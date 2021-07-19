@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol HTMLRepresentable {
+    var html: String { get }
+}
