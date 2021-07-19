@@ -7,6 +7,13 @@
 
 import Foundation
 
+public extension Node {
+
+    static func div(_ children: [Node] = []) -> Node {
+        Node(type: .standard, name: "div", children: children)
+    }
+}
+
 public struct Div: Tag {
     public var node: Node
 
@@ -14,9 +21,12 @@ public struct Div: Tag {
         self.node = node
     }
     
-    public init(attributes: [Attribute] = [], @TagBuilder _ builder: () -> [Tag]) {
-        let children = builder().map(\.node)
-        node = .init(type: .standard, name: "div", attributes: attributes, children: children)
+    public init(_ children: [Node] = []) {
+        self.node = .div(children)
+    }
+
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        self.init(builder().map(\.node))
     }
 }
 

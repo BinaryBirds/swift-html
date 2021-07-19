@@ -7,17 +7,24 @@
 
 import Foundation
 
+public extension Node {
+
+    static func link() -> Node {
+        Node(type: .empty, name: "link")
+    }
+}
+
 public struct Link: Tag {
     public var node: Node
 
     public init(_ node: Node) {
         self.node = node
     }
-    
-    public init(attributes: [Attribute] = []) {
-        node = .init(type: .empty, name: "link", contents: nil, attributes: attributes, children: [])
-    }
 
+    public init() {
+        self.node = .link()
+    }
+    
     public func href(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "href", value: url)))
     }

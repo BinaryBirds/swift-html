@@ -7,6 +7,13 @@
 
 import Foundation
 
+public extension Node {
+
+    static func comment(_ contents: String) -> Node {
+        Node(type: .comment, contents: contents)
+    }
+}
+
 public struct Comment: Tag {
     public var node: Node
 
@@ -14,8 +21,7 @@ public struct Comment: Tag {
         self.node = node
     }
     
-    public init(_ value: String?) {
-        node = .init(type: .comment, name: "", contents: value, attributes: [], children: [])
+    public init(_ contents: String) {
+        self.node = .comment(contents)
     }
 }
-

@@ -7,17 +7,24 @@
 
 import Foundation
 
+public extension Node {
+
+    static func meta() -> Node {
+        Node(type: .empty, name: "meta")
+    }
+}
+
 public struct Meta: Tag {
     public var node: Node
 
     public init(_ node: Node) {
         self.node = node
     }
-    
-    public init(attributes: [Attribute] = []) {
-        node = .init(type: .empty, name: "meta", contents: nil, attributes: attributes, children: [])
-    }
 
+    public init() {
+        self.node = .meta()
+    }
+    
     public func name(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "name", value: url)))
     }
@@ -26,4 +33,3 @@ public struct Meta: Tag {
         .init(node.addOrReplace(Attribute(key: "content", value: url)))
     }
 }
-
