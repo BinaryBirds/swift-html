@@ -9,11 +9,18 @@ import Foundation
 
 public struct Document: HTMLRepresentable {
 
-    public enum Doctype: String {
-        case html5 = "html"
-        // @TODO: custom doctype support?
-        case html4 = "HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\""
-        case xhtml = "html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
+    public enum Doctype {
+        case html5
+        case custom(String)
+        
+        var rawValue: String {
+            switch self {
+            case .html5:
+                return "html"
+            case let .custom(value):
+                return value
+            }
+        }
     }
 
     var type: Doctype

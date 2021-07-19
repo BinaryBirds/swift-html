@@ -19,15 +19,11 @@ public struct Meta: Tag {
     }
 
     public func name(_ url: String) -> Self {
-        var attributes = node.attributes
-        attributes.append(.init(key: "name", value: url))
-        return .init(attributes: attributes)
+        .init(node.addOrReplace(Attribute(key: "name", value: url)))
     }
     
     public func content(_ url: String) -> Self {
-        var attributes = node.attributes
-        attributes.append(.init(key: "content", value: url))
-        return .init(attributes: attributes)
+        .init(node.addOrReplace(Attribute(key: "content", value: url)))
     }
 }
 

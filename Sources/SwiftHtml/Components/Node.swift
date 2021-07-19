@@ -41,24 +41,35 @@ public struct Node {
     var html: String {
         switch type {
         case .standard:
-            var attr = attributes.map { $0.key + "=\"" + $0.value + "\"" }.joined(separator: " ")
-            if !attributes.isEmpty {
-                attr = " " + attr
-            }
             var htmlValue = children.map(\.html).joined(separator: "")
             if !children.isEmpty {
                 htmlValue = htmlValue + "\n"
             }
-            return "\n<" + name! + attr + ">" + (contents ?? htmlValue) + "</" + name! + ">"
+            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">" + (contents ?? htmlValue) + "</" + name! + ">"
         case .comment:
             return "\n<!--" + (contents ?? "") + "-->"
         case .empty:
-            var attr = attributes.map { $0.key + "=\"" + $0.value + "\"" }.joined(separator: " ")
-            if !attributes.isEmpty {
-               attr = " " + attr
-            }
-            return "\n<" + name! + attr + ">"
+            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">"
         }
+    }
+    
+    private var attributesList: String {
+        return attributes.reduce([]) { res, next in
+            if let value = next.value {
+                return res + [next.key + #"=""# + value + #"""#]
+            }
+            return res + [next.key]
+        }.joined(separator: " ")
+    }
+}
+
+extension Node {
+    
+    func addOrReplace(_ attribute: Attribute) -> Node {
+        var newNode = self
+        newNode.attributes = newNode.attributes.filter { $0.key != attribute.key }
+        newNode.attributes.append(attribute)
+        return newNode
     }
 }
 

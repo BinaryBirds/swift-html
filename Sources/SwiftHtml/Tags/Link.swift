@@ -19,14 +19,10 @@ public struct Link: Tag {
     }
 
     public func href(_ url: String) -> Self {
-        var attributes = node.attributes
-        attributes.append(.init(key: "href", value: url))
-        return .init(attributes: attributes)
+        .init(node.addOrReplace(Attribute(key: "href", value: url)))
     }
     
     public func rel(_ url: String) -> Self {
-        var attributes = node.attributes
-        attributes.append(.init(key: "rel", value: url))
-        return .init(attributes: attributes)
+        .init(node.addOrReplace(Attribute(key: "rel", value: url)))
     }
 }
