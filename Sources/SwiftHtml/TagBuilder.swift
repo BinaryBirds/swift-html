@@ -8,8 +8,9 @@
 import Foundation
 
 @resultBuilder
-enum TagBuilder {
-    static func buildBlock(_ components: Tag...) -> [Tag] {
+public enum TagBuilder {
+    
+    public static func buildBlock(_ components: Tag...) -> [Tag] {
         components
     }
 }

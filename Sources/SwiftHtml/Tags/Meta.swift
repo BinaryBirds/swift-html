@@ -7,20 +7,24 @@
 
 import Foundation
 
-struct Meta: Tag {
-    var node: Node
+public struct Meta: Tag {
+    public var node: Node
 
-    init(attributes: [Attribute] = []) {
-        node = .init(type: .empty, name: "meta", value: nil, attributes: attributes, children: [])
+    public init(_ node: Node) {
+        self.node = node
+    }
+    
+    public init(attributes: [Attribute] = []) {
+        node = .init(type: .empty, name: "meta", contents: nil, attributes: attributes, children: [])
     }
 
-    func name(_ url: String) -> Self {
+    public func name(_ url: String) -> Self {
         var attributes = node.attributes
         attributes.append(.init(key: "name", value: url))
         return .init(attributes: attributes)
     }
     
-    func content(_ url: String) -> Self {
+    public func content(_ url: String) -> Self {
         var attributes = node.attributes
         attributes.append(.init(key: "content", value: url))
         return .init(attributes: attributes)

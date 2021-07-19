@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct P: Tag {
-    var node: Node
+public struct P: Tag {
+    public var node: Node
 
-    init(_ value: String?) {
-        node = .init(type: .standard, name: "p", value: value, attributes: [], children: [])
+    public init(_ node: Node) {
+        self.node = node
+    }
+    
+    public init(_ value: String?) {
+        self.init(.init(type: .standard, name: "p", contents: value, attributes: [], children: []))
     }
 }
 

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Document: HTMLRepresentable {
+public struct Document: HTMLRepresentable {
 
-    enum Doctype: String {
+    public enum Doctype: String {
         case html5 = "html"
         // @TODO: custom doctype support?
         case html4 = "HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\""
@@ -19,12 +19,12 @@ struct Document: HTMLRepresentable {
     var type: Doctype
     var root: Html
     
-    init(_ type: Doctype = .html5, _ builder: () -> Html) {
+    public init(_ type: Doctype = .html5, _ builder: () -> Html) {
         self.type = type
         self.root = builder()
     }
     
-    var html: String {
+    public var html: String {
         "<!DOCTYPE " + type.rawValue + ">" + root.html
     }
 }

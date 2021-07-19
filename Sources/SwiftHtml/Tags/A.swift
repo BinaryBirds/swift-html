@@ -7,18 +7,28 @@
 
 import Foundation
 
+public extension Node {
 
-struct A: Tag {
-    var node: Node
-
-    init(_ value: String?, attributes: [Attribute] = []) {
-        node = .init(type: .standard, name: "a", value: value, attributes: attributes, children: [])
-    }
-
-    func href(_ url: String) -> Self {
-        var attributes = node.attributes
-        attributes.append(.init(key: "href", value: url))
-        return .init(node.value, attributes: attributes)
+    static func a(_ value: String) -> Node {
+        Node(type: .standard, name: "a", contents: value)
     }
 }
 
+public struct A: Tag {
+
+    public var node: Node
+
+    public init(_ node: Node) {
+        self.node = node
+    }
+
+    public init(_ value: String) {
+        self.init(.a(value))
+    }
+
+    public func href(_ url: String) -> Self {
+        var newNode = node
+        newNode.attributes.append(.init(key: "href", value: url))
+        return .init(newNode)
+    }
+}

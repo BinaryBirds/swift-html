@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Html: Tag {
-    var node: Node
+public struct Html: Tag {
+    
+    public var node: Node
 
-    init(attributes: [Attribute] = [], @TagBuilder _ builder: () -> [Tag]) {
+    public init(_ node: Node) {
+        self.node = node
+    }
+    
+    public init(attributes: [Attribute] = [], @TagBuilder _ builder: () -> [Tag]) {
         let children = builder().map(\.node)
         node = .init(type: .standard, name: "html", attributes: attributes, children: children)
     }
 }
-

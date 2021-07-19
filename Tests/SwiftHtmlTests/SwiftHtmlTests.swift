@@ -6,12 +6,12 @@
 //
 
 import XCTest
-@testable import SwiftHtml
+//@testable import SwiftHtml
+import SwiftHtml
 
 final class SwiftCssTests: XCTestCase {
     
     func testHtml001() {
-        
         let doc = Document(.html5) {
             Html {
                 Head {
@@ -25,14 +25,13 @@ final class SwiftCssTests: XCTestCase {
                 }
                 Body {
                     Div {
-                        H1("Lorem ipsum")
+                        H1("Lorem ipsum").class("red")
                         P("Dolor sit amet")
                         A("Hello Swift HTML DSL!").href("https://swift.org")
                     }
                 }
             }
         }
-
         print(doc.html)
         XCTAssertTrue(true)
     }

@@ -7,23 +7,26 @@
 
 import Foundation
 
-struct Link: Tag {
-    var node: Node
+public struct Link: Tag {
+    public var node: Node
 
-    init(attributes: [Attribute] = []) {
-        node = .init(type: .empty, name: "link", value: nil, attributes: attributes, children: [])
+    public init(_ node: Node) {
+        self.node = node
+    }
+    
+    public init(attributes: [Attribute] = []) {
+        node = .init(type: .empty, name: "link", contents: nil, attributes: attributes, children: [])
     }
 
-    func href(_ url: String) -> Self {
+    public func href(_ url: String) -> Self {
         var attributes = node.attributes
         attributes.append(.init(key: "href", value: url))
         return .init(attributes: attributes)
     }
     
-    func rel(_ url: String) -> Self {
+    public func rel(_ url: String) -> Self {
         var attributes = node.attributes
         attributes.append(.init(key: "rel", value: url))
         return .init(attributes: attributes)
     }
 }
-

@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct Comment: Tag {
-    var node: Node
+public struct Comment: Tag {
+    public var node: Node
 
-    init(_ value: String?) {
-        node = .init(type: .comment, name: "", value: value, attributes: [], children: [])
+    public init(_ node: Node) {
+        self.node = node
+    }
+    
+    public init(_ value: String?) {
+        node = .init(type: .comment, name: "", contents: value, attributes: [], children: [])
     }
 }
 
