@@ -11,7 +11,7 @@ import XCTest
 final class SwiftCssTests: XCTestCase {
         
     func testHtml001() {
-        let doc = Document(.html5) {
+        let doc = Document {
             Html {
                 Head {
                     Title("Hello Swift DSL")
@@ -25,9 +25,8 @@ final class SwiftCssTests: XCTestCase {
                     Main {
                         Div {
                             Section {
-                                Img()
-                                    .src("./images/swift.png")
-                                    .title("Swift Logo")
+                                Img(src: "./images/swift.png", alt: "Swift Logo")
+                                    .title("Picture of the Swift Logo")
                                 H1("Lorem ipsum")
                                     .class("red")
                                 P("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.")

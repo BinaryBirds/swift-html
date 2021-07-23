@@ -34,8 +34,12 @@ public struct Img: Tag {
         self.node = node
     }
 
-    public init() {
+    public init(src: String, alt: String) {
         self.node = .img()
+        self.node.attributes.append(contentsOf: [
+            .init(key: "src", value: src),
+            .init(key: "alt", value: src),
+        ])
     }
     
     /// Specifies an alternate text for an image
