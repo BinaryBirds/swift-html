@@ -15,12 +15,11 @@ final class SwiftCssTests: XCTestCase {
             Html {
                 Head {
                     Title("Hello Swift DSL")
-                    Meta()
-                        .name("viewport")
-                        .content("width=device-width, initial-scale=1")
-                    Link()
-                        .rel("stylesheet")
-                        .href("./css/style.css")
+                    
+                    Meta().charset("utf-8")
+                    Meta().name(.viewport).content("width=device-width, initial-scale=1")
+
+                    Link(rel: .stylesheet).href("./css/style.css")
                 }
                 Body {
                     Main {

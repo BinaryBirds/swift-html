@@ -105,7 +105,7 @@ public struct A: Tag {
     }
     
     /// Specifies where to open the linked document
-    public func target(_ value: Target) -> Self {
+    public func target(_ value: TargetFrame) -> Self {
         .init(node.addOrReplace(Attribute(key: "target", value: value.rawValue)))
     }
     

@@ -14,6 +14,7 @@ public extension Node {
     }
 }
 
+/// The <legend> tag defines a caption for the <fieldset> element.
 public struct Legend: Tag {
     public var node: Node
 

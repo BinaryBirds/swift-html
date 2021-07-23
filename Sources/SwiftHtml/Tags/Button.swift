@@ -78,7 +78,7 @@ public struct Button: Tag {
     }
     
     /// Specifies where to display the response after submitting the form. Only for type="submit"
-    public func target(_ value: Target) -> Self {
+    public func target(_ value: TargetFrame) -> Self {
         .init(node.addOrReplace(Attribute(key: "target", value: value.rawValue)))
     }
     
