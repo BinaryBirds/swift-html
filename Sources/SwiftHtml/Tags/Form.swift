@@ -16,17 +16,6 @@ public extension Node {
 
 public struct Form: Tag {
     
-    public enum Method: String {
-        case get
-        case post
-    }
-    
-    public enum Enctype: String {
-        case urlencoded = "application/x-www-form-urlencoded"
-        case multipart = "multipart/form-data"
-        case plain = "text/plain"
-    }
-    
     public var node: Node
 
     public init(_ node: Node) {

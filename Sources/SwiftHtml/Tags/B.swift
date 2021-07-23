@@ -14,6 +14,7 @@ public extension Node {
     }
 }
 
+/// Make some text bold (without marking it as important)
 public struct B: Tag {
     public var node: Node
 
