@@ -14,6 +14,9 @@ public extension Node {
     }
 }
 
+/// The <small> tag defines smaller text (like copyright and other side-comments).
+///
+/// Tip: This tag is not deprecated, but it is possible to achieve richer (or the same) effect with CSS.
 public struct Small: Tag {
     public var node: Node
 

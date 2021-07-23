@@ -14,6 +14,9 @@ public extension Node {
     }
 }
 
+/// The <sup> tag defines superscript text. Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font. Superscript text can be used for footnotes, like WWW[1].
+///
+/// Tip: Use the <sub> tag to define subscript text.
 public struct Sup: Tag {
     public var node: Node
 

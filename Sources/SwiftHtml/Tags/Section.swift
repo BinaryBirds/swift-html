@@ -14,6 +14,7 @@ public extension Node {
     }
 }
 
+/// The <section> tag defines a section in a document.
 public struct Section: Tag {
     public var node: Node
 

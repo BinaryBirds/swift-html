@@ -14,6 +14,9 @@ public extension Node {
     }
 }
 
+/// The <strong> tag is used to define text with strong importance. The content inside is typically displayed in bold.
+///
+/// Tip: Use the <b> tag to specify bold text without any extra importance!
 public struct Strong: Tag {
     public var node: Node
 

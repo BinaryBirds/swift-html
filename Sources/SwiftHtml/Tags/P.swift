@@ -14,6 +14,11 @@ public extension Node {
     }
 }
 
+/// The <p> tag defines a paragraph.
+/// 
+/// Browsers automatically add a single blank line before and after each <p> element.
+/// 
+/// Tip: Use CSS to style paragraphs.
 public struct P: Tag {
     public var node: Node
 

@@ -73,7 +73,7 @@ public struct Input: Tag {
     
     /// Specifies that an <input> element should automatically get focus when the page loads
     public func autofocus() -> Self {
-        .init(node.addOrReplace(Attribute(key: "autocomplete")))
+        .init(node.addOrReplace(Attribute(key: "autofocus")))
     }
     
     /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")

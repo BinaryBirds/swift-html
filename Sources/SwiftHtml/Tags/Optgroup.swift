@@ -14,6 +14,9 @@ public extension Node {
     }
 }
 
+/// The <optgroup> tag is used to group related options in a <select> element (drop-down list).
+/// 
+/// If you have a long list of options, groups of related options are easier to handle for a user.
 public struct Optgroup: Tag {
     public var node: Node
 
@@ -27,5 +30,15 @@ public struct Optgroup: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         self.init(builder().map(\.node))
+    }
+    
+    /// Specifies that an option-group should be disabled
+    public func disabled() -> Self {
+        .init(node.addOrReplace(Attribute(key: "disabled")))
+    }
+    
+    /// Specifies a label for an option-group
+    public func label(_ value: String) -> Self {
+        .init(node.addOrReplace(Attribute(key: "label", value: value)))
     }
 }

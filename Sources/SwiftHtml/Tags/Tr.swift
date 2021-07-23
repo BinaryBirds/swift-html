@@ -14,6 +14,9 @@ public extension Node {
     }
 }
 
+/// The <tr> tag defines a row in an HTML table.
+///
+/// A <tr> element contains one or more <th> or <td> elements.
 public struct Tr: Tag {
     public var node: Node
 
