@@ -9,8 +9,8 @@ import Foundation
 
 public extension Node {
 
-    static func script() -> Node {
-        Node(type: .empty, name: "script")
+    static func script(_ contents: String? = nil) -> Node {
+        Node(type: contents == nil ? .empty : .standard, name: "script", contents: contents)
     }
 }
 
@@ -26,8 +26,8 @@ public struct Script: Tag {
         self.node = node
     }
 
-    public init() {
-        self.node = .script()
+    public init(_ contents: String? = nil) {
+        self.node = .script(contents)
     }
     
     /// Specifies that the script is executed asynchronously (only for external scripts)

@@ -8,9 +8,9 @@
 import XCTest
 @testable import SwiftHtml
 
-final class SwiftCssTests: XCTestCase {
+final class SwiftHtmlTests: XCTestCase {
         
-    func testHtml001() {
+    func testHtmlDocument() {
         let doc = Document {
             Html {
                 Head {
@@ -48,79 +48,6 @@ final class SwiftCssTests: XCTestCase {
                 }
             }
         }
-        print(doc.html)
-        XCTAssertTrue(true)
-    }
-    
-    func testHtml002() {
-        let doc = Ul {
-            Li("a")
-            Li("b")
-            Li {
-                P("c")
-            }
-        }
-        print(doc.html)
-        XCTAssertTrue(true)
-    }
-    
-    func testHtml003() {
-        let doc = Table {
-            Thead {
-                Tr {
-                    Th("1")
-                    Th("2")
-                    Th("3")
-                }
-            }
-            Tbody {
-                Tr {
-                    Td("a")
-                    Td("b")
-                    Td("c")
-                }
-            }
-            Tfoot {
-                Tr {
-                    Td("d")
-                    Td("e")
-                    Td("f")
-                }
-            }
-        }
-        print(doc.html)
-        XCTAssertTrue(true)
-    }
-    
-    func testHtml004() {
-        let doc = Form {
-            Section {
-                Label("Email address")
-                    .for("email")
-                Input()
-                    .type(.email)
-                    .id("email")
-                    .placeholder("Your email address")
-                    .value("root@localhost.com")
-            }
-            Section {
-                Label("Password")
-                    .for("password")
-                Input()
-                    .type(.password)
-                    .id("password")
-                    .placeholder("Your password")
-            }
-            Section {
-                Input()
-                    .type(.submit)
-                    .value("Sign in")
-            }
-        }
-        .enctype(.multipart)
-        .method(.post)
-        .action("/sign-in/")
-
         print(doc.html)
         XCTAssertTrue(true)
     }
