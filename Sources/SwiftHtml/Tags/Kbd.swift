@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Kbd.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <kbd> tag is used to define keyboard input. The content inside is displayed in the browser's default monospace font.
+/// The `<kbd>` tag is used to define keyboard input. The content inside is displayed in the browser's default monospace font.
 ///
-/// Tip: This tag is not deprecated. However, it is possible to achieve richer effect by using CSS (see example below).
+/// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS (see example below).
 public struct Kbd: Tag {
     public var node: Node
 

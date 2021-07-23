@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Span.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,11 +12,11 @@ public extension Node {
     }
 }
 
-/// The <span> tag is an inline container used to mark up a part of a text, or a part of a document.
+/// The `<span>` tag is an inline container used to mark up a part of a text, or a part of a document.
 ///
-/// The <span> tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
+/// The `<span>` tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
 ///
-/// The <span> tag is much like the <div> element, but <div> is a block-level element and <span> is an inline element.
+/// The `<span>` tag is much like the `<div>` element, but `<div>` is a block-level element and `<span>` is an inline element.
 public struct Span: Tag {
     public var node: Node
 

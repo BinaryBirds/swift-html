@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Ins.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <ins> tag defines a text that has been inserted into a document. Browsers will usually underline inserted text.
+/// The `<ins>` tag defines a text that has been inserted into a document. Browsers will usually underline inserted text.
 ///
-/// Tip: Also look at the <del> tag to markup deleted text.
+/// **Tip:** Also look at the `<del>` tag to markup deleted text.
 public struct Ins: Tag {
     public var node: Node
 

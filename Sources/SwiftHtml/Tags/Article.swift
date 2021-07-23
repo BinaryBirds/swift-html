@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Article.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -24,7 +22,8 @@ public extension Node {
 /// - Blog post
 /// - News story
 ///
-/// **Note:** The `<article>` element does not render as anything special in a browser. However, you can use CSS to style the `<article>` element (see example below).
+/// **Note:** The `<article>` element does not render as anything special in a browser.
+/// However, you can use CSS to style the `<article>` element (see example below).
 public struct Article: Tag {
     public var node: Node
 

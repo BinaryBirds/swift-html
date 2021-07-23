@@ -1,12 +1,9 @@
 //
-//  File.swift
-//  File
+//  Tag.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
-
 
 public protocol NodeRepresentable {
     var node: Node { get }
@@ -16,4 +13,8 @@ public protocol NodeRepresentable {
 
 public protocol Tag: NodeRepresentable, HTMLRepresentable {
     
+}
+
+public extension Tag {
+    var html: String { node.html }
 }

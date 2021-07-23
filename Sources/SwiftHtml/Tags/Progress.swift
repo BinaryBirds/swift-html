@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Progress.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <progress> tag represents the completion progress of a task.
+/// The `<progress>` tag represents the completion progress of a task.
 /// 
-/// Tip: Always add the <label> tag for best accessibility practices!
+/// **Tip:** Always add the `<label>` tag for best accessibility practices!
 public struct Progress: Tag {
     public var node: Node
 
@@ -27,14 +25,16 @@ public struct Progress: Tag {
     public init(_ contents: String) {
         self.node = .progress(contents)
     }
-    
+}
+
+public extension Progress {
     /// Specifies how much work the task requires in total. Default value is 1
-    public func max(_ value: String) -> Self {
+    func max(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "max", value: value)))
     }
     
     /// Specifies how much of the task has been completed
-    public func value(_ value: String) -> Self {
+    func value(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "value", value: value)))
     }
 }

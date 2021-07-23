@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Iframe.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,16 +12,27 @@ public extension Node {
     }
 }
 
-/// The <iframe> tag specifies an inline frame.
+/// The `<iframe>` tag specifies an inline frame.
 ///
 /// An inline frame is used to embed another document within the current HTML document.
 ///
-/// Tip: Use CSS to style the <iframe> (see example below).
+/// **Tip:** Use CSS to style the `<iframe>` (see example below).
 ///
-/// Tip: It is a good practice to always include a title attribute for the <iframe>. This is used by screen readers to read out what the content of the <iframe> is.
+/// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
 public struct Iframe: Tag {
+    public var node: Node
+
+    public init(_ node: Node) {
+        self.node = node
+    }
     
-    public enum Sandbox {
+    public init() {
+        self.node = .iframe()
+    }
+}
+
+public extension Iframe {
+    enum Sandbox {
         /// (no value)    Applies all restrictions
         case all
         /// Allows form submission
@@ -78,72 +87,59 @@ public struct Iframe: Tag {
             }
         }
     }
-
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
-    }
     
-    public init() {
-        self.node = .iframe()
-    }
-    
-    /// Specifies a feature policy for the <iframe>
-    public func allow() -> Self {
+    /// Specifies a feature policy for the `<iframe>`
+    func allow() -> Self {
         .init(node.addOrReplace(Attribute(key: "allow")))
     }
     
-    /// Set to true if the <iframe> can activate fullscreen mode by calling the requestFullscreen() method
-    public func allowfullscreen(_ value: Bool) -> Self {
+    /// Set to true if the `<iframe>` can activate fullscreen mode by calling the requestFullscreen() method
+    func allowfullscreen(_ value: Bool) -> Self {
         .init(node.addOrReplace(Attribute(key: "allowfullscreen", value: String(value))))
     }
     
-    /// Set to true if a cross-origin <iframe> should be allowed to invoke the Payment Request API
-    public func allowpaymentrequest(_ value: Bool) -> Self {
+    /// Set to true if a cross-origin `<iframe>` should be allowed to invoke the Payment Request API
+    func allowpaymentrequest(_ value: Bool) -> Self {
         .init(node.addOrReplace(Attribute(key: "allowpaymentrequest", value: String(value))))
     }
     
-    /// Specifies the height of an <iframe>. Default height is 150 pixels
-    public func height(_ value: Double) -> Self {
+    /// Specifies the height of an `<iframe>`. Default height is 150 pixels
+    func height(_ value: Double) -> Self {
         .init(node.addOrReplace(Attribute(key: "height", value: String(value))))
     }
     
     /// Specifies whether a browser should load an iframe immediately or to defer loading of iframes until some conditions are met
-    public func loading(_ value: Loading) -> Self {
+    func loading(_ value: Loading) -> Self {
         .init(node.addOrReplace(Attribute(key: "loading", value: value.rawValue)))
     }
     
-    /// Specifies the name of an <iframe>
-    public func name(_ value: String) -> Self {
+    /// Specifies the name of an `<iframe>`
+    func name(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "name", value: value)))
     }
     
     /// Specifies which referrer information to send when fetching the iframe
-    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
     }
     
-    /// Enables an extra set of restrictions for the content in an <iframe>
-    public func sandbox(_ value: Sandbox = .all) -> Self {
+    /// Enables an extra set of restrictions for the content in an `<iframe>`
+    func sandbox(_ value: Sandbox = .all) -> Self {
         .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
     }
     
-    /// Specifies the address of the document to embed in the <iframe>
-    public func src(_ value: String) -> Self {
+    /// Specifies the address of the document to embed in the `<iframe>`
+    func src(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "src", value: value)))
     }
     
-    /// Specifies the HTML content of the page to show in the <iframe>
-    public func srcdoc(_ value: String) -> Self {
+    /// Specifies the HTML content of the page to show in the `<iframe>`
+    func srcdoc(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "srcdoc", value: value)))
     }
     
-    /// Specifies the width of an <iframe>. Default width is 300 pixels
-    public func width(_ value: Double) -> Self {
+    /// Specifies the width of an `<iframe>`. Default width is 300 pixels
+    func width(_ value: Double) -> Self {
         .init(node.addOrReplace(Attribute(key: "width", value: String(value))))
     }
-    
-    
-    
 }

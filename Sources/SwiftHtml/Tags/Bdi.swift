@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Bdi.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -16,7 +14,7 @@ public extension Node {
 
 /// BDI stands for Bi-Directional Isolation.
 ///
-/// The <bdi> tag isolates a part of text that might be formatted in a different direction from other text outside it.
+/// The `<bdi>` tag isolates a part of text that might be formatted in a different direction from other text outside it.
 ///
 /// This element is useful when embedding user-generated content with an unknown text direction.
 public struct Bdi: Tag {

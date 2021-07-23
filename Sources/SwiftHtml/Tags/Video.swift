@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Video.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,17 +12,22 @@ public extension Node {
     }
 }
 
+/// The `<video>` tag is used to embed video content in a document, such as a movie clip or other video streams.
+///
+/// The `<video>` tag contains one or more `<source>` tags with different video sources. The browser will choose the first source it supports.
+///
+/// The text between the `<video>` and `</video>` tags will only be displayed in browsers that do not support the `<video>` element.
+///
+/// There are three supported video formats in HTML: MP4, WebM, and OGG.
+///
+///     Browser | MP4 | WebM | Ogg
+///     ------- | --- | ---- | ---
+///     Edge    | YES | YES  | YES
+///     Chrome  | YES | YES  | YES
+///     Firefox | YES | YES  | YES
+///     Safari  | YES | YES  | NO
+///     Opera   | YES | YES  | YES
 public struct Video: Tag {
-    
-    public enum Preload: String {
-        /// The author thinks that the browser should load the entire video when the page loads
-        case auto
-        /// The author thinks that the browser should load only metadata when the page loads
-        case metadata
-        /// The author thinks that the browser should NOT load the video when the page loads
-        case none
-    }
-    
     public var node: Node
 
     public init(_ node: Node) {
@@ -38,29 +41,41 @@ public struct Video: Tag {
     public init(@TagBuilder _ builder: () -> [Tag]) {
         self.init(builder().map(\.node))
     }
+}
+
+public extension Video {
+    
+    enum Preload: String {
+        /// The author thinks that the browser should load the entire video when the page loads
+        case auto
+        /// The author thinks that the browser should load only metadata when the page loads
+        case metadata
+        /// The author thinks that the browser should NOT load the video when the page loads
+        case none
+    }
     
     /// Specifies that the video will start playing as soon as it is ready
-    public func autoplay() -> Self {
+    func autoplay() -> Self {
         .init(node.addOrReplace(Attribute(key: "autoplay")))
     }
     
     /// Specifies that video controls should be displayed (such as a play/pause button etc).
-    public func controls() -> Self {
+    func controls() -> Self {
         .init(node.addOrReplace(Attribute(key: "controls")))
     }
     
     /// Sets the height of the video player
-    public func height(_ value: Double) -> Self {
+    func height(_ value: Double) -> Self {
         .init(node.addOrReplace(Attribute(key: "height", value: String(value))))
     }
     
     /// Specifies that the video will start over again, every time it is finished
-    public func loop() -> Self {
+    func loop() -> Self {
         .init(node.addOrReplace(Attribute(key: "loop")))
     }
     
     /// Specifies that the audio output of the video should be muted
-    public func muted() -> Self {
+    func muted() -> Self {
         .init(node.addOrReplace(Attribute(key: "muted")))
     }
     
@@ -80,10 +95,9 @@ public struct Video: Tag {
     }
     
     /// Sets the width of the video player
-    public func width(_ value: Double) -> Self {
+    func width(_ value: Double) -> Self {
         .init(node.addOrReplace(Attribute(key: "width", value: String(value))))
     }
 }
-
 
 

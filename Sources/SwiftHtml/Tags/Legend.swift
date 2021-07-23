@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Legend.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,7 +12,7 @@ public extension Node {
     }
 }
 
-/// The <legend> tag defines a caption for the <fieldset> element.
+/// The `<legend>` tag defines a caption for the `<fieldset>` element.
 public struct Legend: Tag {
     public var node: Node
 

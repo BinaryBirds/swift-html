@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Blockquote.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <blockquote> tag specifies a section that is quoted from another source.
+/// The `<blockquote>` tag specifies a section that is quoted from another source.
 /// 
-/// Browsers usually indent <blockquote> elements (look at example below to see how to remove the indentation).
+/// Browsers usually indent `<blockquote>` elements (look at example below to see how to remove the indentation).
 public struct Blockquote: Tag {
     public var node: Node
 
@@ -27,9 +25,11 @@ public struct Blockquote: Tag {
     public init(_ contents: String) {
         self.node = .blockquote(contents)
     }
-    
+}
+
+public extension Blockquote {
     /// Specifies the source of the quotation
-    public func cite(_ value: String) -> Self {
+    func cite(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "cite", value: value)))
     }
 }

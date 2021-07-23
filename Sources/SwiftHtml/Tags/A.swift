@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  A.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <a> tag defines a hyperlink, which is used to link from one page to another.
+/// The `<a>` tag defines a hyperlink, which is used to link from one page to another.
 ///
-/// The most important attribute of the <a> element is the href attribute, which indicates the link's destination.
+/// The most important attribute of the `<a>` element is the href attribute, which indicates the link's destination.
 ///
 /// By default, links will appear as follows in all browsers:
 ///
@@ -24,8 +22,20 @@ public extension Node {
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
 public struct A: Tag {
+    public var node: Node
+
+    public init(_ node: Node) {
+        self.node = node
+    }
+
+    public init(_ value: String) {
+        self.init(.a(value))
+    }
+}
+
+public extension A {
     
-    public enum Rel: String {
+    enum Rel: String {
         /// Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)
         case alternate
         /// Provides a link to the author of the document
@@ -55,62 +65,50 @@ public struct A: Tag {
         case tag
     }
     
-    
-
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
-    }
-
-    public init(_ value: String) {
-        self.init(.a(value))
-    }
-
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-    public func download(_ name: String? = nil) -> Self {
+    func download(_ name: String? = nil) -> Self {
         .init(node.addOrReplace(Attribute(key: "download", value: name)))
     }
     
     /// Specifies the URL of the page the link goes to
-    public func href(_ url: String) -> Self {
+    func href(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "href", value: url)))
     }
     
     /// Specifies the language of the linked document
-    public func hreflang(_ langCode: String) -> Self {
+    func hreflang(_ langCode: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "hreflang", value: langCode)))
     }
     
     /// Specifies what media/device the linked document is optimized for
-    public func media(_ value: String) -> Self {
+    func media(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "media", value: value)))
     }
     
     /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
     ///
     /// Typically used for tracking.
-    public func ping(_ value: [String]) -> Self {
+    func ping(_ value: [String]) -> Self {
         .init(node.addOrReplace(Attribute(key: "ping", value: value.joined(separator: " "))))
     }
     
     /// Specifies which referrer information to send with the link
-    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
     }
     
     /// Specifies the relationship between the current document and the linked document
-    public func rel(_ value: Rel) -> Self {
+    func rel(_ value: Rel) -> Self {
         .init(node.addOrReplace(Attribute(key: "rel", value: value.rawValue)))
     }
     
     /// Specifies where to open the linked document
-    public func target(_ value: TargetFrame) -> Self {
+    func target(_ value: TargetFrame) -> Self {
         .init(node.addOrReplace(Attribute(key: "target", value: value.rawValue)))
     }
     
     /// The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document.
-    public func type(_ value: String) -> Self {
+    func type(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "type", value: value)))
     }
 }

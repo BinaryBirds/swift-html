@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Object.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,7 +12,7 @@ public extension Node {
     }
 }
 
-/// The <object> tag defines a container for an external resource.
+/// The `<object>` tag defines a container for an external resource.
 ///
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.
 public struct Object: Tag {
@@ -27,24 +25,26 @@ public struct Object: Tag {
     public init() {
         self.node = .object()
     }
-    
+}
+
+public extension Object {
     /// Specifies the URL of the resource to be used by the object
-    public func data(_ value: String) -> Self {
+    func data(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "data", value: value)))
     }
     
     /// Specifies which form the object belongs to
-    public func form(_ value: String) -> Self {
+    func form(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "form", value: value)))
     }
     
     /// Specifies the height of the object
-    public func height(_ value: Double) -> Self {
+    func height(_ value: Double) -> Self {
         .init(node.addOrReplace(Attribute(key: "height", value: String(value))))
     }
         
     /// Specifies a name for the object
-    public func name(_ value: String) -> Self {
+    func name(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "name", value: value)))
     }
     
@@ -64,7 +64,7 @@ public struct Object: Tag {
     }
     
     /// Specifies the width of the object
-    public func width(_ value: Double) -> Self {
+    func width(_ value: Double) -> Self {
         .init(node.addOrReplace(Attribute(key: "width", value: String(value))))
     }
 }

@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Label.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -37,10 +35,11 @@ public extension Node {
 /// - `<progress>`
 /// - `<select>`
 /// - `<textarea>`
+/// 
 /// Proper use of labels with the elements above will benefit:
 ///
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
-/// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the <label> element, it toggles the input (this increases the hit area).
+/// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
 public struct Label: Tag {
     public var node: Node
 
@@ -51,14 +50,16 @@ public struct Label: Tag {
     public init(_ contents: String) {
         self.node = .label(contents)
     }
-    
+}
+
+public extension Label {
     /// Specifies the id of the form element the label should be bound to
-    public func `for`(_ value: String) -> Self {
+    func `for`(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "for", value: value)))
     }
     
     /// Specifies which form the label belongs to
-    public func form(_ value: String) -> Self {
+    func form(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "form", value: value)))
     }
 }

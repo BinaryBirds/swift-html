@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Bdo.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -16,15 +14,8 @@ public extension Node {
 
 /// BDO stands for Bi-Directional Override.
 ///
-/// The <bdo> tag is used to override the current text direction.
+/// The `<bdo>` tag is used to override the current text direction.
 public struct Bdo: Tag {
-    
-    public enum Dir: String {
-        /// Left-to-right text direction
-        case ltr
-        /// Right-to-left text direction
-        case rtl
-    }
     
     public var node: Node
 
@@ -32,13 +23,15 @@ public struct Bdo: Tag {
         self.node = node
     }
 
-    public init(_ contents: String, dir: Dir = .ltr) {
+    public init(_ contents: String, dir: TextDirection = .ltr) {
         self.node = .bdo(contents)
         self.node.attributes.append(.init(key: "dir", value: dir.rawValue))
     }
-    
+}
+
+public extension Bdo {
     /// Required. Specifies the text direction of the text inside the <bdo> element
-    public func dir(_ value: Dir) -> Self {
+    func dir(_ value: TextDirection) -> Self {
         .init(node.addOrReplace(Attribute(key: "dir", value: value.rawValue)))
     }
 }

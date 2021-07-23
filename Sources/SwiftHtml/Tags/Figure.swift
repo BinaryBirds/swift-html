@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Figure.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,11 +12,11 @@ public extension Node {
     }
 }
 
-/// The <figure> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+/// The `<figure>` tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
 ///
-/// While the content of the <figure> element is related to the main flow, its position is independent of the main flow, and if removed it should not affect the flow of the document.
+/// While the content of the `<figure>` element is related to the main flow, its position is independent of the main flow, and if removed it should not affect the flow of the document.
 ///
-/// Tip: The <figcaption> element is used to add a caption for the <figure> element.
+/// **Tip:** The `<figcaption>` element is used to add a caption for the `<figure>` element.
 public struct Figure: Tag {
     public var node: Node
 

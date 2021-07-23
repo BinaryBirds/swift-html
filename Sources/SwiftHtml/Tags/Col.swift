@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Col.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <col> tag specifies column properties for each column within a <colgroup> element.
+/// The `<col>` tag specifies column properties for each column within a `<colgroup>` element.
 /// 
-/// The <col> tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
+/// The `<col>` tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
 public struct Col: Tag {
     public var node: Node
 
@@ -27,9 +25,11 @@ public struct Col: Tag {
     public init() {
         self.node = .col()
     }
-    
-    /// Sets the number of columns a <col> element should span
-    public func span(_ value: Int) -> Self {
+}
+
+public extension Col {
+    /// Sets the number of columns a `<col>` element should span
+    func span(_ value: Int) -> Self {
         .init(node.addOrReplace(Attribute(key: "span", value: String(value))))
     }
 }

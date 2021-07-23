@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Strong.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <strong> tag is used to define text with strong importance. The content inside is typically displayed in bold.
+/// The `<strong>` tag is used to define text with strong importance. The content inside is typically displayed in bold.
 ///
-/// Tip: Use the <b> tag to specify bold text without any extra importance!
+/// **Tip:** Use the `<b>` tag to specify bold text without any extra importance!
 public struct Strong: Tag {
     public var node: Node
 

@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Footer.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <footer> tag defines a footer for a document or section.
+/// The `<footer>` tag defines a footer for a document or section.
 ///
-/// A <footer> element typically contains:
+/// A `<footer>` element typically contains:
 ///
 /// - authorship information
 /// - copyright information
@@ -24,7 +22,7 @@ public extension Node {
 /// - sitemap
 /// - back to top links
 /// - related documents
-/// You can have several <footer> elements in one document.
+/// You can have several `<footer>` elements in one document.
 public struct Footer: Tag {
     public var node: Node
 

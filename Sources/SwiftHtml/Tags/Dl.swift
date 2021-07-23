@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Dl.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <dl> tag defines a description list.
+/// The `<dl>` tag defines a description list.
 ///
-/// The <dl> tag is used in conjunction with <dt> (defines terms/names) and <dd> (describes each term/name).
+/// The `<dl>` tag is used in conjunction with `<dt>` (defines terms/names) and `<dd>` (describes each term/name).
 public struct Dl: Tag {
     public var node: Node
 

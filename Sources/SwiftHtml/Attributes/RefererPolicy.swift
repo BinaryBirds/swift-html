@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  RefererPolicy.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public enum RefererPolicy: String {
     /// No referrer information is sent

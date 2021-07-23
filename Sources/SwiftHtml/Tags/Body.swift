@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  Body.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,11 +12,11 @@ public extension Node {
     }
 }
 
-/// The <body> tag defines the document's body.
+/// The `<body>` tag defines the document's body.
 /// 
-/// The <body> element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+/// The `<body>` element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
 /// 
-/// Note: There can only be one <body> element in an HTML document.
+/// **Note:** There can only be one `<body>` element in an HTML document.
 public struct Body: Tag {
     public var node: Node
 

@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  B.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 

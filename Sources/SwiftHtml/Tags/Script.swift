@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Script.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <script> tag is used to embed a client-side script (JavaScript).
+/// The `<script>` tag is used to embed a client-side script (JavaScript).
 ///
-/// The <script> element either contains scripting statements, or it points to an external script file through the src attribute.
+/// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 public struct Script: Tag {
@@ -29,14 +27,17 @@ public struct Script: Tag {
     public init(_ contents: String? = nil) {
         self.node = .script(contents)
     }
-    
+}
+
+public extension Script {
+
     /// Specifies that the script is executed asynchronously (only for external scripts)
     func async() -> Self {
         .init(node.addOrReplace(Attribute(key: "async")))
     }
     
     /// Sets the mode of the request to an HTTP CORS Request
-    public func crossorigin(_ value: Crossorigin) -> Self {
+    func crossorigin(_ value: Crossorigin) -> Self {
         .init(node.addOrReplace(Attribute(key: "crossorigin", value: value.rawValue)))
     }
     
@@ -50,13 +51,14 @@ public struct Script: Tag {
         .init(node.addOrReplace(Attribute(key: "integrity", value: value)))
     }
     
+    // @NOTE: auto capitalize string value?
     /// Specifies that the script should not be executed in browsers supporting ES2015 modules
     func nomodule(_ value: Bool) -> Self {
-        .init(node.addOrReplace(Attribute(key: "nomodule", value: String(value).capitalized)))
+        .init(node.addOrReplace(Attribute(key: "nomodule", value: String(value))))
     }
     
     /// Specifies which referrer information to send when fetching a script
-    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
     }
     

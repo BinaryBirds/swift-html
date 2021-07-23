@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  Comment.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,6 +12,13 @@ public extension Node {
     }
 }
 
+/// The comment tag is used to insert comments in the source code.
+///
+/// `<!-- example comment -->`
+///
+/// Comments are not displayed in the browsers.
+/// You can use comments to explain your code, which can help you when you edit the source code at a later date.
+/// This is especially useful if you have a lot of code.
 public struct Comment: Tag {
     public var node: Node
 

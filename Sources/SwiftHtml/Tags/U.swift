@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  U.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,12 @@ public extension Node {
     }
 }
 
-/// The <u> tag represents some text that is unarticulated and styled differently from normal text, such as misspelled words or proper names in Chinese text. The content inside is typically displayed with an underline. You can change this with CSS (see example below).
+/// The `<u>` tag represents some text that is unarticulated and styled differently from normal text, such as misspelled words or proper names in Chinese text.
 ///
-/// Tip: Avoid using the <u> element where it could be confused for a hyperlink!
+/// The content inside is typically displayed with an underline.
+/// You can change this with CSS (see example below).
+///
+/// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
 public struct U: Tag {
     public var node: Node
 

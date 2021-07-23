@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Param.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,7 +12,7 @@ public extension Node {
     }
 }
 
-/// The <param> tag is used to define parameters for an <object> element.
+/// The `<param>` tag is used to define parameters for an `<object>` element.
 public struct Param: Tag {
     public var node: Node
 
@@ -25,14 +23,16 @@ public struct Param: Tag {
     public init() {
         self.node = .param()
     }
-        
+}
+
+public extension Param {
     /// Specifies the name of a parameter
-    public func name(_ value: String) -> Self {
+    func name(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "name", value: value)))
     }
     
     /// Specifies the value of the parameter
-    public func value(_ value: String) -> Self {
+    func value(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "value", value: value)))
     }
 }

@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Data.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,11 +12,11 @@ public extension Node {
     }
 }
 
-/// The <data> tag is used to add a machine-readable translation of a given content.
+/// The `<data>` tag is used to add a machine-readable translation of a given content.
 ///
 /// This element provides both a machine-readable value for data processors, and a human-readable value for rendering in a browser.
 ///
-/// Tip: If the content is time- or date-related, use the <time> element instead.
+/// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
 public struct Data: Tag {
     public var node: Node
 
@@ -29,9 +27,11 @@ public struct Data: Tag {
     public init(_ contents: String) {
         self.node = .data(contents)
     }
-    
+}
+
+public extension Data {
     /// Specifies the machine-readable translation of the content of the element
-    public func value(_ value: String) -> Self {
+    func value(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "value", value: value)))
     }
 }

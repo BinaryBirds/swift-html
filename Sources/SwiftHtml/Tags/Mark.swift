@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Mark.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,7 +12,7 @@ public extension Node {
     }
 }
 
-/// The <mark> tag defines text that should be marked or highlighted.
+/// The `<mark>` tag defines text that should be marked or highlighted.
 public struct Mark: Tag {
     public var node: Node
 

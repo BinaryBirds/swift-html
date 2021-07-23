@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Section.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,7 +12,7 @@ public extension Node {
     }
 }
 
-/// The <section> tag defines a section in a document.
+/// The `<section>` tag defines a section in a document.
 public struct Section: Tag {
     public var node: Node
 

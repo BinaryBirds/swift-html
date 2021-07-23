@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  Document.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public struct Document: HTMLRepresentable {
 
@@ -23,8 +21,8 @@ public struct Document: HTMLRepresentable {
         }
     }
 
-    var type: Doctype
-    var root: Html
+    public let type: Doctype
+    public let root: Html
     
     public init(_ type: Doctype = .html5, _ builder: () -> Html) {
         self.type = type

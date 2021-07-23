@@ -91,4 +91,14 @@ final class TagTests: XCTestCase {
 
         XCTAssertEqual(res2, #"<script type="text/javascript">alert("Hello world!");</script>"#)
     }
+    
+    func testParagraph() {
+        let tag = P("Hello world!")
+        
+        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        XCTAssertEqual(res, "<p>Hello world!</p>")
+    }
+    
+    
 }

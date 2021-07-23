@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Target.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public enum Target: String {
     /// Opens the link in a new window or tab

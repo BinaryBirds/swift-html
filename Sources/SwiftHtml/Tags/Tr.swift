@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Tr.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <tr> tag defines a row in an HTML table.
+/// The `<tr>` tag defines a row in an HTML table.
 ///
-/// A <tr> element contains one or more <th> or <td> elements.
+/// A `<tr>` element contains one or more `<th>` or `<td>` elements.
 public struct Tr: Tag {
     public var node: Node
 

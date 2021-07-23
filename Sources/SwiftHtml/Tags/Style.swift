@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Style.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <style> tag is used to define style information (CSS) for a document.
+/// The `<style>` tag is used to define style information (CSS) for a document.
 ///
-/// Inside the <style> element you specify how HTML elements should render in a browser.
+/// Inside the `<style>` element you specify how HTML elements should render in a browser.
 public struct Style: Tag {
     public var node: Node
 
@@ -27,13 +25,16 @@ public struct Style: Tag {
     public init(_ contents: String) {
         self.node = .style(contents)
     }
-    
+}
+
+public extension Style {
+
     /// Specifies what media/device the media resource is optimized for
     func media(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "media", value: value)))
     }
     
-    /// Specifies the media type of the <style> tag
+    /// Specifies the media type of the `<style>` tag
     func type() -> Self {
         .init(node.addOrReplace(Attribute(key: "type", value: "text/css")))
     }

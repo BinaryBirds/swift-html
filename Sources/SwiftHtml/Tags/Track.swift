@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Track.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,14 +12,27 @@ public extension Node {
     }
 }
 
-/// The <track> tag specifies text tracks for <audio> or <video> elements.
+/// The `<track>` tag specifies text tracks for `<audio>` or `<video>` elements.
 ///
 /// This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.
 ///
 /// Tracks are formatted in WebVTT format (.vtt files).
 public struct Track: Tag {
+    public var node: Node
+
+    public init(_ node: Node) {
+        self.node = node
+    }
     
-    public enum Kind: String {
+    public init(src: String) {
+        self.node = .track()
+        self.node.attributes.append(.init(key: "src", value: src))
+    }
+}
+
+public extension Track {
+    
+    enum Kind: String {
         /// The track defines translation of dialogue and sound effects (suitable for deaf users)
         case captions
         /// The track defines chapter titles (suitable for navigating the media resource)
@@ -34,39 +45,28 @@ public struct Track: Tag {
         case subtitles
     }
     
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
-    }
-    
-    public init(src: String) {
-        self.node = .track()
-        self.node.attributes.append(.init(key: "src", value: src))
-    }
-    
     /// Specifies that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
-    public func `default`() -> Self {
+    func `default`() -> Self {
         .init(node.addOrReplace(Attribute(key: "default")))
     }
     
     /// Specifies the kind of text track
-    public func kind(_ value: Kind) -> Self {
+    func kind(_ value: Kind) -> Self {
         .init(node.addOrReplace(Attribute(key: "kind", value: value.rawValue)))
     }
     
     /// Specifies the title of the text track
-    public func label(_ value: String) -> Self {
+    func label(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "label", value: value)))
     }
     
     /// Required. Specifies the URL of the track file
-    public func src(_ value: String) -> Self {
+    func src(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "src", value: value)))
     }
     
     /// Specifies the language of the track text data (required if kind="subtitles")
-    public func srclang(_ value: String) -> Self {
+    func srclang(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "srclang", value: value)))
     }
 }

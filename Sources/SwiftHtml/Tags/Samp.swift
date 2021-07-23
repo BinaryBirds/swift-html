@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Samp.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,9 +12,9 @@ public extension Node {
     }
 }
 
-/// The <samp> tag is used to define sample output from a computer program. The content inside is displayed in the browser's default monospace font.
+/// The `<samp>` tag is used to define sample output from a computer program. The content inside is displayed in the browser's default monospace font.
 ///
-/// Tip: This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
+/// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
 public struct Samp: Tag {
     public var node: Node
 
@@ -27,5 +25,4 @@ public struct Samp: Tag {
     public init(_ contents: String) {
         self.node = .samp(contents)
     }
-
 }

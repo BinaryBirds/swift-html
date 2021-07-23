@@ -1,14 +1,11 @@
 //
-//  File.swift
-//  
+//  Global.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-import Foundation
-
 /// https://www.w3schools.com/tags/ref_standardattributes.asp
-
 public enum TextDirection: String {
     /// Default. Left-to-right text direction
     case ltr
@@ -35,8 +32,6 @@ public enum Translate: String {
 }
 
 public extension Tag {
-
-    var html: String { node.html }
     
     /// Specifies a shortcut key to activate/focus an element
     func accesskey(_ value: Character) -> Self {
@@ -112,5 +107,4 @@ public extension Tag {
     func translate(_ value: Translate) -> Self {
         .init(node.addOrReplace(Attribute(key: "translate", value: value.rawValue)))
     }
-
 }

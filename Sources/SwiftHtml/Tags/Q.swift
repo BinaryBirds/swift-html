@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Q.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,11 +12,11 @@ public extension Node {
     }
 }
 
-/// The <q> tag defines a short quotation.
+/// The `<q>` tag defines a short quotation.
 ///
 /// Browsers normally insert quotation marks around the quotation.
 ///
-/// Tip: Use <blockquote> for long quotations.
+/// **Tip:** Use `<blockquote>` for long quotations.
 public struct Q: Tag {
     public var node: Node
 
@@ -29,9 +27,11 @@ public struct Q: Tag {
     public init(_ contents: String) {
         self.node = .q(contents)
     }
-    
+}
+
+public extension Q {
     /// Specifies the source URL of the quote
-    public func cite(_ value: String) -> Self {
+    func cite(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "cite", value: value)))
     }
 }

@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  TagBuilder.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 @resultBuilder
 public enum TagBuilder {

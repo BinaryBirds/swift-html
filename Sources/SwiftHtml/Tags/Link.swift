@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  Link.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,27 +12,41 @@ public extension Node {
     }
 }
 
-/// The <link> tag defines the relationship between the current document and an external resource.
+/// The `<link>` tag defines the relationship between the current document and an external resource.
 /// 
-/// The <link> tag is most often used to link to external style sheets.
+/// The `<link>` tag is most often used to link to external style sheets.
 /// 
-/// The <link> element is an empty element, it contains attributes only.
+/// The `<link>` element is an empty element, it contains attributes only.
 public struct Link: Tag {
+    public var node: Node
+
+    public init(_ node: Node) {
+        self.node = node
+    }
+
+    public init(rel: Rel) {
+        self.node = .link()
+        self.node.attributes.append(Attribute(key: "rel", value: rel.rawValue))
+    }
     
-    public enum Rel: String {
+    
+}
+
+public extension Link {
+    enum Rel: String {
         /// Provides a link to an alternate version of the document (i.e. print page, translated or mirror).
         ///
-        /// Example: <link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">
+        /// Example: `<link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">`
         case alternate
         /// Provides a link to the author of the document
         case author
         /// Specifies that the browser should preemptively perform DNS resolution for the target resource's origin
         case dnsPrefetch = "dns-prefetch"
-        /// Provides a link to a help document. Example: <link rel="help" href="/help/">
+        /// Provides a link to a help document. Example: `<link rel="help" href="/help/">`
         case help
         /// Imports an icon to represent the document.
         ///
-        /// Example: <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        /// Example: `<link rel="icon" href="/favicon.ico" type="image/x-icon">`
         case icon
         /// Provides a link to copyright information for the document
         case license
@@ -61,60 +73,49 @@ public struct Link: Tag {
         /// Imports a style sheet
         case stylesheet
     }
-
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
-    }
-
-    public init(rel: Rel) {
-        self.node = .link()
-        self.node.attributes.append(Attribute(key: "rel", value: rel.rawValue))
-    }
     
     /// Specifies how the element handles cross-origin requests
-    public func crossorigin(_ value: Crossorigin) -> Self {
+    func crossorigin(_ value: Crossorigin) -> Self {
         .init(node.addOrReplace(Attribute(key: "crossorigin", value: value.rawValue)))
     }
     
     /// Specifies the location of the linked document
-    public func href(_ url: String) -> Self {
+    func href(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "href", value: url)))
     }
     
     /// Specifies the language of the text in the linked document
-    public func hreflang(_ url: String) -> Self {
+    func hreflang(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "hreflang", value: url)))
     }
     
     /// Specifies on what device the linked document will be displayed
-    public func media(_ url: String) -> Self {
+    func media(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "media", value: url)))
     }
     
     /// Specifies which referrer to use when fetching the resource
-    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
     }
 
     /// Required. Specifies the relationship between the current document and the linked document
-    public func rel(_ value: Rel) -> Self {
+    func rel(_ value: Rel) -> Self {
         .init(node.addOrReplace(Attribute(key: "rel", value: value.rawValue)))
     }
     
-    /// Specifies the size of the linked resource. Only for rel="icon"
-    public func sizes(_ url: String) -> Self {
+    /// Specifies the size of the linked resource. Only for `rel="icon"`
+    func sizes(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "sizes", value: url)))
     }
     
     /// Defines a preferred or an alternate stylesheet
-    public func title(_ url: String) -> Self {
+    func title(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "title", value: url)))
     }
     
     /// Specifies the media type of the linked document
-    public func type(_ url: String) -> Self {
+    func type(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "type", value: url)))
     }
 }

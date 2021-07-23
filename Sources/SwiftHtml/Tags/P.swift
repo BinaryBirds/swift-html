@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  File
+//  P.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -14,11 +12,11 @@ public extension Node {
     }
 }
 
-/// The <p> tag defines a paragraph.
+/// The `<p>` tag defines a paragraph.
 /// 
-/// Browsers automatically add a single blank line before and after each <p> element.
+/// Browsers automatically add a single blank line before and after each `<p>` element.
 /// 
-/// Tip: Use CSS to style paragraphs.
+/// **Tip:** Use CSS to style paragraphs.
 public struct P: Tag {
     public var node: Node
 
@@ -28,5 +26,5 @@ public struct P: Tag {
     
     public init(_ contents: String) {
         self.node = .p(contents)
-    }
+    }   
 }

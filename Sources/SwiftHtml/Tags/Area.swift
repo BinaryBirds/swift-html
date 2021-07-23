@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Area.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
-
-import Foundation
 
 public extension Node {
 
@@ -18,7 +16,7 @@ public extension Node {
 /// 
 /// <area> elements are always nested inside a <map> tag.
 /// 
-/// Note: The usemap attribute in <img> is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
+/// **Note:** The usemap attribute in <img> is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
 public struct Area: Tag {
     
     public enum Rel: String {
