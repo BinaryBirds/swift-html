@@ -7,30 +7,33 @@
 
 public struct Document: HTMLRepresentable {
 
-    public enum Doctype {
-        case html5
+    public enum `Type` {
+        case html
+        case xml
         case custom(String)
-        
+
         var rawValue: String {
             switch self {
-            case .html5:
-                return "html"
+            case .html:
+                return "<!DOCTYPE html>"
+            case .xml:
+                return #"<?xml version="1.0" encoding="utf-8" ?>"#
             case let .custom(value):
                 return value
             }
         }
     }
 
-    public let type: Doctype
-    public let root: Html
+    public let type: Type
+    public let root: Tag
     
-    public init(_ type: Doctype = .html5, _ builder: () -> Html) {
+    public init(_ type: Type = .html, _ builder: () -> Tag) {
         self.type = type
         self.root = builder()
     }
     
     public var html: String {
-        "<!DOCTYPE " + type.rawValue + ">" + root.html
+        type.rawValue + root.html
     }
 }
 
