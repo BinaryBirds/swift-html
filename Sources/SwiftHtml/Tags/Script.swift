@@ -18,6 +18,11 @@ public extension Node {
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 public struct Script: Tag {
+    
+    public enum `Type`: String {
+        case javascript = "text/javascript"
+    }
+
     public var node: Node
 
     public init(_ node: Node) {
@@ -70,6 +75,13 @@ public extension Script {
     /// Specifies the media type of the script
     func type(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "type", value: value)))
+    }
+}
+
+public extension Script {
+    /// Specifies the media type of the script
+    func type(_ value: `Type`) -> Self {
+        type(value.rawValue)
     }
 }
 
