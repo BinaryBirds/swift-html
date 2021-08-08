@@ -76,8 +76,11 @@ public extension Input {
     }
     
     /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")
-    func checked() -> Self {
-        .init(node.addOrReplace(Attribute(key: "checked")))
+    func checked(_ value: Bool = true) -> Self {
+        guard value else {
+            return .init(node.remove(Attribute(key: "checked")))
+        }
+        return .init(node.addOrReplace(Attribute(key: "checked")))
     }
     
     /// Specifies that the text direction will be submitted

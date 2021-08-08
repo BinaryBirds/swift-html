@@ -69,5 +69,11 @@ extension Node {
         newNode.attributes.append(attribute)
         return newNode
     }
+
+    func remove(_ attribute: Attribute) -> Node {
+        var newNode = self
+        newNode.attributes = newNode.attributes.filter { $0.key != attribute.key }
+        return newNode
+    }
 }
 
