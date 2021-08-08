@@ -8,7 +8,7 @@
 public extension Node {
 
     static func script(_ contents: String? = nil) -> Node {
-        Node(type: contents == nil ? .empty : .standard, name: "script", contents: contents)
+        Node(type: .standard, name: "script", contents: contents)
     }
 }
 
