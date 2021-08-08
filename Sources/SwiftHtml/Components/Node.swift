@@ -7,7 +7,8 @@
 
 public struct Node {
 
-    public enum NodeType {
+    /// internal node types
+    enum NodeType {
         /// standard container tags
         case standard     // <div>  </div>
         /// comment tag
@@ -15,6 +16,8 @@ public struct Node {
         // @TODO: force close tags? <br> vs <br/>
         /// non-container tags
         case empty        // <br>
+        /// invisible node for grouping other nodes
+//        case group    // *invisible group*<h1>lorem</h1><p>ipsum</p>*invisible group*
     }
 
     var type: NodeType
@@ -43,11 +46,17 @@ public struct Node {
             if !children.isEmpty {
                 htmlValue = htmlValue + "\n"
             }
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">" + (contents ?? htmlValue) + "</" + name! + ">"
+            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">" + (contents ?? "") + htmlValue + "</" + name! + ">"
         case .comment:
             return "\n<!--" + (contents ?? "") + "-->"
         case .empty:
             return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">"
+//        case .group:
+//            var htmlValue = children.map(\.html).joined(separator: "")
+//            if !children.isEmpty {
+//                htmlValue = htmlValue + "\n"
+//            }
+//            return htmlValue
         }
     }
     

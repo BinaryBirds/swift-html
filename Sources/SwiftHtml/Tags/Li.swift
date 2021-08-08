@@ -13,7 +13,7 @@ public extension Node {
         Node(type: .standard, name: name, contents: contents)
     }
     
-    static func li(_ children: [Node] = []) -> Node {
+    static func li(_ children: [Node]) -> Node {
         Node(type: .standard, name: name, children: children)
     }
 }

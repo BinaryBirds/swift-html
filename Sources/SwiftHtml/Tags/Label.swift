@@ -7,8 +7,8 @@
 
 public extension Node {
 
-    static func label(_ contents: String) -> Node {
-        Node(type: .standard, name: "label", contents: contents)
+    static func label(_ contents: String, _ children: [Node] = []) -> Node {
+        Node(type: .standard, name: "label", contents: contents, children: children)
     }
 }
 
@@ -49,6 +49,14 @@ public struct Label: Tag {
     
     public init(_ contents: String) {
         self.node = .label(contents)
+    }
+
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        self.node = .label("", builder().map(\.node))
+    }
+    
+    public init(_ contents: String, @TagBuilder _ builder: () -> [Tag]) {
+        self.node = .label(contents, builder().map(\.node))
     }
 }
 
