@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func label(_ contents: String, _ children: [Node] = []) -> Node {
-        Node(type: .standard, name: "label", contents: contents, children: children)
-    }
-}
-
 /// The `<label>` tag defines a label for several elements:
 ///
 /// - `<input type="checkbox">`
@@ -40,23 +33,22 @@ public extension Node {
 ///
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
-public struct Label: Tag {
-    public var node: Node
+public final class Label: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
-    public init(_ contents: String) {
-        self.node = .label(contents)
+    public convenience init(_ contents: String) {
+        self.init(contents) {}
     }
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        self.node = .label("", builder().map(\.node))
+    public convenience init(@TagBuilder _ builder: () -> [Tag]) {
+        self.init("", builder)
     }
     
     public init(_ contents: String, @TagBuilder _ builder: () -> [Tag]) {
-        self.node = .label(contents, builder().map(\.node))
+        super.init(Node(type: .standard, name: "label", contents: contents), tags: builder())
     }
 }
 

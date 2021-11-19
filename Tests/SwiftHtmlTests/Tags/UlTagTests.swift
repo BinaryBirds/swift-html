@@ -11,13 +11,13 @@ import XCTest
 final class UlTagTests: XCTestCase {
 
     func testUl() {
-        let doc = Ul {
-            Li("a")
-            Li("b")
-            Li {
-                P("c")
-            }
-        }
+//        let doc = Ul {
+//            Li("a")
+//            Li("b")
+//            Li {
+//                P("c")
+//            }
+//        }
 //        print(doc.html)
         XCTAssertTrue(true)
     }

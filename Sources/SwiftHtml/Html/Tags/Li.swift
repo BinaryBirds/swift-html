@@ -5,19 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    private static var name = "li"
-    
-    static func li(_ contents: String) -> Node {
-        Node(type: .standard, name: name, contents: contents)
-    }
-    
-    static func li() -> Node {
-        Node(type: .standard, name: name)
-    }
-}
-
 /// The `<li>` tag defines a list item.
 ///
 /// The `<li>` tag is used inside ordered lists(`<ol>`), unordered lists (`<ul>`), and in menu lists (`<menu>`).
@@ -27,24 +14,16 @@ public extension Node {
 /// In `<ol>`, the list items will usually be displayed with numbers or letters.
 ///
 /// **Tip:** Use CSS to style lists.
-public struct Li: Tag {
-    public var node: Node
+public final class Li: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
-    public init(_ contents: String) {
-        self.node = .li(contents)
-    }
-    
-    public init() {
-        self.node = .li()
+    public init(_ contents: String, @TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "li", contents: contents), tags: builder())
     }
 
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 
 public extension Li {

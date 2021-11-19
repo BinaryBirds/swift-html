@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func img() -> Node {
-        Node(type: .empty, name: "img")
-    }
-}
-
 /// The `<img>` tag is used to embed an image in an HTML page.
 ///
 /// Images are not technically inserted into a web page; images are linked to web pages.
@@ -25,19 +18,18 @@ public extension Node {
 /// If width and height are not specified, the page might flicker while the image loads.
 ///
 /// **Tip:** To link an image to another document, simply nest the `<img>` tag inside an `<a>` tag (see example below).
-public struct Img: Tag {
-    public var node: Node
+public final class Img: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init(src: String, alt: String) {
-        self.node = .img()
-        self.node.attributes.append(contentsOf: [
+        let node = Node(type: .empty, name: "img", attributes: [
             .init(key: "src", value: src),
             .init(key: "alt", value: src),
         ])
+        super.init(node)
     }
 }
 

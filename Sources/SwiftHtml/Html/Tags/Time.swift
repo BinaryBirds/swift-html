@@ -5,25 +5,17 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func time(_ contents: String) -> Node {
-        Node(type: .standard, name: "time", contents: contents)
-    }
-}
-
 /// The `<time>` tag defines a specific time (or datetime).
 ///
 /// The datetime attribute of this element is used translate the time into a machine-readable format so that browsers can offer to add date reminders through the user's calendar, and search engines can produce smarter search results.
-public struct Time: Tag {
-    public var node: Node
+public final class Time: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init(_ contents: String) {
-        self.node = .time(contents)
+        super.init(Node(type: .standard, name: "time", contents: contents))
     }
 }
 

@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func meter(_ contents: String) -> Node {
-        Node(type: .standard, name: "meter", contents: contents)
-    }
-}
-
 /// The `<meter>` tag defines a scalar measurement within a known range, or a fractional value. This is also known as a gauge.
 /// 
 /// Examples: Disk usage, the relevance of a query result, etc.
@@ -19,16 +12,15 @@ public extension Node {
 /// **Note:** The `<meter>` tag should not be used to indicate progress (as in a progress bar). For progress bars, use the `<progress>` tag.
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-public struct Meter: Tag {
-    public var node: Node
+public final class Meter: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init(value: Int, _ contents: String) {
-        self.node = .meter(contents)
-        self.node.attributes.append(Attribute(key: "value", value: String(value)))
+        let node = Node(type: .standard, name: "meter", contents: contents, attributes: [Attribute(key: "value", value: String(value))])
+        super.init(node)
     }
 }
 

@@ -5,32 +5,23 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func script(_ contents: String? = nil) -> Node {
-        Node(type: .standard, name: "script", contents: contents)
-    }
-}
-
 /// The `<script>` tag is used to embed a client-side script (JavaScript).
 ///
 /// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
-public struct Script: Tag {
+public final class Script: Tag {
     
     public enum `Type`: String {
         case javascript = "text/javascript"
     }
 
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init(_ contents: String? = nil) {
-        self.node = .script(contents)
+        super.init(Node(type: .standard, name: "script", contents: contents))
     }
 }
 

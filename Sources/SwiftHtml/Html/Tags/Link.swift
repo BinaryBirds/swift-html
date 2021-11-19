@@ -5,31 +5,21 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func link() -> Node {
-        Node(type: .empty, name: "link")
-    }
-}
-
 /// The `<link>` tag defines the relationship between the current document and an external resource.
 /// 
 /// The `<link>` tag is most often used to link to external style sheets.
 /// 
 /// The `<link>` element is an empty element, it contains attributes only.
-public struct Link: Tag {
-    public var node: Node
+public final class Link: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init(rel: Rel) {
-        self.node = .link()
-        self.node.attributes.append(Attribute(key: "rel", value: rel.rawValue))
+        let node = Node(type: .empty, name: "link", attributes: [Attribute(key: "rel", value: rel.rawValue)])
+        super.init(node)
     }
-    
-    
 }
 
 public extension Link {
@@ -108,12 +98,7 @@ public extension Link {
     func sizes(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "sizes", value: url)))
     }
-    
-    /// Defines a preferred or an alternate stylesheet
-    func title(_ url: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "title", value: url)))
-    }
-    
+        
     /// Specifies the media type of the linked document
     func type(_ url: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "type", value: url)))

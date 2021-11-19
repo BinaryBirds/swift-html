@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func textarea(_ contents: String) -> Node {
-        Node(type: .standard, name: "textarea", contents: contents)
-    }
-}
-
 /// The `<textarea>` tag defines a multi-line text input control.
 ///
 /// The `<textarea>` element is often used in a form, to collect user inputs like comments or reviews.
@@ -25,15 +18,14 @@ public extension Node {
 /// The id attribute is needed to associate the text area with a label.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-public struct Textarea: Tag {
-    public var node: Node
+public final class Textarea: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init(_ contents: String) {
-        self.node = .textarea(contents)
+        super.init(Node(type: .standard, name: "textarea", contents: contents))
     }
 }
 

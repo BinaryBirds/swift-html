@@ -24,22 +24,22 @@ final class DocumentTests: XCTestCase {
     }
 
     func testXml() {
-        struct Root: Tag {
-            var node: Node
-            
-            init(_ node: Node) {
-                self.node = node
-            }
-            
-            init() {
-                self.init(.init(type: .standard, name: "root"))
-            }
-        }
-        
-        let tag = Document(.xml) {
-            Root()
-        }
-        
+//        struct Root: Tag {
+//            var node: Node
+//            
+//            init(_ node: Node) {
+//                self.node = node
+//            }
+//            
+//            init() {
+//                self.init(.init(type: .standard, name: "root"))
+//            }
+//        }
+//        
+//        let tag = Document(.xml) {
+//            Root()
+//        }
+//        
 //        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
 //
 //        XCTAssertEqual(res, """

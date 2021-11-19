@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func iframe() -> Node {
-        Node(type: .standard, name: "iframe")
-    }
-}
-
 /// The `<iframe>` tag specifies an inline frame.
 ///
 /// An inline frame is used to embed another document within the current HTML document.
@@ -19,15 +12,14 @@ public extension Node {
 /// **Tip:** Use CSS to style the `<iframe>` (see example below).
 ///
 /// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
-public struct Iframe: Tag {
-    public var node: Node
+public final class Iframe: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init() {
-        self.node = .iframe()
+        super.init(Node(type: .standard, name: "iframe"))
     }
 }
 

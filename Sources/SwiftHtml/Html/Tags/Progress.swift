@@ -5,25 +5,17 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func progress(_ contents: String) -> Node {
-        Node(type: .standard, name: "progress", contents: contents)
-    }
-}
-
 /// The `<progress>` tag represents the completion progress of a task.
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-public struct Progress: Tag {
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
+public final class Progress: Tag {
+    
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init(_ contents: String) {
-        self.node = .progress(contents)
+        super.init(Node(type: .standard, name: "progress", contents: contents))
     }
 }
 

@@ -8,7 +8,7 @@
 public extension Tag {
     
     // MARK: - Window Event Attributes
-    
+    /*
     /// Script to be run after the document is printed
     func onAfterPrint(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "onafterprint", value: value)))
@@ -378,4 +378,6 @@ public extension Tag {
     func onToggle(_ value: String) -> Self {
         .init(node.addOrReplace(Attribute(key: "ontoggle", value: value)))
     }
+     
+     */
 }

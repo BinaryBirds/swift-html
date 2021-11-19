@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func tbody() -> Node {
-        Node(type: .standard, name: "tbody")
-    }
-}
-
 /// The `<tbody>` tag is used to group the body content in an HTML table.
 ///
 /// The `<tbody>` element is used in conjunction with the `<thead>` and `<tfoot>` elements to specify each part of a table (body, header, footer).
@@ -24,19 +17,10 @@ public extension Node {
 /// The `<tbody>` tag must be used in the following context: As a child of a `<table>` element, after any `<caption>`, `<colgroup>`, and `<thead>` elements.
 ///
 /// **Tip:** The `<thead>`, `<tbody>`, and `<tfoot>` elements will not affect the layout of the table by default. However, you can use CSS to style these elements (see example below)!
-public struct Tbody: Tag {
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
-    }
+public final class Tbody: Tag {
     
-    public init() {
-        self.node = .tbody()
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "tbody"), tags: builder())
     }
-//
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 

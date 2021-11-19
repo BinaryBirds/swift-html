@@ -5,19 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    private static var name = "th"
-    
-    static func th(_ contents: String) -> Node {
-        Node(type: .standard, name: name, contents: contents)
-    }
-    
-    static func th() -> Node {
-        Node(type: .standard, name: name)
-    }
-}
-
 /// The `<th>` tag defines a header cell in an HTML table.
 ///
 /// An HTML table has two kinds of cells:
@@ -28,24 +15,17 @@ public extension Node {
 /// The text in `<th>` elements are bold and centered by default.
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
-public struct Th: Tag {
-    public var node: Node
+public final class Th: Tag {
+    
 
-    public init(_ node: Node) {
-        self.node = node
+     init(_ node: Node) {
+         super.init(node)
     }
     
-    public init(_ contents: String) {
-        self.node = .th(contents)
+    public init(_ contents: String, @TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "th", contents: contents), tags: builder())
     }
     
-    public init() {
-        self.node = .th()
-    }
-
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 
 public extension Th {

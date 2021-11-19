@@ -5,26 +5,19 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func source() -> Node {
-        Node(type: .empty, name: "source")
-    }
-}
 
 /// The `<source>` tag is used to specify multiple media resources for media elements, such as `<video>`, `<audio>`, and `<picture>`.
 ///
 /// The `<source>` tag allows you to specify alternative video/audio/image files which the browser may choose from, based on browser support or viewport width.
 /// The browser will choose the first `<source>` it supports.
-public struct Source: Tag {
-    public var node: Node
+public final class Source: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init() {
-        self.node = .source()
+        super.init(Node(type: .empty, name: "source"))
     } 
 }
 

@@ -5,23 +5,16 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func param() -> Node {
-        Node(type: .empty, name: "param")
-    }
-}
-
 /// The `<param>` tag is used to define parameters for an `<object>` element.
-public struct Param: Tag {
-    public var node: Node
+public final class Param: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init() {
-        self.node = .param()
+        super.init(Node(type: .empty, name: "param"))
     }
 }
 

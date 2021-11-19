@@ -5,27 +5,19 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func input() -> Node {
-        Node(type: .empty, name: "input")
-    }
-}
-
 /// The `<input>` tag specifies an input field where the user can enter data.
 ///
 /// The `<input>` element is the most important form element.
 ///
 /// The `<input>` element can be displayed in several ways, depending on the type attribute.
-public struct Input: Tag {
-    public var node: Node
+public final class Input: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init() {
-        self.node = .input()
+        super.init(Node(type: .empty, name: "input"))
     }
 }
 

@@ -5,25 +5,17 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func object() -> Node {
-        Node(type: .standard, name: "object")
-    }
-}
-
 /// The `<object>` tag defines a container for an external resource.
 ///
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.
-public struct Object: Tag {
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
+public final class Object: Tag {
+    
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init() {
-        self.node = .object()
+        super.init(Node(type: .standard, name: "object"))
     }
 }
 

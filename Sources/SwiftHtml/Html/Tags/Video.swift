@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func video() -> Node {
-        Node(type: .standard, name: "video")
-    }
-}
-
 /// The `<video>` tag is used to embed video content in a document, such as a movie clip or other video streams.
 ///
 /// The `<video>` tag contains one or more `<source>` tags with different video sources. The browser will choose the first source it supports.
@@ -27,20 +20,16 @@ public extension Node {
 ///     Firefox | YES | YES  | YES
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
-public struct Video: Tag {
-    public var node: Node
+public final class Video: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
-    public init() {
-        self.node = .video()
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "video"), tags: builder())
     }
 
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 
 public extension Video {

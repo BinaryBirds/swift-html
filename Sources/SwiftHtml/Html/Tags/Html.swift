@@ -5,31 +5,19 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func html(_ children: [Node] = []) -> Node {
-        Node(type: .standard, name: "html", children: children)
-    }
-}
-
 /// The `<html>` tag represents the root of an HTML document.
 ///
 /// The `<html>` tag is the container for all other HTML elements (except for the `<!DOCTYPE>` tag).
 ///
 /// **Note:** You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
-public struct Html: Tag {
-    public var node: Node
+public final class Html: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
-    }
-    
-    public init(_ children: [Node] = []) {
-        self.node = .html(children)
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        self.init(builder().map(\.node))
+        super.init(Node(type: .standard, name: "html"), tags: builder())
     }
 }
 

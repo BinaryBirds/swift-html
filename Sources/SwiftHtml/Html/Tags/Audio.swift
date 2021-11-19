@@ -24,7 +24,7 @@
 public final class Audio: Tag {
 
     init(_ node: Node) {
-        self.node = node
+        super.init(node)
     }
     
     public init(@TagBuilder _ builder: () -> [Tag]) {

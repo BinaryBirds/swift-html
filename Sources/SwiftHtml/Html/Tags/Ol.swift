@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func ol(_ children: [Node] = []) -> Node {
-        Node(type: .standard, name: "ol", children: children)
-    }
-}
-
 /// The `<ol>` tag defines an ordered list. An ordered list can be numerical or alphabetical.
 /// 
 /// The `<li>` tag is used to define each list item.
@@ -19,19 +12,14 @@ public extension Node {
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For unordered list, use the `<ul>` tag.
-public struct Ol: Tag {
-    public var node: Node
+public final class Ol: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
-    }
-    
-    public init(_ children: [Node] = []) {
-        self.node = .ol(children)
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        self.init(builder().map(\.node))
+        super.init(Node(type: .standard, name: "ol"), tags: builder())
     }
 }
 

@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func select() -> Node {
-        Node(type: .standard, name: "select")
-    }
-}
-
 /// The `<select>` element is used to create a drop-down list.
 ///
 /// The `<select>` element is most often used in a form, to collect user input.
@@ -23,20 +16,16 @@ public extension Node {
 /// The `<option>` tags inside the `<select>` element define the available options in the drop-down list.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-public struct Select: Tag {
-    public var node: Node
+public final class Select: Tag {
+    
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
-    public init() {
-        self.node = .select()
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "select"), tags: builder())
     }
-
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 
 public extension Select {

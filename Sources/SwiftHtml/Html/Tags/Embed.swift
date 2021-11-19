@@ -5,23 +5,15 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func embed() -> Node {
-        Node(type: .empty, name: "embed")
-    }
-}
-
 /// The `<embed>` tag defines a container for an external resource, such as a web page, a picture, a media player, or a plug-in application.
-public struct Embed: Tag {
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
+public final class Embed: Tag {
+    
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init() {
-        self.node = .embed()
+        super.init(Node(type: .empty, name: "embed"))
     }
 }
 

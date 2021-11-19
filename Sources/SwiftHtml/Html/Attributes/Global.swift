@@ -32,7 +32,7 @@ public enum Translate: String {
 }
 
 public extension Tag {
-    
+    /*
     /// Specifies a shortcut key to activate/focus an element
     func accesskey(_ value: Character) -> Self {
         .init(node.addOrReplace(Attribute(key: "accesskey", value: String(value))))
@@ -107,4 +107,5 @@ public extension Tag {
     func translate(_ value: Translate) -> Self {
         .init(node.addOrReplace(Attribute(key: "translate", value: value.rawValue)))
     }
+     */
 }

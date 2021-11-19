@@ -5,23 +5,15 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func output() -> Node {
-        Node(type: .standard, name: "output")
-    }
-}
-
 /// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
-public struct Output: Tag {
-    public var node: Node
+public final class Output: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init() {
-        self.node = .output()
+        super.init(Node(type: .standard, name: "output"))
     }
 }
 

@@ -5,30 +5,18 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func fieldset() -> Node {
-        Node(type: .standard, name: "fieldset")
-    }
-}
-
 /// The `<fieldset>` tag is used to group related elements in a form.
 /// 
 /// The `<fieldset>` tag draws a box around the related elements.
-public struct Fieldset: Tag {
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
+public final class Fieldset: Tag {
+    
+    init(_ node: Node) {
+        super.init(node)
     }
     
-    public init() {
-        self.node = .fieldset()
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "fieldset"), tags: builder())
     }
-
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 
 public extension Fieldset {

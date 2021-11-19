@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func head() -> Node {
-        Node(type: .standard, name: "head")
-    }
-}
-
 /// The `<head>` element is a container for metadata (data about data) and is placed between the `<html>` tag and the `<body>` tag.
 ///
 /// Metadata is data about the HTML document. Metadata is not displayed.
@@ -27,18 +20,9 @@ public extension Node {
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
-public struct Head: Tag {
-    public var node: Node
+public final class Head: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "head"), tags: builder())
     }
-    
-    public init() {
-        self.node = .head()
-    }
-
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }

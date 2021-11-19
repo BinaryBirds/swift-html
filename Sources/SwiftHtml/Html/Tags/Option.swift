@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func option(_ contents: String) -> Node {
-        Node(type: .standard, name: "option", contents: contents)
-    }
-}
-
 /// The `<option>` tag defines an option in a select list.
 /// 
 /// `<option>` elements go inside a `<select>`, `<optgroup>`, or `<datalist>` element.
@@ -19,15 +12,14 @@ public extension Node {
 /// **Note:** The `<option>` tag can be used without any attributes, but you usually need the value attribute, which indicates what is sent to the server on form submission.
 /// 
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
-public struct Option: Tag {
-    public var node: Node
-
-    public init(_ node: Node) {
-        self.node = node
+public final class Option: Tag {
+    
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init(_ contents: String) {
-        self.node = .option(contents)
+        super.init(Node(type: .standard, name: "option", contents: contents))
     }
 }
 

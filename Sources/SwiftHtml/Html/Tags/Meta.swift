@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func meta() -> Node {
-        Node(type: .empty, name: "meta")
-    }
-}
-
 /// The `<meta>` tag defines metadata about an HTML document. Metadata is data (information) about data.
 ///
 /// `<meta>` tags always go inside the `<head>` element, and are typically used to specify character set, page description, keywords, author of the document, and viewport settings.
@@ -21,15 +14,14 @@ public extension Node {
 /// Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services.
 ///
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
-public struct Meta: Tag {
-    public var node: Node
+public final class Meta: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
 
     public init() {
-        self.node = .meta()
+        super.init(Node(type: .empty, name: "meta"))
     }
 }
 

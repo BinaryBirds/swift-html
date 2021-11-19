@@ -5,28 +5,21 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Node {
-
-    static func track() -> Node {
-        Node(type: .empty, name: "track")
-    }
-}
-
 /// The `<track>` tag specifies text tracks for `<audio>` or `<video>` elements.
 ///
 /// This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.
 ///
 /// Tracks are formatted in WebVTT format (.vtt files).
-public struct Track: Tag {
-    public var node: Node
+public final class Track: Tag {
+    
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
     public init(src: String) {
-        self.node = .track()
-        self.node.attributes.append(.init(key: "src", value: src))
+        let node = Node(type: .empty, name: "track", attributes: [.init(key: "src", value: src)])
+        super.init(node)
     }
 }
 

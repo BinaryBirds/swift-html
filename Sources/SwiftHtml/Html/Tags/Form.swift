@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func form() -> Node {
-        Node(type: .standard, name: "form")
-    }
-}
-
 /// The `<form>` tag is used to create an HTML form for user input.
 ///
 /// The `<form>` element can contain one or more of the following form elements:
@@ -25,20 +18,15 @@ public extension Node {
 /// - `<fieldset>`
 /// - `<label>`
 /// - `<output>`
-public struct Form: Tag {
-    public var node: Node
+public final class Form: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
+    init(_ node: Node) {
+        super.init(node)
     }
     
-    public init() {
-        self.node = .form()
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "form"), tags: builder())
     }
-
-//    public init(@TagBuilder _ builder: () -> [Tag]) {
-//        self.init(builder().map(\.node))
-//    }
 }
 
 public extension Form {

@@ -5,25 +5,18 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func style(_ contents: String) -> Node {
-        Node(type: .standard, name: "style", contents: contents)
-    }
-}
 
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
-public struct Style: Tag {
-    public var node: Node
+public final class Style: Tag {
 
     public init(_ node: Node) {
-        self.node = node
+        super.init(node)
     }
     
     public init(_ contents: String) {
-        self.node = .style(contents)
+        super.init(Node(type: .standard, name: "style", contents: contents))
     }
 }
 

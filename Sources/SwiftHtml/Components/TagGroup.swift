@@ -10,7 +10,7 @@ open class Tag: TagRepresentable {
     public var node: Node
     public var tags: [Tag]
 
-    internal init(_ node: Node, tags: [Tag] = []) {
+    public init(_ node: Node, tags: [Tag] = []) {
         self.node = node
         self.tags = tags
     }

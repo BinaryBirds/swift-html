@@ -13,10 +13,10 @@ final class LabelTagTests: XCTestCase {
     func testLabelChildren() {
         let isRequired = true
         let tag = Label("foo") {
-            Span("(bar)").class("more")
-            if isRequired {
-                Span("*").class("required")
-            }
+//            Span("(bar)").class("more")
+//            if isRequired {
+//                Span("*").class("required")
+//            }
         }
                 
 //        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)

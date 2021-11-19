@@ -5,13 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func title(_ contents: String) -> Node {
-        Node(type: .standard, name: "title", contents: contents)
-    }
-}
-
 /// The `<title>` tag defines the title of the document.
 /// The title must be text-only, and it is shown in the browser's title bar or in the page's tab.
 ///
@@ -33,14 +26,9 @@ public extension Node {
 /// So, try to make the title as accurate and meaningful as possible!
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
-public struct Title: Tag {
-    public var node: Node
+public final class Title: Tag {
 
-    public init(_ node: Node) {
-        self.node = node
-    }
-    
     public init(_ contents: String) {
-        self.node = .title(contents)
+        super.init(Node(type: .standard, name: "title", contents: contents))
     }
 }
