@@ -24,50 +24,19 @@ public struct Node {
     var name: String?
     var contents: String?
     var attributes: [Attribute]
-    var children: [Node]
 
     init(type: NodeType = .standard,
          name: String? = nil,
          contents: String? = nil,
-         attributes: [Attribute] = [],
-         children: [Node] = []
+         attributes: [Attribute] = []
     ) {
         self.type = type
         self.name = name
         self.contents = contents
         self.attributes = attributes
-        self.children = children
     }
 
-    var html: String {
-        switch type {
-        case .standard:
-            var htmlValue = children.map(\.html).joined(separator: "")
-            if !children.isEmpty {
-                htmlValue = htmlValue + "\n"
-            }
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">" + (contents ?? "") + htmlValue + "</" + name! + ">"
-        case .comment:
-            return "\n<!--" + (contents ?? "") + "-->"
-        case .empty:
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">"
-//        case .group:
-//            var htmlValue = children.map(\.html).joined(separator: "")
-//            if !children.isEmpty {
-//                htmlValue = htmlValue + "\n"
-//            }
-//            return htmlValue
-        }
-    }
     
-    private var attributesList: String {
-        return attributes.reduce([]) { res, next in
-            if let value = next.value {
-                return res + [next.key + #"=""# + value + #"""#]
-            }
-            return res + [next.key]
-        }.joined(separator: " ")
-    }
 }
 
 extension Node {

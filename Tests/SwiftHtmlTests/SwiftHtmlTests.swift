@@ -48,7 +48,7 @@ final class SwiftHtmlTests: XCTestCase {
                 }
             }
         }
-        print(doc.html)
-        XCTAssertTrue(true)
+//        print(doc.html)
+//        XCTAssertTrue(true)
     }
 }

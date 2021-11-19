@@ -39,8 +39,8 @@ final class FormTagTests: XCTestCase {
         .method(.post)
         .action("/sign-in/")
 
-        print(doc.html)
-        XCTAssertTrue(true)
+//        print(doc.html)
+//        XCTAssertTrue(true)
     }
     
 }

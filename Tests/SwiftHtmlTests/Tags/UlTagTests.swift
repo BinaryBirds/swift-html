@@ -18,7 +18,7 @@ final class UlTagTests: XCTestCase {
                 P("c")
             }
         }
-        print(doc.html)
+//        print(doc.html)
         XCTAssertTrue(true)
     }
    

@@ -1,0 +1,18 @@
+//
+//  Address.swift
+//  SwiftHtml
+//
+//  Created by Tibor Bodecs on 2021. 07. 19..
+//
+
+/// The `<address>` tag defines the contact information for the author/owner of a document or an article.
+///
+/// The contact information can be an email address, URL, physical address, phone number, social media handle, etc.
+///
+/// The text in the `<address>` element usually renders in italic, and browsers will always add a line break before and after the `<address>` element.
+public final class Address: Tag {
+
+    public init(_ contents: String) {
+        super.init(Node(type: .standard, name: "address", contents: contents))
+    }
+}

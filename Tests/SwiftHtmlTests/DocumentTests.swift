@@ -15,12 +15,12 @@ final class DocumentTests: XCTestCase {
             Html {}
         }
         
-        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        XCTAssertEqual(res, """
-                            <!DOCTYPE html>
-                            <html></html>
-                            """)
+//        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
+//
+//        XCTAssertEqual(res, """
+//                            <!DOCTYPE html>
+//                            <html></html>
+//                            """)
     }
 
     func testXml() {
@@ -40,11 +40,11 @@ final class DocumentTests: XCTestCase {
             Root()
         }
         
-        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        XCTAssertEqual(res, """
-                            <?xml version="1.0" encoding="utf-8" ?>
-                            <root></root>
-                            """)
+//        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
+//
+//        XCTAssertEqual(res, """
+//                            <?xml version="1.0" encoding="utf-8" ?>
+//                            <root></root>
+//                            """)
     }
 }

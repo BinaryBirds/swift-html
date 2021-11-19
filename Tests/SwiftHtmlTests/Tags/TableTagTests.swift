@@ -34,7 +34,7 @@ final class TableTagTests: XCTestCase {
                 }
             }
         }
-        print(doc.html)
+//        print(doc.html)
         XCTAssertTrue(true)
     }
     
