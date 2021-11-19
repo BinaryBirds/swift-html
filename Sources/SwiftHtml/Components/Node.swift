@@ -17,6 +17,8 @@ public struct Node {
         /// non-container tags
         case empty        // <br>
         /// invisible node for grouping other nodes
+        ///
+        /// NOTE: this feature is implemented on the tag level, nodes are basic components
 //        case group    // *invisible group*<h1>lorem</h1><p>ipsum</p>*invisible group*
     }
 

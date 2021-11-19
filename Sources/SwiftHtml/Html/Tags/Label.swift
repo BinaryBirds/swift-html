@@ -35,16 +35,12 @@
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
 public final class Label: Tag {
 
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
-
-    public convenience init(@TagBuilder _ builder: () -> [Tag]) {
-        self.init("", builder)
+    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "label", contents: contents), tags: builder())
     }
     
-    public init(_ contents: String, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "label", contents: contents), tags: builder())
+    public convenience init(_ contents: String) {
+        self.init(contents) {}
     }
 }
 

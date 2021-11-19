@@ -15,10 +15,6 @@
 ///
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 public final class Div: Tag {
-    
-    public convenience init() {
-        self.init { }
-    }
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "div"), tags: builder())
