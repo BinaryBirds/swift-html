@@ -20,6 +20,13 @@ public final class Li: Tag {
         super.init(Node(type: .standard, name: "li", contents: contents), tags: builder())
     }
 
+    public convenience init(_ contents: String) {
+        self.init(contents) {}
+    }
+    
+    public convenience init(@TagBuilder _ builder: () -> [Tag]) {
+        self.init("", builder)
+    }
 }
 
 public extension Li {

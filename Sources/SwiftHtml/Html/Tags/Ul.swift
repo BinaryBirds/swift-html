@@ -14,7 +14,7 @@
 /// **Tip:** For ordered lists, use the `<ol>` tag.
 public final class Ul: Tag {
     
-    public init() {
-        super.init(Node(type: .standard, name: "ul"))
+    public init(@TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "ul"), tags: builder())
     }
 }
