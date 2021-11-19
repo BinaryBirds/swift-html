@@ -20,31 +20,31 @@ public final class Source: Tag {
 public extension Source {
     /// Accepts any valid media query that would normally be defined in a CSS
     func media(value: String) -> Self {
-        node.addOrReplace(Attribute(key: "media", value: value))
+        node.upsert(Attribute(key: "media", value: value))
         return self
     }
     
     /// Specifies image sizes for different page layouts
     func sizes(value: String) -> Self {
-        node.addOrReplace(Attribute(key: "sizes", value: value))
+        node.upsert(Attribute(key: "sizes", value: value))
         return self
     }
     
     /// Required when <source> is used in <audio> and <video>. Specifies the URL of the media file
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
     
     /// Required when <source> is used in <picture>. Specifies the URL of the image to use in different situations
     func srcset(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "srcset", value: value))
+        node.upsert(Attribute(key: "srcset", value: value))
         return self
     }
     
     /// Specifies the MIME-type of the resource
     func type(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "type", value: value))
+        node.upsert(Attribute(key: "type", value: value))
         return self
     }
 }

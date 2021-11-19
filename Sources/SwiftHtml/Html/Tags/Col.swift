@@ -18,7 +18,7 @@ public final class Col: Tag {
 public extension Col {
     /// Sets the number of columns a `<col>` element should span
     func span(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "span", value: String(value)))
+        node.upsert(Attribute(key: "span", value: String(value)))
         return self
     }
 }

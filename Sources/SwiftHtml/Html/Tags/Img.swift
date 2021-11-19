@@ -32,73 +32,73 @@ public final class Img: Tag {
 public extension Img {
     /// Specifies an alternate text for an image
     func alt(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "alt", value: value))
+        node.upsert(Attribute(key: "alt", value: value))
         return self
     }
     
     /// Allow images from third-party sites that allow cross-origin access to be used with canvas
     func crossorigin(_ value: Crossorigin) -> Self {
-        node.addOrReplace(Attribute(key: "crossorigin", value: value.rawValue))
+        node.upsert(Attribute(key: "crossorigin", value: value.rawValue))
         return self
     }
     
     /// Specifies the height of an image
     func height(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "height", value: String(value)))
+        node.upsert(Attribute(key: "height", value: String(value)))
         return self
     }
     
     /// Specifies an image as a server-side image map
     func ismap() -> Self {
-        node.addOrReplace(Attribute(key: "ismap"))
+        node.upsert(Attribute(key: "ismap"))
         return self
     }
     
     /// Specifies whether a browser should load an image immediately or to defer loading of images until some conditions are met
     func loading(_ value: Loading) -> Self {
-        node.addOrReplace(Attribute(key: "loading", value: value.rawValue))
+        node.upsert(Attribute(key: "loading", value: value.rawValue))
         return self
     }
     
     /// Specifies a URL to a detailed description of an image
     func longdesc(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "longdesc", value: value))
+        node.upsert(Attribute(key: "longdesc", value: value))
         return self
     }
     
     /// Specifies which referrer information to use when fetching an image
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue))
+        node.upsert(Attribute(key: "referrerpolicy", value: value.rawValue))
         return self
     }
     
     /// Specifies image sizes for different page layouts
     func sizes(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "sizes", value: value))
+        node.upsert(Attribute(key: "sizes", value: value))
         return self
     }
     
     /// Specifies the path to the image
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
     
     /// Specifies a list of image files to use in different situations
     func srcset(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "srcset", value: value))
+        node.upsert(Attribute(key: "srcset", value: value))
         return self
     }
     
     /// Specifies an image as a client-side image map
     func usemap(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "usemap", value: "#" + value))
+        node.upsert(Attribute(key: "usemap", value: "#" + value))
         return self
     }
     
     /// Specifies the width of an image
     func width(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "width", value: String(value)))
+        node.upsert(Attribute(key: "width", value: String(value)))
         return self
     }
 }

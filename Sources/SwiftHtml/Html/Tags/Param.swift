@@ -16,13 +16,13 @@ public final class Param: Tag {
 public extension Param {
     /// Specifies the name of a parameter
     func name(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "name", value: value))
+        node.upsert(Attribute(key: "name", value: value))
         return self
     }
     
     /// Specifies the value of the parameter
     func value(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "value", value: value))
+        node.upsert(Attribute(key: "value", value: value))
         return self
     }
 }

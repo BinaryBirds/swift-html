@@ -18,7 +18,7 @@ public final class Dialog: Tag {
 public extension Dialog {
     /// Specifies that the dialog element is active and that the user can interact with it
     func open() -> Self {
-        node.addOrReplace(Attribute(key: "open"))
+        node.upsert(Attribute(key: "open"))
         return self
     }
 }

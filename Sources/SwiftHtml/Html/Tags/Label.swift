@@ -47,13 +47,13 @@ public final class Label: Tag {
 public extension Label {
     /// Specifies the id of the form element the label should be bound to
     func `for`(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "for", value: value))
+        node.upsert(Attribute(key: "for", value: value))
         return self
     }
     
     /// Specifies which form the label belongs to
     func form(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "form", value: value))
+        node.upsert(Attribute(key: "form", value: value))
         return self
     }
 }

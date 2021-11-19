@@ -35,31 +35,31 @@ public extension Track {
     
     /// Specifies that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
     func `default`() -> Self {
-        node.addOrReplace(Attribute(key: "default"))
+        node.upsert(Attribute(key: "default"))
         return self
     }
     
     /// Specifies the kind of text track
     func kind(_ value: Kind) -> Self {
-        node.addOrReplace(Attribute(key: "kind", value: value.rawValue))
+        node.upsert(Attribute(key: "kind", value: value.rawValue))
         return self
     }
     
     /// Specifies the title of the text track
     func label(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "label", value: value))
+        node.upsert(Attribute(key: "label", value: value))
         return self
     }
     
     /// Required. Specifies the URL of the track file
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
     
     /// Specifies the language of the track text data (required if kind="subtitles")
     func srclang(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "srclang", value: value))
+        node.upsert(Attribute(key: "srclang", value: value))
         return self
     }
 }

@@ -8,7 +8,7 @@
 public struct Node {
 
     /// internal node types
-    enum NodeType {
+    public enum NodeType {
         /// standard container tags
         case standard     // <div>  </div>
         /// comment tag
@@ -22,12 +22,12 @@ public struct Node {
 //        case group    // *invisible group*<h1>lorem</h1><p>ipsum</p>*invisible group*
     }
 
-    var type: NodeType
-    var name: String?
-    var contents: String?
-    var attributes: [Attribute]
+    public let type: NodeType
+    public let name: String?
+    public let contents: String?
+    public private(set) var attributes: [Attribute]
 
-    init(type: NodeType = .standard,
+    public init(type: NodeType = .standard,
          name: String? = nil,
          contents: String? = nil,
          attributes: [Attribute] = []
@@ -37,18 +37,18 @@ public struct Node {
         self.contents = contents
         self.attributes = attributes
     }
-
-    
 }
 
-extension Node {
+public extension Node {
     
-    mutating func addOrReplace(_ attribute: Attribute) {
-        remove(attribute)
+    /// add or replace an attribute with a given key to the node
+    mutating func upsert(_ attribute: Attribute) {
+        delete(attribute)
         attributes.append(attribute)
     }
 
-    mutating func remove(_ attribute: Attribute) {
+    /// deletes a attribute with a given key from the node
+    mutating func delete(_ attribute: Attribute) {
         attributes = attributes.filter { $0.key != attribute.key }
     }
 }

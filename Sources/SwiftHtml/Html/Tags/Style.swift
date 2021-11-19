@@ -20,13 +20,13 @@ public extension Style {
 
     /// Specifies what media/device the media resource is optimized for
     func media(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "media", value: value))
+        node.upsert(Attribute(key: "media", value: value))
         return self
     }
     
     /// Specifies the media type of the `<style>` tag
     func type() -> Self {
-        node.addOrReplace(Attribute(key: "type", value: "text/css"))
+        node.upsert(Attribute(key: "type", value: "text/css"))
         return self
     }
 }

@@ -32,67 +32,67 @@ public extension Button {
 
     /// Specifies that a button should automatically get focus when the page loads
     func autofocus() -> Self {
-        node.addOrReplace(Attribute(key: "autofocus"))
+        node.upsert(Attribute(key: "autofocus"))
         return self
     }
     
     /// Specifies that a button should be disabled
     func disabled() -> Self {
-        node.addOrReplace(Attribute(key: "disabled"))
+        node.upsert(Attribute(key: "disabled"))
         return self
     }
     
     /// Specifies which form the button belongs to
     func form(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "form", value: value))
+        node.upsert(Attribute(key: "form", value: value))
         return self
     }
     
     /// Specifies where to send the form-data when a form is submitted. Only for type="submit"
     func formaction(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "formaction", value: value))
+        node.upsert(Attribute(key: "formaction", value: value))
         return self
     }
     
     /// Specifies how form-data should be encoded before sending it to a server. Only for type="submit"
     func formenctype(_ value: Enctype = .urlencoded) -> Self {
-        node.addOrReplace(Attribute(key: "formenctype", value: value.rawValue))
+        node.upsert(Attribute(key: "formenctype", value: value.rawValue))
         return self
     }
     
     /// Specifies how to send the form-data (which HTTP method to use). Only for type="submit"
     func formmethod(_ value: Enctype = .urlencoded) -> Self {
-        node.addOrReplace(Attribute(key: "formmethod", value: value.rawValue))
+        node.upsert(Attribute(key: "formmethod", value: value.rawValue))
         return self
     }
     
     /// Specifies that the form-data should not be validated on submission. Only for type="submit"
     func formnovalidate() -> Self {
-        node.addOrReplace(Attribute(key: "formnovalidate"))
+        node.upsert(Attribute(key: "formnovalidate"))
         return self
     }
     
     /// Specifies where to display the response after submitting the form. Only for type="submit"
     func target(_ value: TargetFrame) -> Self {
-        node.addOrReplace(Attribute(key: "target", value: value.rawValue))
+        node.upsert(Attribute(key: "target", value: value.rawValue))
         return self
     }
     
     /// Specifies a name for the button
     func name(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "name", value: value))
+        node.upsert(Attribute(key: "name", value: value))
         return self
     }
     
     /// Specifies the type of button
     func type(_ value: Type) -> Self {
-        node.addOrReplace(Attribute(key: "type", value: value.rawValue))
+        node.upsert(Attribute(key: "type", value: value.rawValue))
         return self
     }
     
     /// Specifies an initial value for the button
     func value(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "value", value: value))
+        node.upsert(Attribute(key: "value", value: value))
         return self
     }
     

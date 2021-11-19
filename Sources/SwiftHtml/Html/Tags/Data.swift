@@ -20,7 +20,7 @@ public final class Data: Tag {
 public extension Data {
     /// Specifies the machine-readable translation of the content of the element
     func value(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "value", value: value))
+        node.upsert(Attribute(key: "value", value: value))
         return self
     }
 }

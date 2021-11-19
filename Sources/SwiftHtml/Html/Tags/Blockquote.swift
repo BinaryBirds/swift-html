@@ -18,7 +18,7 @@ public final class Blockquote: Tag {
 public extension Blockquote {
     /// Specifies the source of the quotation
     func cite(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "cite", value: value))
+        node.upsert(Attribute(key: "cite", value: value))
         return self
     }
 }

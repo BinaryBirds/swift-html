@@ -18,13 +18,13 @@ public final class Optgroup: Tag {
 public extension Optgroup {
     /// Specifies that an option-group should be disabled
     func disabled() -> Self {
-        node.addOrReplace(Attribute(key: "disabled"))
+        node.upsert(Attribute(key: "disabled"))
         return self
     }
     
     /// Specifies a label for an option-group
     func label(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "label", value: value))
+        node.upsert(Attribute(key: "label", value: value))
         return self
     }
 }

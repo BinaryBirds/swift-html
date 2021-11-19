@@ -41,55 +41,55 @@ public extension Video {
     
     /// Specifies that the video will start playing as soon as it is ready
     func autoplay() -> Self {
-        node.addOrReplace(Attribute(key: "autoplay"))
+        node.upsert(Attribute(key: "autoplay"))
         return self
     }
     
     /// Specifies that video controls should be displayed (such as a play/pause button etc).
     func controls() -> Self {
-        node.addOrReplace(Attribute(key: "controls"))
+        node.upsert(Attribute(key: "controls"))
         return self
     }
     
     /// Sets the height of the video player
     func height(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "height", value: String(value)))
+        node.upsert(Attribute(key: "height", value: String(value)))
         return self
     }
     
     /// Specifies that the video will start over again, every time it is finished
     func loop() -> Self {
-        node.addOrReplace(Attribute(key: "loop"))
+        node.upsert(Attribute(key: "loop"))
         return self
     }
     
     /// Specifies that the audio output of the video should be muted
     func muted() -> Self {
-        node.addOrReplace(Attribute(key: "muted"))
+        node.upsert(Attribute(key: "muted"))
         return self
     }
     
     /// Specifies an image to be shown while the video is downloading, or until the user hits the play button
     func poster(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "poster", value: value))
+        node.upsert(Attribute(key: "poster", value: value))
         return self
     }
     
     /// Specifies if and how the author thinks the video should be loaded when the page loads
     func preload(_ value: Preload) -> Self {
-        node.addOrReplace(Attribute(key: "preload", value: value.rawValue))
+        node.upsert(Attribute(key: "preload", value: value.rawValue))
             return self
     }
     
     /// Specifies the URL of the video file
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
     
     /// Sets the width of the video player
     func width(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "width", value: String(value)))
+        node.upsert(Attribute(key: "width", value: String(value)))
         return self
     }
 }

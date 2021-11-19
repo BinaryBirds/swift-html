@@ -22,6 +22,7 @@ public final class Meta: Tag {
 }
 
 public extension Meta {
+    
     enum Name: String {
         /// Specifies the name of the Web application that the page represents
         case applicationName = "application-name"
@@ -50,25 +51,25 @@ public extension Meta {
 
     /// Specifies the character encoding for the HTML document
     func charset(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "charset", value: value))
+        node.upsert(Attribute(key: "charset", value: value))
         return self
     }
     
     /// Specifies the value associated with the http-equiv or name attribute
     func content(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "content", value: value))
+        node.upsert(Attribute(key: "content", value: value))
         return self
     }
     
     /// Provides an HTTP header for the information/value of the content attribute
     func httpEquiv(_ value: HttpEquiv) -> Self {
-        node.addOrReplace(Attribute(key: "http-equiv", value: value.rawValue))
+        node.upsert(Attribute(key: "http-equiv", value: value.rawValue))
         return self
     }
     
     /// Specifies a name for the metadata
     func name(_ value: Name) -> Self {
-        node.addOrReplace(Attribute(key: "name", value: value.rawValue))
+        node.upsert(Attribute(key: "name", value: value.rawValue))
         return self
     }
 }

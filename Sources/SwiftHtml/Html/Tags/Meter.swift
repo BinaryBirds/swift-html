@@ -23,43 +23,43 @@ public final class Meter: Tag {
 public extension Meter {
     /// Specifies which form the <meter> element belongs to
     func form(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "form", value: value))
+        node.upsert(Attribute(key: "form", value: value))
         return self
     }
     
     /// Specifies the range that is considered to be a high value
     func high(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "high", value: String(value)))
+        node.upsert(Attribute(key: "high", value: String(value)))
         return self
     }
     
     /// Specifies the range that is considered to be a low value
     func low(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "low", value: String(value)))
+        node.upsert(Attribute(key: "low", value: String(value)))
         return self
     }
     
     /// Specifies the maximum value of the range
     func max(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "max", value: String(value)))
+        node.upsert(Attribute(key: "max", value: String(value)))
         return self
     }
     
     /// Specifies the minimum value of the range. Default value is 0
     func min(_ value: Int = 0) -> Self {
-        node.addOrReplace(Attribute(key: "min", value: String(value)))
+        node.upsert(Attribute(key: "min", value: String(value)))
         return self
     }
     
     /// Specifies what value is the optimal value for the gauge
     func optimum(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "optimum", value: String(value)))
+        node.upsert(Attribute(key: "optimum", value: String(value)))
         return self
     }
     
     /// Required. Specifies the current value of the gauge
     func value(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "value", value: String(value)))
+        node.upsert(Attribute(key: "value", value: String(value)))
         return self
     }
 }

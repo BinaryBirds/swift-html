@@ -16,25 +16,25 @@ public final class Embed: Tag {
 public extension Embed {
     /// Specifies the height of the embedded content
     func height(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "height", value: String(value)))
+        node.upsert(Attribute(key: "height", value: String(value)))
         return self
     }
     
     /// Specifies the address of the external file to embed
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
     
     /// Specifies the media type of the embedded content
     func type(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "type", value: value))
+        node.upsert(Attribute(key: "type", value: value))
         return self
     }
     
     /// Specifies the width of the embedded content
     func width(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "width", value: String(value)))
+        node.upsert(Attribute(key: "width", value: String(value)))
         return self
     }
 }

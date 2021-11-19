@@ -35,19 +35,19 @@ public extension Ol {
     
     /// Specifies that the list order should be reversed (9,8,7...)
     func reversed(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "reversed"))
+        node.upsert(Attribute(key: "reversed"))
         return self
     }
     
     /// Specifies the start value of an ordered list
     func start(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "start", value: String(value)))
+        node.upsert(Attribute(key: "start", value: String(value)))
         return self
     }
     
     /// Specifies the kind of marker to use in the list
     func type(_ value: Type) -> Self {
-        node.addOrReplace(Attribute(key: "type", value: value.rawValue))
+        node.upsert(Attribute(key: "type", value: value.rawValue))
         return self
     }
 }

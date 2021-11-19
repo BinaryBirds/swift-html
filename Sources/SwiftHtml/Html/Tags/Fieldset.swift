@@ -18,19 +18,19 @@ public final class Fieldset: Tag {
 public extension Fieldset {
     /// Specifies that a group of related form elements should be disabled
     func disabled() -> Self {
-        node.addOrReplace(Attribute(key: "disabled"))
+        node.upsert(Attribute(key: "disabled"))
         return self
     }
     
     /// Specifies which form the fieldset belongs to
     func form(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "form", value: value))
+        node.upsert(Attribute(key: "form", value: value))
         return self
     }
     
     /// Specifies a name for the fieldset
     func name(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "name", value: value))
+        node.upsert(Attribute(key: "name", value: value))
         return self
     }
 }

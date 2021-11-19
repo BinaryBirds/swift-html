@@ -22,25 +22,25 @@ public final class Option: Tag {
 public extension Option {
     /// Specifies that an option should be disabled
     func disabled() -> Self {
-        node.addOrReplace(Attribute(key: "disabled"))
+        node.upsert(Attribute(key: "disabled"))
         return self
     }
     
     /// Specifies a shorter label for an option
     func label(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "label", value: value))
+        node.upsert(Attribute(key: "label", value: value))
         return self
     }
     
     /// Specifies that an option should be pre-selected when the page loads
     func selected() -> Self {
-        node.addOrReplace(Attribute(key: "selected"))
+        node.upsert(Attribute(key: "selected"))
         return self
     }
     
     /// Specifies the value to be sent to a server
     func value(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "value", value: value))
+        node.upsert(Attribute(key: "value", value: value))
         return self
     }
 }

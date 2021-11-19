@@ -62,49 +62,49 @@ public extension Link {
     
     /// Specifies how the element handles cross-origin requests
     func crossorigin(_ value: Crossorigin) -> Self {
-        node.addOrReplace(Attribute(key: "crossorigin", value: value.rawValue))
+        node.upsert(Attribute(key: "crossorigin", value: value.rawValue))
         return self
     }
     
     /// Specifies the location of the linked document
     func href(_ url: String) -> Self {
-        node.addOrReplace(Attribute(key: "href", value: url))
+        node.upsert(Attribute(key: "href", value: url))
         return self
     }
     
     /// Specifies the language of the text in the linked document
     func hreflang(_ url: String) -> Self {
-        node.addOrReplace(Attribute(key: "hreflang", value: url))
+        node.upsert(Attribute(key: "hreflang", value: url))
         return self
     }
     
     /// Specifies on what device the linked document will be displayed
     func media(_ url: String) -> Self {
-        node.addOrReplace(Attribute(key: "media", value: url))
+        node.upsert(Attribute(key: "media", value: url))
         return self
     }
     
     /// Specifies which referrer to use when fetching the resource
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue))
+        node.upsert(Attribute(key: "referrerpolicy", value: value.rawValue))
         return self
     }
 
     /// Required. Specifies the relationship between the current document and the linked document
     func rel(_ value: Rel) -> Self {
-        node.addOrReplace(Attribute(key: "rel", value: value.rawValue))
+        node.upsert(Attribute(key: "rel", value: value.rawValue))
         return self
     }
     
     /// Specifies the size of the linked resource. Only for `rel="icon"`
     func sizes(_ url: String) -> Self {
-        node.addOrReplace(Attribute(key: "sizes", value: url))
+        node.upsert(Attribute(key: "sizes", value: url))
         return self
     }
         
     /// Specifies the media type of the linked document
     func type(_ url: String) -> Self {
-        node.addOrReplace(Attribute(key: "type", value: url))
+        node.upsert(Attribute(key: "type", value: url))
         return self
     }
 }

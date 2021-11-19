@@ -51,55 +51,55 @@ public extension Form {
     
     /// Specifies the character encodings that are to be used for the form submission
     func acceptCharset(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "accept-charset", value: value))
+        node.upsert(Attribute(key: "accept-charset", value: value))
         return self
     }
     
     /// Specifies where to send the form-data when a form is submitted
     func action(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "action", value: value))
+        node.upsert(Attribute(key: "action", value: value))
         return self
     }
     
     /// Specifies whether a form should have autocomplete on or off
     func autocomplete(_ value: Bool = true) -> Self {
-        node.addOrReplace(Attribute(key: "autocomplete", value: value ? "on" : "off"))
+        node.upsert(Attribute(key: "autocomplete", value: value ? "on" : "off"))
         return self
     }
     
     /// Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
     func enctype(_ value: Enctype) -> Self {
-        node.addOrReplace(Attribute(key: "enctype", value: value.rawValue))
+        node.upsert(Attribute(key: "enctype", value: value.rawValue))
         return self
     }
     
     /// Specifies the HTTP method to use when sending form-data
     func method(_ value: Method) -> Self {
-        node.addOrReplace(Attribute(key: "method", value: value.rawValue))
+        node.upsert(Attribute(key: "method", value: value.rawValue))
         return self
     }
     
     /// Specifies the name of a form
     func name(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "name", value: value))
+        node.upsert(Attribute(key: "name", value: value))
         return self
     }
     
     /// Specifies that the form should not be validated when submitted
     func novalidate() -> Self {
-        node.addOrReplace(Attribute(key: "novalidate"))
+        node.upsert(Attribute(key: "novalidate"))
         return self
     }
     
     /// Specifies the relationship between a linked resource and the current document
     func rel(_ value: Rel) -> Self {
-        node.addOrReplace(Attribute(key: "rel", value: value.rawValue))
+        node.upsert(Attribute(key: "rel", value: value.rawValue))
         return self
     }
     
     /// Specifies where to display the response that is received after submitting the form
     func target(_ value: Target) -> Self {
-        node.addOrReplace(Attribute(key: "target", value: value.rawValue))
+        node.upsert(Attribute(key: "target", value: value.rawValue))
         return self
     }
 }

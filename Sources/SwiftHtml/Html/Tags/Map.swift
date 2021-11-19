@@ -21,7 +21,7 @@ public final class Map: Tag {
 public extension Map {
     /// Specifies the name of an <input> element
     func name(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "name", value: value))
+        node.upsert(Attribute(key: "name", value: value))
         return self
     }
 }

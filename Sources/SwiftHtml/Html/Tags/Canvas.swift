@@ -20,13 +20,13 @@ public final class Canvas: Tag {
 public extension Canvas {
     /// Specifies the height of the canvas. Default value is 150
     func height(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "height", value: String(value)))
+        node.upsert(Attribute(key: "height", value: String(value)))
         return self
     }
     
     /// Specifies the width of the canvas Default value is 300
     func width(_ value: Double) -> Self {
-        node.addOrReplace(Attribute(key: "width", value: String(value)))
+        node.upsert(Attribute(key: "width", value: String(value)))
         return self
     }
 }

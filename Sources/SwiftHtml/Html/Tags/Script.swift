@@ -25,50 +25,50 @@ public extension Script {
 
     /// Specifies that the script is executed asynchronously (only for external scripts)
     func async() -> Self {
-        node.addOrReplace(Attribute(key: "async"))
+        node.upsert(Attribute(key: "async"))
         return self
     }
     
     /// Sets the mode of the request to an HTTP CORS Request
     func crossorigin(_ value: Crossorigin) -> Self {
-        node.addOrReplace(Attribute(key: "crossorigin", value: value.rawValue))
+        node.upsert(Attribute(key: "crossorigin", value: value.rawValue))
         return self
     }
     
     /// Specifies that the script is executed when the page has finished parsing (only for external scripts)
     func `defer`() -> Self {
-        node.addOrReplace(Attribute(key: "defer"))
+        node.upsert(Attribute(key: "defer"))
         return self
     }
     
     /// Allows a browser to check the fetched script to ensure that the code is never loaded if the source has been manipulated
     func integrity(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "integrity", value: value))
+        node.upsert(Attribute(key: "integrity", value: value))
         return self
     }
     
     // @NOTE: auto capitalize string value?
     /// Specifies that the script should not be executed in browsers supporting ES2015 modules
     func nomodule(_ value: Bool) -> Self {
-        node.addOrReplace(Attribute(key: "nomodule", value: String(value)))
+        node.upsert(Attribute(key: "nomodule", value: String(value)))
         return self
     }
     
     /// Specifies which referrer information to send when fetching a script
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue))
+        node.upsert(Attribute(key: "referrerpolicy", value: value.rawValue))
         return self
     }
     
     /// The URL of the external script file.
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
     
     /// Specifies the media type of the script
     func type(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "type", value: value))
+        node.upsert(Attribute(key: "type", value: value))
         return self
     }
 }

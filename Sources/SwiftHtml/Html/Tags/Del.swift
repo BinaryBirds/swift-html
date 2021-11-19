@@ -18,7 +18,7 @@ public final class Del: Tag {
 public extension Del {
     /// Specifies a URL to a document that explains the reason why the text was deleted/changed
     func cite(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "cite", value: value))
+        node.upsert(Attribute(key: "cite", value: value))
         return self
     }
     
@@ -26,7 +26,7 @@ public extension Del {
     ///
     /// Format: `YYYY-MM-DDThh:mm:ssTZD`
     func datetime(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "datetime", value: value))
+        node.upsert(Attribute(key: "datetime", value: value))
         return self
     }
 }

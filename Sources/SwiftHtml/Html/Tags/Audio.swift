@@ -40,37 +40,37 @@ public extension Audio {
     
     /// Specifies that the audio will start playing as soon as it is ready
     func autoplay() -> Self {
-        node.addOrReplace(Attribute(key: "autoplay"))
+        node.upsert(Attribute(key: "autoplay"))
         return self
     }
     
     /// Specifies that audio controls should be displayed (such as a play/pause button etc)
     func controls() -> Self {
-        node.addOrReplace(Attribute(key: "controls"))
+        node.upsert(Attribute(key: "controls"))
         return self
     }
     
     /// Specifies that the audio will start over again, every time it is finished
     func loop() -> Self {
-        node.addOrReplace(Attribute(key: "loop"))
+        node.upsert(Attribute(key: "loop"))
         return self
     }
     
     /// Specifies that the audio output should be muted
     func muted() -> Self {
-        node.addOrReplace(Attribute(key: "muted"))
+        node.upsert(Attribute(key: "muted"))
         return self
     }
     
     /// Specifies if and how the author thinks the audio should be loaded when the page loads
     func preload(_ value: Preload = .auto) -> Self {
-        node.addOrReplace(Attribute(key: "preload", value: value.rawValue))
+        node.upsert(Attribute(key: "preload", value: value.rawValue))
         return self
     }
     
     /// Specifies the URL of the audio file
     func src(_ value: String) -> Self {
-        node.addOrReplace(Attribute(key: "src", value: value))
+        node.upsert(Attribute(key: "src", value: value))
         return self
     }
 }

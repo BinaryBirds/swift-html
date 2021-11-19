@@ -29,7 +29,7 @@ public final class Li: Tag {
 public extension Li {
     /// Only for `<ol>` lists. Specifies the start value of a list item. The following list items will increment from that number
     func value(_ value: Int) -> Self {
-        node.addOrReplace(Attribute(key: "value", value: String(value)))
+        node.upsert(Attribute(key: "value", value: String(value)))
         return self
     }
 }

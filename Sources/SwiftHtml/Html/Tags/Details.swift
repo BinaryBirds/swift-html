@@ -22,7 +22,7 @@ public final class Details: Tag {
 public extension Details {
     /// Specifies that the details should be visible (open) to the user
     func open() -> Self {
-        node.addOrReplace(Attribute(key: "open"))
+        node.upsert(Attribute(key: "open"))
         return self
     }
 }
