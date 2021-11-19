@@ -41,17 +41,13 @@ public struct Node {
 
 extension Node {
     
-    func addOrReplace(_ attribute: Attribute) -> Node {
-        var newNode = self
-        newNode.attributes = newNode.attributes.filter { $0.key != attribute.key }
-        newNode.attributes.append(attribute)
-        return newNode
+    mutating func addOrReplace(_ attribute: Attribute) {
+        remove(attribute)
+        attributes.append(attribute)
     }
 
-    func remove(_ attribute: Attribute) -> Node {
-        var newNode = self
-        newNode.attributes = newNode.attributes.filter { $0.key != attribute.key }
-        return newNode
+    mutating func remove(_ attribute: Attribute) {
+        attributes = attributes.filter { $0.key != attribute.key }
     }
 }
 

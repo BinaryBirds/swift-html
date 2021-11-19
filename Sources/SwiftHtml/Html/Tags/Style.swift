@@ -11,10 +11,6 @@
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
 public final class Style: Tag {
 
-    public init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "style", contents: contents))
     }
@@ -24,11 +20,13 @@ public extension Style {
 
     /// Specifies what media/device the media resource is optimized for
     func media(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "media", value: value)))
+        node.addOrReplace(Attribute(key: "media", value: value))
+        return self
     }
     
     /// Specifies the media type of the `<style>` tag
     func type() -> Self {
-        .init(node.addOrReplace(Attribute(key: "type", value: "text/css")))
+        node.addOrReplace(Attribute(key: "type", value: "text/css"))
+        return self
     }
 }

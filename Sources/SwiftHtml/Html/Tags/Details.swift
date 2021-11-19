@@ -14,10 +14,6 @@
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
 public final class Details: Tag {
 
-    public init(_ node: Node) {
-        super.init(node)
-    }
-
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "details"), tags: builder())
     }
@@ -26,7 +22,8 @@ public final class Details: Tag {
 public extension Details {
     /// Specifies that the details should be visible (open) to the user
     func open() -> Self {
-        .init(node.addOrReplace(Attribute(key: "open")))
+        node.addOrReplace(Attribute(key: "open"))
+        return self
     }
 }
 

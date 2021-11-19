@@ -14,10 +14,6 @@
 /// **Tip:** For unordered list, use the `<ul>` tag.
 public final class Ol: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "ol"), tags: builder())
     }
@@ -39,16 +35,19 @@ public extension Ol {
     
     /// Specifies that the list order should be reversed (9,8,7...)
     func reversed(_ value: Double) -> Self {
-        .init(node.addOrReplace(Attribute(key: "reversed")))
+        node.addOrReplace(Attribute(key: "reversed"))
+        return self
     }
     
     /// Specifies the start value of an ordered list
     func start(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "start", value: String(value))))
+        node.addOrReplace(Attribute(key: "start", value: String(value)))
+        return self
     }
     
     /// Specifies the kind of marker to use in the list
     func type(_ value: Type) -> Self {
-        .init(node.addOrReplace(Attribute(key: "type", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "type", value: value.rawValue))
+        return self
     }
 }

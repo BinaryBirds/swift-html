@@ -16,10 +16,6 @@
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
 public final class Meta: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-
     public init() {
         super.init(Node(type: .empty, name: "meta"))
     }
@@ -54,21 +50,25 @@ public extension Meta {
 
     /// Specifies the character encoding for the HTML document
     func charset(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "charset", value: value)))
+        node.addOrReplace(Attribute(key: "charset", value: value))
+        return self
     }
     
     /// Specifies the value associated with the http-equiv or name attribute
     func content(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "content", value: value)))
+        node.addOrReplace(Attribute(key: "content", value: value))
+        return self
     }
     
     /// Provides an HTTP header for the information/value of the content attribute
     func httpEquiv(_ value: HttpEquiv) -> Self {
-        .init(node.addOrReplace(Attribute(key: "http-equiv", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "http-equiv", value: value.rawValue))
+        return self
     }
     
     /// Specifies a name for the metadata
     func name(_ value: Name) -> Self {
-        .init(node.addOrReplace(Attribute(key: "name", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "name", value: value.rawValue))
+        return self
     }
 }

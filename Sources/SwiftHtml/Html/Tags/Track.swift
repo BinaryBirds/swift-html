@@ -12,13 +12,8 @@
 /// Tracks are formatted in WebVTT format (.vtt files).
 public final class Track: Tag {
     
-
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(src: String) {
-        let node = Node(type: .empty, name: "track", attributes: [.init(key: "src", value: src)])
+        let node = Node(type: .empty, name: "track", attributes: [Attribute(key: "src", value: src)])
         super.init(node)
     }
 }
@@ -40,26 +35,31 @@ public extension Track {
     
     /// Specifies that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
     func `default`() -> Self {
-        .init(node.addOrReplace(Attribute(key: "default")))
+        node.addOrReplace(Attribute(key: "default"))
+        return self
     }
     
     /// Specifies the kind of text track
     func kind(_ value: Kind) -> Self {
-        .init(node.addOrReplace(Attribute(key: "kind", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "kind", value: value.rawValue))
+        return self
     }
     
     /// Specifies the title of the text track
     func label(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "label", value: value)))
+        node.addOrReplace(Attribute(key: "label", value: value))
+        return self
     }
     
     /// Required. Specifies the URL of the track file
     func src(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "src", value: value)))
+        node.addOrReplace(Attribute(key: "src", value: value))
+        return self
     }
     
     /// Specifies the language of the track text data (required if kind="subtitles")
     func srclang(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "srclang", value: value)))
+        node.addOrReplace(Attribute(key: "srclang", value: value))
+        return self
     }
 }

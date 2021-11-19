@@ -32,80 +32,94 @@ public enum Translate: String {
 }
 
 public extension Tag {
-    /*
+    
     /// Specifies a shortcut key to activate/focus an element
     func accesskey(_ value: Character) -> Self {
-        .init(node.addOrReplace(Attribute(key: "accesskey", value: String(value))))
+        node.addOrReplace(Attribute(key: "accesskey", value: String(value)))
+        return self
     }
     
     /// Specifies one classname for an element (refers to a class in a style sheet)
     func `class`(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "class", value: value)))
+        node.addOrReplace(Attribute(key: "class", value: value))
+        return self
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
     func `class`(_ value: [String]) -> Self {
-        .init(node.addOrReplace(Attribute(key: "class", value: value.joined(separator: " "))))
+        node.addOrReplace(Attribute(key: "class", value: value.joined(separator: " ")))
+        return self
     }
     
     /// Specifies whether the content of an element is editable or not
     func contenteditable(_ value: Bool) -> Self {
-        .init(node.addOrReplace(Attribute(key: "contenteditable", value: String(value))))
+        node.addOrReplace(Attribute(key: "contenteditable", value: String(value)))
+        return self
     }
     
     /// Used to store custom data private to the page or application
     func data(key: String, _ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "data-" + key, value: value)))
+        node.addOrReplace(Attribute(key: "data-" + key, value: value))
+        return self
     }
 
     /// Specifies the text direction for the content in an element
     func dir(_ value: TextDirection = .ltr) -> Self {
-        .init(node.addOrReplace(Attribute(key: "dir", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "dir", value: value.rawValue))
+        return self
     }
     
     /// Specifies whether an element is draggable or not
     func draggable(_ value: Draggable = .auto) -> Self {
-        .init(node.addOrReplace(Attribute(key: "draggable", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "draggable", value: value.rawValue))
+        return self
     }
     
     /// Specifies that an element is not yet, or is no longer, relevant
     func hidden(_ value: Bool? = nil) -> Self {
-        .init(node.addOrReplace(Attribute(key: "hidden", value: value?.description)))
+        node.addOrReplace(Attribute(key: "hidden", value: value?.description))
+        return self
     }
     
     /// Specifies a unique id for an element
     func `id`(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "id", value: value)))
+        node.addOrReplace(Attribute(key: "id", value: value))
+        return self
     }
     
     /// Specifies the language of the element's content
     func lang(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "lang", value: value)))
+        node.addOrReplace(Attribute(key: "lang", value: value))
+        return self
     }
     
     /// Specifies whether the element is to have its spelling and grammar checked or not
     func spellcheck(_ value: Bool) -> Self {
-        .init(node.addOrReplace(Attribute(key: "spellcheck", value: String(value))))
+        node.addOrReplace(Attribute(key: "spellcheck", value: String(value)))
+        return self
     }
     
     /// Specifies an inline CSS style for an element
     func style(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "style", value: value)))
+        node.addOrReplace(Attribute(key: "style", value: value))
+        return self
     }
     
     /// Specifies the tabbing order of an element
     func tabindex(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "tabindex", value: String(value))))
+        node.addOrReplace(Attribute(key: "tabindex", value: String(value)))
+        return self
     }
     
     /// Specifies extra information about an element
     func title(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "title", value: value)))
+        node.addOrReplace(Attribute(key: "title", value: value))
+        return self
     }
     
     /// Specifies whether the content of an element should be translated or not
     func translate(_ value: Translate) -> Self {
-        .init(node.addOrReplace(Attribute(key: "translate", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "translate", value: value.rawValue))
+        return self
     }
-     */
 }

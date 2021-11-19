@@ -35,10 +35,6 @@
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
 public final class Label: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public convenience init(_ contents: String) {
         self.init(contents) {}
     }
@@ -55,11 +51,13 @@ public final class Label: Tag {
 public extension Label {
     /// Specifies the id of the form element the label should be bound to
     func `for`(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "for", value: value)))
+        node.addOrReplace(Attribute(key: "for", value: value))
+        return self
     }
     
     /// Specifies which form the label belongs to
     func form(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "form", value: value)))
+        node.addOrReplace(Attribute(key: "form", value: value))
+        return self
     }
 }

@@ -12,11 +12,6 @@
 /// **Tip:** Use `<blockquote>` for long quotations.
 public final class Q: Tag {
     
-
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "q", contents: contents))
     }
@@ -25,6 +20,7 @@ public final class Q: Tag {
 public extension Q {
     /// Specifies the source URL of the quote
     func cite(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "cite", value: value)))
+        node.addOrReplace(Attribute(key: "cite", value: value))
+        return self
     }
 }

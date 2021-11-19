@@ -16,10 +16,6 @@
 /// - An active link is underlined and red
 public final class A: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(_ value: String) {
         super.init(Node(type: .standard, name: "a", contents: value))
     }
@@ -59,48 +55,57 @@ public extension A {
     
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
     func download(_ name: String? = nil) -> Self {
-        .init(node.addOrReplace(Attribute(key: "download", value: name)))
+        node.addOrReplace(Attribute(key: "download", value: name))
+        return self
     }
     
     /// Specifies the URL of the page the link goes to
     func href(_ url: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "href", value: url)))
+        node.addOrReplace(Attribute(key: "href", value: url))
+        return self
     }
     
     /// Specifies the language of the linked document
     func hreflang(_ langCode: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "hreflang", value: langCode)))
+        node.addOrReplace(Attribute(key: "hreflang", value: langCode))
+        return self
     }
     
     /// Specifies what media/device the linked document is optimized for
     func media(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "media", value: value)))
+        node.addOrReplace(Attribute(key: "media", value: value))
+        return self
     }
     
     /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
     ///
     /// Typically used for tracking.
     func ping(_ value: [String]) -> Self {
-        .init(node.addOrReplace(Attribute(key: "ping", value: value.joined(separator: " "))))
+        node.addOrReplace(Attribute(key: "ping", value: value.joined(separator: " ")))
+        return self
     }
     
     /// Specifies which referrer information to send with the link
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue))
+        return self
     }
     
     /// Specifies the relationship between the current document and the linked document
     func rel(_ value: Rel) -> Self {
-        .init(node.addOrReplace(Attribute(key: "rel", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "rel", value: value.rawValue))
+        return self
     }
     
     /// Specifies where to open the linked document
     func target(_ value: TargetFrame) -> Self {
-        .init(node.addOrReplace(Attribute(key: "target", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "target", value: value.rawValue))
+        return self
     }
     
     /// The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document.
     func type(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "type", value: value)))
+        node.addOrReplace(Attribute(key: "type", value: value))
+        return self
     }
 }

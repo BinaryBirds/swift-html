@@ -12,10 +12,6 @@
 /// **Note:** You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
 public final class Html: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "html"), tags: builder())
     }
@@ -24,6 +20,7 @@ public final class Html: Tag {
 public extension Html {
     /// Specifies the XML namespace attribute (If you need your content to conform to XHTML)
     func xmlns() -> Self {
-        .init(node.addOrReplace(Attribute(key: "xmlns", value: "http://www.w3.org/1999/xhtml")))
+        node.addOrReplace(Attribute(key: "xmlns", value: "http://www.w3.org/1999/xhtml"))
+        return self
     }
 }

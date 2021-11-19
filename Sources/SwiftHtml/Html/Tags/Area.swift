@@ -50,68 +50,75 @@ public final class Area: Tag {
         /// Defines a polygonal region
         case poly
     }
-    
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
+
     public init() {
         super.init(Node(type: .empty, name: "area"))
     }
     
     /// Specifies an alternate text for the area. Required if the href attribute is present
     public func alt(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "alt", value: value)))
+        node.addOrReplace(Attribute(key: "alt", value: value))
+        return self
     }
     
     /// Specifies the coordinates of the area
     public func coords(_ values: Double...) -> Self {
-        .init(node.addOrReplace(Attribute(key: "coords", value: values.map {String($0) }.joined(separator: ","))))
+        node.addOrReplace(Attribute(key: "coords", value: values.map {String($0) }.joined(separator: ",")))
+        return self
     }
     
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
     public func download(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "download", value: value)))
+        node.addOrReplace(Attribute(key: "download", value: value))
+        return self
     }
     
     /// Specifies the hyperlink target for the area
     public func href(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "href", value: value)))
+        node.addOrReplace(Attribute(key: "href", value: value))
+        return self
     }
     
     /// Specifies the language of the target URL
     public func hreflang(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "hreflang", value: value)))
+        node.addOrReplace(Attribute(key: "hreflang", value: value))
+        return self
     }
     
     /// Specifies what media/device the target URL is optimized for
     public func media(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "media", value: value)))
+        node.addOrReplace(Attribute(key: "media", value: value))
+        return self
     }
     
     /// Specifies which referrer information to send with the link
     public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        .init(node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "referrerpolicy", value: value.rawValue))
+        return self
     }
     
     /// Specifies the relationship between the current document and the target URL
     public func rel(_ value: Rel) -> Self {
-        .init(node.addOrReplace(Attribute(key: "rel", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "rel", value: value.rawValue))
+        return self
     }
     
     /// Specifies the shape of the area
     public func shape(_ value: Shape) -> Self {
-        .init(node.addOrReplace(Attribute(key: "shape", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "shape", value: value.rawValue))
+        return self
     }
     
     /// Specifies where to open the target URL
     public func target(_ value: TargetFrame) -> Self {
-        .init(node.addOrReplace(Attribute(key: "target", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "target", value: value.rawValue))
+        return self
     }
     
     /// Specifies the media type of the target URL
     public func type(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "type", value: value)))
+        node.addOrReplace(Attribute(key: "type", value: value))
+        return self
     }
 }
 

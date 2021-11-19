@@ -20,10 +20,6 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 public final class Textarea: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "textarea", contents: contents))
     }
@@ -40,61 +36,73 @@ public extension Textarea {
 
     /// Specifies that a text area should automatically get focus when the page loads
     func autofocus() -> Self {
-        .init(node.addOrReplace(Attribute(key: "autofocus")))
+        node.addOrReplace(Attribute(key: "autofocus"))
+        return self
     }
     
     /// Specifies the visible width of a text area
     func cols(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "cols", value: String(value))))
+        node.addOrReplace(Attribute(key: "cols", value: String(value)))
+        return self
     }
     
     /// Specifies that the text direction of the textarea will be submitted
     func dirname(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "dirname", value: value)))
+        node.addOrReplace(Attribute(key: "dirname", value: value))
+        return self
     }
     
     /// Specifies that a text area should be disabled
     func disabled() -> Self {
-        .init(node.addOrReplace(Attribute(key: "disabled")))
+        node.addOrReplace(Attribute(key: "disabled"))
+        return self
     }
     
     /// Specifies which form the text area belongs to
     func form(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "form", value: value)))
+        node.addOrReplace(Attribute(key: "form", value: value))
+        return self
     }
     
     /// Specifies the maximum number of characters allowed in the text area
     func maxlength(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "maxlength", value: String(value))))
+        node.addOrReplace(Attribute(key: "maxlength", value: String(value)))
+        return self
     }
 
     /// Specifies a name for a text area
     func name(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "name", value: value)))
+        node.addOrReplace(Attribute(key: "name", value: value))
+        return self
     }
     
     /// Specifies a short hint that describes the expected value of a text area
     func placeholder(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "placeholder", value: value)))
+        node.addOrReplace(Attribute(key: "placeholder", value: value))
+        return self
     }
     
     /// Specifies that a text area should be read-only
     func readonly() -> Self {
-        .init(node.addOrReplace(Attribute(key: "readonly")))
+        node.addOrReplace(Attribute(key: "readonly"))
+        return self
     }
     
     /// Specifies that a text area is required/must be filled out
     func required() -> Self {
-        .init(node.addOrReplace(Attribute(key: "required")))
+        node.addOrReplace(Attribute(key: "required"))
+        return self
     }
     
     /// Specifies the visible width of a text area
     func rows(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "rows", value: String(value))))
+        node.addOrReplace(Attribute(key: "rows", value: String(value)))
+        return self
     }
     
     /// Specifies how the text in a text area is to be wrapped when submitted in a form
     func wrap(_ value: Wrap) -> Self {
-        .init(node.addOrReplace(Attribute(key: "wrap", value: value.rawValue)))
+        node.addOrReplace(Attribute(key: "wrap", value: value.rawValue))
+        return self
     }
 }

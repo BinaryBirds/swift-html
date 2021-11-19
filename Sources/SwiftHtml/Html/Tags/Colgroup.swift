@@ -14,10 +14,6 @@
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
 public final class Colgroup: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "colgroup"), tags: builder())
     }
@@ -26,6 +22,7 @@ public final class Colgroup: Tag {
 public extension Colgroup {
     /// Specifies the number of columns a column group should span
     func span(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "span", value: String(value))))
+        node.addOrReplace(Attribute(key: "span", value: String(value)))
+        return self
     }
 }

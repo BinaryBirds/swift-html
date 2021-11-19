@@ -18,11 +18,6 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 public final class Select: Tag {
     
-
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "select"), tags: builder())
     }
@@ -31,36 +26,43 @@ public final class Select: Tag {
 public extension Select {
     /// Specifies that the drop-down list should automatically get focus when the page loads
     func autofocus() -> Self {
-        .init(node.addOrReplace(Attribute(key: "autofocus")))
+        node.addOrReplace(Attribute(key: "autofocus"))
+        return self
     }
     
     /// Specifies that a drop-down list should be disabled
     func disabled() -> Self {
-        .init(node.addOrReplace(Attribute(key: "disabled")))
+        node.addOrReplace(Attribute(key: "disabled"))
+        return self
     }
     
     /// Defines which form the drop-down list belongs to
     func form(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "form", value: value)))
+        node.addOrReplace(Attribute(key: "form", value: value))
+        return self
     }
     
     /// Specifies that multiple options can be selected at once
     func multiple() -> Self {
-        .init(node.addOrReplace(Attribute(key: "multiple")))
+        node.addOrReplace(Attribute(key: "multiple"))
+        return self
     }
     
     /// Defines a name for the drop-down list
     func name(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "name", value: value)))
+        node.addOrReplace(Attribute(key: "name", value: value))
+        return self
     }
     
     /// Specifies that the user is required to select a value before submitting the form
     func required() -> Self {
-        .init(node.addOrReplace(Attribute(key: "required")))
+        node.addOrReplace(Attribute(key: "required"))
+        return self
     }
     
     /// Defines the number of visible options in a drop-down list
     func size(_ value: Int) -> Self {
-        .init(node.addOrReplace(Attribute(key: "size", value: String(value))))
+        node.addOrReplace(Attribute(key: "size", value: String(value)))
+        return self
     }
 }

@@ -10,10 +10,6 @@
 /// The datetime attribute of this element is used translate the time into a machine-readable format so that browsers can offer to add date reminders through the user's calendar, and search engines can produce smarter search results.
 public final class Time: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "time", contents: contents))
     }
@@ -41,6 +37,7 @@ public extension Time {
     /// - M - a prefix for "Minutes"
     /// - S - a prefix for "Seconds"
     func datetime(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "datetime", value: value)))
+        node.addOrReplace(Attribute(key: "datetime", value: value))
+        return self
     }
 }

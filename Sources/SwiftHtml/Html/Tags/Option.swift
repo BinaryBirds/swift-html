@@ -14,10 +14,6 @@
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
 public final class Option: Tag {
     
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "option", contents: contents))
     }
@@ -26,21 +22,25 @@ public final class Option: Tag {
 public extension Option {
     /// Specifies that an option should be disabled
     func disabled() -> Self {
-        .init(node.addOrReplace(Attribute(key: "disabled")))
+        node.addOrReplace(Attribute(key: "disabled"))
+        return self
     }
     
     /// Specifies a shorter label for an option
     func label(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "label", value: value)))
+        node.addOrReplace(Attribute(key: "label", value: value))
+        return self
     }
     
     /// Specifies that an option should be pre-selected when the page loads
     func selected() -> Self {
-        .init(node.addOrReplace(Attribute(key: "selected")))
+        node.addOrReplace(Attribute(key: "selected"))
+        return self
     }
     
     /// Specifies the value to be sent to a server
     func value(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "value", value: value)))
+        node.addOrReplace(Attribute(key: "value", value: value))
+        return self
     }
 }

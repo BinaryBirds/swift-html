@@ -10,10 +10,6 @@
 /// The `<fieldset>` tag draws a box around the related elements.
 public final class Fieldset: Tag {
     
-    init(_ node: Node) {
-        super.init(node)
-    }
-    
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "fieldset"), tags: builder())
     }
@@ -22,16 +18,19 @@ public final class Fieldset: Tag {
 public extension Fieldset {
     /// Specifies that a group of related form elements should be disabled
     func disabled() -> Self {
-        .init(node.addOrReplace(Attribute(key: "disabled")))
+        node.addOrReplace(Attribute(key: "disabled"))
+        return self
     }
     
     /// Specifies which form the fieldset belongs to
     func form(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "form", value: value)))
+        node.addOrReplace(Attribute(key: "form", value: value))
+        return self
     }
     
     /// Specifies a name for the fieldset
     func name(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "name", value: value)))
+        node.addOrReplace(Attribute(key: "name", value: value))
+        return self
     }
 }

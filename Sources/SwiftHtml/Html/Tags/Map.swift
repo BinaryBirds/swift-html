@@ -12,10 +12,6 @@
 /// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
 public final class Map: Tag {
 
-    init(_ node: Node) {
-        super.init(node)
-    }
-
     public init(name: String, @TagBuilder _ builder: () -> [Tag]) {
         let node = Node(type: .standard, name: "map", attributes: [Attribute(key: "name", value: name)])
         super.init(node, tags: builder())
@@ -25,7 +21,8 @@ public final class Map: Tag {
 public extension Map {
     /// Specifies the name of an <input> element
     func name(_ value: String) -> Self {
-        .init(node.addOrReplace(Attribute(key: "name", value: value)))
+        node.addOrReplace(Attribute(key: "name", value: value))
+        return self
     }
 }
 
