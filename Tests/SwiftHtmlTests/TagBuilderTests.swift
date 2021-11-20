@@ -90,5 +90,23 @@ final class TagBuilderTests: XCTestCase {
                             </div>
                             """)
     }
+    
+    func testGroupBuilder() {
+        let doc = Document(.unspecified) {
+            Main {
+                H1("Lorem ipsum")
+                P("Dolor sit amet")
+            }
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <main>
+                                <h1>Lorem ipsum</h1>
+                                <p>Dolor sit amet</p>
+                            </main>
+                            """)
+    }
+    
+    
 }
 

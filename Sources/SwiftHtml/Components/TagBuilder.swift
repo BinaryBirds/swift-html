@@ -11,6 +11,10 @@ public enum TagBuilder {
     public static func buildBlock(_ components: [Tag]...) -> [Tag] {
         components.flatMap { $0 }
     }
+    
+    public static func buildBlock(_ components: [Tag]...) -> Tag {
+        Tag(.init(type: .empty), children: components.flatMap { $0 })
+    }
 
     public static func buildExpression(_ expression: Tag) -> [Tag] {
         [expression]

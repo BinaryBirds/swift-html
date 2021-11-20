@@ -41,20 +41,26 @@ public struct DocumentRenderer {
         let spaces = String(repeating: " ", count: level * indent)
         switch tag.node.type {
         case .standard:
-            var children = tag.children.map { render(tag: $0, level: level + 1) }.joined(separator: newline)
-            if !children.isEmpty {
-                children = newline + children + newline + spaces
-            }
-            return spaces + renderOpening(tag) + (tag.node.contents ?? "") + children + renderClosing(tag)
+            return spaces + renderOpening(tag) + (tag.node.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
         case .comment:
             return spaces + "<!--" + (tag.node.contents ?? "") + "-->"
         case .empty:
             return spaces + renderOpening(tag)
+        case .group:
+            return spaces + renderChildren(tag, level: level, spaces: spaces)
         }
     }
     
+    private func renderChildren(_ tag: Tag, level: Int, spaces: String) -> String {
+        var children = tag.children.map { render(tag: $0, level: level + 1) }.joined(separator: newline)
+        if !children.isEmpty {
+            children = newline + children + newline + spaces
+        }
+        return children
+    }
+    
     private func renderOpening(_ tag: Tag) -> String {
-        "<" + tag.node.name! + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
+        return "<" + tag.node.name! + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
     }
     
     private func renderClosing(_ tag: Tag) -> String {
