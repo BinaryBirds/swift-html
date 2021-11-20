@@ -2,19 +2,17 @@
 //  Tag.swift
 //  SwiftHtml
 //
-//  Created by Tibor Bodecs on 2021. 07. 19..
+//  Created by Tibor Bodecs on 2021. 11. 19..
 //
 
-public protocol NodeRepresentable {
-    var node: Node { get }
-    init(_ node: Node)
-}
+open class Tag {
 
+    public var node: Node
+    public var children: [Tag]
 
-public protocol Tag: NodeRepresentable, HTMLRepresentable {
-    
-}
+    public init(_ node: Node, children: [Tag] = []) {
+        self.node = node
+        self.children = children
+    }
 
-public extension Tag {
-    var html: String { node.html }
 }

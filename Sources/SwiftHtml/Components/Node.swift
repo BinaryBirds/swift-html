@@ -8,7 +8,7 @@
 public struct Node {
 
     /// internal node types
-    enum NodeType {
+    public enum NodeType {
         /// standard container tags
         case standard     // <div>  </div>
         /// comment tag
@@ -17,72 +17,39 @@ public struct Node {
         /// non-container tags
         case empty        // <br>
         /// invisible node for grouping other nodes
+        ///
+        /// NOTE: this feature is implemented on the tag level, nodes are basic components
 //        case group    // *invisible group*<h1>lorem</h1><p>ipsum</p>*invisible group*
     }
 
-    var type: NodeType
-    var name: String?
-    var contents: String?
-    var attributes: [Attribute]
-    var children: [Node]
+    public let type: NodeType
+    public let name: String?
+    public let contents: String?
+    public private(set) var attributes: [Attribute]
 
-    init(type: NodeType = .standard,
+    public init(type: NodeType = .standard,
          name: String? = nil,
          contents: String? = nil,
-         attributes: [Attribute] = [],
-         children: [Node] = []
+         attributes: [Attribute] = []
     ) {
         self.type = type
         self.name = name
         self.contents = contents
         self.attributes = attributes
-        self.children = children
-    }
-
-    var html: String {
-        switch type {
-        case .standard:
-            var htmlValue = children.map(\.html).joined(separator: "")
-            if !children.isEmpty {
-                htmlValue = htmlValue + "\n"
-            }
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">" + (contents ?? "") + htmlValue + "</" + name! + ">"
-        case .comment:
-            return "\n<!--" + (contents ?? "") + "-->"
-        case .empty:
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + attributesList + ">"
-//        case .group:
-//            var htmlValue = children.map(\.html).joined(separator: "")
-//            if !children.isEmpty {
-//                htmlValue = htmlValue + "\n"
-//            }
-//            return htmlValue
-        }
-    }
-    
-    private var attributesList: String {
-        return attributes.reduce([]) { res, next in
-            if let value = next.value {
-                return res + [next.key + #"=""# + value + #"""#]
-            }
-            return res + [next.key]
-        }.joined(separator: " ")
     }
 }
 
-extension Node {
+public extension Node {
     
-    func addOrReplace(_ attribute: Attribute) -> Node {
-        var newNode = self
-        newNode.attributes = newNode.attributes.filter { $0.key != attribute.key }
-        newNode.attributes.append(attribute)
-        return newNode
+    /// add or replace an attribute with a given key to the node
+    mutating func upsert(_ attribute: Attribute) {
+        delete(attribute)
+        attributes.append(attribute)
     }
 
-    func remove(_ attribute: Attribute) -> Node {
-        var newNode = self
-        newNode.attributes = newNode.attributes.filter { $0.key != attribute.key }
-        return newNode
+    /// deletes a attribute with a given key from the node
+    mutating func delete(_ attribute: Attribute) {
+        attributes = attributes.filter { $0.key != attribute.key }
     }
 }
 

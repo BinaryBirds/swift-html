@@ -11,38 +11,27 @@ import XCTest
 final class DocumentTests: XCTestCase {
 
     func testHtml() {
-        let tag = Document(.html) {
+        let doc = Document(.html) {
             Html {}
         }
-        
-        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        XCTAssertEqual(res, """
+        XCTAssertEqual(DocumentRenderer().render(doc), """
                             <!DOCTYPE html>
                             <html></html>
                             """)
     }
 
     func testXml() {
-        struct Root: Tag {
-            var node: Node
-            
-            init(_ node: Node) {
-                self.node = node
-            }
-            
-            init() {
-                self.init(.init(type: .standard, name: "root"))
+        final class Root: Tag {
+            init(_ contents: String? = nil) {
+                super.init(Node(type: .standard, name: "root", contents: contents))
             }
         }
-        
-        let tag = Document(.xml) {
+        let doc = Document(.xml) {
             Root()
         }
-        
-        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        XCTAssertEqual(res, """
+        XCTAssertEqual(DocumentRenderer().render(doc), """
                             <?xml version="1.0" encoding="utf-8" ?>
                             <root></root>
                             """)

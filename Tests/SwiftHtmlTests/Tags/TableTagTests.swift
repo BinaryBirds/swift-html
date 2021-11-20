@@ -11,31 +11,60 @@ import XCTest
 final class TableTagTests: XCTestCase {
 
     func testTable() {
-        let doc = Table {
-            Thead {
-                Tr {
-                    Th("1")
-                    Th("2")
-                    Th("3")
+        let doc = Document(.html) {
+            Table {
+                Thead {
+                    Tr {
+                        Th("1")
+                        Th("2")
+                        Th("3")
+                    }
                 }
-            }
-            Tbody {
-                Tr {
-                    Td("a")
-                    Td("b")
-                    Td("c")
+                Tbody {
+                    Tr {
+                        Td("a")
+                        Td("b")
+                        Td("c")
+                    }
                 }
-            }
-            Tfoot {
-                Tr {
-                    Td("d")
-                    Td("e")
-                    Td("f")
+                Tfoot {
+                    Tr {
+                        Td("d")
+                        Td("e")
+                        Td("f")
+                    }
                 }
             }
         }
-        print(doc.html)
-        XCTAssertTrue(true)
+
+        XCTAssertEqual(DocumentRenderer().render(doc), #"""
+                            <!DOCTYPE html>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>a</td>
+                                        <td>b</td>
+                                        <td>c</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>d</td>
+                                        <td>e</td>
+                                        <td>f</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            """#)
+        
+        
     }
     
 }

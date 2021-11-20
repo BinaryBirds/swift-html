@@ -13,8 +13,6 @@ final class PTagTests: XCTestCase {
     func testParagraph() {
         let tag = P("Hello world!")
         
-        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        XCTAssertEqual(res, "<p>Hello world!</p>")
+        XCTAssertEqual(DocumentRenderer(minify: true).render(Document(.html) { tag } ), "<!DOCTYPE html><p>Hello world!</p>")
     } 
 }
