@@ -11,7 +11,7 @@ import XCTest
 final class UlTagTests: XCTestCase {
 
     func testUl() {
-        let doc = Document(.html) {
+        let doc = Document(.unspecified) {
             Ul {
                 Li("a")
                 Li("b")
@@ -20,8 +20,16 @@ final class UlTagTests: XCTestCase {
                 }
             }
         }
-        print(DocumentRenderer().render(doc))
-        XCTAssertTrue(true)
+
+        XCTAssertEqual(DocumentRenderer().render(doc), #"""
+                            <ul>
+                                <li>a</li>
+                                <li>b</li>
+                                <li>
+                                    <p>c</p>
+                                </li>
+                            </ul>
+                            """#)
     }
    
     

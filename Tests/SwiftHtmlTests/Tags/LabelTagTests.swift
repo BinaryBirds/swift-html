@@ -21,15 +21,13 @@ final class LabelTagTests: XCTestCase {
             }
         }
 
-        print(DocumentRenderer().render(doc))
-        
-//        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
-//        XCTAssertEqual(res, #"""
-//                            <label>foo
-//                            <span class="more">(bar)</span>
-//                            <span class="required">*</span>
-//                            </label>
-//                            """#)
+        XCTAssertEqual(DocumentRenderer().render(doc), #"""
+                            <!DOCTYPE html>
+                            <label>foo
+                                <span class="more">(bar)</span>
+                                <span class="required">*</span>
+                            </label>
+                            """#)
     }
    
     

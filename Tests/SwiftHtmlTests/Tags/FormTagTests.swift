@@ -41,9 +41,8 @@ final class FormTagTests: XCTestCase {
             .action("/sign-in/")
         }
 
-        print(DocumentRenderer(minify: true).render(doc))
+        XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<!DOCTYPE html><form enctype="multipart/form-data" method="post" action="/sign-in/"><section><label for="email">Email address</label><input type="email" id="email" placeholder="Your email address" value="root@localhost.com"></section><section><label for="password">Password</label><input type="password" id="password" placeholder="Your password"></section><section><input type="submit" value="Sign in"></section></form>"#)
 
-//        XCTAssertTrue(true)
     }
     
 }

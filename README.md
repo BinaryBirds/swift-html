@@ -43,7 +43,9 @@ let doc = Document {
         }
     }
 }
-print(doc.html)
+
+let html = DocumentRenderer(minify: false, indent: 2).render(doc)
+print(html)
 ```
 
 

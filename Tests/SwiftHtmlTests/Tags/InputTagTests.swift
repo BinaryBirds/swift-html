@@ -11,24 +11,30 @@ import XCTest
 final class InputTagTests: XCTestCase {
 
     func testCheckedInput() {
-        let tag = Input()
-            .type(.checkbox)
-            .checked()
+        let doc = Document(.unspecified) {
+            Input()
+                .type(.checkbox)
+                .checked()
+        }
 
-//        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
-//        XCTAssertEqual(res, #"<input type="checkbox" checked>"#)
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <input type="checkbox" checked>
+                            """)
     }
     
     func testUncheckedInput() {
-        let tag = Input()
-            .type(.checkbox)
-            // first add checked attribute
-            .checked()
-            // this should remove the checked attribute
-            .checked(false)
+        let doc = Document(.unspecified) {
+            Input()
+                .type(.checkbox)
+                // first add checked attribute
+                .checked()
+                // this should remove the checked attribute
+                .checked(false)
+        }
 
-//        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
-//        XCTAssertEqual(res, #"<input type="checkbox">"#)
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <input type="checkbox">
+                            """)
     }
     
    

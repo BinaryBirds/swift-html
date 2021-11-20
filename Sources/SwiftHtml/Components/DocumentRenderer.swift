@@ -1,15 +1,13 @@
 //
-//  File.swift
-//  
+//  DocumentRenderer.swift
+//  SwiftHtml
 //
 //  Created by Tibor Bodecs on 2021. 11. 19..
 //
 
-import Foundation
-
 public struct DocumentRenderer {
-    
-    public let newline: String
+
+    private let newline: String
     public let minify: Bool
     public let indent: Int
     
@@ -20,24 +18,22 @@ public struct DocumentRenderer {
     }
 
     public func render(_ document: Document) -> String {
-        var result = renderDocumentType(document.type)
-        if !minify {
-           result += newline
-        }
-        result += render(tag: document.root)
-        return result
+        renderDocumentType(document.type) + render(tag: document.root)
     }
     
     // MARK: - private render methods
 
     private func renderDocumentType(_ type: Document.`Type`) -> String {
+        
         switch type {
+        case .unspecified:
+            return ""
         case .html:
-            return "<!DOCTYPE html>"
+            return "<!DOCTYPE html>" + newline
         case .xml:
-            return #"<?xml version="1.0" encoding="utf-8" ?>"#
+            return #"<?xml version="1.0" encoding="utf-8" ?>"# + newline
         case let .custom(value):
-            return value
+            return value + newline 
         }
     }
 
@@ -65,7 +61,7 @@ public struct DocumentRenderer {
         "</" + tag.node.name! + ">"
     }
 
-    private func renderAttributes(_ attributes: [Attribute], minify: Bool = false) -> String {
+    private func renderAttributes(_ attributes: [Attribute]) -> String {
         return attributes.reduce([]) { res, next in
             if let value = next.value {
                 return res + [next.key + #"=""# + value + #"""#]

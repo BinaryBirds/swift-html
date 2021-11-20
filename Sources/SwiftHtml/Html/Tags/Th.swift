@@ -20,6 +20,10 @@ public final class Th: Tag {
     public init(_ contents: String, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "th", contents: contents), children: builder())
     }
+    
+    public convenience init(_ contents: String) {
+        self.init(contents) {}
+    }
 }
 
 public extension Th {
