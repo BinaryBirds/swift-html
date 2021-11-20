@@ -15,7 +15,7 @@
 public final class Colgroup: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "colgroup"), tags: builder())
+        super.init(Node(type: .standard, name: "colgroup"), children: builder())
     }
 }
 

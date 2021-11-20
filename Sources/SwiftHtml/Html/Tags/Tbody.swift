@@ -20,7 +20,7 @@
 public final class Tbody: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "tbody"), tags: builder())
+        super.init(Node(type: .standard, name: "tbody"), children: builder())
     }
 }
 

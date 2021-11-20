@@ -5,14 +5,14 @@
 //  Created by Tibor Bodecs on 2021. 11. 19..
 //
 
-open class Tag: TagRepresentable {
+open class Tag {
 
     public var node: Node
-    public var tags: [Tag]
+    public var children: [Tag]
 
-    public init(_ node: Node, tags: [Tag] = []) {
+    public init(_ node: Node, children: [Tag] = []) {
         self.node = node
-        self.tags = tags
+        self.children = children
     }
 
 }

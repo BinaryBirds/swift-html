@@ -16,7 +16,7 @@
 public final class Aside: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "aside"), tags: builder())
+        super.init(Node(type: .standard, name: "aside"), children: builder())
     }
 }
 

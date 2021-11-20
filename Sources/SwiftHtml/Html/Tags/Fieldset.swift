@@ -11,7 +11,7 @@
 public final class Fieldset: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "fieldset"), tags: builder())
+        super.init(Node(type: .standard, name: "fieldset"), children: builder())
     }
 }
 

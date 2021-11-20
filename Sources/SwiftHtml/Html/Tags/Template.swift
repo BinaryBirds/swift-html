@@ -14,7 +14,7 @@
 public final class Template: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "template"), tags: builder())
+        super.init(Node(type: .standard, name: "template"), children: builder())
     }
 }
 

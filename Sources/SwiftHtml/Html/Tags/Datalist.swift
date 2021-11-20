@@ -13,6 +13,6 @@
 public final class Datalist: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "datalist"), tags: builder())
+        super.init(Node(type: .standard, name: "datalist"), children: builder())
     }
 }

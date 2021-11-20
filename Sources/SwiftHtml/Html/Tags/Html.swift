@@ -13,7 +13,7 @@
 public final class Html: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "html"), tags: builder())
+        super.init(Node(type: .standard, name: "html"), children: builder())
     }
 }
 

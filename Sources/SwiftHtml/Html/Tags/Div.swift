@@ -17,7 +17,7 @@
 public final class Div: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "div"), tags: builder())
+        super.init(Node(type: .standard, name: "div"), children: builder())
     }
 }
 

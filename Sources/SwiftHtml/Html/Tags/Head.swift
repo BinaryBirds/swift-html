@@ -23,6 +23,6 @@
 public final class Head: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "head"), tags: builder())
+        super.init(Node(type: .standard, name: "head"), children: builder())
     }
 }

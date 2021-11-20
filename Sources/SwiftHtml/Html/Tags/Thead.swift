@@ -20,6 +20,6 @@
 public final class Thead: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "thead"), tags: builder())
+        super.init(Node(type: .standard, name: "thead"), children: builder())
     }
 }

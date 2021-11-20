@@ -22,7 +22,7 @@ struct DocumentRenderer {
         if !minify {
            result += newline
         }
-//        result += renderTags(minify: minify)
+        result += render(tag: document.root)
         return result
     }
     
@@ -38,32 +38,32 @@ struct DocumentRenderer {
             return value
         }
     }
-/*
-    private func renderTags(minify: Bool = false) -> String {
-        
-        document.root.
-        
-        switch type {
+
+    private func render(tag: Tag, minify: Bool = false, indent: Int = 0) -> String {
+        let spaces = String(repeating: " ", count: indent * 4)
+        switch tag.node.type {
         case .standard:
-            var htmlValue = children.map(\.rawValue).joined(separator: "")
+            var children = tag.children.map { render(tag: $0, minify: minify, indent: indent + 1) }.joined(separator: newline)
             if !children.isEmpty {
-                htmlValue = htmlValue + "\n"
+                children = newline + children + newline + spaces
             }
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + renderAttributesList() + ">" + (contents ?? "") + htmlValue + "</" + name! + ">"
+            return spaces + renderOpening(tag) + (tag.node.contents ?? "") + children + renderClosing(tag)
         case .comment:
-            return "\n<!--" + (contents ?? "") + "-->"
+            return spaces + "<!--" + (tag.node.contents ?? "") + "-->"
         case .empty:
-            return "\n<" + name! + (attributes.isEmpty ? "" : " ") + renderAttributesList() + ">"
-//        case .group:
-//            var htmlValue = children.map(\.html).joined(separator: "")
-//            if !children.isEmpty {
-//                htmlValue = htmlValue + "\n"
-//            }
-//            return htmlValue
+            return spaces + renderOpening(tag)
         }
     }
+    
+    private func renderOpening(_ tag: Tag) -> String {
+        "<" + tag.node.name! + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
+    }
+    
+    private func renderClosing(_ tag: Tag) -> String {
+        "</" + tag.node.name! + ">"
+    }
 
-    private func renderAttributesList(minify: Bool = false) -> String {
+    private func renderAttributes(_ attributes: [Attribute], minify: Bool = false) -> String {
         return attributes.reduce([]) { res, next in
             if let value = next.value {
                 return res + [next.key + #"=""# + value + #"""#]
@@ -71,6 +71,4 @@ struct DocumentRenderer {
             return res + [next.key]
         }.joined(separator: " ")
     }
-     
-     */
 }

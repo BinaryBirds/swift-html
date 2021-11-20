@@ -27,7 +27,7 @@ public extension Node {
 public final class Article: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(.article(), tags: builder())
+        super.init(.article(), children: builder())
     }
 }
 

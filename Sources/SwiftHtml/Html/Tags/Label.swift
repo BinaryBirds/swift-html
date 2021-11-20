@@ -36,7 +36,7 @@
 public final class Label: Tag {
 
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "label", contents: contents), tags: builder())
+        super.init(Node(type: .standard, name: "label", contents: contents), children: builder())
     }
     
     public convenience init(_ contents: String) {

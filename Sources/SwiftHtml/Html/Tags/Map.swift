@@ -14,7 +14,7 @@ public final class Map: Tag {
 
     public init(name: String, @TagBuilder _ builder: () -> [Tag]) {
         let node = Node(type: .standard, name: "map", attributes: [Attribute(key: "name", value: name)])
-        super.init(node, tags: builder())
+        super.init(node, children: builder())
     }
 }
 

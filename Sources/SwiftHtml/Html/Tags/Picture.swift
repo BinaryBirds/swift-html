@@ -19,7 +19,7 @@
 public final class Picture: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "picture"), tags: builder())
+        super.init(Node(type: .standard, name: "picture"), children: builder())
     }
 
 }

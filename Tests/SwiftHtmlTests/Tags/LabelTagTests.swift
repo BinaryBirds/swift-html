@@ -12,13 +12,17 @@ final class LabelTagTests: XCTestCase {
 
     func testLabelChildren() {
         let isRequired = true
-        let tag = Label("foo") {
-            Span("(bar)").class("more")
-            if isRequired {
-                Span("*").class("required")
+        let doc = Document(.html) {
+            Label("foo") {
+                Span("(bar)").class("more")
+                if isRequired {
+                    Span("*").class("required")
+                }
             }
         }
-                
+
+        print(DocumentRenderer(doc).render(minify: false))
+        
 //        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
 //        XCTAssertEqual(res, #"""
 //                            <label>foo

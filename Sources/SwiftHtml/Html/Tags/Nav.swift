@@ -13,7 +13,7 @@
 public final class Nav: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "nav"), tags: builder())
+        super.init(Node(type: .standard, name: "nav"), children: builder())
     }
 }
 

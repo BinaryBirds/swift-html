@@ -19,6 +19,6 @@
 public final class Footer: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "footer"), tags: builder())
+        super.init(Node(type: .standard, name: "footer"), children: builder())
     }
 }
