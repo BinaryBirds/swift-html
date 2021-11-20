@@ -21,7 +21,7 @@ final class LabelTagTests: XCTestCase {
             }
         }
 
-        print(DocumentRenderer(doc).render(minify: false))
+        print(DocumentRenderer().render(doc))
         
 //        let res = tag.html.trimmingCharacters(in: .whitespacesAndNewlines)
 //        XCTAssertEqual(res, #"""

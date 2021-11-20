@@ -20,7 +20,7 @@ final class UlTagTests: XCTestCase {
                 }
             }
         }
-        print(DocumentRenderer(doc).render(minify: false))
+        print(DocumentRenderer().render(doc))
         XCTAssertTrue(true)
     }
    

@@ -41,7 +41,7 @@ final class FormTagTests: XCTestCase {
             .action("/sign-in/")
         }
 
-        print(DocumentRenderer(doc).render(minify: false))
+        print(DocumentRenderer(minify: true).render(doc))
 
 //        XCTAssertTrue(true)
     }

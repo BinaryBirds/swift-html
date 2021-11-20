@@ -7,18 +7,20 @@
 
 import Foundation
 
-struct DocumentRenderer {
+public struct DocumentRenderer {
     
-    let document: Document
+    public let newline: String
+    public let minify: Bool
+    public let indent: Int
     
-    private let newline = "\n"
-    
-    init(_ document: Document) {
-        self.document = document
+    public init(minify: Bool = false, indent: Int = 4) {
+        self.minify = minify
+        self.indent = minify ? 0 : indent
+        self.newline = minify ? "" : "\n"
     }
 
-    public func render(minify: Bool = false) -> String {
-        var result = renderDocumentType()
+    public func render(_ document: Document) -> String {
+        var result = renderDocumentType(document.type)
         if !minify {
            result += newline
         }
@@ -27,9 +29,9 @@ struct DocumentRenderer {
     }
     
     // MARK: - private render methods
-    
-    private func renderDocumentType() -> String {
-        switch document.type {
+
+    private func renderDocumentType(_ type: Document.`Type`) -> String {
+        switch type {
         case .html:
             return "<!DOCTYPE html>"
         case .xml:
@@ -39,11 +41,11 @@ struct DocumentRenderer {
         }
     }
 
-    private func render(tag: Tag, minify: Bool = false, indent: Int = 0) -> String {
-        let spaces = String(repeating: " ", count: indent * 4)
+    private func render(tag: Tag, level: Int = 0) -> String {
+        let spaces = String(repeating: " ", count: level * indent)
         switch tag.node.type {
         case .standard:
-            var children = tag.children.map { render(tag: $0, minify: minify, indent: indent + 1) }.joined(separator: newline)
+            var children = tag.children.map { render(tag: $0, level: level + 1) }.joined(separator: newline)
             if !children.isEmpty {
                 children = newline + children + newline + spaces
             }
