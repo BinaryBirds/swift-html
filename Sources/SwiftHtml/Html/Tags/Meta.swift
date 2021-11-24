@@ -67,9 +67,16 @@ public extension Meta {
         return self
     }
     
-    /// Specifies a name for the metadata
-    func name(_ value: Name) -> Self {
-        node.upsert(Attribute(key: "name", value: value.rawValue))
+    /// set a custom name for the given meta tag
+    func name(_ value: String) -> Self {
+        node.upsert(Attribute(key: "name", value: value))
         return self
     }
+    
+    /// Specifies a name for the metadata
+    func name(_ value: Name) -> Self {
+        name(value.rawValue)
+    }
+
+    
 }
