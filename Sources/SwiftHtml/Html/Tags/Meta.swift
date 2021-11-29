@@ -36,6 +36,8 @@ public extension Meta {
         case keywords
         /// Controls the viewport (the user's visible area of a web page).
         case viewport
+        /// robots
+        case robots
     }
     
     enum HttpEquiv: String {

@@ -11,7 +11,7 @@ import XCTest
 final class SwiftHtmlTests: XCTestCase {
         
     func testHtmlDocument() {
-        let doc = Document {
+        let doc = Document(.html) {
             Html {
                 Head {
                     Title("Hello Swift DSL")

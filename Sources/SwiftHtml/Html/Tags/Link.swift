@@ -26,6 +26,8 @@ public extension Link {
         case alternate
         /// Provides a link to the author of the document
         case author
+        /// canonical url
+        case canonical
         /// Specifies that the browser should preemptively perform DNS resolution for the target resource's origin
         case dnsPrefetch = "dns-prefetch"
         /// Provides a link to a help document. Example: `<link rel="help" href="/help/">`
