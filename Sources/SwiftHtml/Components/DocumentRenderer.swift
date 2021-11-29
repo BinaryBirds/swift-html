@@ -47,7 +47,7 @@ public struct DocumentRenderer {
         case .empty:
             return spaces + renderOpening(tag)
         case .group:
-            return spaces + renderChildren(tag, level: level, spaces: spaces)
+            return spaces + (tag.node.contents ?? "") + renderChildren(tag, level: level, spaces: spaces)
         }
     }
     
