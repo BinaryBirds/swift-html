@@ -10,6 +10,16 @@ import XCTest
 
 final class FormTagTests: XCTestCase {
 
+    func testGroup() {
+        let items = ["a", "b", "c"]
+        let doc = Document(.unspecified) {
+            Form {
+                items.map { P($0) }
+            }
+        }
+        XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<form><p>a</p><p>b</p><p>c</p></form>"#)
+    }
+
     func testForm() {
         let doc = Document(.html) {
             Form {

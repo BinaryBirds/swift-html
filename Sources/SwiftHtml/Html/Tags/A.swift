@@ -16,8 +16,12 @@
 /// - An active link is underlined and red
 public final class A: Tag {
 
-    public init(_ value: String) {
-        super.init(Node(type: .standard, name: "a", contents: value))
+    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "a", contents: contents), children: builder())
+    }
+
+    public convenience init(_ contents: String) {
+        self.init(contents) {}
     }
 }
 

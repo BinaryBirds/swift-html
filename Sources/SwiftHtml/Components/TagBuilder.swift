@@ -16,10 +16,14 @@ public enum TagBuilder {
         Tag(.init(type: .group), children: components.flatMap { $0 })
     }
 
+    public static func buildExpression(_ expression: [Tag]) -> [Tag] {
+        expression
+    }
+    
     public static func buildExpression(_ expression: Tag) -> [Tag] {
         [expression]
     }
-    
+
     public static func buildEither(first component: [Tag]) -> [Tag] {
         component
     }
