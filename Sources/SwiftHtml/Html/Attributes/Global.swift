@@ -38,10 +38,12 @@ public extension Tag {
         node.upsert(Attribute(key: "accesskey", value: String(value)))
         return self
     }
-    
+
     /// Specifies one classname for an element (refers to a class in a style sheet)
-    func `class`(_ value: String) -> Self {
-        node.upsert(Attribute(key: "class", value: value))
+    func `class`(_ value: String, _ condition: Bool = true) -> Self {
+        if condition {
+            node.upsert(Attribute(key: "class", value: value))
+        }
         return self
     }
 
