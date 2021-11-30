@@ -37,6 +37,17 @@ final class InputTagTests: XCTestCase {
                             """)
     }
     
+    func testKey() {
+        let doc = Document(.unspecified) {
+            Input()
+                .type(.text)
+                .key("email")
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <input type="text" id="email" name="email">
+                            """)
+    }
    
     
 }
