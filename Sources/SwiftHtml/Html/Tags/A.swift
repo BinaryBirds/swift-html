@@ -100,10 +100,12 @@ public extension A {
         node.upsert(Attribute(key: "rel", value: value.rawValue))
         return self
     }
-    
+
     /// Specifies where to open the linked document
-    func target(_ value: TargetFrame) -> Self {
-        node.upsert(Attribute(key: "target", value: value.rawValue))
+    func target(_ value: TargetFrame, _ condition: Bool = true) -> Self {
+        if condition {
+            node.upsert(Attribute(key: "target", value: value.rawValue))
+        }
         return self
     }
     
