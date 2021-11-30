@@ -18,6 +18,7 @@ public final class Input: Tag {
 }
 
 public extension Input {
+    
     enum `Type`: String {
         case button
         case checkbox
@@ -41,6 +42,13 @@ public extension Input {
         case time
         case url
         case week
+    }
+    
+    /// Sets both the name and id
+    func key(_ value: String) -> Self {
+        node.upsert(Attribute(key: "id", value: value))
+        node.upsert(Attribute(key: "name", value: value))
+        return self
     }
     
     /// Specifies a filter for what file types the user can pick from the file input dialog box (only for type="file")
