@@ -56,8 +56,10 @@ public extension Form {
     }
     
     /// Specifies where to send the form-data when a form is submitted
-    func action(_ value: String) -> Self {
-        node.upsert(Attribute(key: "action", value: value))
+    func action(_ value: String?) -> Self {
+        if let value = value {
+            node.upsert(Attribute(key: "action", value: value))
+        }
         return self
     }
     
@@ -68,8 +70,10 @@ public extension Form {
     }
     
     /// Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
-    func enctype(_ value: Enctype) -> Self {
-        node.upsert(Attribute(key: "enctype", value: value.rawValue))
+    func enctype(_ value: Enctype, _ condition: Bool = true) -> Self {
+        if condition {
+            node.upsert(Attribute(key: "enctype", value: value.rawValue))
+        }
         return self
     }
     
