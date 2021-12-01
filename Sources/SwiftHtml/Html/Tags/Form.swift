@@ -70,16 +70,18 @@ public extension Form {
     }
     
     /// Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
-    func enctype(_ value: Enctype, _ condition: Bool = true) -> Self {
-        if condition {
+    func enctype(_ value: Enctype?, _ condition: Bool = true) -> Self {
+        if let value = value, condition {
             node.upsert(Attribute(key: "enctype", value: value.rawValue))
         }
         return self
     }
     
     /// Specifies the HTTP method to use when sending form-data
-    func method(_ value: Method) -> Self {
-        node.upsert(Attribute(key: "method", value: value.rawValue))
+    func method(_ value: Method?) -> Self {
+        if let value = value {
+            node.upsert(Attribute(key: "method", value: value.rawValue))
+        }
         return self
     }
     
