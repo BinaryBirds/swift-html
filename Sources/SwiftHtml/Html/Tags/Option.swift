@@ -21,8 +21,10 @@ public final class Option: Tag {
 
 public extension Option {
     /// Specifies that an option should be disabled
-    func disabled() -> Self {
-        node.upsert(Attribute(key: "disabled"))
+    func disabled(_ condition: Bool = true) -> Self {
+        if condition {
+            node.upsert(Attribute(key: "disabled"))
+        }
         return self
     }
     
@@ -33,8 +35,10 @@ public extension Option {
     }
     
     /// Specifies that an option should be pre-selected when the page loads
-    func selected() -> Self {
-        node.upsert(Attribute(key: "selected"))
+    func selected(_ condition: Bool = true) -> Self {
+        if condition {
+            node.upsert(Attribute(key: "selected"))
+        }
         return self
     }
     
