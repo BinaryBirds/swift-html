@@ -188,8 +188,10 @@ public extension Input {
     }
     
     /// Specifies a short hint that describes the expected value of an `<input>` element
-    func placeholder(_ value: String) -> Self {
-        node.upsert(Attribute(key: "placeholder", value: value))
+    func placeholder(_ value: String?) -> Self {
+        if let value = value {
+            node.upsert(Attribute(key: "placeholder", value: value))
+        }
         return self
     }
     
