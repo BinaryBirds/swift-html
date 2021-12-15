@@ -52,8 +52,10 @@ public extension Input {
     }
     
     /// Specifies a filter for what file types the user can pick from the file input dialog box (only for type="file")
-    func accept(_ value: String) -> Self {
-        node.upsert(Attribute(key: "accept", value: value))
+    func accept(_ value: String?) -> Self {
+        if let value = value {
+            node.upsert(Attribute(key: "accept", value: value))
+        }
         return self
     }
     
