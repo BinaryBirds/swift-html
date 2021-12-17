@@ -40,8 +40,8 @@ public extension Tag {
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
-    func `class`(_ value: String, _ condition: Bool = true) -> Self {
-        if condition {
+    func `class`(_ value: String?, _ condition: Bool = true) -> Self {
+        if let value = value, condition {
             node.upsert(Attribute(key: "class", value: value))
         }
         return self
