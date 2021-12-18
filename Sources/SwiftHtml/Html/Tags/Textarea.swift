@@ -20,8 +20,8 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 public final class Textarea: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "textarea", contents: contents))
+    public init(_ contents: String? = nil) {
+        super.init(Node(type: .standard, name: "textarea", contents: contents ?? ""))
     }
 }
 
