@@ -234,8 +234,10 @@ public extension Input {
     }
 
     /// Specifies the value of an `<input>` element
-    func value(_ value: String) -> Self {
-        node.upsert(Attribute(key: "value", value: value))
+    func value(_ value: String?) -> Self {
+        if let value = value {
+            node.upsert(Attribute(key: "value", value: value))
+        }
         return self
     }
     
