@@ -8,6 +8,7 @@
 import XCTest
 @testable import SwiftHtml
 
+// TODO: move this to the SwiftSgmlTests folder
 final class TagBuilderTests: XCTestCase {
         
     func testOptionalBuilder() {

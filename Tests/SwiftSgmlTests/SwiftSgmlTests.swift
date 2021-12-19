@@ -1,27 +1,16 @@
 //
-//  DocumentTests.swift
-//  SwiftHtmlTests
+//  SwiftSgmlTests.swift
+//  SwiftSgmlTests
 //
 //  Created by Tibor Bodecs on 2021. 08. 08..
 //
 
 import XCTest
-@testable import SwiftHtml
+@testable import SwiftSgml
 
-final class DocumentTests: XCTestCase {
+final class SwiftSgmlTests: XCTestCase {
 
-    func testHtml() {
-        let doc = Document(.html) {
-            Html {}
-        }
-
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <!DOCTYPE html>
-                            <html></html>
-                            """)
-    }
-
-    func testXml() {
+    func testXmlDocument() {
         final class Root: Tag {
             init(_ contents: String? = nil) {
                 super.init(Node(type: .standard, name: "root", contents: contents))
