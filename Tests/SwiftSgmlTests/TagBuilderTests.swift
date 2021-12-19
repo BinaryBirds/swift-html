@@ -6,48 +6,47 @@
 //
 
 import XCTest
-@testable import SwiftHtml
+@testable import SwiftSgml
 
-// TODO: move this to the SwiftSgmlTests folder
 final class TagBuilderTests: XCTestCase {
         
     func testOptionalBuilder() {
         let condition: Bool = false
         let doc = Document {
-            Div {
+            Branch {
                 if condition {
-                    H1("a")
+                    Leaf("a")
                 }
-                P("b")
+                Leaf("b")
             }
         }
         
         XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <div>
-                                <p>b</p>
-                            </div>
+                            <branch>
+                                <leaf>b</leaf>
+                            </branch>
                             """)
     }
     
     func testEitherFirstBuilder() {
         let condition: Bool = true
         let doc = Document {
-            Div {
+            Branch {
                 if condition {
-                    H1("a")
+                    Leaf("a")
                 }
                 else {
-                    H2("b")
+                    Leaf("b")
                 }
-                P("c")
+                Leaf("c")
             }
         }
 
         XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <div>
-                                <h1>a</h1>
-                                <p>c</p>
-                            </div>
+                            <branch>
+                                <leaf>a</leaf>
+                                <leaf>c</leaf>
+                            </branch>
                             """)
         
     }
@@ -55,56 +54,56 @@ final class TagBuilderTests: XCTestCase {
     func testEitherSecondBuilder() {
         let condition: Bool = false
         let doc = Document {
-            Div {
+            Branch {
                 if condition {
-                    H1("a")
+                    Leaf("a")
                 }
                 else {
-                    H1("b")
+                    Leaf("b")
                 }
-                P("c")
+                Leaf("c")
             }
         }
         
         XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <div>
-                                <h1>b</h1>
-                                <p>c</p>
-                            </div>
+                            <branch>
+                                <leaf>b</leaf>
+                                <leaf>c</leaf>
+                            </branch>
                             """)
     }
     
     func testArrayBuilder() {
         let doc = Document {
-            Div {
+            Branch {
                 for i in 0..<3 {
-                    P(String(i + 1))
+                    Leaf(String(i + 1))
                 }
             }
         }
 
         XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <div>
-                                <p>1</p>
-                                <p>2</p>
-                                <p>3</p>
-                            </div>
+                            <branch>
+                                <leaf>1</leaf>
+                                <leaf>2</leaf>
+                                <leaf>3</leaf>
+                            </branch>
                             """)
     }
     
     func testGroupBuilder() {
         let doc = Document {
-            Main {
-                H1("Lorem ipsum")
-                P("Dolor sit amet")
+            Branch {
+                Leaf("Lorem ipsum")
+                Leaf("Dolor sit amet")
             }
         }
 
         XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <main>
-                                <h1>Lorem ipsum</h1>
-                                <p>Dolor sit amet</p>
-                            </main>
+                            <branch>
+                                <leaf>Lorem ipsum</leaf>
+                                <leaf>Dolor sit amet</leaf>
+                            </branch>
                             """)
     }
     
