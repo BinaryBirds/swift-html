@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Rss.swift
+//  SwiftRss
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
-
-import Foundation
 
 // https://validator.w3.org/feed/docs/rss2.html#ltttlgtSubelementOfLtchannelgt
 public final class Rss: Tag {

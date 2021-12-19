@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  SwiftRssTests.swift
+//  SwiftRssTests
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import SwiftRss
 
-final class RssTests: XCTestCase {
+final class SwiftRssTests: XCTestCase {
 
     func testA() {
         let doc = Document(.xml) {

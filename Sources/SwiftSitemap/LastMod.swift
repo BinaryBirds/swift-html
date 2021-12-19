@@ -1,13 +1,11 @@
 //
-//  File.swift
-//  
+//  LastMod.swift
+//  SwiftSitemap
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-import Foundation
-
-public final class Lastmod: Tag {
+public final class LastMod: Tag {
 
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "lastmod", contents: contents))

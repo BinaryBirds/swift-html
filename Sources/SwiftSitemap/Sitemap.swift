@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  Sitemap.swift
+//  SwiftSitemap
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
-
-import Foundation
 
 // https://www.sitemaps.org/protocol.html
 public final class Sitemap: Tag {

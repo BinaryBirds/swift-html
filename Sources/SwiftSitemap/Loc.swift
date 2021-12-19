@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  Loc.swift
+//  SwiftSitemap
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //

@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  SwiftSitemapTests.swift
+//  SwiftSitemapTests
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
@@ -8,15 +8,15 @@
 import XCTest
 @testable import SwiftSitemap
 
-final class SitemapTests: XCTestCase {
+final class SwiftSitemapTests: XCTestCase {
 
     func testA() {
         let doc = Document(.xml) {
-            Urlset {
+            UrlSet {
                 Url {
                     Loc("http://localhost/")
-                    Lastmod("2021-12-19")
-                    Changefreq(.monthly)
+                    LastMod("2021-12-19")
+                    ChangeFreq(.monthly)
                     Priority(0.5)
                 }
             }

@@ -1,6 +1,6 @@
 //
 //  DocumentTests.swift
-//  SwiftHtml
+//  SwiftHtmlTests
 //
 //  Created by Tibor Bodecs on 2021. 08. 08..
 //

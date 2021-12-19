@@ -1,13 +1,11 @@
 //
-//  File.swift
-//  
+//  Changefreq.swift
+//  SwiftSitemap
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-import Foundation
-
-public final class Changefreq: Tag {
+public final class ChangeFreq: Tag {
     
     public enum Value: String {
         case always
