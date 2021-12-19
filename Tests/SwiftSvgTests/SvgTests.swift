@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SwiftHtml
+@testable import SwiftSvg
 
 final class SvgTests: XCTestCase {
 
