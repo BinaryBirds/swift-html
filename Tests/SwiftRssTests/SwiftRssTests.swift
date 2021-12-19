@@ -11,7 +11,7 @@ import XCTest
 final class RssTests: XCTestCase {
 
     func testA() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Rss {
                 Channel {
                     Title("lorem")

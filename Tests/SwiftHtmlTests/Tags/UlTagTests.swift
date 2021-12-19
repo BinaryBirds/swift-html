@@ -11,7 +11,7 @@ import XCTest
 final class UlTagTests: XCTestCase {
 
     func testUl() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Ul {
                 Li("a")
                 Li("b")

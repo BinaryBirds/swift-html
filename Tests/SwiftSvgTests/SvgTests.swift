@@ -11,7 +11,7 @@ import XCTest
 final class SvgTests: XCTestCase {
 
     func testSvgWithLine() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Svg {
                 Line(x1: 1, y1: 2, x2: 3, y2: 4)
             }
@@ -28,7 +28,7 @@ final class SvgTests: XCTestCase {
     }
     
     func testSvgWithCircle() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Svg {
                 Circle(cx: 1, cy: 2, r: 3)
             }

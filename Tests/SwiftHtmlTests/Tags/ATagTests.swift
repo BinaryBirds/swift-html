@@ -12,7 +12,7 @@ final class ATagTests: XCTestCase {
 
     func testA() {
         
-        let doc = Document(.unspecified) {
+        let doc = Document {
             A {
                 P("Hello")
             }

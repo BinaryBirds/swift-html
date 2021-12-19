@@ -11,7 +11,7 @@ import XCTest
 final class InputTagTests: XCTestCase {
 
     func testCheckedInput() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Input()
                 .type(.checkbox)
                 .checked()
@@ -23,7 +23,7 @@ final class InputTagTests: XCTestCase {
     }
     
     func testUncheckedInput() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Input()
                 .type(.checkbox)
                 // first add checked attribute
@@ -38,7 +38,7 @@ final class InputTagTests: XCTestCase {
     }
     
     func testKey() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Input()
                 .type(.text)
                 .key("email")

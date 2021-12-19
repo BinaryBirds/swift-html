@@ -12,7 +12,7 @@ final class TagBuilderTests: XCTestCase {
         
     func testOptionalBuilder() {
         let condition: Bool = false
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Div {
                 if condition {
                     H1("a")
@@ -30,7 +30,7 @@ final class TagBuilderTests: XCTestCase {
     
     func testEitherFirstBuilder() {
         let condition: Bool = true
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Div {
                 if condition {
                     H1("a")
@@ -53,7 +53,7 @@ final class TagBuilderTests: XCTestCase {
     
     func testEitherSecondBuilder() {
         let condition: Bool = false
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Div {
                 if condition {
                     H1("a")
@@ -74,7 +74,7 @@ final class TagBuilderTests: XCTestCase {
     }
     
     func testArrayBuilder() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Div {
                 for i in 0..<3 {
                     P(String(i + 1))
@@ -92,7 +92,7 @@ final class TagBuilderTests: XCTestCase {
     }
     
     func testGroupBuilder() {
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Main {
                 H1("Lorem ipsum")
                 P("Dolor sit amet")
