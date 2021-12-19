@@ -8,6 +8,6 @@
 public final class Title: Tag {
 
     public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "title", contents: contents))
+        super.init(Node(type: .standard, name: "title", contents: "<![CDATA[" + contents + "]]>"))
     }
 }

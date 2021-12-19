@@ -8,6 +8,6 @@
 public final class Description: Tag {
 
     public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "description", contents: contents))
+        super.init(Node(type: .standard, name: "description", contents: "<![CDATA[" + contents + "]]>"))
     }
 }
