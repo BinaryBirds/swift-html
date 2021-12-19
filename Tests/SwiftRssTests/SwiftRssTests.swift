@@ -11,7 +11,7 @@ import XCTest
 final class RssTests: XCTestCase {
 
     func testA() {
-        let doc = Document {
+        let doc = Document(.xml) {
             Rss {
                 Channel {
                     Title("lorem")
@@ -34,6 +34,7 @@ final class RssTests: XCTestCase {
             }
         }
         XCTAssertEqual(DocumentRenderer().render(doc), """
+        <?xml version="1.0" encoding="utf-8" ?>
         <rss version="2.0">
             <channel>
                 <title><![CDATA[lorem]]></title>
