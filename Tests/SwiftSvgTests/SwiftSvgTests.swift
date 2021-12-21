@@ -81,5 +81,18 @@ final class SwiftSvgTests: XCTestCase {
         </svg>
         """)
     }
+    
+    func testEllipse() {
+        let doc = Document {
+            Svg {
+                Ellipse(cx: 1, cy: 2, rx: 3, ry: 4)
+            }
+        }
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+        <svg>
+            <ellipse cx="1" cy="2" rx="3" ry="4"></ellipse>
+        </svg>
+        """)
+    }
 
 }
