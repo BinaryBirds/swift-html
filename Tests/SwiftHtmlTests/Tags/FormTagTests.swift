@@ -12,7 +12,7 @@ final class FormTagTests: XCTestCase {
 
     func testGroup() {
         let items = ["a", "b", "c"]
-        let doc = Document(.unspecified) {
+        let doc = Document {
             Form {
                 items.map { P($0) }
             }

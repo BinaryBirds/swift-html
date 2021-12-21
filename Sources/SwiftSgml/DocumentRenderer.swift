@@ -1,6 +1,6 @@
 //
 //  DocumentRenderer.swift
-//  SwiftHtml
+//  SwiftSgml
 //
 //  Created by Tibor Bodecs on 2021. 11. 19..
 //
@@ -24,7 +24,6 @@ public struct DocumentRenderer {
     // MARK: - private render methods
 
     private func renderDocumentType(_ type: Document.`Type`) -> String {
-        
         switch type {
         case .unspecified:
             return ""

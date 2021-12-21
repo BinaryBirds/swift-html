@@ -5,7 +5,7 @@ An awesome Swift HTML DSL library using result builders.
 ```swift
 import SwiftHtml 
 
-let doc = Document {
+let doc = Document(.html) {
     Html {
         Head {
             Title("Hello Swift HTML DSL")

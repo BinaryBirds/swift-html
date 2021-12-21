@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  ATagTests.swift
+//  SwiftHtmlTests
 //
 //  Created by Tibor Bodecs on 2021. 11. 29..
 //
@@ -12,7 +12,7 @@ final class ATagTests: XCTestCase {
 
     func testA() {
         
-        let doc = Document(.unspecified) {
+        let doc = Document {
             A {
                 P("Hello")
             }

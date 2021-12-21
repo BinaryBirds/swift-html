@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  Svg.swift
+//  SwiftSvg
 //
 //  Created by Tibor Bodecs on 2021. 11. 29..
 //

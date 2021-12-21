@@ -1,6 +1,6 @@
 //
 //  Node.swift
-//  SwiftHtml
+//  SwiftSgml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //

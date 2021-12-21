@@ -1,6 +1,6 @@
 //
 //  Document.swift
-//  SwiftHtml
+//  SwiftSgml
 //
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
@@ -17,7 +17,7 @@ public struct Document {
     public let type: `Type`
     public let root: Tag
     
-    public init(_ type: `Type` = .html, _ builder: () -> Tag) {
+    public init(_ type: `Type` = .unspecified, _ builder: () -> Tag) {
         self.type = type
         self.root = builder()
     }
