@@ -24,7 +24,6 @@ public struct DocumentRenderer {
     // MARK: - private render methods
 
     private func renderDocumentType(_ type: Document.`Type`) -> String {
-        
         switch type {
         case .unspecified:
             return ""
