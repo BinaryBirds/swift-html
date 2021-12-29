@@ -23,8 +23,8 @@ public extension Style {
         attribute("media", value)
     }
     
-    /// Specifies the media type of the `<style>` tag
-    func type() -> Self {
+    /// Specifies the media type (text/css) of the `<style>` tag
+    func css() -> Self {
         attribute("type", "text/css")
     }
 }
