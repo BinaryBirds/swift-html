@@ -24,8 +24,8 @@ public final class Script: Tag {
 public extension Script {
 
     /// Specifies that the script is executed asynchronously (only for external scripts)
-    func async() -> Self {
-        flagAttribute("async")
+    func async(_ condition: Bool = true) -> Self {
+        flagAttribute("async", nil, condition)
     }
     
     /// Sets the mode of the request to an HTTP CORS Request

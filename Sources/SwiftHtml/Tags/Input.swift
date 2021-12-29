@@ -67,8 +67,8 @@ public extension Input {
     }
     
     /// Specifies that an <input> element should automatically get focus when the page loads
-    func autofocus() -> Self {
-        flagAttribute("autofocus")
+    func autofocus(_ condition: Bool = true) -> Self {
+        flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")
@@ -86,8 +86,8 @@ public extension Input {
     }
     
     /// Specifies that an <input> element should be disabled
-    func disabled() -> Self {
-        flagAttribute("disabled")
+    func disabled(_ condition: Bool = true) -> Self {
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies the form the <input> element belongs to
@@ -111,8 +111,8 @@ public extension Input {
     }
     
     /// Defines that form elements should not be validated when submitted
-    func formnovalidate() -> Self {
-        flagAttribute("formnovalidate")
+    func formnovalidate(_ condition: Bool = true) -> Self {
+        flagAttribute("formnovalidate", nil, condition)
     }
     
     /// Specifies where to display the response that is received after submitting the form (for type="submit" and type="image")
@@ -151,8 +151,8 @@ public extension Input {
     }
     
     /// Specifies that a user can enter more than one value in an `<input>` element
-    func multiple() -> Self {
-        flagAttribute("multiple")
+    func multiple(_ condition: Bool = true) -> Self {
+        flagAttribute("multiple", nil, condition)
     }
     
     /// Specifies the name of an `<input>` element
@@ -171,13 +171,13 @@ public extension Input {
     }
     
     /// Specifies that an input field is read-only
-    func readonly() -> Self {
-        flagAttribute("readonly")
+    func readonly(_ condition: Bool = true) -> Self {
+        flagAttribute("readonly", nil, condition)
     }
     
     /// Specifies that an input field must be filled out before submitting the form
-    func required() -> Self {
-        flagAttribute("required")
+    func required(_ condition: Bool = true) -> Self {
+        flagAttribute("required", nil, condition)
     }
     
     /// Specifies the width, in characters, of an `<input>` element

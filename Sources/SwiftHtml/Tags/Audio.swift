@@ -29,6 +29,7 @@ public final class Audio: Tag {
 }
 
 public extension Audio {
+    
     enum Preload: String {
         /// The author thinks that the browser should load the entire audio file when the page loads
         case auto
@@ -39,23 +40,23 @@ public extension Audio {
     }
     
     /// Specifies that the audio will start playing as soon as it is ready
-    func autoplay() -> Self {
-        flagAttribute("autoplay")
+    func autoplay(_ condition: Bool = true) -> Self {
+        flagAttribute("autoplay", nil, condition)
     }
     
     /// Specifies that audio controls should be displayed (such as a play/pause button etc)
-    func controls() -> Self {
-        flagAttribute("controls")
+    func controls(_ condition: Bool = true) -> Self {
+        flagAttribute("controls", nil, condition)
     }
     
     /// Specifies that the audio will start over again, every time it is finished
-    func loop() -> Self {
-        flagAttribute("loop")
+    func loop(_ condition: Bool = true) -> Self {
+        flagAttribute("loop", nil, condition)
     }
     
     /// Specifies that the audio output should be muted
-    func muted() -> Self {
-        flagAttribute("muted")
+    func muted(_ condition: Bool = true) -> Self {
+        flagAttribute("muted", nil, condition)
     }
     
     /// Specifies if and how the author thinks the audio should be loaded when the page loads

@@ -18,8 +18,8 @@ public final class Fieldset: Tag {
 public extension Fieldset {
     
     /// Specifies that a group of related form elements should be disabled
-    func disabled() -> Self {
-        flagAttribute("disabled")
+    func disabled(_ condition: Bool = true) -> Self {
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies which form the fieldset belongs to

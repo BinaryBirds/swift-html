@@ -26,13 +26,13 @@ public final class Select: Tag {
 public extension Select {
     
     /// Specifies that the drop-down list should automatically get focus when the page loads
-    func autofocus() -> Self {
-        flagAttribute("autofocus")
+    func autofocus(_ condition: Bool = true) -> Self {
+        flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies that a drop-down list should be disabled
-    func disabled() -> Self {
-        flagAttribute("disabled")
+    func disabled(_ condition: Bool = true) -> Self {
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Defines which form the drop-down list belongs to
@@ -41,8 +41,8 @@ public extension Select {
     }
     
     /// Specifies that multiple options can be selected at once
-    func multiple() -> Self {
-        flagAttribute("multiple")
+    func multiple(_ condition: Bool = true) -> Self {
+        flagAttribute("multiple", nil, condition)
     }
     
     /// Defines a name for the drop-down list
@@ -51,8 +51,8 @@ public extension Select {
     }
     
     /// Specifies that the user is required to select a value before submitting the form
-    func required() -> Self {
-        flagAttribute("required")
+    func required(_ condition: Bool = true) -> Self {
+        flagAttribute("required", nil, condition)
     }
     
     /// Defines the number of visible options in a drop-down list

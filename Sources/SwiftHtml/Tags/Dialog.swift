@@ -16,8 +16,9 @@ public final class Dialog: Tag {
 }
 
 public extension Dialog {
+    
     /// Specifies that the dialog element is active and that the user can interact with it
-    func open() -> Self {
-        flagAttribute("open")
+    func open(_ condition: Bool = true) -> Self {
+        flagAttribute("open", nil, condition)
     }
 }

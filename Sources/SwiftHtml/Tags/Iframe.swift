@@ -77,8 +77,8 @@ public extension Iframe {
     }
     
     /// Specifies a feature policy for the `<iframe>`
-    func allow() -> Self {
-        flagAttribute("allow")
+    func allow(_ condition: Bool = true) -> Self {
+        flagAttribute("allow", nil, condition)
     }
     
     /// Set to true if the `<iframe>` can activate fullscreen mode by calling the requestFullscreen() method

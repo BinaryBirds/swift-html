@@ -36,7 +36,7 @@ public extension Ol {
     
     /// Specifies that the list order should be reversed (9,8,7...)
     func reversed(_ value: Double) -> Self {
-        flagAttribute("reversed")
+        attribute("reversed", String(value))
     }
     
     /// Specifies the start value of an ordered list

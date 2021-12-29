@@ -47,8 +47,8 @@ public extension Img {
     }
     
     /// Specifies an image as a server-side image map
-    func ismap() -> Self {
-        flagAttribute("ismap")
+    func ismap(_ condition: Bool = true) -> Self {
+        flagAttribute("ismap", nil, condition)
     }
     
     /// Specifies whether a browser should load an image immediately or to defer loading of images until some conditions are met

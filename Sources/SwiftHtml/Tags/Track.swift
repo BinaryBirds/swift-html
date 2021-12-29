@@ -34,8 +34,8 @@ public extension Track {
     }
     
     /// Specifies that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
-    func `default`() -> Self {
-        flagAttribute("default")
+    func `default`(_ condition: Bool = true) -> Self {
+        flagAttribute("default", nil, condition)
     }
     
     /// Specifies the kind of text track

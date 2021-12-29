@@ -18,8 +18,8 @@ public final class Optgroup: Tag {
 public extension Optgroup {
     
     /// Specifies that an option-group should be disabled
-    func disabled() -> Self {
-        flagAttribute("disabled")
+    func disabled(_ condition: Bool = true) -> Self {
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies a label for an option-group

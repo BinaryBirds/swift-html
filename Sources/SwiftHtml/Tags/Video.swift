@@ -40,13 +40,13 @@ public extension Video {
     }
     
     /// Specifies that the video will start playing as soon as it is ready
-    func autoplay() -> Self {
-        flagAttribute("autoplay")
+    func autoplay(_ condition: Bool = true) -> Self {
+        flagAttribute("autoplay", nil, condition)
     }
     
     /// Specifies that video controls should be displayed (such as a play/pause button etc).
-    func controls() -> Self {
-        flagAttribute("controls")
+    func controls(_ condition: Bool = true) -> Self {
+        flagAttribute("controls", nil, condition)
     }
     
     /// Sets the height of the video player
@@ -55,13 +55,13 @@ public extension Video {
     }
     
     /// Specifies that the video will start over again, every time it is finished
-    func loop() -> Self {
-        flagAttribute("loop")
+    func loop(_ condition: Bool = true) -> Self {
+        flagAttribute("loop", nil, condition)
     }
     
     /// Specifies that the audio output of the video should be muted
-    func muted() -> Self {
-        flagAttribute("muted")
+    func muted(_ condition: Bool = true) -> Self {
+        flagAttribute("muted", nil, condition)
     }
     
     /// Specifies an image to be shown while the video is downloading, or until the user hits the play button

@@ -31,13 +31,13 @@ public extension Button {
     }
 
     /// Specifies that a button should automatically get focus when the page loads
-    func autofocus() -> Self {
-        flagAttribute("autofocus")
+    func autofocus(_ condition: Bool = true) -> Self {
+        flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies that a button should be disabled
-    func disabled() -> Self {
-        flagAttribute("disabled")
+    func disabled(_ condition: Bool = true) -> Self {
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies which form the button belongs to
@@ -61,8 +61,8 @@ public extension Button {
     }
     
     /// Specifies that the form-data should not be validated on submission. Only for type="submit"
-    func formnovalidate() -> Self {
-        flagAttribute("formnovalidate")
+    func formnovalidate(_ condition: Bool = true) -> Self {
+        flagAttribute("formnovalidate", nil, condition)
     }
     
     /// Specifies where to display the response after submitting the form. Only for type="submit"

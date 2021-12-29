@@ -81,8 +81,8 @@ public extension Form {
     }
     
     /// Specifies that the form should not be validated when submitted
-    func novalidate() -> Self {
-        flagAttribute("novalidate")
+    func novalidate(_ condition: Bool = true) -> Self {
+        flagAttribute("novalidate", nil, condition)
     }
     
     /// Specifies the relationship between a linked resource and the current document

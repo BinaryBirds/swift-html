@@ -22,8 +22,8 @@ public final class Details: Tag {
 public extension Details {
     
     /// Specifies that the details should be visible (open) to the user
-    func open() -> Self {
-        flagAttribute("open")
+    func open(_ condition: Bool = true) -> Self {
+        flagAttribute("open", nil, condition)
     }
 }
 
