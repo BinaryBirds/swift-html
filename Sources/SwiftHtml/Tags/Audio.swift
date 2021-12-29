@@ -21,7 +21,7 @@
 ///     Safari   | YES | YES  | NO
 ///     Opera    | YES | YES  | YES
 ///      *From Edge 79
-public final class Audio: Tag {
+open class Audio: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "audio"), children: builder())

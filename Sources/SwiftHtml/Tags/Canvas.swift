@@ -10,7 +10,7 @@
 /// The `<canvas>` tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.
 /// 
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
-public final class Canvas: Tag {
+open class Canvas: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "canvas", contents: contents))

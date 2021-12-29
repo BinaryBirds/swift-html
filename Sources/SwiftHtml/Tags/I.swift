@@ -16,7 +16,7 @@
 /// - `<mark>` (marked/highlighted text)
 /// - `<cite>` (the title of a work)
 /// - `<dfn>` (a definition term)
-public final class I: Tag {
+open class I: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "i", contents: contents))

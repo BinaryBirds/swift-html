@@ -12,7 +12,7 @@ import Darwin
 /// The `<input>` element is the most important form element.
 ///
 /// The `<input>` element can be displayed in several ways, depending on the type attribute.
-public final class Input: Tag {
+open class Input: Tag {
 
     public init() {
         super.init(Node(type: .empty, name: "input"))

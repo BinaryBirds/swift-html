@@ -10,7 +10,7 @@
 /// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
-public final class Script: Tag {
+open class Script: Tag {
     
     public enum `Type`: String {
         case javascript = "text/javascript"

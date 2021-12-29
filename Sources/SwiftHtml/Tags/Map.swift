@@ -10,7 +10,7 @@
 /// The required name attribute of the `<map>` element is associated with the `<img>`'s usemap attribute and creates a relationship between the image and the map.
 ///
 /// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
-public final class Map: Tag {
+open class Map: Tag {
 
     public init(name: String, @TagBuilder _ builder: () -> [Tag]) {
         let node = Node(type: .standard, name: "map", attributes: [Attribute(key: "name", value: name)])

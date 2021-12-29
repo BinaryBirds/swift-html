@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 12. 21..
 //
 
-public final class Rect: Tag {
+open class Rect: Tag {
 
     public init(x: Int, y: Int, width: Int, height: Int) {
         super.init(Node(type: .standard, name: "rect", attributes: [

@@ -8,7 +8,7 @@
 /// The `<fieldset>` tag is used to group related elements in a form.
 /// 
 /// The `<fieldset>` tag draws a box around the related elements.
-public final class Fieldset: Tag {
+open class Fieldset: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "fieldset"), children: builder())

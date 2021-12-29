@@ -16,7 +16,7 @@
 /// The `<option>` tags inside the `<select>` element define the available options in the drop-down list.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-public final class Select: Tag {
+open class Select: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "select"), children: builder())

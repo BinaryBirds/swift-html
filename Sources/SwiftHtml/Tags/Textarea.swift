@@ -18,7 +18,7 @@
 /// The id attribute is needed to associate the text area with a label.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-public final class Textarea: Tag {
+open class Textarea: Tag {
 
     public init(_ contents: String? = nil) {
         super.init(Node(type: .standard, name: "textarea", contents: contents ?? ""))

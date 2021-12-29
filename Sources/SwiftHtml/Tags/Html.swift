@@ -10,7 +10,7 @@
 /// The `<html>` tag is the container for all other HTML elements (except for the `<!DOCTYPE>` tag).
 ///
 /// **Note:** You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
-public final class Html: Tag {
+open class Html: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "html"), children: builder())

@@ -12,7 +12,7 @@
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For unordered list, use the `<ul>` tag.
-public final class Ol: Tag {
+open class Ol: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "ol"), children: builder())

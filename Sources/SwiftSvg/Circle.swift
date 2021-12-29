@@ -6,7 +6,7 @@
 //
 
 
-public final class Circle: Tag {
+open class Circle: Tag {
 
     public init(cx: Int, cy: Int, r: Int) {
         super.init(Node(type: .standard, name: "circle", attributes: [

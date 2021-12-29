@@ -14,7 +14,7 @@
 /// - An unvisited link is underlined and blue
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
-public final class A: Tag {
+open class A: Tag {
 
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "a", contents: contents), children: builder())

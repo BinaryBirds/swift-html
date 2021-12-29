@@ -11,7 +11,7 @@
 ///
 /// **Note:** Only use one `<h1>` per page - this should represent the main heading/subject for the whole page.
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
-public final class H5: Tag {
+open class H5: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "h5", contents: contents))

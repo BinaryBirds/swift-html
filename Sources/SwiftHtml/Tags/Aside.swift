@@ -13,7 +13,7 @@
 /// 
 /// **Note:** The `<aside>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<aside>` element (see example below).
-public final class Aside: Tag {
+open class Aside: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "aside"), children: builder())

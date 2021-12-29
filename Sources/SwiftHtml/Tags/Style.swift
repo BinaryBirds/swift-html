@@ -9,7 +9,7 @@
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
-public final class Style: Tag {
+open class Style: Tag {
 
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "style", contents: contents))

@@ -16,7 +16,7 @@
 /// - back to top links
 /// - related documents
 /// You can have several `<footer>` elements in one document.
-public final class Footer: Tag {
+open class Footer: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "footer"), children: builder())

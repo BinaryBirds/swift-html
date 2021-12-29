@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 12. 21..
 //
 
-public final class Polygon: Tag {
+open class Polygon: Tag {
 
     public init(_ points: [Int]) {
         super.init(Node(type: .standard, name: "polygon", attributes: [

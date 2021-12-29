@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 12. 21..
 //
 
-public final class Ellipse: Tag {
+open class Ellipse: Tag {
 
     public init(cx: Int, cy: Int, rx: Int, ry: Int) {
         super.init(Node(type: .standard, name: "ellipse", attributes: [

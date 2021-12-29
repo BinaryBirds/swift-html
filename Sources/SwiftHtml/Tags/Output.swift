@@ -6,7 +6,7 @@
 //
 
 /// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
-public final class Output: Tag {
+open class Output: Tag {
     
     public init() {
         super.init(Node(type: .standard, name: "output"))

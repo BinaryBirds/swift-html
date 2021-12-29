@@ -20,7 +20,7 @@
 ///     Firefox | YES | YES  | YES
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
-public final class Video: Tag {
+open class Video: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "video"), children: builder())

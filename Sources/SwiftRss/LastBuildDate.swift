@@ -6,7 +6,7 @@
 //
 
 
-public final class LastBuildDate: Tag {
+open class LastBuildDate: Tag {
 
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "lastBuildDate", contents: contents))

@@ -10,7 +10,7 @@
 ///
 /// The `<source>` tag allows you to specify alternative video/audio/image files which the browser may choose from, based on browser support or viewport width.
 /// The browser will choose the first `<source>` it supports.
-public final class Source: Tag {
+open class Source: Tag {
 
     public init() {
         super.init(Node(type: .empty, name: "source"))

@@ -10,7 +10,7 @@
 /// Browsers automatically add a single blank line before and after each `<p>` element.
 /// 
 /// **Tip:** Use CSS to style paragraphs.
-public final class P: Tag {
+open class P: Tag {
     
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "p", contents: contents), children: builder())

@@ -10,7 +10,7 @@
 /// Browsers normally insert quotation marks around the quotation.
 ///
 /// **Tip:** Use `<blockquote>` for long quotations.
-public final class Q: Tag {
+open class Q: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "q", contents: contents))

@@ -10,7 +10,7 @@
 /// **Note:** A person's name is not the title of a work.
 /// 
 /// The text in the `<cite>` element usually renders in italic.
-public final class Cite: Tag {
+open class Cite: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "cite", contents: contents))

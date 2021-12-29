@@ -11,7 +11,7 @@
 ///
 /// The term inside the `<dfn>` tag can be any of the following:
 /// `<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>`
-public final class Dfn: Tag {
+open class Dfn: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "dfn", contents: contents))

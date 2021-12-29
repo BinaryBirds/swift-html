@@ -10,7 +10,7 @@
 /// The `<base>` tag must have either an href or a target attribute present, or both.
 ///
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
-public final class Base: Tag {
+open class Base: Tag {
 
     public init() {
         super.init(Node(type: .empty, name: "base"))

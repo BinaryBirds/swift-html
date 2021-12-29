@@ -18,7 +18,7 @@
 /// If width and height are not specified, the page might flicker while the image loads.
 ///
 /// **Tip:** To link an image to another document, simply nest the `<img>` tag inside an `<a>` tag (see example below).
-public final class Img: Tag {
+open class Img: Tag {
 
     public init(src: String, alt: String) {
         let node = Node(type: .empty, name: "img", attributes: [

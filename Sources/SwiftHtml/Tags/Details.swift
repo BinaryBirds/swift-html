@@ -12,7 +12,7 @@
 /// Any sort of content can be put inside the `<details>` tag.
 ///
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
-public final class Details: Tag {
+open class Details: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "details"), children: builder())

@@ -10,7 +10,7 @@
 /// The `<span>` tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
 ///
 /// The `<span>` tag is much like the `<div>` element, but `<div>` is a block-level element and `<span>` is an inline element.
-public final class Span: Tag {
+open class Span: Tag {
     
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "span", contents: contents), children: builder())

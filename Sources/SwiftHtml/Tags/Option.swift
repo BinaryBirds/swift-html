@@ -12,7 +12,7 @@
 /// **Note:** The `<option>` tag can be used without any attributes, but you usually need the value attribute, which indicates what is sent to the server on form submission.
 /// 
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
-public final class Option: Tag {
+open class Option: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "option", contents: contents))

@@ -6,7 +6,7 @@
 //
 
 
-public final class Path: Tag {
+open class Path: Tag {
 
     public init(_ d: String) {
         super.init(Node(type: .standard, name: "path", attributes: [

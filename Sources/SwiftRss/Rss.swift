@@ -6,7 +6,7 @@
 //
 
 // https://validator.w3.org/feed/docs/rss2.html#ltttlgtSubelementOfLtchannelgt
-public final class Rss: Tag {
+open class Rss: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "rss", attributes: [

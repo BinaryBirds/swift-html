@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 11. 29..
 //
 
-public final class Svg: Tag {
+open class Svg: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "svg"), children: builder())

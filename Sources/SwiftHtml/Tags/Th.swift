@@ -15,7 +15,7 @@
 /// The text in `<th>` elements are bold and centered by default.
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
-public final class Th: Tag {
+open class Th: Tag {
     
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "th", contents: contents), children: builder())

@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-public final class ChangeFreq: Tag {
+open class ChangeFreq: Tag {
     
     public enum Value: String {
         case always

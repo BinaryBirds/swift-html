@@ -16,7 +16,7 @@
 /// The `<img>` element is required as the last child of the `<picture>` element, as a fallback option if none of the source tags matches.
 ///
 /// **Tip:** The `<picture>` element works "similar" to `<video>` and `<audio>`. You set up different sources, and the first source that fits the preferences is the one being used.
-public final class Picture: Tag {
+open class Picture: Tag {
     
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "picture"), children: builder())

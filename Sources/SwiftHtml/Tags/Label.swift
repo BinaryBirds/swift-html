@@ -33,7 +33,7 @@
 ///
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
-public final class Label: Tag {
+open class Label: Tag {
 
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "label", contents: contents), children: builder())

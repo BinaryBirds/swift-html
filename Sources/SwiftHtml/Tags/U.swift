@@ -11,7 +11,7 @@
 /// You can change this with CSS (see example below).
 ///
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
-public final class U: Tag {
+open class U: Tag {
 
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "u", contents: contents))

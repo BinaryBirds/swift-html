@@ -8,7 +8,7 @@
 /// The `<del>` tag defines text that has been deleted from a document.
 ///
 /// Browsers will usually strike a line through deleted text.
-public final class Del: Tag {
+open class Del: Tag {
     
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "del", contents: contents))

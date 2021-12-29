@@ -14,7 +14,7 @@
 /// In `<ol>`, the list items will usually be displayed with numbers or letters.
 ///
 /// **Tip:** Use CSS to style lists.
-public final class Li: Tag {
+open class Li: Tag {
 
     public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "li", contents: contents), children: builder())

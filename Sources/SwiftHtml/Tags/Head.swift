@@ -20,7 +20,7 @@
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
-public final class Head: Tag {
+open class Head: Tag {
 
     public init(@TagBuilder _ builder: () -> [Tag]) {
         super.init(Node(type: .standard, name: "head"), children: builder())

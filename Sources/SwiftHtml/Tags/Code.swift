@@ -14,7 +14,7 @@
 /// - `<kbd>`    Defines keyboard input
 /// - `<var>`    Defines a variable
 /// - `<pre>`    Defines preformatted text
-public final class Code: Tag {
+open class Code: Tag {
 
     public init(_ contents: String) {
         super.init(Node(type: .standard, name: "code", contents: contents))
