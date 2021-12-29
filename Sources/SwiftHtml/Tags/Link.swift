@@ -19,6 +19,7 @@ open class Link: Tag {
 }
 
 public extension Link {
+    
     enum Rel: String {
         /// Provides a link to an alternate version of the document (i.e. print page, translated or mirror).
         ///
@@ -60,6 +61,14 @@ public extension Link {
         case search
         /// Imports a style sheet
         case stylesheet
+        
+        /// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6
+        case appleTouchIcon = "apple-touch-icon"
+        case appleTouchStartupImage = "apple-touch-startup-image"
+        case appleMobileWebAppTitle = "apple-mobile-web-app-title"
+        case shortcutIcon = "shortcut icon"
+        case manifest
+        case maskIcon = "mask-icon"
     }
     
     /// Specifies how the element handles cross-origin requests
@@ -88,13 +97,23 @@ public extension Link {
     }
 
     /// Required. Specifies the relationship between the current document and the linked document
+    func rel(_ value: String) -> Self {
+        attribute("rel", value)
+    }
+
+    /// Specifies the relationship between the current document and the linked document
     func rel(_ value: Rel) -> Self {
-        attribute("rel", value.rawValue)
+        rel(value.rawValue)
     }
     
     /// Specifies the size of the linked resource. Only for `rel="icon"`
     func sizes(_ value: String) -> Self {
         attribute("sizes", value)
+    }
+    
+    /// Specifies the size of the linked resource. For example `57x57` if the value is `57`.
+    func sizes(_ value: Int) -> Self {
+        sizes(String(value) + "x" + String(value))
     }
         
     /// Specifies the media type of the linked document
