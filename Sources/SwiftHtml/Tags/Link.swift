@@ -13,7 +13,9 @@
 open class Link: Tag {
 
     public init(rel: Rel) {
-        let node = Node(type: .empty, name: "link", attributes: [Attribute(key: "rel", value: rel.rawValue)])
+        let node = Node(type: .empty, name: "link", attributes: [
+            Attribute(key: "rel", value: rel.rawValue),
+        ])
         super.init(node)
     }
 }
@@ -96,15 +98,15 @@ public extension Link {
         attribute("referrerpolicy", value.rawValue)
     }
 
-    /// Required. Specifies the relationship between the current document and the linked document
-    func rel(_ value: String) -> Self {
-        attribute("rel", value)
-    }
+    /// Specifies the relationship between the current document and the linked document
+//    func rel(_ value: String) -> Self {
+//        attribute("rel", value)
+//    }
 
     /// Specifies the relationship between the current document and the linked document
-    func rel(_ value: Rel) -> Self {
-        rel(value.rawValue)
-    }
+//    func rel(_ value: Rel) -> Self {
+//        rel(value.rawValue)
+//    }
     
     /// Specifies the size of the linked resource. Only for `rel="icon"`
     func sizes(_ value: String) -> Self {
