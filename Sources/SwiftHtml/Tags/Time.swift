@@ -37,7 +37,6 @@ public extension Time {
     /// - M - a prefix for "Minutes"
     /// - S - a prefix for "Seconds"
     func datetime(_ value: String) -> Self {
-        node.upsert(Attribute(key: "datetime", value: value))
-        return self
+        attribute("datetime", value)
     }
 }

@@ -30,6 +30,9 @@ let package = Package(
         .target(name: "SwiftRss", dependencies: [
             .target(name: "SwiftSgml")
         ]),
+        .testTarget(name: "SwiftSgmlTests", dependencies: [
+            .target(name: "SwiftSgml"),
+        ]),
         .testTarget(name: "SwiftHtmlTests", dependencies: [
             .target(name: "SwiftHtml"),
         ]),

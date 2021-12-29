@@ -20,6 +20,7 @@ public final class Ol: Tag {
 }
 
 public extension Ol {
+    
     enum `Type`: String {
         /// Default. Decimal numbers (1, 2, 3, 4)
         case `default` = "1"
@@ -35,19 +36,16 @@ public extension Ol {
     
     /// Specifies that the list order should be reversed (9,8,7...)
     func reversed(_ value: Double) -> Self {
-        node.upsert(Attribute(key: "reversed"))
-        return self
+        flagAttribute("reversed")
     }
     
     /// Specifies the start value of an ordered list
     func start(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "start", value: String(value)))
-        return self
+        attribute("start", String(value))
     }
     
     /// Specifies the kind of marker to use in the list
-    func type(_ value: Type) -> Self {
-        node.upsert(Attribute(key: "type", value: value.rawValue))
-        return self
+    func type(_ value: `Type`) -> Self {
+        attribute("type", value.rawValue)
     }
 }

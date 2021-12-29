@@ -32,96 +32,79 @@ public enum Translate: String {
 }
 
 public extension Tag {
-    
+        
     /// Specifies a shortcut key to activate/focus an element
     func accesskey(_ value: Character) -> Self {
-        node.upsert(Attribute(key: "accesskey", value: String(value)))
-        return self
+        attribute("accesskey", String(value))
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
     func `class`(_ value: String?, _ condition: Bool = true) -> Self {
-        if let value = value, condition {
-            node.upsert(Attribute(key: "class", value: value))
-        }
-        return self
+        attribute("class", value, condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
     func `class`(_ value: [String]) -> Self {
-        node.upsert(Attribute(key: "class", value: value.joined(separator: " ")))
-        return self
+        `class`(value.joined(separator: " "))
     }
     
     /// Specifies whether the content of an element is editable or not
     func contenteditable(_ value: Bool) -> Self {
-        node.upsert(Attribute(key: "contenteditable", value: String(value)))
-        return self
+        attribute("contenteditable", String(value))
     }
     
     /// Used to store custom data private to the page or application
     func data(key: String, _ value: String) -> Self {
-        node.upsert(Attribute(key: "data-" + key, value: value))
-        return self
+        attribute("data-" + key, value)
     }
 
     /// Specifies the text direction for the content in an element
     func dir(_ value: TextDirection = .ltr) -> Self {
-        node.upsert(Attribute(key: "dir", value: value.rawValue))
-        return self
+        attribute("dir", value.rawValue)
     }
     
     /// Specifies whether an element is draggable or not
     func draggable(_ value: Draggable = .auto) -> Self {
-        node.upsert(Attribute(key: "draggable", value: value.rawValue))
-        return self
+        attribute("draggable", value.rawValue)
     }
     
     /// Specifies that an element is not yet, or is no longer, relevant
     func hidden(_ value: Bool? = nil) -> Self {
-        node.upsert(Attribute(key: "hidden", value: value?.description))
-        return self
+        attribute("hidden", value?.description)
     }
     
     /// Specifies a unique id for an element
     func `id`(_ value: String) -> Self {
-        node.upsert(Attribute(key: "id", value: value))
-        return self
+        attribute("id", value)
     }
     
     /// Specifies the language of the element's content
     func lang(_ value: String) -> Self {
-        node.upsert(Attribute(key: "lang", value: value))
-        return self
+        attribute("lang", value)
     }
     
     /// Specifies whether the element is to have its spelling and grammar checked or not
     func spellcheck(_ value: Bool) -> Self {
-        node.upsert(Attribute(key: "spellcheck", value: String(value)))
-        return self
+        attribute("spellcheck", String(value))
     }
     
     /// Specifies an inline CSS style for an element
     func style(_ value: String) -> Self {
-        node.upsert(Attribute(key: "style", value: value))
-        return self
+        attribute("style", value)
     }
     
     /// Specifies the tabbing order of an element
     func tabindex(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "tabindex", value: String(value)))
-        return self
+        attribute("tabindex", String(value))
     }
     
     /// Specifies extra information about an element
     func title(_ value: String) -> Self {
-        node.upsert(Attribute(key: "title", value: value))
-        return self
+        attribute("title", value)
     }
     
     /// Specifies whether the content of an element should be translated or not
     func translate(_ value: Translate) -> Self {
-        node.upsert(Attribute(key: "translate", value: value.rawValue))
-        return self
+        attribute("translate", value.rawValue)
     }
 }

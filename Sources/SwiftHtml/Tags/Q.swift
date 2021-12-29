@@ -18,9 +18,9 @@ public final class Q: Tag {
 }
 
 public extension Q {
+    
     /// Specifies the source URL of the quote
     func cite(_ value: String) -> Self {
-        node.upsert(Attribute(key: "cite", value: value))
-        return self
+        attribute("cite", value)
     }
 }

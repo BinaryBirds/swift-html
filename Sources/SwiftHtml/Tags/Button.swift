@@ -32,68 +32,57 @@ public extension Button {
 
     /// Specifies that a button should automatically get focus when the page loads
     func autofocus() -> Self {
-        node.upsert(Attribute(key: "autofocus"))
-        return self
+        flagAttribute("autofocus")
     }
     
     /// Specifies that a button should be disabled
     func disabled() -> Self {
-        node.upsert(Attribute(key: "disabled"))
-        return self
+        flagAttribute("disabled")
     }
     
     /// Specifies which form the button belongs to
     func form(_ value: String) -> Self {
-        node.upsert(Attribute(key: "form", value: value))
-        return self
+        attribute("form", value)
     }
     
     /// Specifies where to send the form-data when a form is submitted. Only for type="submit"
     func formaction(_ value: String) -> Self {
-        node.upsert(Attribute(key: "formaction", value: value))
-        return self
+        attribute("formaction", value)
     }
     
     /// Specifies how form-data should be encoded before sending it to a server. Only for type="submit"
     func formenctype(_ value: Enctype = .urlencoded) -> Self {
-        node.upsert(Attribute(key: "formenctype", value: value.rawValue))
-        return self
+        attribute("formenctype", value.rawValue)
     }
     
     /// Specifies how to send the form-data (which HTTP method to use). Only for type="submit"
     func formmethod(_ value: Enctype = .urlencoded) -> Self {
-        node.upsert(Attribute(key: "formmethod", value: value.rawValue))
-        return self
+        attribute("formmethod", value.rawValue)
     }
     
     /// Specifies that the form-data should not be validated on submission. Only for type="submit"
     func formnovalidate() -> Self {
-        node.upsert(Attribute(key: "formnovalidate"))
-        return self
+        flagAttribute("formnovalidate")
     }
     
     /// Specifies where to display the response after submitting the form. Only for type="submit"
     func target(_ value: TargetFrame) -> Self {
-        node.upsert(Attribute(key: "target", value: value.rawValue))
-        return self
+        attribute("target", value.rawValue)
     }
     
     /// Specifies a name for the button
     func name(_ value: String) -> Self {
-        node.upsert(Attribute(key: "name", value: value))
-        return self
+        attribute("name", value)
     }
     
     /// Specifies the type of button
     func type(_ value: Type) -> Self {
-        node.upsert(Attribute(key: "type", value: value.rawValue))
-        return self
+        attribute("type", value.rawValue)
     }
     
     /// Specifies an initial value for the button
     func value(_ value: String) -> Self {
-        node.upsert(Attribute(key: "value", value: value))
-        return self
+        attribute("value", value)
     }
     
 }

@@ -35,74 +35,62 @@ public extension Textarea {
     }
 
     /// Specifies that a text area should automatically get focus when the page loads
-    func autofocus() -> Self {
-        node.upsert(Attribute(key: "autofocus"))
-        return self
+    func autofocus(_ condition: Bool = true) -> Self {
+        flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies the visible width of a text area
     func cols(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "cols", value: String(value)))
-        return self
+        attribute("cols", String(value))
     }
     
     /// Specifies that the text direction of the textarea will be submitted
     func dirname(_ value: String) -> Self {
-        node.upsert(Attribute(key: "dirname", value: value))
-        return self
+        attribute("dirname", value)
     }
     
     /// Specifies that a text area should be disabled
-    func disabled() -> Self {
-        node.upsert(Attribute(key: "disabled"))
-        return self
+    func disabled(_ condition: Bool = true) -> Self {
+        flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies which form the text area belongs to
     func form(_ value: String) -> Self {
-        node.upsert(Attribute(key: "form", value: value))
-        return self
+        attribute("form", value)
     }
     
     /// Specifies the maximum number of characters allowed in the text area
     func maxlength(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "maxlength", value: String(value)))
-        return self
+        attribute("maxlength", String(value))
     }
 
     /// Specifies a name for a text area
     func name(_ value: String) -> Self {
-        node.upsert(Attribute(key: "name", value: value))
-        return self
+        attribute("name", value)
     }
     
     /// Specifies a short hint that describes the expected value of a text area
     func placeholder(_ value: String) -> Self {
-        node.upsert(Attribute(key: "placeholder", value: value))
-        return self
+        attribute("placeholder", value)
     }
     
     /// Specifies that a text area should be read-only
-    func readonly() -> Self {
-        node.upsert(Attribute(key: "readonly"))
-        return self
+    func readonly(_ condition: Bool = true) -> Self {
+        flagAttribute("readonly", nil, condition)
     }
     
     /// Specifies that a text area is required/must be filled out
-    func required() -> Self {
-        node.upsert(Attribute(key: "required"))
-        return self
+    func required(_ condition: Bool = true) -> Self {
+        flagAttribute("required", nil, condition)
     }
     
     /// Specifies the visible width of a text area
     func rows(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "rows", value: String(value)))
-        return self
+        attribute("rows", String(value))
     }
     
     /// Specifies how the text in a text area is to be wrapped when submitted in a form
     func wrap(_ value: Wrap) -> Self {
-        node.upsert(Attribute(key: "wrap", value: value.rawValue))
-        return self
+        attribute("wrap", value.rawValue)
     }
 }

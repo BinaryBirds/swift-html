@@ -20,9 +20,9 @@ public final class Colgroup: Tag {
 }
 
 public extension Colgroup {
+    
     /// Specifies the number of columns a column group should span
     func span(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "span", value: String(value)))
-        return self
+        attribute("span", String(value))
     }
 }

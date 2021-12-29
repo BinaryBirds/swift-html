@@ -21,45 +21,42 @@ public final class Meter: Tag {
 }
 
 public extension Meter {
+    
     /// Specifies which form the <meter> element belongs to
     func form(_ value: String) -> Self {
-        node.upsert(Attribute(key: "form", value: value))
-        return self
+        attribute("form", value)
     }
     
     /// Specifies the range that is considered to be a high value
     func high(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "high", value: String(value)))
-        return self
+        attribute("high", String(value))
+    
     }
     
     /// Specifies the range that is considered to be a low value
     func low(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "low", value: String(value)))
-        return self
+        attribute("low", String(value))
+    
     }
     
     /// Specifies the maximum value of the range
     func max(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "max", value: String(value)))
-        return self
+        attribute("max", String(value))
+    
     }
     
     /// Specifies the minimum value of the range. Default value is 0
     func min(_ value: Int = 0) -> Self {
-        node.upsert(Attribute(key: "min", value: String(value)))
-        return self
+        attribute("min", String(value))
     }
     
     /// Specifies what value is the optimal value for the gauge
     func optimum(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "optimum", value: String(value)))
-        return self
+        attribute("optimum", String(value))
     }
     
     /// Required. Specifies the current value of the gauge
     func value(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "value", value: String(value)))
-        return self
+        attribute("value", String(value))
     }
 }

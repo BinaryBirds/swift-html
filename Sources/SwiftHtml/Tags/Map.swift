@@ -19,10 +19,10 @@ public final class Map: Tag {
 }
 
 public extension Map {
+    
     /// Specifies the name of an <input> element
     func name(_ value: String) -> Self {
-        node.upsert(Attribute(key: "name", value: value))
-        return self
+        attribute("name", value)
     }
 }
 

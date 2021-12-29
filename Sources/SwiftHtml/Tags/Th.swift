@@ -41,31 +41,26 @@ public extension Th {
     
     /// Specifies an abbreviated version of the content in a header cell
     func abbr(_ value: String) -> Self {
-        node.upsert(Attribute(key: "abbr", value: value))
-        return self
+        attribute("abbr", value)
     }
     
     /// Specifies the number of columns a header cell should span
     func colspan(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "colspan", value: String(value)))
-        return self
+        attribute("colspan", String(value))
     }
     
     /// Specifies one or more header cells a cell is related to
     func headers(_ value: String) -> Self {
-        node.upsert(Attribute(key: "headers", value: value))
-        return self
+        attribute("headers", value)
     }
     
     /// Specifies the number of rows a header cell should span
     func rowspan(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "rowspan", value: String(value)))
-        return self
+        attribute("rowspan", String(value))
     }
     
     /// Specifies one or more header cells a cell is related to
     func scope(_ value: Scope) -> Self {
-        node.upsert(Attribute(key: "scope", value: value.rawValue))
-        return self
+        attribute("scope", value.rawValue)
     }
 }

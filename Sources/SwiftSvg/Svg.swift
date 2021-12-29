@@ -15,43 +15,35 @@ public final class Svg: Tag {
 public extension Svg {
 
     func width(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "width", value: String(value)))
-        return self
+        attribute("width", String(value))
     }
     
     func height(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "height", value: String(value)))
-        return self
+        attribute("height", String(value))
     }
     
     func viewBox(minX: Int, minY: Int, width: Int, height: Int) -> Self {
         let value = [minX, minY, width, height].map(String.init).joined(separator: " ")
-        node.upsert(Attribute(key: "viewBox", value: value))
-        return self
+        return attribute("viewBox", value)
     }
     
     func fill(_ value: String) -> Self {
-        node.upsert(Attribute(key: "fill", value: value))
-        return self
+        attribute("fill", value)
     }
     
     func stroke(_ value: String) -> Self {
-        node.upsert(Attribute(key: "stroke", value: value))
-        return self
+        attribute("stroke", value)
     }
     
     func strokeWidth(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "stroke-width", value: String(value)))
-        return self
+        attribute("stroke-width", String(value))
     }
     
     func strokeLinecap(_ value: String) -> Self {
-        node.upsert(Attribute(key: "stroke-linecap", value: value))
-        return self
+        attribute("stroke-linecap", value)
     }
     
     func strokeLinejoin(_ value: String) -> Self {
-        node.upsert(Attribute(key: "stroke-linejoin", value: value))
-        return self
+        attribute("stroke-linejoin", value)
     }
 }

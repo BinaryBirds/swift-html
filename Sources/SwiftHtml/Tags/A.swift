@@ -58,60 +58,49 @@ public extension A {
     }
     
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-    func download(_ name: String? = nil) -> Self {
-        node.upsert(Attribute(key: "download", value: name))
-        return self
+    func download(_ value: String? = nil) -> Self {
+        flagAttribute("download", value)
     }
     
     /// Specifies the URL of the page the link goes to
-    func href(_ url: String) -> Self {
-        node.upsert(Attribute(key: "href", value: url))
-        return self
+    func href(_ value: String) -> Self {
+        attribute("href", value)
     }
     
     /// Specifies the language of the linked document
-    func hreflang(_ langCode: String) -> Self {
-        node.upsert(Attribute(key: "hreflang", value: langCode))
-        return self
+    func hreflang(_ value: String) -> Self {
+        attribute("hreflang", value)
     }
     
     /// Specifies what media/device the linked document is optimized for
     func media(_ value: String) -> Self {
-        node.upsert(Attribute(key: "media", value: value))
-        return self
+        attribute("media", value)
     }
     
     /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
     ///
     /// Typically used for tracking.
     func ping(_ value: [String]) -> Self {
-        node.upsert(Attribute(key: "ping", value: value.joined(separator: " ")))
-        return self
+        attribute("ping", value.joined(separator: " "))
     }
     
     /// Specifies which referrer information to send with the link
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        node.upsert(Attribute(key: "referrerpolicy", value: value.rawValue))
-        return self
+        attribute("referrerpolicy", value.rawValue)
     }
     
     /// Specifies the relationship between the current document and the linked document
     func rel(_ value: Rel) -> Self {
-        node.upsert(Attribute(key: "rel", value: value.rawValue))
-        return self
+        attribute("rel", value.rawValue)
     }
 
     /// Specifies where to open the linked document
     func target(_ value: TargetFrame, _ condition: Bool = true) -> Self {
-        if condition {
-            node.upsert(Attribute(key: "target", value: value.rawValue))
-        }
-        return self
+        attribute("target", value.rawValue, condition)
     }
     
     /// The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document.
     func type(_ value: String) -> Self {
-        node.upsert(Attribute(key: "type", value: value))
-        return self
+        attribute("type", value)
     }
 }

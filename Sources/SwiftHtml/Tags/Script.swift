@@ -25,55 +25,48 @@ public extension Script {
 
     /// Specifies that the script is executed asynchronously (only for external scripts)
     func async() -> Self {
-        node.upsert(Attribute(key: "async"))
-        return self
+        flagAttribute("async")
     }
     
     /// Sets the mode of the request to an HTTP CORS Request
     func crossorigin(_ value: Crossorigin) -> Self {
-        node.upsert(Attribute(key: "crossorigin", value: value.rawValue))
-        return self
+        attribute("crossorigin", value.rawValue)
     }
     
     /// Specifies that the script is executed when the page has finished parsing (only for external scripts)
-    func `defer`() -> Self {
-        node.upsert(Attribute(key: "defer"))
-        return self
+    func `defer`(_ condition: Bool = true) -> Self {
+        flagAttribute("defer", nil, condition)
     }
     
     /// Allows a browser to check the fetched script to ensure that the code is never loaded if the source has been manipulated
     func integrity(_ value: String) -> Self {
-        node.upsert(Attribute(key: "integrity", value: value))
-        return self
+        attribute("integrity", value)
     }
     
     // @NOTE: auto capitalize string value?
     /// Specifies that the script should not be executed in browsers supporting ES2015 modules
     func nomodule(_ value: Bool) -> Self {
-        node.upsert(Attribute(key: "nomodule", value: String(value)))
-        return self
+        attribute("nomodule", String(value))
     }
     
     /// Specifies which referrer information to send when fetching a script
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        node.upsert(Attribute(key: "referrerpolicy", value: value.rawValue))
-        return self
+        attribute("referrerpolicy", value.rawValue)
     }
     
     /// The URL of the external script file.
     func src(_ value: String) -> Self {
-        node.upsert(Attribute(key: "src", value: value))
-        return self
+        attribute("src", value)
     }
     
     /// Specifies the media type of the script
     func type(_ value: String) -> Self {
-        node.upsert(Attribute(key: "type", value: value))
-        return self
+        attribute("type", value)
     }
 }
 
 public extension Script {
+    
     /// Specifies the media type of the script
     func type(_ value: `Type`) -> Self {
         type(value.rawValue)

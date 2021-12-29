@@ -41,56 +41,47 @@ public extension Video {
     
     /// Specifies that the video will start playing as soon as it is ready
     func autoplay() -> Self {
-        node.upsert(Attribute(key: "autoplay"))
-        return self
+        flagAttribute("autoplay")
     }
     
     /// Specifies that video controls should be displayed (such as a play/pause button etc).
     func controls() -> Self {
-        node.upsert(Attribute(key: "controls"))
-        return self
+        flagAttribute("controls")
     }
     
     /// Sets the height of the video player
     func height(_ value: Double) -> Self {
-        node.upsert(Attribute(key: "height", value: String(value)))
-        return self
+        attribute("height", String(value))
     }
     
     /// Specifies that the video will start over again, every time it is finished
     func loop() -> Self {
-        node.upsert(Attribute(key: "loop"))
-        return self
+        flagAttribute("loop")
     }
     
     /// Specifies that the audio output of the video should be muted
     func muted() -> Self {
-        node.upsert(Attribute(key: "muted"))
-        return self
+        flagAttribute("muted")
     }
     
     /// Specifies an image to be shown while the video is downloading, or until the user hits the play button
     func poster(_ value: String) -> Self {
-        node.upsert(Attribute(key: "poster", value: value))
-        return self
+        attribute("poster", value)
     }
     
     /// Specifies if and how the author thinks the video should be loaded when the page loads
     func preload(_ value: Preload) -> Self {
-        node.upsert(Attribute(key: "preload", value: value.rawValue))
-            return self
+        attribute("preload", value.rawValue)
     }
     
     /// Specifies the URL of the video file
     func src(_ value: String) -> Self {
-        node.upsert(Attribute(key: "src", value: value))
-        return self
+        attribute("src", value)
     }
     
     /// Sets the width of the video player
     func width(_ value: Double) -> Self {
-        node.upsert(Attribute(key: "width", value: String(value)))
-        return self
+        attribute("width", String(value))
     }
 }
 

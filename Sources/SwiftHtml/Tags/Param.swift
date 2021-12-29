@@ -14,15 +14,14 @@ public final class Param: Tag {
 }
 
 public extension Param {
+    
     /// Specifies the name of a parameter
     func name(_ value: String) -> Self {
-        node.upsert(Attribute(key: "name", value: value))
-        return self
+        attribute("name", value)
     }
     
     /// Specifies the value of the parameter
     func value(_ value: String) -> Self {
-        node.upsert(Attribute(key: "value", value: value))
-        return self
+        attribute("value", value)
     }
 }

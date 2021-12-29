@@ -53,26 +53,22 @@ public extension Meta {
 
     /// Specifies the character encoding for the HTML document
     func charset(_ value: String) -> Self {
-        node.upsert(Attribute(key: "charset", value: value))
-        return self
+        attribute("charset", value)
     }
     
     /// Specifies the value associated with the http-equiv or name attribute
     func content(_ value: String) -> Self {
-        node.upsert(Attribute(key: "content", value: value))
-        return self
+        attribute("content", value)
     }
     
     /// Provides an HTTP header for the information/value of the content attribute
     func httpEquiv(_ value: HttpEquiv) -> Self {
-        node.upsert(Attribute(key: "http-equiv", value: value.rawValue))
-        return self
+        attribute("http-equiv", value.rawValue)
     }
     
     /// set a custom name for the given meta tag
     func name(_ value: String) -> Self {
-        node.upsert(Attribute(key: "name", value: value))
-        return self
+        attribute("name", value)
     }
     
     /// Specifies a name for the metadata

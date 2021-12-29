@@ -11,174 +11,147 @@ public extension Tag {
     
     /// Script to be run after the document is printed
     func onAfterPrint(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onafterprint", value: value))
-        return self
+        attribute("onafterprint", value)
     }
     
     /// Script to be run before the document is printed
     func onBeforePrint(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onbeforeprint", value: value))
-        return self
+        attribute("onbeforeprint", value)
     }
     
     /// Script to be run when the document is about to be unloaded
     func onBeforeUnload(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onbeforeunload", value: value))
-        return self
+        attribute("onbeforeunload", value)
     }
     
     /// Script to be run when an error occurs
     func onError(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onerror", value: value))
-        return self
+        attribute("onerror", value)
     }
     
     /// Script to be run when there has been changes to the anchor part of the a URL
     func onHashChange(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onhashchange", value: value))
-        return self
+        attribute("onhashchange", value)
     }
     
     /// Fires after the page is finished loading
     func onLoad(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onload", value: value))
-        return self
+        attribute("onload", value)
     }
     
     /// Script to be run when the message is triggered
     func onMessage(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onmessage", value: value))
-        return self
+        attribute("onmessage", value)
     }
     
     /// Script to be run when the browser starts to work offline
     func onOffline(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onoffline", value: value))
-        return self
+        attribute("onoffline", value)
     }
     
     /// Script to be run when the browser starts to work online
     func onOnline(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ononline", value: value))
-        return self
+        attribute("ononline", value)
     }
     
     /// Script to be run when a user navigates away from a page
     func onPageHide(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onpagehide", value: value))
-        return self
+        attribute("onpagehide", value)
     }
     
     /// Script to be run when a user navigates to a page
     func onPageShow(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onpageshow", value: value))
-        return self
+        attribute("onpageshow", value)
     }
     
     /// Script to be run when the window's history changes
     func onPopState(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onpopstate", value: value))
-        return self
+        attribute("onpopstate", value)
     }
     
     /// Fires when the browser window is resized
     func onResize(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onresize", value: value))
-        return self
+        attribute("onresize", value)
     }
     
     /// Script to be run when a Web Storage area is updated
     func onStorage(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onstorage", value: value))
-        return self
+        attribute("onstorage", value)
     }
     
     /// Fires once a page has unloaded (or the browser window has been closed)
     func onUnload(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onunload", value: value))
-        return self
+        attribute("onunload", value)
     }
     
     // MARK: - Form Events
     
     /// Fires the moment that the element loses focus
     func onBlur(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onblur", value: value))
-        return self
+        attribute("onblur", value)
     }
 
     /// Fires the moment when the value of the element is changed
     func onChange(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onchange", value: value))
-        return self
+        attribute("onchange", value)
     }
 
     /// Script to be run when a context menu is triggered
     func onContextMenu(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oncontextmenu", value: value))
-        return self
+        attribute("oncontextmenu", value)
     }
 
     /// Fires the moment when the element gets focus
     func onFocus(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onfocus", value: value))
-        return self
+        attribute("onfocus", value)
     }
 
     /// Script to be run when an element gets user input
     func onInput(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oninput", value: value))
-        return self
+        attribute("oninput", value)
     }
 
     /// Script to be run when an element is invalid
     func onInvalid(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oninvalid", value: value))
-        return self
+        attribute("oninvalid", value)
     }
 
     /// Fires when the Reset button in a form is clicked
     func onReset(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onreset", value: value))
-        return self
+        attribute("onreset", value)
     }
 
     /// Fires when the user writes something in a search field (for <input="search">)
     func onSearch(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onsearch", value: value))
-        return self
+        attribute("onsearch", value)
     }
 
     /// Fires after some text has been selected in an element
     func onSelect(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onselect", value: value))
-        return self
+        attribute("onselect", value)
     }
 
     /// Fires when a form is submitted
     func onSubmit(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onsubmit", value: value))
-        return self
+        attribute("onsubmit", value)
     }
+    
     // MARK: - Keyboard Events
     
 
     /// Fires when a user is pressing a key
     func onKeyDown(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onkeydown", value: value))
-        return self
+        attribute("onkeydown", value)
     }
 
     /// Fires when a user presses a key
     func onKeyPress(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onkeypress", value: value))
-        return self
+        attribute("onkeypress", value)
     }
 
     /// Fires when a user releases a key
     func onKeyUp(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onkeyup", value: value))
-        return self
+        attribute("onkeyup", value)
     }
     
     // MARK: - Mouse Events
@@ -186,266 +159,224 @@ public extension Tag {
 
     /// Fires on a mouse click on the element
     func onClick(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onclick", value: value))
-        return self
+        attribute("onclick", value)
     }
 
     /// Fires on a mouse double-click on the element
     func onDoubleClick(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondblclick", value: value))
-        return self
+        attribute("ondblclick", value)
     }
 
     /// Fires when a mouse button is pressed down on an element
     func onMouseDown(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onmousedown", value: value))
-        return self
+        attribute("onmousedown", value)
     }
 
     /// Fires when the mouse pointer is moving while it is over an element
     func onMouseMove(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onmousemove", value: value))
-        return self
+        attribute("onmousemove", value)
     }
 
     /// Fires when the mouse pointer moves out of an element
     func onMouseOut(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onmouseout", value: value))
-        return self
+        attribute("onmouseout", value)
     }
 
     /// Fires when the mouse pointer moves over an element
     func onMouseOver(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onmouseover", value: value))
-        return self
+        attribute("onmouseover", value)
     }
 
     /// Fires when a mouse button is released over an element
     func onMouseUp(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onmouseup", value: value))
-        return self
+        attribute("onmouseup", value)
     }
 
     /// Fires when the mouse wheel rolls up or down over an element
     func onWheel(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onwheel", value: value))
-        return self
+        attribute("onwheel", value)
     }
     
     // MARK: - Drag Events
 
     /// Script to be run when an element is dragged
     func onDrag(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondrag", value: value))
-        return self
+        attribute("ondrag", value)
     }
 
     /// Script to be run at the end of a drag operation
     func onDragEnd(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondragend", value: value))
-        return self
+        attribute("ondragend", value)
     }
 
     /// Script to be run when an element has been dragged to a valid drop target
     func onDragEnter(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondragenter", value: value))
-        return self
+        attribute("ondragenter", value)
     }
 
     /// Script to be run when an element leaves a valid drop target
     func onDragLeave(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondragleave", value: value))
-        return self
+        attribute("ondragleave", value)
     }
 
     /// Script to be run when an element is being dragged over a valid drop target
     func onDragOver(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondragover", value: value))
-        return self
+        attribute("ondragover", value)
     }
 
     /// Script to be run at the start of a drag operation
     func onDragStart(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondragstart", value: value))
-        return self
+        attribute("ondragstart", value)
     }
 
     /// Script to be run when dragged element is being dropped
     func onDrop(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondrop", value: value))
-        return self
+        attribute("ondrop", value)
     }
 
     /// Script to be run when an element's scrollbar is being scrolled
     func onScroll(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onscroll", value: value))
-        return self
+        attribute("onscroll", value)
     }
     
     // MARK: - Clipboard Events
 
     /// Fires when the user copies the content of an element
     func onCopy(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oncopy", value: value))
-        return self
+        attribute("oncopy", value)
     }
 
     /// Fires when the user cuts the content of an element
     func onCut(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oncut", value: value))
-        return self
+        attribute("oncut", value)
     }
 
     /// Fires when the user pastes some content in an element
     func onPaste(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onpaste", value: value))
-        return self
+        attribute("onpaste", value)
     }
     
     // MARK: - Media Events
     
     /// Script to be run on abort
     func onAbort(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onabort", value: value))
-        return self
+        attribute("onabort", value)
     }
 
     /// Script to be run when a file is ready to start playing (when it has buffered enough to begin)
     func onCanPlay(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oncanplay", value: value))
-        return self
+        attribute("oncanplay", value)
     }
 
     /// Script to be run when a file can be played all the way to the end without pausing for buffering
     func onCanPlaythrough(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oncanplaythrough", value: value))
-        return self
+        attribute("oncanplaythrough", value)
     }
 
     /// Script to be run when the cue changes in a <track> element
     func onCueChange(_ value: String) -> Self {
-        node.upsert(Attribute(key: "oncuechange", value: value))
-        return self
+        attribute("oncuechange", value)
     }
 
     /// Script to be run when the length of the media changes
     func onDurationChange(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ondurationchange", value: value))
-        return self
+        attribute("ondurationchange", value)
     }
 
     /// Script to be run when something bad happens and the file is suddenly unavailable (like unexpectedly disconnects)
     func onEmptied(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onemptied", value: value))
-        return self
+        attribute("onemptied", value)
     }
 
     /// Script to be run when the media has reach the end (a useful event for messages like "thanks for listening")
     func onEnded(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onended", value: value))
-        return self
+        attribute("onended", value)
     }
 
     /// Script to be run when an error occurs when the file is being loaded
 //    func onError(_ value: String) -> Self {
-//        node.addOrReplace(Attribute(key: "onerror", value: value)))
+//        attribute("onerror", value)
 //    }
 
     /// Script to be run when media data is loaded
     func onLoadedData(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onloadeddata", value: value))
-        return self
+        attribute("onloadeddata", value)
     }
 
     /// Script to be run when meta data (like dimensions and duration) are loaded
     func onLoadedMetadata(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onloadedmetadata", value: value))
-        return self
+        attribute("onloadedmetadata", value)
     }
 
     /// Script to be run just as the file begins to load before anything is actually loaded
     func onLoadStart(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onloadstart", value: value))
-        return self
+        attribute("onloadstart", value)
     }
 
     /// Script to be run when the media is paused either by the user or programmatically
     func onPause(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onpause", value: value))
-        return self
+        attribute("onpause", value)
     }
 
     /// Script to be run when the media is ready to start playing
     func onPlay(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onplay", value: value))
-        return self
+        attribute("onplay", value)
     }
 
     /// Script to be run when the media actually has started playing
     func onPlaying(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onplaying", value: value))
-        return self
+        attribute("onplaying", value)
     }
 
     /// Script to be run when the browser is in the process of getting the media data
     func onProgress(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onprogress", value: value))
-        return self
+        attribute("onprogress", value)
     }
 
     /// Script to be run each time the playback rate changes (like when a user switches to a slow motion or fast forward mode)
     func onRateChange(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onratechange", value: value))
-        return self
+        attribute("onratechange", value)
     }
 
     /// Script to be run when the seeking attribute is set to false indicating that seeking has ended
     func onSeeked(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onseeked", value: value))
-        return self
+        attribute("onseeked", value)
     }
 
     /// Script to be run when the seeking attribute is set to true indicating that seeking is active
     func onSeeking(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onseeking", value: value))
-        return self
+        attribute("onseeking", value)
     }
 
     /// Script to be run when the browser is unable to fetch the media data for whatever reason
     func onStalled(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onstalled", value: value))
-        return self
+        attribute("onstalled", value)
     }
 
     /// Script to be run when fetching the media data is stopped before it is completely loaded for whatever reason
     func onSuspend(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onsuspend", value: value))
-        return self
+        attribute("onsuspend", value)
     }
 
     /// Script to be run when the playing position has changed (like when the user fast forwards to a different point in the media)
     func onTimeUpdate(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ontimeupdate", value: value))
-        return self
+        attribute("ontimeupdate", value)
     }
 
     /// Script to be run each time the volume is changed which (includes setting the volume to "mute")
     func onVolumeChange(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onvolumechange", value: value))
-        return self
+        attribute("onvolumechange", value)
     }
 
     /// Script to be run when the media has paused but is expected to resume (like when the media pauses to buffer more data)
     func onWaiting(_ value: String) -> Self {
-        node.upsert(Attribute(key: "onwaiting", value: value))
-        return self
+        attribute("onwaiting", value)
     }
     
     // MARK: - Misc Events
     
     /// Fires when the user opens or closes the <details> element
     func onToggle(_ value: String) -> Self {
-        node.upsert(Attribute(key: "ontoggle", value: value))
-        return self
+        attribute("ontoggle", value)
     }
 }

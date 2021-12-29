@@ -15,7 +15,6 @@ public final class Guid: Tag {
 public extension Guid {
     
     func isPermalink(_ value: Bool = true) -> Self {
-        node.upsert(Attribute(key: "isPermalink", value: String(value)))
-        return self
+        attribute("isPermalink", String(value))
     }
 }

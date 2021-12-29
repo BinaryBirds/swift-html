@@ -20,10 +20,10 @@ public final class Details: Tag {
 }
 
 public extension Details {
+    
     /// Specifies that the details should be visible (open) to the user
     func open() -> Self {
-        node.upsert(Attribute(key: "open"))
-        return self
+        flagAttribute("open")
     }
 }
 

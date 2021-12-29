@@ -24,45 +24,39 @@ public final class Select: Tag {
 }
 
 public extension Select {
+    
     /// Specifies that the drop-down list should automatically get focus when the page loads
     func autofocus() -> Self {
-        node.upsert(Attribute(key: "autofocus"))
-        return self
+        flagAttribute("autofocus")
     }
     
     /// Specifies that a drop-down list should be disabled
     func disabled() -> Self {
-        node.upsert(Attribute(key: "disabled"))
-        return self
+        flagAttribute("disabled")
     }
     
     /// Defines which form the drop-down list belongs to
     func form(_ value: String) -> Self {
-        node.upsert(Attribute(key: "form", value: value))
-        return self
+        attribute("form", value)
     }
     
     /// Specifies that multiple options can be selected at once
     func multiple() -> Self {
-        node.upsert(Attribute(key: "multiple"))
-        return self
+        flagAttribute("multiple")
     }
     
     /// Defines a name for the drop-down list
     func name(_ value: String) -> Self {
-        node.upsert(Attribute(key: "name", value: value))
-        return self
+        attribute("name", value)
     }
     
     /// Specifies that the user is required to select a value before submitting the form
     func required() -> Self {
-        node.upsert(Attribute(key: "required"))
-        return self
+        flagAttribute("required")
     }
     
     /// Defines the number of visible options in a drop-down list
     func size(_ value: Int) -> Self {
-        node.upsert(Attribute(key: "size", value: String(value)))
-        return self
+        attribute("size", String(value))
     }
 }

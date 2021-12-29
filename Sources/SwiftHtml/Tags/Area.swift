@@ -57,68 +57,57 @@ public final class Area: Tag {
     
     /// Specifies an alternate text for the area. Required if the href attribute is present
     public func alt(_ value: String) -> Self {
-        node.upsert(Attribute(key: "alt", value: value))
-        return self
+        attribute("alt", value)
     }
     
     /// Specifies the coordinates of the area
     public func coords(_ values: Double...) -> Self {
-        node.upsert(Attribute(key: "coords", value: values.map {String($0) }.joined(separator: ",")))
-        return self
+        attribute("coords", values.map {String($0) }.joined(separator: ","))
     }
     
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
     public func download(_ value: String) -> Self {
-        node.upsert(Attribute(key: "download", value: value))
-        return self
+        attribute("download", value)
     }
     
     /// Specifies the hyperlink target for the area
     public func href(_ value: String) -> Self {
-        node.upsert(Attribute(key: "href", value: value))
-        return self
+        attribute("href", value)
     }
     
     /// Specifies the language of the target URL
     public func hreflang(_ value: String) -> Self {
-        node.upsert(Attribute(key: "hreflang", value: value))
-        return self
+        attribute("hreflang", value)
     }
     
     /// Specifies what media/device the target URL is optimized for
     public func media(_ value: String) -> Self {
-        node.upsert(Attribute(key: "media", value: value))
-        return self
+        attribute("media", value)
     }
     
     /// Specifies which referrer information to send with the link
     public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        node.upsert(Attribute(key: "referrerpolicy", value: value.rawValue))
-        return self
+        attribute("referrerpolicy", value.rawValue)
     }
     
     /// Specifies the relationship between the current document and the target URL
     public func rel(_ value: Rel) -> Self {
-        node.upsert(Attribute(key: "rel", value: value.rawValue))
-        return self
+        attribute("rel", value.rawValue)
     }
     
     /// Specifies the shape of the area
     public func shape(_ value: Shape) -> Self {
-        node.upsert(Attribute(key: "shape", value: value.rawValue))
-        return self
+        attribute("shape", value.rawValue)
     }
     
     /// Specifies where to open the target URL
     public func target(_ value: TargetFrame) -> Self {
-        node.upsert(Attribute(key: "target", value: value.rawValue))
-        return self
+        attribute("target", value.rawValue)
     }
     
     /// Specifies the media type of the target URL
     public func type(_ value: String) -> Self {
-        node.upsert(Attribute(key: "type", value: value))
-        return self
+        attribute("type", value)
     }
 }
 

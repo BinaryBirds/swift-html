@@ -7,6 +7,12 @@
 
 import SwiftSgml
 
+final class Root: Tag {
+    init(_ contents: String? = nil) {
+        super.init(Node(type: .standard, name: "root", contents: contents))
+    }
+}
+
 final class Leaf: Tag {
     init(_ contents: String? = nil) {
         super.init(Node(type: .standard, name: "leaf", contents: contents))

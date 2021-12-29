@@ -16,15 +16,14 @@ public final class Progress: Tag {
 }
 
 public extension Progress {
+    
     /// Specifies how much work the task requires in total. Default value is 1
     func max(_ value: String) -> Self {
-        node.upsert(Attribute(key: "max", value: value))
-        return self
+        attribute("max", value)
     }
     
     /// Specifies how much of the task has been completed
     func value(_ value: String) -> Self {
-        node.upsert(Attribute(key: "value", value: value))
-        return self
+        attribute("value", value)
     }
 }

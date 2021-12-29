@@ -22,29 +22,21 @@ public final class Option: Tag {
 public extension Option {
     /// Specifies that an option should be disabled
     func disabled(_ condition: Bool = true) -> Self {
-        if condition {
-            node.upsert(Attribute(key: "disabled"))
-        }
-        return self
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies a shorter label for an option
     func label(_ value: String) -> Self {
-        node.upsert(Attribute(key: "label", value: value))
-        return self
+        attribute("label", value)
     }
     
     /// Specifies that an option should be pre-selected when the page loads
     func selected(_ condition: Bool = true) -> Self {
-        if condition {
-            node.upsert(Attribute(key: "selected"))
-        }
-        return self
+        flagAttribute("selected", nil, condition)
     }
     
     /// Specifies the value to be sent to a server
     func value(_ value: String) -> Self {
-        node.upsert(Attribute(key: "value", value: value))
-        return self
+        attribute("value", value)
     }
 }
