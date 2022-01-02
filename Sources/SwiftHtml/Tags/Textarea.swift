@@ -70,7 +70,7 @@ public extension Textarea {
     }
     
     /// Specifies a short hint that describes the expected value of a text area
-    func placeholder(_ value: String) -> Self {
+    func placeholder(_ value: String?) -> Self {
         attribute("placeholder", value)
     }
     
