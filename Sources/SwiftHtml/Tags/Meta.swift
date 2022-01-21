@@ -38,6 +38,12 @@ public extension Meta {
         case viewport
         /// robots
         case robots
+
+        case colorScheme = "color-scheme"
+        case themeColor = "theme-color"
+        case appleMobileWebAppTitle = "apple-mobile-web-app-title"
+        case appleMobileWebAppCapable = "apple-mobile-web-app-capable"
+        case appleMobileWebAppStatusBarStyle = "apple-mobile-web-app-status-bar-style"
     }
     
     enum HttpEquiv: String {
@@ -75,6 +81,16 @@ public extension Meta {
     func name(_ value: Name) -> Self {
         name(value.rawValue)
     }
-
     
+    func media(_ value: String) -> Self {
+        attribute("media", value)
+    }
+
+    func mediaPrefersColorSchemeLight() -> Self {
+        attribute("media", "(prefers-color-scheme: light)")
+    }
+
+    func mediaPrefersColorSchemeDark() -> Self {
+        attribute("media", "(prefers-color-scheme: dark)")
+    }
 }
