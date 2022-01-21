@@ -39,6 +39,7 @@ public extension Meta {
         /// robots
         case robots
 
+        /// https://css-tricks.com/meta-theme-color-and-trickery/
         case colorScheme = "color-scheme"
         case themeColor = "theme-color"
         case appleMobileWebAppTitle = "apple-mobile-web-app-title"
