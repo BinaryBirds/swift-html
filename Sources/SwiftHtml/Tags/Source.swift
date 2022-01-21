@@ -20,8 +20,16 @@ open class Source: Tag {
 public extension Source {
     
     /// Accepts any valid media query that would normally be defined in a CSS
-    func media(value: String) -> Self {
+    func media(_ value: String) -> Self {
         attribute("media", value)
+    }
+
+    func mediaPrefersColorSchemeLight() -> Self {
+        media("(prefers-color-scheme: light)")
+    }
+
+    func mediaPrefersColorSchemeDark() -> Self {
+        media("(prefers-color-scheme: dark)")
     }
     
     /// Specifies image sizes for different page layouts

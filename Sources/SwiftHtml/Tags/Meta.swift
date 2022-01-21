@@ -87,10 +87,10 @@ public extension Meta {
     }
 
     func mediaPrefersColorSchemeLight() -> Self {
-        attribute("media", "(prefers-color-scheme: light)")
+        media("(prefers-color-scheme: light)")
     }
 
     func mediaPrefersColorSchemeDark() -> Self {
-        attribute("media", "(prefers-color-scheme: dark)")
+        media("(prefers-color-scheme: dark)")
     }
 }
