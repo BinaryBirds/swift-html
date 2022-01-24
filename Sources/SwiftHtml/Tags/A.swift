@@ -77,6 +77,10 @@ public extension A {
         attribute("media", value)
     }
     
+    func media(_ queries: [MediaQuery]) -> Self {
+        return media(queries.map(\.value).joined(separator: " and "))
+    }
+    
     /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
     ///
     /// Typically used for tracking.

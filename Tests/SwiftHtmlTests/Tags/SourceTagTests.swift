@@ -15,7 +15,7 @@ final class SourceTagTests: XCTestCase {
         let doc = Document {
             Source()
                 .srcset("img.png")
-                .mediaPrefersColorSchemeDark()
+                .media([.prefersColorScheme(.dark)])
         }
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<source srcset="img.png" media="(prefers-color-scheme: dark)">"#, html)

@@ -24,12 +24,8 @@ public extension Source {
         attribute("media", value)
     }
 
-    func mediaPrefersColorSchemeLight() -> Self {
-        media("(prefers-color-scheme: light)")
-    }
-
-    func mediaPrefersColorSchemeDark() -> Self {
-        media("(prefers-color-scheme: dark)")
+    func media(_ queries: [MediaQuery]) -> Self {
+        return media(queries.map(\.value).joined(separator: " and "))
     }
     
     /// Specifies image sizes for different page layouts

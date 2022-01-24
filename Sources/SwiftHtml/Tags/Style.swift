@@ -22,6 +22,10 @@ public extension Style {
     func media(_ value: String) -> Self {
         attribute("media", value)
     }
+
+    func media(_ queries: [MediaQuery]) -> Self {
+        return media(queries.map(\.value).joined(separator: " and "))
+    }
     
     /// Specifies the media type (text/css) of the `<style>` tag
     func css() -> Self {
