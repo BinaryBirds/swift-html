@@ -24,6 +24,10 @@ public extension Source {
         attribute("media", value)
     }
 
+    func media(_ queries: MediaQuery...) -> Self {
+        return media(queries)
+    }
+    
     func media(_ queries: [MediaQuery]) -> Self {
         return media(queries.map(\.value).joined(separator: " and "))
     }
