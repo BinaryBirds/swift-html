@@ -5,8 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-import Darwin
-
 /// The `<input>` tag specifies an input field where the user can enter data.
 ///
 /// The `<input>` element is the most important form element.
