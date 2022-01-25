@@ -54,60 +54,69 @@ open class Area: Tag {
     public init() {
         super.init(Node(type: .empty, name: "area"))
     }
-    
+}
+
+public extension Area {
     /// Specifies an alternate text for the area. Required if the href attribute is present
-    public func alt(_ value: String) -> Self {
+    func alt(_ value: String) -> Self {
         attribute("alt", value)
     }
     
     /// Specifies the coordinates of the area
-    public func coords(_ values: Double...) -> Self {
+    func coords(_ values: Double...) -> Self {
         attribute("coords", values.map {String($0) }.joined(separator: ","))
     }
     
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-    public func download(_ value: String) -> Self {
+    func download(_ value: String) -> Self {
         attribute("download", value)
     }
     
     /// Specifies the hyperlink target for the area
-    public func href(_ value: String) -> Self {
+    func href(_ value: String) -> Self {
         attribute("href", value)
     }
     
     /// Specifies the language of the target URL
-    public func hreflang(_ value: String) -> Self {
+    func hreflang(_ value: String) -> Self {
         attribute("hreflang", value)
     }
     
     /// Specifies what media/device the target URL is optimized for
-    public func media(_ value: String) -> Self {
+    func media(_ value: String) -> Self {
         attribute("media", value)
     }
     
+    func media(_ queries: MediaQuery...) -> Self {
+        return media(queries)
+    }
+    
+    func media(_ queries: [MediaQuery]) -> Self {
+        return media(queries.map(\.value).joined(separator: " and "))
+    }
+    
     /// Specifies which referrer information to send with the link
-    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         attribute("referrerpolicy", value.rawValue)
     }
     
     /// Specifies the relationship between the current document and the target URL
-    public func rel(_ value: Rel) -> Self {
+    func rel(_ value: Rel) -> Self {
         attribute("rel", value.rawValue)
     }
     
     /// Specifies the shape of the area
-    public func shape(_ value: Shape) -> Self {
+    func shape(_ value: Shape) -> Self {
         attribute("shape", value.rawValue)
     }
     
     /// Specifies where to open the target URL
-    public func target(_ value: TargetFrame) -> Self {
+    func target(_ value: TargetFrame) -> Self {
         attribute("target", value.rawValue)
     }
     
     /// Specifies the media type of the target URL
-    public func type(_ value: String) -> Self {
+    func type(_ value: String) -> Self {
         attribute("type", value)
     }
 }
-

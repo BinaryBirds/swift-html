@@ -86,12 +86,12 @@ public extension Meta {
     func media(_ value: String) -> Self {
         attribute("media", value)
     }
-
-    func mediaPrefersColorSchemeLight() -> Self {
-        media("(prefers-color-scheme: light)")
+    
+    func media(_ queries: MediaQuery...) -> Self {
+        return media(queries)
     }
 
-    func mediaPrefersColorSchemeDark() -> Self {
-        media("(prefers-color-scheme: dark)")
+    func media(_ queries: [MediaQuery]) -> Self {
+        return media(queries.map(\.value).joined(separator: " and "))
     }
 }

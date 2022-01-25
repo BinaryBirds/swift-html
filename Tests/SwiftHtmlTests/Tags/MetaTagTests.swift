@@ -25,7 +25,7 @@ final class MetaTagTests: XCTestCase {
             Meta()
                 .name(.themeColor)
                 .content("#fff")
-                .mediaPrefersColorSchemeLight()
+                .media(.prefersColorScheme(.light))
         }
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">"##, html)

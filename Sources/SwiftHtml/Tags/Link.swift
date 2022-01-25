@@ -93,6 +93,14 @@ public extension Link {
         attribute("media", value)
     }
     
+    func media(_ queries: MediaQuery...) -> Self {
+        return media(queries)
+    }
+    
+    func media(_ queries: [MediaQuery]) -> Self {
+        return media(queries.map(\.value).joined(separator: " and "))
+    }
+    
     /// Specifies which referrer to use when fetching the resource
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         attribute("referrerpolicy", value.rawValue)
@@ -122,4 +130,7 @@ public extension Link {
     func type(_ value: String) -> Self {
         attribute("type", value)
     }
+    
+    
 }
+
