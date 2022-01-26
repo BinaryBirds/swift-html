@@ -77,10 +77,16 @@ public extension A {
         attribute("media", value)
     }
     
+    /// Specifies what media/device the linked document is optimized for
+    ///
+    /// If multiple queries were provided they're going to be concatenated with an `and` operand
     func media(_ queries: MediaQuery...) -> Self {
         return media(queries)
     }
     
+    /// Specifies what media/device the linked document is optimized for
+    ///
+    /// If multiple queries were provided they're going to be concatenated with an `and` operand
     func media(_ queries: [MediaQuery]) -> Self {
         return media(queries.map(\.value).joined(separator: " and "))
     }
