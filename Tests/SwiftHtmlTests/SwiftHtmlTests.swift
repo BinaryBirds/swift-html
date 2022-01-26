@@ -10,6 +10,14 @@ import XCTest
 
 final class SwiftHtmlTests: XCTestCase {
         
+    func testClassAttribute() {
+        let doc = Document {
+            Span("").class("a", "b", "c")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a b c"></span>"#, html)
+    }
+    
     func testHtmlDocument() {
         let doc = Document(.html) {
             Html {

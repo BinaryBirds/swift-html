@@ -44,8 +44,14 @@ public extension Tag {
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
-    func `class`(_ value: [String]) -> Self {
-        `class`(value.joined(separator: " "))
+    func `class`(_ values: [String]) -> Self {
+        /// @NOTE: explicit true flag is needed, otherwise Swift won't know which function to call...
+        `class`(values.joined(separator: " "), true)
+    }
+
+    /// Specifies multiple classnames for an element (refers to a class in a style sheet)
+    func `class`(_ values: String...) -> Self {
+        `class`(values)
     }
     
     /// Specifies whether the content of an element is editable or not
