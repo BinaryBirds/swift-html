@@ -112,15 +112,10 @@ public extension Link {
         attribute("referrerpolicy", value.rawValue)
     }
 
-    /// Specifies the relationship between the current document and the linked document
-//    func rel(_ value: String) -> Self {
-//        attribute("rel", value)
-//    }
-
-    /// Specifies the relationship between the current document and the linked document
-//    func rel(_ value: Rel) -> Self {
-//        rel(value.rawValue)
-//    }
+    /// Allows a browser to check the fetched link to ensure that the code is never loaded if the source has been manipulated
+    func integrity(_ value: String) -> Self {
+        attribute("integrity", value)
+    }
     
     /// Specifies the size of the linked resource. Only for `rel="icon"`
     func sizes(_ value: String) -> Self {
