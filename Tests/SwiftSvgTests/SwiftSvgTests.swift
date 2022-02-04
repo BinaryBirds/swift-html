@@ -13,7 +13,7 @@ final class SwiftSvgTests: XCTestCase {
     func testLine() {
         let doc = Document {
             Svg {
-                Line(x1: 1, y1: 2, x2: 3, y2: 4)
+                Line(x1: 1.01, y1: 2, x2: 3.33, y2: 4)
             }
             .width(24)
             .height(24)
@@ -25,7 +25,7 @@ final class SwiftSvgTests: XCTestCase {
         }
         XCTAssertEqual(DocumentRenderer().render(doc), """
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="1" y1="2" x2="3" y2="4"></line>
+                <line x1="1.01" y1="2" x2="3.33" y2="4"></line>
             </svg>
             """)
     }

@@ -8,11 +8,11 @@
 
 open class Circle: Tag {
 
-    public init(cx: Int, cy: Int, r: Int) {
+    public init(cx: Double, cy: Double, r: Double) {
         super.init(Node(type: .standard, name: "circle", attributes: [
-            .init(key: "cx", value: String(cx)),
-            .init(key: "cy", value: String(cy)),
-            .init(key: "r", value: String(r)),
+            .init(key: "cx", value: cx.preciseString),
+            .init(key: "cy", value: cy.preciseString),
+            .init(key: "r", value: r.preciseString),
         ]))
         
     }

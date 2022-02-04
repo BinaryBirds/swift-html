@@ -7,9 +7,9 @@
 
 open class Polyline: Tag {
 
-    public init(_ points: [Int]) {
+    public init(_ points: [Double]) {
         super.init(Node(type: .standard, name: "polyline", attributes: [
-            .init(key: "points", value: points.map { String($0) }.joined(separator: " ")),
+            .init(key: "points", value: points.map(\.preciseString).joined(separator: " ")),
         ]))
     }
 }

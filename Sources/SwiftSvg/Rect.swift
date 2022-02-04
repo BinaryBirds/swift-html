@@ -7,12 +7,12 @@
 
 open class Rect: Tag {
 
-    public init(x: Int, y: Int, width: Int, height: Int) {
+    public init(x: Double, y: Double, width: Double, height: Double) {
         super.init(Node(type: .standard, name: "rect", attributes: [
-            .init(key: "x", value: String(x)),
-            .init(key: "y", value: String(y)),
-            .init(key: "width", value: String(width)),
-            .init(key: "height", value: String(height)),
+            .init(key: "x", value: x.preciseString),
+            .init(key: "y", value: y.preciseString),
+            .init(key: "width", value: width.preciseString),
+            .init(key: "height", value: height.preciseString),
         ]))
     }
 }

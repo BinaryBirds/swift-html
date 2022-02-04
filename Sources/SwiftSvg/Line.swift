@@ -7,12 +7,12 @@
 
 open class Line: Tag {
 
-    public init(x1: Int, y1: Int, x2: Int, y2: Int) {
+    public init(x1: Double, y1: Double, x2: Double, y2: Double) {
         super.init(Node(type: .standard, name: "line", attributes: [
-            .init(key: "x1", value: String(x1)),
-            .init(key: "y1", value: String(y1)),
-            .init(key: "x2", value: String(x2)),
-            .init(key: "y2", value: String(y2)),
+            .init(key: "x1", value: x1.preciseString),
+            .init(key: "y1", value: y1.preciseString),
+            .init(key: "x2", value: x2.preciseString),
+            .init(key: "y2", value: y2.preciseString),
         ]))
         
     }
