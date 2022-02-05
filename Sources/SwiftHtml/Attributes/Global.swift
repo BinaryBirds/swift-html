@@ -31,6 +31,8 @@ public enum Translate: String {
     case no
 }
 
+
+
 public extension Tag {
         
     /// Specifies a shortcut key to activate/focus an element
@@ -40,13 +42,21 @@ public extension Tag {
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
     func `class`(_ value: String?, _ condition: Bool = true) -> Self {
-        attribute("class", value, condition)
+        let values = value?.split(separator: " ").map { String($0) } ?? []
+        let existing = node.attributes.first { $0.key == "class" }?.value?.split(separator: " ").map { String($0) } ?? []
+        let newValues = existing + values
+        
+        var newValue: String? = nil
+        if !newValues.isEmpty {
+            newValue = newValues.joined(separator: " ")
+        }
+        return attribute("class", newValue, condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
-    func `class`(_ values: [String]) -> Self {
+    func `class`(_ values: [String], _ condition: Bool = true) -> Self {
         /// @NOTE: explicit true flag is needed, otherwise Swift won't know which function to call...
-        `class`(values.joined(separator: " "), true)
+        `class`(values.joined(separator: " "), condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)

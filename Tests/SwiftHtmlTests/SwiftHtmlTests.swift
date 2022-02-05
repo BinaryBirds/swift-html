@@ -18,6 +18,18 @@ final class SwiftHtmlTests: XCTestCase {
         XCTAssertEqual(#"<span class="a b c"></span>"#, html)
     }
     
+    func testMultipleClassAttribute() {
+        let doc = Document {
+            Span("")
+                .class("a", "b", "c")
+                .class("d", "e", "f")
+                .class("g", true)
+                .class(["h", "i", "j"], true)
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a b c d e f g h i j"></span>"#, html)
+    }
+    
     func testHtmlDocument() {
         let doc = Document(.html) {
             Html {
