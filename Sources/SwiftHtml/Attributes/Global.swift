@@ -56,7 +56,7 @@ public extension Tag {
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
     func `class`(_ values: [String], _ condition: Bool = true) -> Self {
         /// @NOTE: explicit true flag is needed, otherwise Swift won't know which function to call...
-        `class`(values.joined(separator: " "), condition)
+        `class`(values.filter{$0.count > 0}.joined(separator: " "), condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
