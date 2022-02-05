@@ -70,7 +70,7 @@ final class SwiftHtmlTests: XCTestCase {
                                     <main class="container">
                                         <div>
                                             <section>
-                                                <img src="./images/swift.png" alt="./images/swift.png" title="Picture of the Swift Logo">
+                                                <img src="./images/swift.png" alt="Swift Logo" title="Picture of the Swift Logo">
                                                 <h1 class="red">Lorem ipsum</h1>
                                                 <p class="green blue" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
                                             </section>

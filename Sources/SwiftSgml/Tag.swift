@@ -9,11 +9,15 @@ open class Tag {
 
     public var node: Node
     public var children: [Tag]
+    
+    // MARK: - init
 
     public init(_ node: Node, children: [Tag] = []) {
         self.node = node
         self.children = children
     }
+    
+    // MARK: - attributes
    
     public func attribute(_ key: String, _ value: String?, _ condition: Bool = true) -> Self {
         if let value = value, condition {
