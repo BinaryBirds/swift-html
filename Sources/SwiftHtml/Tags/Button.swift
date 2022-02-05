@@ -13,9 +13,13 @@
 ///
 /// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
 open class Button: Tag {
+    
+    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "button", contents: contents), children: builder())
+    }
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "button", contents: contents))
+    public convenience init(_ contents: String) {
+        self.init(contents) {}
     }
 }
 
