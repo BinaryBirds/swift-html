@@ -12,22 +12,73 @@ final class SwiftHtmlTests: XCTestCase {
         
     func testClassAttribute() {
         let doc = Document {
-            Span("").class("a", "b", "c")
+            Span("").class("a", "b", "", "b", "c")
         }
         let html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(#"<span class="a b c"></span>"#, html)
+        XCTAssertEqual(#"<span class="a b b c"></span>"#, html)
     }
     
-    func testMultipleClassAttribute() {
+    func testMultipleClasses() {
         let doc = Document {
             Span("")
                 .class("a", "b", "c")
                 .class("d", "e", "f")
-                .class("g", true)
-                .class(["h", "i", "j"], true)
         }
         let html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(#"<span class="a b c d e f g h i j"></span>"#, html)
+        XCTAssertEqual(#"<span class="d e f"></span>"#, html)
+    }
+    
+    func testClassManipulation() {
+        let doc = Document {
+            Span("")
+                .class("a", "b", "c")
+                .class(add: ["d", "e", "f"])
+                .class(add: "b", true)
+                .class(remove: ["b", "c", "d"])
+                .class(remove: "e")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a f"></span>"#, html)
+    }
+    
+    func testAddClass() {
+        let doc = Document {
+            Span("")
+                .class("a", "b", "c")
+                .class(add: "d")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a b c d"></span>"#, html)
+    }
+    
+    func testRemoveClass() {
+        let doc = Document {
+            Span("")
+                .class("a", "b", "c")
+                .class(remove: "b")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a c"></span>"#, html)
+    }
+    
+    func testToggleAddClass() {
+        let doc = Document {
+            Span("")
+                .class("a", "b", "c")
+                .class(toggle: "d")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a b c d"></span>"#, html)
+    }
+    
+    func testToggleRemoveClass() {
+        let doc = Document {
+            Span("")
+                .class("a", "b", "c")
+                .class(toggle: "b")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span class="a c"></span>"#, html)
     }
     
     func testHtmlDocument() {

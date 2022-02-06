@@ -31,37 +31,101 @@ public enum Translate: String {
     case no
 }
 
+private extension String {
 
+    /// turns a list of class values (separated by a space" into an array of strings
+    var classArray: [String] {
+        split(separator: " ").map { String($0) }
+    }
+}
+
+private extension Array where Element == String {
+    
+    var classString: String {
+        filter { !$0.isEmpty }.joined(separator: " ")
+    }
+}
 
 public extension Tag {
         
-    /// Specifies a shortcut key to activate/focus an element
-    func accesskey(_ value: Character) -> Self {
-        attribute("accesskey", String(value))
+    // MARK: - class management
+
+    /// find an existing class attribute and return the value as an array of strings or an empty array
+    private var classArray: [String] {
+        node.attributes.first { $0.key == "class" }?.value?.classArray ?? []
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
     func `class`(_ value: String?, _ condition: Bool = true) -> Self {
-        let values = value?.split(separator: " ").map { String($0) } ?? []
-        let existing = node.attributes.first { $0.key == "class" }?.value?.split(separator: " ").map { String($0) } ?? []
-        let newValues = existing + values
-        
-        var newValue: String? = nil
-        if !newValues.isEmpty {
-            newValue = newValues.joined(separator: " ")
-        }
-        return attribute("class", newValue, condition)
+        attribute("class", value, condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
     func `class`(_ values: [String], _ condition: Bool = true) -> Self {
         /// @NOTE: explicit true flag is needed, otherwise Swift won't know which function to call...
-        `class`(values.filter{!$0.isEmpty}.joined(separator: " "), condition)
+        `class`(values.classString, condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
     func `class`(_ values: String...) -> Self {
         `class`(values)
+    }
+    
+    /// Adds a single value to the class list if the condition is true
+    ///
+    /// Note: If the value is empty or nil it won't be added to the list
+    ///
+    func `class`(add value: String?, _ condition: Bool = true) -> Self {
+        guard let value = value else {
+            return self
+        }
+        return `class`(add: [value], condition)
+    }
+    
+    /// Adds an array of values to the class list if the condition is true
+    ///
+    /// Note: If the value is empty it won't be added to the list
+    ///
+    func `class`(add values: [String], _ condition: Bool = true) -> Self {
+        let newValues = classArray + values.filter { !$0.isEmpty }
+
+        var newValue: String? = nil
+        if !newValues.isEmpty {
+            newValue = newValues.classString
+        }
+        return `class`(newValue, condition)
+    }
+    
+    /// Removes a given class values if the condition is true
+    func `class`(remove value: String?, _ condition: Bool = true) -> Self {
+        guard let value = value else {
+            return self
+        }
+        return `class`(remove: [value], condition)
+    }
+    
+    /// Removes an array of class values if the condition is true
+    func `class`(remove values: [String], _ condition: Bool = true) -> Self {
+        let newClasses = classArray.filter { !values.contains($0) }
+        return `class`(newClasses, condition)
+    }
+    
+    /// toggles a single class value
+    func `class`(toggle value: String?, _ condition: Bool = true) -> Self {
+        guard let value = value else {
+            return self
+        }
+        if classArray.contains(value) {
+            return `class`(remove: value, condition)
+        }
+        return `class`(add: value, condition)
+    }
+    
+    // MARK: - other global attributes
+    
+    /// Specifies a shortcut key to activate/focus an element
+    func accesskey(_ value: Character) -> Self {
+        attribute("accesskey", String(value))
     }
     
     /// Specifies whether the content of an element is editable or not
