@@ -41,7 +41,7 @@ public extension Tag {
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
-    func `class`(_ value: String?, _ condition: Bool = true) -> Self {
+    func `classAppend`(_ value: String?, _ condition: Bool = true) -> Self {
         let values = value?.split(separator: " ").map { String($0) } ?? []
         let existing = node.attributes.first { $0.key == "class" }?.value?.split(separator: " ").map { String($0) } ?? []
         let newValues = existing + values
