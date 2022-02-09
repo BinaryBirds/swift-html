@@ -44,4 +44,15 @@ final class SwiftSgmlTests: XCTestCase {
                             <root></root>
                             """)
     }
+    
+    func testFlagAttribute() {
+        let doc = Document() {
+            Root()
+                .flagAttribute("foo")
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <root foo></root>
+                            """)
+    }
 }
