@@ -13,7 +13,11 @@
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 open class H2: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "h2", contents: contents))
+    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
+        super.init(Node(type: .standard, name: "h2", contents: contents), children: builder())
+    }
+    
+     public convenience init(_ contents: String) {
+        self.init(contents) {}
     }
 }
