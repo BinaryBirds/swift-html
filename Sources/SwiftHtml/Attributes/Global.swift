@@ -160,7 +160,8 @@ public extension Tag {
         if let value = value {
             attribute("id", value)
         } else {
-            attribute("id", UUID().uuidString)
+            /// id must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.)
+            attribute("id", "uuid-" + UUID().uuidString)
         }
     }
     
