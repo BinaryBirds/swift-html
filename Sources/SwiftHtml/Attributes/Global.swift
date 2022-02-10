@@ -5,6 +5,8 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
+import Foundation
+
 /// https://www.w3schools.com/tags/ref_standardattributes.asp
 public enum TextDirection: String {
     /// Default. Left-to-right text direction
@@ -154,8 +156,12 @@ public extension Tag {
     }
     
     /// Specifies a unique id for an element
-    func `id`(_ value: String) -> Self {
-        attribute("id", value)
+    func `id`(_ value: String?) -> Self {
+        if let value = value {
+            attribute("id", value)
+        } else {
+            attribute("id", UUID().uuidString)
+        }
     }
     
     /// Specifies the language of the element's content
