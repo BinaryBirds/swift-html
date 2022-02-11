@@ -54,7 +54,7 @@ print(html)
 You can simply use `SwiftHtml` as a dependency via the Swift Package Manager:
 
 ```swift
-.package(url: "https://github.com/binarybirds/swift-html", from: "1.0.0"),
+.package(url: "https://github.com/binarybirds/swift-html", from: "1.6.0"),
 ```
 
 Add the `SwiftHtml` product from the `swift-html` package as a dependency to your target:
