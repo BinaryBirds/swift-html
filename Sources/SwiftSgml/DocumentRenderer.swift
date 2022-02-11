@@ -42,7 +42,7 @@ public struct DocumentRenderer {
         case .standard:
             return spaces + renderOpening(tag) + (tag.node.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
         case .comment:
-            return spaces + "<!--" + (tag.node.contents ?? "") + "-->"
+            return spaces + "<!-- " + (tag.node.contents ?? "") + " -->"
         case .empty:
             return spaces + renderOpening(tag)
         case .group:
