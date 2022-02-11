@@ -6,6 +6,6 @@ docs:
   --clean \
   --author "Tibor Bödecs" \
   --author_url https://twitter.com/tiborbodecs/ \
-  --module-version 1.3.4 \
+  --module-version 1.6.0 \
   --module SwiftHtml \
   --output docs/
