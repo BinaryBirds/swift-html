@@ -16,23 +16,18 @@ open class Tag {
         Node(type: .standard, name: String(describing: self).lowercased())
     }
 
-    /// initialize a new Tag with child tags
-    public init(_ children: [Tag] = []) {
+    /// initialize a new Tag with contents and child tags
+    public init(_ contents: String? = nil, _ children: [Tag] = []) {
         self.node = Self.createNode()
         self.children = children
+        if let contents = contents {
+             setContents(contents) 
+        }
     }
     
     /// initialize a new Tag with children using a builder
     public convenience init(@TagBuilder _ builder: () -> [Tag]) {
         self.init(builder())
-    }
-
-    /// initialize a new Tag with some contents
-    public convenience init(_ contents: String?) {
-        self.init()
-        if let contents = contents {
-            setContents(contents)
-        }
     }
 
     // MARK: - contents
