@@ -28,9 +28,11 @@ open class Tag {
     }
 
     /// initialize a new Tag with some contents
-    public convenience init(_ contents: String) {
+    public convenience init(_ contents: String?) {
         self.init()
-        setContents(contents)
+        if let contents = contents {
+            setContents(contents)
+        }
     }
 
     // MARK: - contents
