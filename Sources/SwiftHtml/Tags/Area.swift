@@ -10,7 +10,7 @@
 /// <area> elements are always nested inside a <map> tag.
 /// 
 /// **Note:** The usemap attribute in <img> is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
-open class Area: Tag {
+open class Area: EmptyTag {
     
     public enum Rel: String {
         /// Links to an alternate version of the document (i.e. print page, translated or mirror)
@@ -51,9 +51,6 @@ open class Area: Tag {
         case poly
     }
 
-    public init() {
-        super.init(Node(type: .empty, name: "area"))
-    }
 }
 
 public extension Area {

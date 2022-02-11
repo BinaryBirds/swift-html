@@ -10,7 +10,4 @@
 /// The `<s>` tag should not be used to define deleted text in a document, use the `<del>` tag for that.
 open class S: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "s", contents: contents))
-    }
 }

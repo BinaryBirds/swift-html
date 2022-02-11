@@ -9,10 +9,7 @@
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Progress: Tag {
-    
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "progress", contents: contents))
-    }
+
 }
 
 public extension Progress {

@@ -13,7 +13,4 @@
 /// **Tip:** Use the `<sup>` tag to define superscripted text.
 open class Sub: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "sub", contents: contents))
-    }
 }

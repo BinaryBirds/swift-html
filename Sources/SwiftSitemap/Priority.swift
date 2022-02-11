@@ -8,6 +8,7 @@
 open class Priority: Tag {
 
     public init(_ value: Double) {
-        super.init(Node(type: .standard, name: "priority", contents: String(value)))
+        super.init()
+        setContents(String(value))
     }
 }

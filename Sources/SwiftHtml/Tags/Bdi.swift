@@ -12,7 +12,4 @@
 /// This element is useful when embedding user-generated content with an unknown text direction.
 open class Bdi: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "bdi", contents: contents))
-    }
 }

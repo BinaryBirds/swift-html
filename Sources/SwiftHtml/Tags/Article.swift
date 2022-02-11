@@ -26,8 +26,5 @@ public extension Node {
 /// However, you can use CSS to style the `<article>` element (see example below).
 open class Article: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(.article(), children: builder())
-    }
 }
 

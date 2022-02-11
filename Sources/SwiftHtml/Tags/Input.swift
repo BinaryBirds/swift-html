@@ -10,11 +10,8 @@
 /// The `<input>` element is the most important form element.
 ///
 /// The `<input>` element can be displayed in several ways, depending on the type attribute.
-open class Input: Tag {
+open class Input: EmptyTag {
 
-    public init() {
-        super.init(Node(type: .empty, name: "input"))
-    }
 }
 
 public extension Input {
@@ -72,7 +69,7 @@ public extension Input {
     /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")
     func checked(_ value: Bool = true) -> Self {
         guard value else {
-            node.delete(Attribute(key: "checked"))
+            deleteAttribute("checked")
             return self
         }
         return flagAttribute("checked")

@@ -8,6 +8,7 @@
 open class Title: Tag {
 
     public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "title", contents: "<![CDATA[" + contents + "]]>"))
+        super.init()
+        setContents("<![CDATA[" + contents + "]]>")
     }
 }

@@ -7,9 +7,6 @@
 
 open class Svg: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "svg"), children: builder())
-    }
 }
 
 public extension Svg {

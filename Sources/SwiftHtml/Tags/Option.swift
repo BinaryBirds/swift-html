@@ -14,9 +14,6 @@
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
 open class Option: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "option", contents: contents))
-    }
 }
 
 public extension Option {

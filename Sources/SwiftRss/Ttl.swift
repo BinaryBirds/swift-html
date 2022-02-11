@@ -8,6 +8,7 @@
 open class Ttl: Tag {
 
     public init(_ value: Int) {
-        super.init(Node(type: .standard, name: "ttl", contents: String(value)))
+        super.init()
+        setContents(String(value))
     }
 }

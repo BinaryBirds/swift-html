@@ -10,13 +10,13 @@
 /// The `<link>` tag is most often used to link to external style sheets.
 /// 
 /// The `<link>` element is an empty element, it contains attributes only.
-open class Link: Tag {
+open class Link: EmptyTag {
 
     public init(rel: Rel) {
-        let node = Node(type: .empty, name: "link", attributes: [
+        super.init()
+        setAttributes([
             Attribute(key: "rel", value: rel.rawValue),
         ])
-        super.init(node)
     }
 }
 

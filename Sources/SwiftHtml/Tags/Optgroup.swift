@@ -10,9 +10,6 @@
 /// If you have a long list of options, groups of related options are easier to handle for a user.
 open class Optgroup: Tag {
     
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "optgroup"), children: builder())
-    }
 }
 
 public extension Optgroup {

@@ -10,9 +10,6 @@
 /// The `<fieldset>` tag draws a box around the related elements.
 open class Fieldset: Tag {
     
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "fieldset"), children: builder())
-    }
 }
 
 public extension Fieldset {

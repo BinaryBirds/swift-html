@@ -10,7 +10,4 @@
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.
 open class Tr: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "tr"), children: builder())
-    }
 }

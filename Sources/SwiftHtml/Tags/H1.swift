@@ -13,7 +13,4 @@
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 open class H1: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "h1", contents: contents))
-    }
 }

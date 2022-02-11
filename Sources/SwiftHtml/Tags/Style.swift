@@ -11,9 +11,6 @@
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
 open class Style: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "style", contents: contents))
-    }
 }
 
 public extension Style {

@@ -10,7 +10,4 @@
 /// **Note:** The `<summary>` element should be the first child element of the `<details>` element.
 open class Summary: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "summary", contents: contents))
-    }
 }

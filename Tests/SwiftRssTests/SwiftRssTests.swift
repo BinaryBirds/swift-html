@@ -21,14 +21,14 @@ final class SwiftRssTests: XCTestCase {
                     LastBuildDate("2021-12-19")
                     PubDate("2021-12-19")
                     Ttl(250)
-                    
+
                     Item {
                         Guid("http://localhost/")
                             .isPermalink()
                         Title("lorem")
                         Description("ipsum")
                         PubDate("lorem")
-                        
+
                     }
                 }
             }

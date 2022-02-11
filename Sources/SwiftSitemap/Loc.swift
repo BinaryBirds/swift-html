@@ -7,7 +7,4 @@
 
 open class Loc: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "loc", contents: contents))
-    }
 }

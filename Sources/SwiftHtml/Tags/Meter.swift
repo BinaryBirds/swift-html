@@ -14,9 +14,13 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Meter: Tag {
 
+    
     public init(value: Int, _ contents: String) {
-        let node = Node(type: .standard, name: "meter", contents: contents, attributes: [Attribute(key: "value", value: String(value))])
-        super.init(node)
+        super.init()
+        setContents(contents)
+        setAttributes([
+            .init(key: "value", value: String(value))
+        ])
     }
 }
 

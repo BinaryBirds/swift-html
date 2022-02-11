@@ -12,7 +12,4 @@
 /// The text in the `<cite>` element usually renders in italic.
 open class Cite: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "cite", contents: contents))
-    }
 }

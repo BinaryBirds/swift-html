@@ -13,9 +13,5 @@
 /// 
 /// An HTML table may also include `<caption>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements.
 open class Table: Tag {
-    
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "table"), children: builder())
-    }
 
 }

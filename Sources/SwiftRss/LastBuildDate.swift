@@ -8,7 +8,7 @@
 
 open class LastBuildDate: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "lastBuildDate", contents: contents))
+    open override class func createNode() -> Node {
+        Node(type: .standard, name: "lastBuildDate")
     }
 }

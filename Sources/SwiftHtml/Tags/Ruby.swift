@@ -12,8 +12,4 @@
 /// Use `<ruby>` together with `<rt>` and `<rp>`: The `<ruby>` element consists of one or more characters that needs an explanation/pronunciation, and an `<rt>` element that gives that information, and an optional `<rp>` element that defines what to show for browsers that do not support ruby annotations.
 open class Ruby: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "ruby", contents: contents))
-    }
-
 }

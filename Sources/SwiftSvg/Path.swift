@@ -9,8 +9,9 @@
 open class Path: Tag {
 
     public init(_ d: String) {
-        super.init(Node(type: .standard, name: "path", attributes: [
+        super.init()
+        setAttributes([
             .init(key: "d", value: d),
-        ]))
+        ])
     }
 }

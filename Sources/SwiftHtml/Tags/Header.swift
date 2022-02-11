@@ -15,8 +15,5 @@
 /// **Note:** You can have several` <header>` elements in one HTML document. However,` <header>` cannot be placed within a` <footer>`,` <address>` or another` <header>` element.
 open class Header: Tag {
     
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "header"), children: builder())
-    }
 }
 

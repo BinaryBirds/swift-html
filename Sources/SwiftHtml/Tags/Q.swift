@@ -11,10 +11,7 @@
 ///
 /// **Tip:** Use `<blockquote>` for long quotations.
 open class Q: Tag {
-    
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "q", contents: contents))
-    }
+
 }
 
 public extension Q {

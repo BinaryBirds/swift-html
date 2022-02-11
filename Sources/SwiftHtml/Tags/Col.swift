@@ -8,11 +8,8 @@
 /// The `<col>` tag specifies column properties for each column within a `<colgroup>` element.
 /// 
 /// The `<col>` tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
-open class Col: Tag {
+open class Col: EmptyTag {
     
-    public init() {
-        super.init(Node(type: .empty, name: "col"))
-    }
 }
 
 public extension Col {

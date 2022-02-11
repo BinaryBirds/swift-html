@@ -14,9 +14,6 @@
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
 open class Colgroup: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "colgroup"), children: builder())
-    }
 }
 
 public extension Colgroup {

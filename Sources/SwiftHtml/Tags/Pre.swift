@@ -11,7 +11,4 @@
 /// The text will be displayed exactly as written in the HTML source code.
 open class Pre: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "pre", contents: contents))
-    }
 }

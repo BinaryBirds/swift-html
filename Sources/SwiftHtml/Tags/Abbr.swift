@@ -10,8 +10,5 @@
 /// **Tip:** Use the global title attribute to show the description for the abbreviation/acronym when you mouse over the element.
 open class Abbr: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "abbr", contents: contents))
-    }
 }
 

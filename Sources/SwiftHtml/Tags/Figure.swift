@@ -12,8 +12,5 @@
 /// **Tip:** The `<figcaption>` element is used to add a caption for the `<figure>` element.
 open class Figure: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "figure"), children: builder())
-    }
 }
 

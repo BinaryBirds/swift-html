@@ -13,7 +13,4 @@
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
 open class U: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "u", contents: contents))
-    }
 }

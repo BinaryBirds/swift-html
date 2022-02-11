@@ -23,7 +23,7 @@ public struct Node {
     public let type: NodeType
     public let name: String?
     public var contents: String?
-    public private(set) var attributes: [Attribute]
+    public internal(set) var attributes: [Attribute]
 
     public init(type: NodeType = .standard,
          name: String? = nil,

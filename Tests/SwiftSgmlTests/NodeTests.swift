@@ -11,25 +11,17 @@ import XCTest
 final class NodeTests: XCTestCase {
 
     func testNodeContents() {
-        final class FooTag: Tag {
-            init(_ contents: String? = nil) {
-                super.init(Node(type: .standard, name: "foo", contents: contents))
-            }
+        final class Foo: Tag {
             
-            func updateContents() -> Tag {
-                node.contents = "bar"
-                return self
-            }
         }
 
-        
         let doc = Document {
-            FooTag()
-                .updateContents()
+            Foo("bar")
+                .setContents("baz")
         }
 
         XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <foo>bar</foo>
+                            <foo>baz</foo>
                             """)
     }
 }

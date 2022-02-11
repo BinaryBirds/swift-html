@@ -14,9 +14,6 @@
 /// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
 open class Iframe: Tag {
 
-    public init() {
-        super.init(Node(type: .standard, name: "iframe"))
-    }
 }
 
 public extension Iframe {

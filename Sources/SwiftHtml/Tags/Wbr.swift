@@ -10,7 +10,4 @@
 /// **Tip:** When a word is too long, the browser might break it at the wrong place. You can use the `<wbr>` element to add word break opportunities.
 open class Wbr: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "wbr", contents: contents))
-    }
 }

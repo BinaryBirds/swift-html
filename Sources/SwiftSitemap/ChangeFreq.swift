@@ -17,7 +17,9 @@ open class ChangeFreq: Tag {
         case never
     }
     
-    public init(_ value: Value) {
-        super.init(Node(type: .standard, name: "changefreq", contents: value.rawValue))
+    init(_ value: Value) {
+        super.init()
+        setContents(value.rawValue)
     }
+
 }

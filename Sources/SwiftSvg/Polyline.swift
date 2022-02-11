@@ -8,8 +8,9 @@
 open class Polyline: Tag {
 
     public init(_ points: [Double]) {
-        super.init(Node(type: .standard, name: "polyline", attributes: [
+        super.init()
+        setAttributes([
             .init(key: "points", value: points.map(\.preciseString).joined(separator: " ")),
-        ]))
+        ])
     }
 }

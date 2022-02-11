@@ -16,12 +16,5 @@
 ///
 /// The text in `<th>` elements are bold and centered by default.
 open class Td: Tag {
-    
-    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "td", contents: contents), children: builder())
-    }
-    
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
+
 }

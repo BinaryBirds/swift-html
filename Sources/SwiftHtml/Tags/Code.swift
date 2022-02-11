@@ -16,7 +16,4 @@
 /// - `<pre>`    Defines preformatted text
 open class Code: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "code", contents: contents))
-    }
 }

@@ -6,8 +6,8 @@
 //
 
 open class PubDate: Tag {
-
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "pubDate", contents: contents))
+    
+    open override class func createNode() -> Node {
+        Node(type: .standard, name: "pubDate")
     }
 }

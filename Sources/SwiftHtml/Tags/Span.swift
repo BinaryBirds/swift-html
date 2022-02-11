@@ -12,12 +12,4 @@
 /// The `<span>` tag is much like the `<div>` element, but `<div>` is a block-level element and `<span>` is an inline element.
 open class Span: Tag {
     
-    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "span", contents: contents), children: builder())
-    }
-
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
-
 }

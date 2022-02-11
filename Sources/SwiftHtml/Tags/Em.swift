@@ -10,7 +10,4 @@
 /// A screen reader will pronounce the words in `<em>` with an emphasis, using verbal stress.
 open class Em: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "em", contents: contents))
-    }
 }

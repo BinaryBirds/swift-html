@@ -14,9 +14,6 @@
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
 open class Details: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "details"), children: builder())
-    }
 }
 
 public extension Details {

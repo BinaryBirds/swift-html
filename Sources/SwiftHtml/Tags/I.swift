@@ -18,7 +18,4 @@
 /// - `<dfn>` (a definition term)
 open class I: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "i", contents: contents))
-    }
 }

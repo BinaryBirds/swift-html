@@ -14,9 +14,6 @@
 /// **Tip:** For unordered list, use the `<ul>` tag.
 open class Ol: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "ol"), children: builder())
-    }
 }
 
 public extension Ol {

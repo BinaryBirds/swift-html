@@ -22,10 +22,6 @@
 ///     Opera   | YES | YES  | YES
 open class Video: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "video"), children: builder())
-    }
-
 }
 
 public extension Video {

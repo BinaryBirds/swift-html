@@ -10,7 +10,4 @@
 /// The `<noscript>` element can be used in both `<head>` and `<body>`. When used inside `<head>`, the `<noscript>` element could only contain `<link>`, `<style>`, and `<meta>` elements.
 open class Noscript: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "noscript", contents: contents))
-    }
 }

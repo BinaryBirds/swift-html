@@ -13,7 +13,4 @@
 /// **Tip:** Use the `<sub>` tag to define subscript text.
 open class Sup: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "sup", contents: contents))
-    }
 }

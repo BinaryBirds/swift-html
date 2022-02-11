@@ -17,13 +17,6 @@
 /// The text in `<td>` elements are regular and left-aligned by default.
 open class Th: Tag {
     
-    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "th", contents: contents), children: builder())
-    }
-    
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
 }
 
 public extension Th {

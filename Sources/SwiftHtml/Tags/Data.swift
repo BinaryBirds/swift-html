@@ -12,9 +12,6 @@
 /// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
 open class Data: Tag {
         
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "data", contents: contents))
-    }
 }
 
 public extension Data {

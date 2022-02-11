@@ -28,7 +28,4 @@
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
 open class Title: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "title", contents: contents))
-    }
 }

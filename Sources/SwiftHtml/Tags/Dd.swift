@@ -12,12 +12,4 @@
 /// Inside a `<dd>` tag you can put paragraphs, line breaks, images, links, lists, etc.
 open class Dd: Tag {
 
-    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "dd", contents: contents), children: builder())
-    }
-
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
-
 }

@@ -6,7 +6,5 @@
 //
 
 public class Channel: Tag {
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "channel"), children: builder())
-    }
+    
 }

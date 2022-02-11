@@ -10,19 +10,29 @@ import XCTest
 
 final class LabelTagTests: XCTestCase {
 
-    func testLabelChildren() {
+    func testLabelContents() {
+        let doc = Document {
+            Label("foo")
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), #"""
+                            <label>foo</label>
+                            """#)
+    }
+    
+    func testLabelChildrenWithContents() {
         let isRequired = true
-        let doc = Document(.html) {
-            Label("foo") {
+        let doc = Document {
+            Label {
                 Span("(bar)").class("more")
                 if isRequired {
                     Span("*").class("required")
                 }
             }
+            .setContents("foo")
         }
 
         XCTAssertEqual(DocumentRenderer().render(doc), #"""
-                            <!DOCTYPE html>
                             <label>foo
                                 <span class="more">(bar)</span>
                                 <span class="required">*</span>

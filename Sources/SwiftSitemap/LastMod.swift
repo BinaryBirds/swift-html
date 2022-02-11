@@ -7,7 +7,5 @@
 
 open class LastMod: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "lastmod", contents: contents))
-    }
+
 }

@@ -7,7 +7,4 @@
 
 open class Link: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "link", contents: contents))
-    }
 }

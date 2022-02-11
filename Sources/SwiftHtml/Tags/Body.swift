@@ -11,9 +11,5 @@
 /// 
 /// **Note:** There can only be one `<body>` element in an HTML document.
 open class Body: Tag {
-    
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "body"), children: builder())
-    }
 
 }

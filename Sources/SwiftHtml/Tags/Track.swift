@@ -10,11 +10,13 @@
 /// This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.
 ///
 /// Tracks are formatted in WebVTT format (.vtt files).
-open class Track: Tag {
+open class Track: EmptyTag {
     
     public init(src: String) {
-        let node = Node(type: .empty, name: "track", attributes: [Attribute(key: "src", value: src)])
-        super.init(node)
+        super.init()
+        setAttributes([
+            .init(key: "src", value: src)
+        ])
     }
 }
 

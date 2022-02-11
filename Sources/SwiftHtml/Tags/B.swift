@@ -8,7 +8,4 @@
 /// Make some text bold (without marking it as important)
 open class B: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "b", contents: contents))
-    }
 }

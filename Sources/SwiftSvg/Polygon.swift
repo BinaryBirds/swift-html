@@ -8,8 +8,9 @@
 open class Polygon: Tag {
 
     public init(_ points: [Double]) {
-        super.init(Node(type: .standard, name: "polygon", attributes: [
+        super.init()
+        setAttributes([
             .init(key: "points", value: points.map(\.preciseString).joined(separator: " ")),
-        ]))
+        ])
     }
 }

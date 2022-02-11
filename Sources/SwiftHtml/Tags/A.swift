@@ -16,13 +16,6 @@
 /// - An active link is underlined and red
 open class A: Tag {
 
-    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "a", contents: contents), children: builder())
-    }
-
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
 }
 
 public extension A {

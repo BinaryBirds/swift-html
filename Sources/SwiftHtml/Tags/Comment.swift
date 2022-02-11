@@ -14,7 +14,12 @@
 /// This is especially useful if you have a lot of code.
 open class Comment: Tag {
 
+    open override class func createNode() -> Node {
+        Node(type: .comment)
+    }
+    
     public init(_ contents: String) {
-        super.init(Node(type: .comment, contents: contents))
+        super.init()
+        setContents(contents)
     }
 }

@@ -15,10 +15,6 @@ open class Script: Tag {
     public enum `Type`: String {
         case javascript = "text/javascript"
     }
-
-    public init(_ contents: String? = nil) {
-        super.init(Node(type: .standard, name: "script", contents: contents))
-    }
 }
 
 public extension Script {

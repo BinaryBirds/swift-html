@@ -18,9 +18,6 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Select: Tag {
     
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "select"), children: builder())
-    }
 }
 
 public extension Select {

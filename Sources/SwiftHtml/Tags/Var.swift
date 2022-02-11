@@ -10,7 +10,4 @@
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
 open class Var: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "var", contents: contents))
-    }
 }

@@ -15,8 +15,5 @@
 /// However, you can use CSS to style the `<aside>` element (see example below).
 open class Aside: Tag {
     
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "aside"), children: builder())
-    }
 }
 

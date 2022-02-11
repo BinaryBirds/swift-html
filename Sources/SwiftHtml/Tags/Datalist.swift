@@ -11,8 +11,5 @@
 ///
 /// The `<datalist>` element's id attribute must be equal to the `<input>` element's list attribute (this binds them together).
 open class Datalist: Tag {
-
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "datalist"), children: builder())
-    }
+ 
 }

@@ -15,15 +15,7 @@
 ///
 /// **Tip:** Use CSS to style lists.
 open class Li: Tag {
-
-    public init(_ contents: String? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "li", contents: contents), children: builder())
-    }
-
-    public convenience init(_ contents: String) {
-        self.init(contents) {}
-    }
-
+    
 }
 
 public extension Li {

@@ -12,9 +12,6 @@
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
 open class Canvas: Tag {
     
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "canvas", contents: contents))
-    }
 }
 
 public extension Canvas {

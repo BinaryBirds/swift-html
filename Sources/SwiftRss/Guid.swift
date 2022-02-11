@@ -7,9 +7,6 @@
 
 open class Guid: Tag {
 
-    public init(_ contents: String) {
-        super.init(Node(type: .standard, name: "guid", contents: contents))
-    }
 }
 
 public extension Guid {

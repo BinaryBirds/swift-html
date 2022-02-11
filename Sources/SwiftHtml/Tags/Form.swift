@@ -20,9 +20,6 @@
 /// - `<output>`
 open class Form: Tag {
 
-    public init(@TagBuilder _ builder: () -> [Tag]) {
-        super.init(Node(type: .standard, name: "form"), children: builder())
-    }
 }
 
 public extension Form {
