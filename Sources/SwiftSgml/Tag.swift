@@ -17,7 +17,7 @@ open class Tag {
     }
 
     /// initialize a new Tag with child tags
-    public init(_ children: [Tag] = []) {
+    public required init(_ children: [Tag] = []) {
         self.node = Self.createNode()
         self.children = children
     }
