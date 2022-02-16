@@ -56,7 +56,7 @@ final class SwiftHtmlTests: XCTestCase {
                 .class(add: ["d", "e", "f"])
                 .class(add: "b", true)
                 .class(remove: ["b", "c", "d"])
-                .class(remove: "e")
+                .class(remove: "e", true)
         }
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a f"></span>"#, html)
