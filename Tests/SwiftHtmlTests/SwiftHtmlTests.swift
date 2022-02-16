@@ -120,6 +120,32 @@ final class SwiftHtmlTests: XCTestCase {
                             """)
     }
     
+    func testMultiGroupTagBuilderAndRenderer() {
+        let values: [String] = ["a", "b", "c"]
+        
+        let doc = Document {
+            Div {
+                values.map { item -> Tag in
+                    GroupTag {
+                        H1(item)
+                        P(item)
+                    }
+                }
+            }
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <div>
+                                <h1>a</h1>
+                                <p>a</p>
+                                <h1>b</h1>
+                                <p>b</p>
+                                <h1>c</h1>
+                                <p>c</p>
+                            </div>
+                            """)
+    }
+    
     func testHtmlDocument() {
         let doc = Document(.html) {
             Html {

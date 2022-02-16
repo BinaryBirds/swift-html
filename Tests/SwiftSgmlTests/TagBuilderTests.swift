@@ -149,9 +149,6 @@ final class TagBuilderTests: XCTestCase {
                                 <leaf>c</leaf>
                             </branch>
                             """)
-    }
-    
-    
-    
+    }    
 }
 
