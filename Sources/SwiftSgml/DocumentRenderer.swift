@@ -46,14 +46,24 @@ public struct DocumentRenderer {
         case .empty:
             return spaces + renderOpening(tag)
         case .group:
-            return spaces + (tag.node.contents ?? "") + renderChildren(tag, level: level, spaces: spaces)
+            var contents = ""
+            if let rawValue = tag.node.contents {
+                contents = spaces + rawValue
+            }
+            return contents + renderChildren(tag, level: level, spaces: spaces, isGrouped: true)
         }
     }
     
-    private func renderChildren(_ tag: Tag, level: Int, spaces: String) -> String {
-        var children = tag.children.map { render(tag: $0, level: level + 1) }.joined(separator: newline)
+    private func renderChildren(_ tag: Tag, level: Int, spaces: String, isGrouped: Bool = false) -> String {
+        var newLevel = level + 1
+        if isGrouped {
+            newLevel = level
+        }
+        var children = tag.children.map { render(tag: $0, level: newLevel) }.joined(separator: newline)
         if !children.isEmpty {
-            children = newline + children + newline + spaces
+            if !isGrouped {
+                children = newline + children + newline + spaces
+            }
         }
         return children
     }

@@ -107,6 +107,51 @@ final class TagBuilderTests: XCTestCase {
                             """)
     }
     
+    func testGroupTagBuilderAndRenderer() {
+        let doc = Document {
+            Branch {
+                GroupTag {
+                    Leaf("a")
+                    Leaf("b")
+                }
+            }
+        }
+        // TODO: needs better support group tag render support...
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <branch>
+                                <leaf>a</leaf>
+                                <leaf>b</leaf>
+                            </branch>
+                            """)
+    }
+    
+    func testMultiGroupTagBuilderAndRenderer() {
+        let values: [String] = ["a", "b", "c"]
+        
+        let doc = Document {
+            Branch {
+                values.map { item -> Tag in
+                    GroupTag {
+                        Leaf(item)
+                        Leaf(item)
+                    }
+                }
+            }
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <branch>
+                                <leaf>a</leaf>
+                                <leaf>a</leaf>
+                                <leaf>b</leaf>
+                                <leaf>b</leaf>
+                                <leaf>c</leaf>
+                                <leaf>c</leaf>
+                            </branch>
+                            """)
+    }
+    
+    
     
 }
 
