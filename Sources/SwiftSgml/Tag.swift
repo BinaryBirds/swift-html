@@ -61,7 +61,7 @@ open class Tag {
     @discardableResult
     public func deleteAttribute(_ key: String, _ condition: Bool = true) -> Self {
         if condition {
-            node.delete(Attribute(key: "checked"))
+            node.delete(Attribute(key: key))
         }
         return self
     }
