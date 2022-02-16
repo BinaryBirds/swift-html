@@ -8,8 +8,29 @@
 import XCTest
 @testable import SwiftHtml
 
+extension Div {
+
+    convenience init(_ value: String, @TagBuilder _ builder: () -> [Tag]) {
+        self.init(builder())
+        self.setAttributes([
+            .init(key: "some-key", value: value)
+        ])
+    }
+}
+
 final class SwiftHtmlTests: XCTestCase {
-        
+     
+    func testCustomInitWithAttribute() {
+        let doc = Document {
+            Div("some-value") {
+                Span("a")
+                Span("b")
+            }
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<div some-key="some-value"><span>a</span><span>b</span></div>"#, html)
+    }
+    
     func testClassAttribute() {
         let doc = Document {
             Span("").class("a", "b", "", "b", "c")
