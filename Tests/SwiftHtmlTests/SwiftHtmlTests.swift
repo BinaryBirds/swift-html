@@ -82,6 +82,16 @@ final class SwiftHtmlTests: XCTestCase {
         XCTAssertEqual(#"<span class="a c"></span>"#, html)
     }
     
+    func testRemoveLastClass() {
+        let doc = Document {
+            Span("")
+                .class("a")
+                .class(remove: "a")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span></span>"#, html)
+    }
+    
     func testToggleAddClass() {
         let doc = Document {
             Span("")
