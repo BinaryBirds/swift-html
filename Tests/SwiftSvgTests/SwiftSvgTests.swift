@@ -82,6 +82,19 @@ final class SwiftSvgTests: XCTestCase {
         """)
     }
     
+    func testRectWithOptionalAttributes() {
+        let doc = Document {
+            Svg {
+                Rect(x: 1, y: 2, width: 3, height: 4, rx: 5, ry: 6, pathLength: 7)
+            }
+        }
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+        <svg>
+            <rect x="1" y="2" width="3" height="4" rx="5" ry="6" pathLength="7"></rect>
+        </svg>
+        """)
+    }
+    
     func testEllipse() {
         let doc = Document {
             Svg {

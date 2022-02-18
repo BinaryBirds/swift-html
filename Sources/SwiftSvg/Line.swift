@@ -5,9 +5,14 @@
 //  Created by Tibor Bodecs on 2021. 11. 29..
 //
 
+/// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
 open class Line: Tag {
 
-    public init(x1: Double, y1: Double, x2: Double, y2: Double) {
+    public init(x1: Double,
+                y1: Double,
+                x2: Double,
+                y2: Double,
+                pathLength: Double? = nil) {
         super.init()
         setAttributes([
             .init(key: "x1", value: x1.preciseString),
@@ -15,6 +20,6 @@ open class Line: Tag {
             .init(key: "x2", value: x2.preciseString),
             .init(key: "y2", value: y2.preciseString),
         ])
-        
+        attribute("pathLength", pathLength?.preciseString)
     }
 }

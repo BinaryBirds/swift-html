@@ -6,12 +6,14 @@
 //
 
 
+/// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
 open class Path: Tag {
 
-    public init(_ d: String) {
+    public init(_ d: String, pathLength: Double? = nil) {
         super.init()
         setAttributes([
             .init(key: "d", value: d),
         ])
+        attribute("pathLength", pathLength?.preciseString)
     }
 }

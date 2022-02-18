@@ -5,6 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 11. 29..
 //
 
+/// https://developer.mozilla.org/en-US/docs/Web/SVG/Element
 open class Svg: Tag {
 
 }
