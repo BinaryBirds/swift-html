@@ -174,7 +174,7 @@ public extension Tag {
     /// Specifies an inline CSS style for an element
     func style(_ value: String) -> Self {
         guard !value.isEmpty else { return self }
-        attribute("style", value)
+        return attribute("style", value)
     }
     
     /// Specifies the tabbing order of an element
