@@ -112,6 +112,15 @@ final class SwiftHtmlTests: XCTestCase {
         XCTAssertEqual(#"<span class="a c"></span>"#, html)
     }
     
+    func testSetEmptyStyle() {
+        let doc = Document {
+            Span("")
+            .style("")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span></span>"#, html)
+    }
+    
     func testTextTag() {
         let doc = Document() {
             P {
