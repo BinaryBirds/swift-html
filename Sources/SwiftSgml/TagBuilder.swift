@@ -13,7 +13,11 @@ public enum TagBuilder {
     }
     
     public static func buildBlock(_ components: [Tag]...) -> Tag {
-        GroupTag(components.flatMap { $0 })
+        let flat = components.flatMap { $0 }
+        if flat.count < 2, let first = flat.first {
+            return first
+        }
+        return GroupTag(flat)
     }
 
     public static func buildExpression(_ expression: [Tag]) -> [Tag] {
