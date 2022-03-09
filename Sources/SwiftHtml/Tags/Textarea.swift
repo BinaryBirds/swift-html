@@ -48,7 +48,7 @@ public extension Textarea {
     
     /// Specifies that a text area should be disabled
     func disabled(_ condition: Bool = true) -> Self {
-        flagAttribute("autofocus", nil, condition)
+        flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies which form the text area belongs to
