@@ -107,6 +107,40 @@ final class TagBuilderTests: XCTestCase {
                             """)
     }
     
+    func testSingleGroupBuilder() {
+        let doc = Document {
+            Branch {
+                [
+                    Leaf("Lorem ipsum")
+                ]
+            }
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <branch>
+                                <leaf>Lorem ipsum</leaf>
+                            </branch>
+                            """)
+    }
+    
+    func testMultiGroupBuilder() {
+        let doc = Document {
+            Branch {
+                [
+                    Leaf("Lorem ipsum"),
+                    Leaf("Dolor sit amet"),
+                ]
+            }
+        }
+
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+                            <branch>
+                                <leaf>Lorem ipsum</leaf>
+                                <leaf>Dolor sit amet</leaf>
+                            </branch>
+                            """)
+    }
+    
     func testGroupTagBuilderAndRenderer() {
         let doc = Document {
             Branch {
