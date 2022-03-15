@@ -20,5 +20,13 @@ final class ATagTests: XCTestCase {
         }
         XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<a href="world"><p>Hello</p></a>"#)
     }
-
+    
+    func testSelfTarget() {
+        let doc = Document {
+            A("foo")
+            .href("bar")
+            .target(.default)
+        }
+        XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<a href="bar" target="_self">foo</a>"#)
+    }
 }

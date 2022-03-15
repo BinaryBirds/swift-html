@@ -55,4 +55,12 @@ final class FormTagTests: XCTestCase {
 
     }
     
+    func testTarget() {
+        let doc = Document {
+            Form()
+                .target(.default)
+        }
+        XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<form target="_self"></form>"#)
+    }
+    
 }
