@@ -9,7 +9,7 @@ public enum Target: String {
     /// Opens the link in a new window or tab
     case blank = "_blank"
     /// Default. Opens the link in the same frame as it was clicked
-    case `self` = "_self"
+    case `default` = "_self"
     /// Opens the link in the parent frame
     case parent = "_parent"
     /// Opens the link in the full body of the window
