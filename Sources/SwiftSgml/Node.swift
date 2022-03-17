@@ -39,6 +39,10 @@ public struct Node {
 
 public extension Node {
     
+    func value(_ key: String) -> String? {
+        attributes.first(where: { $0.key == key })?.value
+    }
+    
     /// add or replace an attribute with a given key to the node
     mutating func upsert(_ attribute: Attribute) {
         delete(attribute)

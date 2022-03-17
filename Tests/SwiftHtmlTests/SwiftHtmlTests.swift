@@ -139,6 +139,30 @@ final class SwiftHtmlTests: XCTestCase {
                             """)
     }
     
+    func testInsertRemoveChildren() {
+        // inserts
+        let tag = A("Link").href("#")
+        let img = Img(src: "/some/path/selfie.img", alt: "Selfie").id("selfie")
+        tag.insert(img, at: 999)
+        XCTAssert(tag.children.count == 1)
+        XCTAssert(tag.children[0].node.value("id") == img.node.value("id"))
+        let first = Div().id("first")
+        tag.insert(first, at: 0)
+        XCTAssert(tag.children.count == 2)
+        XCTAssert(tag.children[0].node.value("id") == first.node.value("id"))
+        let last = Div().id("last")
+        tag.insert(last, at: tag.children.endIndex)
+        XCTAssert(tag.children.count == 3)
+        XCTAssert(tag.children.last?.node.value("id") == last.node.value("id"))
+        // removes
+        tag.remove(at: 1)
+        XCTAssert(tag.children.count == 2)
+        tag.remove(at: tag.children.startIndex)
+        XCTAssert(tag.children.count == 1)
+        tag.remove(at: tag.children.endIndex-1)
+        XCTAssert(tag.children.count == 0)
+    }
+    
     func testMultiGroupTagBuilderAndRenderer() {
         let values: [String] = ["a", "b", "c"]
         
