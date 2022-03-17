@@ -86,4 +86,20 @@ open class Tag {
         }
         return self
     }
+    
+    // MARK - Children
+    
+    /// i > index.last ... child appended
+    @discardableResult
+    public func insert(_ child: Tag, at i: Int, if condition: Bool = true) -> Self {
+        self.children.insert(child, at: i)
+        return self
+    }
+    
+    /// i must be a valid index of array
+    @discardableResult
+    public func remove(at i: Int, if condition: Bool = true) -> Self {
+        self.children.remove(at: i)
+        return self
+    }
 }
