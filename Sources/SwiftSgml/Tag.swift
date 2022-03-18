@@ -21,11 +21,22 @@ open class Tag {
         self.node = Self.createNode()
         self.children = children
     }
-    
+
+    /// initialize a new Tag with a single child tag
+    public convenience init(_ child: Tag) {
+        self.init([child])
+    }
+
     /// initialize a new Tag with children using a builder
     public convenience init(@TagBuilder _ builder: () -> [Tag]) {
         self.init(builder())
     }
+   
+//    /// initialize a new Tag with children using an async throwing builder
+//    public convenience init(@TagBuilder _ builder: () async throws -> [Tag]) async throws {
+//        self.init(try await builder())
+//    }
+
 
     /// initialize a new Tag with some contents
     public convenience init(_ contents: String?) {
