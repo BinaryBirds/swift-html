@@ -89,10 +89,10 @@ open class Tag {
     
     // MARK - Children
     
-    /// i > index.last ... child appended
+    /// i == nil ... append
     @discardableResult
-    public func insert(_ child: Tag, at i: Int, if condition: Bool = true) -> Self {
-        children.insert(child, at: i < children.count ? i : children.endIndex)
+    public func insert(at i: Int? = nil, if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
+        self.children.insert(contentsOf: children(), at: i ?? self.children.endIndex)
         return self
     }
     
