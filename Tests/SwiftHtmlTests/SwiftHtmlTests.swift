@@ -139,7 +139,7 @@ final class SwiftHtmlTests: XCTestCase {
                             """)
     }
     
-    func testInsertRemoveChildren() {
+    func testInsertAppendRemoveChildren() {
         // start with parent + child
         let first = Div { }.id("first")
         let parent = Div { first }
