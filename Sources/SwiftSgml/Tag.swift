@@ -89,6 +89,7 @@ open class Tag {
     
     // MARK - Children
     
+    /// i must be a valid index of array
     /// i == nil ... append
     @discardableResult
     public func insert(at i: Int? = nil, if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
