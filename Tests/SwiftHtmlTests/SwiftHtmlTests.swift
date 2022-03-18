@@ -151,7 +151,7 @@ final class SwiftHtmlTests: XCTestCase {
         // add sibling after
         let after = Div().id("after")
         let after2 = Div().id("after2")
-        parent.insert {
+        parent.append {
             after
             after2
         }

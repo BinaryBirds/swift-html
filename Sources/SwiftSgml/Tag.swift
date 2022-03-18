@@ -101,10 +101,15 @@ open class Tag {
     // MARK - Children
     
     /// i must be a valid index of array
-    /// i == nil ... append
     @discardableResult
-    public func insert(at i: Int? = nil, if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
-        self.children.insert(contentsOf: children(), at: i ?? self.children.endIndex)
+    public func insert(at i: Int, if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
+        self.children.insert(contentsOf: children(), at: i)
+        return self
+    }
+    
+    @discardableResult
+    public func append(_ condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
+        self.children.append(contentsOf: children())
         return self
     }
     
