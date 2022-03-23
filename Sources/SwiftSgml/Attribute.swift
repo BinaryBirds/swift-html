@@ -24,7 +24,7 @@ extension Attribute {
 
 public enum AttributeKey: String {
 	case accept
-	case accept-charset
+	case acceptCharset = "accept-charset"
 	case accesskey
 	case action
 	case align
@@ -44,7 +44,7 @@ public enum AttributeKey: String {
 	case charset
 	case checked
 	case cite
-	case class
+	case `class`
 	case code
 	case codebase
 	case color
@@ -58,11 +58,10 @@ public enum AttributeKey: String {
 	case crossorigin
 	case csp
 	case data
-	case data-*
 	case datetime
 	case decoding
-	case default
-	case defer
+	case `default`
+	case `defer`
 	case dir
 	case dirname
 	case disabled
@@ -70,7 +69,7 @@ public enum AttributeKey: String {
 	case draggable
 	case enctype
 	case enterkeyhint
-	case for
+	case `for`
 	case form
 	case formaction
 	case formenctype
@@ -83,7 +82,7 @@ public enum AttributeKey: String {
 	case high
 	case href
 	case hreflang
-	case http-equiv
+	case httpEquiv = "http-equiv"
 	case icon
 	case id
 	case importance
@@ -112,7 +111,7 @@ public enum AttributeKey: String {
 	case muted
 	case name
 	case novalidate
-	case open
+	case `open`
 	case optimum
 	case pattern
 	case ping
@@ -123,7 +122,7 @@ public enum AttributeKey: String {
 	case readonly
 	case referrerpolicy
 	case rel
-	case required
+	case `required`
 	case reversed
 	case rows
 	case rowspan
