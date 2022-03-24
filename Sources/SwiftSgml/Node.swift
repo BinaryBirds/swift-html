@@ -39,10 +39,6 @@ public struct Node {
 
 public extension Node {
     
-    func value(_ key: AttributeKey) -> String? {
-        self.value(key.rawValue)
-    }
-    
     func value(_ key: String) -> String? {
         attributes.first(where: { $0.key == key })?.value
     }
