@@ -71,23 +71,36 @@ public extension Tag {
         `class`(values)
     }
     
-    /// Adds a single value to the class list if the condition is true
+    /// Inserts a single value to the class list if the condition is true
     ///
-    /// Note: If the value is empty or nil it won't be added to the list
+    /// Note: If the value is empty or nil it won't be inserted to the list
     ///
-    func `class`(add value: String?, _ condition: Bool = true) -> Self {
+    func `class`(insert value: String?, _ condition: Bool = true) -> Self {
         guard let value = value else {
             return self
         }
-        return `class`(add: [value], condition)
+        return `class`(insert: [value], condition)
     }
     
-    /// Adds an array of values to the class list if the condition is true
+    /// Inserts a variadic array of optional values to the class list if the condition is true
     ///
-    /// Note: If the value is empty it won't be added to the list
+    /// Note: nil or empty values will not be inserted into the list
     ///
-    func `class`(add values: [String], _ condition: Bool = true) -> Self {
-        let newValues = classArray + values.filter { !$0.isEmpty }
+    func `class`(insert values: String?..., if condition: Bool = true) -> Self {
+        return `class`(insert: values, condition)
+    }
+    
+     /// Inserts an array of values to the class list if the condition is true
+    ///
+    /// Note: If the value is empty it won't be inserted into the list
+    ///
+    func `class`(insert values: [String?], _ condition: Bool = true) -> Self {
+        let values = values.compactMap{ $0 }.filter{ !$0.isEmpty }
+        guard condition, !values.isEmpty else { return self }
+        
+        var classes = Set(classArray)
+        _ = values.map{ classes.insert($0) }
+        let newValues = Array(classes)
 
         var newValue: String? = nil
         if !newValues.isEmpty {
