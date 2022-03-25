@@ -87,6 +87,7 @@ public extension Tag {
     /// Note: nil or empty values will not be inserted into the list
     ///
     func `class`(insert values: String?..., if condition: Bool = true) -> Self {
+        let values = values.compactMap{ $0 }
         return `class`(insert: values, condition)
     }
     
@@ -94,9 +95,10 @@ public extension Tag {
     ///
     /// Note: If the value is empty it won't be inserted into the list
     ///
-    func `class`(insert values: [String?], _ condition: Bool = true) -> Self {
-        let values = values.compactMap{ $0 }.filter{ !$0.isEmpty }
-        guard condition, !values.isEmpty else { return self }
+    func `class`(insert values: [String]?, _ condition: Bool = true) -> Self {
+        guard condition, let values = values?.filter({!$0.isEmpty}), !values.isEmpty else {
+            return self
+        }
         
         var classes = Set(classArray)
         _ = values.map{ classes.insert($0) }
