@@ -119,6 +119,7 @@ public extension Tag {
     
     /// Removes an array of class values if the condition is true
     func `class`(remove values: [String], _ condition: Bool = true) -> Self {
+        guard condition else { return self }
         let newClasses = classArray.filter { !values.contains($0) }
         if newClasses.isEmpty {
             return deleteAttribute("class")
