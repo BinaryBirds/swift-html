@@ -101,7 +101,7 @@ public extension Input {
     }
     
     /// Defines the HTTP method for sending data to the action URL (for type="submit" and type="image")
-    func formmethod(_ value: Enctype = .urlencoded) -> Self {
+    func formmethod(_ value: Method = .get) -> Self {
         attribute("formmethod", value.rawValue)
     }
     

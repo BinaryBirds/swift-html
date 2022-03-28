@@ -53,7 +53,7 @@ public extension Button {
     }
     
     /// Specifies how to send the form-data (which HTTP method to use). Only for type="submit"
-    func formmethod(_ value: Enctype = .urlencoded) -> Self {
+    func formmethod(_ value: Method = .get) -> Self {
         attribute("formmethod", value.rawValue)
     }
     
