@@ -36,7 +36,7 @@ public struct DocumentRenderer {
         }
     }
 
-    private func render(tag: Tag, level: Int = 0) -> String {
+    public func render(tag: Tag, level: Int = 0) -> String {
         let spaces = String(repeating: " ", count: level * indent)
         switch tag.node.type {
         case .standard:
