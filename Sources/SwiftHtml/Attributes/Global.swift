@@ -98,17 +98,14 @@ public extension Tag {
     func `class`(insert values: [String]?, _ condition: Bool = true) -> Self {
         guard condition, let values = values?.filter({!$0.isEmpty}), !values.isEmpty else {
             return self
+        }        
+        var classes = Array(classArray)
+        for value in values {
+            if !classes.contains(value) {
+                classes.append(value)
+            }
         }
-        
-        var classes = Set(classArray)
-        _ = values.map{ classes.insert($0) }
-        let newValues = Array(classes)
-
-        var newValue: String? = nil
-        if !newValues.isEmpty {
-            newValue = newValues.classString
-        }
-        return `class`(newValue, condition)
+        return `class`(classes.classString, condition)
     }
     
     /// Removes a given class values if the condition is true
