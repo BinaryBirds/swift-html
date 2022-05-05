@@ -62,10 +62,11 @@ final class SwiftHtmlTests: XCTestCase {
         XCTAssertEqual(#"<span class="a f"></span>"#, html)
     }
     
-    func testAddClass() {
+    func testInsertClass() {
         let doc = Document {
             Span("")
                 .class("a", "b", "c")
+                .class(insert: "d")
                 .class(insert: "d")
         }
         let html = DocumentRenderer(minify: true).render(doc)
