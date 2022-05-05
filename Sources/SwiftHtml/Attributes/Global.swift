@@ -137,7 +137,7 @@ public extension Tag {
         if classArray.contains(value) {
             return `class`(remove: value, condition)
         }
-        return `class`(add: value, condition)
+        return `class`(insert: value, condition)
     }
     
     // MARK: - other global attributes
