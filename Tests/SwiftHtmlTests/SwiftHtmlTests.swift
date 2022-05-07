@@ -139,33 +139,14 @@ final class SwiftHtmlTests: XCTestCase {
                             """)
     }
     
-    func testInsertAppendRemoveChildren() {
+    func testChildren() {
         // start with parent + child
-        let first = Div { }.id("first")
-        let parent = Div { first }
-        // add sibling before
-        let before = Div().id("before")
-        parent.insert(at: 0) { before }
-        XCTAssert(parent.children.count == 2)
-        XCTAssert(parent.children[0].node.value("id") == before.node.value("id"))
-        // add sibling after
-        let after = Div().id("after")
-        let after2 = Div().id("after2")
-        parent.append {
-            after
-            after2
-        }
-        XCTAssert(parent.children.count == 4)
-        XCTAssert(parent.children.last?.node.value("id") == after2.node.value("id"))
-        // removes
-        parent.remove(at: 1)
-        XCTAssert(parent.children.count == 3)
-        parent.remove(at: parent.children.startIndex)
-        XCTAssert(parent.children.count == 2)
-        parent.remove(at: parent.children.endIndex-1)
-        XCTAssert(parent.children.count == 1)
-        parent.remove(at: 0)
-        XCTAssert(parent.children.count == 0)
+        let abcChildren = [Div { }.id("a"), Div { }.id("b"), Div { }.id("c")]
+        let parent = Div { for child in abcChildren { child } }
+        let defChildren = [Div { }.id("a"), Div { }.id("b"), Div { }.id("c")]
+        parent.children { for child in defChildren { child } }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span></span>"#, html)
     }
     
     func testMultiGroupTagBuilderAndRenderer() {
