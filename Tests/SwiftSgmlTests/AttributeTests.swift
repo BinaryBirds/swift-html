@@ -81,4 +81,11 @@ final class AttributeTests: XCTestCase {
                             <leaf>example</leaf>
                             """)
     }
+    
+    func testAttributeValue() {
+        let key = "foo"
+        let value = "example"
+        let leaf = Leaf("example").attribute(key, value)
+        XCTAssertEqual(leaf.node.value(key), value)
+    }
 }
