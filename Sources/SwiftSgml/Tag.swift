@@ -101,7 +101,7 @@ open class Tag {
     @discardableResult
     public func children(if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
         guard condition else { return self }
-        self.children = children
+        self.children = children()
         return self
     }    
 }
