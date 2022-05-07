@@ -98,25 +98,10 @@ open class Tag {
         return self
     }
     
-    // MARK - Children
-    
-    /// i must be a valid index of array
     @discardableResult
-    public func insert(at i: Int, if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
-        self.children.insert(contentsOf: children(), at: i)
+    public func children(if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
+        guard condition else { return self }
+        self.children = children
         return self
-    }
-    
-    @discardableResult
-    public func append(_ condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
-        self.children.append(contentsOf: children())
-        return self
-    }
-    
-    /// i must be a valid index of array
-    @discardableResult
-    public func remove(at i: Int, if condition: Bool = true) -> Self {
-        children.remove(at: i)
-        return self
-    }
+    }    
 }
