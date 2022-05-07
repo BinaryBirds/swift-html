@@ -140,15 +140,17 @@ final class SwiftHtmlTests: XCTestCase {
     }
     
     func testChildren() {
-        // start with parent + child
-        let abcChildren = [Div { }.id("a"), Div { }.id("b"), Div { }.id("c")]
-        let parent = Div { for child in abcChildren { child } }
-        let defChildren = [Div { }.id("a"), Div { }.id("b"), Div { }.id("c")]
-        parent.children { for child in defChildren { child } }
+        let doc = Document {
+            Div().children {
+                Span("a")
+                Span("b")
+                Span("c")
+            }
+        }
         let html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(#"<span></span>"#, html)
+        XCTAssertEqual(#"<div><span>a</span><span>b</span><span>c</span></div>"#, html)
     }
-    
+        
     func testMultiGroupTagBuilderAndRenderer() {
         let values: [String] = ["a", "b", "c"]
         
