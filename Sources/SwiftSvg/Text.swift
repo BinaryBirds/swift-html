@@ -11,8 +11,7 @@ open class Text: Tag{
     
 }
     
-extension Text{
-    
+public extension Text{
     ///    The x coordinate of the starting point of the text baseline.
     func x(_ value: Double=0) -> Self {
         attribute("x", value.preciseString)
