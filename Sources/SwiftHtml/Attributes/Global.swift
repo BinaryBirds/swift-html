@@ -71,29 +71,41 @@ public extension Tag {
         `class`(values)
     }
     
-    /// Adds a single value to the class list if the condition is true
+    /// Inserts a single value to the class list if the condition is true
     ///
-    /// Note: If the value is empty or nil it won't be added to the list
+    /// Note: If the value is empty or nil it won't be inserted to the list
     ///
-    func `class`(add value: String?, _ condition: Bool = true) -> Self {
+    func `class`(insert value: String?, _ condition: Bool = true) -> Self {
         guard let value = value else {
             return self
         }
-        return `class`(add: [value], condition)
+        return `class`(insert: [value], condition)
     }
     
-    /// Adds an array of values to the class list if the condition is true
+    /// Inserts a variadic array of optional values to the class list if the condition is true
     ///
-    /// Note: If the value is empty it won't be added to the list
+    /// Note: nil or empty values will not be inserted into the list
     ///
-    func `class`(add values: [String], _ condition: Bool = true) -> Self {
-        let newValues = classArray + values.filter { !$0.isEmpty }
-
-        var newValue: String? = nil
-        if !newValues.isEmpty {
-            newValue = newValues.classString
+    func `class`(insert values: String?..., if condition: Bool = true) -> Self {
+        let values = values.compactMap{ $0 }
+        return `class`(insert: values, condition)
+    }
+    
+     /// Inserts an array of values to the class list if the condition is true
+    ///
+    /// Note: If the value is empty it won't be inserted into the list
+    ///
+    func `class`(insert values: [String]?, _ condition: Bool = true) -> Self {
+        guard condition, let values = values?.filter({!$0.isEmpty}), !values.isEmpty else {
+            return self
+        }        
+        var classes = Array(classArray)
+        for value in values {
+            if !classes.contains(value) {
+                classes.append(value)
+            }
         }
-        return `class`(newValue, condition)
+        return `class`(classes.classString, condition)
     }
     
     /// Removes a given class values if the condition is true
@@ -106,6 +118,7 @@ public extension Tag {
     
     /// Removes an array of class values if the condition is true
     func `class`(remove values: [String], _ condition: Bool = true) -> Self {
+        guard condition else { return self }
         let newClasses = classArray.filter { !values.contains($0) }
         if newClasses.isEmpty {
             return deleteAttribute("class")
@@ -121,7 +134,7 @@ public extension Tag {
         if classArray.contains(value) {
             return `class`(remove: value, condition)
         }
-        return `class`(add: value, condition)
+        return `class`(insert: value, condition)
     }
     
     // MARK: - other global attributes

@@ -53,8 +53,8 @@ final class SwiftHtmlTests: XCTestCase {
         let doc = Document {
             Span("")
                 .class("a", "b", "c")
-                .class(add: ["d", "e", "f"])
-                .class(add: "b", true)
+                .class(insert: ["d", "e", "f"])
+                .class(insert: "b", true)
                 .class(remove: ["b", "c", "d"])
                 .class(remove: "e", true)
         }
@@ -62,11 +62,12 @@ final class SwiftHtmlTests: XCTestCase {
         XCTAssertEqual(#"<span class="a f"></span>"#, html)
     }
     
-    func testAddClass() {
+    func testInsertClass() {
         let doc = Document {
             Span("")
                 .class("a", "b", "c")
-                .class(add: "d")
+                .class(insert: "d")
+                .class(insert: "d")
         }
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a b c d"></span>"#, html)
