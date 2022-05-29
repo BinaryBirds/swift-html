@@ -107,5 +107,55 @@ final class SwiftSvgTests: XCTestCase {
         </svg>
         """)
     }
+    
+    
+    func testText(){
+        let doc = Document{
+            Svg{
+                Text("I love SVG")
+                    .x(0)
+                    .y(15)
+                    .attribute("fill", "red")
+                    .attribute("transform", "rotate(30 20,40)")
+            }
+            .height(60)
+            .width(200)
+        }
+        
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+        <svg height="60" width="200">
+            <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
+        </svg>
+        """)
+    }
+    
+    func testG(){
+        let doc = Document{
+            Svg{
+                G{
+                    Circle(cx: 40, cy: 40, r: 25)
+                    Circle(cx: 60, cy: 60, r: 25)
+                }
+                .attribute("fill", "white")
+                .attribute("stroke", "green")
+                .attribute("stroke-width", "5")
+            }
+            .viewBox(minX: 0, minY: 0, width: 100, height: 100)
+            
+        }
+        
+        XCTAssertEqual(DocumentRenderer().render(doc), """
+        <svg viewBox="0 0 100 100">
+            <g fill="white" stroke="green" stroke-width="5">
+                <circle cx="40" cy="40" r="25"></circle>
+                <circle cx="60" cy="60" r="25"></circle>
+            </g>
+        </svg>
+        """)
+    }
+    
+   
+    
+
 
 }
