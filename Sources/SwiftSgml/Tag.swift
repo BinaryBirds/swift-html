@@ -97,4 +97,11 @@ open class Tag {
         }
         return self
     }
+    
+    @discardableResult
+    public func children(if condition: Bool = true, @TagBuilder children: () -> [Tag]) -> Self {
+        guard condition else { return self }
+        self.children = children()
+        return self
+    }    
 }
