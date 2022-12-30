@@ -83,10 +83,10 @@ open class Tag {
         guard var value = value, condition else { return self }
         /// insure integrity of class value by filtering empty and duplicate strings
         if key == "class" {
-            let slugs = value
+            let substrings = value
                 .split(separator: " ")
                 .filter{ !$0.isEmpty }
-            value = Set(slugs).joined(separator: " ")
+            value = Set(substrings).joined(separator: " ")
         }
         node.upsert(Attribute(key: key, value: value))
         return self
