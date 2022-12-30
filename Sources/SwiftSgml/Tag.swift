@@ -80,9 +80,15 @@ open class Tag {
     /// add a new attribute with a given value if the condition is true
     @discardableResult
     public func attribute(_ key: String, _ value: String?, _ condition: Bool = true) -> Self {
-        if let value = value, condition {
-            node.upsert(Attribute(key: key, value: value))
+        guard var value = value, condition else { return self }
+        /// insure integrity of class value by filtering empty and duplicate strings
+        if key == "class" {
+            let slugs = value
+                .split(separator: " ")
+                .filter{ !$0.isEmpty }
+            value = Set(slugs).joined(separator: " ")
         }
+        node.upsert(Attribute(key: key, value: value))
         return self
     }
 

@@ -39,11 +39,9 @@ private extension String {
     }
 }
 
-private extension Array where Element == String {
+private extension Set where Element == String {
     
-    var classString: String {
-        filter { !$0.isEmpty }.joined(separator: " ")
-    }
+    var classString: String { joined(separator: " ") }
 }
 
 public extension Tag {
@@ -51,8 +49,13 @@ public extension Tag {
     // MARK: - class management
 
     /// find an existing class attribute and return the value as an array of strings or an empty array
-    private var classArray: [String] {
-        node.attributes.first { $0.key == "class" }?.value?.classArray ?? []
+    var classes: Set<String> {
+        let slugs = node
+            .attributes
+            .first(where: {$0.key == "class" })?
+            .value?
+            .classArray ?? []
+        return Set(slugs)
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
@@ -63,7 +66,7 @@ public extension Tag {
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
     func `class`(_ values: [String], _ condition: Bool = true) -> Self {
         /// @NOTE: explicit true flag is needed, otherwise Swift won't know which function to call...
-        `class`(values.classString, condition)
+        `class`(Set(values), condition)
     }
 
     /// Specifies multiple classnames for an element (refers to a class in a style sheet)
@@ -71,46 +74,57 @@ public extension Tag {
         `class`(values)
     }
     
+    func `class`(_ values: Set<String>, _ condition: Bool = true) -> Self {
+        `class`(values.classString, condition)
+    }
+    
     /// Adds a single value to the class list if the condition is true
     ///
     /// Note: If the value is empty or nil it won't be added to the list
     ///
-    func `class`(add value: String?, _ condition: Bool = true) -> Self {
-        guard let value = value else {
-            return self
-        }
-        return `class`(add: [value], condition)
+    func `class`(insert value: String?, _ condition: Bool = true) -> Self {
+        `class`(union: value != nil ? Set([value!]) : nil, condition)
     }
     
     /// Adds an array of values to the class list if the condition is true
     ///
     /// Note: If the value is empty it won't be added to the list
     ///
-    func `class`(add values: [String], _ condition: Bool = true) -> Self {
-        let newValues = classArray + values.filter { !$0.isEmpty }
-
-        var newValue: String? = nil
-        if !newValues.isEmpty {
-            newValue = newValues.classString
-        }
-        return `class`(newValue, condition)
+    func `class`(insert values: [String]?, _ condition: Bool = true) -> Self {
+        `class`(union: values != nil ? Set(values!) : nil, condition)
+    }
+    
+    func `class`(union values: Set<String>?, _ condition: Bool = true) -> Self {
+        guard let values = values else { return self }
+        return `class`(classes.union(values).classString, condition)
     }
     
     /// Removes a given class values if the condition is true
     func `class`(remove value: String?, _ condition: Bool = true) -> Self {
-        guard let value = value else {
-            return self
-        }
-        return `class`(remove: [value], condition)
+        `class`(subtract: value != nil ? Set([value!]) : nil, condition)
     }
     
     /// Removes an array of class values if the condition is true
-    func `class`(remove values: [String], _ condition: Bool = true) -> Self {
-        let newClasses = classArray.filter { !values.contains($0) }
+    func `class`(remove values: [String]?, _ condition: Bool = true) -> Self {
+        `class`(subtract: values != nil ? Set(values!) : nil, condition)
+    }
+    
+    func `class`(subtract values: Set<String>?, _ condition: Bool = true) -> Self {
+        guard let values = values else { return self }
+        let newClasses = classes.subtracting(values)
         if newClasses.isEmpty {
             return deleteAttribute("class")
         }
-        return `class`(newClasses, condition)
+        return `class`(newClasses.classString, condition)
+    }
+    
+    func `class`(intersect values: Set<String>?, _ condition: Bool = true) -> Self {
+        guard let values = values else { return self }
+        let newClasses = classes.intersection(values)
+        if newClasses.isEmpty {
+            return deleteAttribute("class")
+        }
+        return `class`(newClasses.classString, condition)
     }
     
     /// toggles a single class value
@@ -118,10 +132,10 @@ public extension Tag {
         guard let value = value else {
             return self
         }
-        if classArray.contains(value) {
+        if classes.contains(value) {
             return `class`(remove: value, condition)
         }
-        return `class`(add: value, condition)
+        return `class`(insert: value, condition)
     }
     
     // MARK: - other global attributes
