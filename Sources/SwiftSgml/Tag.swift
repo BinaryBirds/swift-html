@@ -12,7 +12,7 @@ open class Tag {
     
     // MARK: - init
     
-    open class var name: String? { String(describing: self).lowercased() }
+    open class var name: String? { String(describing: self) }
     
     open class var type: Node.NodeType { .standard }
 
@@ -22,7 +22,8 @@ open class Tag {
 
     /// initialize a new Tag with child tags
     public init(name: String? = nil, type: Node.NodeType? = nil, _ children: [Tag] = []) {
-        self.node = Self.createNode(type ?? Self.type, name ?? Self.name)
+        let name = name ?? Self.name
+        self.node = Self.createNode(type ?? Self.type, name?.lowercased())
         self.children = children
     }
 
