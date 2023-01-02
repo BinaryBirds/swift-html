@@ -6,11 +6,9 @@
 //
 
 open class EmptyTag: Tag {
-    
-    open override class func createNode() -> Node {
-        Node(type: .empty, name: String(describing: self).lowercased())
-    }
 
+    open class override var type: Node.NodeType { .empty }
+    
     public init() {
         super.init()
     }

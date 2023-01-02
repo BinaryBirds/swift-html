@@ -7,8 +7,8 @@
 
 
 open class GroupTag: Tag {
+    
+    open class override var name: String? { nil }
 
-    open override class func createNode() -> Node {
-        .init(type: .group)
-    }
+    open class override var type: Node.NodeType { .group }
 }

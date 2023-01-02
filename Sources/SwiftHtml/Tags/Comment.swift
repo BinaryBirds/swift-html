@@ -14,9 +14,9 @@
 /// This is especially useful if you have a lot of code.
 open class Comment: Tag {
 
-    open override class func createNode() -> Node {
-        Node(type: .comment)
-    }
+    open class override var name: String? { nil }
+
+    open class override var type: Node.NodeType { .comment }
     
     public init(_ contents: String) {
         super.init()
