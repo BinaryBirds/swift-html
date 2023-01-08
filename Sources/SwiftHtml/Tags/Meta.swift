@@ -75,6 +75,11 @@ public extension Meta {
         attribute("name", value)
     }
     
+    /// Open Graph property
+    func property(_ value: String) -> Self {
+        attribute("property", value)
+    }
+    
     /// Specifies a name for the metadata
     func name(_ value: Name) -> Self {
         name(value.rawValue)
