@@ -10,4 +10,5 @@
 /// The `<s>` tag should not be used to define deleted text in a document, use the `<del>` tag for that.
 open class S: Tag {
     
+    open class override var name: String? { "s" }
 }

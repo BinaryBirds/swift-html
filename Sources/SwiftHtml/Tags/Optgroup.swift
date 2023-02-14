@@ -10,6 +10,7 @@
 /// If you have a long list of options, groups of related options are easier to handle for a user.
 open class Optgroup: Tag {
     
+    open class override var name: String? { "optgroup" }
 }
 
 public extension Optgroup {

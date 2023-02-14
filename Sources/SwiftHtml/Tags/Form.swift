@@ -20,6 +20,7 @@
 /// - `<output>`
 open class Form: Tag {
 
+    open class override var name: String? { "form" }
 }
 
 public extension Form {

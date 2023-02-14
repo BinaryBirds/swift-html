@@ -10,4 +10,5 @@
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.
 open class Tr: Tag {
 
+    open class override var name: String? { "tr" }
 }

@@ -12,6 +12,8 @@
 /// Tracks are formatted in WebVTT format (.vtt files).
 open class Track: EmptyTag {
     
+    open class override var name: String? { "track" }
+    
     public init(src: String) {
         super.init()
         setAttributes([

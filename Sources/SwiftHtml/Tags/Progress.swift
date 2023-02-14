@@ -10,6 +10,7 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Progress: Tag {
 
+    open class override var name: String? { "progress" }
 }
 
 public extension Progress {

@@ -12,4 +12,5 @@
 /// The `<datalist>` element's id attribute must be equal to the `<input>` element's list attribute (this binds them together).
 open class Datalist: Tag {
  
+    open class override var name: String? { "datalist" }
 }

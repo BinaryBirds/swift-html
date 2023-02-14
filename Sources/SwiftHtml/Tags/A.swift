@@ -16,6 +16,7 @@
 /// - An active link is underlined and red
 open class A: Tag {
 
+    open class override var name: String? { "a" }
 }
 
 public extension A {

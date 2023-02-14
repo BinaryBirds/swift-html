@@ -14,6 +14,7 @@
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
 open class Details: Tag {
 
+    open class override var name: String? { "details" }
 }
 
 public extension Details {

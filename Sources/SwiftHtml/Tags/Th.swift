@@ -17,6 +17,7 @@
 /// The text in `<td>` elements are regular and left-aligned by default.
 open class Th: Tag {
     
+    open class override var name: String? { "th" }
 }
 
 public extension Th {

@@ -14,6 +14,7 @@
 /// **Tip:** For unordered list, use the `<ul>` tag.
 open class Ol: Tag {
 
+    open class override var name: String? { "ol" }
 }
 
 public extension Ol {

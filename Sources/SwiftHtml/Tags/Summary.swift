@@ -10,4 +10,5 @@
 /// **Note:** The `<summary>` element should be the first child element of the `<details>` element.
 open class Summary: Tag {
     
+    open class override var name: String? { "summary" }
 }

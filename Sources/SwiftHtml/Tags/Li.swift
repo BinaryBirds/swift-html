@@ -16,6 +16,7 @@
 /// **Tip:** Use CSS to style lists.
 open class Li: Tag {
     
+    open class override var name: String? { "li" }
 }
 
 public extension Li {

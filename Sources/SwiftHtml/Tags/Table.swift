@@ -14,4 +14,5 @@
 /// An HTML table may also include `<caption>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements.
 open class Table: Tag {
 
+    open class override var name: String? { "table" }
 }

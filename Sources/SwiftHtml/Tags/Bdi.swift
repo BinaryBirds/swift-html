@@ -12,4 +12,5 @@
 /// This element is useful when embedding user-generated content with an unknown text direction.
 open class Bdi: Tag {
     
+    open class override var name: String? { "bdi" }
 }

@@ -35,6 +35,7 @@
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
 open class Label: Tag {
 
+    open class override var name: String? { "label" }
 }
 
 public extension Label {

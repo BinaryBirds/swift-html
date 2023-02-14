@@ -16,6 +16,7 @@
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 open class Div: Tag {
 
+    open class override var name: String? { "div" }
 }
 
 

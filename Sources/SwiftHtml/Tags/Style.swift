@@ -11,6 +11,7 @@
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
 open class Style: Tag {
 
+    open class override var name: String? { "style" }
 }
 
 public extension Style {

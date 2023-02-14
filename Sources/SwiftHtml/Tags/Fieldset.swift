@@ -10,6 +10,7 @@
 /// The `<fieldset>` tag draws a box around the related elements.
 open class Fieldset: Tag {
     
+    open class override var name: String? { "fieldset" }
 }
 
 public extension Fieldset {

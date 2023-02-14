@@ -14,6 +14,7 @@
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
 open class Colgroup: Tag {
 
+    open class override var name: String? { "colgroup" }
 }
 
 public extension Colgroup {

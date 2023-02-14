@@ -14,6 +14,7 @@
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
 open class Option: Tag {
     
+    open class override var name: String? { "option" }
 }
 
 public extension Option {

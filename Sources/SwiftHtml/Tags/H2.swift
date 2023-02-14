@@ -13,4 +13,5 @@
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 open class H2: Tag {
     
+    open class override var name: String? { "h2" }
 }

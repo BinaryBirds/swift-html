@@ -11,7 +11,8 @@
 ///
 /// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
 open class Data: Tag {
-        
+    
+    open class override var name: String? { "data" }
 }
 
 public extension Data {

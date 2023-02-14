@@ -12,6 +12,7 @@
 /// **Note:** There must not be more than one `<main>` element in a document. The `<main>` element must NOT be a descendant of an `<article>`, `<aside>`, `<footer>`, `<header>`, or `<nav>` element.
 open class Main: Tag {
     
+    open class override var name: String? { "main" }
 }
 
 

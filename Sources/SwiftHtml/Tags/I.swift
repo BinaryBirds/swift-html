@@ -18,4 +18,5 @@
 /// - `<dfn>` (a definition term)
 open class I: Tag {
     
+    open class override var name: String? { "i" }
 }

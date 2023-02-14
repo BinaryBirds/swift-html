@@ -12,6 +12,7 @@
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
 open class Canvas: Tag {
     
+    open class override var name: String? { "canvas" }
 }
 
 public extension Canvas {

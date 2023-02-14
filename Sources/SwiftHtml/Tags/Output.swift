@@ -8,6 +8,7 @@
 /// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
 open class Output: Tag {
     
+    open class override var name: String? { "output" }
 }
 
 public extension Output {

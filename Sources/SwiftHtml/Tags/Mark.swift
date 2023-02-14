@@ -8,4 +8,5 @@
 /// The `<mark>` tag defines text that should be marked or highlighted.
 open class Mark: Tag {
     
+    open class override var name: String? { "mark" }
 }

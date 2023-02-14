@@ -10,4 +10,5 @@
 /// **Tip:** Use the `<b>` tag to specify bold text without any extra importance!
 open class Strong: Tag {
 
+    open class override var name: String? { "strong" }
 }

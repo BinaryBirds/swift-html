@@ -10,4 +10,5 @@
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS (see example below).
 open class Kbd: Tag {
     
+    open class override var name: String? { "kbd" }
 }

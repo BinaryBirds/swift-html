@@ -15,5 +15,6 @@
 /// However, you can use CSS to style the `<aside>` element (see example below).
 open class Aside: Tag {
     
+    open class override var name: String? { "aside" }
 }
 

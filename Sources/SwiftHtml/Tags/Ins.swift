@@ -10,4 +10,5 @@
 /// **Tip:** Also look at the `<del>` tag to markup deleted text.
 open class Ins: Tag {
     
+    open class override var name: String? { "ins" }
 }

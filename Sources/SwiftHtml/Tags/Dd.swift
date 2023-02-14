@@ -12,4 +12,5 @@
 /// Inside a `<dd>` tag you can put paragraphs, line breaks, images, links, lists, etc.
 open class Dd: Tag {
 
+    open class override var name: String? { "dd" }
 }

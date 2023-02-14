@@ -8,4 +8,5 @@
 /// The `<section>` tag defines a section in a document.
 open class Section: Tag {
 
+    open class override var name: String? { "section" }
 }

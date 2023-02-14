@@ -12,4 +12,5 @@
 /// The text in the `<cite>` element usually renders in italic.
 open class Cite: Tag {
     
+    open class override var name: String? { "cite" }
 }

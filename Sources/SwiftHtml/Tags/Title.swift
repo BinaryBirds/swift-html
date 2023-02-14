@@ -28,4 +28,5 @@
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
 open class Title: Tag {
 
+    open class override var name: String? { "title" }
 }

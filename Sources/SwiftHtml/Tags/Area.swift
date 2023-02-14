@@ -51,6 +51,7 @@ open class Area: EmptyTag {
         case poly
     }
 
+    open class override var name: String? { "area" }
 }
 
 public extension Area {

@@ -12,6 +12,8 @@
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 open class Script: Tag {
     
+    open class override var name: String? { "script" }
+    
     public enum `Type`: String {
         case javascript = "text/javascript"
     }

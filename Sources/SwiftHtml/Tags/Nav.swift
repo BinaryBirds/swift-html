@@ -12,6 +12,7 @@
 /// Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content.
 open class Nav: Tag {
 
+    open class override var name: String? { "nav" }
 }
 
 

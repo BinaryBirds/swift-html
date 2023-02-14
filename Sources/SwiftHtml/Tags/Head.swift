@@ -22,4 +22,5 @@
 /// - `<noscript>`
 open class Head: Tag {
 
+    open class override var name: String? { "head" }
 }

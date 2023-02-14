@@ -14,4 +14,5 @@
 /// **Tip:** For ordered lists, use the `<ol>` tag.
 open class Ul: Tag {
 
+    open class override var name: String? { "ul" }
 }

@@ -12,7 +12,7 @@
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 open class Base: EmptyTag {
 
-
+    open class override var name: String? { "base" }
 }
 
 public extension Base {

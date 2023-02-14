@@ -18,6 +18,7 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Select: Tag {
     
+    open class override var name: String? { "select" }
 }
 
 public extension Select {

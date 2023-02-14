@@ -10,4 +10,5 @@
 /// **Tip:** When a word is too long, the browser might break it at the wrong place. You can use the `<wbr>` element to add word break opportunities.
 open class Wbr: Tag {
 
+    open class override var name: String? { "wbr" }
 }

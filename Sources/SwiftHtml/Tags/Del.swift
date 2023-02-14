@@ -10,6 +10,7 @@
 /// Browsers will usually strike a line through deleted text.
 open class Del: Tag {
     
+    open class override var name: String? { "del" }
 }
 
 public extension Del {

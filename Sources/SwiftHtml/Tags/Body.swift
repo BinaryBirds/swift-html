@@ -12,4 +12,5 @@
 /// **Note:** There can only be one `<body>` element in an HTML document.
 open class Body: Tag {
 
+    open class override var name: String? { "body" }
 }

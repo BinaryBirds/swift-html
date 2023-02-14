@@ -12,4 +12,5 @@
 /// **Tip:** Use CSS to style paragraphs.
 open class P: Tag {
     
+    open class override var name: String? { "p" }
 }

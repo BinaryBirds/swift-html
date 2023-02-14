@@ -10,4 +10,5 @@
 /// A screen reader will pronounce the words in `<em>` with an emphasis, using verbal stress.
 open class Em: Tag {
 
+    open class override var name: String? { "em" }
 }

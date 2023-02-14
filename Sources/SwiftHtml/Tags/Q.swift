@@ -11,7 +11,7 @@
 ///
 /// **Tip:** Use `<blockquote>` for long quotations.
 open class Q: Tag {
-
+    open class override var name: String? { "q" }
 }
 
 public extension Q {

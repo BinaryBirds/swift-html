@@ -12,6 +12,7 @@
 /// The browser will choose the first `<source>` it supports.
 open class Source: EmptyTag {
     
+    open class override var name: String? { "source" }
 }
 
 public extension Source {

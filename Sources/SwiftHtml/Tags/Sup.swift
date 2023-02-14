@@ -13,4 +13,5 @@
 /// **Tip:** Use the `<sub>` tag to define subscript text.
 open class Sup: Tag {
     
+    open class override var name: String? { "sup" }
 }

@@ -17,6 +17,7 @@
 /// The text in `<th>` elements are bold and centered by default.
 open class Td: Tag {
 
+    open class override var name: String? { "td" }
 }
 
 public extension Td {

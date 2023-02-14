@@ -11,4 +11,5 @@
 /// The text will be displayed exactly as written in the HTML source code.
 open class Pre: Tag {
 
+    open class override var name: String? { "pre" }
 }

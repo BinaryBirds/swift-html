@@ -10,6 +10,7 @@
 /// Browsers usually indent `<blockquote>` elements (look at example below to see how to remove the indentation).
 open class Blockquote: Tag {
 
+    open class override var name: String? { "blockquote" }
 }
 
 public extension Blockquote {

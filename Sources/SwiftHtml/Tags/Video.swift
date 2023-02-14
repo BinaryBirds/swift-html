@@ -22,6 +22,7 @@
 ///     Opera   | YES | YES  | YES
 open class Video: Tag {
 
+    open class override var name: String? { "video" }
 }
 
 public extension Video {

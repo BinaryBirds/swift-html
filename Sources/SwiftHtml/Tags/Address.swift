@@ -12,4 +12,5 @@
 /// The text in the `<address>` element usually renders in italic, and browsers will always add a line break before and after the `<address>` element.
 open class Address: Tag {
 
+    open class override var name: String? { "address" }
 }

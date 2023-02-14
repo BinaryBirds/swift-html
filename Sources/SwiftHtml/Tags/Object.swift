@@ -10,6 +10,7 @@
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.
 open class Object: Tag {
     
+    open class override var name: String? { "object" }
 }
 
 public extension Object {

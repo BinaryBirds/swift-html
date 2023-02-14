@@ -13,6 +13,7 @@
 /// To do this without the `<template>` tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.
 open class Template: Tag {
 
+    open class override var name: String? { "template" }
 }
 
 
