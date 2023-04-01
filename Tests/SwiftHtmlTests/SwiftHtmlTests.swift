@@ -10,7 +10,7 @@ import XCTest
 
 extension Div {
 
-    convenience init(_ value: String, @TagBuilder _ builder: () -> [Tag]) {
+    convenience init(_ value: String, @TagBuilder _ builder: () -> Tag) {
         self.init(builder())
         self.setAttributes([
             .init(key: "some-key", value: value)
@@ -19,7 +19,7 @@ extension Div {
 }
 
 final class SwiftHtmlTests: XCTestCase {
-     
+
     func testCustomInitWithAttribute() {
         let doc = Document {
             Div("some-value") {
@@ -30,7 +30,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<div some-key="some-value"><span>a</span><span>b</span></div>"#, html)
     }
-    
+
     func testClassAttribute() {
         let doc = Document {
             Span("").class("a", "b", "", "b", "c")
@@ -38,7 +38,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a b b c"></span>"#, html)
     }
-    
+
     func testMultipleClasses() {
         let doc = Document {
             Span("")
@@ -48,7 +48,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="d e f"></span>"#, html)
     }
-    
+
     func testClassManipulation() {
         let doc = Document {
             Span("")
@@ -61,7 +61,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a f"></span>"#, html)
     }
-    
+
     func testAddClass() {
         let doc = Document {
             Span("")
@@ -71,7 +71,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a b c d"></span>"#, html)
     }
-    
+
     func testRemoveClass() {
         let doc = Document {
             Span("")
@@ -81,7 +81,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a c"></span>"#, html)
     }
-    
+
     func testRemoveLastClass() {
         let doc = Document {
             Span("")
@@ -91,7 +91,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span></span>"#, html)
     }
-    
+
     func testToggleAddClass() {
         let doc = Document {
             Span("")
@@ -101,7 +101,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a b c d"></span>"#, html)
     }
-    
+
     func testToggleRemoveClass() {
         let doc = Document {
             Span("")
@@ -111,7 +111,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span class="a c"></span>"#, html)
     }
-    
+
     func testSetEmptyStyle() {
         let doc = Document {
             Span("")
@@ -120,7 +120,7 @@ final class SwiftHtmlTests: XCTestCase {
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span></span>"#, html)
     }
-    
+
     func testTextTag() {
         let doc = Document() {
             P {
@@ -130,18 +130,20 @@ final class SwiftHtmlTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <p>
-                                <span>foo</span>
-                                bar
-                                <span>baz</span>
-                            </p>
-                            """)
+        let html = """
+        <p>
+            <span>foo</span>
+            bar
+            <span>baz</span>
+        </p>
+        """
+        
+        assert(doc: doc, html: html)
     }
-    
+
     func testMultiGroupTagBuilderAndRenderer() {
         let values: [String] = ["a", "b", "c"]
-        
+
         let doc = Document {
             Div {
                 values.map { item -> Tag in
@@ -153,24 +155,25 @@ final class SwiftHtmlTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <div>
-                                <h1>a</h1>
-                                <p>a</p>
-                                <h1>b</h1>
-                                <p>b</p>
-                                <h1>c</h1>
-                                <p>c</p>
-                            </div>
-                            """)
+        let html = """
+        <div>
+            <h1>a</h1>
+            <p>a</p>
+            <h1>b</h1>
+            <p>b</p>
+            <h1>c</h1>
+            <p>c</p>
+        </div>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testHtmlDocument() {
         let doc = Document(.html) {
             Html {
                 Head {
                     Title("Hello Swift DSL")
-                    
+
                     Meta().charset("utf-8")
                     Meta().name(.viewport).content("width=device-width, initial-scale=1")
 
@@ -204,30 +207,31 @@ final class SwiftHtmlTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <!DOCTYPE html>
-                            <html>
-                                <head>
-                                    <title>Hello Swift DSL</title>
-                                    <meta charset="utf-8">
-                                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                                    <link rel="stylesheet" href="./css/style.css">
-                                </head>
-                                <body>
-                                    <main class="container">
-                                        <div>
-                                            <section>
-                                                <img src="./images/swift.png" alt="Swift Logo" title="Picture of the Swift Logo">
-                                                <h1 class="red">Lorem ipsum</h1>
-                                                <p class="green blue" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
-                                            </section>
-                                            <a href="https://swift.org" target="_blank" download>Hello Swift HTML DSL!</a>
-                                            <abbr title="World Health Organization">WHO</abbr>
-                                        </div>
-                                    </main>
-                                    <script src="./javascript/main.js"></script>
-                                </body>
-                            </html>
-                            """)
+        let html = """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Hello Swift DSL</title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="./css/style.css">
+            </head>
+            <body>
+                <main class="container">
+                    <div>
+                        <section>
+                            <img src="./images/swift.png" alt="Swift Logo" title="Picture of the Swift Logo">
+                            <h1 class="red">Lorem ipsum</h1>
+                            <p class="green blue" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
+                        </section>
+                        <a href="https://swift.org" target="_blank" download>Hello Swift HTML DSL!</a>
+                        <abbr title="World Health Organization">WHO</abbr>
+                    </div>
+                </main>
+                <script src="./javascript/main.js"></script>
+            </body>
+        </html>
+        """
+        assert(doc: doc, html: html)
     }
 }

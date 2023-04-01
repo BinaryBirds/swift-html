@@ -28,8 +28,8 @@ open class Tag {
     }
 
     /// initialize a new Tag with children using a builder
-    public convenience init(@TagBuilder _ builder: () -> [Tag]) {
-        self.init(builder())
+    public convenience init(@TagBuilder _ builder: () -> Tag) {
+        self.init([builder()])
     }
    
 //    /// initialize a new Tag with children using an async throwing builder

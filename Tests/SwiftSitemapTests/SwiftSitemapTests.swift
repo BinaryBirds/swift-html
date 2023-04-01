@@ -21,7 +21,7 @@ final class SwiftSitemapTests: XCTestCase {
                 }
             }
         }
-        XCTAssertEqual(DocumentRenderer().render(doc), """
+        let html = """
         <?xml version="1.0" encoding="utf-8" ?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
@@ -31,7 +31,8 @@ final class SwiftSitemapTests: XCTestCase {
                 <priority>0.5</priority>
             </url>
         </urlset>
-        """)
+        """
+        assert(doc: doc, html: html)
     }
 
 }
