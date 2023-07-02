@@ -112,6 +112,87 @@ final class SwiftHtmlTests: XCTestCase {
         XCTAssertEqual(#"<span class="a c"></span>"#, html)
     }
 
+    func testStyleAttribute() {
+        let doc = Document {
+            Span("").style("a", "b", "", "b", "c")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="a;b;b;c"></span>"#, html)
+    }
+
+    func testMultipleStylees() {
+        let doc = Document {
+            Span("")
+                .style("a", "b", "c")
+                .style("d", "e", "f")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="d;e;f"></span>"#, html)
+    }
+
+    func testStyleManipulation() {
+        let doc = Document {
+            Span("")
+                .style("a", "b", "c")
+                .style(add: ["d", "e", "f"])
+                .style(add: "b", true)
+                .style(remove: ["b", "c", "d"])
+                .style(remove: "e", true)
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="a;f"></span>"#, html)
+    }
+
+    func testAddStyle() {
+        let doc = Document {
+            Span("")
+                .style("a", "b", "c")
+                .style(add: "d")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="a;b;c;d"></span>"#, html)
+    }
+
+    func testRemoveStyle() {
+        let doc = Document {
+            Span("")
+                .style("a", "b", "c")
+                .style(remove: "b")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="a;c"></span>"#, html)
+    }
+
+    func testRemoveLastStyle() {
+        let doc = Document {
+            Span("")
+                .style("a")
+                .style(remove: "a")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span></span>"#, html)
+    }
+
+    func testToggleAddStyle() {
+        let doc = Document {
+            Span("")
+                .style("a", "b", "c")
+                .style(toggle: "d")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="a;b;c;d"></span>"#, html)
+    }
+
+    func testToggleRemoveStyle() {
+        let doc = Document {
+            Span("")
+                .style("a", "b", "c")
+                .style(toggle: "b")
+        }
+        let html = DocumentRenderer(minify: true).render(doc)
+        XCTAssertEqual(#"<span style="a;c"></span>"#, html)
+    }
+
     func testSetEmptyStyle() {
         let doc = Document {
             Span("")
