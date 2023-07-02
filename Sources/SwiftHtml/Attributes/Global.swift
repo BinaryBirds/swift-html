@@ -278,12 +278,6 @@ public extension Tag {
         attribute("spellcheck", String(value))
     }
     
-    /// Specifies an inline CSS style for an element
-    // func style(_ value: String) -> Self {
-    //     guard !value.isEmpty else { return self }
-    //     return attribute("style", value)
-    // }
-    
     /// Specifies the tabbing order of an element
     func tabindex(_ value: Int) -> Self {
         attribute("tabindex", String(value))
