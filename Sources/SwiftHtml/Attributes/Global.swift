@@ -199,6 +199,26 @@ public extension Tag {
         return style(newClasses, condition)
     }
     
+    /// Removes a given style value with its key name if the condition is true
+    /// `.style(removeByKey: "font-size")` as opposed to `.style(remove: "font-size: 12rem")`
+    func style(removeByKey value: String?, _ condition: Bool = true) -> Self {
+        guard let value = value else {
+            return self
+        }
+        return style(removeByKey: [value], condition)
+    }
+
+    
+    /// Removes an array of style values with the key name if the condition is true
+    /// `.style(removeByKey:[ "font-size"])` as opposed to `.style(remove: ["font-size: 12rem"])`
+    func style(removeByKey values: [String], _ condition: Bool = true) -> Self {
+        let newClasses = styleArray.filter { !values.contains(String($0.prefix(while: {$0 != ":"}))) }
+        if newClasses.isEmpty {
+            return deleteAttribute("style")
+        }
+        return style(newClasses, condition)
+    }
+    
     /// toggles a single style value
     func style(toggle value: String?, _ condition: Bool = true) -> Self {
         guard let value = value else {
