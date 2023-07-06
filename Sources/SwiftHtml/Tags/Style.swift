@@ -9,10 +9,7 @@
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
-open class Style: Tag {
-
-    open class override var name: String? { "style" }
-}
+open class Style: Tag {}
 
 public extension Style {
 

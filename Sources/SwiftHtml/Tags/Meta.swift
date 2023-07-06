@@ -14,10 +14,7 @@
 /// Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services.
 ///
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
-open class Meta: EmptyTag {
-
-    open class override var name: String? { "meta" }
-}
+open class Meta: EmptyTag {}
 
 public extension Meta {
     

@@ -14,10 +14,7 @@
 /// - An unvisited link is underlined and blue
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
-open class A: Tag {
-
-    open class override var name: String? { "a" }
-}
+open class A: Tag {}
 
 public extension A {
     

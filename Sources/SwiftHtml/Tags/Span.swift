@@ -10,7 +10,4 @@
 /// The `<span>` tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
 ///
 /// The `<span>` tag is much like the `<div>` element, but `<div>` is a block-level element and `<span>` is an inline element.
-open class Span: Tag {
-    
-    open class override var name: String? { "span" }
-}
+open class Span: Tag {}

@@ -20,10 +20,7 @@
 ///     Firefox | YES | YES  | YES
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
-open class Video: Tag {
-
-    open class override var name: String? { "video" }
-}
+open class Video: Tag {}
 
 public extension Video {
     

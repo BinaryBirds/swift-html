@@ -13,10 +13,6 @@
 /// You can use comments to explain your code, which can help you when you edit the source code at a later date.
 /// This is especially useful if you have a lot of code.
 open class Comment: Tag {
-
-    open class override var name: String? { nil }
-
-    open class override var type: Node.NodeType { .comment }
     
     public init(_ contents: String) {
         super.init()

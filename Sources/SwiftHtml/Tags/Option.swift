@@ -12,10 +12,7 @@
 /// **Note:** The `<option>` tag can be used without any attributes, but you usually need the value attribute, which indicates what is sent to the server on form submission.
 /// 
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
-open class Option: Tag {
-    
-    open class override var name: String? { "option" }
-}
+open class Option: Tag {}
 
 public extension Option {
     /// Specifies that an option should be disabled

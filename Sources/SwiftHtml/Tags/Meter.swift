@@ -13,8 +13,6 @@
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Meter: Tag {
-
-    open class override var name: String? { "meter" }
     
     public init(value: Int, _ contents: String) {
         super.init()

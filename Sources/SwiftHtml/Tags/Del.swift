@@ -8,10 +8,7 @@
 /// The `<del>` tag defines text that has been deleted from a document.
 ///
 /// Browsers will usually strike a line through deleted text.
-open class Del: Tag {
-    
-    open class override var name: String? { "del" }
-}
+open class Del: Tag {}
 
 public extension Del {
     

@@ -12,43 +12,70 @@ open class Tag {
     
     // MARK: - init
     
-    open class var name: String? { String(describing: self) }
+//    open class var name: String? { String(describing: self) }
     
-    open class var type: Node.NodeType { .standard }
+//    open class var type: Node.NodeType { .standard }
 
-    open class func createNode(_ type: Node.NodeType, _ name: String?) -> Node {
-        Node(type: type, name: name)
+//    open class func createNode(_ type: Node.NodeType, _ name: String?) -> Node {
+//        Node(type: type, name: name)
+//    }
+    
+    open class func createNode() -> Node {
+        Node(type: .standard, name: String(describing: self).lowercased())
     }
-
+    
     /// initialize a new Tag with child tags
-    public init(name: String? = nil, type: Node.NodeType? = nil, _ children: [Tag] = []) {
-        let name = name ?? Self.name
-        self.node = Self.createNode(type ?? Self.type, name?.lowercased())
+    public init(node: Node? = nil, _ children: [Tag] = []) {
+        self.node = node ?? Self.createNode()
         self.children = children
     }
 
     /// initialize a new Tag with a single child tag
-    public convenience init(name: String? = nil, type: Node.NodeType? = nil, _ child: Tag) {
-        self.init(name: name, type: type, [child])
+    public convenience init(_ child: Tag) {
+        self.init([child])
     }
 
     /// initialize a new Tag with children using a builder
-    public convenience init(name: String? = nil, type: Node.NodeType? = nil, @TagBuilder _ builder: () -> [Tag]) {
-        self.init(name: name, type: type, builder())
+    public convenience init(@TagBuilder _ builder: () -> Tag) {
+        self.init([builder()])
     }
-   
-//    /// initialize a new Tag with children using an async throwing builder
-//    public convenience init(@TagBuilder _ builder: () async throws -> [Tag]) async throws {
-//        self.init(try await builder())
+    
+//    public convenience init(@TagBuilder builders: () -> [Tag]) {
+//        self.init(builders())
 //    }
 
     /// initialize a new Tag with some contents
-    public convenience init(name: String? = nil, type: Node.NodeType? = nil, _ contents: String?) {
-        self.init(name: name, type: type)
+    public convenience init(_ contents: String?) {
+        self.init()
         if let contents = contents {
             setContents(contents)
         }
     }
+
+//    /// initialize a new Tag with child tags
+//    public init(name: String? = nil, type: Node.NodeType? = nil, _ children: [Tag] = []) {
+//        let name = name ?? Self.name
+//        self.node = Self.createNode(type ?? Self.type, name?.lowercased())
+//        self.children = children
+//    }
+//
+//    /// initialize a new Tag with a single child tag
+//    public convenience init(name: String? = nil, type: Node.NodeType? = nil, _ child: Tag) {
+//        self.init(name: name, type: type, [child])
+//    }
+//
+//    /// initialize a new Tag with children using a builder
+//    public convenience init(name: String? = nil, type: Node.NodeType? = nil, @TagBuilder _ builder: () -> [Tag]) {
+//        self.init(name: name, type: type, builder())
+//    }
+//   
+//    /// initialize a new Tag with some contents
+//    public convenience init(name: String? = nil, type: Node.NodeType? = nil, _ contents: String?) {
+//        self.init(name: name, type: type)
+//        if let contents = contents {
+//            setContents(contents)
+//        }
+//    }
 
     // MARK: - contents
     

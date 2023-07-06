@@ -12,10 +12,7 @@
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For unordered list, use the `<ul>` tag.
-open class Ol: Tag {
-
-    open class override var name: String? { "ol" }
-}
+open class Ol: Tag {}
 
 public extension Ol {
     

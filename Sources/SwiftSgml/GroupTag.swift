@@ -6,9 +6,4 @@
 //
 
 
-open class GroupTag: Tag {
-    
-    open class override var name: String? { nil }
-
-    open class override var type: Node.NodeType { .group }
-}
+open class GroupTag: Tag {}

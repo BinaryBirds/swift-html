@@ -10,10 +10,7 @@
 /// The `<input>` element is the most important form element.
 ///
 /// The `<input>` element can be displayed in several ways, depending on the type attribute.
-open class Input: EmptyTag {
-
-    open class override var name: String? { "input" }
-}
+open class Input: EmptyTag {}
 
 public extension Input {
     

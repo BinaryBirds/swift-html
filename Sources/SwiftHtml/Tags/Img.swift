@@ -19,8 +19,6 @@
 ///
 /// **Tip:** To link an image to another document, simply nest the `<img>` tag inside an `<a>` tag (see example below).
 open class Img: EmptyTag {
-    
-    open class override var name: String? { "img" }
 
     public init(src: String, alt: String) {
         super.init()

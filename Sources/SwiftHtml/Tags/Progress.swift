@@ -8,10 +8,7 @@
 /// The `<progress>` tag represents the completion progress of a task.
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-open class Progress: Tag {
-
-    open class override var name: String? { "progress" }
-}
+open class Progress: Tag {}
 
 public extension Progress {
     

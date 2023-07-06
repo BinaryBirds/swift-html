@@ -8,7 +8,4 @@
 /// The `<small>` tag defines smaller text (like copyright and other side-comments).
 ///
 /// **Tip:** This tag is not deprecated, but it is possible to achieve richer (or the same) effect with CSS.
-open class Small: Tag {
-    
-    open class override var name: String? { "small" }
-}
+open class Small: Tag {}

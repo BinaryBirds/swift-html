@@ -10,7 +10,4 @@
 /// The `<dd>` tag is used in conjunction with `<dl>` (defines a description list) and `<dt>` (defines terms/names).
 /// 
 /// Inside a `<dd>` tag you can put paragraphs, line breaks, images, links, lists, etc.
-open class Dd: Tag {
-
-    open class override var name: String? { "dd" }
-}
+open class Dd: Tag {}

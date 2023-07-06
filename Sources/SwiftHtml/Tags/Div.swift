@@ -14,10 +14,7 @@
 /// Any sort of content can be put inside the `<div>` tag!
 ///
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
-open class Div: Tag {
-
-    open class override var name: String? { "div" }
-}
+open class Div: Tag {}
 
 
 

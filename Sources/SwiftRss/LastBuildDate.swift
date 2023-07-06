@@ -6,7 +6,4 @@
 //
 
 
-open class LastBuildDate: Tag {
-    
-    open class override var name: String? { "lastBuildDate" }
-}
+open class LastBuildDate: Tag {}

@@ -7,7 +7,7 @@
 
 open class EmptyTag: Tag {
 
-    open class override var type: Node.NodeType { .empty }
+//    open class override var type: Node.NodeType { .empty }
     
     public init() {
         super.init()

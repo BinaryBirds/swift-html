@@ -26,7 +26,4 @@
 /// So, try to make the title as accurate and meaningful as possible!
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
-open class Title: Tag {
-
-    open class override var name: String? { "title" }
-}
+open class Title: Tag {}

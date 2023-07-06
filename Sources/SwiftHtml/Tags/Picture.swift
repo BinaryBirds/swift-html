@@ -16,7 +16,4 @@
 /// The `<img>` element is required as the last child of the `<picture>` element, as a fallback option if none of the source tags matches.
 ///
 /// **Tip:** The `<picture>` element works "similar" to `<video>` and `<audio>`. You set up different sources, and the first source that fits the preferences is the one being used.
-open class Picture: Tag {
-    
-    open class override var name: String? { "picture" }
-}
+open class Picture: Tag {}

@@ -18,10 +18,7 @@
 /// The id attribute is needed to associate the text area with a label.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-open class Textarea: Tag {
-
-    open class override var name: String? { "textarea" }
-}
+open class Textarea: Tag {}
 
 public extension Textarea {
     

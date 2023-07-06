@@ -10,10 +10,7 @@
 /// The `<base>` tag must have either an href or a target attribute present, or both.
 ///
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
-open class Base: EmptyTag {
-
-    open class override var name: String? { "base" }
-}
+open class Base: EmptyTag {}
 
 public extension Base {
     /// Specifies the base URL for all relative URLs in the page

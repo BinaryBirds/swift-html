@@ -11,7 +11,4 @@
 /// You can change this with CSS (see example below).
 ///
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
-open class U: Tag {
-
-    open class override var name: String? { "u" }
-}
+open class U: Tag {}

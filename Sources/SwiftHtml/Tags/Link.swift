@@ -11,8 +11,6 @@
 /// 
 /// The `<link>` element is an empty element, it contains attributes only.
 open class Link: EmptyTag {
-    
-    open class override var name: String? { "link" }
 
     public init(rel: Rel) {
         super.init()

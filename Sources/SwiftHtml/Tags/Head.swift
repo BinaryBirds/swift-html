@@ -20,7 +20,4 @@
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
-open class Head: Tag {
-
-    open class override var name: String? { "head" }
-}
+open class Head: Tag {}

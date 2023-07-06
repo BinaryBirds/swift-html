@@ -11,10 +11,7 @@
 ///
 /// You can use the `<template>` tag if you have some HTML code you want to use over and over again, but not until you ask for it.
 /// To do this without the `<template>` tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.
-open class Template: Tag {
-
-    open class override var name: String? { "template" }
-}
+open class Template: Tag {}
 
 
 

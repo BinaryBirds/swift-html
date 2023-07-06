@@ -18,10 +18,7 @@
 /// - `<fieldset>`
 /// - `<label>`
 /// - `<output>`
-open class Form: Tag {
-
-    open class override var name: String? { "form" }
-}
+open class Form: Tag {}
 
 public extension Form {
     

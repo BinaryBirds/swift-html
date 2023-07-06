@@ -6,10 +6,7 @@
 //
 
 /// The `<param>` tag is used to define parameters for an `<object>` element.
-open class Param: EmptyTag {
-
-    open class override var name: String? { "param" }
-}
+open class Param: EmptyTag {}
 
 public extension Param {
     

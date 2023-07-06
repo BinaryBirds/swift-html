@@ -8,7 +8,4 @@
 /// The `<dt>` tag defines a term/name in a description list.
 /// 
 /// The `<dt>` tag is used in conjunction with `<dl>` (defines a description list) and `<dd>` (describes each term/name).
-open class Dt: Tag {
-    
-    open class override var name: String? { "dt" }
-}
+open class Dt: Tag {}

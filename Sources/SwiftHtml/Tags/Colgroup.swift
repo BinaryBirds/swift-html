@@ -12,10 +12,7 @@
 /// **Note:** The `<colgroup>` tag must be a child of a `<table>` element, after any `<caption>` elements and before any `<thead>`, `<tbody>`, `<tfoot>`, and `<tr>` elements.
 ///
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
-open class Colgroup: Tag {
-
-    open class override var name: String? { "colgroup" }
-}
+open class Colgroup: Tag {}
 
 public extension Colgroup {
     

@@ -15,10 +15,7 @@
 /// The text in `<th>` elements are bold and centered by default.
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
-open class Th: Tag {
-    
-    open class override var name: String? { "th" }
-}
+open class Th: Tag {}
 
 public extension Th {
     
