@@ -16,10 +16,15 @@ open class Tag {
         Node(type: .standard, name: String(describing: self).lowercased())
     }
 
-    /// initialize a new Tag with child tags
-    public init(_ children: [Tag] = []) {
-        self.node = Self.createNode()
+    public init(node: Node, children: [Tag] = []) {
+        self.node = node
         self.children = children
+    }
+
+    /// initialize a new Tag with child tags
+    public convenience init(_ children: [Tag] = []) {
+        self.init(node: Self.createNode(), 
+                  children: children)
     }
 
     /// initialize a new Tag with a single child tag
