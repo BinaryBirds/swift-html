@@ -17,8 +17,8 @@ open class Tag {
     }
 
     /// initialize a new Tag with child tags
-    public init(_ children: [Tag] = []) {
-        self.node = Self.createNode()
+    public init(node: Node? = nil, _ children: [Tag] = []) {
+        self.node = node ?? Self.createNode()
         self.children = children
     }
 
