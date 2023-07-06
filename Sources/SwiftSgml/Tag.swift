@@ -12,14 +12,6 @@ open class Tag {
     
     // MARK: - init
     
-//    open class var name: String? { String(describing: self) }
-    
-//    open class var type: Node.NodeType { .standard }
-
-//    open class func createNode(_ type: Node.NodeType, _ name: String?) -> Node {
-//        Node(type: type, name: name)
-//    }
-    
     open class func createNode() -> Node {
         Node(type: .standard, name: String(describing: self).lowercased())
     }
@@ -40,10 +32,6 @@ open class Tag {
         self.init([builder()])
     }
     
-//    public convenience init(@TagBuilder builders: () -> [Tag]) {
-//        self.init(builders())
-//    }
-
     /// initialize a new Tag with some contents
     public convenience init(_ contents: String?) {
         self.init()
@@ -51,31 +39,6 @@ open class Tag {
             setContents(contents)
         }
     }
-
-//    /// initialize a new Tag with child tags
-//    public init(name: String? = nil, type: Node.NodeType? = nil, _ children: [Tag] = []) {
-//        let name = name ?? Self.name
-//        self.node = Self.createNode(type ?? Self.type, name?.lowercased())
-//        self.children = children
-//    }
-//
-//    /// initialize a new Tag with a single child tag
-//    public convenience init(name: String? = nil, type: Node.NodeType? = nil, _ child: Tag) {
-//        self.init(name: name, type: type, [child])
-//    }
-//
-//    /// initialize a new Tag with children using a builder
-//    public convenience init(name: String? = nil, type: Node.NodeType? = nil, @TagBuilder _ builder: () -> [Tag]) {
-//        self.init(name: name, type: type, builder())
-//    }
-//   
-//    /// initialize a new Tag with some contents
-//    public convenience init(name: String? = nil, type: Node.NodeType? = nil, _ contents: String?) {
-//        self.init(name: name, type: type)
-//        if let contents = contents {
-//            setContents(contents)
-//        }
-//    }
 
     // MARK: - contents
     
