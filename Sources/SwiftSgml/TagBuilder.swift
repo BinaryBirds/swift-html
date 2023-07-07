@@ -8,9 +8,9 @@
 @resultBuilder
 public enum TagBuilder {
 
-//    public static func buildBlock() -> Tag {
-//        GroupTag()
-//    }
+    public static func buildBlock() -> Tag {
+        GroupTag()
+    }
     
     public static func buildBlock(_ components: [Tag]...) -> Tag {
         GroupTag(components.flatMap { $0 })
