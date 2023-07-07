@@ -20,10 +20,6 @@ public enum TagBuilder {
         GroupTag(components)
     }
     
-    public static func buildExpression(_ expression: Tag) -> [Tag] {
-        [expression]
-    }
-    
     public static func buildOptional(_ component: Tag?) -> Tag {
         component ?? GroupTag()
     }
