@@ -23,18 +23,18 @@ open class Tag {
     }
 
     /// initialize a new Tag with a single child tag
-    public convenience init(_ child: Tag) {
-        self.init([child])
+    public convenience init(node: Node? = nil, _ child: Tag) {
+        self.init(node: node, [child])
     }
 
     /// initialize a new Tag with children using a builder
-    public convenience init(@TagBuilder _ builder: () -> Tag) {
-        self.init([builder()])
+    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
+        self.init(node: node, [builder()])
     }
     
     /// initialize a new Tag with some contents
-    public convenience init(_ contents: String?) {
-        self.init()
+    public convenience init(node: Node? = nil, _ contents: String?) {
+        self.init(node: node)
         if let contents = contents {
             setContents(contents)
         }
