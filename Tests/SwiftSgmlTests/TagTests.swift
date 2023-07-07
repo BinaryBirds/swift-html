@@ -16,31 +16,11 @@ final class TagTests: XCTestCase {
             Root(Leaf("hello"))
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <root>
-                                <leaf>hello</leaf>
-                            </root>
-                            """)
-    }
-    
-//    func testConvenienceAsyncTagInit() async throws {
-//        
-//        func leaf() async throws -> Leaf {
-//            Leaf("hello")
-//        }
-//
-//        let root = try await Root {
-//            try await leaf()
-//        }
-//        let doc = Document {
-//            root
-//        }
-//
-//        XCTAssertEqual(DocumentRenderer().render(doc), """
-//                            <root>
-//                                <leaf>hello</leaf>
-//                            </root>
-//                            """)
-//    }
-    
+        let html = """
+        <root>
+            <leaf>hello</leaf>
+        </root>
+        """
+        assert(doc: doc, html: html)
+    }    
 }

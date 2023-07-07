@@ -15,44 +15,48 @@ final class SwiftSgmlTests: XCTestCase {
             Root()
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <?xml version="1.0" encoding="utf-8" ?>
-                            <root></root>
-                            """)
+        let html = """
+        <?xml version="1.0" encoding="utf-8" ?>
+        <root></root>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testCustomAttribute() {
         let doc = Document(.xml) {
             Root()
                 .attribute("foo", "bar")
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <?xml version="1.0" encoding="utf-8" ?>
-                            <root foo="bar"></root>
-                            """)
+        let html = """
+        <?xml version="1.0" encoding="utf-8" ?>
+        <root foo="bar"></root>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testCustomNilAttribute() {
         let doc = Document(.xml) {
             Root()
                 .attribute("foo", nil)
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <?xml version="1.0" encoding="utf-8" ?>
-                            <root></root>
-                            """)
+        let html = """
+        <?xml version="1.0" encoding="utf-8" ?>
+        <root></root>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testFlagAttribute() {
         let doc = Document() {
             Root()
                 .flagAttribute("foo")
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <root foo></root>
-                            """)
+        let html = """
+        <root foo></root>
+        """
+        assert(doc: doc, html: html)
     }
 }

@@ -33,7 +33,7 @@ final class SwiftRssTests: XCTestCase {
                 }
             }
         }
-        XCTAssertEqual(DocumentRenderer().render(doc), """
+        let html = """
         <?xml version="1.0" encoding="utf-8" ?>
         <rss version="2.0">
             <channel>
@@ -52,7 +52,8 @@ final class SwiftRssTests: XCTestCase {
                 </item>
             </channel>
         </rss>
-        """)
+        """
+        assert(doc: doc, html: html)
     }
 
 }

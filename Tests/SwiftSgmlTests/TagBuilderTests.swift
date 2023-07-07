@@ -21,11 +21,13 @@ final class TagBuilderTests: XCTestCase {
             }
         }
         
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>b</leaf>
-                            </branch>
-                            """)
+        let html = """
+        <branch>
+            <leaf>b</leaf>
+        </branch>
+        """
+        
+        assert(doc: doc, html: html)
     }
     
     func testEitherFirstBuilder() {
@@ -41,16 +43,17 @@ final class TagBuilderTests: XCTestCase {
                 Leaf("c")
             }
         }
-
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>a</leaf>
-                                <leaf>c</leaf>
-                            </branch>
-                            """)
         
+        let html = """
+        <branch>
+            <leaf>a</leaf>
+            <leaf>c</leaf>
+        </branch>
+        """
+        
+        assert(doc: doc, html: html)
     }
-    
+
     func testEitherSecondBuilder() {
         let condition: Bool = false
         let doc = Document {
@@ -64,15 +67,17 @@ final class TagBuilderTests: XCTestCase {
                 Leaf("c")
             }
         }
+
+        let html = """
+        <branch>
+            <leaf>b</leaf>
+            <leaf>c</leaf>
+        </branch>
+        """
         
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>b</leaf>
-                                <leaf>c</leaf>
-                            </branch>
-                            """)
+        assert(doc: doc, html: html)
     }
-    
+
     func testArrayBuilder() {
         let doc = Document {
             Branch {
@@ -82,65 +87,69 @@ final class TagBuilderTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>1</leaf>
-                                <leaf>2</leaf>
-                                <leaf>3</leaf>
-                            </branch>
-                            """)
+        let html = """
+        <branch>
+            <leaf>1</leaf>
+            <leaf>2</leaf>
+            <leaf>3</leaf>
+        </branch>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testGroupBuilder() {
         let doc = Document {
             Branch {
-                Leaf("Lorem ipsum")
-                Leaf("Dolor sit amet")
+                Leaf("foo")
+                Leaf("bar")
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>Lorem ipsum</leaf>
-                                <leaf>Dolor sit amet</leaf>
-                            </branch>
-                            """)
+        let html = """
+        <branch>
+            <leaf>foo</leaf>
+            <leaf>bar</leaf>
+        </branch>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testSingleGroupBuilder() {
         let doc = Document {
             Branch {
                 [
-                    Leaf("Lorem ipsum")
+                    Leaf("Lorem")
                 ]
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>Lorem ipsum</leaf>
-                            </branch>
-                            """)
+        let html = """
+        <branch>
+            <leaf>Lorem</leaf>
+        </branch>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testMultiGroupBuilder() {
         let doc = Document {
             Branch {
                 [
-                    Leaf("Lorem ipsum"),
-                    Leaf("Dolor sit amet"),
+                    Leaf("Lorem"),
+                    Leaf("Dolor"),
                 ]
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>Lorem ipsum</leaf>
-                                <leaf>Dolor sit amet</leaf>
-                            </branch>
-                            """)
+        let html = """
+        <branch>
+            <leaf>Lorem</leaf>
+            <leaf>Dolor</leaf>
+        </branch>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testGroupTagBuilderAndRenderer() {
         let doc = Document {
             Branch {
@@ -150,18 +159,19 @@ final class TagBuilderTests: XCTestCase {
                 }
             }
         }
-        // TODO: needs better support group tag render support...
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>a</leaf>
-                                <leaf>b</leaf>
-                            </branch>
-                            """)
+        
+        let html = """
+        <branch>
+            <leaf>a</leaf>
+            <leaf>b</leaf>
+        </branch>
+        """
+        assert(doc: doc, html: html)
     }
-    
+
     func testMultiGroupTagBuilderAndRenderer() {
         let values: [String] = ["a", "b", "c"]
-        
+
         let doc = Document {
             Branch {
                 values.map { item -> Tag in
@@ -173,16 +183,17 @@ final class TagBuilderTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <branch>
-                                <leaf>a</leaf>
-                                <leaf>a</leaf>
-                                <leaf>b</leaf>
-                                <leaf>b</leaf>
-                                <leaf>c</leaf>
-                                <leaf>c</leaf>
-                            </branch>
-                            """)
-    }    
+        let html = """
+        <branch>
+            <leaf>a</leaf>
+            <leaf>a</leaf>
+            <leaf>b</leaf>
+            <leaf>b</leaf>
+            <leaf>c</leaf>
+            <leaf>c</leaf>
+        </branch>
+        """
+        assert(doc: doc, html: html)
+    }
 }
 

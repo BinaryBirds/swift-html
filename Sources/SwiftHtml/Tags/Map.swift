@@ -12,8 +12,8 @@
 /// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
 open class Map: Tag {
 
-    public init(name: String, @TagBuilder _ builder: () -> [Tag]) {
-        super.init(builder())
+    public init(name: String, @TagBuilder _ builder: () -> Tag) {
+        super.init([builder()])
         setAttributes([
             .init(key: "name", value: name)
         ])

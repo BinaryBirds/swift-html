@@ -119,7 +119,7 @@ open class Description: Tag {
 
 open class Rss: Tag {
     
-    public init(@TagBuilder _ builder: () -> [Tag]) {
+    public init(@TagBuilder _ builder: () -> Tag) {
         super.init(builder())
         setAttributes([
             .init(key: "version", value: "2.0"),

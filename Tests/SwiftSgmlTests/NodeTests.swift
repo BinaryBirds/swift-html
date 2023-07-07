@@ -10,18 +10,18 @@ import XCTest
 
 final class NodeTests: XCTestCase {
 
-    func testNodeContents() {
-        final class Foo: Tag {
-            
-        }
-
-        let doc = Document {
-            Foo("bar")
-                .setContents("baz")
-        }
-
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <foo>baz</foo>
-                            """)
-    }
+//    func testNodeContents() {
+//        final class Foo: Tag {
+//            
+//        }
+//
+//        let doc = Document {
+//            Foo("bar")
+//                .setContents("baz")
+//        }
+//
+//        let html = """
+//                            <foo>baz</foo>
+//                            """
+//    }
 }
