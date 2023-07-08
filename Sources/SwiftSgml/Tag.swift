@@ -22,19 +22,20 @@ open class Tag {
         self.children = children
     }
 
-    /// initialize a new Tag with a single child tag
-    public convenience init(node: Node? = nil, _ child: Tag) {
-        self.init(node: node, [child])
-    }
-
     /// initialize a new Tag with children using a builder
-    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
-        self.init(node: node, [builder()])
+    public init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
+        self.node = node ?? Self.createNode()
+        self.children = [builder()]
     }
     
+    /// initialize a new Tag with a single child tag
+    public convenience init(_ child: Tag) {
+        self.init([child])
+    }
+
     /// initialize a new Tag with some contents
-    public convenience init(node: Node? = nil, _ contents: String?) {
-        self.init(node: node)
+    public convenience init(_ contents: String?) {
+        self.init()
         if let contents = contents {
             setContents(contents)
         }
