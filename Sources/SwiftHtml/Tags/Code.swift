@@ -14,4 +14,7 @@
 /// - `<kbd>`    Defines keyboard input
 /// - `<var>`    Defines a variable
 /// - `<pre>`    Defines preformatted text
-open class Code: Tag {}
+open class Code: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

@@ -26,4 +26,7 @@
 /// So, try to make the title as accurate and meaningful as possible!
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
-open class Title: Tag {}
+open class Title: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

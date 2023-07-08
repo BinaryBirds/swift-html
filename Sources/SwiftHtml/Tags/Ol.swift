@@ -12,7 +12,10 @@
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For unordered list, use the `<ul>` tag.
-open class Ol: Tag {}
+open class Ol: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Ol {
     

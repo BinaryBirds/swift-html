@@ -18,7 +18,10 @@
 /// - `<fieldset>`
 /// - `<label>`
 /// - `<output>`
-open class Form: Tag {}
+open class Form: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Form {
     

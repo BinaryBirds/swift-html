@@ -7,9 +7,7 @@
 
 open class EmptyTag: Tag {
     
-    open override class func createNode() -> Node {
-        Node(type: .empty, name: String(describing: self).lowercased())
-    }
+    override class var node: Node { .init(type: .empty, name: String(describing: self).lowercased()) }
 
     public init() {
         super.init()

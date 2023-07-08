@@ -13,4 +13,5 @@
 /// `<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>`
 open class Dfn: Tag {
     
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
 }

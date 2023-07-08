@@ -10,7 +10,10 @@
 /// Browsers normally insert quotation marks around the quotation.
 ///
 /// **Tip:** Use `<blockquote>` for long quotations.
-open class Q: Tag {}
+open class Q: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Q {
     

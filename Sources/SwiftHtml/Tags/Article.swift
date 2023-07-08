@@ -24,5 +24,8 @@ public extension Node {
 ///
 /// **Note:** The `<article>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<article>` element (see example below).
-open class Article: Tag {}
+open class Article: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 

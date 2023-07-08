@@ -20,4 +20,7 @@
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
-open class Head: Tag {}
+open class Head: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

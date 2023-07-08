@@ -14,7 +14,10 @@
 /// In `<ol>`, the list items will usually be displayed with numbers or letters.
 ///
 /// **Tip:** Use CSS to style lists.
-open class Li: Tag {}
+open class Li: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Li {
     

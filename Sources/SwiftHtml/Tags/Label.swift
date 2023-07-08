@@ -33,7 +33,10 @@
 ///
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
-open class Label: Tag {}
+open class Label: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Label {
     /// Specifies the id of the form element the label should be bound to

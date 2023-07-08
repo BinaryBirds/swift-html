@@ -21,7 +21,10 @@
 ///     Safari   | YES | YES  | NO
 ///     Opera    | YES | YES  | YES
 ///      *From Edge 79
-open class Audio: Tag {}
+open class Audio: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Audio {
     

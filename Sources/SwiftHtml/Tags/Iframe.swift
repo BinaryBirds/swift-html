@@ -12,7 +12,10 @@
 /// **Tip:** Use CSS to style the `<iframe>` (see example below).
 ///
 /// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
-open class Iframe: Tag {}
+open class Iframe: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Iframe {
     enum Sandbox {

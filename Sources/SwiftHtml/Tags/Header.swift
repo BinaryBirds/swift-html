@@ -13,5 +13,8 @@
 /// - logo or icon
 /// - authorship information
 /// **Note:** You can have several` <header>` elements in one HTML document. However,` <header>` cannot be placed within a` <footer>`,` <address>` or another` <header>` element.
-open class Header: Tag {}
+open class Header: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 

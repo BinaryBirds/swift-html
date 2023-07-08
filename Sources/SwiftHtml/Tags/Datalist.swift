@@ -10,4 +10,7 @@
 /// The `<datalist>` tag is used to provide an "autocomplete" feature for `<input>` elements. Users will see a drop-down list of pre-defined options as they input data.
 ///
 /// The `<datalist>` element's id attribute must be equal to the `<input>` element's list attribute (this binds them together).
-open class Datalist: Tag {}
+open class Datalist: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

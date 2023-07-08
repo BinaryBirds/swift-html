@@ -10,4 +10,7 @@
 /// The `<br>` tag is useful for writing addresses or poems.
 /// 
 /// The `<br>` tag is an empty tag which means that it has no end tag.
-open class Br: EmptyTag {}
+open class Br: EmptyTag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

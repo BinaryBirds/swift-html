@@ -6,4 +6,7 @@
 //
 
 /// The `<mark>` tag defines text that should be marked or highlighted.
-open class Mark: Tag {}
+open class Mark: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

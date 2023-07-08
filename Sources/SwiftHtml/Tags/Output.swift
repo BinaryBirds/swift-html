@@ -6,7 +6,10 @@
 //
 
 /// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
-open class Output: Tag {}
+open class Output: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Output {
     

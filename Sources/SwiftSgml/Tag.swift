@@ -6,19 +6,17 @@
 //
 
 open class Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
 
     public private(set) var node: Node
     public private(set) var children: [Tag]
     
     // MARK: - init
     
-    open class func createNode() -> Node {
-        Node(type: .standard, name: String(describing: self).lowercased())
-    }
-    
     /// initialize a new Tag with child tags
     public init(node: Node? = nil, _ children: [Tag] = []) {
-        self.node = node ?? Self.createNode()
+        self.node = node ?? Self.node
         self.children = children
     }
 

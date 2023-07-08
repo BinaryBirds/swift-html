@@ -8,7 +8,10 @@
 /// The `<fieldset>` tag is used to group related elements in a form.
 /// 
 /// The `<fieldset>` tag draws a box around the related elements.
-open class Fieldset: Tag {}
+open class Fieldset: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Fieldset {
     

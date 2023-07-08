@@ -14,6 +14,8 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Meter: Tag {
     
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    
     public init(value: Int, _ contents: String) {
         super.init()
         setContents(contents)

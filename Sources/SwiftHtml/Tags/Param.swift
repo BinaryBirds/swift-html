@@ -6,7 +6,10 @@
 //
 
 /// The `<param>` tag is used to define parameters for an `<object>` element.
-open class Param: EmptyTag {}
+open class Param: EmptyTag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Param {
     

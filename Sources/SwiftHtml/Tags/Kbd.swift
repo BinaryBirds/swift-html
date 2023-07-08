@@ -8,4 +8,7 @@
 /// The `<kbd>` tag is used to define keyboard input. The content inside is displayed in the browser's default monospace font.
 ///
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS (see example below).
-open class Kbd: Tag {}
+open class Kbd: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

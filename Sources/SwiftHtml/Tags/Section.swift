@@ -6,4 +6,7 @@
 //
 
 /// The `<section>` tag defines a section in a document.
-open class Section: Tag {}
+open class Section: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

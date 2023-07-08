@@ -16,4 +16,7 @@
 /// - back to top links
 /// - related documents
 /// You can have several `<footer>` elements in one document.
-open class Footer: Tag {}
+open class Footer: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

@@ -12,4 +12,7 @@
 /// The `<tr>` element defines a table row, the `<th>` element defines a table header, and the `<td>` element defines a table cell.
 /// 
 /// An HTML table may also include `<caption>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements.
-open class Table: Tag {}
+open class Table: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

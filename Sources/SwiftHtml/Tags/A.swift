@@ -14,7 +14,10 @@
 /// - An unvisited link is underlined and blue
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
-open class A: Tag {}
+open class A: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension A {
     

@@ -20,7 +20,10 @@
 ///     Firefox | YES | YES  | YES
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
-open class Video: Tag {}
+open class Video: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Video {
     

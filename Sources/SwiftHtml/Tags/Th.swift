@@ -15,7 +15,10 @@
 /// The text in `<th>` elements are bold and centered by default.
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
-open class Th: Tag {}
+open class Th: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Th {
     

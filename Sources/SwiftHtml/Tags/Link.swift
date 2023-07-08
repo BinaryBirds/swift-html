@@ -11,6 +11,8 @@
 /// 
 /// The `<link>` element is an empty element, it contains attributes only.
 open class Link: EmptyTag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
 
     public init(rel: Rel) {
         super.init()

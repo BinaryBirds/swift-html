@@ -12,4 +12,7 @@
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For ordered lists, use the `<ol>` tag.
-open class Ul: Tag {}
+open class Ul: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}

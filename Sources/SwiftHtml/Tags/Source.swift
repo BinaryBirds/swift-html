@@ -10,7 +10,10 @@
 ///
 /// The `<source>` tag allows you to specify alternative video/audio/image files which the browser may choose from, based on browser support or viewport width.
 /// The browser will choose the first `<source>` it supports.
-open class Source: EmptyTag {}
+open class Source: EmptyTag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Source {
     

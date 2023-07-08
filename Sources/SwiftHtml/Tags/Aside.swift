@@ -13,5 +13,8 @@
 /// 
 /// **Note:** The `<aside>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<aside>` element (see example below).
-open class Aside: Tag {}
+open class Aside: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 

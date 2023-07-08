@@ -18,7 +18,10 @@
 /// The id attribute is needed to associate the text area with a label.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-open class Textarea: Tag {}
+open class Textarea: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 public extension Textarea {
     

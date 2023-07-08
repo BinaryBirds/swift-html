@@ -14,6 +14,8 @@
 /// This is especially useful if you have a lot of code.
 open class Comment: Tag {
     
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    
     public init(_ contents: String) {
         super.init()
         setContents(contents)

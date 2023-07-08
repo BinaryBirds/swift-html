@@ -14,7 +14,10 @@
 /// Any sort of content can be put inside the `<div>` tag!
 ///
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
-open class Div: Tag {}
+open class Div: Tag {
+    
+    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+}
 
 
 
