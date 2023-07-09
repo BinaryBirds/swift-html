@@ -8,19 +8,22 @@
 
 open class GroupTag: Tag {
     
-    static var type: Node.NodeType { .group }
-    
-    public class func defaultNode(_ `class`: AnyClass) -> Node {
-        .init(type: Self.type, name: Self.name(`class`))
-    }
-        
-    override public init(node: Node? = nil, _ children: [Tag] = []) {
-        let node: Node = node ?? .init(type: Self.type)
-        super.init(node: node, children)
+    static var node: Node { .init(type: .group) }
+
+    public init(_ children: [Tag] = []) {
+        super.init(node: Self.node, children)
     }
     
-    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
-        let node: Node = node ?? .init(type: Self.type)
-        self.init(node: node, [builder()])
+    public init(@TagBuilder _ builder: () -> Tag) {
+        super.init(node: Self.node, [builder()])
+    }
+    
+    public convenience init(_ child: Tag) {
+        self.init([child])
+    }
+    
+    public convenience init(_ contents: String?) {
+        self.init()
+        setContents(contents)
     }
 }

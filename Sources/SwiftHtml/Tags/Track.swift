@@ -13,7 +13,7 @@
 open class Track: EmptyTag {
     
     public init(src: String) {
-        super.init(node: EmptyTag.defaultNode(Track.self))
+        super.init(name: .init(Track.self))
         setAttributes([
             .init(key: "src", value: src)
         ])

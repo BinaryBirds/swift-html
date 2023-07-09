@@ -9,7 +9,7 @@
 open class Param: EmptyTag {
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(Param.self))
+        super.init(name: .init(Param.self))
     }
 }
 

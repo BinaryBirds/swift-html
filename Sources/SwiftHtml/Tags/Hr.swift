@@ -11,6 +11,6 @@
 open class Hr: EmptyTag {
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(Hr.self))
+        super.init(name: .init(Hr.self))
     }
 }

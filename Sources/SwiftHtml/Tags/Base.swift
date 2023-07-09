@@ -13,7 +13,7 @@
 open class Base: EmptyTag {
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(Base.self))
+        super.init(name: .init(Base.self))
     }
 }
 

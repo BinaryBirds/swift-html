@@ -9,7 +9,7 @@
 open class Embed: EmptyTag {
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(Embed.self))
+        super.init(name: .init(Embed.self))
     }
 }
 

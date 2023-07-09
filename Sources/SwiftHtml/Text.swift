@@ -6,10 +6,4 @@
 //
 
 /// a plain text node to write simple textual content into the html tree
-open class Text: GroupTag {
-    
-    public convenience init(_ contents: String) {
-        self.init(node: GroupTag.defaultNode(Text.self))
-        setContents(contents)
-    }
-}
+open class Text: GroupTag {}

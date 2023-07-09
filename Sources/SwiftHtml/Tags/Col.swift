@@ -11,7 +11,7 @@
 open class Col: EmptyTag {
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(Col.self))
+        super.init(name: .init(Col.self))
     }
 }
 

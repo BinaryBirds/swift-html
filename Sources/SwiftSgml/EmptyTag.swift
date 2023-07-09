@@ -7,19 +7,32 @@
 
 open class EmptyTag: Tag {
     
-    static var type: Node.NodeType { .empty }
-    
-    public class func defaultNode(_ `class`: AnyClass) -> Node {
-        .init(type: Self.type, name: Self.name(`class`))
+    open class func node(_ name: String) -> Node {
+        .init(type: .empty, name: name)
     }
     
-    override public init(node: Node? = nil, _ children: [Tag] = []) {
-        let node = node ?? .init(type: Self.type)
-        super.init(node: node, children)
+    public init(name: String, _ children: [Tag] = []) {
+        super.init(node: Self.node(name), children)
     }
     
-    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
-        let node: Node = node ?? .init(type: Self.type)
-        self.init(node: node, [builder()])
+    public init(name: String, @TagBuilder _ builder: () -> Tag) {
+        super.init(node:Self.node(name), [builder()])
+    }
+    
+    public convenience init(name: String, _ child: Tag) {
+        self.init(name: name, [child])
+    }
+    
+    public convenience init(name: String, _ contents: String?) {
+        self.init(name: name)
+        setContents(contents)
+    }
+}
+
+extension String {
+    
+    public init(_ `class`: AnyClass) {
+        self.init(describing: `class`.self)
+        _ = lowercased()
     }
 }

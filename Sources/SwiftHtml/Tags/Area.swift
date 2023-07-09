@@ -52,7 +52,7 @@ open class Area: EmptyTag {
     }
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(Area.self))
+        super.init(name: .init(Area.self))
     }
 }
 
