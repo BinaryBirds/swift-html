@@ -8,14 +8,14 @@
 open class EmptyTag: Tag {
     
     static var type: Node.NodeType { .empty }
-
-    public init(name: String? = nil,
-                contents: String? = nil,
-                attributes: [Attribute] = []) {
-        let node = Node(type: Self.type,
-                        name: name,
-                        contents: contents,
-                        attributes: attributes)
-        super.init(node: node, [])
-    }    
+    
+    public class func defaultNode(name: String,
+                                  contents: String? = nil,
+                                  attributes: [Attribute] = []) -> Node {
+        .init(type: Self.type, name: name, contents: contents, attributes: attributes)
+    }
+    
+    override public init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: node ?? .init(type: Self.type, name: Self.name), children)
+    }
 }

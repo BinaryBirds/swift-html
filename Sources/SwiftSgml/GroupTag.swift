@@ -10,14 +10,13 @@ open class GroupTag: Tag {
     
     static var type: Node.NodeType { .group }
     
-    public init(name: String? = nil,
-                contents: String? = nil,
-                attributes: [Attribute] = [],
-                @TagBuilder _ builder: () -> Tag) {
-        let node = Node(type: Self.type,
-                        name: name,
-                        contents: contents,
-                        attributes: attributes)
-        super.init(node: node, [builder()])
+    public class func defaultNode(name: String,
+                           contents: String? = nil,
+                           attributes: [Attribute] = []) -> Node {
+        .init(type: Self.type, name: name, contents: contents, attributes: attributes)
+    }
+        
+    override public init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(type: Self.type, name: Self.name), children)
     }
 }

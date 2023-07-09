@@ -13,7 +13,7 @@
 open class Link: EmptyTag {
     
     public init(rel: Rel) {
-        super.init(name: Self.name)
+        super.init(node: EmptyTag.defaultNode(name: Self.name))
         setAttributes([
             Attribute(key: "rel", value: rel.rawValue),
         ])
