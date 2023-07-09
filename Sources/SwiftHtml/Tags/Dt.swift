@@ -10,5 +10,7 @@
 /// The `<dt>` tag is used in conjunction with `<dl>` (defines a description list) and `<dd>` (describes each term/name).
 open class Dt: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

@@ -15,6 +15,8 @@
 /// However, you can use CSS to style the `<aside>` element (see example below).
 open class Aside: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 

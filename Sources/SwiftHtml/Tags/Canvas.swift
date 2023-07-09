@@ -12,7 +12,9 @@
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
 open class Canvas: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Canvas {

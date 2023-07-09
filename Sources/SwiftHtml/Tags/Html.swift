@@ -12,7 +12,9 @@
 /// **Note:** You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
 open class Html: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Html {

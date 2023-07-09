@@ -12,7 +12,9 @@
 /// The `<input>` element can be displayed in several ways, depending on the type attribute.
 open class Input: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public init() {
+        super.init(name: Self.name)
+    }
 }
 
 public extension Input {

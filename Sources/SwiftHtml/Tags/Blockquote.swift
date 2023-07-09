@@ -10,7 +10,9 @@
 /// Browsers usually indent `<blockquote>` elements (look at example below to see how to remove the indentation).
 open class Blockquote: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Blockquote {

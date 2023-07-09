@@ -12,5 +12,7 @@
 /// The `<br>` tag is an empty tag which means that it has no end tag.
 open class Br: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public init() {
+        super.init(name: Self.name)
+    }
 }

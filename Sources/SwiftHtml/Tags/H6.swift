@@ -13,5 +13,7 @@
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 open class H6: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

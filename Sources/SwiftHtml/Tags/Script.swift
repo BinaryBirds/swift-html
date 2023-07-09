@@ -12,7 +12,9 @@
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 open class Script: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
     
     public enum `Type`: String {
         case javascript = "text/javascript"

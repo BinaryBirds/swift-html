@@ -12,8 +12,6 @@
 /// **Note:** The usemap attribute in <img> is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
 open class Area: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
-    
     public enum Rel: String {
         /// Links to an alternate version of the document (i.e. print page, translated or mirror)
         case alternate
@@ -51,6 +49,10 @@ open class Area: EmptyTag {
         case circle
         /// Defines a polygonal region
         case poly
+    }
+    
+    public init() {
+        super.init(name: Self.name)
     }
 }
 

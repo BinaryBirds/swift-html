@@ -7,32 +7,32 @@
 
 open class Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
-
+    public class var name: String { String(describing: self).lowercased() }
+        
     public private(set) var node: Node
     public private(set) var children: [Tag]
     
     // MARK: - init
-    
+        
     /// initialize a new Tag with child tags
     public init(node: Node? = nil, _ children: [Tag] = []) {
-        self.node = node ?? Self.node
+        self.node = node ?? .init()
         self.children = children
     }
 
     /// initialize a new Tag with a single child tag
-    public convenience init(_ child: Tag) {
-        self.init([child])
+    public convenience init(node: Node? = nil, _ child: Tag) {
+        self.init(node: node, [child])
     }
 
     /// initialize a new Tag with children using a builder
-    public convenience init(@TagBuilder _ builder: () -> Tag) {
-        self.init([builder()])
+    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
+        self.init(node: node, [builder()])
     }
     
     /// initialize a new Tag with some contents
-    public convenience init(_ contents: String?) {
-        self.init()
+    public convenience init(node: Node? = nil, _ contents: String?) {
+        self.init(node: node)
         if let contents = contents {
             setContents(contents)
         }

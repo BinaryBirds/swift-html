@@ -10,10 +10,9 @@
 /// The `<bdo>` tag is used to override the current text direction.
 open class Bdo: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
-
     public init(_ contents: String, dir: TextDirection = .ltr) {
-        super.init()
+        let node = Node(name: Self.name)
+        super.init(node: node)
         self.setAttributes([
             .init(key: "dir", value: dir.rawValue)
         ])

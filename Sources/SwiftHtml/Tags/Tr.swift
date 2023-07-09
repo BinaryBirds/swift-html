@@ -10,5 +10,7 @@
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.
 open class Tr: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

@@ -10,5 +10,7 @@
 /// **Tip:** This tag is not deprecated, but it is possible to achieve richer (or the same) effect with CSS.
 open class Small: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

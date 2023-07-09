@@ -9,7 +9,7 @@
 open class Text: GroupTag {
     
     public init(_ contents: String) {
-        super.init()
+        super.init(name: Self.name) {}
         setContents(contents)
     }
 }

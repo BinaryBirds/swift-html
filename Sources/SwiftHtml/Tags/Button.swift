@@ -14,7 +14,9 @@
 /// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
 open class Button: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Button {

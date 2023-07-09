@@ -10,5 +10,7 @@
 /// The `<figcaption>` element can be placed as the first or last child of the `<figure>` element.
 open class Figcaption: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

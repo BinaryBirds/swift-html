@@ -10,7 +10,9 @@
 /// The `<col>` tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
 open class Col: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public init() {
+        super.init(name: Self.name)
+    }
 }
 
 public extension Col {

@@ -7,9 +7,15 @@
 
 open class EmptyTag: Tag {
     
-    override class var node: Node { .init(type: .empty, name: String(describing: self).lowercased()) }
+    static var type: Node.NodeType { .empty }
 
-    public init() {
-        super.init()
-    }
+    public init(name: String? = nil,
+                contents: String? = nil,
+                attributes: [Attribute] = []) {
+        let node = Node(type: Self.type,
+                        name: name,
+                        contents: contents,
+                        attributes: attributes)
+        super.init(node: node, [])
+    }    
 }

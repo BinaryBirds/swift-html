@@ -12,7 +12,9 @@
 /// The browser will choose the first `<source>` it supports.
 open class Source: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public init() {
+        super.init(name: Self.name)
+    }
 }
 
 public extension Source {

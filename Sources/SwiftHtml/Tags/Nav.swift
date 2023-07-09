@@ -12,7 +12,9 @@
 /// Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content.
 open class Nav: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 

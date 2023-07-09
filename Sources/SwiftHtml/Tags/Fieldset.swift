@@ -10,7 +10,9 @@
 /// The `<fieldset>` tag draws a box around the related elements.
 open class Fieldset: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Fieldset {

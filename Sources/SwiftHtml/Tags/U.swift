@@ -13,5 +13,7 @@
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
 open class U: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

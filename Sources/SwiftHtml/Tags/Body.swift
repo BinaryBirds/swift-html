@@ -12,5 +12,7 @@
 /// **Note:** There can only be one `<body>` element in an HTML document.
 open class Body: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

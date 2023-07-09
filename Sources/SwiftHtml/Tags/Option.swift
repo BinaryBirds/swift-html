@@ -14,7 +14,9 @@
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
 open class Option: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Option {

@@ -12,5 +12,7 @@
 /// The text in the `<address>` element usually renders in italic, and browsers will always add a line break before and after the `<address>` element.
 open class Address: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

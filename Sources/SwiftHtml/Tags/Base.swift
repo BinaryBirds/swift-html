@@ -12,7 +12,9 @@
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 open class Base: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public init() {
+        super.init(name: Self.name)
+    }
 }
 
 public extension Base {

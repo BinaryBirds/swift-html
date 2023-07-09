@@ -13,7 +13,7 @@ open class Ellipse: Tag {
                 rx: Double,
                 ry: Double,
                 pathLength: Double? = nil) {
-        super.init()
+        super.init(node: .init(name: Self.name))
         setAttributes([
             .init(key: "cx", value: cx.preciseString),
             .init(key: "cy", value: cy.preciseString),

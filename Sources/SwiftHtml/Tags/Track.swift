@@ -12,10 +12,8 @@
 /// Tracks are formatted in WebVTT format (.vtt files).
 open class Track: EmptyTag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
-    
     public init(src: String) {
-        super.init()
+        super.init(name: Self.name)
         setAttributes([
             .init(key: "src", value: src)
         ])

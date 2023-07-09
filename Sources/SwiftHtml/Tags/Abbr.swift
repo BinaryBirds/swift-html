@@ -10,6 +10,8 @@
 /// **Tip:** Use the global title attribute to show the description for the abbreviation/acronym when you mouse over the element.
 open class Abbr: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 

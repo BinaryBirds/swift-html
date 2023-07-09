@@ -16,7 +16,9 @@
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 open class Div: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 

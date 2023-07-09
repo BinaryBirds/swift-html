@@ -8,5 +8,7 @@
 /// The `<mark>` tag defines text that should be marked or highlighted.
 open class Mark: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }

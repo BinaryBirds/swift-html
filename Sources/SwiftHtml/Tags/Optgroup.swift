@@ -10,7 +10,9 @@
 /// If you have a long list of options, groups of related options are easier to handle for a user.
 open class Optgroup: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Optgroup {

@@ -14,7 +14,9 @@
 /// **Tip:** For unordered list, use the `<ul>` tag.
 open class Ol: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 public extension Ol {

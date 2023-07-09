@@ -13,7 +13,9 @@
 /// To do this without the `<template>` tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.
 open class Template: Tag {
     
-    class var node: Node { .init(type: .standard, name: String(describing: self).lowercased()) }
+    public override init(node: Node? = nil, _ children: [Tag] = []) {
+        super.init(node: .init(name: Self.name), children)
+    }
 }
 
 
