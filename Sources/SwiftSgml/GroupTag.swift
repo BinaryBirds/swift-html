@@ -18,4 +18,9 @@ open class GroupTag: Tag {
         let node: Node = node ?? .init(type: Self.type)
         super.init(node: node, children)
     }
+    
+    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
+        let node: Node = node ?? .init(type: Self.type)
+        self.init(node: node, [builder()])
+    }
 }
