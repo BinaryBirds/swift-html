@@ -6,9 +6,7 @@
 //
 
 /// Make some text bold (without marking it as important)
-open class B: Tag {
+open class B: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { B.self }
 }

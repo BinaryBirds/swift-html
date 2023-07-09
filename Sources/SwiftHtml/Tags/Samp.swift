@@ -8,9 +8,7 @@
 /// The `<samp>` tag is used to define sample output from a computer program. The content inside is displayed in the browser's default monospace font.
 ///
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
-open class Samp: Tag {
+open class Samp: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Samp.self }
 }

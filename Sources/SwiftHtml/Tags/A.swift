@@ -14,11 +14,9 @@
 /// - An unvisited link is underlined and blue
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
-open class A: Tag {
+open class A: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { A.self }
 }
 
 public extension A {

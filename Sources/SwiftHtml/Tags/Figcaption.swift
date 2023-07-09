@@ -8,9 +8,7 @@
 /// The `<figcaption>` tag defines a caption for a `<figure>` element.
 ///
 /// The `<figcaption>` element can be placed as the first or last child of the `<figure>` element.
-open class Figcaption: Tag {
+open class Figcaption: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Figcaption.self }
 }

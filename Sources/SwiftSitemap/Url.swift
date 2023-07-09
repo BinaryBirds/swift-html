@@ -8,6 +8,6 @@
 open class Url: Tag {
 
     convenience init() {
-        self.init(node: .init(name: Self.name))
+        self.init(node: .init(Url.self))
     }
 }

@@ -8,9 +8,7 @@
 /// The `<rt>` tag defines an explanation or pronunciation of characters (for East Asian typography) in a ruby annotation.
 ///
 /// Use `<rt>` together with `<ruby>` and `<rp>`: The `<ruby>` element consists of one or more characters that needs an explanation/pronunciation, and an `<rt>` element that gives that information, and an optional `<rp>` element that defines what to show for browsers that not support ruby annotations.
-open class Rt: Tag {
+open class Rt: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Rt.self }
 }

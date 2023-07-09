@@ -8,11 +8,9 @@
 /// The `<blockquote>` tag specifies a section that is quoted from another source.
 /// 
 /// Browsers usually indent `<blockquote>` elements (look at example below to see how to remove the indentation).
-open class Blockquote: Tag {
+open class Blockquote: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Blockquote.self }
 }
 
 public extension Blockquote {

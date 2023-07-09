@@ -8,9 +8,7 @@
 /// The `<summary>` tag defines a visible heading for the `<details>` element. The heading can be clicked to view/hide the details.
 ///
 /// **Note:** The `<summary>` element should be the first child element of the `<details>` element.
-open class Summary: Tag {
+open class Summary: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Summary.self }
 }

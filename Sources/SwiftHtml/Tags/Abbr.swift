@@ -8,10 +8,8 @@
 /// The `<abbr>` tag defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
 ///
 /// **Tip:** Use the global title attribute to show the description for the abbreviation/acronym when you mouse over the element.
-open class Abbr: Tag {
+open class Abbr: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Abbr.self }
 }
 

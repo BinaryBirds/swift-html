@@ -6,11 +6,9 @@
 //
 
 /// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
-open class Output: Tag {
+open class Output: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Output.self }
 }
 
 public extension Output {

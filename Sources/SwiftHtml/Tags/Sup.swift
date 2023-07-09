@@ -11,9 +11,7 @@
 /// Superscript text can be used for footnotes, like WWW[1].
 ///
 /// **Tip:** Use the `<sub>` tag to define subscript text.
-open class Sup: Tag {
+open class Sup: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Sup.self }
 }

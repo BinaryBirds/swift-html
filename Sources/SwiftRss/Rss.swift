@@ -9,7 +9,7 @@
 open class Rss: Tag {
     
     public init(@TagBuilder _ builder: () -> Tag) {
-        super.init(node: .init(name: Self.name), [builder()])
+        super.init(node: .init(Rss.self), [builder()])
         setAttributes([
             .init(key: "version", value: "2.0"),
 //            .init(key: "xmlns:atom", value: "http://www.w3.org/2005/Atom"),

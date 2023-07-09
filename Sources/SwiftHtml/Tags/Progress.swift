@@ -8,11 +8,9 @@
 /// The `<progress>` tag represents the completion progress of a task.
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-open class Progress: Tag {
+open class Progress: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Progress.self }
 }
 
 public extension Progress {

@@ -8,11 +8,9 @@
 /// The `<fieldset>` tag is used to group related elements in a form.
 /// 
 /// The `<fieldset>` tag draws a box around the related elements.
-open class Fieldset: Tag {
+open class Fieldset: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Fieldset.self }
 }
 
 public extension Fieldset {

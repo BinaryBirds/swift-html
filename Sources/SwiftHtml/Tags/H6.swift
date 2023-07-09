@@ -11,9 +11,7 @@
 ///
 /// **Note:** Only use one `<h1>` per page - this should represent the main heading/subject for the whole page.
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
-open class H6: Tag {
+open class H6: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { H6.self }
 }

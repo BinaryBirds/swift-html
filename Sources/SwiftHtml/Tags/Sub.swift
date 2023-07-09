@@ -11,9 +11,7 @@
 /// Subscript text can be used for chemical formulas, like H2O.
 ///
 /// **Tip:** Use the `<sup>` tag to define superscripted text.
-open class Sub: Tag {
+open class Sub: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Sub.self }
 }

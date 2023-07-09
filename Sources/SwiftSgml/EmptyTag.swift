@@ -9,13 +9,12 @@ open class EmptyTag: Tag {
     
     static var type: Node.NodeType { .empty }
     
-    public class func defaultNode(name: String,
-                                  contents: String? = nil,
-                                  attributes: [Attribute] = []) -> Node {
-        .init(type: Self.type, name: name, contents: contents, attributes: attributes)
+    public class func defaultNode(_ `class`: AnyClass) -> Node {
+        .init(type: Self.type, name: Self.name(`class`))
     }
     
     override public init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: node ?? .init(type: Self.type, name: Self.name), children)
+        let node = node ?? .init(type: Self.type)
+        super.init(node: node, children)
     }
 }

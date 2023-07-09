@@ -10,11 +10,9 @@
 /// Browsers normally insert quotation marks around the quotation.
 ///
 /// **Tip:** Use `<blockquote>` for long quotations.
-open class Q: Tag {
+open class Q: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Q.self }
 }
 
 public extension Q {

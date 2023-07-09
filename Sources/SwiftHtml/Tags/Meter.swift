@@ -15,7 +15,7 @@
 open class Meter: Tag {
     
     public init(value: Int, _ contents: String) {
-        super.init(node: .init(name: Self.name))
+        super.init(node: .init(Meter.self))
         setContents(contents)
         setAttributes([
             .init(key: "value", value: String(value))

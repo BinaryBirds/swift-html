@@ -21,11 +21,9 @@
 ///     Safari   | YES | YES  | NO
 ///     Opera    | YES | YES  | YES
 ///      *From Edge 79
-open class Audio: Tag {
+open class Audio: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Audio.self }
 }
 
 public extension Audio {

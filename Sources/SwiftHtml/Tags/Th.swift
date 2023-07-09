@@ -15,11 +15,9 @@
 /// The text in `<th>` elements are bold and centered by default.
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
-open class Th: Tag {
+open class Th: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Th.self }
 }
 
 public extension Th {

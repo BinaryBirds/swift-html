@@ -12,11 +12,9 @@
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For unordered list, use the `<ul>` tag.
-open class Ol: Tag {
+open class Ol: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Ol.self }
 }
 
 public extension Ol {

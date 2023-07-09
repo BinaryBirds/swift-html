@@ -16,9 +16,7 @@
 /// - `<mark>` (marked/highlighted text)
 /// - `<cite>` (the title of a work)
 /// - `<dfn>` (a definition term)
-open class I: Tag {
+open class I: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { I.self }
 }

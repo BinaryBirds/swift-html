@@ -21,7 +21,7 @@
 open class Img: EmptyTag {
     
     public init(src: String, alt: String) {
-        super.init(node: EmptyTag.defaultNode(name: Self.name))
+        super.init(node: EmptyTag.defaultNode(Img.self))
         setAttributes([
             .init(key: "src", value: src),
             .init(key: "alt", value: alt),

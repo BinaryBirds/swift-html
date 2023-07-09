@@ -12,11 +12,9 @@
 /// Any sort of content can be put inside the `<details>` tag.
 ///
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
-open class Details: Tag {
+open class Details: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Details.self }
 }
 
 public extension Details {

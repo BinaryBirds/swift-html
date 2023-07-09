@@ -11,9 +11,7 @@
 /// You can change this with CSS (see example below).
 ///
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
-open class U: Tag {
+open class U: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { U.self }
 }

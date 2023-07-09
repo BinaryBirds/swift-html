@@ -10,11 +10,9 @@
 /// The `<canvas>` tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.
 /// 
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
-open class Canvas: Tag {
+open class Canvas: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Canvas.self }
 }
 
 public extension Canvas {

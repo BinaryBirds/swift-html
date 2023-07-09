@@ -24,10 +24,8 @@ public extension Node {
 ///
 /// **Note:** The `<article>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<article>` element (see example below).
-open class Article: Tag {
+open class Article: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Article.self }
 }
 

@@ -8,9 +8,7 @@
 /// The `<ins>` tag defines a text that has been inserted into a document. Browsers will usually underline inserted text.
 ///
 /// **Tip:** Also look at the `<del>` tag to markup deleted text.
-open class Ins: Tag {
+open class Ins: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Ins.self }
 }

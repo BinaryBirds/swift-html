@@ -10,9 +10,7 @@
 /// The contact information can be an email address, URL, physical address, phone number, social media handle, etc.
 ///
 /// The text in the `<address>` element usually renders in italic, and browsers will always add a line break before and after the `<address>` element.
-open class Address: Tag {
+open class Address: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Address.self }
 }

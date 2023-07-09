@@ -8,11 +8,9 @@
 /// The `<object>` tag defines a container for an external resource.
 ///
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.
-open class Object: Tag {
+open class Object: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Object.self }
 }
 
 public extension Object {

@@ -10,11 +10,9 @@
 /// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
-open class Script: Tag {
+open class Script: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Script.self }
     
     public enum `Type`: String {
         case javascript = "text/javascript"

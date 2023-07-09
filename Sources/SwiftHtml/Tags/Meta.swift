@@ -17,7 +17,7 @@
 open class Meta: EmptyTag {
     
     public init() {
-        super.init(node: EmptyTag.defaultNode(name: Self.name))
+        super.init(node: EmptyTag.defaultNode(Meta.self))
     }
 }
 

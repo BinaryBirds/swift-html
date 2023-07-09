@@ -11,9 +11,7 @@
 ///
 /// The term inside the `<dfn>` tag can be any of the following:
 /// `<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>`
-open class Dfn: Tag {
+open class Dfn: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Dfn.self }
 }

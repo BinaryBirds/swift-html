@@ -9,11 +9,9 @@
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
-open class Style: Tag {
+open class Style: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Style.self }
 }
 
 public extension Style {

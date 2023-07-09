@@ -8,9 +8,7 @@
 /// The `<dt>` tag defines a term/name in a description list.
 /// 
 /// The `<dt>` tag is used in conjunction with `<dl>` (defines a description list) and `<dd>` (describes each term/name).
-open class Dt: Tag {
+open class Dt: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Dt.self }
 }

@@ -13,7 +13,7 @@
 open class Map: Tag {
         
     public init(name: String, @TagBuilder _ builder: () -> Tag) {
-        super.init(node: .init(name: Self.name), [builder()])
+        super.init(node: .init(Map.self), [builder()])
         setAttributes([
             .init(key: "name", value: name)
         ])

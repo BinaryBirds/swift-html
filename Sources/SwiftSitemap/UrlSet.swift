@@ -8,7 +8,7 @@
 open class UrlSet: Tag {
 
     public init(@TagBuilder _ builder: () -> Tag) {
-        super.init(node: .init(name: Self.name), [builder()])
+        super.init(node: .init(UrlSet.self), [builder()])
         setAttributes([
             .init(key: "xmlns", value: "http://www.sitemaps.org/schemas/sitemap/0.9"),
         ])

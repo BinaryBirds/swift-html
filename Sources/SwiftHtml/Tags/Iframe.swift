@@ -12,11 +12,9 @@
 /// **Tip:** Use CSS to style the `<iframe>` (see example below).
 ///
 /// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
-open class Iframe: Tag {
+open class Iframe: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Iframe.self }
 }
 
 public extension Iframe {

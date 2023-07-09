@@ -15,7 +15,7 @@ open class Rect: Tag {
                 rx: Double? = nil,
                 ry: Double? = nil,
                 pathLength: Double? = nil) {
-        super.init(node: .init(name: Self.name))
+        super.init(node: .init(Rect.self))
         setAttributes([
             .init(key: "x", value: x.preciseString),
             .init(key: "y", value: y.preciseString),

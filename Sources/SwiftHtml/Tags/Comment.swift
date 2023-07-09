@@ -15,7 +15,7 @@
 open class Comment: Tag {
     
     public init(_ contents: String) {
-        super.init(node: .init(name: Self.name))
+        super.init(node: .init(Comment.self))
         setContents(contents)
     }
 }

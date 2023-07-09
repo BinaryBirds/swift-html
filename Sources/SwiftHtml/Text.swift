@@ -9,7 +9,7 @@
 open class Text: GroupTag {
     
     public convenience init(_ contents: String) {
-        self.init(node: GroupTag.defaultNode(name: Self.name))
+        self.init(node: GroupTag.defaultNode(Text.self))
         setContents(contents)
     }
 }

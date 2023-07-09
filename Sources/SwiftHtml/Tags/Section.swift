@@ -6,9 +6,7 @@
 //
 
 /// The `<section>` tag defines a section in a document.
-open class Section: Tag {
+open class Section: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Section.self }
 }

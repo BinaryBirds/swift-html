@@ -10,9 +10,7 @@
 /// The `<dd>` tag is used in conjunction with `<dl>` (defines a description list) and `<dt>` (defines terms/names).
 /// 
 /// Inside a `<dd>` tag you can put paragraphs, line breaks, images, links, lists, etc.
-open class Dd: Tag {
+open class Dd: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Dd.self }
 }

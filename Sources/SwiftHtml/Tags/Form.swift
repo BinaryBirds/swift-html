@@ -18,11 +18,9 @@
 /// - `<fieldset>`
 /// - `<label>`
 /// - `<output>`
-open class Form: Tag {
+open class Form: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Form.self }
 }
 
 public extension Form {

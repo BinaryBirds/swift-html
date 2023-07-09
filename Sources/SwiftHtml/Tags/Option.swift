@@ -12,11 +12,9 @@
 /// **Note:** The `<option>` tag can be used without any attributes, but you usually need the value attribute, which indicates what is sent to the server on form submission.
 /// 
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
-open class Option: Tag {
+open class Option: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Option.self }
 }
 
 public extension Option {

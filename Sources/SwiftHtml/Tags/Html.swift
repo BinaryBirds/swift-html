@@ -10,11 +10,9 @@
 /// The `<html>` tag is the container for all other HTML elements (except for the `<!DOCTYPE>` tag).
 ///
 /// **Note:** You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
-open class Html: Tag {
+open class Html: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Html.self }
 }
 
 public extension Html {

@@ -14,11 +14,9 @@
 /// Any sort of content can be put inside the `<div>` tag!
 ///
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
-open class Div: Tag {
+open class Div: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Div.self }
 }
 
 

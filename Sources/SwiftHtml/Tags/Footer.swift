@@ -16,9 +16,7 @@
 /// - back to top links
 /// - related documents
 /// You can have several `<footer>` elements in one document.
-open class Footer: Tag {
+open class Footer: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Footer.self }
 }

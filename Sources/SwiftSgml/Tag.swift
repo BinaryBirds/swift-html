@@ -6,11 +6,13 @@
 //
 
 open class Tag {
-    
-    public class var name: String { String(describing: self).lowercased() }
         
     public private(set) var node: Node
     public private(set) var children: [Tag]
+    
+    public class func name(_ c: AnyClass) -> String {
+        String(describing: c.self).lowercased()
+    }
     
     // MARK: - init
         

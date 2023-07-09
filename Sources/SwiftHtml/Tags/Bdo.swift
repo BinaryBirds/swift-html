@@ -11,8 +11,8 @@
 open class Bdo: Tag {
     
     public init(_ contents: String, dir: TextDirection = .ltr) {
-        let node = Node(name: Self.name)
-        super.init(node: node)
+        super.init(node: .init(Bdo.self))
+        self.setContents(contents)
         self.setAttributes([
             .init(key: "dir", value: dir.rawValue)
         ])

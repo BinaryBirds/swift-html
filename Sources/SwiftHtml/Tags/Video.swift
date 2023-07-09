@@ -20,11 +20,9 @@
 ///     Firefox | YES | YES  | YES
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
-open class Video: Tag {
+open class Video: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Video.self }
 }
 
 public extension Video {

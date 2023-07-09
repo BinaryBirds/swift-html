@@ -20,9 +20,7 @@
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
-open class Head: Tag {
+open class Head: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Head.self }
 }

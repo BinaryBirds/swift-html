@@ -13,10 +13,8 @@
 /// 
 /// **Note:** The `<aside>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<aside>` element (see example below).
-open class Aside: Tag {
+open class Aside: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Aside.self }
 }
 

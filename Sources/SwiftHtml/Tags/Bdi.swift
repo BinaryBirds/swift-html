@@ -10,9 +10,7 @@
 /// The `<bdi>` tag isolates a part of text that might be formatted in a different direction from other text outside it.
 ///
 /// This element is useful when embedding user-generated content with an unknown text direction.
-open class Bdi: Tag {
+open class Bdi: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Bdi.self }
 }

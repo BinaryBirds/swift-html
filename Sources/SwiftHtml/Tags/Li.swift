@@ -14,11 +14,9 @@
 /// In `<ol>`, the list items will usually be displayed with numbers or letters.
 ///
 /// **Tip:** Use CSS to style lists.
-open class Li: Tag {
+open class Li: StandardTag {
     
-    public override init(node: Node? = nil, _ children: [Tag] = []) {
-        super.init(node: .init(name: Self.name), children)
-    }
+    override open class var `class`: AnyClass { Li.self }
 }
 
 public extension Li {
