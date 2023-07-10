@@ -12,7 +12,5 @@
 /// The `<br>` tag is an empty tag which means that it has no end tag.
 open class Br: EmptyTag {
     
-    public init() {
-        super.init(name: .init(Br.self))
-    }
+    override open class var name: String { .init(Br.self) }    
 }

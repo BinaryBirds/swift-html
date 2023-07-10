@@ -6,7 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
-open class Line: Tag {
+open class Line: StandardTag {
+    
+    override open class var name: String { .init(Line.self) }
 
     public init(x1: Double,
                 y1: Double,

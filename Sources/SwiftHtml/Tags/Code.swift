@@ -16,5 +16,5 @@
 /// - `<pre>`    Defines preformatted text
 open class Code: StandardTag {
     
-    override open class var `class`: AnyClass { Code.self }
+    override open class var name: String { .init(Code.self) }
 }

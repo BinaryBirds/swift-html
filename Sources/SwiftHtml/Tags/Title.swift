@@ -28,5 +28,5 @@
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
 open class Title: StandardTag {
     
-    override open class var `class`: AnyClass { Title.self }
+    override open class var name: String { .init(Title.self) }
 }

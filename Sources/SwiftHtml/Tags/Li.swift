@@ -16,7 +16,7 @@
 /// **Tip:** Use CSS to style lists.
 open class Li: StandardTag {
     
-    override open class var `class`: AnyClass { Li.self }
+    override open class var name: String { .init(Li.self) }
 }
 
 public extension Li {

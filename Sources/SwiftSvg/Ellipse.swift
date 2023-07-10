@@ -6,14 +6,16 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
-open class Ellipse: Tag {
+open class Ellipse: EmptyTag {
+    
+    override open class var name: String { .init(Ellipse.self) }
 
     public init(cx: Double,
                 cy: Double,
                 rx: Double,
                 ry: Double,
                 pathLength: Double? = nil) {
-        super.init(node: .init(Ellipse.self))
+        super.init()
         setAttributes([
             .init(key: "cx", value: cx.preciseString),
             .init(key: "cy", value: cy.preciseString),

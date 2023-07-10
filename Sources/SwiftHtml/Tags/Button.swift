@@ -14,7 +14,7 @@
 /// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
 open class Button: StandardTag {
     
-    override open class var `class`: AnyClass { Button.self }
+    override open class var name: String { .init(Button.self) }
 }
 
 public extension Button {

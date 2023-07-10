@@ -10,5 +10,5 @@
 /// **Tip:** Also look at the `<del>` tag to markup deleted text.
 open class Ins: StandardTag {
     
-    override open class var `class`: AnyClass { Ins.self }
+    override open class var name: String { .init(Ins.self) }
 }

@@ -13,5 +13,5 @@
 /// **Tip:** Use the `<sup>` tag to define superscripted text.
 open class Sub: StandardTag {
     
-    override open class var `class`: AnyClass { Sub.self }
+    override open class var name: String { .init(Sub.self) }
 }

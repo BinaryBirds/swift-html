@@ -10,6 +10,6 @@
 /// **Tip:** Use the global title attribute to show the description for the abbreviation/acronym when you mouse over the element.
 open class Abbr: StandardTag {
     
-    override open class var `class`: AnyClass { Abbr.self }
+    override open class var name: String { .init(Abbr.self) }
 }
 

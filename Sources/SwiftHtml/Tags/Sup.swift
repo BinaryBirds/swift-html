@@ -13,5 +13,5 @@
 /// **Tip:** Use the `<sub>` tag to define subscript text.
 open class Sup: StandardTag {
     
-    override open class var `class`: AnyClass { Sup.self }
+    override open class var name: String { .init(Sup.self) }
 }

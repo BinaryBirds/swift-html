@@ -10,5 +10,5 @@
 /// A screen reader will pronounce the words in `<em>` with an emphasis, using verbal stress.
 open class Em: StandardTag {
     
-    override open class var `class`: AnyClass { Em.self }
+    override open class var name: String { .init(Em.self) }
 }

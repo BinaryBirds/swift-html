@@ -12,8 +12,10 @@
 /// The `<link>` element is an empty element, it contains attributes only.
 open class Link: EmptyTag {
     
+    override open class var name: String { .init(Link.self) }
+    
     public init(rel: Rel) {
-        super.init(name: .init(Link.self))
+        super.init()
         setAttributes([
             Attribute(key: "rel", value: rel.rawValue),
         ])

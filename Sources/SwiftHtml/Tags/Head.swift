@@ -22,5 +22,5 @@
 /// - `<noscript>`
 open class Head: StandardTag {
     
-    override open class var `class`: AnyClass { Head.self }
+    override open class var name: String { .init(Head.self) }
 }

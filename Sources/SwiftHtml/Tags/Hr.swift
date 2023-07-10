@@ -10,7 +10,5 @@
 /// The `<hr>` element is most often displayed as a horizontal rule that is used to separate content (or define a change) in an HTML page.
 open class Hr: EmptyTag {
     
-    public init() {
-        super.init(name: .init(Hr.self))
-    }
+    override open class var name: String { .init(Hr.self) }
 }

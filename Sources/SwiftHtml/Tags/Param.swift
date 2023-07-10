@@ -8,9 +8,7 @@
 /// The `<param>` tag is used to define parameters for an `<object>` element.
 open class Param: EmptyTag {
     
-    public init() {
-        super.init(name: .init(Param.self))
-    }
+    override open class var name: String { .init(Param.self) }
 }
 
 public extension Param {

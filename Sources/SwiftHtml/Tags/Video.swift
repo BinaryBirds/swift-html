@@ -22,7 +22,7 @@
 ///     Opera   | YES | YES  | YES
 open class Video: StandardTag {
     
-    override open class var `class`: AnyClass { Video.self }
+    override open class var name: String { .init(Video.self) }
 }
 
 public extension Video {

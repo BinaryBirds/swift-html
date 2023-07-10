@@ -11,7 +11,7 @@
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
 open class Style: StandardTag {
     
-    override open class var `class`: AnyClass { Style.self }
+    override open class var name: String { .init(Style.self) }
 }
 
 public extension Style {

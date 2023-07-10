@@ -14,7 +14,7 @@
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
 open class Details: StandardTag {
     
-    override open class var `class`: AnyClass { Details.self }
+    override open class var name: String { .init(Details.self) }
 }
 
 public extension Details {

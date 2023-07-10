@@ -5,9 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-open class Url: Tag {
-
-    convenience init() {
-        self.init(node: .init(Url.self))
-    }
+open class Url: StandardTag {
+    
+    override open class var name: String { .init(Url.self) }
 }

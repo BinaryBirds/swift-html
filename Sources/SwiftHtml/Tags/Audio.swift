@@ -23,7 +23,7 @@
 ///      *From Edge 79
 open class Audio: StandardTag {
     
-    override open class var `class`: AnyClass { Audio.self }
+    override open class var name: String { .init(Audio.self) }
 }
 
 public extension Audio {

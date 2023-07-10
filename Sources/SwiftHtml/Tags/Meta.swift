@@ -16,9 +16,7 @@
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
 open class Meta: EmptyTag {
     
-    public init() {
-        super.init(name: .init(Meta.self))
-    }
+    override open class var name: String { .init(Meta.self) }
 }
 
 public extension Meta {

@@ -12,6 +12,6 @@
 /// **Tip:** The `<figcaption>` element is used to add a caption for the `<figure>` element.
 open class Figure: StandardTag {
     
-    override open class var `class`: AnyClass { Figure.self }
+    override open class var name: String { .init(Figure.self) }
 }
 

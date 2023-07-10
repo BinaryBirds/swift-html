@@ -10,5 +10,5 @@
 /// The `<figcaption>` element can be placed as the first or last child of the `<figure>` element.
 open class Figcaption: StandardTag {
     
-    override open class var `class`: AnyClass { Figcaption.self }
+    override open class var name: String { .init(Figcaption.self) }
 }

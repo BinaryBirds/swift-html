@@ -12,10 +12,12 @@
 /// **Note:** The `<meter>` tag should not be used to indicate progress (as in a progress bar). For progress bars, use the `<progress>` tag.
 /// 
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-open class Meter: Tag {
+open class Meter: StandardTag {
+    
+    override open class var name: String { .init(Meter.self) }
     
     public init(value: Int, _ contents: String) {
-        super.init(node: .init(Meter.self))
+        super.init()
         setContents(contents)
         setAttributes([
             .init(key: "value", value: String(value))

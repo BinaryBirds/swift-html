@@ -12,7 +12,7 @@
 /// Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content.
 open class Nav: StandardTag {
     
-    override open class var `class`: AnyClass { Nav.self }
+    override open class var name: String { .init(Nav.self) }
 }
 
 

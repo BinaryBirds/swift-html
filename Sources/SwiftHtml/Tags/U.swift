@@ -13,5 +13,5 @@
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
 open class U: StandardTag {
     
-    override open class var `class`: AnyClass { U.self }
+    override open class var name: String { .init(U.self) }
 }

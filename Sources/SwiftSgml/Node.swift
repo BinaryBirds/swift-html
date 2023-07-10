@@ -35,10 +35,6 @@ public struct Node {
         self.contents = contents
         self.attributes = attributes
     }
-    
-    public init(_ `class`: AnyClass) {
-        self.init(name: String(describing: `class`.self).lowercased())
-    }
 }
 
 public extension Node {

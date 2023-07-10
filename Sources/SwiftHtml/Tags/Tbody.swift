@@ -19,6 +19,6 @@
 /// **Tip:** The `<thead>`, `<tbody>`, and `<tfoot>` elements will not affect the layout of the table by default. However, you can use CSS to style these elements (see example below)!
 open class Tbody: StandardTag {
     
-    override open class var `class`: AnyClass { Tbody.self }
+    override open class var name: String { .init(Tbody.self) }
 }
 

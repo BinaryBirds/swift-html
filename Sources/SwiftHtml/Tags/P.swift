@@ -12,5 +12,5 @@
 /// **Tip:** Use CSS to style paragraphs.
 open class P: StandardTag {
     
-    override open class var `class`: AnyClass { P.self }
+    override open class var name: String { .init(P.self) }
 }

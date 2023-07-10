@@ -12,5 +12,5 @@
 /// **Note:** There can only be one `<body>` element in an HTML document.
 open class Body: StandardTag {
     
-    override open class var `class`: AnyClass { Body.self }
+    override open class var name: String { .init(Body.self) }
 }

@@ -12,7 +12,7 @@
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
 open class Canvas: StandardTag {
     
-    override open class var `class`: AnyClass { Canvas.self }
+    override open class var name: String { .init(Canvas.self) }
 }
 
 public extension Canvas {

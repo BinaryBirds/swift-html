@@ -8,5 +8,5 @@
 /// The `<legend>` tag defines a caption for the `<fieldset>` element.
 open class Legend: StandardTag {
     
-    override open class var `class`: AnyClass { Legend.self }
+    override open class var name: String { .init(Legend.self) }
 }

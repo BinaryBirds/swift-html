@@ -10,7 +10,7 @@
 /// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
 open class Dialog: StandardTag {
     
-    override open class var `class`: AnyClass { Dialog.self }
+    override open class var name: String { .init(Dialog.self) }
 }
 
 public extension Dialog {

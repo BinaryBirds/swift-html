@@ -12,5 +12,5 @@
 /// This element is useful when embedding user-generated content with an unknown text direction.
 open class Bdi: StandardTag {
     
-    override open class var `class`: AnyClass { Bdi.self }
+    override open class var name: String { .init(Bdi.self) }
 }

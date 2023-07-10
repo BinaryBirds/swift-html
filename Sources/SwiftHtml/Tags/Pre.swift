@@ -11,5 +11,5 @@
 /// The text will be displayed exactly as written in the HTML source code.
 open class Pre: StandardTag {
     
-    override open class var `class`: AnyClass { Pre.self }
+    override open class var name: String { .init(Pre.self) }
 }

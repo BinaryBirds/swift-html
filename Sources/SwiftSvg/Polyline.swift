@@ -6,7 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline
-open class Polyline: Tag {
+open class Polyline: StandardTag {
+    
+    override open class var name: String { .init(Polyline.self) }
 
     public init(_ points: [Double], pathLength: Double? = nil) {
         super.init()

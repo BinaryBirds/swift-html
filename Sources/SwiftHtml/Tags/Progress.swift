@@ -10,7 +10,7 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Progress: StandardTag {
     
-    override open class var `class`: AnyClass { Progress.self }
+    override open class var name: String { .init(Progress.self) }
 }
 
 public extension Progress {

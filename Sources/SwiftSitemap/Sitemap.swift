@@ -6,6 +6,7 @@
 //
 
 // https://www.sitemaps.org/protocol.html
-open class Sitemap: Tag {
-
+open class Sitemap: StandardTag {
+    
+    override open class var name: String { .init(Sitemap.self) }
 }

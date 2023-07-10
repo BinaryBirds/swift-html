@@ -12,7 +12,7 @@
 /// **Tip:** Use `<blockquote>` for long quotations.
 open class Q: StandardTag {
     
-    override open class var `class`: AnyClass { Q.self }
+    override open class var name: String { .init(Q.self) }
 }
 
 public extension Q {

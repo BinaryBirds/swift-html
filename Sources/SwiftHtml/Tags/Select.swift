@@ -18,7 +18,7 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Select: StandardTag {
     
-    override open class var `class`: AnyClass { Select.self }
+    override open class var name: String { .init(Select.self) }
 }
 
 public extension Select {

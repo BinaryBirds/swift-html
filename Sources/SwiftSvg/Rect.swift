@@ -6,7 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
-open class Rect: Tag {
+open class Rect: EmptyTag {
+    
+    override open class var name: String { .init(Rect.self) }
 
     public init(x: Double,
                 y: Double,
@@ -15,7 +17,7 @@ open class Rect: Tag {
                 rx: Double? = nil,
                 ry: Double? = nil,
                 pathLength: Double? = nil) {
-        super.init(node: .init(Rect.self))
+        super.init()
         setAttributes([
             .init(key: "x", value: x.preciseString),
             .init(key: "y", value: y.preciseString),

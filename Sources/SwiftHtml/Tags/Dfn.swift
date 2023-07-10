@@ -13,5 +13,5 @@
 /// `<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>`
 open class Dfn: StandardTag {
     
-    override open class var `class`: AnyClass { Dfn.self }
+    override open class var name: String { .init(Dfn.self) }
 }

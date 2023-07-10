@@ -10,5 +10,5 @@
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.
 open class Tr: StandardTag {
     
-    override open class var `class`: AnyClass { Tr.self }
+    override open class var name: String { .init(Tr.self) }
 }

@@ -6,4 +6,7 @@
 //
 
 
-open class LastBuildDate: Tag {}
+open class LastBuildDate: StandardTag {
+    
+    override open class var name: String { .init(LastBuildDate.self) }
+}

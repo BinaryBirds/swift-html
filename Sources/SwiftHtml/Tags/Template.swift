@@ -13,7 +13,7 @@
 /// To do this without the `<template>` tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.
 open class Template: StandardTag {
     
-    override open class var `class`: AnyClass { Template.self }
+    override open class var name: String { .init(Template.self) }
 }
 
 

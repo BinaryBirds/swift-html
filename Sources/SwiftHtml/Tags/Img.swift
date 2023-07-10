@@ -20,8 +20,10 @@
 /// **Tip:** To link an image to another document, simply nest the `<img>` tag inside an `<a>` tag (see example below).
 open class Img: EmptyTag {
     
+    override open class var name: String { .init(Img.self) }
+    
     public init(src: String, alt: String) {
-        super.init(name: .init(Img.self))
+        super.init()
         setAttributes([
             .init(key: "src", value: src),
             .init(key: "alt", value: alt),

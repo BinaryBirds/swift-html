@@ -12,10 +12,14 @@
 /// Comments are not displayed in the browsers.
 /// You can use comments to explain your code, which can help you when you edit the source code at a later date.
 /// This is especially useful if you have a lot of code.
-open class Comment: Tag {
+open class Comment: TypedTag {
+    
+    override open class var type: Node.NodeType { .comment }
+    
+    override open class var name: String { .init(Comment.self) }
     
     public init(_ contents: String) {
-        super.init(node: .init(Comment.self))
+        super.init()
         setContents(contents)
     }
 }

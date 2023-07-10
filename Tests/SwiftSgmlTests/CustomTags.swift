@@ -7,14 +7,14 @@
 
 import SwiftSgml
 
-final class Root: Tag {
+final class Root: StandardTag {
     
 }
 
-final class Leaf: Tag {
+final class Leaf: StandardTag {
     
 }
 
-final class Branch: Tag {
+final class Branch: StandardTag {
     
 }

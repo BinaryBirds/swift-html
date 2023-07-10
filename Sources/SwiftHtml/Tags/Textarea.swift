@@ -20,7 +20,7 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Textarea: StandardTag {
     
-    override open class var `class`: AnyClass { Textarea.self }
+    override open class var name: String { .init(Textarea.self) }
 }
 
 public extension Textarea {

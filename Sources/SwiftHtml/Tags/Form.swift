@@ -20,7 +20,7 @@
 /// - `<output>`
 open class Form: StandardTag {
     
-    override open class var `class`: AnyClass { Form.self }
+    override open class var name: String { .init(Form.self) }
 }
 
 public extension Form {

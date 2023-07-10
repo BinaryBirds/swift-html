@@ -14,5 +14,5 @@
 /// **Tip:** For ordered lists, use the `<ol>` tag.
 open class Ul: StandardTag {
     
-    override open class var `class`: AnyClass { Ul.self }
+    override open class var name: String { .init(Ul.self) }
 }

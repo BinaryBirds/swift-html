@@ -26,6 +26,6 @@ public extension Node {
 /// However, you can use CSS to style the `<article>` element (see example below).
 open class Article: StandardTag {
     
-    override open class var `class`: AnyClass { Article.self }
+    override open class var name: String { .init(Article.self) }
 }
 
