@@ -41,14 +41,14 @@ final class SwiftRssTests: XCTestCase {
                 <description><![CDATA[ipsum]]></description>
                 <link></link>
                 <language>en_US</language>
-                <lastbuilddate>2021-12-19</lastbuilddate>
-                <pubdate>2021-12-19</pubdate>
+                <lastBuildDate>2021-12-19</lastBuildDate>
+                <pubDate>2021-12-19</pubDate>
                 <ttl>250</ttl>
                 <item>
                     <guid isPermalink="true">http://localhost/</guid>
                     <title><![CDATA[lorem]]></title>
                     <description><![CDATA[ipsum]]></description>
-                    <pubdate>lorem</pubdate>
+                    <pubDate>lorem</pubDate>
                 </item>
             </channel>
         </rss>

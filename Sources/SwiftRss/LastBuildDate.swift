@@ -8,5 +8,5 @@
 
 open class LastBuildDate: StandardTag {
     
-    override open class var name: String { .init(LastBuildDate.self) }
+    override open class var name: String { "lastBuildDate" }
 }

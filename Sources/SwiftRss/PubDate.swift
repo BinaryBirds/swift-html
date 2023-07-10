@@ -7,5 +7,5 @@
 
 open class PubDate: StandardTag {
     
-    override open class var name: String { .init(PubDate.self) }
+    override open class var name: String { "pubDate" }
 }
