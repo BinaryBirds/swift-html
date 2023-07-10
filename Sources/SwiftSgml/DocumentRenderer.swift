@@ -69,11 +69,11 @@ public struct DocumentRenderer {
     }
     
     private func renderOpening(_ tag: Tag) -> String {
-        return "<" + tag.node.name! + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
+        return "<" + tag.node.name + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
     }
     
     private func renderClosing(_ tag: Tag) -> String {
-        "</" + tag.node.name! + ">"
+        "</" + tag.node.name + ">"
     }
 
     private func renderAttributes(_ attributes: [Attribute]) -> String {
