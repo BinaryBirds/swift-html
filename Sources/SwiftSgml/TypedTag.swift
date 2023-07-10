@@ -9,8 +9,6 @@ open class TypedTag: Tag {
     
     open class var type: Node.NodeType { .standard }
     
-    open class var name: String { .init(self).lowercased() }
-    
     private class func node(name: String? = nil,
                             contents: String? = nil,
                             attributes: [Attribute] = []) -> Node {
@@ -33,9 +31,9 @@ open class TypedTag: Tag {
     }
     
     public convenience init(name: String? = nil,
-                contents: String? = nil,
-                attributes: [Attribute] = [],
-                @TagBuilder _ builder: () -> Tag) {
+                            contents: String? = nil,
+                            attributes: [Attribute] = [],
+                            @TagBuilder _ builder: () -> Tag) {
         self.init(name: name, contents: contents, attributes: attributes, [builder()])
     }
     
