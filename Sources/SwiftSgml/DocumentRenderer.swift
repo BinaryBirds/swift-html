@@ -72,6 +72,7 @@ public struct DocumentRenderer {
         return "<" + tag.node.name + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
     }
     
+    
     private func renderClosing(_ tag: Tag) -> String {
         "</" + tag.node.name + ">"
     }
