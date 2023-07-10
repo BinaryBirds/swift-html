@@ -16,8 +16,7 @@
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 open class Div: StandardTag {
     
-//    override open class var name: String { .init(Div.self) }
-    
+    override open class var name: String { .init(Div.self) }
 }
 
 
