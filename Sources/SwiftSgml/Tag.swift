@@ -13,23 +13,23 @@ open class Tag {
     // MARK: - init
         
     /// initialize a new Tag with child tags
-    public init(node: Node? = nil, _ children: [Tag] = []) {
-        self.node = node ?? .init()
+    public init(node: Node = .init(), _ children: [Tag] = []) {
+        self.node = node
         self.children = children
     }
 
     /// initialize a new Tag with a single child tag
-    public convenience init(node: Node? = nil, _ child: Tag) {
+    public convenience init(node: Node = .init(), _ child: Tag) {
         self.init(node: node, [child])
     }
 
     /// initialize a new Tag with children using a builder
-    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
+    public convenience init(node: Node = .init(), @TagBuilder _ builder: () -> Tag) {
         self.init(node: node, [builder()])
     }
     
     /// initialize a new Tag with some contents
-    public convenience init(node: Node? = nil, _ contents: String?) {
+    public convenience init(node: Node = .init(), _ contents: String?) {
         self.init(node: node)
         if let contents = contents {
             setContents(contents)
