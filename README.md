@@ -184,10 +184,10 @@ open class Rss: Tag {
 To customize tags of a particular `Node` type...
 
 ```html
-// Open and close tags, use StandardTag class
+// Bracketed tags, use StandardTag class
 <standard></standard>
 
-// Empty tag, use EmptyTag class
+// Single tag, use EmptyTag class
 <empty>
 
 // Comment tag, use CommentTag class
