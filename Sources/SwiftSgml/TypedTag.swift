@@ -5,6 +5,15 @@
 //  Created by Brad Gourley on 7/10/23.
 //
 
+//  Base class for all tags with a particular node type.
+//
+//  In most cases, it is more appropriate to subclass the parent class Tag
+//
+//  or one of the superclasses: StandardTag, GroupTag, EmptyTag, CommentTag.
+//
+//  Subclasses only need to override the 'type' var
+
+
 open class TypedTag: Tag {
     
     open class var type: Node.NodeType { .standard }

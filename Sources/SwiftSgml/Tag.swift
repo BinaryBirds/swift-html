@@ -5,6 +5,19 @@
 //  Created by Tibor Bodecs on 2021. 11. 19..
 //
 
+//  There are three ways to use this class...
+//
+//  1- init(...) with a custom Node. It will render according to the type, name, etc. supplied.
+//
+//  2— Subclass and override `class var node: Node`. It will render with the type, name, etc. supplied.
+//
+//  3— Just subclass. It will render an opening and closing tag with the name of your subclass lowercased. <classname></classname>
+//
+//  Simple subclasses that render with an open and close tag can just override `class var name: String`. <customName></customName>
+//
+//  For common HTML tags like Div, P, A, etc. use one of the pre-made subclasses elsewhere in the library.
+
+
 open class Tag {
         
     public private(set) var node: Node
