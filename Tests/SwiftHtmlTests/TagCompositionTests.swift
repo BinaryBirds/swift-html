@@ -8,33 +8,33 @@
 import XCTest
 @testable import SwiftHtml
 
-//protocol Tag {
+//protocol TagRepresentable {
 //
 //    func build() -> Tag
 //}
 //
 //extension TagBuilder {
 //
-//    static func buildExpression(_ expression: Tag) -> Tag {
+//    static func buildExpression(_ expression: TagRepresentable) -> Tag {
 //        expression.build()
 //    }
 //    
-//    static func buildExpression(_ expression: Tag) -> [Tag] {
+//    static func buildExpression(_ expression: TagRepresentable) -> [Tag] {
 //        [expression.build()]
 //    }
 //
-//    static func buildExpression(_ expression: [Tag]) -> [Tag] {
+//    static func buildExpression(_ expression: [TagRepresentable]) -> [Tag] {
 //        expression.map { $0.build() }
 //    }
 //
-//    static func buildExpression(_ expression: [Tag]) -> Tag {
+//    static func buildExpression(_ expression: [TagRepresentable]) -> Tag {
 //        GroupTag {
 //            expression.map { $0.build() }
 //        }
 //    }
 //}
 //
-//struct ListComponent: Tag {
+//struct ListComponent: TagRepresentable {
 //
 //    let items: [String]
 //    
