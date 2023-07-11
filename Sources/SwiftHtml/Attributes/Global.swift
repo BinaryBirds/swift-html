@@ -235,61 +235,61 @@ public extension Tag {
     
     /// Specifies a shortcut key to activate/focus an element
     func accesskey(_ value: Character) -> Self {
-        attribute("accesskey", String(value), true)
+        attribute("accesskey", String(value))
     }
     
     /// Specifies whether the content of an element is editable or not
     func contenteditable(_ value: Bool) -> Self {
-        attribute("contenteditable", String(value), true)
+        attribute("contenteditable", String(value))
     }
     
     /// Used to store custom data private to the page or application
     func data(key: String, _ value: String) -> Self {
-        attribute("data-" + key, value, true)
+        attribute("data-" + key, value)
     }
 
     /// Specifies the text direction for the content in an element
     func dir(_ value: TextDirection = .ltr) -> Self {
-        attribute("dir", value.rawValue, true)
+        attribute("dir", value.rawValue)
     }
     
     /// Specifies whether an element is draggable or not
     func draggable(_ value: Draggable = .auto) -> Self {
-        attribute("draggable", value.rawValue, true)
+        attribute("draggable", value.rawValue)
     }
     
     /// Specifies that an element is not yet, or is no longer, relevant
     func hidden(_ value: Bool? = nil) -> Self {
-        attribute("hidden", value?.description, true)
+        attribute("hidden", value?.description)
     }
     
     /// Specifies a unique id for an element
     func `id`(_ value: String) -> Self {
-        attribute("id", value, true)
+        attribute("id", value)
     }
     
     /// Specifies the language of the element's content
     func lang(_ value: String) -> Self {
-        attribute("lang", value, true)
+        attribute("lang", value)
     }
     
     /// Specifies whether the element is to have its spelling and grammar checked or not
     func spellcheck(_ value: Bool) -> Self {
-        attribute("spellcheck", String(value), true)
+        attribute("spellcheck", String(value))
     }
     
     /// Specifies the tabbing order of an element
     func tabindex(_ value: Int) -> Self {
-        attribute("tabindex", String(value), true)
+        attribute("tabindex", String(value))
     }
     
     /// Specifies extra information about an element
     func title(_ value: String) -> Self {
-        attribute("title", value, true)
+        attribute("title", value)
     }
     
     /// Specifies whether the content of an element should be translated or not
     func translate(_ value: Translate) -> Self {
-        attribute("translate", value.rawValue, true)
+        attribute("translate", value.rawValue)
     }
 }
