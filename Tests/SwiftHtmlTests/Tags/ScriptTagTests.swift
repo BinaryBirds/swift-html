@@ -12,7 +12,7 @@ final class ScriptTagTests: XCTestCase {
 
     func testScript() {
         let doc = Document(.html) {
-            Script {}
+            Script ()
                 .src("./js/main.js")
                 .async()
         }
@@ -25,7 +25,7 @@ final class ScriptTagTests: XCTestCase {
     
     func testIntegrity() {
         let doc = Document {
-            Script {}
+            Script ()
                 .src("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
                 .integrity("sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl")
                 .crossorigin(.anonymous)
