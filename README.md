@@ -127,7 +127,7 @@ class MyTag: Tag {
 class MyClass { }
 
 extension MyClass: TagRepresentable {
-    ... implement protocol requirements
+    // ... implement protocol requirements
 }
 ```
 
