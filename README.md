@@ -124,7 +124,7 @@ class MyTag: Tag {
 5. Implement the `TagRepresentable` protocol in your own class. It is very simple, can be customized with an extension, and allows any class to render as nested tags.
 
 ```swift
-class ChildA: TagRepresentable { }
+class ChildA { }
 
 extension ChildA: TagRepresentable {
     // ... implement protocol requirements
