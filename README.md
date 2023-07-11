@@ -184,11 +184,10 @@ open class Rss: Tag {
 To customize tags of a particular `Node` type...
 
 ```swift
-// Bracketed tags... <standard></standard> ...use StandardTag class
+// Bracketed tags... <tagname></tagname> ...use StandardTag class
 class MyClass: StandardTag { }
 
-
-// Single tag... <empty> ...use EmptyTag class
+// Single tag... <tagname> ...use EmptyTag class
 class MyClass: EmptyTag { }
 
 // Comment tag... <!-- your comments here --> ...use CommentTag class
