@@ -14,7 +14,9 @@ final class FormTagTests: XCTestCase {
         let items = ["a", "b", "c"]
         let doc = Document {
             Form {
-                items.map { P($0) }
+				for item in items {
+					P(item)
+				}
             }
         }
         XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<form><p>a</p><p>b</p><p>c</p></form>"#)
