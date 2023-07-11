@@ -113,7 +113,7 @@ class MyTag: Tag {
 
     init(myAttributeValue: String, @TagBuilder _ builder: () -> Tag) {
         let attribute = .init(key: "myKey", value: myAttributeValue)
-        let node = Node(type: .empty, name: "myTag", [attribute])
+        let node = Node(type: .empty, name: "myTag", attributes: [attribute])
         super.init(node: node, [builder()])
     }
 }
