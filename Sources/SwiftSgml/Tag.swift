@@ -8,14 +8,16 @@
 //  See README.md for detailed options on how to use the class.
 
 open class Tag {
-        
-    public private(set) var node: Node
-    public private(set) var children: [Tag]
     
+    // override to implement a default Node
     open class var node: Node { .init(type: .standard, name: Self.name) }
     
+    // override to customize the <tag_name>
     open class var name: String { .init(self).lowercased() }
-    
+
+    public private(set) var node: Node
+    public private(set) var children: [Tag]
+        
     // MARK: - init
         
     /// initialize a new Tag with child tags
