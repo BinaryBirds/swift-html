@@ -132,13 +132,10 @@ extension MyInnerClass: TagRepresentable {
 
 class MyInnerMostClass: TagRepresentable {}
 
-// can now be used...
-class MyClass {
+class MyOuterClass: GroupTag {
 
-    init(myAttributeValue: String, @TagBuilder _ builder: () -> Tag) {
-        let attribute = .init(key: "myKey", value: myAttributeValue)
-        let node = Node(type: .group, name: "myTag", attributes: [attribute])
-        super.init(node: node, [content(builder)])
+    init@TagBuilder _ builder: () -> Tag) {
+        super.init([content(builder)])
     }
     
     @TagBuilder
@@ -151,7 +148,7 @@ class MyClass {
     }
 }
 
-//  * MyClass is a .group node so it does not render
+//  * MyOuterClass is a GroupTag so it does not render
 //
 //  <myinnerclass>
 //      <myinnermostclass>
