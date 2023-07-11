@@ -74,35 +74,51 @@ That's it.
 
 ## Creating custom tags
 
-You can define your own custom tags by subclassing the `Tag` or `EmptyTag` class. 
+You can define your own custom tags a few different ways, from most simple to complex cases.
 
-You can follow the same pattern if you take a look at the core tags.
+1. Just subclass `Tag` and it will render with your class name lowercased.
 
 ```swift
-open class Div: Tag {
+class MyTag: Tag { }
 
-}
-
-// <div></div> - standard tag
-
-open class Br: EmptyTag {
-    
-}
-// <br> - no closing tag
-
+// renders <mytag></mytag>
 ```
 
-By default the name of the tag is automatically derived from the class name (lowercased), but you can also create your own tag type & name by overriding the `createNode()` class function.
+2. Subclass `Tag` and override the `name` property.
 
 ```swift
-open class LastBuildDate: Tag {
+class MyTag: Tag { 
 
-    open override class func createNode() -> Node {
-        Node(type: .standard, name: "lastBuildDate")
+    override open class var name: String { "myTag" }
+}
+
+// renders <myTag></myTag>
+```
+
+3. Subclass `Tag` and override the `node` property. The `Node` determines how your class will render. For example, to create an empty tag...
+
+```swift
+class MyTag: Tag {
+    
+    override open class var node: Node { .init(type: .empty, name: "myTag") }
+}
+
+// renders <myTag>
+```
+
+4. Subclass, create your own custom initializer and then call the `Tag` designated initializer.
+
+```swift
+class MyTag: Tag {
+
+    init(myAttributeValue: String, @TagBuilder _ builder: () -> Tag) {
+        let attribute = .init(key: "myKey", value: myAttributeValue)
+        let node = Node(type: .empty, name: "myTag", [attribute])
+        super.init(node: node, [builder()])
     }
 }
 
-// <lastBuildDate></lastBuildDate> - standard tag with custom name
+// renders <myTag myKey="myAttributeValue">
 ```
 
 It is also possible to create tags with altered content or default attributes.
@@ -128,6 +144,45 @@ open class Rss: Tag {
 }
 // <rss version="2.0">...</rss> - tag with a default attribute
 ```
+
+
+To customize tags of a particular type...
+
+```html
+<standard></standard>
+<empty>
+<!-- comment -->
+```
+
+...use the `TypedTag` classes: `StandardTag`, `EmptyTag` and `CommentTag`
+
+
+If you get into coding situations where tags need to be combined without the container rendering, use the `GroupTag`. This class is especially handy when the function calls for a single `Tag` and you want to supply many.
+
+```swift
+class MyTag: Tag {
+
+    init(myAttributeValue: String, @TagBuilder _ builder: () -> Tag) {
+        let attribute = .init(key: "myKey", value: myAttributeValue)
+        let node = Node(type: .empty, name: "myTag", [attribute])
+        super.init(node: node, [builder()])
+    }
+    
+    convenience init(anotherValue: String) {
+        self.init(myAttributeValue: anotherValue) {
+            // must return one Tag for builder parameter
+            // use GroupTag because it will not render 
+            GroupTag {
+                Tag()
+                Tag()
+                Tag()
+            }
+        }
+    }
+}
+```
+
+And if you just need to render standard HTML — `<div>`, `<p>`, `<a>`, etc. — use one the pre-made classes in the library.
 
 ## Attribute management
 
