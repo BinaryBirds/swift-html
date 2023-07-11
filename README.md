@@ -81,7 +81,7 @@ You can define your own custom tags a few different ways, from most simple to co
 ```swift
 class MyTag: Tag { }
 
-// renders <mytag></mytag>
+// <mytag></mytag>
 ```
 
 2. Subclass `Tag` and override the `name` property.
@@ -92,7 +92,7 @@ class MyTag: Tag {
     override open class var name: String { "myTag" }
 }
 
-// renders <myTag></myTag>
+// <myTag></myTag>
 ```
 
 3. Subclass `Tag` and override the `node` property. The `Node` determines how your class will render. For example, to create an empty tag...
@@ -103,7 +103,7 @@ class MyTag: Tag {
     override open class var node: Node { .init(type: .empty, name: "myTag") }
 }
 
-// renders <myTag>
+// <myTag>
 ```
 
 4. Subclass, create your own custom initializer and then call the `Tag` designated initializer.
@@ -118,7 +118,7 @@ class MyTag: Tag {
     }
 }
 
-// renders <myTag myKey="myAttributeValue">
+// <myTag myKey="myAttributeValue">
 ```
 
 It is also possible to create tags with altered content or default attributes.
