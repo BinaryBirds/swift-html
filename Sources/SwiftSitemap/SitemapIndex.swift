@@ -9,7 +9,7 @@ open class SitemapIndex: StandardTag {
     
     override open class var name: String { .init(SitemapIndex.self) }
 
-    public init(@TagBuilder _ builder: () -> Tag) {
+    public init(@TagBuilder _ builder: () -> TagRepresentable) {
         super.init([builder()])
         setAttributes([
             .init(key: "xmlns", value: "http://www.sitemaps.org/schemas/sitemap/0.9"),

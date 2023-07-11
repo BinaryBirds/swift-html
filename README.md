@@ -121,6 +121,16 @@ class MyTag: Tag {
 // <myTag myKey="myAttributeValue">
 ```
 
+5. Implement the `TagRepresentable` protocol in your own class. It is very simple, can be customized with an extension, and allows any class to render as nested tags.
+
+```swift
+class MyClass { }
+
+extension MyClass: TagRepresentable {
+    ... implement protocol requirements
+}
+```
+
 It is also possible to create tags with altered content or default attributes.
 
 ```swift

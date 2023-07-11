@@ -5,23 +5,53 @@
 //  Created by Tibor Bodecs on 2021. 11. 19..
 //
 
-//  There are three ways to use this class...
+// This is the base protocol for tags.
 //
-//  1- init(...) with a custom Node. It will render according to the type, name, etc. supplied.
+//  Implement it in your own classes to render them.
 //
-//  2— Subclass and override `class var node: Node`. It will render with the type, name, etc. supplied.
+//  Or use the pre-made class called `Tag`.
 //
-//  3— Just subclass. It will render an opening and closing tag with the name of your subclass lowercased. <classname></classname>
-//
-//  Simple subclasses that render with an open and close tag can just override `class var name: String`. <customName></customName>
-//
-//  For common HTML tags like Div, P, A, etc. use one of the pre-made subclasses elsewhere in the library.
+//  Extend it to customize for your needs.
+
+public protocol TagRepresentable {
+    
+    var node: Node { get }
+    var children: [TagRepresentable] { get }
+    
+    @discardableResult
+    func setContents(_ value: String?, _ condition: Bool) -> Self
+
+    // MARK: - attributes
+    
+    /// set attributes
+    @discardableResult
+    func setAttributes(_ attributes: [Attribute], _ condition: Bool) -> Self
+    
+    /// delete an attribute by a given key
+    @discardableResult
+    func deleteAttribute(_ key: String, _ condition: Bool) -> Self
+    
+    /// add a new attribute with a given value if the condition is true
+    @discardableResult
+    func attribute(_ key: String, _ value: String?, _ condition: Bool) -> Self
+
+    /// add a new flag-like attribute with a given value if the condition is true
+    ///
+    /// if the flag value is `nil` only the attribute key will be used. eg. `<foo bar></foo>`
+    ///
+    @discardableResult
+    func flagAttribute(_ key: String, _ value: String?, _ condition: Bool) -> Self
+}
 
 
-open class Tag {
+//  This is a basic implementation of the TagRepresentable protocol.
+//
+//  See README.md for detailed options on how to use the class.
+
+open class Tag: TagRepresentable {
         
     public private(set) var node: Node
-    public private(set) var children: [Tag]
+    public private(set) var children: [TagRepresentable]
     
     open class var node: Node { .init(type: .standard, name: Self.name) }
     
@@ -30,18 +60,18 @@ open class Tag {
     // MARK: - init
         
     /// initialize a new Tag with child tags
-    public init(node: Node? = nil, _ children: [Tag] = []) {
+    public init(node: Node? = nil, _ children: [TagRepresentable] = []) {
         self.node = node ?? Self.node
         self.children = children
     }
 
     /// initialize a new Tag with a single child tag
-    public convenience init(node: Node? = nil, _ child: Tag) {
+    public convenience init(node: Node? = nil, _ child: TagRepresentable) {
         self.init(node: node, [child])
     }
 
     /// initialize a new Tag with children using a builder
-    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
+    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> TagRepresentable) {
         self.init(node: node, [builder()])
     }
     
@@ -103,5 +133,13 @@ open class Tag {
             node.upsert(Attribute(key: key, value: value))
         }
         return self
+    }
+}
+
+public extension String {
+    
+    /// convert class names into node names
+    init(_ `class`: AnyClass) {
+        self.init(stringLiteral: .init(describing: `class`.self).lowercased())
     }
 }

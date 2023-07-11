@@ -55,7 +55,7 @@ private extension Array where Element == String {
     }
 }
 
-public extension Tag {
+public extension TagRepresentable {
         
     // MARK: - class management
 
@@ -117,7 +117,7 @@ public extension Tag {
     func `class`(remove values: [String], _ condition: Bool = true) -> Self {
         let newClasses = classArray.filter { !values.contains($0) }
         if newClasses.isEmpty {
-            return deleteAttribute("class")
+            return deleteAttribute("class", condition)
         }
         return `class`(newClasses, condition)
     }
@@ -194,7 +194,7 @@ public extension Tag {
     func style(remove values: [String], _ condition: Bool = true) -> Self {
         let newClasses = styleArray.filter { !values.contains($0) }
         if newClasses.isEmpty {
-            return deleteAttribute("style")
+            return deleteAttribute("style", condition)
         }
         return style(newClasses, condition)
     }
@@ -214,7 +214,7 @@ public extension Tag {
     func style(removeByKey values: [String], _ condition: Bool = true) -> Self {
         let newClasses = styleArray.filter { !values.contains(String($0.prefix(while: {$0 != ":"}))) }
         if newClasses.isEmpty {
-            return deleteAttribute("style")
+            return deleteAttribute("style", condition)
         }
         return style(newClasses, condition)
     }
@@ -235,61 +235,61 @@ public extension Tag {
     
     /// Specifies a shortcut key to activate/focus an element
     func accesskey(_ value: Character) -> Self {
-        attribute("accesskey", String(value))
+        attribute("accesskey", String(value), true)
     }
     
     /// Specifies whether the content of an element is editable or not
     func contenteditable(_ value: Bool) -> Self {
-        attribute("contenteditable", String(value))
+        attribute("contenteditable", String(value), true)
     }
     
     /// Used to store custom data private to the page or application
     func data(key: String, _ value: String) -> Self {
-        attribute("data-" + key, value)
+        attribute("data-" + key, value, true)
     }
 
     /// Specifies the text direction for the content in an element
     func dir(_ value: TextDirection = .ltr) -> Self {
-        attribute("dir", value.rawValue)
+        attribute("dir", value.rawValue, true)
     }
     
     /// Specifies whether an element is draggable or not
     func draggable(_ value: Draggable = .auto) -> Self {
-        attribute("draggable", value.rawValue)
+        attribute("draggable", value.rawValue, true)
     }
     
     /// Specifies that an element is not yet, or is no longer, relevant
     func hidden(_ value: Bool? = nil) -> Self {
-        attribute("hidden", value?.description)
+        attribute("hidden", value?.description, true)
     }
     
     /// Specifies a unique id for an element
     func `id`(_ value: String) -> Self {
-        attribute("id", value)
+        attribute("id", value, true)
     }
     
     /// Specifies the language of the element's content
     func lang(_ value: String) -> Self {
-        attribute("lang", value)
+        attribute("lang", value, true)
     }
     
     /// Specifies whether the element is to have its spelling and grammar checked or not
     func spellcheck(_ value: Bool) -> Self {
-        attribute("spellcheck", String(value))
+        attribute("spellcheck", String(value), true)
     }
     
     /// Specifies the tabbing order of an element
     func tabindex(_ value: Int) -> Self {
-        attribute("tabindex", String(value))
+        attribute("tabindex", String(value), true)
     }
     
     /// Specifies extra information about an element
     func title(_ value: String) -> Self {
-        attribute("title", value)
+        attribute("title", value, true)
     }
     
     /// Specifies whether the content of an element should be translated or not
     func translate(_ value: Translate) -> Self {
-        attribute("translate", value.rawValue)
+        attribute("translate", value.rawValue, true)
     }
 }

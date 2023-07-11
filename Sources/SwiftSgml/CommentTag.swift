@@ -7,5 +7,5 @@
 
 open class CommentTag: TypedTag {
         
-    override open class var type: Node.NodeType { .comment }
+    override open class var type: Node.NodeType { .comment }    
 }

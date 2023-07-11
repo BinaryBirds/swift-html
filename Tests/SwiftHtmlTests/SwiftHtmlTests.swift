@@ -10,7 +10,7 @@ import XCTest
 
 extension Div {
 
-    convenience init(_ value: String, @TagBuilder _ builder: () -> Tag) {
+    convenience init(_ value: String, @TagBuilder _ builder: () -> TagRepresentable) {
         self.init(builder)
         self.setAttributes([
             .init(key: "some-key", value: value)
