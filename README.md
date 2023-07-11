@@ -248,12 +248,12 @@ There are other built-in type-safe attribute modifiers available on tags.
 You can come up with your own `Tag` composition system by introducing a new protocol.
 
 ```swift
-protocol Tag {
+protocol TagRepresentable {
 
     func build() -> Tag
 }
 
-struct ListComponent: Tag {
+struct ListComponent: TagRepresentable {
 
     let items: [String]
     
