@@ -181,7 +181,7 @@ open class Rss: Tag {
 // <rss version="2.0">...</rss> - tag with a default attribute
 ```
 
-To customize tags of a particular type...
+To customize tags of a particular `Node` type...
 
 ```html
 // Open and close tags, use StandardTag class
