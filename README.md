@@ -277,19 +277,19 @@ This way it is also possible to extend the `TagBuilder` to support the new proto
 ```swift
 extension TagBuilder {
 
-    static func buildExpression(_ expression: Tag) -> Tag {
+    static func buildExpression(_ expression: TagRepresentable) -> Tag {
         expression.build()
     }
     
-    static func buildExpression(_ expression: Tag) -> [Tag] {
+    static func buildExpression(_ expression: TagRepresentable) -> [Tag] {
         [expression.build()]
     }
 
-    static func buildExpression(_ expression: [Tag]) -> [Tag] {
+    static func buildExpression(_ expression: [TagRepresentable]) -> [Tag] {
         expression.map { $0.build() }
     }
 
-    static func buildExpression(_ expression: [Tag]) -> Tag {
+    static func buildExpression(_ expression: [TagRepresentable]) -> Tag {
         GroupTag {
             expression.map { $0.build() }
         }
