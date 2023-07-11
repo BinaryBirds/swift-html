@@ -210,13 +210,17 @@ class MyTag: Tag {
             // must return one Tag for builder parameter
             // use GroupTag because it will not render 
             GroupTag {
-                Tag()
-                Tag()
-                Tag()
+                TagA()
+                TagB()
+                TagC()
             }
         }
     }
 }
+
+//  <taga></taga>
+//  <tagb></tagb>
+//  <tagc></tagc>
 ```
 
 If you just need to render basic HTML — `<div>`, `<p>`, `<a>`, etc. — then use one the many pre-made classes in the library called by the same name.
