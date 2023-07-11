@@ -74,7 +74,7 @@ That's it.
 
 ## Creating custom tags
 
-You can define your own custom tags a few different ways, from most simple to complex cases.
+You can define your own custom tags a few different ways, from simple to complex cases.
 
 1. Just subclass `Tag` and it will render with your class name lowercased.
 
@@ -128,6 +128,19 @@ class MyClass { }
 
 extension MyClass: TagRepresentable {
     // ... implement protocol requirements
+}
+
+class MyInnerClass: TagRepresentable {}
+
+class MyInnerMostClass: TagRepresentable {}
+
+// can now be used...
+MyClass {
+    MyInnerClass {
+        MyInnerMostClass {
+            // etc.
+        }
+    }
 }
 ```
 
