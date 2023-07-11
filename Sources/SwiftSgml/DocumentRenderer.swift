@@ -36,7 +36,7 @@ public struct DocumentRenderer {
         }
     }
 
-    private func render(tag: TagRepresentable, level: Int = 0) -> String {
+    private func render(tag: Tag, level: Int = 0) -> String {
         let spaces = String(repeating: " ", count: level * indent)
         switch tag.node.type {
         case .standard:
@@ -54,7 +54,7 @@ public struct DocumentRenderer {
         }
     }
     
-    private func renderChildren(_ tag: TagRepresentable, level: Int, spaces: String, isGrouped: Bool = false) -> String {
+    private func renderChildren(_ tag: Tag, level: Int, spaces: String, isGrouped: Bool = false) -> String {
         var newLevel = level + 1
         if isGrouped {
             newLevel = level
@@ -68,11 +68,11 @@ public struct DocumentRenderer {
         return children
     }
     
-    private func renderOpening(_ tag: TagRepresentable) -> String {
+    private func renderOpening(_ tag: Tag) -> String {
         return "<" + tag.node.name + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
     }
     
-    private func renderClosing(_ tag: TagRepresentable) -> String {
+    private func renderClosing(_ tag: Tag) -> String {
         "</" + tag.node.name + ">"
     }
 

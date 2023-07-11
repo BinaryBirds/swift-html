@@ -55,7 +55,7 @@ private extension Array where Element == String {
     }
 }
 
-public extension TagRepresentable {
+public extension Tag {
         
     // MARK: - class management
 

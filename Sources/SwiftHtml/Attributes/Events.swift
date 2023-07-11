@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension TagRepresentable {
+public extension Tag {
     
     // MARK: - Window Event Attributes
     

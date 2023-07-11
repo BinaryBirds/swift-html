@@ -121,16 +121,16 @@ class MyTag: Tag {
 // <myTag myKey="myAttributeValue">
 ```
 
-5. Implement the `TagRepresentable` protocol in your own class. It is very simple, can be customized with an extension, and allows any class to render as nested tags.
+5. Implement the `Tag` protocol in your own class. It is very simple, can be customized with an extension, and allows any class to render as nested tags.
 
 ```swift
 class ChildA { }
 
-extension ChildA: TagRepresentable {
+extension ChildA: Tag {
     // ... implement protocol requirements
 }
 
-class ChildB: TagRepresentable {}
+class ChildB: Tag {}
 
 class Parent: GroupTag {
 
@@ -282,12 +282,12 @@ There are other built-in type-safe attribute modifiers available on tags.
 You can come up with your own `Tag` composition system by introducing a new protocol.
 
 ```swift
-protocol TagRepresentable {
+protocol Tag {
 
     func build() -> Tag
 }
 
-struct ListComponent: TagRepresentable {
+struct ListComponent: Tag {
 
     let items: [String]
     
@@ -311,19 +311,19 @@ This way it is also possible to extend the `TagBuilder` to support the new proto
 ```swift
 extension TagBuilder {
 
-    static func buildExpression(_ expression: TagRepresentable) -> Tag {
+    static func buildExpression(_ expression: Tag) -> Tag {
         expression.build()
     }
     
-    static func buildExpression(_ expression: TagRepresentable) -> [Tag] {
+    static func buildExpression(_ expression: Tag) -> [Tag] {
         [expression.build()]
     }
 
-    static func buildExpression(_ expression: [TagRepresentable]) -> [Tag] {
+    static func buildExpression(_ expression: [Tag]) -> [Tag] {
         expression.map { $0.build() }
     }
 
-    static func buildExpression(_ expression: [TagRepresentable]) -> Tag {
+    static func buildExpression(_ expression: [Tag]) -> Tag {
         GroupTag {
             expression.map { $0.build() }
         }

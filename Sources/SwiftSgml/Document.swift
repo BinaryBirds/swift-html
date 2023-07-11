@@ -15,9 +15,9 @@ public struct Document {
     }
 
     public let type: `Type`
-    public let root: TagRepresentable
+    public let root: Tag
     
-    public init(_ type: `Type` = .unspecified, @TagBuilder _ builder: () -> TagRepresentable) {
+    public init(_ type: `Type` = .unspecified, @TagBuilder _ builder: () -> Tag) {
         self.type = type
         self.root = builder()
     }

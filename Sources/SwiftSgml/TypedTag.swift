@@ -27,7 +27,7 @@ open class TypedTag: Tag {
     public init(name: String? = nil,
                 contents: String? = nil,
                 attributes: [Attribute] = [],
-                _ children: [TagRepresentable] = []) {
+                _ children: [Tag] = []) {
         let node = Self.node(name: name ?? Self.name, contents: contents, attributes: attributes)
         super.init(node: node, children)
     }
@@ -35,14 +35,14 @@ open class TypedTag: Tag {
     public convenience init(name: String? = nil,
                             contents: String? = nil,
                             attributes: [Attribute] = [],
-                            _ child: TagRepresentable) {
+                            _ child: Tag) {
         self.init(name: name, contents: contents, attributes: attributes, [child])
     }
     
     public convenience init(name: String? = nil,
                             contents: String? = nil,
                             attributes: [Attribute] = [],
-                            @TagBuilder _ builder: () -> TagRepresentable) {
+                            @TagBuilder _ builder: () -> Tag) {
         self.init(name: name, contents: contents, attributes: attributes, [builder()])
     }
     

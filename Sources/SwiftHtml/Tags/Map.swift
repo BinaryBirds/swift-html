@@ -14,7 +14,7 @@ open class Map: StandardTag {
     
     override open class var name: String { .init(Map.self) }
         
-    public init(name: String, @TagBuilder _ builder: () -> TagRepresentable) {
+    public init(name: String, @TagBuilder _ builder: () -> Tag) {
         super.init([builder()])
         setAttributes([
             .init(key: "name", value: name)
