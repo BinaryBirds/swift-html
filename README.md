@@ -124,24 +124,40 @@ class MyTag: Tag {
 5. Implement the `TagRepresentable` protocol in your own class. It is very simple, can be customized with an extension, and allows any class to render as nested tags.
 
 ```swift
-class MyClass { }
+class MyInnerClass: TagRepresentable { }
 
-extension MyClass: TagRepresentable {
+extension MyInnerClass: TagRepresentable {
     // ... implement protocol requirements
 }
-
-class MyInnerClass: TagRepresentable {}
 
 class MyInnerMostClass: TagRepresentable {}
 
 // can now be used...
-MyClass {
-    MyInnerClass {
-        MyInnerMostClass {
-            // etc.
+class MyClass {
+
+    init(myAttributeValue: String, @TagBuilder _ builder: () -> Tag) {
+        let attribute = .init(key: "myKey", value: myAttributeValue)
+        let node = Node(type: .group, name: "myTag", attributes: [attribute])
+        super.init(node: node, [content(builder)])
+    }
+    
+    @TagBuilder
+    func content(_ builder: () -> Tag) -> Tag {
+        MyInnerClass {
+            MyInnerMostClass {
+                builder()
+            }
         }
     }
 }
+
+//  * MyClass is a .group node so it does not render
+//
+//  <myinnerclass>
+//      <myinnermostclass>
+//          // ... contents of builder parameter
+//      </myinnermostclass>
+//  <myinnerclss>
 ```
 
 It is also possible to create tags with altered content or default attributes.
