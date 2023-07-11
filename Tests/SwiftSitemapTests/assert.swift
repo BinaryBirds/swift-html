@@ -13,6 +13,6 @@ func assert(doc: Document, html: String) {
     let expectation = html
         .replacingOccurrences(of: "    ", with: "")
         .replacingOccurrences(of: "\n", with: "")
-    print(renderer.render(doc))
+    
     XCTAssertEqual(renderer.render(doc), expectation)
 }
