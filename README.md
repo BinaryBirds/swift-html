@@ -155,17 +155,17 @@ open class Rss: Tag {
 // <rss version="2.0">...</rss> - tag with a default attribute
 ```
 
-
 To customize tags of a particular type...
 
 ```html
 <standard></standard>
 <empty>
-<!-- comment -->
+<!-- your comments here -->
 ```
 
 ...use the `TypedTag` classes: `StandardTag`, `EmptyTag` and `CommentTag`
 
+Avoid subclassing `TypedTag` directly unless absolutely necessary.
 
 If you get into coding situations where tags need to be combined without the container rendering, use the `GroupTag`. This class is especially handy when the function calls for a single `Tag` and you want to supply many.
 
