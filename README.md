@@ -135,17 +135,15 @@ class MyInnerMostClass: TagRepresentable {}
 class MyOuterClass: GroupTag {
 
     init@TagBuilder _ builder: () -> Tag) {
-        super.init([content(builder)])
-    }
-    
-    @TagBuilder
-    func content(_ builder: () -> Tag) -> Tag {
-        MyInnerClass {
-            MyInnerMostClass {
-                builder()
+        @TagBuilder func content(_ builder: () -> Tag) -> Tag {
+            MyInnerClass {
+                MyInnerMostClass {
+                    builder()
+                }
             }
         }
-    }
+        super.init([content(builder)])
+    }    
 }
 
 //  * MyOuterClass is a GroupTag so it does not render
