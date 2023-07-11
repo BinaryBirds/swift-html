@@ -121,40 +121,6 @@ class MyTag: Tag {
 // <myTag myKey="myAttributeValue">
 ```
 
-5. Implement the `Tag` protocol in your own class. It is very simple, can be customized with an extension, and allows any class to render as nested tags.
-
-```swift
-class ChildA { }
-
-extension ChildA: Tag {
-    // ... implement protocol requirements
-}
-
-class ChildB: Tag {}
-
-class Parent: GroupTag {
-
-    init@TagBuilder _ builder: () -> Tag) {
-        @TagBuilder func content(_ builder: () -> Tag) -> Tag {
-            ChildA {
-                ChildB {
-                    builder()
-                }
-            }
-        }
-        super.init([content(builder)])
-    }    
-}
-
-//  * Parent is a GroupTag so it does not render
-//
-//  <childa>
-//      <childb>
-//          // ... contents of builder parameter
-//      </childb>
-//  <childa>
-```
-
 It is also possible to create tags with altered content or default attributes.
 
 ```swift
