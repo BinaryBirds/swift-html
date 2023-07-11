@@ -76,7 +76,7 @@ That's it.
 
 You can define your own custom tags a few different ways, from simple to complex cases.
 
-1. Just subclass `Tag` and it will render with your class name lowercased.
+1. Subclass `Tag` and it will render with your class name lowercased.
 
 ```swift
 class MyTag: Tag { }
@@ -106,7 +106,7 @@ class MyTag: Tag {
 // <myTag>
 ```
 
-4. Subclass, create your own custom initializer and then call the `Tag` designated initializer.
+4. Subclass `Tag`, create your own custom initializer and then call the `Tag` designated initializer.
 
 ```swift
 class MyTag: Tag {
@@ -183,22 +183,19 @@ open class Rss: Tag {
 
 To customize tags of a particular `Node` type...
 
-```html
-// Bracketed tags, use StandardTag class
-<standard></standard>
+```swift
+// Bracketed tags... <standard></standard> ...use StandardTag class
+class MyClass: StandardTag { }
 
-// Single tag, use EmptyTag class
-<empty>
 
-// Comment tag, use CommentTag class
-<!-- your comments here -->
+// Single tag... <empty> ...use EmptyTag class
+class MyClass: EmptyTag { }
+
+// Comment tag... <!-- your comments here --> ...use CommentTag class
+class MyClass: CommentTag { }
 ```
 
-...use the `TypedTag` classes: `StandardTag`, `EmptyTag` and `CommentTag`
-
-Avoid subclassing `TypedTag` directly unless absolutely necessary.
-
-If you get into coding situations where tags need to be combined without the container rendering, use the `GroupTag`. This class is especially handy when the function calls for a single `Tag` and you want to supply many.
+When you need to combined multiple tags into one, but don't want the container to render, use the `GroupTag`. This class is especially handy when a function parameter requires one `Tag` but you need to supply many.
 
 ```swift
 class MyTag: Tag {
@@ -223,7 +220,7 @@ class MyTag: Tag {
 }
 ```
 
-And if you just need to render standard HTML — `<div>`, `<p>`, `<a>`, etc. — use one the pre-made classes in the library.
+If you just need to render basic HTML — `<div>`, `<p>`, `<a>`, etc. — then use one the many pre-made classes in the library called by the same name.
 
 ## Attribute management
 
