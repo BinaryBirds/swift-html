@@ -44,7 +44,7 @@ public protocol TagRepresentable {
 }
 
 
-//  This is a basic implementation of the TagRepresentable protocol.
+//  Tag is an implementation of the TagRepresentable protocol.
 //
 //  See README.md for detailed options on how to use the class.
 

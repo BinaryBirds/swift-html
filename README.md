@@ -184,8 +184,13 @@ open class Rss: Tag {
 To customize tags of a particular type...
 
 ```html
+// Open and close tags, use StandardTag class
 <standard></standard>
+
+// Empty tag, use EmptyTag class
 <empty>
+
+// Comment tag, use CommentTag class
 <!-- your comments here -->
 ```
 
