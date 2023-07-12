@@ -12,7 +12,7 @@ open class Tag {
     public enum `Type` {
         case comment    // <!-- -->
         case empty      // <name>
-        case renderless // no tag
+        case onlyChildren // only children render
         case standard   // <name></name>
     }
     
@@ -22,7 +22,7 @@ open class Tag {
     public internal(set) var attributes: [Attribute]?
     public private(set) var children: [Tag]?
     
-    open class var type: `Type` { .renderless }
+    open class var type: `Type` { .onlyChildren }
     open class var name: String { .init(self).lowercased() }
         
     // MARK: - init
@@ -50,7 +50,7 @@ open class Tag {
                   [child])
     }
     
-    public convenience init(type: `Type` = .renderless,
+    public convenience init(type: `Type` = .onlyChildren,
                             name: String? = nil,
                             contents: String? = nil,
                             attributes: [Attribute]? = nil,

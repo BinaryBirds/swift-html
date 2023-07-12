@@ -45,7 +45,7 @@ public struct DocumentRenderer {
             return spaces + renderOpening(tag)
         case .standard:
             return spaces + renderOpening(tag) + (tag.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
-        case .renderless:
+        case .onlyChildren:
             var contents = ""
             if let rawValue = tag.contents {
                 contents = spaces + rawValue
