@@ -10,19 +10,19 @@
 public enum TagBuilder {
     
     public static func buildBlock() -> Tag {
-        GroupTag()
+        Tag()
     }
     
     public static func buildBlock(_ components: [Tag]...) -> Tag {
-        GroupTag(components.flatMap { $0 })
+        Tag(components.flatMap { $0 })
     }
     
     public static func buildBlock(_ components: Tag...) -> Tag {
-        GroupTag(components)
+        Tag(components)
     }
     
     public static func buildOptional(_ component: Tag?) -> Tag {
-        component ?? GroupTag()
+        component ?? Tag()
     }
     
     public static func buildEither(first component: Tag) -> Tag {
@@ -34,6 +34,6 @@ public enum TagBuilder {
     }
     
     public static func buildArray(_ components: [Tag]) -> Tag {
-        GroupTag(components)
+        Tag(components)
     }
 }

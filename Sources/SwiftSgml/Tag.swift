@@ -9,39 +9,61 @@
 
 open class Tag {
     
-    // override to implement a default Node
-    open class var node: Node { .init(type: .standard, name: Self.name) }
+    public enum `Type` {
+        case comment    // <!-- -->
+        case empty      // <name>
+        case renderless // no tag
+        case standard   // <name></name>
+    }
     
-    // override to customize the <tag_name>
+    public let type: `Type`
+    public let name: String
+    public var contents: String?
+    public internal(set) var attributes: [Attribute]?
+    public private(set) var children: [Tag]?
+    
+    open class var type: `Type` { .renderless }
     open class var name: String { .init(self).lowercased() }
-
-    public private(set) var node: Node
-    public private(set) var children: [Tag]
         
     // MARK: - init
-        
-    /// initialize a new Tag with child tags
-    public init(node: Node? = nil, _ children: [Tag] = []) {
-        self.node = node ?? Self.node
+    public init(type: `Type`? = nil,
+                name: String? = nil,
+                contents: String? = nil,
+                attributes: [Attribute]? = nil,
+                _ children: [Tag]? = nil) {
+        self.type = type ?? Self.type
+        self.name = name ?? Self.name
+        self.contents = contents
+        self.attributes = attributes
         self.children = children
     }
-
-    /// initialize a new Tag with a single child tag
-    public convenience init(node: Node? = nil, _ child: Tag) {
-        self.init(node: node, [child])
-    }
-
-    /// initialize a new Tag with children using a builder
-    public convenience init(node: Node? = nil, @TagBuilder _ builder: () -> Tag) {
-        self.init(node: node, [builder()])
+    
+    public convenience init(type: `Type`? = nil,
+                            name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            _ child: Tag) {
+        self.init(type: type,
+                  name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [child])
     }
     
-    /// initialize a new Tag with some contents
-    public convenience init(node: Node? = nil, _ contents: String?) {
-        self.init(node: node)
-        if let contents = contents {
-            setContents(contents)
-        }
+    public convenience init(type: `Type` = .renderless,
+                            name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(type: type,
+                  name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [builder()])
+    }
+    
+    public convenience init(_ contents: String) {
+        self.init(contents: contents)
     }
 
     // MARK: - contents
@@ -49,20 +71,29 @@ open class Tag {
     /// set contents
     @discardableResult
     public func setContents(_ value: String?, _ condition: Bool = true) -> Self {
-        if condition {
-            node.contents = value
-        }
+        contents = condition ? value : contents
         return self
     }
 
     // MARK: - attributes
     
+    /// add or replace an attribute with a given key to the node
+    private func upsert(_ attribute: Attribute) {
+        delete(attribute)
+        self.attributes = self.attributes ?? []
+        self.attributes?.append(attribute)
+    }
+
+    /// deletes a attribute with a given key from the node
+    private func delete(_ attribute: Attribute) {
+        guard let attributes = attributes else { return }
+        self.attributes = attributes.filter { $0.key != attribute.key }
+    }
+    
     /// set attributes
     @discardableResult
-    public func setAttributes(_ attributes: [Attribute], _ condition: Bool = true) -> Self {
-        if condition {
-            node.attributes = attributes
-        }
+    public func setAttributes(_ new: [Attribute], _ condition: Bool = true) -> Self {
+        self.attributes = condition ? new : attributes
         return self
     }
     
@@ -70,7 +101,7 @@ open class Tag {
     @discardableResult
     public func deleteAttribute(_ key: String, _ condition: Bool = true) -> Self {
         if condition {
-            node.delete(Attribute(key: key))
+            delete(Attribute(key: key))
         }
         return self
     }
@@ -79,7 +110,7 @@ open class Tag {
     @discardableResult
     public func attribute(_ key: String, _ value: String?, _ condition: Bool = true) -> Self {
         if let value = value, condition {
-            node.upsert(Attribute(key: key, value: value))
+            upsert(Attribute(key: key, value: value))
         }
         return self
     }
@@ -91,7 +122,7 @@ open class Tag {
     @discardableResult
     public func flagAttribute(_ key: String, _ value: String? = nil, _ condition: Bool = true) -> Self {
         if condition {
-            node.upsert(Attribute(key: key, value: value))
+            upsert(Attribute(key: key, value: value))
         }
         return self
     }

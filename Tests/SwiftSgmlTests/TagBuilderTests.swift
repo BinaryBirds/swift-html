@@ -153,10 +153,8 @@ final class TagBuilderTests: XCTestCase {
     func testGroupTagBuilderAndRenderer() {
         let doc = Document {
             Branch {
-                GroupTag {
-                    Leaf("a")
-                    Leaf("b")
-                }
+                Leaf("a")
+                Leaf("b")
             }
         }
         
@@ -175,7 +173,7 @@ final class TagBuilderTests: XCTestCase {
         let doc = Document {
             Branch {
                 values.map { item -> Tag in
-                    GroupTag {
+                    Tag {
                         Leaf(item)
                         Leaf(item)
                     }

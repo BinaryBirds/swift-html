@@ -38,16 +38,16 @@ public struct DocumentRenderer {
 
     private func render(tag: Tag, level: Int = 0) -> String {
         let spaces = String(repeating: " ", count: level * indent)
-        switch tag.node.type {
-        case .standard:
-            return spaces + renderOpening(tag) + (tag.node.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
+        switch tag.type {
         case .comment:
-            return spaces + "<!-- " + (tag.node.contents ?? "") + " -->"
+            return spaces + "<!-- " + (tag.contents ?? "") + " -->"
         case .empty:
             return spaces + renderOpening(tag)
-        case .group:
+        case .standard:
+            return spaces + renderOpening(tag) + (tag.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
+        case .renderless:
             var contents = ""
-            if let rawValue = tag.node.contents {
+            if let rawValue = tag.contents {
                 contents = spaces + rawValue
             }
             return contents + renderChildren(tag, level: level, spaces: spaces, isGrouped: true)
@@ -59,7 +59,8 @@ public struct DocumentRenderer {
         if isGrouped {
             newLevel = level
         }
-        var children = tag.children.map { render(tag: $0, level: newLevel) }.joined(separator: newline)
+        let tagChildren = tag.children ?? []
+        var children = tagChildren.map { render(tag: $0, level: newLevel) }.joined(separator: newline)
         if !children.isEmpty {
             if !isGrouped {
                 children = newline + children + newline + spaces
@@ -69,15 +70,16 @@ public struct DocumentRenderer {
     }
     
     private func renderOpening(_ tag: Tag) -> String {
-        return "<" + tag.node.name + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
+        let attributes = tag.attributes ?? []
+        return "<" + tag.name + (attributes.isEmpty ? "" : " ") + renderAttributes(attributes) + ">"
     }
     
     private func renderClosing(_ tag: Tag) -> String {
-        "</" + tag.node.name + ">"
+        "</" + tag.name + ">"
     }
 
     private func renderAttributes(_ attributes: [Attribute]) -> String {
-        return attributes.reduce([]) { res, next in
+        attributes.reduce([]) { res, next in
             if let value = next.value {
                 return res + [next.key + #"=""# + value + #"""#]
             }
