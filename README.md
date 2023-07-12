@@ -95,12 +95,12 @@ class MyTag: Tag {
 // <myTag></myTag>
 ```
 
-3. Subclass `Tag` and override the `node` property. The `Node` determines how your class will render. For example, to create an empty tag...
+3. Subclass `Tag` and override the `type` property. `Type` determines how your class will render. For example, to create an empty tag...
 
 ```swift
 class MyTag: Tag {
     
-    override open class var node: Node { .init(type: .empty, name: "myTag") }
+    override open class var type: `Type` { .empty }
 }
 
 // <myTag>
@@ -113,8 +113,11 @@ class MyTag: Tag {
 
     init(myAttributeValue: String, @TagBuilder _ builder: () -> Tag) {
         let attribute = .init(key: "myKey", value: myAttributeValue)
-        let node = Node(type: .empty, name: "myTag", attributes: [attribute])
-        super.init(node: node, [builder()])
+        super.init(type: .empty,
+                   name: "myTag",
+                   attributes: [attribute],
+                   builder: [builder()]
+        )
     }
 }
 
