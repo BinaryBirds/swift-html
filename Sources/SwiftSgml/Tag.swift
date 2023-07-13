@@ -37,19 +37,6 @@ open class Tag {
         self.children = children
     }
     
-    // alternate designated initializer with builder parameter to make subclassing easier
-    public init(type: `Type`? = nil,
-                name: String? = nil,
-                contents: String? = nil,
-                attributes: [Attribute]? = nil,
-                @TagBuilder _ builder: () -> Tag) {
-        self.type = type ?? Self.type
-        self.name = name ?? Self.name
-        self.contents = contents
-        self.attributes = attributes
-        self.children = [builder()]
-    }
-    
     public convenience init(type: `Type`? = nil,
                             name: String? = nil,
                             contents: String? = nil,
@@ -63,10 +50,10 @@ open class Tag {
     }
     
     public convenience init(type: `Type`? = nil,
-                            name: String? = nil,
-                            contents: String? = nil,
-                            attributes: [Attribute]? = nil,
-                            @TagBuilder _ builder: () -> Tag) {
+                name: String? = nil,
+                contents: String? = nil,
+                attributes: [Attribute]? = nil,
+                @TagBuilder _ builder: () -> Tag) {
         self.init(type: type,
                   name: name,
                   contents: contents,
