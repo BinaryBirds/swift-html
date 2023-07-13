@@ -12,17 +12,16 @@ open class Tag {
     public enum `Type` {
         case comment    // <!-- -->
         case empty      // <name>
-        case onlyChildren // only children render
         case standard   // <name></name>
     }
     
-    public let type: `Type`
+    public let type: `Type`?
     public let name: String
     public var contents: String?
     public internal(set) var attributes: [Attribute]?
     public private(set) var children: [Tag]?
     
-    open class var type: `Type` { .onlyChildren }
+    open class var type: `Type`? { nil }
     open class var name: String { .init(self).lowercased() }
         
     // MARK: - init
@@ -50,7 +49,7 @@ open class Tag {
                   [child])
     }
     
-    public convenience init(type: `Type` = .onlyChildren,
+    public convenience init(type: `Type`? = nil,
                             name: String? = nil,
                             contents: String? = nil,
                             attributes: [Attribute]? = nil,

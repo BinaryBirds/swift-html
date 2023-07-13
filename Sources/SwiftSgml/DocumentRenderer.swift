@@ -38,14 +38,16 @@ public struct DocumentRenderer {
 
     private func render(tag: Tag, level: Int = 0) -> String {
         let spaces = String(repeating: " ", count: level * indent)
-        switch tag.type {
-        case .comment:
-            return spaces + "<!-- " + (tag.contents ?? "") + " -->"
-        case .empty:
-            return spaces + renderOpening(tag)
-        case .standard:
-            return spaces + renderOpening(tag) + (tag.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
-        case .onlyChildren:
+        if let type = tag.type {
+            switch type {
+            case .comment:
+                return spaces + "<!-- " + (tag.contents ?? "") + " -->"
+            case .empty:
+                return spaces + renderOpening(tag)
+            case .standard:
+                return spaces + renderOpening(tag) + (tag.contents ?? "") + renderChildren(tag, level: level, spaces: spaces) + renderClosing(tag)
+            }
+        } else {
             var contents = ""
             if let rawValue = tag.contents {
                 contents = spaces + rawValue

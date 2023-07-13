@@ -7,5 +7,5 @@
 
 open class StandardTag: TypedTag {
     
-    override open class var type: `Type` { .standard }
+    override open class var type: `Type`? { .standard }
 }

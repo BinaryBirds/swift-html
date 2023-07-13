@@ -7,5 +7,5 @@
 
 open class EmptyTag: TypedTag {
     
-    override open class var type: `Type` { .empty }
+    override open class var type: `Type`? { .empty }
 }

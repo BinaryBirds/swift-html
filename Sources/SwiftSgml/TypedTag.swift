@@ -7,8 +7,6 @@
 
 open class TypedTag: Tag {
     
-    override open class var type: `Type` { .onlyChildren }
-    
     public init(name: String? = nil,
                 contents: String? = nil,
                 attributes: [Attribute]? = nil,
