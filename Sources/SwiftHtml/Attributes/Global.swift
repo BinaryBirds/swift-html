@@ -61,7 +61,7 @@ public extension Tag {
 
     /// find an existing class attribute and return the value as an array of strings or an empty array
     private var classArray: [String] {
-        node.attributes.first { $0.key == "class" }?.value?.classArray ?? []
+        attributes?.first { $0.key == "class" }?.value?.classArray ?? []
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
@@ -137,7 +137,7 @@ public extension Tag {
 
     /// find an existing style attribute and return the value as an array of strings or an empty array
     private var styleArray: [String] {
-        node.attributes.first { $0.key == "style" }?.value?.styleArray ?? []
+        attributes?.first { $0.key == "style" }?.value?.styleArray ?? []
     }
 
     /// Specifies one stylename for an element (refers to a style in a style sheet)

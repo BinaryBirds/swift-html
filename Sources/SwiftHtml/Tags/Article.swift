@@ -5,12 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
-
-    static func article() -> Node {
-        Node(type: .standard, name: "article")
-    }
-}
 
 /// The `<article>` tag specifies independent, self-contained content.
 ///
