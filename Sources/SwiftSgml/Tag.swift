@@ -15,7 +15,7 @@ open class Tag {
         case standard   // <name></name>
     }
     
-    public let type: `Type`?
+    public let type: `Type`?    // type == nil only children rendered
     public let name: String
     public var contents: String?
     public internal(set) var attributes: [Attribute]?
