@@ -10,15 +10,46 @@ open class TypedTag: Tag {
     public init(name: String? = nil,
                 contents: String? = nil,
                 attributes: [Attribute]? = nil,
-                @TagBuilder _ builder: () -> Tag) {
+                _ children: [Tag]? = nil) {
         super.init(name: name,
                    contents: contents,
                    attributes: attributes,
-                   [builder()])
+                   children)
     }
-        
+    
+    // alternate designated initializer with builder parameter for subclassing convenience
+    public init(name: String? = nil,
+                contents: String? = nil,
+                attributes: [Attribute]? = nil,
+                @TagBuilder _ builder: () -> Tag) {
+        super.init(name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [builder()])
+    }
+    
+    public convenience init(name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            _ child: Tag) {
+        self.init(name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [child])
+    }
+    
+    public convenience init(name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            @TagBuilder _ builder: () -> [Tag]) {
+        self.init(name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  builder())
+    }
+    
     public convenience init(_ contents: String) {
-        self.init(contents: contents) {}
+        self.init(contents: contents)
     }
 }
 
