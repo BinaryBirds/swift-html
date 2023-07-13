@@ -62,6 +62,18 @@ open class Tag {
                   [child])
     }
     
+    public convenience init(type: `Type`? = nil,
+                            name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(type: type,
+                  name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [builder()])
+    }
+    
     public convenience init(_ contents: String) {
         self.init(contents: contents)
     }
