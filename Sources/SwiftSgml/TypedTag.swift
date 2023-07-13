@@ -17,7 +17,7 @@ open class TypedTag: Tag {
                    children)
     }
     
-    // alternate designated initializer with builder parameter for subclassing convenience
+    // alternate designated initializer with builder parameter for convenient subclassing
     public init(name: String? = nil,
                 contents: String? = nil,
                 attributes: [Attribute]? = nil,
@@ -36,16 +36,6 @@ open class TypedTag: Tag {
                   contents: contents,
                   attributes: attributes,
                   [child])
-    }
-    
-    public convenience init(name: String? = nil,
-                            contents: String? = nil,
-                            attributes: [Attribute]? = nil,
-                            @TagBuilder _ builder: () -> [Tag]) {
-        self.init(name: name,
-                  contents: contents,
-                  attributes: attributes,
-                  builder())
     }
     
     public convenience init(_ contents: String) {
