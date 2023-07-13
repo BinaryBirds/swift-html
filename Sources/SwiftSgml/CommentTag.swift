@@ -7,5 +7,5 @@
 
 open class CommentTag: TypedTag {
         
-    override open class var type: `Type` { .comment }    
+    override open class var type: `Type`? { .comment }    
 }
