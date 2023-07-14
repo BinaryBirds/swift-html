@@ -5,7 +5,7 @@
 //  Created by Brad Gourley on 7/12/23.
 //
 
-open class TypedTag: Tag {
+open class TagKind: Tag {
     
     public init(name: String? = nil,
                 contents: String? = nil,

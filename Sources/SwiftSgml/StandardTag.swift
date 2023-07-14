@@ -5,7 +5,7 @@
 //  Created by Brad Gourley on 7/9/23.
 //
 
-open class StandardTag: TypedTag {
+open class StandardTag: TagKind {
     
-    override open class var type: `Type`? { .standard }
+    override open class var kind: Kind? { .standard }
 }

@@ -9,52 +9,52 @@
 
 open class Tag {
     
-    public enum `Type` {
+    public enum Kind {
         case comment    // <!-- -->
         case empty      // <name>
         case standard   // <name></name>
     }
     
-    public let type: `Type`?    // type == nil only children rendered
+    public let kind: Kind?    // type == nil only children rendered
     public let name: String
     public var contents: String?
     public internal(set) var attributes: [Attribute]?
     public private(set) var children: [Tag]?
     
-    open class var type: `Type`? { nil }
+    open class var kind: Kind? { nil }
     open class var name: String { .init(self).lowercased() }
-        
+    
     // MARK: - init
-    public init(type: `Type`? = nil,
+    public init(kind: Kind? = nil,
                 name: String? = nil,
                 contents: String? = nil,
                 attributes: [Attribute]? = nil,
                 _ children: [Tag]? = nil) {
-        self.type = type ?? Self.type
+        self.kind = kind ?? Self.kind
         self.name = name ?? Self.name
         self.contents = contents
         self.attributes = attributes
         self.children = children
     }
     
-    public convenience init(type: `Type`? = nil,
+    public convenience init(kind: Kind? = nil,
                             name: String? = nil,
                             contents: String? = nil,
                             attributes: [Attribute]? = nil,
                             _ child: Tag) {
-        self.init(type: type,
+        self.init(kind: kind,
                   name: name,
                   contents: contents,
                   attributes: attributes,
                   [child])
     }
     
-    public convenience init(type: `Type`? = nil,
-                name: String? = nil,
-                contents: String? = nil,
-                attributes: [Attribute]? = nil,
-                @TagBuilder _ builder: () -> Tag) {
-        self.init(type: type,
+    public convenience init(kind: Kind? = nil,
+                            name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(kind: kind,
                   name: name,
                   contents: contents,
                   attributes: attributes,
@@ -64,7 +64,7 @@ open class Tag {
     public convenience init(_ contents: String) {
         self.init(contents: contents)
     }
-
+    
     // MARK: - contents
     
     /// set contents
@@ -73,7 +73,7 @@ open class Tag {
         contents = condition ? value : contents
         return self
     }
-
+    
     // MARK: - attributes
     
     /// add or replace an attribute with a given key to the node
@@ -82,7 +82,7 @@ open class Tag {
         self.attributes = self.attributes ?? []
         self.attributes?.append(attribute)
     }
-
+    
     /// deletes a attribute with a given key from the node
     private func delete(_ attribute: Attribute) {
         guard let attributes = attributes else { return }
@@ -113,7 +113,7 @@ open class Tag {
         }
         return self
     }
-
+    
     /// add a new flag-like attribute with a given value if the condition is true
     ///
     /// if the flag value is `nil` only the attribute key will be used. eg. `<foo bar></foo>`

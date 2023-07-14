@@ -38,8 +38,8 @@ public struct DocumentRenderer {
 
     private func render(tag: Tag, level: Int = 0) -> String {
         let spaces = String(repeating: " ", count: level * indent)
-        if let type = tag.type {
-            switch type {
+        if let kind = tag.kind {
+            switch kind {
             case .comment:
                 return spaces + "<!-- " + (tag.contents ?? "") + " -->"
             case .empty:

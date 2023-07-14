@@ -5,7 +5,7 @@
 //  Created by Brad Gourley on 7/11/23.
 //
 
-open class CommentTag: TypedTag {
+open class CommentTag: TagKind {
         
-    override open class var type: `Type`? { .comment }    
+    override open class var kind: Kind? { .comment }    
 }
