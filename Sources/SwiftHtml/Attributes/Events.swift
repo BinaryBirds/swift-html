@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 07. 23..
 //
 
-public extension Tag {
+public extension Attribute {
     
     typealias JSFunction = String
     
@@ -94,14 +94,17 @@ public extension Tag {
         let event: Event
         let function: JSFunction
     }
+}
+
+extension Tag {
     
     @discardableResult
-    func onEvent(_ e: Event, _ function: JSFunction?, _ condition: Bool = true) -> Self {
+    func onEvent(_ e: Attribute.Event, _ function: Attribute.JSFunction?, _ condition: Bool = true) -> Self {
         attribute(e.rawValue.lowercased(), function, condition)
     }
     
     @discardableResult
-    func onEvents(_ efs: [EventFunction]?, condition: Bool = true) -> Self {
+    func onEvents(_ efs: [Attribute.EventFunction]?, condition: Bool = true) -> Self {
         guard let efs = efs, condition else { return self }
         _ = efs.map { appendToAttribute($0.event.rawValue, $0.function, separator: ";\r") }
         return self

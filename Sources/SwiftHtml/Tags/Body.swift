@@ -15,10 +15,10 @@ open class Body: StandardTag {
     override open class var name: String { .init(Body.self) }
     
     public private(set) var scripts: [Script]?
-    public private(set) var eventFuncs: [EventFunction]?
+    public private(set) var eventFuncs: [Attribute.EventFunction]?
     
     public init(scripts: [Script]? = nil,
-                eventFuncs: [EventFunction]? = nil,
+                eventFuncs: [Attribute.EventFunction]? = nil,
                 _ children: [Tag]? = nil) {
         self.scripts = scripts ?? []
         self.eventFuncs = eventFuncs
