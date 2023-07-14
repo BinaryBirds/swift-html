@@ -14,14 +14,14 @@ open class Body: StandardTag {
     
     override open class var name: String { .init(Body.self) }
     
-    public private(set) var scripts: [Script]
+    public private(set) var scripts: [Script]?
     
-    public init(scripts: [Script] = [],
+    public init(scripts: [Script]? = nil,
                 _ children: [Tag]? = nil) {
-        self.scripts = scripts
+        self.scripts = scripts ?? []
         let temp = Tag {
             if let children = children { children }
-            Tag { scripts }
+            if let scripts = scripts { scripts }
         }
         super.init(temp.children)
     }
