@@ -105,6 +105,19 @@ open class Tag {
         return self
     }
     
+    @discardableResult
+    public func appendToAttribute(_ key: String, _ value: String?, separator: String? = nil, _ condition: Bool = true) -> Self {
+        guard condition else { return self }
+        let attribute: Attribute
+        if let existing = attributes?.first(where: { $0.key == key }) {
+            attribute = .init(key: key, value: (existing.value ?? "") + (separator ?? "") + (value ?? ""))
+        } else {
+            attribute = .init(key: key, value: value)
+        }
+        upsert(attribute)
+        return self
+    }
+    
     /// add a new attribute with a given value if the condition is true
     @discardableResult
     public func attribute(_ key: String, _ value: String?, _ condition: Bool = true) -> Self {
