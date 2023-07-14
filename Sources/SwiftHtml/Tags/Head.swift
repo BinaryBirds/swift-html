@@ -23,4 +23,18 @@
 open class Head: StandardTag {
     
     override open class var name: String { .init(Head.self) }
+    
+    public let scripts: [Script]?
+    
+    public init(scripts: [Script]? = nil,
+                @TagBuilder _ builder: () -> Tag) {
+        self.scripts = scripts
+        let temp = Tag {
+            builder()
+            if let scripts = scripts {
+                Tag { scripts }
+            }
+        }
+        super.init(temp.children)
+    }
 }
