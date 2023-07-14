@@ -24,17 +24,51 @@ open class Head: StandardTag {
     
     override open class var name: String { .init(Head.self) }
     
-    public let scripts: [Script]?
+    public var title: Title?
+    public var styles: [Style]
+    public var links: [Link]
+    public var metas: [Meta]
+    public var scripts: [Script]
+    public var bases: [Base]
     
-    public init(scripts: [Script]? = nil,
-                @TagBuilder _ builder: () -> Tag) {
+    public init(title: Title? = nil,
+                styles: [Style] = [],
+                links: [Link] = [],
+                metas: [Meta] = [],
+                scripts: [Script] = [],
+                bases: [Base] = [],
+                _ children: [Tag]? = nil) {
+        self.title = title
+        self.styles = styles
+        self.links = links
+        self.metas = metas
         self.scripts = scripts
+        self.bases = bases
         let temp = Tag {
-            builder()
-            if let scripts = scripts {
-                Tag { scripts }
-            }
+            title != nil ? [title!] : []
+            styles
+            links
+            metas
+            scripts
+            bases
+            children ?? []
         }
-        super.init(temp.children)
+        super.init(name: Self.name, temp.children)
+    }
+    
+    public convenience init(title: Title? = nil,
+                            styles: [Style] = [],
+                            links: [Link] = [],
+                            metas: [Meta] = [],
+                            scripts: [Script] = [],
+                            bases: [Base] = [],
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(title: title,
+                  styles: styles,
+                  links: links,
+                  metas: metas,
+                  scripts: scripts,
+                  bases: bases,
+                  [builder()])
     }
 }
