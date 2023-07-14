@@ -15,35 +15,19 @@ open class Body: StandardTag {
     override open class var name: String { .init(Body.self) }
     
     public private(set) var scripts: [Script]?
-    public private(set) var eventFuncs: [Event:JSFunction]?
+    public private(set) var eventFuncs: [EventFunction]?
     
     public init(scripts: [Script]? = nil,
-                eventFuncs efs: [EventFunction]? = nil,
+                eventFuncs: [EventFunction]? = nil,
                 _ children: [Tag]? = nil) {
         self.scripts = scripts ?? []
-        // convert [EventFunction] to [Event:JSFunction]
-        self.eventFuncs = efs != nil ? .init(efs!) : nil
+        self.eventFuncs = eventFuncs
         let temp = Tag {
             if let children = children { children }
             if let scripts = scripts { scripts }
         }
         super.init(temp.children)
-        _ = self
-            .onEvent(eventFuncs?[.onAfterPrint])
-            .onEvent(eventFuncs?[.onBeforePrint])
-            .onEvent(eventFuncs?[.onBeforeUnload])
-            .onEvent(eventFuncs?[.onError])
-            .onEvent(eventFuncs?[.onHashChange])
-            .onEvent(eventFuncs?[.onLoad])
-            .onEvent(eventFuncs?[.onMessage])
-            .onEvent(eventFuncs?[.onOffline])
-            .onEvent(eventFuncs?[.onOnline])
-            .onEvent(eventFuncs?[.onPageHide])
-            .onEvent(eventFuncs?[.onPageShow])
-            .onEvent(eventFuncs?[.onPopState])
-            .onEvent(eventFuncs?[.onResize])
-            .onEvent(eventFuncs?[.onStorage])
-            .onEvent(eventFuncs?[.onUnload])
+        self.onEvents(eventFuncs)
     }
     
     public convenience init(scripts: [Script] = [],

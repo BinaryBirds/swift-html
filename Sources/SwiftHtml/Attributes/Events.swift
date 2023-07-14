@@ -95,33 +95,15 @@ public extension Tag {
         let function: JSFunction
     }
     
-    func onEvent(_ e: Event, function: JSFunction?, _ condition: Bool = true) -> Self {
+    @discardableResult
+    func onEvent(_ e: Event, _ function: JSFunction?, _ condition: Bool = true) -> Self {
         attribute(e.rawValue.lowercased(), function, condition)
     }
     
-    func onEvent(_ ef: EventFunction?, _ condition: Bool = true) -> Self {
-        guard let event = ef?.event else { return self }
-        return onEvent(event, function: ef?.function, condition)
-    }
-}
-
-extension Dictionary where Key == Tag.Event, Value == Tag.JSFunction {
-
-    // convert [EventFunction] to [Event:JSFunction] where JSFunctions combined with ";\r"
-    init(_ efs: [Tag.EventFunction]) {
-        self = [:]
-        _ = efs.map{
-            if let existing = self[$0.event] {
-                self[$0.event] = existing + ";\r" + $0.function
-            } else {
-                self[$0.event] = $0.function
-            }
-        }
-    }
-    
-    // retrieve from dictionary as Tag.EventFunction
-    subscript(key: Key) -> Tag.EventFunction? {
-        guard let value = self[key] else { return nil }
-        return Tag.EventFunction(event: key, function: value)
+    @discardableResult
+    func onEvents(_ efs: [EventFunction]?, condition: Bool = true) -> Self {
+        guard let efs = efs, condition else { return self }
+        _ = efs.map { appendToAttribute($0.event.rawValue, $0.function, separator: ";\r") }
+        return self
     }
 }
