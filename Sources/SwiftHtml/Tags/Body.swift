@@ -15,23 +15,26 @@ open class Body: StandardTag {
     override open class var name: String { .init(Body.self) }
     
     public private(set) var scripts: [Script]?
-    public private(set) var eventFuncs: [Attribute.EventFunction]?
+    public private(set) var eventFunctions: [Attribute.EventFunction]?
     
     public init(scripts: [Script]? = nil,
-                eventFuncs: [Attribute.EventFunction]? = nil,
+                eventFunctions: [Attribute.EventFunction]? = nil,
                 _ children: [Tag]? = nil) {
         self.scripts = scripts ?? []
-        self.eventFuncs = eventFuncs
+        self.eventFunctions = eventFunctions
         let temp = Tag {
             if let children = children { children }
             if let scripts = scripts { scripts }
         }
         super.init(temp.children)
-        self.onEvents(eventFuncs)
+        self.onEvents(eventFunctions)
     }
     
     public convenience init(scripts: [Script] = [],
+                            eventFunctions: [Attribute.EventFunction]? = nil,
                             @TagBuilder _ builder: () -> Tag) {
-        self.init(scripts: scripts, [builder()])
+        self.init(scripts: scripts,
+                  eventFunctions: eventFunctions,
+                  [builder()])
     }
 }
