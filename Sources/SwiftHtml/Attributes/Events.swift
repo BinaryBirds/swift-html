@@ -96,7 +96,7 @@ public extension Attribute {
     }
 }
 
-extension Tag {
+public extension Tag {
     
     @discardableResult
     func onEvent(_ e: Attribute.Event, _ function: Attribute.JSFunction?, _ condition: Bool = true) -> Self {
