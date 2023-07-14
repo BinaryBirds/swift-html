@@ -24,12 +24,12 @@ open class Head: StandardTag {
     
     override open class var name: String { .init(Head.self) }
     
-    public var title: Title?
-    public var styles: [Style]
-    public var links: [Link]
-    public var metas: [Meta]
-    public var scripts: [Script]
-    public var bases: [Base]
+    public private(set) var title: Title?
+    public private(set) var styles: [Style]
+    public private(set) var links: [Link]
+    public private(set) var metas: [Meta]
+    public private(set) var scripts: [Script]
+    public private(set) var bases: [Base]
     
     public init(title: Title? = nil,
                 styles: [Style] = [],
