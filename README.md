@@ -182,7 +182,7 @@ public extension Guid {
 
 There are other built-in type-safe attribute modifiers available on tags.
 
- 
+
 ## Composing tags
 
 You can come up with your own `Tag` composition system by introducing a new protocol.
@@ -190,6 +190,7 @@ You can come up with your own `Tag` composition system by introducing a new prot
 ```swift
 protocol TagRepresentable {
 
+    @TagBuilder
     func build() -> Tag
 }
 
@@ -201,7 +202,6 @@ struct ListComponent: TagRepresentable {
         self.items = items
     }
 
-    @TagBuilder
     func build() -> Tag {
         Ul {
             for item in items {
