@@ -9,7 +9,7 @@ import XCTest
 @testable import SwiftHtml
 
 protocol TagRepresentable {
-    
+    @TagBuilder
     func build() -> Tag
 }
 
@@ -32,7 +32,6 @@ struct ListComponent: TagRepresentable {
         self.items = items
     }
     
-    @TagBuilder
     func build() -> Tag {
         Ul {
             for item in items {
