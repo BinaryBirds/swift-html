@@ -10,6 +10,24 @@
 /// The `<body>` element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
 /// 
 /// **Note:** There can only be one `<body>` element in an HTML document.
-open class Body: Tag {
-
+open class Body: StandardTag {
+    
+    override open class var name: String { .init(Body.self) }
+    
+    public private(set) var scripts: [Script]
+    
+    public init(scripts: [Script] = [],
+                _ children: [Tag]? = nil) {
+        self.scripts = scripts
+        let temp = Tag {
+            if let children = children { children }
+            Tag { scripts }
+        }
+        super.init(temp.children)
+    }
+    
+    public convenience init(scripts: [Script] = [],
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(scripts: scripts, [builder()])
+    }
 }

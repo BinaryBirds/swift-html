@@ -6,7 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
-open class Circle: Tag {
+open class Circle: StandardTag {
+    
+    override open class var name: String { .init(Circle.self) }
 
     public init(cx: Double,
                 cy: Double,

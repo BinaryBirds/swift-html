@@ -11,8 +11,8 @@
 ///
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 open class Base: EmptyTag {
-
-
+    
+    override open class var name: String { .init(Base.self) }
 }
 
 public extension Base {

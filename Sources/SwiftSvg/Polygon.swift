@@ -6,7 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
-open class Polygon: Tag {
+open class Polygon: StandardTag {
+    
+    override open class var name: String { .init(Polygon.self) }
 
     public init(_ points: [Double], pathLength: Double? = nil) {
         super.init()

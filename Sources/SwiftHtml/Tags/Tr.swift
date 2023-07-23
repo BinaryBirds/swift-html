@@ -8,6 +8,7 @@
 /// The `<tr>` tag defines a row in an HTML table.
 ///
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.
-open class Tr: Tag {
-
+open class Tr: StandardTag {
+    
+    override open class var name: String { .init(Tr.self) }
 }

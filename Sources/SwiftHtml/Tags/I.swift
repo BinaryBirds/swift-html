@@ -16,6 +16,7 @@
 /// - `<mark>` (marked/highlighted text)
 /// - `<cite>` (the title of a work)
 /// - `<dfn>` (a definition term)
-open class I: Tag {
+open class I: StandardTag {
     
+    override open class var name: String { .init(I.self) }
 }

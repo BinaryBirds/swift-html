@@ -7,7 +7,9 @@
 
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path
-open class Path: Tag {
+open class Path: StandardTag {
+    
+    override open class var name: String { .init(Path.self) }
 
     public init(_ d: String, pathLength: Double? = nil) {
         super.init()

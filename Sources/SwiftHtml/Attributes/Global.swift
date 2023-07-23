@@ -61,7 +61,7 @@ public extension Tag {
 
     /// find an existing class attribute and return the value as an array of strings or an empty array
     private var classArray: [String] {
-        node.attributes.first { $0.key == "class" }?.value?.classArray ?? []
+        attributes?.first { $0.key == "class" }?.value?.classArray ?? []
     }
 
     /// Specifies one classname for an element (refers to a class in a style sheet)
@@ -117,7 +117,7 @@ public extension Tag {
     func `class`(remove values: [String], _ condition: Bool = true) -> Self {
         let newClasses = classArray.filter { !values.contains($0) }
         if newClasses.isEmpty {
-            return deleteAttribute("class")
+            return deleteAttribute("class", condition)
         }
         return `class`(newClasses, condition)
     }
@@ -137,7 +137,7 @@ public extension Tag {
 
     /// find an existing style attribute and return the value as an array of strings or an empty array
     private var styleArray: [String] {
-        node.attributes.first { $0.key == "style" }?.value?.styleArray ?? []
+        attributes?.first { $0.key == "style" }?.value?.styleArray ?? []
     }
 
     /// Specifies one stylename for an element (refers to a style in a style sheet)
@@ -194,7 +194,7 @@ public extension Tag {
     func style(remove values: [String], _ condition: Bool = true) -> Self {
         let newClasses = styleArray.filter { !values.contains($0) }
         if newClasses.isEmpty {
-            return deleteAttribute("style")
+            return deleteAttribute("style", condition)
         }
         return style(newClasses, condition)
     }
@@ -214,7 +214,7 @@ public extension Tag {
     func style(removeByKey values: [String], _ condition: Bool = true) -> Self {
         let newClasses = styleArray.filter { !values.contains(String($0.prefix(while: {$0 != ":"}))) }
         if newClasses.isEmpty {
-            return deleteAttribute("style")
+            return deleteAttribute("style", condition)
         }
         return style(newClasses, condition)
     }

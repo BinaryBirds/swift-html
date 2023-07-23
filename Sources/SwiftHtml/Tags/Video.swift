@@ -20,8 +20,9 @@
 ///     Firefox | YES | YES  | YES
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
-open class Video: Tag {
-
+open class Video: StandardTag {
+    
+    override open class var name: String { .init(Video.self) }
 }
 
 public extension Video {

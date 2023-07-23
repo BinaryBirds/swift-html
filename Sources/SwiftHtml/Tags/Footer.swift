@@ -16,6 +16,7 @@
 /// - back to top links
 /// - related documents
 /// You can have several `<footer>` elements in one document.
-open class Footer: Tag {
+open class Footer: StandardTag {
     
+    override open class var name: String { .init(Footer.self) }
 }

@@ -6,7 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
-open class Rect: Tag {
+open class Rect: EmptyTag {
+    
+    override open class var name: String { .init(Rect.self) }
 
     public init(x: Double,
                 y: Double,

@@ -10,6 +10,7 @@
 /// **Note:** A person's name is not the title of a work.
 /// 
 /// The text in the `<cite>` element usually renders in italic.
-open class Cite: Tag {
+open class Cite: StandardTag {
     
+    override open class var name: String { .init(Cite.self) }
 }

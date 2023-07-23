@@ -50,7 +50,8 @@ open class Area: EmptyTag {
         /// Defines a polygonal region
         case poly
     }
-
+    
+    override open class var name: String { .init(Area.self) }    
 }
 
 public extension Area {

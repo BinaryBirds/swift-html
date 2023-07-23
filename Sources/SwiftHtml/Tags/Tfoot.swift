@@ -17,6 +17,7 @@
 /// The `<tfoot>` tag must be used in the following context: As a child of a <table> element, after any `<caption>`, `<colgroup>`, `<thead>`, and `<tbody>` elements.
 ///
 /// **Tip:** The `<thead>`, `<tbody>`, and `<tfoot>` elements will not affect the layout of the table by default. However, you can use CSS to style these elements (see example below)!
-open class Tfoot: Tag {
-
+open class Tfoot: StandardTag {
+    
+    override open class var name: String { .init(Tfoot.self) }
 }

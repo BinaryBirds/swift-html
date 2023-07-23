@@ -12,6 +12,7 @@
 /// **Tip:** Use CSS to style lists.
 /// 
 /// **Tip:** For ordered lists, use the `<ol>` tag.
-open class Ul: Tag {
-
+open class Ul: StandardTag {
+    
+    override open class var name: String { .init(Ul.self) }
 }

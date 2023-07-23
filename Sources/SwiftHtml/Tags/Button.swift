@@ -12,8 +12,9 @@
 /// **Tip:** Always specify the type attribute for a `<button>` element, to tell browsers what type of button it is.
 ///
 /// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
-open class Button: Tag {
+open class Button: StandardTag {
     
+    override open class var name: String { .init(Button.self) }
 }
 
 public extension Button {

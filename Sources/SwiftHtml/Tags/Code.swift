@@ -14,6 +14,7 @@
 /// - `<kbd>`    Defines keyboard input
 /// - `<var>`    Defines a variable
 /// - `<pre>`    Defines preformatted text
-open class Code: Tag {
-
+open class Code: StandardTag {
+    
+    override open class var name: String { .init(Code.self) }
 }

@@ -8,8 +8,9 @@
 /// The `<dialog>` tag defines a dialog box or subwindow.
 ///
 /// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
-open class Dialog: Tag {
+open class Dialog: StandardTag {
     
+    override open class var name: String { .init(Dialog.self) }
 }
 
 public extension Dialog {

@@ -6,10 +6,10 @@
 //
 
 /// a plain text node to write simple textual content into the html tree
-open class Text: GroupTag {
-    
-    public init(_ contents: String) {
-        super.init()
-        setContents(contents)
-    }
+open class Text: Tag {
+
+  public init(_ contents: String) {
+         super.init()
+         setContents(contents)
+  }
 }

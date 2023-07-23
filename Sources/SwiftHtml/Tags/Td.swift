@@ -15,8 +15,9 @@
 /// The text in `<td>` elements are regular and left-aligned by default.
 ///
 /// The text in `<th>` elements are bold and centered by default.
-open class Td: Tag {
-
+open class Td: StandardTag {
+    
+    override open class var name: String { .init(Td.self) }
 }
 
 public extension Td {

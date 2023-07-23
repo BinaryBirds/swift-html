@@ -18,8 +18,9 @@
 /// - `<fieldset>`
 /// - `<label>`
 /// - `<output>`
-open class Form: Tag {
-
+open class Form: StandardTag {
+    
+    override open class var name: String { .init(Form.self) }
 }
 
 public extension Form {
