@@ -33,8 +33,9 @@
 ///
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
-open class Label: Tag {
-
+open class Label: StandardTag {
+    
+    override open class var name: String { .init(Label.self) }
 }
 
 public extension Label {

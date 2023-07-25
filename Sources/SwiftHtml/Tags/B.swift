@@ -6,6 +6,7 @@
 //
 
 /// Make some text bold (without marking it as important)
-open class B: Tag {
+open class B: StandardTag {
     
+    override open class var name: String { .init(B.self) }
 }

@@ -14,8 +14,9 @@
 /// - An unvisited link is underlined and blue
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
-open class A: Tag {
-
+open class A: StandardTag {
+    
+    override open class var name: String { .init(A.self) }
 }
 
 public extension A {

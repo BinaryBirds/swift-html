@@ -6,8 +6,9 @@
 //
 
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element
-open class Svg: Tag {
-
+open class Svg: StandardTag {
+    
+    override open class var name: String { .init(Svg.self) }
 }
 
 public extension Svg {

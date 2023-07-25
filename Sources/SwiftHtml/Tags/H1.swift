@@ -11,6 +11,7 @@
 ///
 /// **Note:** Only use one `<h1>` per page - this should represent the main heading/subject for the whole page.
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
-open class H1: Tag {
-
+open class H1: StandardTag {
+    
+    override open class var name: String { .init(H1.self) }
 }

@@ -16,8 +16,9 @@
 /// The `<option>` tags inside the `<select>` element define the available options in the drop-down list.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
-open class Select: Tag {
+open class Select: StandardTag {
     
+    override open class var name: String { .init(Select.self) }
 }
 
 public extension Select {

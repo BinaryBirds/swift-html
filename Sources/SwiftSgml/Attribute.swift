@@ -6,7 +6,7 @@
 //
 
 public struct Attribute {
-
+    
     public var key: String
     public var value: String?
     

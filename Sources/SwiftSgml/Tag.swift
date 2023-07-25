@@ -5,66 +5,94 @@
 //  Created by Tibor Bodecs on 2021. 11. 19..
 //
 
-open class Tag {
+//  See README.md for detailed options on how to use the class.
 
-    public private(set) var node: Node
-    public private(set) var children: [Tag]
+open class Tag {
+    
+    public enum Kind {
+        case comment    // <!-- -->
+        case empty      // <name>
+        case standard   // <name></name>
+    }
+    
+    public let kind: Kind?    // == nil only children rendered
+    public let name: String
+    public var contents: String?
+    public internal(set) var attributes: [Attribute]?
+    public private(set) var children: [Tag]?
+    
+    open class var kind: Kind? { nil }
+    open class var name: String { .init(self).lowercased() }
     
     // MARK: - init
-
-    open class func createNode() -> Node {
-        Node(type: .standard, name: String(describing: self).lowercased())
-    }
-
-    /// initialize a new Tag with child tags
-    public init(_ children: [Tag] = []) {
-        self.node = Self.createNode()
+    public init(kind: Kind? = nil,
+                name: String? = nil,
+                contents: String? = nil,
+                attributes: [Attribute]? = nil,
+                _ children: [Tag]? = nil) {
+        self.kind = kind ?? Self.kind
+        self.name = name ?? Self.name
+        self.contents = contents
+        self.attributes = attributes
         self.children = children
     }
-
-    /// initialize a new Tag with a single child tag
-    public convenience init(_ child: Tag) {
-        self.init([child])
+    
+    public convenience init(kind: Kind? = nil,
+                            name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            _ child: Tag) {
+        self.init(kind: kind,
+                  name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [child])
     }
-
-    /// initialize a new Tag with children using a builder
-    public convenience init(@TagBuilder _ builder: () -> Tag) {
-        self.init([builder()])
+    
+    public convenience init(kind: Kind? = nil,
+                            name: String? = nil,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(kind: kind,
+                  name: name,
+                  contents: contents,
+                  attributes: attributes,
+                  [builder()])
     }
-   
-//    /// initialize a new Tag with children using an async throwing builder
-//    public convenience init(@TagBuilder _ builder: () async throws -> [Tag]) async throws {
-//        self.init(try await builder())
-//    }
-
-
-    /// initialize a new Tag with some contents
-    public convenience init(_ contents: String?) {
-        self.init()
-        if let contents = contents {
-            setContents(contents)
-        }
+    
+    public convenience init(_ contents: String) {
+        self.init(contents: contents)
     }
-
+    
     // MARK: - contents
     
     /// set contents
     @discardableResult
     public func setContents(_ value: String?, _ condition: Bool = true) -> Self {
-        if condition {
-            node.contents = value
-        }
+        contents = condition ? value : contents
         return self
     }
-
+    
     // MARK: - attributes
+    
+    /// add or replace an attribute with a given key to the node
+    private func upsert(_ attribute: Attribute) {
+        delete(attribute)
+        self.attributes = self.attributes ?? []
+        self.attributes?.append(attribute)
+    }
+    
+    /// deletes a attribute with a given key from the node
+    private func delete(_ attribute: Attribute) {
+        guard let attributes = attributes else { return }
+        self.attributes = attributes.filter { $0.key != attribute.key }
+    }
     
     /// set attributes
     @discardableResult
-    public func setAttributes(_ attributes: [Attribute], _ condition: Bool = true) -> Self {
-        if condition {
-            node.attributes = attributes
-        }
+    public func setAttributes(_ new: [Attribute], _ condition: Bool = true) -> Self {
+        self.attributes = condition ? new : attributes
         return self
     }
     
@@ -72,8 +100,21 @@ open class Tag {
     @discardableResult
     public func deleteAttribute(_ key: String, _ condition: Bool = true) -> Self {
         if condition {
-            node.delete(Attribute(key: key))
+            delete(Attribute(key: key))
         }
+        return self
+    }
+    
+    @discardableResult
+    public func appendToAttribute(_ key: String, _ value: String?, separator: String? = nil, _ condition: Bool = true) -> Self {
+        guard condition else { return self }
+        let attribute: Attribute
+        if let existing = attributes?.first(where: { $0.key == key }) {
+            attribute = .init(key: key, value: (existing.value ?? "") + (separator ?? "") + (value ?? ""))
+        } else {
+            attribute = .init(key: key, value: value)
+        }
+        upsert(attribute)
         return self
     }
     
@@ -81,11 +122,11 @@ open class Tag {
     @discardableResult
     public func attribute(_ key: String, _ value: String?, _ condition: Bool = true) -> Self {
         if let value = value, condition {
-            node.upsert(Attribute(key: key, value: value))
+            upsert(Attribute(key: key, value: value))
         }
         return self
     }
-
+    
     /// add a new flag-like attribute with a given value if the condition is true
     ///
     /// if the flag value is `nil` only the attribute key will be used. eg. `<foo bar></foo>`
@@ -93,8 +134,16 @@ open class Tag {
     @discardableResult
     public func flagAttribute(_ key: String, _ value: String? = nil, _ condition: Bool = true) -> Self {
         if condition {
-            node.upsert(Attribute(key: key, value: value))
+            upsert(Attribute(key: key, value: value))
         }
         return self
+    }
+}
+
+public extension String {
+    
+    /// convert class names into node names
+    init(_ `class`: AnyClass) {
+        self.init(stringLiteral: .init(describing: `class`.self).lowercased())
     }
 }

@@ -10,8 +10,9 @@
 /// This element provides both a machine-readable value for data processors, and a human-readable value for rendering in a browser.
 ///
 /// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
-open class Data: Tag {
-        
+open class Data: StandardTag {
+    
+    override open class var name: String { .init(Data.self) }
 }
 
 public extension Data {

@@ -21,8 +21,9 @@
 ///     Safari   | YES | YES  | NO
 ///     Opera    | YES | YES  | YES
 ///      *From Edge 79
-open class Audio: Tag {
+open class Audio: StandardTag {
     
+    override open class var name: String { .init(Audio.self) }
 }
 
 public extension Audio {

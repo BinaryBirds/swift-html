@@ -11,7 +11,7 @@ import XCTest
 extension Div {
 
     convenience init(_ value: String, @TagBuilder _ builder: () -> Tag) {
-        self.init(builder())
+        self.init(builder)
         self.setAttributes([
             .init(key: "some-key", value: value)
         ])
@@ -227,12 +227,12 @@ final class SwiftHtmlTests: XCTestCase {
 
         let doc = Document {
             Div {
-				for item in values {
-					GroupTag {
-						H1(item)
-						P(item)
-					}
-				}
+                values.map { item -> Tag in
+                    Tag {
+                        H1(item)
+                        P(item)
+                    }
+                }
             }
         }
 

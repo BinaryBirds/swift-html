@@ -6,9 +6,7 @@
 //
 
 
-open class LastBuildDate: Tag {
-
-    open override class func createNode() -> Node {
-        Node(type: .standard, name: "lastBuildDate")
-    }
+open class LastBuildDate: StandardTag {
+    
+    override open class var name: String { "lastBuildDate" }
 }

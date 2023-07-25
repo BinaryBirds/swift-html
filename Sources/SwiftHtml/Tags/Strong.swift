@@ -8,6 +8,7 @@
 /// The `<strong>` tag is used to define text with strong importance. The content inside is typically displayed in bold.
 ///
 /// **Tip:** Use the `<b>` tag to specify bold text without any extra importance!
-open class Strong: Tag {
-
+open class Strong: StandardTag {
+    
+    override open class var name: String { .init(Strong.self) }
 }

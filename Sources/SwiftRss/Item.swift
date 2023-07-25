@@ -6,7 +6,7 @@
 //
 
 
-public class Item: Tag {
+public class Item: StandardTag {
     
-    
+    override open class var name: String { .init(Item.self) }
 }

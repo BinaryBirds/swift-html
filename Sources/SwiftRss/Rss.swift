@@ -6,7 +6,9 @@
 //
 
 // https://validator.w3.org/feed/docs/rss2.html#ltttlgtSubelementOfLtchannelgt
-open class Rss: Tag {
+open class Rss: StandardTag {
+    
+    override open class var name: String { .init(Rss.self) }
     
     public init(@TagBuilder _ builder: () -> Tag) {
         super.init([builder()])

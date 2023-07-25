@@ -6,6 +6,7 @@
 //
 
 /// The `<mark>` tag defines text that should be marked or highlighted.
-open class Mark: Tag {
+open class Mark: StandardTag {
     
+    override open class var name: String { .init(Mark.self) }
 }

@@ -5,7 +5,9 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-open class Guid: Tag {
+open class Guid: StandardTag {
+    
+    override open class var name: String { .init(Guid.self) }
 
 }
 

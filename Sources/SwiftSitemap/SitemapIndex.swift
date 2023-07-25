@@ -5,7 +5,9 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-open class SitemapIndex: Tag {
+open class SitemapIndex: StandardTag {
+    
+    override open class var name: String { .init(SitemapIndex.self) }
 
     public init(@TagBuilder _ builder: () -> Tag) {
         super.init([builder()])

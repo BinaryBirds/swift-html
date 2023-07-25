@@ -8,6 +8,7 @@
 /// The `<dl>` tag defines a description list.
 ///
 /// The `<dl>` tag is used in conjunction with `<dt>` (defines terms/names) and `<dd>` (describes each term/name).
-open class Dl: Tag {
-
+open class Dl: StandardTag {
+    
+    override open class var name: String { .init(Dl.self) }
 }

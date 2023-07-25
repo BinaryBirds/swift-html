@@ -10,8 +10,9 @@
 /// The `<canvas>` tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.
 /// 
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
-open class Canvas: Tag {
+open class Canvas: StandardTag {
     
+    override open class var name: String { .init(Canvas.self) }
 }
 
 public extension Canvas {

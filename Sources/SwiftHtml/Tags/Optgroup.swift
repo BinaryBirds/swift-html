@@ -8,8 +8,9 @@
 /// The `<optgroup>` tag is used to group related options in a `<select>` element (drop-down list).
 /// 
 /// If you have a long list of options, groups of related options are easier to handle for a user.
-open class Optgroup: Tag {
+open class Optgroup: StandardTag {
     
+    override open class var name: String { .init(Optgroup.self) }
 }
 
 public extension Optgroup {
