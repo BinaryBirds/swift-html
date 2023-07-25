@@ -20,6 +20,9 @@ final class InputTagTests: XCTestCase {
         XCTAssertEqual(DocumentRenderer().render(doc), """
                             <input type="checkbox" checked>
                             """)
+        XCTAssertEqual(DocumentRenderer(selfClose: true).render(doc), """
+                            <input type="checkbox" checked />
+                            """)
     }
     
     func testUncheckedInput() {
@@ -35,6 +38,9 @@ final class InputTagTests: XCTestCase {
         XCTAssertEqual(DocumentRenderer().render(doc), """
                             <input type="checkbox">
                             """)
+        XCTAssertEqual(DocumentRenderer(selfClose: true).render(doc), """
+                            <input type="checkbox" />
+                            """)
     }
     
     func testKey() {
@@ -46,6 +52,9 @@ final class InputTagTests: XCTestCase {
 
         XCTAssertEqual(DocumentRenderer().render(doc), """
                             <input type="text" id="email" name="email">
+                            """)
+        XCTAssertEqual(DocumentRenderer(selfClose: true).render(doc), """
+                            <input type="text" id="email" name="email" />
                             """)
     }
    

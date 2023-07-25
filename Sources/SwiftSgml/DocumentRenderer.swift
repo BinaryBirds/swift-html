@@ -10,11 +10,13 @@ public struct DocumentRenderer {
     private let newline: String
     public let minify: Bool
     public let indent: Int
-    
-    public init(minify: Bool = false, indent: Int = 4) {
+    public let selfClose: Bool
+
+    public init(minify: Bool = false, indent: Int = 4, selfClose: Bool = false) {
         self.minify = minify
         self.indent = minify ? 0 : indent
         self.newline = minify ? "" : "\n"
+        self.selfClose = selfClose
     }
 
     public func render(_ document: Document) -> String {
@@ -44,7 +46,11 @@ public struct DocumentRenderer {
         case .comment:
             return spaces + "<!-- " + (tag.node.contents ?? "") + " -->"
         case .empty:
-            return spaces + renderOpening(tag)
+            if selfClose {
+                return spaces + renderSelfClosing(tag)
+            } else {
+                return spaces + renderOpening(tag)
+            }
         case .group:
             var contents = ""
             if let rawValue = tag.node.contents {
@@ -71,7 +77,11 @@ public struct DocumentRenderer {
     private func renderOpening(_ tag: Tag) -> String {
         return "<" + tag.node.name! + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + ">"
     }
-    
+
+    private func renderSelfClosing(_ tag: Tag) -> String {
+        return "<" + tag.node.name! + (tag.node.attributes.isEmpty ? "" : " ") + renderAttributes(tag.node.attributes) + " />"
+    }
+
     private func renderClosing(_ tag: Tag) -> String {
         "</" + tag.node.name! + ">"
     }

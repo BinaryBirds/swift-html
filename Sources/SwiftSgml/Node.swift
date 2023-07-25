@@ -13,9 +13,8 @@ public struct Node {
         case standard     // <div>  </div>
         /// comment tag
         case comment      // <!--   -->
-        // @TODO: force close tags? <br> vs <br/>
         /// non-container tags
-        case empty        // <br>
+        case empty        // <br/>
         /// invisible node for grouping other nodes
         case group    // *invisible group*<h1>lorem</h1><p>ipsum</p>*invisible group*
     }
