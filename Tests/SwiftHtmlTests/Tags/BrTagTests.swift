@@ -16,6 +16,6 @@ final class BrTagTests: XCTestCase {
             Br()
         }
         XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<br>"#)
+        XCTAssertEqual(DocumentRenderer(minify: true, selfClose: true).render(doc), #"<br />"#)
     }
-
 }

@@ -22,8 +22,11 @@ final class LinkTagTests: XCTestCase {
                 ])
                 .href("/img/apple/splash/1136x640.png")
         }
-        let html = DocumentRenderer(minify: true).render(doc)
+        var html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/img/apple/splash/1136x640.png">"#, html)
+
+        html = DocumentRenderer(minify: true, selfClose: true).render(doc)
+        XCTAssertEqual(#"<link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/img/apple/splash/1136x640.png" />"#, html)
     }
     
     func testIntegrity() {
@@ -34,8 +37,11 @@ final class LinkTagTests: XCTestCase {
                 .crossorigin(.anonymous)
             
         }
-        let html = DocumentRenderer(minify: true).render(doc)
+        var html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">"#, html)
+
+        html = DocumentRenderer(minify: true, selfClose: true).render(doc)
+        XCTAssertEqual(#"<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />"#, html)
     }
     
 
