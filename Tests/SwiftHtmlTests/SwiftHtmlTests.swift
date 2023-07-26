@@ -227,7 +227,7 @@ final class SwiftHtmlTests: XCTestCase {
 
         let doc = Document {
             Div {
-                values.map { item -> Tag in
+                for item in values {
                     Tag {
                         H1(item)
                         P(item)
