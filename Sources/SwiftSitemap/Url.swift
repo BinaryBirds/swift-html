@@ -7,5 +7,5 @@
 
 open class Url: StandardTag {
     
-    override open class var name: String { .init(Url.self) }
+    override open class var name: String { .init(describing: Url.self).lowercased() }
 }

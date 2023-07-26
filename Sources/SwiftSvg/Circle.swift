@@ -8,7 +8,7 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
 open class Circle: StandardTag {
     
-    override open class var name: String { .init(Circle.self) }
+    override open class var name: String { .init(describing: Circle.self).lowercased() }
 
     public init(cx: Double,
                 cy: Double,

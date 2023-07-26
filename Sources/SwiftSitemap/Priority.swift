@@ -7,7 +7,7 @@
 
 open class Priority: StandardTag {
     
-    override open class var name: String { .init(Priority.self) }
+    override open class var name: String { .init(describing: Priority.self).lowercased() }
 
     public init(_ value: Double) {
         super.init()

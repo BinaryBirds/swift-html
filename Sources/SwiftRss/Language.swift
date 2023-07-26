@@ -7,5 +7,5 @@
 
 open class Language: StandardTag {
 
-    override open class var name: String { .init(Language.self) }
+    override open class var name: String { .init(describing: Language.self).lowercased() }
 }

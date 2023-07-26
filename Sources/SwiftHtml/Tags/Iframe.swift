@@ -14,7 +14,7 @@
 /// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
 open class Iframe: StandardTag {
     
-    override open class var name: String { .init(Iframe.self) }
+    override open class var name: String { .init(describing: Iframe.self).lowercased() }
 }
 
 public extension Iframe {

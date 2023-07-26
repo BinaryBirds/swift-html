@@ -10,5 +10,5 @@
 /// The `<dt>` tag is used in conjunction with `<dl>` (defines a description list) and `<dd>` (describes each term/name).
 open class Dt: StandardTag {
     
-    override open class var name: String { .init(Dt.self) }
+    override open class var name: String { .init(describing: Dt.self).lowercased() }
 }

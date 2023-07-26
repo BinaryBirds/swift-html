@@ -14,5 +14,5 @@
 /// An HTML table may also include `<caption>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements.
 open class Table: StandardTag {
     
-    override open class var name: String { .init(Table.self) }
+    override open class var name: String { .init(describing: Table.self).lowercased() }
 }

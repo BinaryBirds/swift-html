@@ -10,7 +10,7 @@
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.
 open class Object: StandardTag {
     
-    override open class var name: String { .init(Object.self) }
+    override open class var name: String { .init(describing: Object.self).lowercased() }
 }
 
 public extension Object {

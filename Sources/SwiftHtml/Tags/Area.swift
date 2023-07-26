@@ -51,7 +51,7 @@ open class Area: EmptyTag {
         case poly
     }
     
-    override open class var name: String { .init(Area.self) }    
+    override open class var name: String { .init(describing: Area.self).lowercased() }
 }
 
 public extension Area {

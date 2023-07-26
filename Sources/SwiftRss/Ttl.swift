@@ -7,7 +7,7 @@
 
 open class Ttl: StandardTag {
     
-    override open class var name: String { .init(Ttl.self) }
+    override open class var name: String { .init(describing: Ttl.self).lowercased() }
 
     public init(_ value: Int) {
         super.init()

@@ -7,7 +7,7 @@
 
 open class Guid: StandardTag {
     
-    override open class var name: String { .init(Guid.self) }
+    override open class var name: String { .init(describing: Guid.self).lowercased() }
 
 }
 

@@ -10,7 +10,7 @@
 /// Browsers will usually strike a line through deleted text.
 open class Del: StandardTag {
     
-    override open class var name: String { .init(Del.self) }
+    override open class var name: String { .init(describing: Del.self).lowercased() }
 }
 
 public extension Del {

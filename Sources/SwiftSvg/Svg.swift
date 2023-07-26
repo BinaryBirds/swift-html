@@ -8,7 +8,7 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element
 open class Svg: StandardTag {
     
-    override open class var name: String { .init(Svg.self) }
+    override open class var name: String { .init(describing: Svg.self).lowercased() }
 }
 
 public extension Svg {

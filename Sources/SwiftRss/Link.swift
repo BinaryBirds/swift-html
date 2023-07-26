@@ -7,5 +7,5 @@
 
 open class Link: StandardTag {
 
-    override open class var name: String { .init(Link.self) }
+    override open class var name: String { .init(describing: Link.self).lowercased() }
 }

@@ -18,5 +18,5 @@
 /// You can have several `<footer>` elements in one document.
 open class Footer: StandardTag {
     
-    override open class var name: String { .init(Footer.self) }
+    override open class var name: String { .init(describing: Footer.self).lowercased() }
 }

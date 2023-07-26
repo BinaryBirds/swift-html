@@ -10,7 +10,7 @@
 /// The `<bdo>` tag is used to override the current text direction.
 open class Bdo: StandardTag {
     
-    override open class var name: String { .init(Bdo.self) }
+    override open class var name: String { .init(describing: Bdo.self).lowercased() }
     
     public init(_ contents: String, dir: TextDirection = .ltr) {
         super.init()

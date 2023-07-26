@@ -16,7 +16,7 @@
 /// - An active link is underlined and red
 open class A: StandardTag {
     
-    override open class var name: String { .init(A.self) }
+    override open class var name: String { .init(describing: A.self).lowercased() }
 }
 
 public extension A {

@@ -10,5 +10,5 @@
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS (see example below).
 open class Kbd: StandardTag {
     
-    override open class var name: String { .init(Kbd.self) }
+    override open class var name: String { .init(describing: Kbd.self).lowercased() }
 }

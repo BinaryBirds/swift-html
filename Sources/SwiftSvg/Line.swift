@@ -8,7 +8,7 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
 open class Line: StandardTag {
     
-    override open class var name: String { .init(Line.self) }
+    override open class var name: String { .init(describing: Line.self).lowercased() }
 
     public init(x1: Double,
                 y1: Double,

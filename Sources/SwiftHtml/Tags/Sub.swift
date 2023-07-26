@@ -13,5 +13,5 @@
 /// **Tip:** Use the `<sup>` tag to define superscripted text.
 open class Sub: StandardTag {
     
-    override open class var name: String { .init(Sub.self) }
+    override open class var name: String { .init(describing: Sub.self).lowercased() }
 }

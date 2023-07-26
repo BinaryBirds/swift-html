@@ -14,7 +14,7 @@
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
 open class Option: StandardTag {
     
-    override open class var name: String { .init(Option.self) }
+    override open class var name: String { .init(describing: Option.self).lowercased() }
 }
 
 public extension Option {

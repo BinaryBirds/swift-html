@@ -20,6 +20,6 @@
 /// However, you can use CSS to style the `<article>` element (see example below).
 open class Article: StandardTag {
     
-    override open class var name: String { .init(Article.self) }
+    override open class var name: String { .init(describing: Article.self).lowercased() }
 }
 

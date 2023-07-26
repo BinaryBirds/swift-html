@@ -7,7 +7,7 @@
 
 open class ChangeFreq: StandardTag {
     
-    override open class var name: String { .init(ChangeFreq.self) }
+    override open class var name: String { .init(describing: ChangeFreq.self).lowercased() }
     
     public enum Value: String {
         case always

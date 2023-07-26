@@ -14,7 +14,7 @@
 /// This is especially useful if you have a lot of code.
 open class Comment: CommentTag {
     
-    override open class var name: String { .init(Comment.self) }
+    override open class var name: String { .init(describing: Comment.self).lowercased() }
     
     public init(_ contents: String) {
         super.init()

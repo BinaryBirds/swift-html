@@ -12,7 +12,7 @@
 /// **Note:** There can only be one `<body>` element in an HTML document.
 open class Body: StandardTag {
     
-    override open class var name: String { .init(Body.self) }
+    override open class var name: String { .init(describing: Body.self).lowercased() }
     
     public private(set) var scripts: [Script]?
     public private(set) var eventFunctions: [Attribute.EventFunction]?

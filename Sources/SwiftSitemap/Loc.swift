@@ -7,5 +7,5 @@
 
 open class Loc: StandardTag {
     
-    override open class var name: String { .init(Loc.self) }
+    override open class var name: String { .init(describing: Loc.self).lowercased() }
 }

@@ -10,5 +10,5 @@
 /// **Note:** The `<summary>` element should be the first child element of the `<details>` element.
 open class Summary: StandardTag {
     
-    override open class var name: String { .init(Summary.self) }
+    override open class var name: String { .init(describing: Summary.self).lowercased() }
 }

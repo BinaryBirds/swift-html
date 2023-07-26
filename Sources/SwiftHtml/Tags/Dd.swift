@@ -12,5 +12,5 @@
 /// Inside a `<dd>` tag you can put paragraphs, line breaks, images, links, lists, etc.
 open class Dd: StandardTag {
     
-    override open class var name: String { .init(Dd.self) }
+    override open class var name: String { .init(describing: Dd.self).lowercased() }
 }

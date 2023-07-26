@@ -12,7 +12,7 @@
 /// The `<link>` element is an empty element, it contains attributes only.
 open class Link: EmptyTag {
     
-    override open class var name: String { .init(Link.self) }
+    override open class var name: String { .init(describing: Link.self).lowercased() }
     
     public init(rel: Rel) {
         super.init()

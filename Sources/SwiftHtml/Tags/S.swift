@@ -10,5 +10,5 @@
 /// The `<s>` tag should not be used to define deleted text in a document, use the `<del>` tag for that.
 open class S: StandardTag {
     
-    override open class var name: String { .init(S.self) }
+    override open class var name: String { .init(describing: S.self).lowercased() }
 }

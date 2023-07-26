@@ -7,7 +7,7 @@
 
 open class UrlSet: StandardTag {
     
-    override open class var name: String { .init(UrlSet.self) }
+    override open class var name: String { .init(describing: UrlSet.self).lowercased() }
 
     public init(@TagBuilder _ builder: () -> Tag) {
         super.init([builder()])

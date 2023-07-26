@@ -17,7 +17,7 @@
 /// The text in `<th>` elements are bold and centered by default.
 open class Td: StandardTag {
     
-    override open class var name: String { .init(Td.self) }
+    override open class var name: String { .init(describing: Td.self).lowercased() }
 }
 
 public extension Td {

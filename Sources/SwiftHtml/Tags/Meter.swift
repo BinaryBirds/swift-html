@@ -14,7 +14,7 @@
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 open class Meter: StandardTag {
     
-    override open class var name: String { .init(Meter.self) }
+    override open class var name: String { .init(describing: Meter.self).lowercased() }
     
     public init(value: Int, _ contents: String) {
         super.init()

@@ -12,7 +12,7 @@
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 open class Script: StandardTag {
     
-    override open class var name: String { .init(Script.self) }
+    override open class var name: String { .init(describing: Script.self).lowercased() }
     
     public enum `Type`: String {
         case javascript = "text/javascript"

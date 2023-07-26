@@ -12,5 +12,5 @@
 /// The `<datalist>` element's id attribute must be equal to the `<input>` element's list attribute (this binds them together).
 open class Datalist: StandardTag {
     
-    override open class var name: String { .init(Datalist.self) }
+    override open class var name: String { .init(describing: Datalist.self).lowercased() }
 }
