@@ -12,7 +12,7 @@
 /// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
 open class Data: StandardTag {
     
-    override open class var name: String { .init(Data.self) }
+    override open class var name: String { .init(describing: Data.self).lowercased() }
 }
 
 public extension Data {

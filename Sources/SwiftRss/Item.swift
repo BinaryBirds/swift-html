@@ -8,5 +8,5 @@
 
 public class Item: StandardTag {
     
-    override open class var name: String { .init(Item.self) }
+    override open class var name: String { .init(describing: Item.self).lowercased() }
 }

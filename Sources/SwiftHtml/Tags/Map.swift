@@ -12,7 +12,7 @@
 /// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
 open class Map: StandardTag {
     
-    override open class var name: String { .init(Map.self) }
+    override open class var name: String { .init(describing: Map.self).lowercased() }
         
     public init(name: String, @TagBuilder _ builder: () -> Tag) {
         super.init([builder()])

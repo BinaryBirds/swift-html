@@ -12,5 +12,5 @@
 /// Use `<ruby>` together with `<rt>` and `<rp>`: The `<ruby>` element consists of one or more characters that needs an explanation/pronunciation, and an `<rt>` element that gives that information, and an optional `<rp>` element that defines what to show for browsers that do not support ruby annotations.
 open class Ruby: StandardTag {
     
-    override open class var name: String { .init(Ruby.self) }
+    override open class var name: String { .init(describing: Ruby.self).lowercased() }
 }

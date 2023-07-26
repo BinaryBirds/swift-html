@@ -12,7 +12,7 @@
 /// Tracks are formatted in WebVTT format (.vtt files).
 open class Track: EmptyTag {
     
-    override open class var name: String { .init(Track.self) }
+    override open class var name: String { .init(describing: Track.self).lowercased() }
     
     public init(src: String) {
         super.init()

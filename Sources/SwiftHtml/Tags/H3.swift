@@ -13,5 +13,5 @@
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 open class H3: StandardTag {
     
-    override open class var name: String { .init(H3.self) }
+    override open class var name: String { .init(describing: H3.self).lowercased() }
 }

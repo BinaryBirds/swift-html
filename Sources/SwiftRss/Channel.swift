@@ -7,5 +7,5 @@
 
 public class Channel: StandardTag {
     
-    override open class var name: String { .init(Channel.self) }
+    override open class var name: String { .init(describing: Channel.self).lowercased() }
 }

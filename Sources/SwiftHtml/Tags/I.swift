@@ -18,5 +18,5 @@
 /// - `<dfn>` (a definition term)
 open class I: StandardTag {
     
-    override open class var name: String { .init(I.self) }
+    override open class var name: String { .init(describing: I.self).lowercased() }
 }

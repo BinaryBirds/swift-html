@@ -14,7 +14,7 @@
 /// **Tip:** For unordered list, use the `<ul>` tag.
 open class Ol: StandardTag {
     
-    override open class var name: String { .init(Ol.self) }
+    override open class var name: String { .init(describing: Ol.self).lowercased() }
 }
 
 public extension Ol {

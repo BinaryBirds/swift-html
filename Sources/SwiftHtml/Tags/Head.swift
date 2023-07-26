@@ -22,7 +22,7 @@
 /// - `<noscript>`
 open class Head: StandardTag {
     
-    override open class var name: String { .init(Head.self) }
+    override open class var name: String { .init(describing: Head.self).lowercased() }
     
     public private(set) var title: Title?
     public private(set) var styles: [Style]?

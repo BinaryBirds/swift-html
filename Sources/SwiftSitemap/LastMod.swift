@@ -7,5 +7,5 @@
 
 open class LastMod: StandardTag {
 
-    override open class var name: String { .init(LastMod.self) }
+    override open class var name: String { .init(describing: LastMod.self).lowercased() }
 }

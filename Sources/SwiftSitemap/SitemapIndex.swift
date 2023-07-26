@@ -7,7 +7,7 @@
 
 open class SitemapIndex: StandardTag {
     
-    override open class var name: String { .init(SitemapIndex.self) }
+    override open class var name: String { .init(describing: SitemapIndex.self).lowercased() }
 
     public init(@TagBuilder _ builder: () -> Tag) {
         super.init([builder()])

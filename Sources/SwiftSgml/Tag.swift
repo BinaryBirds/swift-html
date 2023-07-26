@@ -22,7 +22,7 @@ open class Tag {
     public private(set) var children: [Tag]?
     
     open class var kind: Kind? { nil }
-    open class var name: String { .init(self).lowercased() }
+    open class var name: String { .init(describing: self).lowercased() }
     
     // MARK: - init
     public init(kind: Kind? = nil,
@@ -137,13 +137,5 @@ open class Tag {
             upsert(Attribute(key: key, value: value))
         }
         return self
-    }
-}
-
-public extension String {
-    
-    /// convert class names into node names
-    init(_ `class`: AnyClass) {
-        self.init(stringLiteral: .init(describing: `class`.self).lowercased())
     }
 }

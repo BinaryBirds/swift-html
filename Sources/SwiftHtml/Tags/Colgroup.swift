@@ -14,7 +14,7 @@
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
 open class Colgroup: StandardTag {
     
-    override open class var name: String { .init(Colgroup.self) }
+    override open class var name: String { .init(describing: Colgroup.self).lowercased() }
 }
 
 public extension Colgroup {

@@ -8,7 +8,7 @@
 /// The `<embed>` tag defines a container for an external resource, such as a web page, a picture, a media player, or a plug-in application.
 open class Embed: EmptyTag {
     
-    override open class var name: String { .init(Embed.self) }
+    override open class var name: String { .init(describing: Embed.self).lowercased() }
 }
 
 public extension Embed {

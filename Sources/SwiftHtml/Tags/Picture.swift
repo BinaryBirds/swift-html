@@ -18,5 +18,5 @@
 /// **Tip:** The `<picture>` element works "similar" to `<video>` and `<audio>`. You set up different sources, and the first source that fits the preferences is the one being used.
 open class Picture: StandardTag {
     
-    override open class var name: String { .init(Picture.self) }
+    override open class var name: String { .init(describing: Picture.self).lowercased() }
 }

@@ -8,5 +8,5 @@
 // https://www.sitemaps.org/protocol.html
 open class Sitemap: StandardTag {
     
-    override open class var name: String { .init(Sitemap.self) }
+    override open class var name: String { .init(describing: Sitemap.self).lowercased() }
 }

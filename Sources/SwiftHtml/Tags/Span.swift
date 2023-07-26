@@ -12,5 +12,5 @@
 /// The `<span>` tag is much like the `<div>` element, but `<div>` is a block-level element and `<span>` is an inline element.
 open class Span: StandardTag {
     
-    override open class var name: String { .init(Span.self) }
+    override open class var name: String { .init(describing: Span.self).lowercased() }
 }

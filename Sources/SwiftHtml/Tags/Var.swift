@@ -10,5 +10,5 @@
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
 open class Var: StandardTag {
     
-    override open class var name: String { .init(Var.self) }
+    override open class var name: String { .init(describing: Var.self).lowercased() }
 }

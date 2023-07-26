@@ -8,7 +8,7 @@
 /// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
 open class Output: StandardTag {
     
-    override open class var name: String { .init(Output.self) }
+    override open class var name: String { .init(describing: Output.self).lowercased() }
 }
 
 public extension Output {

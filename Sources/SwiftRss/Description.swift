@@ -7,7 +7,7 @@
 
 open class Description: StandardTag {
     
-    override open class var name: String { .init(Description.self) }
+    override open class var name: String { .init(describing: Description.self).lowercased() }
     
     public init(_ contents: String) {
         super.init()

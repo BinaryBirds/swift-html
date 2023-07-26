@@ -12,5 +12,5 @@
 /// The text in the `<cite>` element usually renders in italic.
 open class Cite: StandardTag {
     
-    override open class var name: String { .init(Cite.self) }
+    override open class var name: String { .init(describing: Cite.self).lowercased() }
 }

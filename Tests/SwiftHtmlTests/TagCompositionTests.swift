@@ -105,7 +105,7 @@ final class TagCompositionTests: XCTestCase {
         let doc = Document {
             H1("foo")
             for value in ["1", "2", "3"] {
-                GroupTag {
+                Tag {
                     H2(value)
                     ListComponent(["a", "b", "c"])
                 }

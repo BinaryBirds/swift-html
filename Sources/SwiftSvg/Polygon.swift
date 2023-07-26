@@ -8,7 +8,7 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon
 open class Polygon: StandardTag {
     
-    override open class var name: String { .init(Polygon.self) }
+    override open class var name: String { .init(describing: Polygon.self).lowercased() }
 
     public init(_ points: [Double], pathLength: Double? = nil) {
         super.init()
