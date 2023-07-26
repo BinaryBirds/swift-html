@@ -24,56 +24,24 @@ open class Head: StandardTag {
     
     override open class var name: String { .init(describing: Head.self).lowercased() }
     
-    public private(set) var title: Title?
-    public private(set) var styles: [Style]
-    public private(set) var bases: [Base]
-    public private(set) var links: [Link]
-    public private(set) var metas: [Meta]
-    public private(set) var scripts: [Script]
-    public private(set) var noscripts: [Noscript]
-    
-    public init(title: Title? = nil,
-                styles: [Style] = [],
-                bases: [Base] = [],
-                links: [Link] = [],
-                metas: [Meta] = [],
-                scripts: [Script] = [],
-                noscripts: [Noscript] = [],
-                _ children: [Tag]? = nil) {
-        self.title = title
-        self.styles = styles
-        self.bases = bases
-        self.links = links
-        self.metas = metas
-        self.scripts = scripts
-        self.noscripts = noscripts
-        super.init(name: Self.name, Tag {
-            title != nil ? [title!] : []
-            styles
-            bases
-            links
-            metas
-            scripts
-            noscripts
-            children ?? []
-        }.children)
-    }
-    
     public convenience init(title: Title? = nil,
-                            styles: [Style] = [],
-                            bases: [Base] = [],
-                            links: [Link] = [],
-                            metas: [Meta] = [],
-                            scripts: [Script] = [],
-                            noscripts: [Noscript] = [],
+                            @TagBuilder style: () -> [Style],
+                            @TagBuilder base: () -> [Base],
+                            @TagBuilder link: () -> [Link],
+                            @TagBuilder meta: () -> [Meta],
+                            @TagBuilder script: () -> [Script],
+                            @TagBuilder noscript: () -> [Noscript],
                             @TagBuilder _ builder: () -> Tag) {
-        self.init(title: title,
-                  styles: styles,
-                  bases: bases,
-                  links: links,
-                  metas: metas,
-                  scripts: scripts,
-                  noscripts: noscripts,
-                  [builder()])
+        let temp = Tag {
+            title != nil ? [title!] : []
+            style()
+            base()
+            link()
+            meta()
+            script()
+            noscript()
+            [builder()]
+        }
+        self.init(name: Self.name, temp.children)
     }
 }
