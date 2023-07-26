@@ -32,11 +32,11 @@ open class Head: StandardTag {
     public private(set) var bases: [Base]?
     
     public init(title: Title? = nil,
-                styles: [Style]? = nil,
-                links: [Link]? = nil,
-                metas: [Meta]? = nil,
-                scripts: [Script]? = nil,
-                bases: [Base]? = nil,
+                styles: [Style] = [],
+                links: [Link] = [],
+                metas: [Meta] = [],
+                scripts: [Script] = [],
+                bases: [Base] = [],
                 _ children: [Tag]? = nil) {
         self.title = title
         self.styles = styles
@@ -44,24 +44,23 @@ open class Head: StandardTag {
         self.metas = metas
         self.scripts = scripts
         self.bases = bases
-        let temp = Tag {
+        super.init(name: Self.name, Tag {
             title != nil ? [title!] : []
-            styles ?? []
-            links ?? []
-            metas ?? []
-            scripts ?? []
-            bases ?? []
+            styles
+            links
+            metas
+            scripts
+            bases
             children ?? []
-        }
-        super.init(name: Self.name, temp.children)
+        }.children)
     }
     
     public convenience init(title: Title? = nil,
-                            styles: [Style]? = nil,
-                            links: [Link]? = nil,
-                            metas: [Meta]? = nil,
-                            scripts: [Script]? = nil,
-                            bases: [Base]? = nil,
+                            styles: [Style] = [],
+                            links: [Link] = [],
+                            metas: [Meta] = [],
+                            scripts: [Script] = [],
+                            bases: [Base] = [],
                             @TagBuilder _ builder: () -> Tag) {
         self.init(title: title,
                   styles: styles,
