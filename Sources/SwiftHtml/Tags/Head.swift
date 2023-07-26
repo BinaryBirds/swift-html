@@ -25,21 +25,21 @@ open class Head: StandardTag {
     override open class var name: String { .init(describing: Head.self).lowercased() }
     
     public convenience init(title: Title? = nil,
-                            @TagBuilder style: () -> [Style],
-                            @TagBuilder base: () -> [Base],
-                            @TagBuilder link: () -> [Link],
-                            @TagBuilder meta: () -> [Meta],
-                            @TagBuilder script: () -> [Script],
-                            @TagBuilder noscript: () -> [Noscript],
+                            @TagBuilder style: () -> [Style]?,
+                            @TagBuilder base: () -> [Base]?,
+                            @TagBuilder link: () -> [Link]?,
+                            @TagBuilder meta: () -> [Meta]?,
+                            @TagBuilder script: () -> [Script]?,
+                            @TagBuilder noscript: () -> [Noscript]?,
                             @TagBuilder _ builder: () -> Tag) {
         let temp = Tag {
             title != nil ? [title!] : []
-            style()
-            base()
-            link()
-            meta()
-            script()
-            noscript()
+            style() ?? []
+            base() ?? []
+            link() ?? []
+            meta() ?? []
+            script() ?? []
+            noscript() ?? []
             [builder()]
         }
         self.init(name: Self.name, temp.children)
