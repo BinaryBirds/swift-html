@@ -445,6 +445,11 @@ public extension Attribute {
         let language: Language
         let country: Country?
         
+        public init(_ language: Language, _ country: Country? = nil) {
+            self.language = language
+            self.country = country
+        }
+        
         var rawValue: String {
             guard let country = country else {
                 return language.rawValue
