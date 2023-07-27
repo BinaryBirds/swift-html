@@ -14,19 +14,14 @@ open class Body: StandardTag {
     
     override open class var name: String { .init(describing: Body.self).lowercased() }
     
-    public private(set) var scripts: [Script]
-    public private(set) var eventFunctions: [Attribute.EventFunction]
-    
-    public init(scripts: [Script] = [],
-                eventFunctions: [Attribute.EventFunction] = [],
-                _ children: [Tag]? = nil) {
-        self.scripts = scripts
-        self.eventFunctions = eventFunctions
+    public convenience init(scripts: [Script] = [],
+                            eventFunctions: [Attribute.EventFunction] = [],
+                            _ children: [Tag]? = nil) {
         let temp = Tag {
             children ?? []
             scripts
         }
-        super.init(temp.children)
+        self.init(attributes: nil, temp.children)   // attributes parameter included to disambiguate init()
         self.onEvents(eventFunctions)
     }
     
