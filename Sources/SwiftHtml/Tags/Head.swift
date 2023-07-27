@@ -20,7 +20,28 @@
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
+
 open class Head: StandardTag {
     
     override open class var name: String { .init(describing: Head.self).lowercased() }
+    
+    public convenience init(title: Title? = nil,
+                            styles: [Style] = [],
+                            bases: [Base] = [],
+                            links: [Link] = [],
+                            metas: [Meta] = [],
+                            scripts: [Script] = [],
+                            noscripts: [Noscript] = [],
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(name: Self.name) {
+            title != nil ? [title!] : []
+            styles
+            bases
+            links
+            metas
+            scripts
+            noscripts
+            [builder()]
+        }
+    }
 }

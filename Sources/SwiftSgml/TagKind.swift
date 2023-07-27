@@ -5,6 +5,8 @@
 //  Created by Brad Gourley on 7/12/23.
 //
 
+// Unifies init code for all superclasses of a particular Tag Kind
+
 open class TagKind: Tag {
     
     public init(name: String? = nil,

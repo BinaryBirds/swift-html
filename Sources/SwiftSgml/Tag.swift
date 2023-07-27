@@ -17,7 +17,7 @@ open class Tag {
     
     public let kind: Kind?    // == nil only children rendered
     public let name: String
-    public var contents: String?
+    public private(set) var contents: String?
     public internal(set) var attributes: [Attribute]?
     public private(set) var children: [Tag]?
     
