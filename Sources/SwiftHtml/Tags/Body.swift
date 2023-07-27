@@ -23,8 +23,8 @@ open class Body: StandardTag {
         self.scripts = scripts
         self.eventFunctions = eventFunctions
         let temp = Tag {
-            if let children = children { children }
-            if let scripts = scripts { scripts }
+            children ?? []
+            scripts
         }
         super.init(temp.children)
         self.onEvents(eventFunctions)
