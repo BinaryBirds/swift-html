@@ -268,11 +268,6 @@ public extension Tag {
         attribute("id", value)
     }
     
-    /// Specifies the language of the element's content
-    func lang(_ value: String) -> Self {
-        attribute("lang", value)
-    }
-    
     /// Specifies whether the element is to have its spelling and grammar checked or not
     func spellcheck(_ value: Bool) -> Self {
         attribute("spellcheck", String(value))

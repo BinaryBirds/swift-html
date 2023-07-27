@@ -198,3 +198,11 @@ public extension Attribute {
         case zulu = "zu"
     }
 }
+
+public extension Tag {
+    
+    @discardableResult
+    func lang(_ l: Attribute.Lang, _ condition: Bool = true) -> Self {
+        attribute("lang", l.rawValue)
+    }
+}
