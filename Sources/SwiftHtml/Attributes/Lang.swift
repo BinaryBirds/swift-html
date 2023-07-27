@@ -198,6 +198,7 @@ public extension Attribute {
         case zulu = "zu"
     }
     
+    // source https://www.w3schools.com/tags/ref_country_codes.asp
     enum Country: String {
         case afghanistan = "AF"
         case albania = "AL"
