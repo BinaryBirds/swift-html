@@ -9,436 +9,438 @@ public extension Attribute {
     
     // source https://www.w3schools.com/tags/ref_language_codes.asp
     enum Language: String {
-        case abkhazian = "ab"
-        case afar = "aa"
-        case afrikaans = "af"
-        case akan = "ak"
-        case albanian = "sq"
-        case amharic = "am"
-        case arabic = "ar"
-        case aragonese = "an"
-        case armenian = "hy"
-        case assamese = "as"
-        case avaric = "av"
-        case avestan = "ae"
-        case aymara = "ay"
-        case azerbaijani = "az"
-        case bambara = "bm"
-        case bashkir = "ba"
-        case basque = "eu"
-        case belarusian = "be"
-        case bengali, bangla = "bn"
-        case bihari = "bh"
-        case bislama = "bi"
-        case bosnian = "bs"
-        case breton = "br"
-        case bulgarian = "bg"
-        case burmese = "my"
-        case catalan = "ca"
-        case chamorro = "ch"
-        case chechen = "ce"
-        case chichewa, Chewa, Nyanja = "ny"
-        case chinese = "zh"
-        case chineseSimplified = "zh-Hans"
-        case chineseTraditional = "zh-Hant"
-        case chuvash = "cv"
-        case cornish = "kw"
-        case corsican = "co"
-        case cree = "cr"
-        case croatian = "hr"
-        case czech = "cs"
-        case danish = "da"
-        case divehi, Dhivehi, Maldivian = "dv"
-        case dutch = "nl"
-        case dzongkha = "dz"
-        case english = "en"
-        case esperanto = "eo"
-        case estonian = "et"
-        case ewe = "ee"
-        case faroese = "fo"
-        case fijian = "fj"
-        case finnish = "fi"
-        case french = "fr"
-        case fula, Fulah, Pulaar, Pular = "ff"
-        case galician = "gl"
-        case gaelicScottish = "gd"
-        case georgian = "ka"
-        case german = "de"
-        case greek = "el"
-        case greenlandic, kalaallisut = "kl"
-        case guarani = "gn"
-        case gujarati = "gu"
-        case haitianCreole = "ht"
-        case hausa = "ha"
-        case hebrew = "he"
-        case herero = "hz"
-        case hindi = "hi"
-        case hiriMotu = "ho"
-        case hungarian = "hu"
-        case icelandic = "is"
-        case ido = "io"
-        case igbo = "ig"
-        case indonesian = "id, in"
-        case interlingua = "ia"
-        case interlingue = "ie"
-        case inuktitut = "iu"
-        case inupiak = "ik"
-        case irish = "ga"
-        case italian = "it"
-        case japanese = "ja"
-        case javanese = "jv"
-        case kannada = "kn"
-        case kanuri = "kr"
-        case kashmiri = "ks"
-        case kazakh = "kk"
-        case khmer = "km"
-        case kikuyu = "ki"
-        case kinyarwanda, rwanda = "rw"
-        case kirundi = "rn"
-        case kyrgyz = "ky"
-        case komi = "kv"
-        case kongo = "kg"
-        case korean = "ko"
-        case kurdish = "ku"
-        case kwanyama = "kj"
-        case lao = "lo"
-        case latin = "la"
-        case latvian, lettish = "lv"
-        case limburgish, limburger = "li"
-        case lingala = "ln"
-        case lithuanian = "lt"
-        case lugaKatanga = "lu"
-        case luganda, Ganda = "lg"
-        case luxembourgish = "lb"
-        case manx = "gv"
-        case macedonian = "mk"
-        case malagasy = "mg"
-        case malay = "ms"
-        case malayalam = "ml"
-        case maltese = "mt"
-        case maori = "mi"
-        case marathi = "mr"
-        case marshallese = "mh"
-        case moldavian = "mo"
-        case mongolian = "mn"
-        case nauru = "na"
-        case navajo = "nv"
-        case ndonga = "ng"
-        case northernNdebele = "nd"
-        case nepali = "ne"
-        case norwegian = "no"
-        case norwegianBokmål = "nb"
-        case norwegianNynorsk = "nn"
-        case nuosu, sichuanYi = "ii"
-        case occitan = "oc"
-        case ojibwe = "oj"
-        case oldChurchSlavonic, oldBulgarian = "cu"
-        case oriya = "or"
-        case oromo, afaanOromo = "om"
-        case ossetian = "os"
-        case pāli = "pi"
-        case pashto, Pushto = "ps"
-        case persian, farsi = "fa"
-        case polish = "pl"
-        case portuguese = "pt"
-        case punjabiEastern = "pa"
-        case quechua = "qu"
-        case romansh = "rm"
-        case romanian = "ro"
-        case russian = "ru"
-        case sami = "se"
-        case samoan = "sm"
-        case sango = "sg"
-        case sanskrit = "sa"
-        case serbian = "sr"
-        case serboCroatian = "sh"
-        case sesotho = "st"
-        case setswana = "tn"
-        case shona = "sn"
-        case sindhi = "sd"
-        case sinhalese = "si"
-        case siswati, swati = "ss"
-        case slovak = "sk"
-        case slovenian = "sl"
-        case somali = "so"
-        case southernNdebele = "nr"
-        case spanish = "es"
-        case sundanese = "su"
-        case swahili, kiswahili = "sw"
-        case swedish = "sv"
-        case tagalog = "tl"
-        case tahitian = "ty"
-        case tajik = "tg"
-        case tamil = "ta"
-        case tatar = "tt"
-        case telugu = "te"
-        case thai = "th"
-        case tibetan = "bo"
-        case tigrinya = "ti"
-        case tonga = "to"
-        case tsonga = "ts"
-        case turkish = "tr"
-        case turkmen = "tk"
-        case twi = "tw"
-        case uyghur = "ug"
-        case ukrainian = "uk"
-        case urdu = "ur"
-        case uzbek = "uz"
-        case venda = "ve"
-        case vietnamese = "vi"
-        case volapük = "vo"
-        case wallon = "wa"
-        case welsh = "cy"
-        case wolof = "wo"
-        case westernFrisian = "fy"
-        case xhosa = "xh"
-        case yiddish = "yi, ji"
-        case yoruba = "yo"
-        case zhuang, Chuang = "za"
-        case zulu = "zu"
+        case ab
+        case aa
+        case af
+        case ak
+        case sq
+        case am
+        case ar
+        case an
+        case hy
+        case `as`
+        case av
+        case ae
+        case ay
+        case az
+        case bm
+        case ba
+        case eu
+        case be
+        case bn
+        case bh
+        case bi
+        case bs
+        case br
+        case bg
+        case my
+        case ca
+        case ch
+        case ce
+        case ny
+        case zh
+        case zhHans = "zh-Hans"
+        case zhHant = "zh-Hant"
+        case cv
+        case kw
+        case co
+        case cr
+        case hr
+        case cs
+        case da
+        case dv
+        case nl
+        case dz
+        case en
+        case eo
+        case et
+        case ee
+        case fo
+        case fj
+        case fi
+        case fr
+        case ff
+        case gl
+        case gd
+        case gv
+        case ka
+        case de
+        case el
+        case kl
+        case gn
+        case gu
+        case ht
+        case ha
+        case he
+        case hz
+        case hi
+        case ho
+        case hu
+        case `is`
+        case io
+        case ig
+        case id
+        case `in`
+        case ia
+        case ie
+        case iu
+        case ik
+        case ga
+        case it
+        case ja
+        case jv
+        case kn
+        case kr
+        case ks
+        case kk
+        case km
+        case ki
+        case rw
+        case rn
+        case ky
+        case kv
+        case kg
+        case ko
+        case ku
+        case kj
+        case lo
+        case la
+        case lv
+        case li
+        case ln
+        case lt
+        case lu
+        case lg
+        case lb
+        case mk
+        case mg
+        case ms
+        case ml
+        case mt
+        case mi
+        case mr
+        case mh
+        case mo
+        case mn
+        case na
+        case nv
+        case ng
+        case nd
+        case ne
+        case no
+        case nb
+        case nn
+        case ii
+        case oc
+        case oj
+        case cu
+        case or
+        case om
+        case os
+        case pi
+        case ps
+        case fa
+        case pl
+        case pt
+        case pa
+        case qu
+        case rm
+        case ro
+        case ru
+        case se
+        case sm
+        case sg
+        case sa
+        case sr
+        case sh
+        case st
+        case tn
+        case sn
+        case sd
+        case si
+        case ss
+        case sk
+        case sl
+        case so
+        case nr
+        case es
+        case su
+        case sw
+        case sv
+        case tl
+        case ty
+        case tg
+        case ta
+        case tt
+        case te
+        case th
+        case bo
+        case ti
+        case to
+        case ts
+        case tr
+        case tk
+        case tw
+        case ug
+        case uk
+        case ur
+        case uz
+        case ve
+        case vi
+        case vo
+        case wa
+        case cy
+        case wo
+        case fy
+        case xh
+        case yi
+        case yo
+        case za
+        case zu
+        case ji
     }
     
     // source https://www.w3schools.com/tags/ref_country_codes.asp
     enum Country: String {
-        case afghanistan = "AF"
-        case albania = "AL"
-        case algeria = "DZ"
-        case americanSamoa = "AS"
-        case andorra = "AD"
-        case angola = "AO"
-        case antarctica = "AQ"
-        case antiguaAndBarbuda = "AG"
-        case argentina = "AR"
-        case armenia = "AM"
-        case aruba = "AW"
-        case australia = "AU"
-        case austria = "AT"
-        case azerbaijan = "AZ"
-        case bahamas = "BS"
-        case bahrain = "BH"
-        case bangladesh = "BD"
-        case barbados = "BB"
-        case belarus = "BY"
-        case belgium = "BE"
-        case belize = "BZ"
-        case benin = "BJ"
-        case bermuda = "BM"
-        case bhutan = "BT"
-        case bolivia = "BO"
-        case bosniaAndHerzegovina = "BA"
-        case botswana = "BW"
-        case bouvetIsland = "BV"
-        case brazil = "BR"
-        case britishIndianOceanTerritory = "IO"
-        case bruneiDarussalam = "BN"
-        case bulgaria = "BG"
-        case burkinaFaso = "BF"
-        case burundi = "BI"
-        case cambodia = "KH"
-        case cameroon = "CM"
-        case canada = "CA"
-        case capeVerde = "CV"
-        case caymanIslands = "KY"
-        case centralAfricanRepublic = "CF"
-        case chad = "TD"
-        case chile = "CL"
-        case china = "CN"
-        case christmasIsland = "CX"
-        case cocosKeelingIslands = "CC"
-        case colombia = "CO"
-        case comoros = "KM"
-        case congo = "CG"
-        case congoTheDemocraticRepublicOfThe = "CD"
-        case cookIslands = "CK"
-        case costaRica = "CR"
-        case côteDivoire = "CI"
-        case croatia = "HR"
-        case cuba = "CU"
-        case cyprus = "CY"
-        case czechRepublic = "CZ"
-        case denmark = "DK"
-        case djibouti = "DJ"
-        case dominica = "DM"
-        case dominicanRepublic = "DO"
-        case ecuador = "EC"
-        case egypt = "EG"
-        case elSalvador = "SV"
-        case equatorialGuinea = "GQ"
-        case eritrea = "ER"
-        case estonia = "EE"
-        case ethiopia = "ET"
-        case falklandIslandsMalvinas = "FK"
-        case faroeIslands = "FO"
-        case fiji = "FJ"
-        case finland = "FI"
-        case france = "FR"
-        case frenchGuiana = "GF"
-        case frenchPolynesia = "PF"
-        case frenchSouthernTerritories = "TF"
-        case gabon = "GA"
-        case gambia = "GM"
-        case georgia = "GE"
-        case germany = "DE"
-        case ghana = "GH"
-        case gibraltar = "GI"
-        case greece = "GR"
-        case greenland = "GL"
-        case grenada = "GD"
-        case guadeloupe = "GP"
-        case guam = "GU"
-        case guatemala = "GT"
-        case guinea = "GN"
-        case guineaBissau = "GW"
-        case guyana = "GY"
-        case haiti = "HT"
-        case heardIslandAndMcdonaldIslands = "HM"
-        case honduras = "HN"
-        case hongKong = "HK"
-        case hungary = "HU"
-        case iceland = "IS"
-        case india = "IN"
-        case indonesia = "ID"
-        case iranIslamicRepublicOf = "IR"
-        case iraq = "IQ"
-        case ireland = "IE"
-        case israel = "IL"
-        case italy = "IT"
-        case jamaica = "JM"
-        case japan = "JP"
-        case jordan = "JO"
-        case kazakhstan = "KZ"
-        case kenya = "KE"
-        case kiribati = "KI"
-        case koreaDemocraticPeoplesRepublicOf = "KP"
-        case koreaRepublicOf = "KR"
-        case kuwait = "KW"
-        case kyrgyzstan = "KG"
-        case laoPeoplesDemocraticRepublicLaos = "LA"
-        case latvia = "LV"
-        case lebanon = "LB"
-        case lesotho = "LS"
-        case liberia = "LR"
-        case libyaStateOf = "LY"
-        case liechtenstein = "LI"
-        case lithuania = "LT"
-        case luxembourg = "LU"
-        case macao = "MO"
-        case macedoniaTheFormerYugoslavRepublicOf = "MK"
-        case madagascar = "MG"
-        case malawi = "MW"
-        case malaysia = "MY"
-        case maldives = "MV"
-        case mali = "ML"
-        case malta = "MT"
-        case marshallIslands = "MH"
-        case martinique = "MQ"
-        case mauritania = "MR"
-        case mauritius = "MU"
-        case mayotte = "YT"
-        case mexico = "MX"
-        case micronesiaFederatedStatesOf = "FM"
-        case moldovaRepublicOf = "MD"
-        case monaco = "MC"
-        case mongolia = "MN"
-        case montenegro = "ME"
-        case montserrat = "MS"
-        case morocco = "MA"
-        case mozambique = "MZ"
-        case myanmar = "MM"
-        case namibia = "NA"
-        case nauru = "NR"
-        case nepalFederalDemocraticRepublicOf = "NP"
-        case netherlands = "NL"
-        case netherlandsAntilles = "AN"
-        case newCaledonia = "NC"
-        case newZealand = "NZ"
-        case nicaragua = "NI"
-        case niger = "NE"
-        case nigeria = "NG"
-        case niue = "NU"
-        case norfolkIsland = "NF"
-        case northernMarianaIslands = "MP"
-        case norway = "NO"
-        case oman = "OM"
-        case pakistan = "PK"
-        case palau = "PW"
-        case palestineStateOf = "PS"
-        case panama = "PA"
-        case papuaNewGuinea = "PG"
-        case paraguay = "PY"
-        case peru = "PE"
-        case philippines = "PH"
-        case pitcairn = "PN"
-        case poland = "PL"
-        case portugal = "PT"
-        case puertoRico = "PR"
-        case qatar = "QA"
-        case réunion = "RE"
-        case romania = "RO"
-        case russianFederation = "RU"
-        case rwanda = "RW"
-        case saintHelena = "SH"
-        case saintKittsAndNevis = "KN"
-        case saintLucia = "LC"
-        case saintPierreAndMiquelon = "PM"
-        case saintVincentAndTheGrenadines = "VC"
-        case samoa = "WS"
-        case sanMarino = "SM"
-        case saoTomeAndPrincipe = "ST"
-        case saudiArabia = "SA"
-        case senegal = "SN"
-        case serbia = "RS"
-        case seychelles = "SC"
-        case sierraLeone = "SL"
-        case singapore = "SG"
-        case slovakia = "SK"
-        case slovenia = "SI"
-        case solomonIslands = "SB"
-        case somalia = "SO"
-        case southAfrica = "ZA"
-        case southGeorgiaAndTheSouthSandwichIslands = "GS"
-        case southSudan = "SS"
-        case spain = "ES"
-        case sriLanka = "LK"
-        case sudan = "SD"
-        case suriname = "SR"
-        case svalbardAndJanMayen = "SJ"
-        case swaziland = "SZ"
-        case sweden = "SE"
-        case switzerland = "CH"
-        case syrianArabRepublic = "SY"
-        case taiwan = "TW"
-        case tajikistan = "TJ"
-        case tanzaniaUnitedRepublicOf = "TZ"
-        case thailand = "TH"
-        case timorLeste = "TL"
-        case togo = "TG"
-        case tokelau = "TK"
-        case tonga = "TO"
-        case trinidadAndTobago = "TT"
-        case tunisia = "TN"
-        case turkey = "TR"
-        case turkmenistan = "TM"
-        case turksAndCaicosIslands = "TC"
-        case tuvalu = "TV"
-        case uganda = "UG"
-        case ukraine = "UA"
-        case unitedArabEmirates = "AE"
-        case unitedKingdom = "GB"
-        case unitedStates = "US"
-        case unitedStatesMinorOutlyingIslands = "UM"
-        case uruguay = "UY"
-        case uzbekistan = "UZ"
-        case vanuatu = "VU"
-        case venezuela = "VE"
-        case vietNam = "VN"
-        case virginIslandsBritish = "VG"
-        case virginIslandsUs = "VI"
-        case wallisAndFutuna = "WF"
-        case westernSahara = "EH"
-        case yemen = "YE"
-        case zambia = "ZM"
-        case zimbabwe = "ZW"
+        case af
+        case al
+        case dz
+        case `as`
+        case ad
+        case ao
+        case aq
+        case ag
+        case ar
+        case am
+        case aw
+        case au
+        case at
+        case az
+        case bs
+        case bh
+        case bd
+        case bb
+        case by
+        case be
+        case bz
+        case bj
+        case bm
+        case bt
+        case bo
+        case ba
+        case bw
+        case bv
+        case br
+        case io
+        case bn
+        case bg
+        case bf
+        case bi
+        case kh
+        case cm
+        case ca
+        case cv
+        case ky
+        case cf
+        case td
+        case cl
+        case cn
+        case cx
+        case cc
+        case co
+        case km
+        case cg
+        case cd
+        case ck
+        case cr
+        case ci
+        case hr
+        case cu
+        case cy
+        case cz
+        case dk
+        case dj
+        case dm
+        case `do`
+        case ec
+        case eg
+        case sv
+        case gq
+        case er
+        case ee
+        case et
+        case fk
+        case fo
+        case fj
+        case fi
+        case fr
+        case gf
+        case pf
+        case tf
+        case ga
+        case gm
+        case ge
+        case de
+        case gh
+        case gi
+        case gr
+        case gl
+        case gd
+        case gp
+        case gu
+        case gt
+        case gn
+        case gw
+        case gy
+        case ht
+        case hm
+        case hn
+        case hk
+        case hu
+        case `is`
+        case `in`
+        case id
+        case ir
+        case iq
+        case ie
+        case il
+        case it
+        case jm
+        case jp
+        case jo
+        case kz
+        case ke
+        case ki
+        case kp
+        case kr
+        case kw
+        case kg
+        case la
+        case lv
+        case lb
+        case ls
+        case lr
+        case ly
+        case li
+        case lt
+        case lu
+        case mo
+        case mk
+        case mg
+        case mw
+        case my
+        case mv
+        case ml
+        case mt
+        case mh
+        case mq
+        case mr
+        case mu
+        case yt
+        case mx
+        case fm
+        case md
+        case mc
+        case mn
+        case me
+        case ms
+        case ma
+        case mz
+        case mm
+        case na
+        case nr
+        case np
+        case nl
+        case an
+        case nc
+        case nz
+        case ni
+        case ne
+        case ng
+        case nu
+        case nf
+        case mp
+        case no
+        case om
+        case pk
+        case pw
+        case ps
+        case pa
+        case pg
+        case py
+        case pe
+        case ph
+        case pn
+        case pl
+        case pt
+        case pr
+        case qa
+        case re
+        case ro
+        case ru
+        case rw
+        case sh
+        case kn
+        case lc
+        case pm
+        case vc
+        case ws
+        case sm
+        case st
+        case sa
+        case sn
+        case rs
+        case sc
+        case sl
+        case sg
+        case sk
+        case si
+        case sb
+        case so
+        case za
+        case gs
+        case ss
+        case es
+        case lk
+        case sd
+        case sr
+        case sj
+        case sz
+        case se
+        case ch
+        case sy
+        case tw
+        case tj
+        case tz
+        case th
+        case tl
+        case tg
+        case tk
+        case to
+        case tt
+        case tn
+        case tr
+        case tm
+        case tc
+        case tv
+        case ug
+        case ua
+        case ae
+        case gb
+        case us
+        case um
+        case uy
+        case uz
+        case vu
+        case ve
+        case vn
+        case vg
+        case vi
+        case wf
+        case eh
+        case ye
+        case zm
+        case zw
     }
     
     struct Lang {
@@ -454,7 +456,7 @@ public extension Attribute {
             guard let country = country else {
                 return language.rawValue
             }
-            return language.rawValue + "-\(country.rawValue)"
+            return language.rawValue + "-\(country.rawValue.uppercased())"
         }
     }
 }
@@ -465,5 +467,12 @@ public extension Tag {
     func lang(_ l: Attribute.Lang?, _ condition: Bool = true) -> Self {
         guard let l = l, condition else { return self }
         return attribute("lang", l.rawValue)
+    }
+    
+    @discardableResult
+    func lang(_ language: Attribute.Language?, _ country: Attribute.Country? = nil, _ condition: Bool = true) -> Self {
+        guard let language = language else { return self }
+        let lang: Attribute.Lang = .init(language, country)
+        return self.lang(lang, condition)
     }
 }
