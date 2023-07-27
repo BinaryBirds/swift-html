@@ -15,22 +15,17 @@ open class Html: StandardTag {
     override open class var name: String { .init(describing: Html.self).lowercased() }
     
     public private(set) var lang: Attribute.Lang?
-    public private(set) var country: Attribute.Country?
     
     public init(lang: Attribute.Lang? = nil,
-                country: Attribute.Country? = nil,
                 _ children: [Tag]? = nil) {
         self.lang = lang
-        self.country = country
         super.init()
-        self.lang(lang, country)
+        self.lang(lang)
     }
     
     public convenience init(lang: Attribute.Lang? = nil,
-                            country: Attribute.Country? = nil,
                             @TagBuilder _ builder: () -> Tag) {
         self.init(lang: lang,
-                  country: country,
                   [builder()])
     }
 }

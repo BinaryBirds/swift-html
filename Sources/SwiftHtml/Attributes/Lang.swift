@@ -8,7 +8,7 @@
 public extension Attribute {
     
     // source https://www.w3schools.com/tags/ref_language_codes.asp
-    enum Lang: String {
+    enum Language: String {
         case abkhazian = "ab"
         case afar = "aa"
         case afrikaans = "af"
@@ -440,17 +440,25 @@ public extension Attribute {
         case zambia = "ZM"
         case zimbabwe = "ZW"
     }
+    
+    struct Lang {
+        let language: Language
+        let country: Country?
+        
+        var rawValue: String {
+            guard let country = country else {
+                return language.rawValue
+            }
+            return language.rawValue + "-\(country.rawValue)"
+        }
+    }
 }
 
 public extension Tag {
     
     @discardableResult
-    func lang(_ l: Attribute.Lang?, _ country: Attribute.Country? = nil, _ condition: Bool = true) -> Self {
+    func lang(_ l: Attribute.Lang?, _ condition: Bool = true) -> Self {
         guard let l = l, condition else { return self }
-        var value = l.rawValue
-        if let country = country {
-            value += "-\(country.rawValue)"
-        }
-        return attribute("lang", value)
+        return attribute("lang", l.rawValue)
     }
 }
