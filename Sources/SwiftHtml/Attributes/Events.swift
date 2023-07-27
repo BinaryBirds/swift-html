@@ -7,8 +7,6 @@
 
 public extension Attribute {
     
-    typealias JSFunction = String
-    
     enum Event: String {
         // Windows
         case afterPrint       // Script to be run after the document is printed
@@ -89,6 +87,8 @@ public extension Attribute {
         // Misc
         case toggle           // Fires when the user opens or closes the <details> element
     }
+    
+    typealias JSFunction = String
     
     struct EventFunction {
         let event: Event

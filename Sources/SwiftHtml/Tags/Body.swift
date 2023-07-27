@@ -14,13 +14,13 @@ open class Body: StandardTag {
     
     override open class var name: String { .init(describing: Body.self).lowercased() }
     
-    public private(set) var scripts: [Script]?
-    public private(set) var eventFunctions: [Attribute.EventFunction]?
+    public private(set) var scripts: [Script]
+    public private(set) var eventFunctions: [Attribute.EventFunction]
     
-    public init(scripts: [Script]? = nil,
-                eventFunctions: [Attribute.EventFunction]? = nil,
+    public init(scripts: [Script] = [],
+                eventFunctions: [Attribute.EventFunction] = [],
                 _ children: [Tag]? = nil) {
-        self.scripts = scripts ?? []
+        self.scripts = scripts
         self.eventFunctions = eventFunctions
         let temp = Tag {
             if let children = children { children }
@@ -31,7 +31,7 @@ open class Body: StandardTag {
     }
     
     public convenience init(scripts: [Script] = [],
-                            eventFunctions: [Attribute.EventFunction]? = nil,
+                            eventFunctions: [Attribute.EventFunction] = [],
                             @TagBuilder _ builder: () -> Tag) {
         self.init(scripts: scripts,
                   eventFunctions: eventFunctions,
