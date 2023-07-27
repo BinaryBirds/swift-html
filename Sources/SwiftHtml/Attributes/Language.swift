@@ -202,7 +202,8 @@ public extension Attribute {
 public extension Tag {
     
     @discardableResult
-    func lang(_ l: Attribute.Lang, _ condition: Bool = true) -> Self {
-        attribute("lang", l.rawValue)
+    func lang(_ l: Attribute.Lang?, _ condition: Bool = true) -> Self {
+        guard let l = l, condition else { return self }
+        return attribute("lang", l.rawValue)
     }
 }

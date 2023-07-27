@@ -20,9 +20,7 @@ open class Html: StandardTag {
                 _ children: [Tag]? = nil) {
         self.lang = lang
         super.init()
-        if let lang = lang {
-            self.lang(lang)
-        }
+        self.lang(lang)
     }
     
     public convenience init(lang: Attribute.Lang? = nil,
