@@ -106,14 +106,15 @@ open class Tag {
     }
     
     @discardableResult
-    public func appendToAttribute(_ key: String, _ value: String?, separator: String? = nil, _ condition: Bool = true) -> Self {
-        guard condition else { return self }
+    public func attribute(addTo key: String, _ value: String?, separator: String? = nil, _ condition: Bool = true) -> Self {
+        guard let value = value, condition else { return self }
         let attribute: Attribute
         if let existing = attributes?.first(where: { $0.key == key }) {
-            attribute = .init(key: key, value: (existing.value ?? "") + (separator ?? "") + (value ?? ""))
+            attribute = .init(key: key, value: (existing.value ?? "") + (separator ?? "") + value)
         } else {
             attribute = .init(key: key, value: value)
         }
+        delete(attribute)
         upsert(attribute)
         return self
     }
