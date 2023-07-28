@@ -93,6 +93,11 @@ public extension Attribute {
     struct EventFunction {
         let event: Event
         let function: JSFunction
+        
+        public init(_ event: Event, _ function: JSFunction) {
+            self.event = event
+            self.function = function
+        }
     }
 }
 
