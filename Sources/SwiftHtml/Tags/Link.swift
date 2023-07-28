@@ -76,21 +76,25 @@ public extension Link {
     }
     
     /// Specifies how the element handles cross-origin requests
+    @discardableResult
     func crossorigin(_ value: Crossorigin) -> Self {
         attribute("crossorigin", value.rawValue)
     }
     
     /// Specifies the location of the linked document
+    @discardableResult
     func href(_ value: String) -> Self {
         attribute("href", value)
     }
     
     /// Specifies the language of the text in the linked document
+    @discardableResult
     func hreflang(_ value: String) -> Self {
         attribute("hreflang", value)
     }
     
     /// Specifies on what device the linked document will be displayed
+    @discardableResult
     func media(_ value: String) -> Self {
         attribute("media", value)
     }
@@ -98,6 +102,7 @@ public extension Link {
     /// Specifies what media/device the linked document is optimized for
     ///
     /// If multiple queries were provided they're going to be concatenated with an `and` operand
+    @discardableResult
     func media(_ queries: MediaQuery...) -> Self {
         return media(queries)
     }
@@ -105,35 +110,39 @@ public extension Link {
     /// Specifies what media/device the linked document is optimized for
     ///
     /// If multiple queries were provided they're going to be concatenated with an `and` operand
+    @discardableResult
     func media(_ queries: [MediaQuery]) -> Self {
         return media(queries.map(\.value).joined(separator: " and "))
     }
     
     /// Specifies which referrer to use when fetching the resource
+    @discardableResult
     func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         attribute("referrerpolicy", value.rawValue)
     }
 
     /// Allows a browser to check the fetched link to ensure that the code is never loaded if the source has been manipulated
+    @discardableResult
     func integrity(_ value: String) -> Self {
         attribute("integrity", value)
     }
     
     /// Specifies the size of the linked resource. Only for `rel="icon"`
+    @discardableResult
     func sizes(_ value: String) -> Self {
         attribute("sizes", value)
     }
     
     /// Specifies the size of the linked resource. For example `57x57` if the value is `57`.
+    @discardableResult
     func sizes(_ value: Int) -> Self {
         sizes(String(value) + "x" + String(value))
     }
         
     /// Specifies the media type of the linked document
+    @discardableResult
     func type(_ value: String) -> Self {
         attribute("type", value)
     }
-    
-    
 }
 
