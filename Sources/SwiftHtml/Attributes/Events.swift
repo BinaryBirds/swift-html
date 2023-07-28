@@ -103,6 +103,7 @@ public extension Tag {
         attribute(e.rawValue.lowercased(), function, condition)
     }
     
+    /// add multiple events and functions to a Tag
     @discardableResult
     func onEvents(_ efs: [Attribute.EventFunction]?, condition: Bool = true) -> Self {
         guard let efs = efs, condition else { return self }
