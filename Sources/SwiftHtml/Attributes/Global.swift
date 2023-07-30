@@ -253,67 +253,67 @@ public extension Tag {
     
     /// Specifies a shortcut key to activate/focus an element
     @discardableResult
-    func accesskey(_ value: Character) -> Self {
-        attribute("accesskey", String(value))
+    func accesskey(_ value: Character?, _ condition: Bool = true) -> Self {
+        attribute("accesskey", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies whether the content of an element is editable or not
     @discardableResult
-    func contenteditable(_ value: Bool) -> Self {
-        attribute("contenteditable", String(value))
+    func contenteditable(_ value: Bool?, _ condition: Bool = true) -> Self {
+        attribute("contenteditable", value != nil ? String(value!) : nil, condition)
     }
     
     /// Used to store custom data private to the page or application
     @discardableResult
-    func data(key: String, _ value: String) -> Self {
-        attribute("data-" + key, value)
+    func data(key: String, _ value: String?, _ condition: Bool = true) -> Self {
+        attribute("data-" + key, value, condition)
     }
 
     /// Specifies the text direction for the content in an element
     @discardableResult
-    func dir(_ value: TextDirection = .ltr) -> Self {
-        attribute("dir", value.rawValue)
+    func dir(_ value: TextDirection? = .ltr, _ condition: Bool = true) -> Self {
+        attribute("dir", value?.rawValue, condition)
     }
     
     /// Specifies whether an element is draggable or not
     @discardableResult
-    func draggable(_ value: Draggable = .auto) -> Self {
-        attribute("draggable", value.rawValue)
+    func draggable(_ value: Draggable? = .auto, _ condition: Bool = true) -> Self {
+        attribute("draggable", value?.rawValue, condition)
     }
     
     /// Specifies that an element is not yet, or is no longer, relevant
     @discardableResult
-    func hidden(_ value: Bool? = nil) -> Self {
-        attribute("hidden", value?.description)
+    func hidden(_ value: Bool? = nil, _ condition: Bool = true) -> Self {
+        attribute("hidden", value?.description, condition)
     }
     
     /// Specifies a unique id for an element
     @discardableResult
-    func `id`(_ value: String) -> Self {
-        attribute("id", value)
+    func `id`(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("id", value, condition)
     }
     
     /// Specifies whether the element is to have its spelling and grammar checked or not
     @discardableResult
-    func spellcheck(_ value: Bool) -> Self {
-        attribute("spellcheck", String(value))
+    func spellcheck(_ value: Bool?, _ condition: Bool = true) -> Self {
+        attribute("spellcheck", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies the tabbing order of an element
     @discardableResult
-    func tabindex(_ value: Int) -> Self {
-        attribute("tabindex", String(value))
+    func tabindex(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("tabindex", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies extra information about an element
     @discardableResult
-    func title(_ value: String) -> Self {
-        attribute("title", value)
+    func title(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("title", value, condition)
     }
     
     /// Specifies whether the content of an element should be translated or not
     @discardableResult
-    func translate(_ value: Translate) -> Self {
-        attribute("translate", value.rawValue)
+    func translate(_ value: Translate?, _ condition: Bool = true) -> Self {
+        attribute("translate", value?.rawValue, condition)
     }
 }

@@ -19,7 +19,7 @@ open class Html: StandardTag {
     public init(lang: Attribute.Lang? = nil,
                 _ children: [Tag]? = nil) {
         self.lang = lang
-        super.init()
+        super.init(children)
         self.lang(lang)
     }
     
