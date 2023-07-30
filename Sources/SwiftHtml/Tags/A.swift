@@ -52,23 +52,23 @@ public extension A {
     }
     
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-    func download(_ value: String? = nil) -> Self {
-        flagAttribute("download", value)
+    func download(_ value: String? = nil, _ condition: Bool = true) -> Self {
+        flagAttribute("download", value, condition)
     }
     
     /// Specifies the URL of the page the link goes to
-    func href(_ value: String) -> Self {
-        attribute("href", value)
+    func href(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("href", value, condition)
     }
     
     /// Specifies the language of the linked document
-    func hreflang(_ value: String) -> Self {
-        attribute("hreflang", value)
+    func hreflang(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("hreflang", value, condition)
     }
     
     /// Specifies what media/device the linked document is optimized for
-    func media(_ value: String) -> Self {
-        attribute("media", value)
+    func media(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("media", value, condition)
     }
     
     /// Specifies what media/device the linked document is optimized for
@@ -81,34 +81,34 @@ public extension A {
     /// Specifies what media/device the linked document is optimized for
     ///
     /// If multiple queries were provided they're going to be concatenated with an `and` operand
-    func media(_ queries: [MediaQuery]) -> Self {
-        return media(queries.map(\.value).joined(separator: " and "))
+    func media(_ queries: [MediaQuery]?, _ condition: Bool = true) -> Self {
+        return media(queries?.map(\.value).joined(separator: " and "), condition)
     }
     
     /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
     ///
     /// Typically used for tracking.
-    func ping(_ value: [String]) -> Self {
-        attribute("ping", value.joined(separator: " "))
+    func ping(_ value: [String]?, _ condition: Bool = true) -> Self {
+        attribute("ping", value?.joined(separator: " "), condition)
     }
     
     /// Specifies which referrer information to send with the link
-    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-        attribute("referrerpolicy", value.rawValue)
+    func refererPolicy(_ value: RefererPolicy? = .origin, _ condition: Bool = true) -> Self {
+        attribute("referrerpolicy", value?.rawValue, condition)
     }
     
     /// Specifies the relationship between the current document and the linked document
-    func rel(_ value: Rel) -> Self {
-        attribute("rel", value.rawValue)
+    func rel(_ value: Rel?, _ condition: Bool = true) -> Self {
+        attribute("rel", value?.rawValue, condition)
     }
 
     /// Specifies where to open the linked document
-    func target(_ value: TargetFrame, _ condition: Bool = true) -> Self {
-        attribute("target", value.rawValue, condition)
+    func target(_ value: TargetFrame?, _ condition: Bool = true) -> Self {
+        attribute("target", value?.rawValue, condition)
     }
     
     /// The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document.
-    func type(_ value: String) -> Self {
-        attribute("type", value)
+    func type(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("type", value, condition)
     }
 }
