@@ -61,10 +61,6 @@ open class Tag {
                   [builder()])
     }
     
-    public convenience init(_ contents: String) {
-        self.init(contents: contents)
-    }
-    
     // MARK: - contents
     
     /// set contents
