@@ -12,24 +12,5 @@
 /// **Note:** There can only be one `<body>` element in an HTML document.
 open class Body: StandardTag {
     
-    override open class var name: String { .init(describing: Body.self).lowercased() }
-    
-    public convenience init(scripts: [Script] = [],
-                            eventFunctions: [Attribute.EventFunction] = [],
-                            _ children: [Tag]? = nil) {
-        let temp = Tag {
-            children ?? []
-            scripts
-        }
-        self.init(attributes: nil, temp.children)   // attributes parameter included to disambiguate init()
-        self.onEvents(eventFunctions)
-    }
-    
-    public convenience init(scripts: [Script] = [],
-                            eventFunctions: [Attribute.EventFunction] = [],
-                            @TagBuilder _ builder: () -> Tag) {
-        self.init(scripts: scripts,
-                  eventFunctions: eventFunctions,
-                  [builder()])
-    }
+    override open class var name: String { .init(describing: Body.self).lowercased() }    
 }
