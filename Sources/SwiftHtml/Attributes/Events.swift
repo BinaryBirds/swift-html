@@ -86,10 +86,6 @@ public extension Attribute {
         case waiting          // Script to be run when the media has paused but is expected to resume (like when the media pauses to buffer more data)
         // Misc
         case toggle           // Fires when the user opens or closes the <details> element
-        
-        public var onRawValue: String {
-            "on" + rawValue.prefix(1).uppercased() + rawValue.dropFirst()
-        }
     }
     
     typealias JSFunction = String
@@ -109,14 +105,14 @@ public extension Tag {
     
     @discardableResult
     func onEvent(_ e: Attribute.Event, _ function: Attribute.JSFunction?, _ condition: Bool = true) -> Self {
-        attribute(e.onRawValue, function, condition)
+        attribute("on" + e.rawValue.lowercased(), function, condition)
     }
 
     /// add multiple events and functions to a Tag
     @discardableResult
     func onEvents(_ efs: [Attribute.EventFunction]?, condition: Bool = true) -> Self {
         guard let efs = efs, condition else { return self }
-        _ = efs.map { attribute(addTo: $0.event.onRawValue, $0.function, separator: ";\r") }
+        _ = efs.map { attribute(addTo: "on" + $0.event.rawValue.lowercased(), $0.function, separator: ";\r") }
         return self
     }
 }
