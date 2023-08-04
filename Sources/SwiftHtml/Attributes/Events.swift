@@ -112,7 +112,7 @@ public extension Tag {
     @discardableResult
     func onEvents(_ efs: [Attribute.EventFunction]?, condition: Bool = true) -> Self {
         guard let efs = efs, condition else { return self }
-        _ = efs.map { attribute(addTo: $0.event.rawValue, $0.function, separator: ";\r") }
+        _ = efs.map { attribute(addTo: "on" + $0.event.rawValue.prefix(1).uppercased() + $0.event.rawValue.dropFirst(), $0.function, separator: ";\r") }
         return self
     }
 }
