@@ -49,47 +49,58 @@ public extension Form {
     }
     
     /// Specifies the character encodings that are to be used for the form submission
-    func acceptCharset(_ value: String) -> Self {
-        attribute("accept-charset", value)
+    @discardableResult
+    func acceptCharset(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("accept-charset", value, condition)
     }
     
     /// Specifies where to send the form-data when a form is submitted
-    func action(_ value: String?) -> Self {
-        attribute("action", value)
+    @discardableResult
+    func action(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("action", value, condition)
     }
     
     /// Specifies whether a form should have autocomplete on or off
-    func autocomplete(_ value: Bool = true) -> Self {
-        attribute("autocomplete", value ? "on" : "off")
+    @discardableResult
+    func autocomplete(_ value: Bool? = true, _ condition: Bool = true) -> Self {
+        var onOffValue: String?
+        if let value = value { onOffValue = value ? "on" : "off" }
+        return attribute("autocomplete", onOffValue, condition)
     }
     
     /// Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
+    @discardableResult
     func enctype(_ value: Enctype?, _ condition: Bool = true) -> Self {
         attribute("enctype", value?.rawValue, condition)
     }
     
     /// Specifies the HTTP method to use when sending form-data
-    func method(_ value: Method?) -> Self {
-        attribute("method", value?.rawValue)
+    @discardableResult
+    func method(_ value: Method?, _ condition: Bool = true) -> Self {
+        attribute("method", value?.rawValue, condition)
     }
     
     /// Specifies the name of a form
-    func name(_ value: String) -> Self {
-        attribute("name", value)
+    @discardableResult
+    func name(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("name", value, condition)
     }
     
     /// Specifies that the form should not be validated when submitted
+    @discardableResult
     func novalidate(_ condition: Bool = true) -> Self {
         flagAttribute("novalidate", nil, condition)
     }
     
     /// Specifies the relationship between a linked resource and the current document
-    func rel(_ value: Rel) -> Self {
-        attribute("rel", value.rawValue)
+    @discardableResult
+    func rel(_ value: Rel?, _ condition: Bool = true) -> Self {
+        attribute("rel", value?.rawValue, condition)
     }
     
     /// Specifies where to display the response that is received after submitting the form
-    func target(_ value: Target) -> Self {
-        attribute("target", value.rawValue)
+    @discardableResult
+    func target(_ value: Target?, condition: Bool = true) -> Self {
+        attribute("target", value?.rawValue, condition)
     }
 }
