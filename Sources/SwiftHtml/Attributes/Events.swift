@@ -6,9 +6,7 @@
 //
 
 public extension Attribute {
-    
-    typealias JSFunction = String
-    
+        
     enum Event: String {
         // Windows
         case afterPrint       // Script to be run after the document is printed
