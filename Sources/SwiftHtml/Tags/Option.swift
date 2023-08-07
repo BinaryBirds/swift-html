@@ -19,22 +19,26 @@ open class Option: StandardTag {
 
 public extension Option {
     /// Specifies that an option should be disabled
+    @discardableResult
     func disabled(_ condition: Bool = true) -> Self {
         flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies a shorter label for an option
-    func label(_ value: String) -> Self {
-        attribute("label", value)
+    @discardableResult
+    func label(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("label", value, condition)
     }
     
     /// Specifies that an option should be pre-selected when the page loads
+    @discardableResult
     func selected(_ condition: Bool = true) -> Self {
         flagAttribute("selected", nil, condition)
     }
     
     /// Specifies the value to be sent to a server
-    func value(_ value: String) -> Self {
-        attribute("value", value)
+    @discardableResult
+    func value(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("value", value, condition)
     }
 }
