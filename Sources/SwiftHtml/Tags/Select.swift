@@ -23,38 +23,52 @@ open class Select: StandardTag {
 
 public extension Select {
     
+    /// Specifies autocomplete attributes
+    /// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+    @discardableResult
+    func autocomplete(_ value: Attribute.Autocomplete?, _ condition: Bool = true) -> Self {
+        attribute("autocomplete", value?.rawValue, condition)
+    }
+    
     /// Specifies that the drop-down list should automatically get focus when the page loads
+    @discardableResult
     func autofocus(_ condition: Bool = true) -> Self {
         flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies that a drop-down list should be disabled
+    @discardableResult
     func disabled(_ condition: Bool = true) -> Self {
         flagAttribute("disabled", nil, condition)
     }
     
     /// Defines which form the drop-down list belongs to
-    func form(_ value: String) -> Self {
-        attribute("form", value)
+    @discardableResult
+    func form(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("form", value, condition)
     }
     
     /// Specifies that multiple options can be selected at once
+    @discardableResult
     func multiple(_ condition: Bool = true) -> Self {
         flagAttribute("multiple", nil, condition)
     }
     
     /// Defines a name for the drop-down list
-    func name(_ value: String) -> Self {
-        attribute("name", value)
+    @discardableResult
+    func name(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("name", value, condition)
     }
     
     /// Specifies that the user is required to select a value before submitting the form
+    @discardableResult
     func required(_ condition: Bool = true) -> Self {
         flagAttribute("required", nil, condition)
     }
     
     /// Defines the number of visible options in a drop-down list
-    func size(_ value: Int) -> Self {
-        attribute("size", String(value))
+    @discardableResult
+    func size(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("size", value != nil ? String(value!) : nil, condition)
     }
 }
