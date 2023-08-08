@@ -44,33 +44,33 @@ public extension Input {
     
     /// Sets both the name and id
     @discardableResult
-    func key(_ value: String) -> Self {
-        attribute("id", value).attribute("name", value)
+    func key(_ value: String, _ condition: Bool = true) -> Self {
+        attribute("id", value, condition).attribute("name", value, condition)
     }
     
     /// Specifies a filter for what file types the user can pick from the file input dialog box (only for type="file")
     @discardableResult
-    func accept(_ value: String?) -> Self {
-        attribute("accept", value)
+    func accept(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("accept", value, condition)
     }
     
     /// Specifies an alternate text for images (only for type="image")
     @discardableResult
-    func alt(_ value: String) -> Self {
-        attribute("alt", value)
+    func alt(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("alt", value, condition)
     }
     
     /// Specifies whether an <input> element should have autocomplete enabled
     @discardableResult
-    func autocomplete(_ value: Bool = true, _ condition: Bool = true) -> Self {
-        autocomplete(value ? .on : .off, condition)
+    func autocomplete(_ value: Bool? = true, _ condition: Bool = true) -> Self {
+        autocomplete(value != nil ? (value! ? .on : .off) : nil, condition)
     }
     
     /// Specifies additional <input> autocomplete attributes
     /// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
     @discardableResult
-    func autocomplete(_ value: Attribute.Autocomplete, _ condition: Bool = true) -> Self {
-        attribute("autocomplete", value.rawValue, condition)
+    func autocomplete(_ value: Attribute.Autocomplete?, _ condition: Bool = true) -> Self {
+        attribute("autocomplete", value?.rawValue, condition)
     }
     
     /// Specifies that an <input> element should automatically get focus when the page loads
@@ -81,7 +81,8 @@ public extension Input {
     
     /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")
     @discardableResult
-    func checked(_ value: Bool = true) -> Self {
+    func checked(_ value: Bool? = true, _ condition: Bool = true) -> Self {
+        guard let value = value, condition else { return self }
         guard value else {
             deleteAttribute("checked")
             return self
@@ -91,8 +92,8 @@ public extension Input {
     
     /// Specifies that the text direction will be submitted
     @discardableResult
-    func dirname(_ value: String) -> Self {
-        attribute("dirname", value)
+    func dirname(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("dirname", value, condition)
     }
     
     /// Specifies that an <input> element should be disabled
@@ -103,26 +104,26 @@ public extension Input {
     
     /// Specifies the form the <input> element belongs to
     @discardableResult
-    func form(_ value: String) -> Self {
-        attribute("form", value)
+    func form(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("form", value, condition)
     }
     
     /// Specifies the URL of the file that will process the input control when the form is submitted (for type="submit" and type="image")
     @discardableResult
-    func formaction(_ value: String) -> Self {
-        attribute("formaction", value)
+    func formaction(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("formaction", value, condition)
     }
     
     /// Specifies how the form-data should be encoded when submitting it to the server (for type="submit" and type="image")
     @discardableResult
-    func formenctype(_ value: Enctype = .urlencoded) -> Self {
-        attribute("formenctype", value.rawValue)
+    func formenctype(_ value: Enctype? = .urlencoded, _ condition: Bool = true) -> Self {
+        attribute("formenctype", value?.rawValue, condition)
     }
     
     /// Defines the HTTP method for sending data to the action URL (for type="submit" and type="image")
     @discardableResult
-    func formmethod(_ value: Method = .get) -> Self {
-        attribute("formmethod", value.rawValue)
+    func formmethod(_ value: Method? = .get, _ condition: Bool = true) -> Self {
+        attribute("formmethod", value?.rawValue, condition)
     }
     
     /// Defines that form elements should not be validated when submitted
@@ -133,44 +134,44 @@ public extension Input {
     
     /// Specifies where to display the response that is received after submitting the form (for type="submit" and type="image")
     @discardableResult
-    func formtarget(_ value: TargetFrame) -> Self {
-        attribute("formtarget", value.rawValue)
+    func formtarget(_ value: TargetFrame?, _ condition: Bool = true) -> Self {
+        attribute("formtarget", value?.rawValue, condition)
     }
     
     /// Specifies the height of an <input> element (only for type="image")
     @discardableResult
-    func height(_ value: Double) -> Self {
-        attribute("height", String(value))
+    func height(_ value: Double?, _ condition: Bool = true) -> Self {
+        attribute("height", value != nil ? String(value!) : nil, condition)
     }
     
     /// Refers to a `<datalist>` element that contains pre-defined options for an `<input>` element
     @discardableResult
-    func list(_ value: String) -> Self {
-        attribute("list", value)
+    func list(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("list", value, condition)
     }
     
     /// Specifies the maximum value for an `<input>` element
     @discardableResult
-    func max(_ value: String) -> Self {
-        attribute("max", value)
+    func max(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("max", value, condition)
     }
     
     /// Specifies the maximum number of characters allowed in an `<input>` element
     @discardableResult
-    func maxlength(_ value: Int) -> Self {
-        attribute("maxlength", String(value))
+    func maxlength(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("maxlength", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies a minimum value for an `<input>` element
     @discardableResult
-    func min(_ value: String) -> Self {
-        attribute("min", value)
+    func min(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("min", value, condition)
     }
     
     /// Specifies the minimum number of characters required in an `<input>` element
     @discardableResult
-    func minlength(_ value: Int) -> Self {
-        attribute("minlength", String(value))
+    func minlength(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("minlength", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies that a user can enter more than one value in an `<input>` element
@@ -181,20 +182,20 @@ public extension Input {
     
     /// Specifies the name of an `<input>` element
     @discardableResult
-    func name(_ value: String) -> Self {
-        attribute("name", value)
+    func name(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("name", value, condition)
     }
     
     /// Specifies a regular expression that an `<input>` element's value is checked against
     @discardableResult
-    func pattern(_ value: String) -> Self {
-        attribute("pattern", value)
+    func pattern(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("pattern", value, condition)
     }
     
     /// Specifies a short hint that describes the expected value of an `<input>` element
     @discardableResult
-    func placeholder(_ value: String?) -> Self {
-        attribute("placeholder", value)
+    func placeholder(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("placeholder", value, condition)
     }
     
     /// Specifies that an input field is read-only
@@ -211,38 +212,38 @@ public extension Input {
     
     /// Specifies the width, in characters, of an `<input>` element
     @discardableResult
-    func size(_ value: Int) -> Self {
-        attribute("size", String(value))
+    func size(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("size", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies the URL of the image to use as a submit button (only for type="image")
     @discardableResult
-    func src(_ value: String) -> Self {
-        attribute("src", value)
+    func src(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("src", value, condition)
     }
     
     /// Specifies the interval between legal numbers in an input field
     @discardableResult
-    func step(_ value: Int) -> Self {
-        attribute("step", String(value))
+    func step(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("step", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies the type `<input>` element to display
     @discardableResult
-    func type(_ value: Type) -> Self {
-        attribute("type", value.rawValue)
+    func type(_ value: Type?, _ condition: Bool = true) -> Self {
+        attribute("type", value?.rawValue, condition)
     }
 
     /// Specifies the value of an `<input>` element
     @discardableResult
-    func value(_ value: String?) -> Self {
-        attribute("value", value)
+    func value(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("value", value, condition)
     }
     
     /// Specifies the width of an `<input>` element (only for type="image")
     @discardableResult
-    func width(_ value: Double) -> Self {
-        attribute("width", String(value))
+    func width(_ value: Double?, _ condition: Bool = true) -> Self {
+        attribute("width", value != nil ? String(value!) : nil, condition)
     }
 }
 
