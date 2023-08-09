@@ -33,62 +33,74 @@ public extension Textarea {
     }
 
     /// Specifies that a text area should automatically get focus when the page loads
+    @discardableResult
     func autofocus(_ condition: Bool = true) -> Self {
         flagAttribute("autofocus", nil, condition)
     }
     
     /// Specifies the visible width of a text area
-    func cols(_ value: Int) -> Self {
-        attribute("cols", String(value))
+    @discardableResult
+    func cols(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("cols", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies that the text direction of the textarea will be submitted
-    func dirname(_ value: String) -> Self {
-        attribute("dirname", value)
+    @discardableResult
+    func dirname(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("dirname", value, condition)
     }
     
     /// Specifies that a text area should be disabled
+    @discardableResult
     func disabled(_ condition: Bool = true) -> Self {
         flagAttribute("disabled", nil, condition)
     }
     
     /// Specifies which form the text area belongs to
-    func form(_ value: String) -> Self {
-        attribute("form", value)
+    @discardableResult
+    func form(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("form", value, condition)
     }
     
     /// Specifies the maximum number of characters allowed in the text area
-    func maxlength(_ value: Int) -> Self {
-        attribute("maxlength", String(value))
+    @discardableResult
+    func maxlength(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("maxlength", value != nil ? String(value!) : nil, condition)
     }
 
     /// Specifies a name for a text area
-    func name(_ value: String) -> Self {
-        attribute("name", value)
+    @discardableResult
+    func name(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("name", value, condition)
     }
     
     /// Specifies a short hint that describes the expected value of a text area
-    func placeholder(_ value: String?) -> Self {
-        attribute("placeholder", value)
+    @discardableResult
+    func placeholder(_ value: String?, _ condition: Bool = true) -> Self {
+        attribute("placeholder", value, condition)
     }
     
     /// Specifies that a text area should be read-only
+    @discardableResult
     func readonly(_ condition: Bool = true) -> Self {
         flagAttribute("readonly", nil, condition)
     }
     
     /// Specifies that a text area is required/must be filled out
+    @discardableResult
     func required(_ condition: Bool = true) -> Self {
         flagAttribute("required", nil, condition)
     }
     
     /// Specifies the visible width of a text area
-    func rows(_ value: Int) -> Self {
-        attribute("rows", String(value))
+    @discardableResult
+    func rows(_ value: Int?, _ condition: Bool = true) -> Self {
+        attribute("rows", value != nil ? String(value!) : nil, condition)
     }
     
     /// Specifies how the text in a text area is to be wrapped when submitted in a form
-    func wrap(_ value: Wrap) -> Self {
-        attribute("wrap", value.rawValue)
+    @discardableResult
+    func wrap(_ value: Wrap?, _ condition: Bool = true) -> Self {
+        attribute("wrap", value?.rawValue, condition)
     }
 }
