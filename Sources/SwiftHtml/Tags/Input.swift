@@ -20,29 +20,23 @@ open class Input: EmptyTag {
                             contents: String? = nil,
                             attributes: [Attribute]? = nil,
                             _ child: Tag? = nil) {
-        self.init(type: type,
+        self.init(type,
                   contents: contents,
                   attributes: attributes,
                   child != nil ? [child!] : [])
     }
     
-    public convenience init(type: Kind,
+    public convenience init(_ type: Kind,
                             contents: String? = nil,
                             attributes: [Attribute]? = nil,
                             @TagBuilder _ builder: () -> Tag) {
-        self.init(type: type,
+        self.init(type,
                   contents: contents,
                   attributes: attributes,
                   [builder()])
     }
     
-    public convenience init(type: Kind,
-                            _ contents: String) {
-        self.init(type: type,
-                  contents: contents)
-    }
-    
-    public init(type: Kind,
+    public init(_ type: Kind,
                 contents: String? = nil,
                 attributes: [Attribute]? = nil,
                 _ children: [Tag]? = nil) {
