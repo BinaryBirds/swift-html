@@ -13,11 +13,51 @@
 open class Input: EmptyTag {
     
     override open class var name: String { .init(describing: Input.self).lowercased() }
+    
+    let type: Kind
+    
+    public convenience init(_ type: Kind,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            _ child: Tag? = nil) {
+        self.init(type: type,
+                  contents: contents,
+                  attributes: attributes,
+                  child != nil ? [child!] : [])
+    }
+    
+    public convenience init(type: Kind,
+                            contents: String? = nil,
+                            attributes: [Attribute]? = nil,
+                            @TagBuilder _ builder: () -> Tag) {
+        self.init(type: type,
+                  contents: contents,
+                  attributes: attributes,
+                  [builder()])
+    }
+    
+    public convenience init(type: Kind,
+                            _ contents: String) {
+        self.init(type: type,
+                  contents: contents)
+    }
+    
+    public init(type: Kind,
+                contents: String? = nil,
+                attributes: [Attribute]? = nil,
+                _ children: [Tag]? = nil) {
+        self.type = type
+        super.init(contents: contents,
+                   attributes: attributes,
+                   children)
+        self.type(type)
+    }
 }
 
 public extension Input {
     
-    enum `Type`: String {
+    // Kind approximates Type which is a reserved word
+    enum Kind: String {
         case button
         case checkbox
         case color
@@ -230,7 +270,7 @@ public extension Input {
     
     /// Specifies the type `<input>` element to display
     @discardableResult
-    func type(_ value: Type?, _ condition: Bool = true) -> Self {
+    func type(_ value: Kind?, _ condition: Bool = true) -> Self {
         attribute("type", value?.rawValue, condition)
     }
 

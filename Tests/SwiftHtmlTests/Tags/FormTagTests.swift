@@ -28,8 +28,7 @@ final class FormTagTests: XCTestCase {
                 Section {
                     Label("Email address")
                         .for("email")
-                    Input()
-                        .type(.email)
+                    Input(.email)
                         .id("email")
                         .placeholder("Your email address")
                         .value("root@localhost.com")
@@ -37,14 +36,12 @@ final class FormTagTests: XCTestCase {
                 Section {
                     Label("Password")
                         .for("password")
-                    Input()
-                        .type(.password)
+                    Input(.password)
                         .id("password")
                         .placeholder("Your password")
                 }
                 Section {
-                    Input()
-                        .type(.submit)
+                    Input(.submit)
                         .value("Sign in")
                 }
             }
