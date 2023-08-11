@@ -16,34 +16,13 @@ open class Input: EmptyTag {
     
     let type: Kind
     
-    public convenience init(_ type: Kind,
-                            contents: String? = nil,
-                            attributes: [Attribute]? = nil,
-                            _ child: Tag? = nil) {
-        self.init(type,
-                  contents: contents,
-                  attributes: attributes,
-                  child != nil ? [child!] : [])
-    }
-    
-    public convenience init(_ type: Kind,
-                            contents: String? = nil,
-                            attributes: [Attribute]? = nil,
-                            @TagBuilder _ builder: () -> Tag) {
-        self.init(type,
-                  contents: contents,
-                  attributes: attributes,
-                  [builder()])
-    }
-    
     public init(_ type: Kind,
                 contents: String? = nil,
-                attributes: [Attribute]? = nil,
-                _ children: [Tag]? = nil) {
+                attributes: [Attribute]? = nil) {
         self.type = type
         super.init(contents: contents,
                    attributes: attributes,
-                   children)
+                   nil)
         self.type(type)
     }
 }
@@ -269,6 +248,8 @@ public extension Input {
     }
 
     /// Specifies the value of an `<input>` element
+    /// For "text", "password", and "hidden" - it defines the initial (default) value of the input field
+    /// For "checkbox", "radio", "image" - it defines the value associated with the input (this is also the value that is sent on submit)
     @discardableResult
     func value(_ value: String?, _ condition: Bool = true) -> Self {
         attribute("value", value, condition)
