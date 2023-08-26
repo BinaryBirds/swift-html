@@ -151,7 +151,7 @@ public extension Tag {
     /// Specifies one stylename for an element (refers to a style in a style sheet)
     @discardableResult
     func style(_ value: String?, _ condition: Bool = true) -> Self {
-        guard let value, !value.isEmpty else { return self }
+        guard let value = value, !value.isEmpty else { return self }
         return attribute("style", value, condition)
     }
 
