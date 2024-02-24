@@ -1,2 +1,2 @@
 test:
-	swift test --enable-test-discovery --parallel
+	swift test --parallel

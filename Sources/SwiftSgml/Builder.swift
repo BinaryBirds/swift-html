@@ -25,14 +25,6 @@ public enum Builder<T> {
     public static func buildBlock(_ components: T...) -> [T] {
         components
     }
-
-//    public static func buildBlock(_ components: T) -> [T] {
-//        [components]
-//    }
-    
-//    public static func buildBlock(_ components: [T]...) -> [T] {
-//        components.flatMap { $0 }
-//    }
     
     public static func buildEither(first component: T) -> T {
         component
@@ -43,26 +35,7 @@ public enum Builder<T> {
     }
 }
 
-extension [SwiftSgml.Element]: SwiftSgml.Element {
-
-    public var node: Node {
-        .group(map { $0.node })
-    }
-}
-
 extension Builder where T == Element {
-
-//    public static func buildBlock(_ components: T) -> [T] {
-//        [components]
-//    }
-
-//    public static func buildExpression(_ expression: [T]) -> T {
-//        Group(expression)
-//    }
-    
-//    public static func buildExpression(_ expression: Void) -> T {
-//        Group([])
-//    }
     
     public static func buildBlock(_ components: T...) -> T {
         Group(components)

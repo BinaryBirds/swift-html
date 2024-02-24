@@ -18,7 +18,9 @@ extension Element {
     }
 }
 
+extension [SwiftSgml.Element]: SwiftSgml.Element {
 
-
-
-
+    public var node: Node {
+        .group(map { $0.node })
+    }
+}
