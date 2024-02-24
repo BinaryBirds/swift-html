@@ -26,9 +26,9 @@ let package = Package(
                 .target(name: "SwiftSgml")
             ]
         ),
-        //        .target(name: "SwiftRss", dependencies: [
-        //            .target(name: "SwiftSgml")
-        //        ]),
+        .target(name: "SwiftRss", dependencies: [
+            .target(name: "SwiftSgml")
+        ]),
         //        .target(name: "SwiftHtml", dependencies: [
         //            .target(name: "SwiftSgml")
         //        ]),
@@ -48,9 +48,9 @@ let package = Package(
                 .target(name: "SwiftSitemap")
             ]
         ),
-        //        .testTarget(name: "SwiftRssTests", dependencies: [
-        //            .target(name: "SwiftRss"),
-        //        ]),
+        .testTarget(name: "SwiftRssTests", dependencies: [
+            .target(name: "SwiftRss"),
+        ]),
         //        .testTarget(name: "SwiftHtmlTests", dependencies: [
         //            .target(name: "SwiftHtml"),
         //        ]),
