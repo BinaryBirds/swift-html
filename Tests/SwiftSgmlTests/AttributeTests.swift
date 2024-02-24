@@ -10,6 +10,60 @@ import XCTest
 
 final class AttributeTests: XCTestCase {
 
+    func testCustomAttribute() {
+        let document = Document(.xml) {
+            Root()
+                .add(attribute: Custom(key: "foo", value: "bar"))
+        }
+
+        let expectation = """
+        <?xml version="1.0" encoding="utf-8" ?>
+        <root foo="bar"></root>
+        """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testCustomNilAttribute() {
+        let document = Document(.xml) {
+            Root()
+                .add(attribute: Custom(key: "foo"))
+        }
+
+        let expectation = """
+        <?xml version="1.0" encoding="utf-8" ?>
+        <root foo></root>
+        """
+        XCTAssertDocument(document, expectation)
+    }
+    
+    func testCustomEmptyAttribute() {
+        let document = Document(.xml) {
+            Root()
+                .add(attribute: Custom(key: "foo", value: ""))
+        }
+
+        let expectation = """
+        <?xml version="1.0" encoding="utf-8" ?>
+        <root foo=""></root>
+        """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testFlagAttribute() {
+        let document = Document() {
+            Root {
+                Custom(key: "foo", value: nil)
+            }
+        }
+
+        let expectation = """
+        <root foo></root>
+        """
+        XCTAssertDocument(document, expectation)
+    }
+    
+    // MARK: -
+    
 //    func testSetAttributes() {
 //
 //        let doc = Document {
