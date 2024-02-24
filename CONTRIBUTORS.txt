@@ -1,9 +1,13 @@
 ### Contributors
 
-- Ferenc Viasz-Kádi <ferenc@binarybirds.com>
-- Gábor Lengyel <gurrka@gmail.com>
-- László Kovács <atomantinator@gmail.com>
+- AaronGe88inTHU <37819541+AaronGe88inTHU@users.noreply.github.com>
+- Heberti Almeida <hebertialmeida@gmail.com>
+- Melvin Gundlach <mail@melvin-gundlach.de>
+- Michael J. Welch, Ph.D <mjwelchphd@ekgreaders.com>
 - Tibor Bödecs <mail.tib@gmail.com>
+- atacan <atacandur@icloud.com>
+- bgisme <55024704+bgisme@users.noreply.github.com>
+- mynona GitHub <63903989+mynonaGithub@users.noreply.github.com>
 
 **Updating this list**
 

@@ -11,8 +11,8 @@ let package = Package(
         .visionOS(.v1),
     ],
     products: [
-        .library(name: "SwiftSgml", targets: ["SwiftSgml"])
-        //        .library(name: "SwiftSitemap", targets: ["SwiftSitemap"]),
+        .library(name: "SwiftSgml", targets: ["SwiftSgml"]),
+        .library(name: "SwiftSitemap", targets: ["SwiftSitemap"]),
         //        .library(name: "SwiftRss", targets: ["SwiftRss"]),
         //        .library(name: "SwiftHtml", targets: ["SwiftHtml"]),
         //        .library(name: "SwiftSvg", targets: ["SwiftSvg"]),
