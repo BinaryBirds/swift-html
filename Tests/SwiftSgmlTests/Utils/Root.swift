@@ -11,13 +11,21 @@ protocol RootChildElement: Element {}
 
 extension Branch: RootChildElement {}
 
-struct Root: ParentElement, MutableAttributes {
+protocol RootAttribute: Attribute {}
 
-    var children: [any Element]
-    var attributes: [any Attribute]
+extension Custom: RootAttribute {}
+
+struct Root: Element, Mutable {
+    
+    var children: [any RootChildElement]
+    var attributes: [any RootAttribute]
+    
+    var node: Node {
+        .standard(.init(name: name, attributes: attributes), children.map { $0.node })
+    }
     
     init(
-        @Builder<Attribute> attributes b2: () -> [any Attribute] = { [] },
+        @Builder<RootAttribute> attributes b2: () -> [RootAttribute] = { [] },
         @Builder<RootChildElement> elements b1: () -> [RootChildElement] = { [] }
     ) {
         self.children = b1()
@@ -30,6 +38,8 @@ struct Root: ParentElement, MutableAttributes {
         self.init(attributes: {}, elements: b1)
     }
 
+    // MARK: -
+
     func add(child: RootChildElement) -> Self {
         mutate { $0.children.append(child) }
     }
@@ -37,7 +47,14 @@ struct Root: ParentElement, MutableAttributes {
     func removeChildren() -> Self {
         mutate { $0.children.removeAll() }
     }
+    
+    // MARK: -
+
+    func add(attribute: RootAttribute) -> Self {
+        mutate { $0.attributes.append(attribute) }
+    }
+
+    func removeAttributes() -> Self {
+        mutate { $0.attributes.removeAll() }
+    }
 }
-
-
-

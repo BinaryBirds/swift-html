@@ -8,7 +8,7 @@
 public protocol CustomAttributes {
     associatedtype A: Attribute
     
-    var attributes: [A] { get set }
+    var attributes: A { get set }
 }
 
 public protocol Attributes {
