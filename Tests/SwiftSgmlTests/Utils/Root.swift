@@ -20,7 +20,7 @@ struct Root: Element, Mutable {
     var children: [any RootChildElement]
     var attributes: [any RootAttribute]
     
-    var node: Node? {
+    var node: Node {
         .standard(.init(name: name, attributes: attributes), children.compactMap { $0.node })
     }
     
@@ -35,7 +35,7 @@ struct Root: Element, Mutable {
     init(
         @Builder<RootChildElement> _ b1: () -> [RootChildElement] = { [] }
     ) {
-        self.init(attributes: {}, elements: b1)
+        self.init(attributes: { }, elements: b1)
     }
 
     // MARK: -

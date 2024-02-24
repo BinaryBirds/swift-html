@@ -8,6 +8,7 @@
 import XCTest
 import SwiftSgml
 
+
 final class TagTests: XCTestCase {
 
     func testBasicStructure() {

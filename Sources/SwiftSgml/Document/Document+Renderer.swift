@@ -36,9 +36,7 @@ public struct DocumentRenderer {
         var result: [String] = []
 
         result += [renderDocumentType(document.type)]
-        if let node = document.root.node {
-            result += render(node)
-        }
+        result += render(document.root.node)
         
         return result.joined(separator: prettyPrint ? "\n" : "")
     }
@@ -62,14 +60,16 @@ private extension DocumentRenderer {
     func render(_ node: Node) -> [String] {
         var result: [String] = []
         switch node {
+        case .group(let children):
+            for child in children {
+                result += render(child)
+            }
         case .standard(let node, let children):
             result += ["<\(node.name)\(attr(node.attributes))>"]
             for child in children {
                 result += render(child)
             }
             result += ["</\(node.name)>"]
-            
-            
         case .short(let node):
             result += ["<\(node.name)\(attr(node.attributes))>"]
         case .text(let node):

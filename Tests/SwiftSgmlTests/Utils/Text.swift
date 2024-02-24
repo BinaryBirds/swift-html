@@ -15,5 +15,5 @@ struct Text: Element {
         self.value = value
     }
     
-    var node: Node? { .text(.init(value: value)) }
+    var node: Node { .text(.init(value: value)) }
 }

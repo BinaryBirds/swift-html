@@ -50,7 +50,7 @@ final class AttributeTests: XCTestCase {
     }
 
     func testFlagAttribute() {
-        let document = Document() {
+        let document = Document {
             Root {
                 Custom(key: "foo", value: nil)
             }

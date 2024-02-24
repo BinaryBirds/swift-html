@@ -10,4 +10,5 @@ public enum Node: Sendable {
     case short(ShortNode)
     case text(TextNode)
     case comment(CommentNode)
+    case group([Node])
 }
