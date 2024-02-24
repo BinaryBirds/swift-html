@@ -8,9 +8,9 @@
 import SwiftSgml
 
 public struct Priority: SimpleElement {
-    
+
     public var value: String
-    
+
     public init(_ value: Float) {
         self.value = String(value)
     }

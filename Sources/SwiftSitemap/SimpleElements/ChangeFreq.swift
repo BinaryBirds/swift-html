@@ -18,9 +18,9 @@ public struct ChangeFreq: SimpleElement {
         case yearly
         case never
     }
-    
+
     public var value: String
-    
+
     public init(_ value: Frequency) {
         self.value = value.rawValue
     }

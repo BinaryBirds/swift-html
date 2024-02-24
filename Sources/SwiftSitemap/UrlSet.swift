@@ -17,7 +17,10 @@ public struct UrlSet: Element, Attributes {
     public var attributes: [Attribute]
 
     public var node: Node {
-        .standard(.init(name: name, attributes: attributes), children.compactMap { $0.node })
+        .standard(
+            .init(name: name, attributes: attributes),
+            children.compactMap { $0.node }
+        )
     }
 
     public init(

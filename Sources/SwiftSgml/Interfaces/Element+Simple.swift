@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
@@ -10,7 +10,7 @@ public protocol SimpleElement: Element {
 }
 
 extension SimpleElement {
-    
+
     public var node: Node {
         .standard(.init(name: name), [.text(.init(value: value))])
     }
@@ -19,7 +19,10 @@ extension SimpleElement {
 extension SimpleElement where Self: Attributes {
 
     public var node: Node {
-        .standard(.init(name: name, attributes: attributes), [.text(.init(value: value))])
+        .standard(
+            .init(name: name, attributes: attributes),
+            [.text(.init(value: value))]
+        )
     }
 }
 

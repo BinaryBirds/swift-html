@@ -10,7 +10,7 @@ import SwiftSgml
 public struct Loc: SimpleElement {
 
     public var value: String
-    
+
     public init(_ value: String) {
         self.value = value
     }
