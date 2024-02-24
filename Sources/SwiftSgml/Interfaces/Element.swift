@@ -5,9 +5,10 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public protocol Element {
+public protocol Element: Sendable {
+
     var name: String { get }
-    var node: Node { get }
+    var node: Node? { get }
 }
 
 extension Element {

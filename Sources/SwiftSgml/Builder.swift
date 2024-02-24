@@ -11,33 +11,42 @@ public enum Builder<T> {
     public static func buildBlock(_ components: T...) -> [T] {
         components
     }
+    
+    public static func buildEither(first component: T) -> T {
+        component
+    }
+
+    public static func buildEither(second component: T) -> T {
+        component
+    }
 }
 
-//@resultBuilder
-//public enum TagBuilder {
-//
-//    public static func buildBlock(_ components: [Tag]...) -> Tag {
-//        GroupTag(components.flatMap { $0 })
-//    }
-//
-//    public static func buildBlock(_ components: Tag...) -> Tag {
-//        GroupTag(components)
-//    }
-//
-//    public static func buildOptional(_ component: Tag?) -> Tag {
-//        component ?? GroupTag()
-//    }
-//
-//    public static func buildEither(first component: Tag) -> Tag {
-//        component
-//    }
-//
-//    public static func buildEither(second component: Tag) -> Tag {
-//        component
-//    }
-//
-//    public static func buildArray(_ components: [Tag]) -> Tag {
-//        GroupTag(components)
-//    }
-//}
-//
+private struct Hidden: Element {
+
+    var node: Node? { nil }
+    var children: [any Element]
+    
+    init(children: [any Element] = []) {
+        self.children = children
+    }
+}
+
+extension Builder where T == Element {
+
+    public static func buildBlock(_ components: [Element]...) -> Element {
+        Hidden(children: components.flatMap { $0 })
+    }
+    
+    public static func buildBlock(_ components: Element...) -> Element {
+        Hidden(children: components)
+    }
+    
+    public static func buildOptional(_ component: Element?) -> Element {
+        component ?? Hidden()
+    }
+
+    public static func buildArray(_ components: [Element]) -> Element {
+        Hidden(children: components)
+    }
+    
+}

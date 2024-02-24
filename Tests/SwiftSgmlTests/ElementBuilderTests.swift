@@ -14,10 +14,10 @@ final class TagBuilderTests: XCTestCase {
         let condition: Bool = false
         let document = Document {
             Root {
-//                if condition {
-//                    Leaf("a")
-//                }
                 Branch {
+                    if condition {
+                        Leaf("a")
+                    }
                     Leaf("b")
                 }
             }

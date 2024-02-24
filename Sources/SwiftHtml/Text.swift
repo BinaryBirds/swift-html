@@ -1,15 +1,17 @@
 //
-//  Text.swift
-//  SwiftHtml
+//  File.swift
+//  
 //
-//  Created by Tibor Bodecs on 2021. 11. 29..
+//  Created by Tibor Bodecs on 24/02/2024.
 //
 
-/// a plain text node to write simple textual content into the html tree
-open class Text: GroupTag {
+public struct Text: Element {
     
-    public init(_ contents: String) {
-        super.init()
-        setContents(contents)
+    let value: String
+
+    public init(_ value: String) {
+        self.value = value
     }
+    
+    public var node: Node { .text(.init(value: value)) }
 }

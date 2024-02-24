@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public struct StandardNode {
+public struct StandardNode: Sendable {
     let name: String
     let attributes: [any Attribute]
     

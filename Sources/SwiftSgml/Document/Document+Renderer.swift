@@ -5,8 +5,6 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-
-
 public struct DocumentRenderer {
     
     public struct Options: OptionSet, Sendable {
@@ -38,7 +36,9 @@ public struct DocumentRenderer {
         var result: [String] = []
 
         result += [renderDocumentType(document.type)]
-        result += render(document.root.node)
+        if let node = document.root.node {
+            result += render(node)
+        }
         
         return result.joined(separator: prettyPrint ? "\n" : "")
     }

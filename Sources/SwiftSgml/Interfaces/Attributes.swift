@@ -5,13 +5,7 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public protocol CustomAttributes {
-    associatedtype A: Attribute
-    
-    var attributes: A { get set }
-}
-
-public protocol Attributes {
+public protocol Attributes: Sendable {
 
     var attributes: [any Attribute] { get set }
 }

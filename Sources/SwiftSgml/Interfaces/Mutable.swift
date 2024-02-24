@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public protocol Mutable {
+public protocol Mutable: Sendable {
     func mutate(_ modify: (inout Self) -> Void) -> Self
 }
 

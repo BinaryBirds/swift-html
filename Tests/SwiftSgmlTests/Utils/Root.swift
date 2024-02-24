@@ -20,8 +20,8 @@ struct Root: Element, Mutable {
     var children: [any RootChildElement]
     var attributes: [any RootAttribute]
     
-    var node: Node {
-        .standard(.init(name: name, attributes: attributes), children.map { $0.node })
+    var node: Node? {
+        .standard(.init(name: name, attributes: attributes), children.compactMap { $0.node })
     }
     
     init(

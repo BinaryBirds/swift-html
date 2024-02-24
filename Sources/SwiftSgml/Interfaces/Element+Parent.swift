@@ -12,15 +12,15 @@ public protocol ParentElement: Element {
 
 extension ParentElement {
 
-    public var node: Node {
-        .standard(.init(name: name), children.map { $0.node })
+    public var node: Node? {
+        .standard(.init(name: name), children.compactMap { $0.node })
     }
 }
 
 extension ParentElement where Self: Attributes {
     
-    public var node: Node {
-        .standard(.init(name: name, attributes: attributes), children.map { $0.node })
+    public var node: Node? {
+        .standard(.init(name: name, attributes: attributes), children.compactMap { $0.node })
     }
 }
 

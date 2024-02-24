@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public struct CommentNode {
+public struct CommentNode: Sendable {
     let value: String
     
     public init(
