@@ -35,11 +35,14 @@ final class TagTests: XCTestCase {
     
     func testAddChildrenStructure() {
         let doc = Document {
-            Root()
-                .add(child: Branch())
-                .add(child: Leaf("asdf")) // TODO: this shouldn't be possible
-//                .add(child: Leaf("foo"))
-//                .add(child: Leaf("bar"))
+            Root {
+                Branch()
+                    .add(child: Leaf("foo"))
+                    .add(child: Leaf("bar"))
+            }
+//                .add(child: Branch())
+//                .add(child: Leaf("asdf")) // TODO: this shouldn't be possible
+                
         }
 
         let expectation = """

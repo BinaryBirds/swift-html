@@ -5,24 +5,19 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public protocol StandardElement: Element, Mutable {
-    
-//    associatedtype Child = Ele
+public protocol StandardElement: Element {
     
     var children: [any Element] { get set }
-    
-    func add<T: Element>(child: T) -> Self
-    func removeChildren() -> Self
 }
 
 extension StandardElement {
-    
+
     public var node: Node {
         .standard(.init(name: name), children.map { $0.node })
     }
 }
 
-public extension StandardElement {
+public extension StandardElement where Self: Mutable {
     
     mutating func removeChildren() {
         children.removeAll()

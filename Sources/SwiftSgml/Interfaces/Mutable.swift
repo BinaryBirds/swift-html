@@ -8,7 +8,7 @@
 public protocol Mutable {
     func mutate(_ modify: (inout Self) -> Void) -> Self
 }
-    
+
 extension Mutable {
 
     public func mutate(_ modify: (inout Self) -> Void) -> Self {
