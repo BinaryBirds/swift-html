@@ -1,5 +1,5 @@
 //
-//  Priority.swift
+//  Loc.swift
 //  SwiftSitemap
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
@@ -7,11 +7,11 @@
 
 import SwiftSgml
 
-public struct Priority: RawElement {
-    
+public struct Loc: SimpleElement {
+
     public var value: String
     
-    public init(value: Float) {
-        self.value = String(value)
+    public init(_ value: String) {
+        self.value = value
     }
 }

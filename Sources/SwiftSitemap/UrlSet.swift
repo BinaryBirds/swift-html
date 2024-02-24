@@ -1,19 +1,29 @@
 //
-//  UrlSet.swift
+//  UrlSetSet.swift
 //  SwiftSitemap
 //
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-//open class UrlSet: Tag {
-//
-//    public init(@TagBuilder _ builder: () -> Tag) {
-//        super.init([builder()])
-//        setAttributes([
-//            .init(
-//                key: "xmlns",
-//                value: "http://www.sitemaps.org/schemas/sitemap/0.9"
-//            )
-//        ])
-//    }
-//}
+import SwiftSgml
+
+public protocol UrlSetChildElement: Element {}
+
+extension Url: UrlSetChildElement {}
+
+public struct UrlSet: Element, Attributes {
+
+    public var children: [UrlSetChildElement]
+    public var attributes: [Attribute]
+
+    public var node: Node {
+        .standard(.init(name: name, attributes: attributes), children.compactMap { $0.node })
+    }
+
+    public init(
+        @Builder<UrlSetChildElement> elements b1: () -> [UrlSetChildElement]
+    ) {
+        self.children = b1()
+        self.attributes = [Xmlns()]
+    }
+}

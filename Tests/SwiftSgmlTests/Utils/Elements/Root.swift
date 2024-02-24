@@ -18,8 +18,8 @@ extension Flag: RootAttribute {}
 
 struct Root: Element, Mutable {
 
-    var children: [any RootChildElement]
-    var attributes: [any RootAttribute]
+    var children: [RootChildElement]
+    var attributes: [RootAttribute]
 
     var node: Node {
         .standard(
