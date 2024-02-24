@@ -14,6 +14,5 @@
 /// - authorship information
 /// **Note:** You can have several` <header>` elements in one HTML document. However,` <header>` cannot be placed within a` <footer>`,` <address>` or another` <header>` element.
 open class Header: Tag {
-    
-}
 
+}

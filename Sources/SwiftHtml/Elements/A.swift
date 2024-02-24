@@ -18,9 +18,9 @@ open class A: Tag {
 
 }
 
-public extension A {
-    
-    enum Rel: String {
+extension A {
+
+    public enum Rel: String {
         /// Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)
         case alternate
         /// Provides a link to the author of the document
@@ -49,65 +49,65 @@ public extension A {
         /// A tag (keyword) for the current document
         case tag
     }
-    
+
     /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-    func download(_ value: String? = nil) -> Self {
+    public func download(_ value: String? = nil) -> Self {
         flagAttribute("download", value)
     }
-    
+
     /// Specifies the URL of the page the link goes to
-    func href(_ value: String) -> Self {
+    public func href(_ value: String) -> Self {
         attribute("href", value)
     }
-    
+
     /// Specifies the language of the linked document
-    func hreflang(_ value: String) -> Self {
+    public func hreflang(_ value: String) -> Self {
         attribute("hreflang", value)
     }
-    
+
     /// Specifies what media/device the linked document is optimized for
-    func media(_ value: String) -> Self {
+    public func media(_ value: String) -> Self {
         attribute("media", value)
     }
-    
+
     /// Specifies what media/device the linked document is optimized for
     ///
     /// If multiple queries were provided they're going to be concatenated with an `and` operand
-    func media(_ queries: MediaQuery...) -> Self {
-        return media(queries)
+    public func media(_ queries: MediaQuery...) -> Self {
+        media(queries)
     }
-    
+
     /// Specifies what media/device the linked document is optimized for
     ///
     /// If multiple queries were provided they're going to be concatenated with an `and` operand
-    func media(_ queries: [MediaQuery]) -> Self {
-        return media(queries.map(\.value).joined(separator: " and "))
+    public func media(_ queries: [MediaQuery]) -> Self {
+        media(queries.map(\.value).joined(separator: " and "))
     }
-    
+
     /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
     ///
     /// Typically used for tracking.
-    func ping(_ value: [String]) -> Self {
+    public func ping(_ value: [String]) -> Self {
         attribute("ping", value.joined(separator: " "))
     }
-    
+
     /// Specifies which referrer information to send with the link
-    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         attribute("referrerpolicy", value.rawValue)
     }
-    
+
     /// Specifies the relationship between the current document and the linked document
-    func rel(_ value: Rel) -> Self {
+    public func rel(_ value: Rel) -> Self {
         attribute("rel", value.rawValue)
     }
 
     /// Specifies where to open the linked document
-    func target(_ value: TargetFrame, _ condition: Bool = true) -> Self {
+    public func target(_ value: TargetFrame, _ condition: Bool = true) -> Self {
         attribute("target", value.rawValue, condition)
     }
-    
+
     /// The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document.
-    func type(_ value: String) -> Self {
+    public func type(_ value: String) -> Self {
         attribute("type", value)
     }
 }

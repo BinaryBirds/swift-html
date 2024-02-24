@@ -5,9 +5,9 @@
 //  Created by Tibor Bodecs on 2021. 07. 19..
 //
 
-public extension Node {
+extension Node {
 
-    static func article() -> Node {
+    public static func article() -> Node {
         Node(type: .standard, name: "article")
     }
 }
@@ -27,4 +27,3 @@ public extension Node {
 open class Article: Tag {
 
 }
-

@@ -14,10 +14,10 @@ open class Html: Tag {
 
 }
 
-public extension Html {
-    
+extension Html {
+
     /// Specifies the XML namespace attribute (If you need your content to conform to XHTML)
-    func xmlns() -> Self {
+    public func xmlns() -> Self {
         attribute("xmlns", "http://www.w3.org/1999/xhtml")
     }
 }

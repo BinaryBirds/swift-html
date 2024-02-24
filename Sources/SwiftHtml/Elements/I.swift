@@ -17,5 +17,5 @@
 /// - `<cite>` (the title of a work)
 /// - `<dfn>` (a definition term)
 open class I: Tag {
-    
+
 }

@@ -27,7 +27,7 @@ public enum TargetFrame {
     case top
     /// Opens the linked document in the named iframe
     case frame(String)
-    
+
     var rawValue: String {
         switch self {
         case .blank:

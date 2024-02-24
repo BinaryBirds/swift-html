@@ -7,5 +7,4 @@
 
 open class LastMod: Tag {
 
-
 }

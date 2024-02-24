@@ -9,9 +9,9 @@ open class Guid: Tag {
 
 }
 
-public extension Guid {
-    
-    func isPermalink(_ value: Bool = true) -> Self {
+extension Guid {
+
+    public func isPermalink(_ value: Bool = true) -> Self {
         attribute("isPermalink", String(value))
     }
 }

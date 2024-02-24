@@ -17,7 +17,7 @@ open class Comment: Tag {
     open override class func createNode() -> Node {
         Node(type: .comment)
     }
-    
+
     public init(_ contents: String) {
         super.init()
         setContents(contents)

@@ -20,12 +20,10 @@ open class Map: Tag {
     }
 }
 
-public extension Map {
-    
+extension Map {
+
     /// Specifies the name of an <input> element
-    func name(_ value: String) -> Self {
+    public func name(_ value: String) -> Self {
         attribute("name", value)
     }
 }
-
-

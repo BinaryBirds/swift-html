@@ -18,9 +18,9 @@ open class Meta: EmptyTag {
 
 }
 
-public extension Meta {
-    
-    enum Name: String {
+extension Meta {
+
+    public enum Name: String {
         /// Specifies the name of the Web application that the page represents
         case applicationName = "application-name"
         /// Specifies the name of the author of the document.
@@ -41,10 +41,11 @@ public extension Meta {
         case themeColor = "theme-color"
         case appleMobileWebAppTitle = "apple-mobile-web-app-title"
         case appleMobileWebAppCapable = "apple-mobile-web-app-capable"
-        case appleMobileWebAppStatusBarStyle = "apple-mobile-web-app-status-bar-style"
+        case appleMobileWebAppStatusBarStyle =
+            "apple-mobile-web-app-status-bar-style"
     }
-    
-    enum HttpEquiv: String {
+
+    public enum HttpEquiv: String {
         /// Specifies a content policy for the document.
         case contentSecurityPolicy = "content-security-policy"
         /// Specifies the character encoding for the document.
@@ -56,46 +57,46 @@ public extension Meta {
     }
 
     /// Specifies the character encoding for the HTML document
-    func charset(_ value: String) -> Self {
+    public func charset(_ value: String) -> Self {
         attribute("charset", value)
     }
-    
+
     /// Specifies the value associated with the http-equiv or name attribute
-    func content(_ value: String) -> Self {
+    public func content(_ value: String) -> Self {
         attribute("content", value)
     }
-    
+
     /// Provides an HTTP header for the information/value of the content attribute
-    func httpEquiv(_ value: HttpEquiv) -> Self {
+    public func httpEquiv(_ value: HttpEquiv) -> Self {
         attribute("http-equiv", value.rawValue)
     }
-    
+
     /// set a custom name for the given meta tag
-    func name(_ value: String) -> Self {
+    public func name(_ value: String) -> Self {
         attribute("name", value)
     }
-    
+
     /// Specifies a name for the metadata
-    func name(_ value: Name) -> Self {
+    public func name(_ value: Name) -> Self {
         name(value.rawValue)
     }
-    
+
     /// Specifies what media/device the linked document is optimized for
-    func media(_ value: String) -> Self {
+    public func media(_ value: String) -> Self {
         attribute("media", value)
-    }
-    
-    /// Specifies what media/device the linked document is optimized for
-    ///
-    /// If multiple queries were provided they're going to be concatenated with an `and` operand
-    func media(_ queries: MediaQuery...) -> Self {
-        return media(queries)
     }
 
     /// Specifies what media/device the linked document is optimized for
     ///
     /// If multiple queries were provided they're going to be concatenated with an `and` operand
-    func media(_ queries: [MediaQuery]) -> Self {
-        return media(queries.map(\.value).joined(separator: " and "))
+    public func media(_ queries: MediaQuery...) -> Self {
+        media(queries)
+    }
+
+    /// Specifies what media/device the linked document is optimized for
+    ///
+    /// If multiple queries were provided they're going to be concatenated with an `and` operand
+    public func media(_ queries: [MediaQuery]) -> Self {
+        media(queries.map(\.value).joined(separator: " and "))
     }
 }

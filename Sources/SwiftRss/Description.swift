@@ -6,7 +6,7 @@
 //
 
 open class Description: Tag {
-    
+
     public init(_ contents: String) {
         super.init()
         setContents("<![CDATA[" + contents + "]]>")

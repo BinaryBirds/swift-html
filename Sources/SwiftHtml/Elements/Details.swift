@@ -16,11 +16,10 @@ open class Details: Tag {
 
 }
 
-public extension Details {
-    
+extension Details {
+
     /// Specifies that the details should be visible (open) to the user
-    func open(_ condition: Bool = true) -> Self {
+    public func open(_ condition: Bool = true) -> Self {
         flagAttribute("open", nil, condition)
     }
 }
-

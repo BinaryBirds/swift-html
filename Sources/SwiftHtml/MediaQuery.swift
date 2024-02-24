@@ -7,7 +7,7 @@
 
 /// represents a CSS media query
 public struct MediaQuery {
-    
+
     /// device orientation
     public enum Orientation: String {
         /// portrait orientation
@@ -15,7 +15,7 @@ public struct MediaQuery {
         /// landscape orientation
         case landscape
     }
-    
+
     /// device color scheme
     public enum ColorScheme: String {
         /// light mode
@@ -26,36 +26,36 @@ public struct MediaQuery {
 
     /// raw representation of the media query
     var value: String
-        
+
 }
 
-public extension MediaQuery {
+extension MediaQuery {
 
     /// screen
-    static let screen = MediaQuery(value: "screen")
-    
+    public static let screen = MediaQuery(value: "screen")
+
     /// device width in pixels
-    static func deviceWidth(px: Int) -> MediaQuery {
+    public static func deviceWidth(px: Int) -> MediaQuery {
         .init(value: "(device-width: \(px)px)")
     }
-    
+
     /// device height in pixels
-    static func deviceHeight(px: Int) -> MediaQuery {
+    public static func deviceHeight(px: Int) -> MediaQuery {
         .init(value: "(device-height: \(px)px)")
     }
-    
+
     /// device pixel ratio with webkit prefix
-    static func webkitDevicePixelRatio(_ value: Int) -> MediaQuery {
+    public static func webkitDevicePixelRatio(_ value: Int) -> MediaQuery {
         .init(value: "(-webkit-device-pixel-ratio: \(value))")
     }
-    
+
     /// device orientation
-    static func orientation(_ value: Orientation) -> MediaQuery {
+    public static func orientation(_ value: Orientation) -> MediaQuery {
         .init(value: "(orientation: \(value.rawValue))")
     }
-    
+
     /// preferred color scheme
-    static func prefersColorScheme(_ value: ColorScheme) -> MediaQuery {
+    public static func prefersColorScheme(_ value: ColorScheme) -> MediaQuery {
         .init(value: "(prefers-color-scheme: \(value.rawValue))")
     }
 }

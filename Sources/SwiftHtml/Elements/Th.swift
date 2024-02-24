@@ -11,17 +11,17 @@
 ///
 /// - Header cells - contains header information (created with the `<th>` element)
 /// - Data cells - contains data (created with the `<td>` element)
-/// 
+///
 /// The text in `<th>` elements are bold and centered by default.
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
 open class Th: Tag {
-    
+
 }
 
-public extension Th {
-    
-    enum Scope: String {
+extension Th {
+
+    public enum Scope: String {
         /// Specifies that the cell is a header for a column
         case col
         /// Specifies that the cell is a header for a row
@@ -31,29 +31,29 @@ public extension Th {
         /// Specifies that the cell is a header for a group of rows
         case rowgroup
     }
-    
+
     /// Specifies an abbreviated version of the content in a header cell
-    func abbr(_ value: String) -> Self {
+    public func abbr(_ value: String) -> Self {
         attribute("abbr", value)
     }
-    
+
     /// Specifies the number of columns a header cell should span
-    func colspan(_ value: Int) -> Self {
+    public func colspan(_ value: Int) -> Self {
         attribute("colspan", String(value))
     }
-    
+
     /// Specifies one or more header cells a cell is related to
-    func headers(_ value: String) -> Self {
+    public func headers(_ value: String) -> Self {
         attribute("headers", value)
     }
-    
+
     /// Specifies the number of rows a header cell should span
-    func rowspan(_ value: Int) -> Self {
+    public func rowspan(_ value: Int) -> Self {
         attribute("rowspan", String(value))
     }
-    
+
     /// Specifies one or more header cells a cell is related to
-    func scope(_ value: Scope) -> Self {
+    public func scope(_ value: Scope) -> Self {
         attribute("scope", value.rawValue)
     }
 }

@@ -22,12 +22,12 @@
 ///     Opera    | YES | YES  | YES
 ///      *From Edge 79
 open class Audio: Tag {
-    
+
 }
 
-public extension Audio {
-    
-    enum Preload: String {
+extension Audio {
+
+    public enum Preload: String {
         /// The author thinks that the browser should load the entire audio file when the page loads
         case auto
         /// The author thinks that the browser should load only metadata when the page loads
@@ -35,35 +35,34 @@ public extension Audio {
         /// The author thinks that the browser should NOT load the audio file when the page loads
         case none
     }
-    
+
     /// Specifies that the audio will start playing as soon as it is ready
-    func autoplay(_ condition: Bool = true) -> Self {
+    public func autoplay(_ condition: Bool = true) -> Self {
         flagAttribute("autoplay", nil, condition)
     }
-    
+
     /// Specifies that audio controls should be displayed (such as a play/pause button etc)
-    func controls(_ condition: Bool = true) -> Self {
+    public func controls(_ condition: Bool = true) -> Self {
         flagAttribute("controls", nil, condition)
     }
-    
+
     /// Specifies that the audio will start over again, every time it is finished
-    func loop(_ condition: Bool = true) -> Self {
+    public func loop(_ condition: Bool = true) -> Self {
         flagAttribute("loop", nil, condition)
     }
-    
+
     /// Specifies that the audio output should be muted
-    func muted(_ condition: Bool = true) -> Self {
+    public func muted(_ condition: Bool = true) -> Self {
         flagAttribute("muted", nil, condition)
     }
-    
+
     /// Specifies if and how the author thinks the audio should be loaded when the page loads
-    func preload(_ value: Preload = .auto) -> Self {
+    public func preload(_ value: Preload = .auto) -> Self {
         attribute("preload", value.rawValue)
     }
-    
+
     /// Specifies the URL of the audio file
-    func src(_ value: String) -> Self {
+    public func src(_ value: String) -> Self {
         attribute("src", value)
     }
 }
-

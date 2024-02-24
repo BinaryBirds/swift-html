@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftHtml
 
 final class LabelTagTests: XCTestCase {
@@ -15,11 +16,14 @@ final class LabelTagTests: XCTestCase {
             Label("foo")
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), #"""
-                            <label>foo</label>
-                            """#)
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            #"""
+            <label>foo</label>
+            """#
+        )
     }
-    
+
     func testLabelChildrenWithContents() {
         let isRequired = true
         let doc = Document {
@@ -32,13 +36,15 @@ final class LabelTagTests: XCTestCase {
             .setContents("foo")
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), #"""
-                            <label>foo
-                                <span class="more">(bar)</span>
-                                <span class="required">*</span>
-                            </label>
-                            """#)
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            #"""
+            <label>foo
+                <span class="more">(bar)</span>
+                <span class="required">*</span>
+            </label>
+            """#
+        )
     }
-   
-    
+
 }

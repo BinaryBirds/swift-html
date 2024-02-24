@@ -12,17 +12,16 @@
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 open class Base: EmptyTag {
 
-
 }
 
-public extension Base {
+extension Base {
     /// Specifies the base URL for all relative URLs in the page
-    func href(_ value: String) -> Self {
+    public func href(_ value: String) -> Self {
         attribute("href", value)
     }
 
     /// Specifies the default target for all hyperlinks and forms in the page
-    func target(_ value: Target) -> Self {
+    public func target(_ value: Target) -> Self {
         attribute("target", value.rawValue)
     }
 }

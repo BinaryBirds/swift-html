@@ -6,7 +6,7 @@
 //
 
 open class PubDate: Tag {
-    
+
     open override class func createNode() -> Node {
         Node(type: .standard, name: "pubDate")
     }

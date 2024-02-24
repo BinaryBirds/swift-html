@@ -15,14 +15,13 @@
 ///
 /// **Tip:** Use CSS to style lists.
 open class Li: Tag {
-    
+
 }
 
-public extension Li {
-    
+extension Li {
+
     /// Only for `<ol>` lists. Specifies the start value of a list item. The following list items will increment from that number
-    func value(_ value: Int) -> Self {
+    public func value(_ value: Int) -> Self {
         attribute("value", String(value))
     }
 }
-

@@ -8,13 +8,15 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect
 open class Rect: Tag {
 
-    public init(x: Double,
-                y: Double,
-                width: Double,
-                height: Double,
-                rx: Double? = nil,
-                ry: Double? = nil,
-                pathLength: Double? = nil) {
+    public init(
+        x: Double,
+        y: Double,
+        width: Double,
+        height: Double,
+        rx: Double? = nil,
+        ry: Double? = nil,
+        pathLength: Double? = nil
+    ) {
         super.init()
         setAttributes([
             .init(key: "x", value: x.preciseString),

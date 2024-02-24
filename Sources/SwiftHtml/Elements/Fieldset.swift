@@ -6,26 +6,26 @@
 //
 
 /// The `<fieldset>` tag is used to group related elements in a form.
-/// 
+///
 /// The `<fieldset>` tag draws a box around the related elements.
 open class Fieldset: Tag {
-    
+
 }
 
-public extension Fieldset {
-    
+extension Fieldset {
+
     /// Specifies that a group of related form elements should be disabled
-    func disabled(_ condition: Bool = true) -> Self {
+    public func disabled(_ condition: Bool = true) -> Self {
         flagAttribute("disabled", nil, condition)
     }
-    
+
     /// Specifies which form the fieldset belongs to
-    func form(_ value: String) -> Self {
+    public func form(_ value: String) -> Self {
         attribute("form", value)
     }
-    
+
     /// Specifies a name for the fieldset
-    func name(_ value: String) -> Self {
+    public func name(_ value: String) -> Self {
         attribute("name", value)
     }
 }

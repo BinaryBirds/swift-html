@@ -7,5 +7,5 @@
 
 /// Make some text bold (without marking it as important)
 open class B: Tag {
-    
+
 }

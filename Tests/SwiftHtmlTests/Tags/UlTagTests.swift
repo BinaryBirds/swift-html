@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftHtml
 
 final class UlTagTests: XCTestCase {
@@ -21,16 +22,18 @@ final class UlTagTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), #"""
-                            <ul>
-                                <li>a</li>
-                                <li>b</li>
-                                <li>
-                                    <p>c</p>
-                                </li>
-                            </ul>
-                            """#)
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            #"""
+            <ul>
+                <li>a</li>
+                <li>b</li>
+                <li>
+                    <p>c</p>
+                </li>
+            </ul>
+            """#
+        )
     }
-   
-    
+
 }

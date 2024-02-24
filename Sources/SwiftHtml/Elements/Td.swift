@@ -19,10 +19,10 @@ open class Td: Tag {
 
 }
 
-public extension Td {
-    
+extension Td {
+
     /// Specifies the number of columns a data cell should span
-    func colspan(_ value: Int) -> Self {
+    public func colspan(_ value: Int) -> Self {
         attribute("colspan", String(value))
     }
 }

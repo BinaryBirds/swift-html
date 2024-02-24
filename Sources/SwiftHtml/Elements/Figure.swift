@@ -13,4 +13,3 @@
 open class Figure: Tag {
 
 }
-

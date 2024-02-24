@@ -16,8 +16,8 @@ open class Iframe: Tag {
 
 }
 
-public extension Iframe {
-    enum Sandbox {
+extension Iframe {
+    public enum Sandbox {
         /// (no value)    Applies all restrictions
         case all
         /// Allows form submission
@@ -42,7 +42,7 @@ public extension Iframe {
         case allowTopNavigation
         /// Allows the iframe content to navigate its top-level browsing context, but only if initiated by user
         case allowTopNavigationByUserActivation
-        
+
         var rawValue: String? {
             switch self {
             case .all:
@@ -72,59 +72,59 @@ public extension Iframe {
             }
         }
     }
-    
+
     /// Specifies a feature policy for the `<iframe>`
-    func allow(_ condition: Bool = true) -> Self {
+    public func allow(_ condition: Bool = true) -> Self {
         flagAttribute("allow", nil, condition)
     }
-    
+
     /// Set to true if the `<iframe>` can activate fullscreen mode by calling the requestFullscreen() method
-    func allowfullscreen(_ value: Bool) -> Self {
+    public func allowfullscreen(_ value: Bool) -> Self {
         attribute("allowfullscreen", String(value))
     }
-    
+
     /// Set to true if a cross-origin `<iframe>` should be allowed to invoke the Payment Request API
-    func allowpaymentrequest(_ value: Bool) -> Self {
+    public func allowpaymentrequest(_ value: Bool) -> Self {
         attribute("allowpaymentrequest", String(value))
     }
-    
+
     /// Specifies the height of an `<iframe>`. Default height is 150 pixels
-    func height(_ value: Double) -> Self {
+    public func height(_ value: Double) -> Self {
         attribute("height", String(value))
     }
-    
+
     /// Specifies whether a browser should load an iframe immediately or to defer loading of iframes until some conditions are met
-    func loading(_ value: Loading) -> Self {
+    public func loading(_ value: Loading) -> Self {
         attribute("loading", value.rawValue)
     }
-    
+
     /// Specifies the name of an `<iframe>`
-    func name(_ value: String) -> Self {
+    public func name(_ value: String) -> Self {
         attribute("name", value)
     }
-    
+
     /// Specifies which referrer information to send when fetching the iframe
-    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         attribute("referrerpolicy", value.rawValue)
     }
-    
+
     /// Enables an extra set of restrictions for the content in an `<iframe>`
-    func sandbox(_ value: Sandbox = .all) -> Self {
+    public func sandbox(_ value: Sandbox = .all) -> Self {
         attribute("sandbox", value.rawValue)
     }
-    
+
     /// Specifies the address of the document to embed in the `<iframe>`
-    func src(_ value: String) -> Self {
+    public func src(_ value: String) -> Self {
         attribute("src", value)
     }
-    
+
     /// Specifies the HTML content of the page to show in the `<iframe>`
-    func srcdoc(_ value: String) -> Self {
+    public func srcdoc(_ value: String) -> Self {
         attribute("srcdoc", value)
     }
-    
+
     /// Specifies the width of an `<iframe>`. Default width is 300 pixels
-    func width(_ value: Double) -> Self {
+    public func width(_ value: Double) -> Self {
         attribute("width", String(value))
     }
 }

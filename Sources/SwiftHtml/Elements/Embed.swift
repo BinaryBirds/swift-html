@@ -10,26 +10,25 @@ open class Embed: EmptyTag {
 
 }
 
-
-public extension Embed {
+extension Embed {
 
     /// Specifies the height of the embedded content
-    func height(_ value: Double) -> Self {
+    public func height(_ value: Double) -> Self {
         attribute("height", String(value))
     }
-    
+
     /// Specifies the address of the external file to embed
-    func src(_ value: String) -> Self {
+    public func src(_ value: String) -> Self {
         attribute("src", value)
     }
-    
+
     /// Specifies the media type of the embedded content
-    func type(_ value: String) -> Self {
+    public func type(_ value: String) -> Self {
         attribute("type", value)
     }
-    
+
     /// Specifies the width of the embedded content
-    func width(_ value: Double) -> Self {
+    public func width(_ value: Double) -> Self {
         attribute("width", String(value))
     }
 }

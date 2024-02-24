@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
@@ -18,13 +18,13 @@ public protocol MutableAttributes: Attributes, Mutable {
     func set(attributes newValue: [Attribute]) -> Self
 }
 
-public extension MutableAttributes {
-    
-    func index(of attribute: Attribute) -> [Attribute].Index? {
+extension MutableAttributes {
+
+    public func index(of attribute: Attribute) -> [Attribute].Index? {
         attributes.firstIndex(where: { $0.key == attribute.key })
     }
 
-    mutating func add(attribute: Attribute) {
+    public mutating func add(attribute: Attribute) {
         if let index = index(of: attribute) {
             attributes[index].value = attribute.value
         }
@@ -33,29 +33,26 @@ public extension MutableAttributes {
         }
     }
 
-    mutating func remove(attributeByKey key: String) {
-        attributes = attributes.filter { $0.key != key}
+    public mutating func remove(attributeByKey key: String) {
+        attributes = attributes.filter { $0.key != key }
     }
-    
-    mutating func set(attributes newValue: [Attribute]) {
+
+    public mutating func set(attributes newValue: [Attribute]) {
         attributes = newValue
     }
 
     // MARK: -
-    
-    func add(attribute: any Attribute) -> Self {
+
+    public func add(attribute: any Attribute) -> Self {
         mutate { $0.add(attribute: attribute) }
     }
-    
-    func set(attributes newValue: [Attribute]) -> Self {
+
+    public func set(attributes newValue: [Attribute]) -> Self {
         mutate { $0.set(attributes: newValue) }
     }
-    
-    func remove(attributeByKey key: String) -> Self {
+
+    public func remove(attributeByKey key: String) -> Self {
         mutate { $0.remove(attributeByKey: key) }
     }
-    
-    
+
 }
-
-

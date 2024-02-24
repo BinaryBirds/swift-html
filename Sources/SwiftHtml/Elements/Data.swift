@@ -11,13 +11,13 @@
 ///
 /// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
 open class Data: Tag {
-        
+
 }
 
-public extension Data {
-    
+extension Data {
+
     /// Specifies the machine-readable translation of the content of the element
-    func value(_ value: String) -> Self {
+    public func value(_ value: String) -> Self {
         attribute("value", value)
     }
 }

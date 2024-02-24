@@ -10,15 +10,15 @@ open class Param: EmptyTag {
 
 }
 
-public extension Param {
-    
+extension Param {
+
     /// Specifies the name of a parameter
-    func name(_ value: String) -> Self {
+    public func name(_ value: String) -> Self {
         attribute("name", value)
     }
-    
+
     /// Specifies the value of the parameter
-    func value(_ value: String) -> Self {
+    public func value(_ value: String) -> Self {
         attribute("value", value)
     }
 }

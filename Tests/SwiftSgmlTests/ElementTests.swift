@@ -1,13 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 2022. 02. 24..
 //
 
-import XCTest
 import SwiftSgml
-
+import XCTest
 
 final class TagTests: XCTestCase {
 
@@ -21,43 +20,43 @@ final class TagTests: XCTestCase {
         }
 
         let expectation = """
-        <root>
-            <branch>
-                <leaf>hello</leaf>
-            </branch>
-        </root>
-        """
-        
+            <root>
+                <branch>
+                    <leaf>hello</leaf>
+                </branch>
+            </root>
+            """
+
         let renderer = DocumentRenderer()
         let result = renderer.render(doc)
 
         XCTAssertEqual(expectation.minify(), result)
     }
-    
+
     func testAddChild() {
         let doc = Document {
             Root {
                 Branch()
                     .add(child: Leaf("foo"))
                     .add(child: Leaf("bar"))
-            }   
+            }
         }
 
         let expectation = """
-        <root>
-            <branch>
-                <leaf>foo</leaf>
-                <leaf>bar</leaf>
-            </branch>
-        </root>
-        """
-        
+            <root>
+                <branch>
+                    <leaf>foo</leaf>
+                    <leaf>bar</leaf>
+                </branch>
+            </root>
+            """
+
         let renderer = DocumentRenderer()
         let result = renderer.render(doc)
 
         XCTAssertEqual(expectation.minify(), result)
     }
-    
+
     func testRemoveAllChildren() {
         let doc = Document {
             Root {
@@ -70,9 +69,9 @@ final class TagTests: XCTestCase {
         }
 
         let expectation = """
-        <root></root>
-        """
-        
+            <root></root>
+            """
+
         let renderer = DocumentRenderer()
         let result = renderer.render(doc)
 

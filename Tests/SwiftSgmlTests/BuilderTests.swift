@@ -6,10 +6,11 @@
 //
 
 import XCTest
+
 @testable import SwiftSgml
 
 final class BuilderTests: XCTestCase {
-        
+
     func testOptional() {
         let condition: Bool = false
         let document = Document {
@@ -22,18 +23,18 @@ final class BuilderTests: XCTestCase {
                 }
             }
         }
-        
+
         let expectation = """
-        <root>
-            <branch>
-                <leaf>b</leaf>
-            </branch>
-        </root>
-        """
-        
+            <root>
+                <branch>
+                    <leaf>b</leaf>
+                </branch>
+            </root>
+            """
+
         XCTAssertDocument(document, expectation)
     }
-    
+
     func testIf() {
         let condition: Bool = true
         let document = Document {
@@ -47,14 +48,14 @@ final class BuilderTests: XCTestCase {
                 Leaf("c")
             }
         }
-        
+
         let expectation = """
-        <branch>
-            <leaf>a</leaf>
-            <leaf>c</leaf>
-        </branch>
-        """
-        
+            <branch>
+                <leaf>a</leaf>
+                <leaf>c</leaf>
+            </branch>
+            """
+
         XCTAssertDocument(document, expectation)
     }
 
@@ -73,15 +74,14 @@ final class BuilderTests: XCTestCase {
         }
 
         let expectation = """
-        <branch>
-            <leaf>b</leaf>
-            <leaf>c</leaf>
-        </branch>
-        """
-        
+            <branch>
+                <leaf>b</leaf>
+                <leaf>c</leaf>
+            </branch>
+            """
+
         XCTAssertDocument(document, expectation)
     }
-
 
     func testBlock1() {
         let document = Document {
@@ -91,10 +91,10 @@ final class BuilderTests: XCTestCase {
         }
 
         let expectation = """
-        <branch>
-            <leaf>Lorem</leaf>
-        </branch>
-        """
+            <branch>
+                <leaf>Lorem</leaf>
+            </branch>
+            """
         XCTAssertDocument(document, expectation)
     }
 
@@ -107,14 +107,14 @@ final class BuilderTests: XCTestCase {
         }
 
         let expectation = """
-        <branch>
-            <leaf>foo</leaf>
-            <leaf>bar</leaf>
-        </branch>
-        """
+            <branch>
+                <leaf>foo</leaf>
+                <leaf>bar</leaf>
+            </branch>
+            """
         XCTAssertDocument(document, expectation)
     }
-    
+
     func testBlock3() {
         let document = Document {
             Branch {
@@ -126,21 +126,20 @@ final class BuilderTests: XCTestCase {
         }
 
         let expectation = """
-        <branch>
-            <leaf>Lorem</leaf>
             <branch>
-                <leaf>Dolor</leaf>
+                <leaf>Lorem</leaf>
+                <branch>
+                    <leaf>Dolor</leaf>
+                </branch>
             </branch>
-        </branch>
-        """
+            """
         XCTAssertDocument(document, expectation)
     }
-    
 
     func testBlock4() {
         let document = Document {
             Branch {
-                [   // NOTE: make this work without array...
+                [  // NOTE: make this work without array...
                     Leaf("a")
                 ]
                 [
@@ -148,16 +147,15 @@ final class BuilderTests: XCTestCase {
                 ]
             }
         }
-        
+
         let expectation = """
-        <branch>
-            <leaf>a</leaf>
-            <leaf>b</leaf>
-        </branch>
-        """
+            <branch>
+                <leaf>a</leaf>
+                <leaf>b</leaf>
+            </branch>
+            """
         XCTAssertDocument(document, expectation)
     }
-
 
     func testArray1() {
         let document = Document {
@@ -169,15 +167,15 @@ final class BuilderTests: XCTestCase {
         }
 
         let expectation = """
-        <branch>
-            <leaf>1</leaf>
-            <leaf>2</leaf>
-            <leaf>3</leaf>
-        </branch>
-        """
+            <branch>
+                <leaf>1</leaf>
+                <leaf>2</leaf>
+                <leaf>3</leaf>
+            </branch>
+            """
         XCTAssertDocument(document, expectation)
     }
-    
+
     func testArray2() {
         let values: [String] = ["a", "b", "c"]
 
@@ -186,22 +184,22 @@ final class BuilderTests: XCTestCase {
                 values.map { item -> [Element] in
                     [
                         Leaf(item),
-                        Leaf(item)
+                        Leaf(item),
                     ]
                 }
             }
         }
 
         let expectation = """
-        <branch>
-            <leaf>a</leaf>
-            <leaf>a</leaf>
-            <leaf>b</leaf>
-            <leaf>b</leaf>
-            <leaf>c</leaf>
-            <leaf>c</leaf>
-        </branch>
-        """
+            <branch>
+                <leaf>a</leaf>
+                <leaf>a</leaf>
+                <leaf>b</leaf>
+                <leaf>b</leaf>
+                <leaf>c</leaf>
+                <leaf>c</leaf>
+            </branch>
+            """
         XCTAssertDocument(document, expectation)
     }
 }

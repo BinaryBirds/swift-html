@@ -6,5 +6,5 @@
 //
 
 open class Loc: Tag {
-    
+
 }

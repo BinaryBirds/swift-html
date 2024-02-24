@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftSgml
 
 final class DocumentTests: XCTestCase {
@@ -16,11 +17,10 @@ final class DocumentTests: XCTestCase {
         }
 
         let expectation = """
-        <?xml version="1.0" encoding="utf-8" ?>
-        <root></root>
-        """
+            <?xml version="1.0" encoding="utf-8" ?>
+            <root></root>
+            """
         XCTAssertDocument(document, expectation)
     }
 
-    
 }

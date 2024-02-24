@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftSitemap
 
 final class SwiftSitemapTests: XCTestCase {
@@ -22,16 +23,16 @@ final class SwiftSitemapTests: XCTestCase {
             }
         }
         let html = """
-        <?xml version="1.0" encoding="utf-8" ?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <url>
-                <loc>http://localhost/</loc>
-                <lastmod>2021-12-19</lastmod>
-                <changefreq>monthly</changefreq>
-                <priority>0.5</priority>
-            </url>
-        </urlset>
-        """
+            <?xml version="1.0" encoding="utf-8" ?>
+            <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+                <url>
+                    <loc>http://localhost/</loc>
+                    <lastmod>2021-12-19</lastmod>
+                    <changefreq>monthly</changefreq>
+                    <priority>0.5</priority>
+                </url>
+            </urlset>
+            """
         assert(doc: doc, html: html)
     }
 

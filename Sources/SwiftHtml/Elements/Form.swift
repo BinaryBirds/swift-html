@@ -22,9 +22,9 @@ open class Form: Tag {
 
 }
 
-public extension Form {
-    
-    enum Rel: String {
+extension Form {
+
+    public enum Rel: String {
         /// Specifies that the referenced document is not a part of the current site
         case external
         /// Links to a help document
@@ -36,7 +36,7 @@ public extension Form {
         /// Links to an unendorsed document, like a paid link.
         /// ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
         case nofollow
-        
+
         case noopener
         /// Specifies that the browser should not send a HTTP referrer header if the user follows the hyperlink
         case noreferrer
@@ -46,49 +46,49 @@ public extension Form {
         /// Links to a search tool for the document
         case search
     }
-    
+
     /// Specifies the character encodings that are to be used for the form submission
-    func acceptCharset(_ value: String) -> Self {
+    public func acceptCharset(_ value: String) -> Self {
         attribute("accept-charset", value)
     }
-    
+
     /// Specifies where to send the form-data when a form is submitted
-    func action(_ value: String?) -> Self {
+    public func action(_ value: String?) -> Self {
         attribute("action", value)
     }
-    
+
     /// Specifies whether a form should have autocomplete on or off
-    func autocomplete(_ value: Bool = true) -> Self {
+    public func autocomplete(_ value: Bool = true) -> Self {
         attribute("autocomplete", value ? "on" : "off")
     }
-    
+
     /// Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
-    func enctype(_ value: Enctype?, _ condition: Bool = true) -> Self {
+    public func enctype(_ value: Enctype?, _ condition: Bool = true) -> Self {
         attribute("enctype", value?.rawValue, condition)
     }
-    
+
     /// Specifies the HTTP method to use when sending form-data
-    func method(_ value: Method?) -> Self {
+    public func method(_ value: Method?) -> Self {
         attribute("method", value?.rawValue)
     }
-    
+
     /// Specifies the name of a form
-    func name(_ value: String) -> Self {
+    public func name(_ value: String) -> Self {
         attribute("name", value)
     }
-    
+
     /// Specifies that the form should not be validated when submitted
-    func novalidate(_ condition: Bool = true) -> Self {
+    public func novalidate(_ condition: Bool = true) -> Self {
         flagAttribute("novalidate", nil, condition)
     }
-    
+
     /// Specifies the relationship between a linked resource and the current document
-    func rel(_ value: Rel) -> Self {
+    public func rel(_ value: Rel) -> Self {
         attribute("rel", value.rawValue)
     }
-    
+
     /// Specifies where to display the response that is received after submitting the form
-    func target(_ value: Target) -> Self {
+    public func target(_ value: Target) -> Self {
         attribute("target", value.rawValue)
     }
 }

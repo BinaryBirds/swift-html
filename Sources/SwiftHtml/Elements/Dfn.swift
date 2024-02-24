@@ -12,5 +12,5 @@
 /// The term inside the `<dfn>` tag can be any of the following:
 /// `<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>`
 open class Dfn: Tag {
-    
+
 }

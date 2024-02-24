@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftHtml
 
 extension Div {
@@ -28,7 +29,10 @@ final class SwiftHtmlTests: XCTestCase {
             }
         }
         let html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(#"<div some-key="some-value"><span>a</span><span>b</span></div>"#, html)
+        XCTAssertEqual(
+            #"<div some-key="some-value"><span>a</span><span>b</span></div>"#,
+            html
+        )
     }
 
     func testClassAttribute() {
@@ -196,14 +200,14 @@ final class SwiftHtmlTests: XCTestCase {
     func testSetEmptyStyle() {
         let doc = Document {
             Span("")
-            .style("")
+                .style("")
         }
         let html = DocumentRenderer(minify: true).render(doc)
         XCTAssertEqual(#"<span></span>"#, html)
     }
 
     func testTextTag() {
-        let doc = Document() {
+        let doc = Document {
             P {
                 Span("foo")
                 Text("bar")
@@ -212,13 +216,13 @@ final class SwiftHtmlTests: XCTestCase {
         }
 
         let html = """
-        <p>
-            <span>foo</span>
-            bar
-            <span>baz</span>
-        </p>
-        """
-        
+            <p>
+                <span>foo</span>
+                bar
+                <span>baz</span>
+            </p>
+            """
+
         assert(doc: doc, html: html)
     }
 
@@ -227,25 +231,25 @@ final class SwiftHtmlTests: XCTestCase {
 
         let doc = Document {
             Div {
-				for item in values {
-					GroupTag {
-						H1(item)
-						P(item)
-					}
-				}
+                for item in values {
+                    GroupTag {
+                        H1(item)
+                        P(item)
+                    }
+                }
             }
         }
 
         let html = """
-        <div>
-            <h1>a</h1>
-            <p>a</p>
-            <h1>b</h1>
-            <p>b</p>
-            <h1>c</h1>
-            <p>c</p>
-        </div>
-        """
+            <div>
+                <h1>a</h1>
+                <p>a</p>
+                <h1>b</h1>
+                <p>b</p>
+                <h1>c</h1>
+                <p>c</p>
+            </div>
+            """
         assert(doc: doc, html: html)
     }
 
@@ -256,7 +260,8 @@ final class SwiftHtmlTests: XCTestCase {
                     Title("Hello Swift DSL")
 
                     Meta().charset("utf-8")
-                    Meta().name(.viewport).content("width=device-width, initial-scale=1")
+                    Meta().name(.viewport)
+                        .content("width=device-width, initial-scale=1")
 
                     Link(rel: .stylesheet).href("./css/style.css")
                 }
@@ -264,13 +269,18 @@ final class SwiftHtmlTests: XCTestCase {
                     Main {
                         Div {
                             Section {
-                                Img(src: "./images/swift.png", alt: "Swift Logo")
-                                    .title("Picture of the Swift Logo")
+                                Img(
+                                    src: "./images/swift.png",
+                                    alt: "Swift Logo"
+                                )
+                                .title("Picture of the Swift Logo")
                                 H1("Lorem ipsum")
                                     .class("red")
-                                P("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.")
-                                    .class(["green", "blue"])
-                                    .spellcheck(false)
+                                P(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta."
+                                )
+                                .class(["green", "blue"])
+                                .spellcheck(false)
                             }
                             A("Hello Swift HTML DSL!")
                                 .href("https://swift.org")
@@ -289,30 +299,30 @@ final class SwiftHtmlTests: XCTestCase {
         }
 
         let html = """
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <title>Hello Swift DSL</title>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="./css/style.css">
-            </head>
-            <body>
-                <main class="container">
-                    <div>
-                        <section>
-                            <img src="./images/swift.png" alt="Swift Logo" title="Picture of the Swift Logo">
-                            <h1 class="red">Lorem ipsum</h1>
-                            <p class="green blue" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
-                        </section>
-                        <a href="https://swift.org" target="_blank" download>Hello Swift HTML DSL!</a>
-                        <abbr title="World Health Organization">WHO</abbr>
-                    </div>
-                </main>
-                <script src="./javascript/main.js"></script>
-            </body>
-        </html>
-        """
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <title>Hello Swift DSL</title>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="./css/style.css">
+                </head>
+                <body>
+                    <main class="container">
+                        <div>
+                            <section>
+                                <img src="./images/swift.png" alt="Swift Logo" title="Picture of the Swift Logo">
+                                <h1 class="red">Lorem ipsum</h1>
+                                <p class="green blue" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
+                            </section>
+                            <a href="https://swift.org" target="_blank" download>Hello Swift HTML DSL!</a>
+                            <abbr title="World Health Organization">WHO</abbr>
+                        </div>
+                    </main>
+                    <script src="./javascript/main.js"></script>
+                </body>
+            </html>
+            """
         assert(doc: doc, html: html)
     }
 }

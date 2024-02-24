@@ -1,12 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
 public struct DocumentRenderer {
-    
+
     public struct Options: OptionSet, Sendable {
 
         /// Produce human-readable HTML with indented output.
@@ -20,31 +20,31 @@ public struct DocumentRenderer {
             self.rawValue = rawValue
         }
     }
-    
+
     public var options: Options
-    
+
     public init(options: Options = []) {
         self.options = options
     }
-    
+
     // TODO: implement nice rendering...
     private var prettyPrint: Bool {
         options.contains(.prettyPrinted)
     }
-    
+
     public func render(_ document: Document) -> String {
         var result: [String] = []
 
         result += [renderDocumentType(document.type)]
         result += render(document.root.node)
-        
+
         return result.joined(separator: prettyPrint ? "\n" : "")
     }
 }
 
-private extension DocumentRenderer {
-    
-    func renderDocumentType(_ type: Document.`Type`) -> String {
+extension DocumentRenderer {
+
+    fileprivate func renderDocumentType(_ type: Document.`Type`) -> String {
         switch type {
         case .unspecified:
             return ""
@@ -56,8 +56,8 @@ private extension DocumentRenderer {
             return value
         }
     }
-    
-    func render(_ node: Node) -> [String] {
+
+    fileprivate func render(_ node: Node) -> [String] {
         var result: [String] = []
         switch node {
         case .group(let children):
@@ -79,16 +79,16 @@ private extension DocumentRenderer {
         }
         return result
     }
-    
-    func attr(_ attributes: [Attribute]) -> String {
+
+    fileprivate func attr(_ attributes: [Attribute]) -> String {
         let attr = render(attributes).joined(separator: " ")
         if !attr.isEmpty {
             return " " + attr
         }
         return attr
     }
-    
-    func render(_ attributes: [Attribute]) -> [String] {
+
+    fileprivate func render(_ attributes: [Attribute]) -> [String] {
         attributes.map { attribute in
             if let value = attribute.value {
                 return #"\#(attribute.key)="\#(value)""#

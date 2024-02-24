@@ -8,10 +8,12 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle
 open class Circle: Tag {
 
-    public init(cx: Double,
-                cy: Double,
-                r: Double,
-                pathLength: Double? = nil) {
+    public init(
+        cx: Double,
+        cy: Double,
+        r: Double,
+        pathLength: Double? = nil
+    ) {
         super.init()
         setAttributes([
             .init(key: "cx", value: cx.preciseString),

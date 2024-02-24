@@ -1,11 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 2022. 02. 16..
 //
 
 import XCTest
+
 @testable import SwiftSgml
 
 final class AttributeTests: XCTestCase {
@@ -17,9 +18,9 @@ final class AttributeTests: XCTestCase {
         }
 
         let expectation = """
-        <?xml version="1.0" encoding="utf-8" ?>
-        <root foo="bar"></root>
-        """
+            <?xml version="1.0" encoding="utf-8" ?>
+            <root foo="bar"></root>
+            """
         XCTAssertDocument(document, expectation)
     }
 
@@ -30,12 +31,12 @@ final class AttributeTests: XCTestCase {
         }
 
         let expectation = """
-        <?xml version="1.0" encoding="utf-8" ?>
-        <root foo></root>
-        """
+            <?xml version="1.0" encoding="utf-8" ?>
+            <root foo></root>
+            """
         XCTAssertDocument(document, expectation)
     }
-    
+
     func testCustomEmptyValue() {
         let document = Document(.xml) {
             Root()
@@ -43,9 +44,9 @@ final class AttributeTests: XCTestCase {
         }
 
         let expectation = """
-        <?xml version="1.0" encoding="utf-8" ?>
-        <root foo=""></root>
-        """
+            <?xml version="1.0" encoding="utf-8" ?>
+            <root foo=""></root>
+            """
         XCTAssertDocument(document, expectation)
     }
 
@@ -57,13 +58,13 @@ final class AttributeTests: XCTestCase {
         }
 
         let expectation = """
-        <root foo></root>
-        """
+            <root foo></root>
+            """
         XCTAssertDocument(document, expectation)
     }
-    
+
     // MARK: -
-    
+
     func testSet() {
         let document = Document {
             Leaf("example")
@@ -76,11 +77,11 @@ final class AttributeTests: XCTestCase {
         }
 
         let expectation = """
-            <leaf a="foo" b="bar" c="baz">example</leaf>
-        """
+                <leaf a="foo" b="bar" c="baz">example</leaf>
+            """
         XCTAssertDocument(document, expectation)
     }
-    
+
     func testAdd() {
         let document = Document {
             Leaf("example")
@@ -93,11 +94,11 @@ final class AttributeTests: XCTestCase {
         }
 
         let expectation = """
-            <leaf a="foo" b="bar" c="baz" foo="example">example</leaf>
-        """
+                <leaf a="foo" b="bar" c="baz" foo="example">example</leaf>
+            """
         XCTAssertDocument(document, expectation)
     }
- 
+
     func testRemove() {
         let document = Document {
             Leaf("example")
@@ -126,17 +127,17 @@ final class AttributeTests: XCTestCase {
             """
         XCTAssertDocument(document, expectation)
     }
-    
+
     func testRemoveFlag() {
         let document = Document {
             Leaf("example")
                 .add(attribute: Flag("foo"))
                 .remove(attributeByKey: "foo")
         }
-        
+
         let expectation = """
-            <leaf>example</leaf>
-        """
+                <leaf>example</leaf>
+            """
         XCTAssertDocument(document, expectation)
     }
 }

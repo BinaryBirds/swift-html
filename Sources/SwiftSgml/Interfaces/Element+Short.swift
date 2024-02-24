@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
@@ -20,4 +20,3 @@ extension ShortElement where Self: Attributes {
         .short(.init(name: name, attributes: attributes))
     }
 }
-

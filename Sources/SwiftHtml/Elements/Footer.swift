@@ -17,5 +17,5 @@
 /// - related documents
 /// You can have several `<footer>` elements in one document.
 open class Footer: Tag {
-    
+
 }

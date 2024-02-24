@@ -1,11 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 2022. 01. 21..
 //
 
 import XCTest
+
 @testable import SwiftHtml
 
 final class MetaTagTests: XCTestCase {
@@ -17,12 +18,18 @@ final class MetaTagTests: XCTestCase {
                 .content("light dark")
         }
         var html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(#"<meta name="color-scheme" content="light dark">"#, html)
+        XCTAssertEqual(
+            #"<meta name="color-scheme" content="light dark">"#,
+            html
+        )
 
         html = DocumentRenderer(minify: true, selfClose: true).render(doc)
-        XCTAssertEqual(#"<meta name="color-scheme" content="light dark" />"#, html)
+        XCTAssertEqual(
+            #"<meta name="color-scheme" content="light dark" />"#,
+            html
+        )
     }
-    
+
     func testMediaColorScheme() {
         let doc = Document {
             Meta()
@@ -31,12 +38,18 @@ final class MetaTagTests: XCTestCase {
                 .media(.prefersColorScheme(.light))
         }
         var html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">"##, html)
+        XCTAssertEqual(
+            ##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">"##,
+            html
+        )
 
         html = DocumentRenderer(minify: true, selfClose: true).render(doc)
-        XCTAssertEqual(##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />"##, html)
+        XCTAssertEqual(
+            ##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />"##,
+            html
+        )
     }
-    
+
     func testAppleStatusBarStyle() {
         let doc = Document {
             Meta()
@@ -44,10 +57,16 @@ final class MetaTagTests: XCTestCase {
                 .content("default")
         }
         var html = DocumentRenderer(minify: true).render(doc)
-        XCTAssertEqual(##"<meta name="apple-mobile-web-app-status-bar-style" content="default">"##, html)
+        XCTAssertEqual(
+            ##"<meta name="apple-mobile-web-app-status-bar-style" content="default">"##,
+            html
+        )
 
         html = DocumentRenderer(minify: true, selfClose: true).render(doc)
-        XCTAssertEqual(##"<meta name="apple-mobile-web-app-status-bar-style" content="default" />"##, html)
+        XCTAssertEqual(
+            ##"<meta name="apple-mobile-web-app-status-bar-style" content="default" />"##,
+            html
+        )
     }
 
 }

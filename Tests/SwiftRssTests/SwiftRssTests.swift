@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftRss
 
 final class SwiftRssTests: XCTestCase {
@@ -34,25 +35,25 @@ final class SwiftRssTests: XCTestCase {
             }
         }
         let html = """
-        <?xml version="1.0" encoding="utf-8" ?>
-        <rss version="2.0">
-            <channel>
-                <title><![CDATA[lorem]]></title>
-                <description><![CDATA[ipsum]]></description>
-                <link></link>
-                <language>en_US</language>
-                <lastBuildDate>2021-12-19</lastBuildDate>
-                <pubDate>2021-12-19</pubDate>
-                <ttl>250</ttl>
-                <item>
-                    <guid isPermalink="true">http://localhost/</guid>
+            <?xml version="1.0" encoding="utf-8" ?>
+            <rss version="2.0">
+                <channel>
                     <title><![CDATA[lorem]]></title>
                     <description><![CDATA[ipsum]]></description>
-                    <pubDate>lorem</pubDate>
-                </item>
-            </channel>
-        </rss>
-        """
+                    <link></link>
+                    <language>en_US</language>
+                    <lastBuildDate>2021-12-19</lastBuildDate>
+                    <pubDate>2021-12-19</pubDate>
+                    <ttl>250</ttl>
+                    <item>
+                        <guid isPermalink="true">http://localhost/</guid>
+                        <title><![CDATA[lorem]]></title>
+                        <description><![CDATA[ipsum]]></description>
+                        <pubDate>lorem</pubDate>
+                    </item>
+                </channel>
+            </rss>
+            """
         assert(doc: doc, html: html)
     }
 

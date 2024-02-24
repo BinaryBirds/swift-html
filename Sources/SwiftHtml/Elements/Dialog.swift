@@ -9,13 +9,13 @@
 ///
 /// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
 open class Dialog: Tag {
-    
+
 }
 
-public extension Dialog {
-    
+extension Dialog {
+
     /// Specifies that the dialog element is active and that the user can interact with it
-    func open(_ condition: Bool = true) -> Self {
+    public func open(_ condition: Bool = true) -> Self {
         flagAttribute("open", nil, condition)
     }
 }

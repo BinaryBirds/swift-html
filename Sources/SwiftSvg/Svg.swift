@@ -10,38 +10,39 @@ open class Svg: Tag {
 
 }
 
-public extension Svg {
+extension Svg {
 
-    func width(_ value: Int) -> Self {
+    public func width(_ value: Int) -> Self {
         attribute("width", String(value))
     }
-    
-    func height(_ value: Int) -> Self {
+
+    public func height(_ value: Int) -> Self {
         attribute("height", String(value))
     }
-    
-    func viewBox(minX: Int, minY: Int, width: Int, height: Int) -> Self {
-        let value = [minX, minY, width, height].map(String.init).joined(separator: " ")
+
+    public func viewBox(minX: Int, minY: Int, width: Int, height: Int) -> Self {
+        let value = [minX, minY, width, height].map(String.init)
+            .joined(separator: " ")
         return attribute("viewBox", value)
     }
-    
-    func fill(_ value: String) -> Self {
+
+    public func fill(_ value: String) -> Self {
         attribute("fill", value)
     }
-    
-    func stroke(_ value: String) -> Self {
+
+    public func stroke(_ value: String) -> Self {
         attribute("stroke", value)
     }
-    
-    func strokeWidth(_ value: Int) -> Self {
+
+    public func strokeWidth(_ value: Int) -> Self {
         attribute("stroke-width", String(value))
     }
-    
-    func strokeLinecap(_ value: String) -> Self {
+
+    public func strokeLinecap(_ value: String) -> Self {
         attribute("stroke-linecap", value)
     }
-    
-    func strokeLinejoin(_ value: String) -> Self {
+
+    public func strokeLinejoin(_ value: String) -> Self {
         attribute("stroke-linejoin", value)
     }
 }

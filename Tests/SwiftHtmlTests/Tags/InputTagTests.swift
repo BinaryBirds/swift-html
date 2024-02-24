@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftHtml
 
 final class InputTagTests: XCTestCase {
@@ -17,14 +18,20 @@ final class InputTagTests: XCTestCase {
                 .checked()
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <input type="checkbox" checked>
-                            """)
-        XCTAssertEqual(DocumentRenderer(selfClose: true).render(doc), """
-                            <input type="checkbox" checked />
-                            """)
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            """
+            <input type="checkbox" checked>
+            """
+        )
+        XCTAssertEqual(
+            DocumentRenderer(selfClose: true).render(doc),
+            """
+            <input type="checkbox" checked />
+            """
+        )
     }
-    
+
     func testUncheckedInput() {
         let doc = Document {
             Input()
@@ -35,14 +42,20 @@ final class InputTagTests: XCTestCase {
                 .checked(false)
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <input type="checkbox">
-                            """)
-        XCTAssertEqual(DocumentRenderer(selfClose: true).render(doc), """
-                            <input type="checkbox" />
-                            """)
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            """
+            <input type="checkbox">
+            """
+        )
+        XCTAssertEqual(
+            DocumentRenderer(selfClose: true).render(doc),
+            """
+            <input type="checkbox" />
+            """
+        )
     }
-    
+
     func testKey() {
         let doc = Document {
             Input()
@@ -50,13 +63,18 @@ final class InputTagTests: XCTestCase {
                 .key("email")
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), """
-                            <input type="text" id="email" name="email">
-                            """)
-        XCTAssertEqual(DocumentRenderer(selfClose: true).render(doc), """
-                            <input type="text" id="email" name="email" />
-                            """)
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            """
+            <input type="text" id="email" name="email">
+            """
+        )
+        XCTAssertEqual(
+            DocumentRenderer(selfClose: true).render(doc),
+            """
+            <input type="text" id="email" name="email" />
+            """
+        )
     }
-   
-    
+
 }

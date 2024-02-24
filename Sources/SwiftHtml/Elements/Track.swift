@@ -11,7 +11,7 @@
 ///
 /// Tracks are formatted in WebVTT format (.vtt files).
 open class Track: EmptyTag {
-    
+
     public init(src: String) {
         super.init()
         setAttributes([
@@ -20,9 +20,9 @@ open class Track: EmptyTag {
     }
 }
 
-public extension Track {
-    
-    enum Kind: String {
+extension Track {
+
+    public enum Kind: String {
         /// The track defines translation of dialogue and sound effects (suitable for deaf users)
         case captions
         /// The track defines chapter titles (suitable for navigating the media resource)
@@ -34,29 +34,29 @@ public extension Track {
         /// The track defines subtitles, used to display subtitles in a video
         case subtitles
     }
-    
+
     /// Specifies that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
-    func `default`(_ condition: Bool = true) -> Self {
+    public func `default`(_ condition: Bool = true) -> Self {
         flagAttribute("default", nil, condition)
     }
-    
+
     /// Specifies the kind of text track
-    func kind(_ value: Kind) -> Self {
+    public func kind(_ value: Kind) -> Self {
         attribute("kind", value.rawValue)
     }
-    
+
     /// Specifies the title of the text track
-    func label(_ value: String) -> Self {
+    public func label(_ value: String) -> Self {
         attribute("label", value)
     }
-    
+
     /// Required. Specifies the URL of the track file
-    func src(_ value: String) -> Self {
+    public func src(_ value: String) -> Self {
         attribute("src", value)
     }
-    
+
     /// Specifies the language of the track text data (required if kind="subtitles")
-    func srclang(_ value: String) -> Self {
+    public func srclang(_ value: String) -> Self {
         attribute("srclang", value)
     }
 }

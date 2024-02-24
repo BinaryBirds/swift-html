@@ -29,66 +29,65 @@ open class Img: EmptyTag {
     }
 }
 
-public extension Img {
-    
+extension Img {
+
     /// Specifies an alternate text for an image
-    func alt(_ value: String) -> Self {
+    public func alt(_ value: String) -> Self {
         attribute("alt", value)
     }
-    
+
     /// Allow images from third-party sites that allow cross-origin access to be used with canvas
-    func crossorigin(_ value: Crossorigin) -> Self {
+    public func crossorigin(_ value: Crossorigin) -> Self {
         attribute("crossorigin", value.rawValue)
     }
-    
+
     /// Specifies the height of an image
-    func height(_ value: Double) -> Self {
+    public func height(_ value: Double) -> Self {
         attribute("height", String(value))
     }
-    
+
     /// Specifies an image as a server-side image map
-    func ismap(_ condition: Bool = true) -> Self {
+    public func ismap(_ condition: Bool = true) -> Self {
         flagAttribute("ismap", nil, condition)
     }
-    
+
     /// Specifies whether a browser should load an image immediately or to defer loading of images until some conditions are met
-    func loading(_ value: Loading) -> Self {
+    public func loading(_ value: Loading) -> Self {
         attribute("loading", value.rawValue)
     }
-    
+
     /// Specifies a URL to a detailed description of an image
-    func longdesc(_ value: String) -> Self {
+    public func longdesc(_ value: String) -> Self {
         attribute("longdesc", value)
     }
-    
+
     /// Specifies which referrer information to use when fetching an image
-    func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
+    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
         attribute("referrerpolicy", value.rawValue)
     }
-    
+
     /// Specifies image sizes for different page layouts
-    func sizes(_ value: String) -> Self {
+    public func sizes(_ value: String) -> Self {
         attribute("sizes", value)
     }
-    
+
     /// Specifies the path to the image
-    func src(_ value: String) -> Self {
+    public func src(_ value: String) -> Self {
         attribute("src", value)
     }
-    
+
     /// Specifies a list of image files to use in different situations
-    func srcset(_ value: String) -> Self {
+    public func srcset(_ value: String) -> Self {
         attribute("srcset", value)
     }
-    
+
     /// Specifies an image as a client-side image map
-    func usemap(_ value: String) -> Self {
+    public func usemap(_ value: String) -> Self {
         attribute("usemap", "#" + value)
     }
-    
+
     /// Specifies the width of an image
-    func width(_ value: Double) -> Self {
+    public func width(_ value: Double) -> Self {
         attribute("width", String(value))
     }
 }
-

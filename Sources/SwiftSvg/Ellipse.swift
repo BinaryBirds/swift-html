@@ -8,11 +8,13 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse
 open class Ellipse: Tag {
 
-    public init(cx: Double,
-                cy: Double,
-                rx: Double,
-                ry: Double,
-                pathLength: Double? = nil) {
+    public init(
+        cx: Double,
+        cy: Double,
+        rx: Double,
+        ry: Double,
+        pathLength: Double? = nil
+    ) {
         super.init()
         setAttributes([
             .init(key: "cx", value: cx.preciseString),

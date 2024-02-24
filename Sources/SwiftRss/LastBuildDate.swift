@@ -5,7 +5,6 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-
 open class LastBuildDate: Tag {
 
     open override class func createNode() -> Node {

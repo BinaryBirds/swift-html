@@ -12,8 +12,8 @@ open class Time: Tag {
 
 }
 
-public extension Time {
-    
+extension Time {
+
     /// Represent a machine-readable format of the `<time>` element
     ///
     /// `YYYY-MM-DDThh:mm:ssTZD`
@@ -33,7 +33,7 @@ public extension Time {
     /// - H - a prefix for "Hours"
     /// - M - a prefix for "Minutes"
     /// - S - a prefix for "Seconds"
-    func datetime(_ value: String) -> Self {
+    public func datetime(_ value: String) -> Self {
         attribute("datetime", value)
     }
 }

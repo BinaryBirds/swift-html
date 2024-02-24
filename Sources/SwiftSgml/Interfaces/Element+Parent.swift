@@ -1,12 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
 public protocol ParentElement: Element {
-    
+
     var children: [Element] { get set }
 }
 
@@ -18,9 +18,12 @@ extension ParentElement {
 }
 
 extension ParentElement where Self: Attributes {
-    
+
     public var node: Node {
-        .standard(.init(name: name, attributes: attributes), children.compactMap { $0.node })
+        .standard(
+            .init(name: name, attributes: attributes),
+            children.compactMap { $0.node }
+        )
     }
 }
 
@@ -29,21 +32,21 @@ public protocol MutableParentElement: ParentElement, Mutable {
     func removeChildren() -> Self
 }
 
-public extension MutableParentElement {
-    
-    mutating func removeChildren() {
+extension MutableParentElement {
+
+    public mutating func removeChildren() {
         children.removeAll()
     }
-    
-    mutating func add<T: Element>(child: T) {
+
+    public mutating func add<T: Element>(child: T) {
         children.append(child)
     }
 
-    func add<T: Element>(child: T) -> Self {
+    public func add<T: Element>(child: T) -> Self {
         mutate { $0.add(child: child) }
     }
 
-    func removeChildren() -> Self {
+    public func removeChildren() -> Self {
         mutate { $0.removeChildren() }
     }
 }

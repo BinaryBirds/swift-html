@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SwiftHtml
 
 final class TableTagTests: XCTestCase {
@@ -37,36 +38,38 @@ final class TableTagTests: XCTestCase {
             }
         }
 
-        XCTAssertEqual(DocumentRenderer().render(doc), #"""
-                            <!DOCTYPE html>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>1</th>
-                                        <th>2</th>
-                                        <th>3</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>a</td>
-                                        <td>b</td>
-                                        <td>c</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td>d</td>
-                                        <td>e</td>
-                                        <td>f</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            """#)
-        
-        
+        XCTAssertEqual(
+            DocumentRenderer().render(doc),
+            #"""
+            <!DOCTYPE html>
+            <table>
+                <thead>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>a</td>
+                        <td>b</td>
+                        <td>c</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>d</td>
+                        <td>e</td>
+                        <td>f</td>
+                    </tr>
+                </tfoot>
+            </table>
+            """#
+        )
+
     }
-    
+
     func testTablewithAttributes() {
         let doc = Document(.html) {
             Table {
@@ -109,9 +112,11 @@ final class TableTagTests: XCTestCase {
             .class("table")
         }
 
-        XCTAssertEqual(DocumentRenderer(minify: true).render(doc), #"<!DOCTYPE html><table class="table"><thead><tr><th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th></tr></thead><tbody><tr><th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><th scope="row">3</th><td colspan="2">Larry the Bird</td><td>@twitter</td></tr></tbody></table>"#)
-        
-        
+        XCTAssertEqual(
+            DocumentRenderer(minify: true).render(doc),
+            #"<!DOCTYPE html><table class="table"><thead><tr><th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th></tr></thead><tbody><tr><th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><th scope="row">3</th><td colspan="2">Larry the Bird</td><td>@twitter</td></tr></tbody></table>"#
+        )
+
     }
-    
+
 }

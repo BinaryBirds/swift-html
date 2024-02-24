@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 12/11/2023.
 //
@@ -8,24 +8,23 @@
 private struct Group: Element {
 
     var children: [Element]
-    
+
     var node: Node {
         .group(children.compactMap { $0.node })
     }
-    
+
     init(_ children: [Element] = []) {
         self.children = children
     }
 }
 
-
 @resultBuilder
 public enum Builder<T> {
-    
+
     public static func buildBlock(_ components: T...) -> [T] {
         components
     }
-    
+
     public static func buildEither(first component: T) -> T {
         component
     }
@@ -36,7 +35,7 @@ public enum Builder<T> {
 }
 
 extension Builder where T == Element {
-    
+
     public static func buildBlock(_ components: T...) -> T {
         Group(components)
     }
@@ -52,14 +51,12 @@ extension Builder where T == Element {
     public static func buildBlock(_ components: [T]...) -> [T] {
         components.flatMap { $0 }
     }
-    
+
     public static func buildBlock(_ components: [T]...) -> T {
         Group(components.map { Group($0) })
     }
-    
+
     public static func buildBlock(_ components: [[T]]) -> [T] {
         components.map { Group($0) }
     }
 }
-
-

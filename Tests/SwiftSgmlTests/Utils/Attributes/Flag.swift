@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
@@ -14,7 +14,7 @@ public struct Flag: Attribute {
         get { nil }
         set {}
     }
-    
+
     public init(_ key: String) {
         self.key = key
     }

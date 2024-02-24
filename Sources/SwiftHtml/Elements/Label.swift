@@ -28,7 +28,7 @@
 /// - `<progress>`
 /// - `<select>`
 /// - `<textarea>`
-/// 
+///
 /// Proper use of labels with the elements above will benefit:
 ///
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
@@ -37,14 +37,14 @@ open class Label: Tag {
 
 }
 
-public extension Label {
+extension Label {
     /// Specifies the id of the form element the label should be bound to
-    func `for`(_ value: String) -> Self {
+    public func `for`(_ value: String) -> Self {
         attribute("for", value)
     }
-    
+
     /// Specifies which form the label belongs to
-    func form(_ value: String) -> Self {
+    public func form(_ value: String) -> Self {
         attribute("form", value)
     }
 }

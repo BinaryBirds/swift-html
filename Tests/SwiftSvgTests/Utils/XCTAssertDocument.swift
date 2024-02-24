@@ -1,12 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-import XCTest
 import SwiftSgml
+import XCTest
 
 func XCTAssertDocument(
     _ document: Document,

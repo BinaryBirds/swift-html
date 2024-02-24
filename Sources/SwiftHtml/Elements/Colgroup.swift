@@ -16,10 +16,10 @@ open class Colgroup: Tag {
 
 }
 
-public extension Colgroup {
-    
+extension Colgroup {
+
     /// Specifies the number of columns a column group should span
-    func span(_ value: Int) -> Self {
+    public func span(_ value: Int) -> Self {
         attribute("span", String(value))
     }
 }

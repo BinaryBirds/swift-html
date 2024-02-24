@@ -12,5 +12,5 @@
 ///
 /// **Tip:** Use the `<sup>` tag to define superscripted text.
 open class Sub: Tag {
-    
+
 }

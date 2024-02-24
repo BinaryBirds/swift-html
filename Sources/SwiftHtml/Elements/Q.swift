@@ -14,10 +14,10 @@ open class Q: Tag {
 
 }
 
-public extension Q {
-    
+extension Q {
+
     /// Specifies the source URL of the quote
-    func cite(_ value: String) -> Self {
+    public func cite(_ value: String) -> Self {
         attribute("cite", value)
     }
 }

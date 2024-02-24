@@ -8,11 +8,13 @@
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line
 open class Line: Tag {
 
-    public init(x1: Double,
-                y1: Double,
-                x2: Double,
-                y2: Double,
-                pathLength: Double? = nil) {
+    public init(
+        x1: Double,
+        y1: Double,
+        x2: Double,
+        y2: Double,
+        pathLength: Double? = nil
+    ) {
         super.init()
         setAttributes([
             .init(key: "x1", value: x1.preciseString),

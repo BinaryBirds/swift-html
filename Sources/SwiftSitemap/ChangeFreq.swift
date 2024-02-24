@@ -6,7 +6,7 @@
 //
 
 open class ChangeFreq: Tag {
-    
+
     public enum Value: String {
         case always
         case hourly
@@ -16,7 +16,7 @@ open class ChangeFreq: Tag {
         case yearly
         case never
     }
-    
+
     init(_ value: Value) {
         super.init()
         setContents(value.rawValue)
