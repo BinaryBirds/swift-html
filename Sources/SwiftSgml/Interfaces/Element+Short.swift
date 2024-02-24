@@ -13,3 +13,11 @@ extension ShortElement {
         .short(.init(name: name))
     }
 }
+
+extension ShortElement where Self: Attributes {
+
+    public var node: Node {
+        .short(.init(name: name, attributes: attributes))
+    }
+}
+

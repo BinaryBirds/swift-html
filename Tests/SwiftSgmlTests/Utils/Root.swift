@@ -11,7 +11,7 @@ protocol RootChildElement: Element {}
 
 extension Branch: RootChildElement {}
 
-struct Root: StandardElement, Attributed, Mutable {
+struct Root: ParentElement, MutableAttributes {
 
     var children: [any Element]
     var attributes: [any Attribute]
@@ -30,9 +30,13 @@ struct Root: StandardElement, Attributed, Mutable {
         self.init(attributes: {}, elements: b1)
     }
 
-//    func add(child: RootChildElement) -> Self {
-//        mutate { $0.children.append(child) }
-//    }
+    func add(child: RootChildElement) -> Self {
+        mutate { $0.children.append(child) }
+    }
+
+    func removeChildren() -> Self {
+        mutate { $0.children.removeAll() }
+    }
 }
 
 

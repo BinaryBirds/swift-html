@@ -5,18 +5,25 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public protocol CustomAttributed {
+public protocol CustomAttributes {
     associatedtype A: Attribute
     
     var attributes: [A] { get set }
 }
 
-public protocol Attributed {
+public protocol Attributes {
 
     var attributes: [any Attribute] { get set }
 }
 
-public extension Attributed where Self: Mutable {
+public protocol MutableAttributes: Attributes, Mutable {
+
+    func index(of attribute: any Attribute) -> [any Attribute].Index?
+    func add(attribute: any Attribute) -> Self
+    func remove(attributeByKey key: String) -> Self
+}
+
+public extension MutableAttributes {
     
     func index(of attribute: any Attribute) -> [any Attribute].Index? {
         attributes.firstIndex(where: { $0.key == attribute.key })

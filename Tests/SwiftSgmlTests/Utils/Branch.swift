@@ -7,7 +7,7 @@
 
 import SwiftSgml
 
-struct Branch: StandardElement, Mutable {
+struct Branch: MutableParentElement {
 
     var children: [any Element]
     

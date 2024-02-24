@@ -7,7 +7,7 @@
 
 import SwiftSgml
 
-struct Leaf: StandardElement {
+struct Leaf: ParentElement {
 
     var children: [any Element]
     

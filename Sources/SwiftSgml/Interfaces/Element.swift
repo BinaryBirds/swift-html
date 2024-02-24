@@ -8,8 +8,6 @@
 public protocol Element {
     var name: String { get }
     var node: Node { get }
-    
-//    func modify(_ modify: (inout Self) -> Void) -> Self
 }
 
 extension Element {

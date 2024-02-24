@@ -5,19 +5,31 @@
 //  Created by Tibor Bodecs on 24/02/2024.
 //
 
-public protocol StandardElement: Element {
+public protocol ParentElement: Element {
     
     var children: [any Element] { get set }
 }
 
-extension StandardElement {
+extension ParentElement {
 
     public var node: Node {
         .standard(.init(name: name), children.map { $0.node })
     }
 }
 
-public extension StandardElement where Self: Mutable {
+extension ParentElement where Self: Attributes {
+    
+    public var node: Node {
+        .standard(.init(name: name, attributes: attributes), children.map { $0.node })
+    }
+}
+
+public protocol MutableParentElement: ParentElement, Mutable {
+    func add<T: Element>(child: T) -> Self
+    func removeChildren() -> Self
+}
+
+public extension MutableParentElement {
     
     mutating func removeChildren() {
         children.removeAll()
