@@ -7,23 +7,24 @@
 
 public protocol Attributes: Sendable {
 
-    var attributes: [any Attribute] { get set }
+    var attributes: [Attribute] { get set }
 }
 
 public protocol MutableAttributes: Attributes, Mutable {
 
-    func index(of attribute: any Attribute) -> [any Attribute].Index?
-    func add(attribute: any Attribute) -> Self
+    func index(of attribute: Attribute) -> [Attribute].Index?
+    func add(attribute: Attribute) -> Self
     func remove(attributeByKey key: String) -> Self
+    func set(attributes newValue: [Attribute]) -> Self
 }
 
 public extension MutableAttributes {
     
-    func index(of attribute: any Attribute) -> [any Attribute].Index? {
+    func index(of attribute: Attribute) -> [Attribute].Index? {
         attributes.firstIndex(where: { $0.key == attribute.key })
     }
 
-    mutating func add(attribute: any Attribute) {
+    mutating func add(attribute: Attribute) {
         if let index = index(of: attribute) {
             attributes[index].value = attribute.value
         }
@@ -35,6 +36,10 @@ public extension MutableAttributes {
     mutating func remove(attributeByKey key: String) {
         attributes = attributes.filter { $0.key != key}
     }
+    
+    mutating func set(attributes newValue: [Attribute]) {
+        attributes = newValue
+    }
 
     // MARK: -
     
@@ -42,9 +47,15 @@ public extension MutableAttributes {
         mutate { $0.add(attribute: attribute) }
     }
     
+    func set(attributes newValue: [Attribute]) -> Self {
+        mutate { $0.set(attributes: newValue) }
+    }
+    
     func remove(attributeByKey key: String) -> Self {
         mutate { $0.remove(attributeByKey: key) }
     }
+    
+    
 }
 
 

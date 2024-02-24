@@ -11,7 +11,7 @@ import SwiftSgml
 
 final class TagTests: XCTestCase {
 
-    func testBasicStructure() {
+    func testBasics() {
         let doc = Document {
             Root {
                 Branch {
@@ -34,7 +34,7 @@ final class TagTests: XCTestCase {
         XCTAssertEqual(expectation.minify(), result)
     }
     
-    func testAddChildrenStructure() {
+    func testAddChild() {
         let doc = Document {
             Root {
                 Branch()
@@ -58,7 +58,7 @@ final class TagTests: XCTestCase {
         XCTAssertEqual(expectation.minify(), result)
     }
     
-    func testRemoveAllChildrenStructure() {
+    func testRemoveAllChildren() {
         let doc = Document {
             Root {
                 Branch {

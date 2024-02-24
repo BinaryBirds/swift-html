@@ -9,7 +9,7 @@ import SwiftSgml
 
 struct Branch: MutableParentElement {
 
-    var children: [any Element]
+    var children: [Element]
     
     public init(
         @Builder<Element> elements b1: () -> [Element] = { [] }

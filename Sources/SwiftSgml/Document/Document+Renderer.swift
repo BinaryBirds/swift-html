@@ -80,7 +80,7 @@ private extension DocumentRenderer {
         return result
     }
     
-    func attr(_ attributes: [any Attribute]) -> String {
+    func attr(_ attributes: [Attribute]) -> String {
         let attr = render(attributes).joined(separator: " ")
         if !attr.isEmpty {
             return " " + attr
@@ -88,7 +88,7 @@ private extension DocumentRenderer {
         return attr
     }
     
-    func render(_ attributes: [any Attribute]) -> [String] {
+    func render(_ attributes: [Attribute]) -> [String] {
         attributes.map { attribute in
             if let value = attribute.value {
                 return #"\#(attribute.key)="\#(value)""#

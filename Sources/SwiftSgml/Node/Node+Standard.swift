@@ -7,11 +7,11 @@
 
 public struct StandardNode: Sendable {
     let name: String
-    let attributes: [any Attribute]
+    let attributes: [Attribute]
     
     public init(
         name: String,
-        attributes: [any Attribute] = []
+        attributes: [Attribute] = []
     ) {
         self.name = name
         self.attributes = attributes

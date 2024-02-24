@@ -7,14 +7,16 @@
 
 import SwiftSgml
 
-struct Leaf: ParentElement {
+struct Leaf: ParentElement, MutableAttributes {
 
-    var children: [any Element]
+    var children: [Element]
+    var attributes: [Attribute]
     
     init(_ value: String) {
         self.children = [
             Text(value)
         ]
+        self.attributes = []
     }
     
     

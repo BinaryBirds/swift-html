@@ -10,7 +10,7 @@ import XCTest
 
 final class AttributeTests: XCTestCase {
 
-    func testCustomAttribute() {
+    func testCustom() {
         let document = Document(.xml) {
             Root()
                 .add(attribute: Custom(key: "foo", value: "bar"))
@@ -23,7 +23,7 @@ final class AttributeTests: XCTestCase {
         XCTAssertDocument(document, expectation)
     }
 
-    func testCustomNilAttribute() {
+    func testCustomNilValue() {
         let document = Document(.xml) {
             Root()
                 .add(attribute: Custom(key: "foo"))
@@ -36,7 +36,7 @@ final class AttributeTests: XCTestCase {
         XCTAssertDocument(document, expectation)
     }
     
-    func testCustomEmptyAttribute() {
+    func testCustomEmptyValue() {
         let document = Document(.xml) {
             Root()
                 .add(attribute: Custom(key: "foo", value: ""))
@@ -49,10 +49,10 @@ final class AttributeTests: XCTestCase {
         XCTAssertDocument(document, expectation)
     }
 
-    func testFlagAttribute() {
+    func testFlag() {
         let document = Document {
             Root {
-                Custom(key: "foo", value: nil)
+                Flag("foo")
             }
         }
 
@@ -64,75 +64,79 @@ final class AttributeTests: XCTestCase {
     
     // MARK: -
     
-//    func testSetAttributes() {
-//
-//        let doc = Document {
-//            Leaf("example")
-//                .attribute("foo", "example")
-//                .setAttributes([
-//                    .init(key: "a", value: "foo"),
-//                    .init(key: "b", value: "bar"),
-//                    .init(key: "c", value: "baz"),
-//                ])
-//        }
-//
-//        let html = """
-//                            <leaf a="foo" b="bar" c="baz">example</leaf>
-//                            """
-//    }
-//    
-//    func testAddAttribute() {
-//        let doc = Document {
-//            Leaf("example")
-//                .setAttributes([
-//                    .init(key: "a", value: "foo"),
-//                    .init(key: "b", value: "bar"),
-//                    .init(key: "c", value: "baz"),
-//                ])
-//                .attribute("foo", "example")
-//        }
-//
-//        let html = """
-//                            <leaf a="foo" b="bar" c="baz" foo="example">example</leaf>
-//                            """
-//    }
-//    
-//    func testDeleteAttribute() {
-//        let doc = Document {
-//            Leaf("example")
-//                .setAttributes([
-//                    .init(key: "a", value: "foo"),
-//                    .init(key: "b", value: "bar"),
-//                    .init(key: "c", value: "baz"),
-//                ])
-//                .deleteAttribute("b")
-//        }
-//
-//        let html = """
-//                            <leaf a="foo" c="baz">example</leaf>
-//                            """
-//    }
-//    
-//    func testFlagAttribute() {
-//        let doc = Document {
-//            Leaf("example")
-//                .flagAttribute("foo")
-//        }
-//
-//        let html = """
-//                            <leaf foo>example</leaf>
-//                            """
-//    }
-//    
-//    func testDeleteFlagAttribute() {
-//        let doc = Document {
-//            Leaf("example")
-//                .flagAttribute("foo")
-//                .deleteAttribute("foo")
-//        }
-//
-//        let html = """
-//                            <leaf>example</leaf>
-//                            """
-//    }
+    func testSet() {
+        let document = Document {
+            Leaf("example")
+                .add(attribute: Custom(key: "foo", value: "example"))
+                .set(attributes: [
+                    Custom(key: "a", value: "foo"),
+                    Custom(key: "b", value: "bar"),
+                    Custom(key: "c", value: "baz"),
+                ])
+        }
+
+        let expectation = """
+            <leaf a="foo" b="bar" c="baz">example</leaf>
+        """
+        XCTAssertDocument(document, expectation)
+    }
+    
+    func testAdd() {
+        let document = Document {
+            Leaf("example")
+                .set(attributes: [
+                    Custom(key: "a", value: "foo"),
+                    Custom(key: "b", value: "bar"),
+                    Custom(key: "c", value: "baz"),
+                ])
+                .add(attribute: Custom(key: "foo", value: "example"))
+        }
+
+        let expectation = """
+            <leaf a="foo" b="bar" c="baz" foo="example">example</leaf>
+        """
+        XCTAssertDocument(document, expectation)
+    }
+ 
+    func testRemove() {
+        let document = Document {
+            Leaf("example")
+                .set(attributes: [
+                    Custom(key: "a", value: "foo"),
+                    Custom(key: "b", value: "bar"),
+                    Custom(key: "c", value: "baz"),
+                ])
+                .remove(attributeByKey: "b")
+        }
+
+        let expectation = """
+            <leaf a="foo" c="baz">example</leaf>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testAddFlag() {
+        let document = Document {
+            Leaf("example")
+                .add(attribute: Flag("foo"))
+        }
+
+        let expectation = """
+            <leaf foo>example</leaf>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+    
+    func testRemoveFlag() {
+        let document = Document {
+            Leaf("example")
+                .add(attribute: Flag("foo"))
+                .remove(attributeByKey: "foo")
+        }
+        
+        let expectation = """
+            <leaf>example</leaf>
+        """
+        XCTAssertDocument(document, expectation)
+    }
 }

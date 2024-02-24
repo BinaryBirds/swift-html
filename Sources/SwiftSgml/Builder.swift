@@ -7,13 +7,13 @@
 
 private struct Group: Element {
 
-    var children: [any Element]
+    var children: [Element]
     
     var node: Node {
         .group(children.compactMap { $0.node })
     }
     
-    init(_ children: [any Element] = []) {
+    init(_ children: [Element] = []) {
         self.children = children
     }
 }
@@ -51,6 +51,10 @@ extension [SwiftSgml.Element]: SwiftSgml.Element {
 }
 
 extension Builder where T == Element {
+
+//    public static func buildBlock(_ components: T) -> [T] {
+//        [components]
+//    }
 
 //    public static func buildExpression(_ expression: [T]) -> T {
 //        Group(expression)

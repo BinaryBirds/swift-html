@@ -14,6 +14,7 @@ extension Branch: RootChildElement {}
 protocol RootAttribute: Attribute {}
 
 extension Custom: RootAttribute {}
+extension Flag: RootAttribute {}
 
 struct Root: Element, Mutable {
     

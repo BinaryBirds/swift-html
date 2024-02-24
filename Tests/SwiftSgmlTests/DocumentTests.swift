@@ -8,9 +8,9 @@
 import XCTest
 @testable import SwiftSgml
 
-final class SwiftSgmlTests: XCTestCase {
+final class DocumentTests: XCTestCase {
 
-    func testXmlDocument() {
+    func testXml() {
         let document = Document(.xml) {
             Root()
         }

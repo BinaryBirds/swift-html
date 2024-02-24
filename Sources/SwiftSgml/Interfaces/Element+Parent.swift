@@ -7,7 +7,7 @@
 
 public protocol ParentElement: Element {
     
-    var children: [any Element] { get set }
+    var children: [Element] { get set }
 }
 
 extension ParentElement {

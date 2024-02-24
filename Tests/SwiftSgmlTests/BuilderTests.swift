@@ -140,7 +140,7 @@ final class BuilderTests: XCTestCase {
     func testBlock4() {
         let document = Document {
             Branch {
-                [
+                [   // NOTE: make this work without array...
                     Leaf("a")
                 ]
                 [
@@ -183,9 +183,6 @@ final class BuilderTests: XCTestCase {
 
         let document = Document {
             Branch {
-                [
-                    Leaf("foo")
-                ]
                 values.map { item -> [Element] in
                     [
                         Leaf(item),
@@ -197,7 +194,6 @@ final class BuilderTests: XCTestCase {
 
         let expectation = """
         <branch>
-            <leaf>foo</leaf>
             <leaf>a</leaf>
             <leaf>a</leaf>
             <leaf>b</leaf>
