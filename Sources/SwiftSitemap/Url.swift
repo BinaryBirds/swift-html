@@ -5,6 +5,13 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-open class Url: Tag {
+import SwiftSgml
 
+public struct Url: RawElement {
+    
+    public var value: String
+    
+    public init(value: String) {
+        self.value = value
+    }
 }

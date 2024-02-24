@@ -5,6 +5,13 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-open class Loc: Tag {
+import SwiftSgml
 
+public struct Loc: RawElement {
+    
+    public var value: String
+    
+    public init(_ value: String) {
+        self.value = value
+    }
 }

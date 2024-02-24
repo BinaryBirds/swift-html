@@ -5,10 +5,18 @@
 //  Created by Tibor Bodecs on 2021. 12. 19..
 //
 
-open class Title: Tag {
+import SwiftSgml
 
-    public init(_ contents: String) {
-        super.init()
-        setContents("<![CDATA[" + contents + "]]>")
+struct Title: ParentElement {
+
+    var children: [Element]
+
+    init(_ value: String) {
+        self.children = [
+            CDATA(value)
+        ]
+        self.attributes = []
     }
+
 }
+

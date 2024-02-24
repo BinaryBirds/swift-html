@@ -6,6 +6,6 @@
 //
 
 // https://www.sitemaps.org/protocol.html
-open class Sitemap: Tag {
-
-}
+//open class Sitemap: Tag {
+//
+//}
