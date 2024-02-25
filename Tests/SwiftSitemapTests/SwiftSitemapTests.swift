@@ -109,7 +109,7 @@ final class SwiftSitemapTests: XCTestCase {
     }
 
     func testSitemap() {
-        let sitemap = Sitemap {
+        let document = Document.Sitemap {
             UrlSet {
                 Url {
                     Loc("http://localhost/")
@@ -130,7 +130,6 @@ final class SwiftSitemapTests: XCTestCase {
                 </url>
             </urlset>
             """
-        XCTAssertDocument(sitemap.document, expectation)
+        XCTAssertDocument(document, expectation)
     }
-
 }

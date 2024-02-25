@@ -82,50 +82,218 @@ final class SwiftRssTests: XCTestCase {
         XCTAssertDocument(document, expectation)
     }
 
-    //    func testA() {
-    //        let doc = Document(.xml) {
-    //            Rss {
-    //                Channel {
-    //                    Title("lorem")
-    //                    Description("ipsum")
-    //                    Link("")
-    //                    Language("en_US")
-    //                    LastBuildDate("2021-12-19")
-    //                    PubDate("2021-12-19")
-    //                    Ttl(250)
-    //
-    //                    Item {
-    //                        Guid("http://localhost/")
-    //                            .isPermalink()
-    //                        Title("lorem")
-    //                        Description("ipsum")
-    //                        PubDate("lorem")
-    //
-    //                    }
-    //                }
-    //            }
-    //        }
-    //        let html = """
-    //            <?xml version="1.0" encoding="utf-8" ?>
-    //            <rss version="2.0">
-    //                <channel>
-    //                    <title><![CDATA[lorem]]></title>
-    //                    <description><![CDATA[ipsum]]></description>
-    //                    <link></link>
-    //                    <language>en_US</language>
-    //                    <lastBuildDate>2021-12-19</lastBuildDate>
-    //                    <pubDate>2021-12-19</pubDate>
-    //                    <ttl>250</ttl>
-    //                    <item>
-    //                        <guid isPermalink="true">http://localhost/</guid>
-    //                        <title><![CDATA[lorem]]></title>
-    //                        <description><![CDATA[ipsum]]></description>
-    //                        <pubDate>lorem</pubDate>
-    //                    </item>
-    //                </channel>
-    //            </rss>
-    //            """
-    //        assert(doc: doc, html: html)
-    //    }
+    func testGuid1() {
+        let document = Document {
+            Guid("http://localhost/") {
+                IsPermalink(true)
+            }
+        }
+        let expectation = """
+            <guid isPermalink="true">http://localhost/</guid>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testGuid2() {
+        let document = Document {
+            Guid("http://localhost/")
+                .add(attribute: IsPermalink(false))
+        }
+        let expectation = """
+            <guid isPermalink="false">http://localhost/</guid>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testItem() {
+        let document = Document {
+            Item {
+                Guid("http://localhost/") {
+                    IsPermalink(true)
+                }
+                Title("lorem")
+                Description("ipsum")
+                PubDate("2021-12-19")
+            }
+        }
+        let expectation = """
+            <item>
+                <guid isPermalink="true">http://localhost/</guid>
+                <title><![CDATA[lorem]]></title>
+                <description><![CDATA[ipsum]]></description>
+                <pubDate>2021-12-19</pubDate>
+            </item>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testChannel() {
+        let document = Document {
+            Channel {
+                Title("lorem")
+                Description("ipsum")
+                Link("http://localhost/1")
+                Language("en_US")
+                LastBuildDate("2021-12-18")
+                PubDate("2021-12-19")
+                Ttl(250)
+
+                Item {
+                    Guid("http://localhost/2") {
+                        IsPermalink(true)
+                    }
+                    Title("dolor")
+                    Description("sit")
+                    PubDate("2021-12-19")
+                }
+            }
+        }
+        let expectation = """
+            <channel>
+                <title><![CDATA[lorem]]></title>
+                <description><![CDATA[ipsum]]></description>
+                <link>http://localhost/1</link>
+                <language>en_US</language>
+                <lastBuildDate>2021-12-18</lastBuildDate>
+                <pubDate>2021-12-19</pubDate>
+                <ttl>250</ttl>
+                
+                <item>
+                    <guid isPermalink="true">http://localhost/2</guid>
+                    <title><![CDATA[dolor]]></title>
+                    <description><![CDATA[sit]]></description>
+                    <pubDate>2021-12-19</pubDate>
+                </item>
+            </channel>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testRss() {
+        let document = Document {
+            Rss {
+                [
+                    Channel {
+                        Title("lorem")
+                        Description("ipsum")
+                        Link("http://localhost/1")
+                        Language("en_US")
+                        LastBuildDate("2021-12-18")
+                        PubDate("2021-12-19")
+                        Ttl(250)
+
+                        Item {
+                            Guid("http://localhost/2") {
+                                IsPermalink(true)
+                            }
+                            Title("dolor")
+                            Description("sit")
+                            PubDate("2021-12-19")
+                        }
+                    },
+                    Channel {
+                        Title("lorem")
+                        Description("ipsum")
+                        Link("http://localhost/1")
+                        Language("en_US")
+                        LastBuildDate("2021-12-18")
+                        PubDate("2021-12-19")
+                        Ttl(250)
+
+                        Item {
+                            Guid("http://localhost/2") {
+                                IsPermalink(true)
+                            }
+                            Title("dolor")
+                            Description("sit")
+                            PubDate("2021-12-19")
+                        }
+                    },
+                ]
+            }
+        }
+        let expectation = """
+            <rss version="2.0">
+            <channel>
+                <title><![CDATA[lorem]]></title>
+                <description><![CDATA[ipsum]]></description>
+                <link>http://localhost/1</link>
+                <language>en_US</language>
+                <lastBuildDate>2021-12-18</lastBuildDate>
+                <pubDate>2021-12-19</pubDate>
+                <ttl>250</ttl>
+                
+                <item>
+                    <guid isPermalink="true">http://localhost/2</guid>
+                    <title><![CDATA[dolor]]></title>
+                    <description><![CDATA[sit]]></description>
+                    <pubDate>2021-12-19</pubDate>
+                </item>
+            </channel>
+            <channel>
+                <title><![CDATA[lorem]]></title>
+                <description><![CDATA[ipsum]]></description>
+                <link>http://localhost/1</link>
+                <language>en_US</language>
+                <lastBuildDate>2021-12-18</lastBuildDate>
+                <pubDate>2021-12-19</pubDate>
+                <ttl>250</ttl>
+                
+                <item>
+                    <guid isPermalink="true">http://localhost/2</guid>
+                    <title><![CDATA[dolor]]></title>
+                    <description><![CDATA[sit]]></description>
+                    <pubDate>2021-12-19</pubDate>
+                </item>
+            </channel>
+            </rss>
+            """
+        XCTAssertDocument(document, expectation)
+    }
+
+    func testDocument() {
+        let document = Document.Rss {
+            Channel {
+                Title("lorem")
+                Description("ipsum")
+                Link("")
+                Language("en_US")
+                LastBuildDate("2021-12-19")
+                PubDate("2021-12-19")
+                Ttl(250)
+
+                Item {
+                    Guid("http://localhost/") {
+                        IsPermalink(true)
+                    }
+                    Title("lorem")
+                    Description("ipsum")
+                    PubDate("lorem")
+                }
+            }
+        }
+
+        let expectation = """
+            <?xml version="1.0" encoding="utf-8" ?>
+            <rss version="2.0">
+                <channel>
+                    <title><![CDATA[lorem]]></title>
+                    <description><![CDATA[ipsum]]></description>
+                    <link></link>
+                    <language>en_US</language>
+                    <lastBuildDate>2021-12-19</lastBuildDate>
+                    <pubDate>2021-12-19</pubDate>
+                    <ttl>250</ttl>
+                    <item>
+                        <guid isPermalink="true">http://localhost/</guid>
+                        <title><![CDATA[lorem]]></title>
+                        <description><![CDATA[ipsum]]></description>
+                        <pubDate>lorem</pubDate>
+                    </item>
+                </channel>
+            </rss>
+            """
+        XCTAssertDocument(document, expectation)
+    }
 
 }

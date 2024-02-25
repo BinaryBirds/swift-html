@@ -8,12 +8,12 @@
 import SwiftSgml
 
 // https://www.sitemaps.org/protocol.html
-public struct Sitemap {
+extension Document {
 
-    public let document: Document
-
-    public init(@Builder<UrlSet> _ builder: () -> [UrlSet]) {
-        self.document = Document(.xml) {
+    public static func Sitemap(
+        @Builder<UrlSet> _ builder: () -> [UrlSet]
+    ) -> Document {
+        .init(.xml) {
             builder().map { $0 }
         }
     }
