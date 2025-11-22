@@ -31,7 +31,7 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var children: [Element]
+            let children: [Element]
         }
 
         struct Branch: ShortTag {}
@@ -63,11 +63,11 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var children: [Element]
+            let children: [Element]
         }
 
         struct Branch: StandardTag {
-            var children: [Element]
+            let children: [Element]
         }
 
         struct Leaf: StandardTag {
@@ -117,7 +117,7 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var children: [Element]
+            let children: [Element]
         }
 
         struct Branch: StandardTag, Mutable {
@@ -183,7 +183,7 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var children: [Element]
+            let children: [Element]
         }
 
         struct Branch: StandardTag, Mutable {

@@ -1,19 +1,15 @@
-////
-////  Base.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<base>` tag specifies the base URL and/or target for all relative URLs in a document.
-/////
-///// The `<base>` tag must have either an href or a target attribute present, or both.
-/////
-///// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
-//open class Base: EmptyTag {
-//
-//}
-//
+import SGML
+
+/// The `<base>` tag specifies the base URL and/or target for all relative URLs in a document.
+///
+/// The `<base>` tag must have either an href or a target attribute present, or both.
+///
+/// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
+public struct Base: ShortTag, MetadataContent {
+
+    public init() {}
+}
+
 //extension Base {
 //    /// Specifies the base URL for all relative URLs in the page
 //    public func href(_ value: String) -> Self {

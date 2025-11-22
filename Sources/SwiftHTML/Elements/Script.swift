@@ -1,22 +1,51 @@
-////
-////  Script.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<script>` tag is used to embed a client-side script (JavaScript).
-/////
-///// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
-/////
-///// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
-//open class Script: Tag {
-//
-//    public enum `Type`: String {
-//        case javascript = "text/javascript"
-//    }
-//}
-//
+import DOM
+import SGML
+
+/// The `<script>` tag is used to embed a client-side script (JavaScript).
+///
+/// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
+///
+/// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+public struct Script: Tag, MetadataContent {
+
+    public enum `Type`: String {
+        case javascript = "text/javascript"
+    }
+
+    private enum Kind {
+        case standard(String)
+        case void
+    }
+
+    private var kind: Kind
+
+    public init(_ contents: String) {
+        self.kind = .standard(contents)
+    }
+
+    public init() {
+        self.kind = .void
+    }
+
+    public var node: Node {
+        switch kind {
+        case .standard(let contents):
+            StandardNode(
+                name: name,
+                attributes: attributes.domAttributes,
+                children: [
+                    TextNode(value: contents)
+                ]
+            )
+        case .void:
+            ShortNode(
+                name: name,
+                attributes: attributes.domAttributes
+            )
+        }
+    }
+}
+
 //extension Script {
 //
 //    /// Specifies that the script is executed asynchronously (only for external scripts)

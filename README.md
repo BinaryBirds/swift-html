@@ -1,6 +1,6 @@
 # SwiftHTML
 
-An awesome Swift HTML DSL library using result builders.
+An awesome Swift HTML DSL library using result builders that closely follows the W3C standards.
 
 
 ```swift

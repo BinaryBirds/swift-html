@@ -18,7 +18,7 @@ public struct Renderer: Sendable {
         )
         let doctype = render(type: document.type)
         let doc = renderer.render(node: document.root.node)
-        if indent > 0 {
+        if indent > 0, !doctype.isEmpty {
             return doctype + "\n" + doc
         }
         return doctype + doc

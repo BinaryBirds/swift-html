@@ -1,17 +1,19 @@
-////
-////  Style.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<style>` tag is used to define style information (CSS) for a document.
-/////
-///// Inside the `<style>` element you specify how HTML elements should render in a browser.
-//open class Style: Tag {
-//
-//}
-//
+import SGML
+
+/// The `<style>` tag is used to define style information (CSS) for a document.
+///
+/// Inside the `<style>` element you specify how HTML elements should render in a browser.
+public struct Style: StandardTextTag, MetadataContent {
+
+    public let text: String
+
+    public init(
+        _ text: String
+    ) {
+        self.text = text
+    }
+}
+
 //extension Style {
 //
 //    /// Specifies what media/device the media resource is optimized for

@@ -17,7 +17,41 @@ import SGML
 /// - `<noscript>`
 public struct Head: StandardTag {
 
-    public init() {
+    @resultBuilder
+    public enum Builder {
 
+        // Enforce exactly: Head, Body
+        public static func buildBlock(
+            _ elements: MetadataContent...
+        ) -> Head {
+            .init(elements: elements)
+        }
+    }
+
+    public var attributes: Attributes
+    public let children: [Element]
+
+    public init(
+        elements: [MetadataContent]
+    ) {
+        self.attributes = .init()
+        self.children = elements
+
+        precondition(
+            elements.count(where: { $0 is Base }) <= 1,
+            "There can be only one `base` element in the head."
+        )
+        precondition(
+            elements.count(where: { $0 is Title }) <= 1,
+            "There can be only one `title` element in the head."
+        )
+    }
+
+    public init(
+        @Builder _ block: () -> Head  //,
+            //        @AttributeBuilder attributes: () -> [A] = { [] }
+    ) {
+        self = block()
+        //        print(attributes())
     }
 }

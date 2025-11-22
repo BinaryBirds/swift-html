@@ -20,7 +20,7 @@ public struct Html: StandardTag {
     }
 
     public var attributes: Attributes
-    public var children: [any Element]
+    public let children: [Element]
 
     public init(
         head: Head,

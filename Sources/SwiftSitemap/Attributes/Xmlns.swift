@@ -1,13 +1,13 @@
-//
-//  File.swift
-//
-//
-//  Created by Tibor Bodecs on 24/02/2024.
-//
+import SGML
 
-import SwiftSgml
+public struct Xmlns: Attribute {
 
-struct Xmlns: Attribute {
-    var key: String = "xmlns"
-    var value: String? = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    public let name = "xmlns"
+    public var value: String?
+
+    public init(
+        value: String? = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    ) {
+        self.value = value
+    }
 }
