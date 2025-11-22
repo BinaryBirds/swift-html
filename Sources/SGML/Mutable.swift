@@ -1,5 +1,5 @@
 public protocol Mutable: Sendable {
-    
+
     func modify(
         _ block: (inout Self) -> Void
     ) -> Self

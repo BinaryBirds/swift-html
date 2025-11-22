@@ -18,8 +18,6 @@ import SGML
 public struct Head: StandardTag {
 
     public init() {
-        
+
     }
 }
-
-

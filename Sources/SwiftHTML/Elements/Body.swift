@@ -8,6 +8,6 @@ import SGML
 public struct Body: StandardTag {
 
     public init() {
-        
+
     }
 }

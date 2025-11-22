@@ -4,22 +4,22 @@ import Testing
 
 @Suite
 struct RendererTestSuite {
-    
+
     @Test
     func commentNode() async throws {
         let renderer = Renderer()
         let node = CommentNode(
             value: "this is a comment"
         )
-        
+
         let expectation = #"""
-        <!-- this is a comment -->
-        """#
-        
+            <!-- this is a comment -->
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func groupNode() async throws {
         let renderer = Renderer()
@@ -33,30 +33,30 @@ struct RendererTestSuite {
                 ),
             ]
         )
-        
+
         let expectation = #"""
-        this is a text<br>
-        """#
-        
+            this is a text<br>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNode() async throws {
         let renderer = Renderer()
         let node = StandardNode(
             name: "p"
         )
-        
+
         let expectation = #"""
-        <p></p>
-        """#
-        
+            <p></p>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodes() async throws {
         let renderer = Renderer(indent: 4)
@@ -68,17 +68,17 @@ struct RendererTestSuite {
                 )
             ]
         )
-        
+
         let expectation = #"""
-        <main>
-            <div></div>
-        </main>
-        """#
-        
+            <main>
+                <div></div>
+            </main>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodeAttributes() async throws {
         let renderer = Renderer()
@@ -88,32 +88,30 @@ struct RendererTestSuite {
                 .init(name: "style", value: "")
             ]
         )
-        
+
         let expectation = #"""
-        <p style=""></p>
-        """#
-        
+            <p style=""></p>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
-    
-    
+
     @Test
     func shortNode() async throws {
         let renderer = Renderer()
         let node = ShortNode(
             name: "br"
         )
-        
+
         let expectation = #"""
-        <br>
-        """#
-        
+            <br>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func shortNodeAsChild() async throws {
         let renderer = Renderer(indent: 4)
@@ -125,17 +123,17 @@ struct RendererTestSuite {
                 )
             ]
         )
-        
+
         let expectation = #"""
-        <main>
-            <br>
-        </main>
-        """#
-        
+            <main>
+                <br>
+            </main>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func shortNodeAttributes() async throws {
         let renderer = Renderer()
@@ -146,30 +144,30 @@ struct RendererTestSuite {
                 .init(name: "checked", value: nil),
             ]
         )
-        
+
         let expectation = #"""
-        <input type="checkbox" checked>
-        """#
-        
+            <input type="checkbox" checked>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func textNode() async throws {
         let renderer = Renderer()
         let node = TextNode(
             value: "this is a text"
         )
-        
+
         let expectation = #"""
-        this is a text
-        """#
-        
+            this is a text
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodeWithText() async throws {
         let renderer = Renderer()
@@ -178,18 +176,18 @@ struct RendererTestSuite {
             children: [
                 TextNode(
                     value: "this is a text"
-                ),
+                )
             ]
         )
-        
+
         let expectation = #"""
-        <p>this is a text</p>
-        """#
-        
+            <p>this is a text</p>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodeWithoutIndentation() async throws {
         let renderer = Renderer()
@@ -209,20 +207,20 @@ struct RendererTestSuite {
                             value: "a text"
                         ),
                     ]
-                    
+
                 )
             ]
-            
+
         )
-        
+
         let expectation = #"""
-        <div><p>this is<br>a text</p></div>
-        """#
-        
+            <div><p>this is<br>a text</p></div>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodeWithIndentation() async throws {
         let renderer = Renderer(
@@ -236,24 +234,24 @@ struct RendererTestSuite {
                     children: [
                         TextNode(
                             value: "this is a text"
-                        ),
+                        )
                     ]
-                    
+
                 )
             ]
-            
+
         )
-        
+
         let expectation = #"""
-        <div>
-            <p>this is a text</p>
-        </div>
-        """#
-        
+            <div>
+                <p>this is a text</p>
+            </div>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodeWithStartingTextIndentation() async throws {
         let renderer = Renderer(
@@ -282,30 +280,30 @@ struct RendererTestSuite {
                                     children: [
                                         TextNode(
                                             value: "text"
-                                        ),
+                                        )
                                     ]
                                 ),
                             ]
-                            
+
                         )
                     ]
                 )
             ]
-            
+
         )
-        
+
         let expectation = #"""
-        <main>
-          <div>
-            <p>this is<br>a <b>text</b></p>
-          </div>
-        </main>
-        """#
-        
+            <main>
+              <div>
+                <p>this is<br>a <b>text</b></p>
+              </div>
+            </main>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
-    
+
     @Test
     func standardNodeWithTextIndentation() async throws {
         let renderer = Renderer(
@@ -339,7 +337,7 @@ struct RendererTestSuite {
                                     children: [
                                         TextNode(
                                             value: "text"
-                                        ),
+                                        )
                                     ]
                                 ),
                             ]
@@ -347,20 +345,20 @@ struct RendererTestSuite {
                     ]
                 )
             ]
-            
+
         )
-        
+
         let expectation = #"""
-        <main>
-          <div>
-            <p>
-              <span>this is<br>a </span>
-              <b>text</b>
-            </p>
-          </div>
-        </main>
-        """#
-        
+            <main>
+              <div>
+                <p>
+                  <span>this is<br>a </span>
+                  <b>text</b>
+                </p>
+              </div>
+            </main>
+            """#
+
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }

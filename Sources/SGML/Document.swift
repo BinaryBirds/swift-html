@@ -1,4 +1,3 @@
-
 public struct Document: Sendable {
 
     public let type: DocType
@@ -12,4 +11,3 @@ public struct Document: Sendable {
         self.root = root
     }
 }
-

@@ -1,5 +1,5 @@
 public struct Renderer {
-    
+
     public var indent: UInt8
 
     public init(
@@ -18,17 +18,18 @@ public struct Renderer {
     }
 
     // MARK: - internal
-    
+
     func indentation(
         for level: UInt8
     ) -> String {
         .init(repeating: " ", count: Int(indent) * Int(level))
     }
-    
+
     func renderAttributeList(
         _ attributes: [Attribute]
     ) -> String {
-        let attributesList = attributes
+        let attributesList =
+            attributes
             .map { renderAttribute($0) }
             .joined(separator: " ")
         if !attributesList.isEmpty {
@@ -36,7 +37,7 @@ public struct Renderer {
         }
         return attributesList
     }
-    
+
     func renderAttribute(
         _ attribute: Attribute
     ) -> String {
@@ -45,7 +46,7 @@ public struct Renderer {
         }
         return attribute.name
     }
-    
+
     func renderStandardOpening(
         _ node: StandardNode
     ) -> String {
@@ -56,24 +57,24 @@ public struct Renderer {
     func renderStandardClosing(
         _ node: StandardNode
     ) -> String {
-        return "</\(node.name)>"
+        "</\(node.name)>"
     }
-    
+
     func renderShort(
         _ node: ShortNode
     ) -> String {
         let attributesList = renderAttributeList(node.attributes)
         return "<\(node.name)\(attributesList)>"
     }
-    
+
     func renderComment(
         _ node: CommentNode
     ) -> String {
-        return "<!-- \(node.value) -->"
+        "<!-- \(node.value) -->"
     }
-    
+
     // MARK: - rendering
-    
+
     func renderInline(
         _ node: Node
     ) -> String {

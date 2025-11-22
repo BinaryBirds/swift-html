@@ -4,32 +4,32 @@ import Testing
 
 @Suite
 struct RendererTestSuite {
-    
+
     @Test
     func renderElement() async throws {
         let renderer = SGML.Renderer()
-        
+
         struct Root: StandardTag {}
-        
+
         let doc = Document(
             type: .html,
             root: Root()
         )
 
         let expectation = #"""
-        <!doctype html><root></root>
-        """#
-        
+            <!doctype html><root></root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    
+
     @Test
     func renderElementWithIndentation() async throws {
         let renderer = SGML.Renderer(
             indent: 4
         )
-        
+
         struct Root: StandardTag {
             var children: [Element]
         }
@@ -46,33 +46,33 @@ struct RendererTestSuite {
         )
 
         let expectation = #"""
-        <!doctype html>
-        <root>
-            <branch>
-        </root>
-        """#
-        
+            <!doctype html>
+            <root>
+                <branch>
+            </root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    
+
     @Test
     func renderHierarchyWithIndentation() async throws {
         let renderer = SGML.Renderer(
             indent: 2
         )
-        
+
         struct Root: StandardTag {
             var children: [Element]
         }
-        
+
         struct Branch: StandardTag {
             var children: [Element]
         }
 
         struct Leaf: StandardTag {
             var text: String
-            
+
             init(text: String) {
                 self.text = text
             }
@@ -98,32 +98,31 @@ struct RendererTestSuite {
         )
 
         let expectation = #"""
-        <!doctype html>
-        <root>
-          <branch>
-            <leaf>foo</leaf>
-          </branch>
-        </root>
-        """#
-        
+            <!doctype html>
+            <root>
+              <branch>
+                <leaf>foo</leaf>
+              </branch>
+            </root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    
-    
+
     @Test
     func renderMutation() async throws {
         let renderer = SGML.Renderer(
             indent: 2
         )
-        
+
         struct Root: StandardTag {
             var children: [Element]
         }
-        
+
         struct Branch: StandardTag, Mutable {
             var children: [Element]
-            
+
             func add(chid: Element) -> Self {
                 modify {
                     $0.children.append(chid)
@@ -133,7 +132,7 @@ struct RendererTestSuite {
 
         struct Leaf: StandardTag {
             var text: String
-            
+
             init(text: String) {
                 self.text = text
             }
@@ -164,33 +163,32 @@ struct RendererTestSuite {
         )
 
         let expectation = #"""
-        <!doctype html>
-        <root>
-          <branch>
-            <leaf>foo</leaf>
-            <leaf>bar</leaf>
-          </branch>
-        </root>
-        """#
-        
+            <!doctype html>
+            <root>
+              <branch>
+                <leaf>foo</leaf>
+                <leaf>bar</leaf>
+              </branch>
+            </root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
 
-    
     @Test
     func renderMutationChildren() async throws {
         let renderer = SGML.Renderer(
             indent: 2
         )
-        
+
         struct Root: StandardTag {
             var children: [Element]
         }
-        
+
         struct Branch: StandardTag, Mutable {
             var children: [Element]
-            
+
             func add(chid: Element) -> Self {
                 modify {
                     $0.children.append(chid)
@@ -206,7 +204,7 @@ struct RendererTestSuite {
 
         struct Leaf: StandardTag {
             var text: String
-            
+
             init(text: String) {
                 self.text = text
             }
@@ -238,12 +236,12 @@ struct RendererTestSuite {
         )
 
         let expectation = #"""
-        <!doctype html>
-        <root>
-          <branch></branch>
-        </root>
-        """#
-        
+            <!doctype html>
+            <root>
+              <branch></branch>
+            </root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }

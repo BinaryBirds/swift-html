@@ -8,7 +8,7 @@ public protocol Attribute: Sendable {
 public struct Attributes: Sendable {
 
     var storage: [String: [String?]]
-    
+
     public init(
         _ values: [Attribute] = []
     ) {
@@ -30,7 +30,7 @@ public struct Attributes: Sendable {
         }
         storage[attribute.name]?.append(attribute.value)
     }
-    
+
     public mutating func set(
         attribute: Attribute
     ) {
@@ -42,7 +42,7 @@ public struct Attributes: Sendable {
     ) {
         storage[attribute.name] = nil
     }
-    
+
     public mutating func removeValue(
         attribute: Attribute
     ) {
@@ -51,14 +51,14 @@ public struct Attributes: Sendable {
         }
         storage[attribute.name] = storage[attribute.name]!
             .filter { $0 != attribute.value }
-        
-//        if storage[attribute.name]!.isEmpty {
-//            storage[attribute.name] = nil
-//        }
+
+        //        if storage[attribute.name]!.isEmpty {
+        //            storage[attribute.name] = nil
+        //        }
     }
-    
+
     // MARK: - internal
-    
+
     var domAttributes: [DOM.Attribute] {
         storage.map { name, value in
             let values = value.compactMap { $0 }.sorted()

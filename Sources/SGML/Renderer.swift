@@ -1,7 +1,7 @@
 import DOM
 
 public struct Renderer: Sendable {
-    
+
     public var indent: UInt8
 
     public init(
@@ -9,7 +9,7 @@ public struct Renderer: Sendable {
     ) {
         self.indent = indent
     }
-    
+
     public func render(
         document: Document
     ) -> String {
@@ -23,9 +23,9 @@ public struct Renderer: Sendable {
         }
         return doctype + doc
     }
-    
+
     // MARK: - internal
-    
+
     func render(
         type: DocType
     ) -> String {

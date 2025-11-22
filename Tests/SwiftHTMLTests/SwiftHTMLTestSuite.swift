@@ -1,19 +1,18 @@
-import Testing
-
 import SGML
 import SwiftHTML
+import Testing
 
 @Suite
 struct SwiftHTMLTestSuite {
-    
+
     @Test
     func html() async throws {
-        
+
         let html = Html {
             Head()
             Body()
         }
-        
+
         let renderer = Renderer(
             indent: 4
         )
@@ -24,13 +23,13 @@ struct SwiftHTMLTestSuite {
         )
 
         let expectation = #"""
-        <!doctype html>
-        <html>
-            <head></head>
-            <body></body>
-        </html>
-        """#
-        
+            <!doctype html>
+            <html>
+                <head></head>
+                <body></body>
+            </html>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }

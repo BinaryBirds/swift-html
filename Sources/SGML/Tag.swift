@@ -5,9 +5,9 @@ public protocol Tag: Element {
     var attributes: Attributes { get }
 }
 
-public extension Tag {
-    
-    var name: String {
+extension Tag {
+
+    public var name: String {
         String(
             describing: type(
                 of: self
@@ -16,18 +16,18 @@ public extension Tag {
         .lowercased()
     }
 
-    var attributes: Attributes { .init() }
+    public var attributes: Attributes { .init() }
 }
 
 public protocol StandardTag: Tag {
     var children: [Element] { get }
 }
 
-public extension StandardTag {
-    
-    var children: [Element] { [] }
-    
-    var node: Node {
+extension StandardTag {
+
+    public var children: [Element] { [] }
+
+    public var node: Node {
         StandardNode(
             name: name,
             attributes: attributes.domAttributes,
@@ -37,11 +37,11 @@ public extension StandardTag {
 }
 
 public protocol ShortTag: Tag {
-    
+
 }
 
-public extension ShortTag {
-    var node: Node {
+extension ShortTag {
+    public var node: Node {
         ShortNode(
             name: name,
             attributes: attributes.domAttributes

@@ -3,7 +3,7 @@ import DOM
 public struct Comment: Element {
 
     public var value: String
-    
+
     public init(_ value: String) {
         self.value = value
     }
@@ -12,4 +12,3 @@ public struct Comment: Element {
         CommentNode(value: value)
     }
 }
-

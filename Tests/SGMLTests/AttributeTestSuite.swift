@@ -1,23 +1,22 @@
-import Testing
-
 import SGML
+import Testing
 
 @Suite
 struct AttributeTestSuite {
-    
+
     @Test
     func custom() async throws {
         let renderer = Renderer()
-        
+
         struct Root: StandardTag {
             var attributes: Attributes
         }
-        
+
         struct Class: Attribute {
             let name = "class"
             var value: String?
         }
-        
+
         let doc = Document(
             type: .unspecified,
             root: Root(
@@ -30,27 +29,27 @@ struct AttributeTestSuite {
         )
 
         let expectation = #"""
-        <root class="custom"></root>
-        """#
-        
+            <root class="custom"></root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    
+
     @Test
     func customNilValue() async throws {
-        
+
         let renderer = Renderer()
-        
+
         struct Root: StandardTag {
             var attributes: Attributes
         }
-        
+
         struct Enabled: Attribute {
             let name = "enabled"
             let value: String? = nil
         }
-        
+
         let doc = Document(
             type: .unspecified,
             root: Root(
@@ -63,43 +62,42 @@ struct AttributeTestSuite {
         )
 
         let expectation = #"""
-        <root enabled></root>
-        """#
-        
+            <root enabled></root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    
+
     @Test
     func mutation() async throws {
-        
+
         let renderer = Renderer()
-        
+
         struct Root: StandardTag, Mutable {
             var attributes: Attributes
         }
-        
+
         struct Class: Attribute {
             let name = "class"
             var value: String?
         }
-        
+
         struct Style: Attribute {
             let name = "style"
             var value: String?
         }
-        
+
         struct Enabled: Attribute {
             let name = "enabled"
             let value: String? = nil
         }
-        
+
         struct Alignment: Attribute {
             let name = "align"
             let value: String?
         }
-        
-        
+
         let doc = Document(
             type: .unspecified,
             root: Root(
@@ -152,9 +150,9 @@ struct AttributeTestSuite {
         )
 
         let expectation = #"""
-        <root class="bar foo" style="bar" enabled></root>
-        """#
-        
+            <root class="bar foo" style="bar" enabled></root>
+            """#
+
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
