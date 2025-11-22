@@ -1,34 +1,58 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.0
 import PackageDescription
+
+let defaultSwiftSettings: [SwiftSetting] = [
+    .swiftLanguageMode(.v6),
+    .enableExperimentalFeature("AvailabilityMacro=htmlSwift 1.0:macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0"),
+
+    // https://github.com/swiftlang/swift-evolution/blob/main/proposals/0444-member-import-visibility.md
+    .enableUpcomingFeature("MemberImportVisibility"),
+]
 
 let package = Package(
     name: "swift-html",
-    platforms: [
-        .macOS(.v13),
-        .iOS(.v16),
-        .tvOS(.v16),
-        .watchOS(.v9),
-        .visionOS(.v1),
-    ],
     products: [
-        .library(name: "SwiftSgml", targets: ["SwiftSgml"]),
-        .library(name: "SwiftSitemap", targets: ["SwiftSitemap"]),
+        .library(name: "DOM", targets: ["DOM"]),
+        .library(name: "SGML", targets: ["SGML"]),
+        .library(name: "SwiftHTML", targets: ["SwiftHTML"]),
+//        .library(name: "SwiftSitemap", targets: ["SwiftSitemap"]),
         //        .library(name: "SwiftRss", targets: ["SwiftRss"]),
-        //        .library(name: "SwiftHtml", targets: ["SwiftHtml"]),
         //        .library(name: "SwiftSvg", targets: ["SwiftSvg"]),
     ],
     targets: [
-        .target(name: "SwiftSgml"),
-
         .target(
-            name: "SwiftSitemap",
-            dependencies: [
-                .target(name: "SwiftSgml")
-            ]
+            name: "DOM",
+            swiftSettings: defaultSwiftSettings
         ),
-        .target(name: "SwiftRss", dependencies: [
-            .target(name: "SwiftSgml")
-        ]),
+        .target(
+            name: "SGML",
+            dependencies: [
+                .target(name: "DOM")
+            ],
+            swiftSettings: defaultSwiftSettings
+        ),
+        .target(
+            name: "SwiftHTML",
+            dependencies: [
+                .target(name: "SGML")
+            ],
+            swiftSettings: defaultSwiftSettings
+        ),
+
+//        .target(
+//            name: "SwiftSitemap",
+//            dependencies: [
+//                .target(name: "SwiftSgml")
+//            ],
+//            swiftSettings: defaultSwiftSettings
+//        ),
+//        .target(
+//            name: "SwiftRss",
+//            dependencies: [
+//                .target(name: "SwiftSgml")
+//            ],
+//            swiftSettings: defaultSwiftSettings
+//        ),
         //        .target(name: "SwiftHtml", dependencies: [
         //            .target(name: "SwiftSgml")
         //        ]),
@@ -37,20 +61,32 @@ let package = Package(
         //        ]),
         //
         .testTarget(
-            name: "SwiftSgmlTests",
+            name: "DOMTests",
             dependencies: [
-                .target(name: "SwiftSgml")
+                .target(name: "DOM")
             ]
         ),
         .testTarget(
-            name: "SwiftSitemapTests",
+            name: "SGMLTests",
             dependencies: [
-                .target(name: "SwiftSitemap")
+                .target(name: "SGML")
             ]
         ),
-        .testTarget(name: "SwiftRssTests", dependencies: [
-            .target(name: "SwiftRss"),
-        ]),
+        .testTarget(
+            name: "SwiftHTMLTests",
+            dependencies: [
+                .target(name: "SwiftHTML")
+            ]
+        ),
+//        .testTarget(
+//            name: "SwiftSitemapTests",
+//            dependencies: [
+//                .target(name: "SwiftSitemap")
+//            ]
+//        ),
+//        .testTarget(name: "SwiftRssTests", dependencies: [
+//            .target(name: "SwiftRss"),
+//        ]),
         //        .testTarget(name: "SwiftHtmlTests", dependencies: [
         //            .target(name: "SwiftHtml"),
         //        ]),

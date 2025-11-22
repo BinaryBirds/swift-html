@@ -1,6 +1,7 @@
-# SwiftHtml
+# SwiftHTML
 
 An awesome Swift HTML DSL library using result builders.
+
 
 ```swift
 import SwiftHtml 
