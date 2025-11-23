@@ -5,14 +5,6 @@ import Testing
 @Suite
 struct AttributesTestSuite {
 
-    struct Class: Attribute {
-        var value: String?
-
-        init(_ value: String? = nil) {
-            self.value = value
-        }
-    }
-
     struct Style: Attribute {
         var value: String?
 
