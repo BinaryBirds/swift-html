@@ -10,20 +10,22 @@ public struct P: StandardTag {
     public var attributes: AttributeStore
     public var children: [Element]
 
-    public init(
-        _ contents: String
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
     ) {
-        self.attributes = .init()
-        self.children = [
-            Text(contents)
-        ]
+        self.attributes = attributes
+        self.children = children
     }
 
     public init(
-        children: [Element]
+        _ contents: String
     ) {
-        self.attributes = .init()
-        self.children = children
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
     }
 
     public init(

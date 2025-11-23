@@ -8,40 +8,30 @@ import SGML
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 public struct H2: StandardTag, HeadingContent {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ elements: Element...
-        ) -> H2 {
-            .init(children: elements)
-        }
-    }
-
-    // MARK: -
-
     public var attributes: AttributeStore
     public var children: [Element]
 
-    public init(
-        @Builder _ block: () -> Self
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
     ) {
-        self = block()
+        self.attributes = attributes
+        self.children = children
     }
 
     public init(
         _ contents: String
     ) {
-        self.attributes = .init()
-        self.children = [
-            Text(contents)
-        ]
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
     }
 
     public init(
-        children: [Element]
+        @ElementBuilder _ block: () -> [Element]
     ) {
-        self.attributes = .init()
-        self.children = children
+        self.init(children: block())
     }
 }

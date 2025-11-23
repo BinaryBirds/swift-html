@@ -7,29 +7,20 @@ import SGML
 /// **Note:** There can only be one `<body>` element in an HTML document.
 public struct Body: StandardTag {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ elements: Element...
-        ) -> Body {
-            .init(elements: elements)
-        }
-    }
-
     public var attributes: AttributeStore
     public var children: [Element]
 
-    public init(
-        elements: [Element]
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
     ) {
         self.attributes = .init()
-        self.children = elements
+        self.children = children
     }
 
     public init(
-        @Builder _ block: () -> Body
+        @ElementBuilder _ block: () -> [Element]
     ) {
-        self = block()
+        self.init(children: block())
     }
 }

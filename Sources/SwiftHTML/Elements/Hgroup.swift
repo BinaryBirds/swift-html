@@ -2,31 +2,30 @@ import SGML
 
 public struct Hgroup: StandardTag {  //, HeadingContent */ {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ elements: Element...
-        ) -> Hgroup {
-            .init(children: elements)
-        }
-    }
-
-    // MARK: -
-
     public var attributes: AttributeStore
     public var children: [Element]
 
-    public init(
-        @Builder _ block: () -> Self
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
     ) {
-        self = block()
+        self.attributes = attributes
+        self.children = children
     }
 
     public init(
-        children: [Element]
+        _ contents: String
     ) {
-        self.attributes = .init()
-        self.children = children
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @ElementBuilder _ block: () -> [Element]
+    ) {
+        self.init(children: block())
     }
 }

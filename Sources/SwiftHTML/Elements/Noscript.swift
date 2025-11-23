@@ -5,31 +5,30 @@ import SGML
 /// The `<noscript>` element can be used in both `<head>` and `<body>`. When used inside `<head>`, the `<noscript>` element could only contain `<link>`, `<style>`, and `<meta>` elements.
 public struct Noscript: StandardTag, MetadataContent {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ elements: Element...
-        ) -> Noscript {
-            .init(children: elements)
-        }
-    }
-
-    // MARK: -
-
     public var attributes: AttributeStore
     public var children: [Element]
 
-    public init(
-        @Builder _ block: () -> Self
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
     ) {
-        self = block()
+        self.attributes = attributes
+        self.children = children
     }
 
     public init(
-        children: [Element]
+        _ contents: String
     ) {
-        self.attributes = .init()
-        self.children = children
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @ElementBuilder _ block: () -> [Element]
+    ) {
+        self.init(children: block())
     }
 }
