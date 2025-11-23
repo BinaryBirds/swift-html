@@ -1,6 +1,6 @@
 import DOM
 
-public protocol StandardTag: Tag, AttributeStorable {
+public protocol StandardTag: Tag, Attributes {
     var children: [Element] { get }
 }
 
@@ -11,7 +11,7 @@ extension StandardTag {
     public var node: Node {
         StandardNode(
             name: name,
-            properties: attributeStore.properties,
+            properties: attributes.properties,
             children: children.map(\.node)
         )
     }

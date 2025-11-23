@@ -14,7 +14,7 @@ public struct Rss: StandardTag {
         }
     }
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
@@ -32,7 +32,7 @@ public struct Rss: StandardTag {
                     Version()
                 ]
             }
-        self.attributeStore = .init(attributes)
+        self.attributes = .init(attributes)
         self.children = channels
     }
 

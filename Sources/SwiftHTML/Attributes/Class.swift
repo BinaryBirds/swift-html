@@ -1,7 +1,7 @@
 import SGML
 
 public struct Class: Attribute {
-    public let name: String = "class"
+    public static let name = "class"
     public var value: String?
 
     public init(value: String? = nil) {

@@ -7,10 +7,10 @@ import SGML
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 public struct Base: ShortTag, MetadataContent {
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
 
     public init() {
-        self.attributeStore = .init()
+        self.attributes = .init()
     }
 }
 

@@ -14,7 +14,7 @@ public struct Hgroup: StandardTag {  //, HeadingContent */ {
 
     // MARK: -
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
@@ -26,7 +26,7 @@ public struct Hgroup: StandardTag {  //, HeadingContent */ {
     public init(
         children: [Element]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = children
     }
 }

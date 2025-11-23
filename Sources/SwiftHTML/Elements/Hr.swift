@@ -5,9 +5,9 @@ import SGML
 /// The `<hr>` element is most often displayed as a horizontal rule that is used to separate content (or define a change) in an HTML page.
 public struct Hr: ShortTag {
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
 
     public init() {
-        self.attributeStore = .init()
+        self.attributes = .init()
     }
 }

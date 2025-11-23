@@ -12,13 +12,13 @@ public struct Item: StandardTag, ChannelContent {
         }
     }
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
         children: [ItemContent]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = children
     }
 

@@ -29,13 +29,13 @@ public struct Head: StandardTag {
 
     // MARK: -
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
         elements: [MetadataContent]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = elements
 
         precondition(

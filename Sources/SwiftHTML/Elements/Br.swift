@@ -7,9 +7,9 @@ import SGML
 /// The `<br>` tag is an empty tag which means that it has no end tag.
 public struct Br: ShortTag {
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
 
     public init() {
-        self.attributeStore = .init()
+        self.attributes = .init()
     }
 }

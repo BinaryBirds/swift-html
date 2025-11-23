@@ -12,13 +12,13 @@ public struct ChangeFreq: StandardTag, UrlContent {
         case never
     }
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
         _ value: Frequency
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = [
             Text(value.rawValue)
         ]

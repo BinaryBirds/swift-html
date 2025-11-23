@@ -18,18 +18,18 @@ public struct Script: Tag, MetadataContent {
     }
 
     private var kind: Kind
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
 
     public init(
         _ contents: String
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.kind = .standard(contents)
     }
 
     public init() {
         self.kind = .void
-        self.attributeStore = .init()
+        self.attributes = .init()
     }
 
     public var node: Node {
@@ -37,7 +37,7 @@ public struct Script: Tag, MetadataContent {
         case .standard(let contents):
             StandardNode(
                 name: name,
-                properties: attributeStore.properties,
+                properties: attributes.properties,
                 children: [
                     TextNode(value: contents)
                 ]
@@ -45,7 +45,7 @@ public struct Script: Tag, MetadataContent {
         case .void:
             ShortNode(
                 name: name,
-                properties: attributeStore.properties
+                properties: attributes.properties
             )
         }
     }

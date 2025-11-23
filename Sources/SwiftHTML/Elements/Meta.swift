@@ -10,12 +10,12 @@ import SGML
 /// Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services.
 ///
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
-public struct Meta: ShortTag, MetadataContent, Mutable {
+public struct Meta: ShortTag, MetadataContent {
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
 
     public init() {
-        self.attributeStore = .init()
+        self.attributes = .init()
     }
 
     /// Specifies the character encoding for the HTML document.
@@ -23,11 +23,9 @@ public struct Meta: ShortTag, MetadataContent, Mutable {
         _ value: String
     ) -> Self {
         modify {
-            $0.attributeStore.add(
-                attribute: RawAttribute(
-                    name: "charset",
-                    value: value
-                )
+            $0.attributes.setValueBy(
+                name: "charset",
+                value: value
             )
         }
     }

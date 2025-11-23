@@ -12,7 +12,7 @@ public struct Urlset: StandardTag {
         }
     }
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
@@ -30,7 +30,7 @@ public struct Urlset: StandardTag {
                     Xmlns()
                 ]
             }
-        self.attributeStore = .init(attributes)
+        self.attributes = .init(attributes)
         self.children = children
     }
 

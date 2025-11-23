@@ -9,13 +9,13 @@ struct TagTestSuite {
     func name() async throws {
 
         struct Div: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
         }
         let div = Div()
         #expect(div.name == "div")
 
         struct Br: ShortTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
         }
         let br = Br()
         #expect(br.name == "br")
@@ -26,14 +26,14 @@ struct TagTestSuite {
 
         struct Div: StandardTag {
             var name = "DIV"
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
         }
         let div = Div()
         #expect(div.name == "DIV")
 
         struct Br: ShortTag {
             var name = "BR"
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
         }
         let br = Br()
         #expect(br.name == "BR")

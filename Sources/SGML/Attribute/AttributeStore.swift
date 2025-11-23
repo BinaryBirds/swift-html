@@ -2,55 +2,88 @@ import DOM
 
 public struct AttributeStore: Sendable {
 
-    var storage: [String: [String?]]
+    private var storage: [String: [String?]]
 
-    public init(
-        _ values: [Attribute] = []
-    ) {
+    public init() {
         self.storage = [:]
-
-        for value in values {
-            add(attribute: value)
-        }
     }
 
-    public mutating func add(
-        attribute: Attribute
+    public init(
+        _ attirbutes: [Attribute]
     ) {
-        if storage[attribute.name] == nil {
-            storage[attribute.name] = []
-        }
-        guard !storage[attribute.name]!.contains(attribute.value) else {
-            return
-        }
-        storage[attribute.name]?.append(attribute.value)
+        self.storage = [:]
+        self.set(attributes: attirbutes)
+    }
+
+    // MARK: - set
+
+    public mutating func set<T: Attribute>(
+        attribute: T
+    ) {
+        storage[T.name] = [attribute.value]
     }
 
     public mutating func set(
-        attribute: Attribute
+        attributes: [Attribute]
     ) {
-        storage[attribute.name] = [attribute.value]
+        for attribute in attributes {
+            set(attribute: attribute)
+        }
     }
 
-    public mutating func remove(
-        attribute: Attribute
+    public mutating func setValueBy(
+        name: String,
+        value: String?
     ) {
-        storage[attribute.name] = nil
+        storage[name] = [value]
     }
 
-    public mutating func removeValue(
-        attribute: Attribute
+    // MARK: - add
+
+    public mutating func add<T: Attribute>(
+        attribute: T
     ) {
-        guard storage[attribute.name] != nil else {
+        if storage[T.name] == nil {
+            storage[T.name] = []
+        }
+        guard !storage[T.name]!.contains(attribute.value) else {
             return
         }
-        storage[attribute.name] = storage[attribute.name]!
+        storage[T.name]?.append(attribute.value)
+    }
+
+    // MARK: - remove
+
+    public mutating func removeAttributeBy(
+        name: String
+    ) {
+        storage[name] = nil
+    }
+
+    public mutating func removeAttributeBy<T: Attribute>(
+        attribute: T
+    ) {
+        storage[T.name] = nil
+    }
+
+    public mutating func removeValueBy<T: Attribute>(
+        attribute: T,
+        keepEmptyAttribute: Bool = false
+    ) {
+        guard storage[T.name] != nil else {
+            return
+        }
+        storage[T.name] = storage[T.name]!
             .filter { $0 != attribute.value }
 
-        //        if storage[attribute.name]!.isEmpty {
-        //            storage[attribute.name] = nil
-        //        }
+        if !keepEmptyAttribute {
+            if storage[T.name]!.isEmpty {
+                storage[T.name] = nil
+            }
+        }
     }
+
+    // MARK: - DOM
 
     public var properties: [Property] {
         storage.map { name, value in

@@ -2,7 +2,7 @@ import SGML
 
 public struct Version: Attribute {
 
-    public let name: String = "version"
+    public static let name = "version"
     public var value: String?
 
     public init(

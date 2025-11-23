@@ -5,7 +5,7 @@ import SGML
 /// Browsers automatically add a single blank line before and after each `<p>` element.
 ///
 /// **Tip:** Use CSS to style paragraphs.
-public struct P: StandardTag, Mutable {
+public struct P: StandardTag {
 
     @resultBuilder
     public enum Builder {
@@ -19,13 +19,13 @@ public struct P: StandardTag, Mutable {
 
     // MARK: -
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
         _ contents: String
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = [
             Text(contents)
         ]
@@ -34,7 +34,7 @@ public struct P: StandardTag, Mutable {
     public init(
         children: [Element]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = children
     }
 

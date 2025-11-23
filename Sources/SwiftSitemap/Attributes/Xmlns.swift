@@ -2,7 +2,7 @@ import SGML
 
 public struct Xmlns: Attribute {
 
-    public let name = "xmlns"
+    public static let name = "xmlns"
     public var value: String?
 
     public init(

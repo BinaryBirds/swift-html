@@ -12,13 +12,13 @@ public struct Url: StandardTag {
         }
     }
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
         children: [UrlContent]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = children
     }
 

@@ -1,7 +1,7 @@
-public protocol AttributeStorable {
+public protocol Attributed {
     var attributeStore: AttributeStore { get }
 }
 
-extension AttributeStorable {
+extension Attributed {
     public var store: AttributeStore { .init() }
 }

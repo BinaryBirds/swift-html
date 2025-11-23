@@ -20,7 +20,7 @@ public struct H4: StandardTag, HeadingContent {
 
     // MARK: -
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
@@ -32,7 +32,7 @@ public struct H4: StandardTag, HeadingContent {
     public init(
         _ contents: String
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = [
             Text(contents)
         ]
@@ -41,7 +41,7 @@ public struct H4: StandardTag, HeadingContent {
     public init(
         children: [Element]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = children
     }
 }

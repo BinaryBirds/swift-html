@@ -9,18 +9,18 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore
+            var attributes: AttributeStore
         }
 
         struct Class: Attribute {
-            let name = "class"
+            static let name = "class"
             var value: String?
         }
 
         let doc = Document(
             type: .unspecified,
             root: Root(
-                attributeStore: .init(
+                attributes: .init(
                     [
                         Class(value: "custom")
                     ]
@@ -42,18 +42,18 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore
+            var attributes: AttributeStore
         }
 
         struct Enabled: Attribute {
-            let name = "enabled"
+            static let name = "enabled"
             let value: String? = nil
         }
 
         let doc = Document(
             type: .unspecified,
             root: Root(
-                attributeStore: .init(
+                attributes: .init(
                     [
                         Enabled()
                     ]
@@ -74,76 +74,76 @@ struct AttributeTestSuite {
 
         let renderer = Renderer()
 
-        struct Root: StandardTag, Mutable {
-            var attributeStore: AttributeStore
+        struct Root: StandardTag {
+            var attributes: AttributeStore
         }
 
         struct Class: Attribute {
-            let name = "class"
+            static let name = "class"
             var value: String?
         }
 
         struct Style: Attribute {
-            let name = "style"
+            static let name = "style"
             var value: String?
         }
 
         struct Enabled: Attribute {
-            let name = "enabled"
+            static let name = "enabled"
             let value: String? = nil
         }
 
         struct Alignment: Attribute {
-            let name = "align"
+            static let name = "align"
             let value: String?
         }
 
         let doc = Document(
             type: .unspecified,
             root: Root(
-                attributeStore: .init(
+                attributes: .init(
                     [
                         Enabled()
                     ]
                 )
             )
             .modify {
-                $0.attributeStore.add(
+                $0.attributes.add(
                     attribute: Class(
                         value: "foo"
                     )
                 )
-                $0.attributeStore.add(
+                $0.attributes.add(
                     attribute: Class(
                         value: "bar"
                     )
                 )
-                $0.attributeStore.add(
+                $0.attributes.add(
                     attribute: Class(
                         value: "baz"
                     )
                 )
-                $0.attributeStore.removeValue(
+                $0.attributes.removeValueBy(
                     attribute: Class(
                         value: "baz"
                     )
                 )
-                $0.attributeStore.add(
+                $0.attributes.add(
                     attribute: Style(
                         value: "foo"
                     )
                 )
-                $0.attributeStore.set(
+                $0.attributes.set(
                     attribute: Style(
                         value: "bar"
                     )
                 )
-                $0.attributeStore.add(
+                $0.attributes.add(
                     attribute: Alignment(
                         value: "left"
                     )
                 )
-                $0.attributeStore.remove(
+                $0.attributes.removeAttributeBy(
                     attribute: Alignment(value: nil)
                 )
             }

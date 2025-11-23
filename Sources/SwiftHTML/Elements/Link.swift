@@ -7,14 +7,16 @@ import SGML
 /// The `<link>` element is an empty element, it contains attributes only.
 public struct Link: ShortTag, MetadataContent {
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
 
+    // TODO: proper rel attribute
     public init(rel: Rel) {
-        self.attributeStore = .init(
-            [
-                RawAttribute(name: "rel", value: rel.rawValue)
-            ]
-        )
+        self.attributes = .init()
+
+        // NOTE: this is just a workaround for Rel
+        self = self.modify {
+            $0.attributes.setValueBy(name: "rel", value: rel.rawValue)
+        }
     }
 }
 

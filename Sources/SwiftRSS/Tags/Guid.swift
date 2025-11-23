@@ -2,7 +2,7 @@ import SGML
 
 public struct Guid: StandardTag, ItemContent {
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
@@ -15,7 +15,7 @@ public struct Guid: StandardTag, ItemContent {
             }
             else { [] }
 
-        self.attributeStore = .init(attributes)
+        self.attributes = .init(attributes)
         self.children = [
             Text(value)
         ]

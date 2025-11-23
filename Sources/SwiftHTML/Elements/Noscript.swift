@@ -17,7 +17,7 @@ public struct Noscript: StandardTag, MetadataContent {
 
     // MARK: -
 
-    public internal(set) var attributeStore: AttributeStore
+    public var attributes: AttributeStore
     public internal(set) var children: [Element]
 
     public init(
@@ -29,7 +29,7 @@ public struct Noscript: StandardTag, MetadataContent {
     public init(
         children: [Element]
     ) {
-        self.attributeStore = .init()
+        self.attributes = .init()
         self.children = children
     }
 }

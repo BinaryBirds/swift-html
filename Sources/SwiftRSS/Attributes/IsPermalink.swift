@@ -2,7 +2,7 @@ import SGML
 
 public struct IsPermalink: Attribute {
 
-    public let name: String = "isPermalink"
+    public static let name = "isPermalink"
     public var value: String?
 
     public init(

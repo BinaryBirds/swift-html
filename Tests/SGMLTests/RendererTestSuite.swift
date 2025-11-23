@@ -10,7 +10,7 @@ struct RendererTestSuite {
         let renderer = SGML.Renderer()
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
         }
 
         let doc = Document(
@@ -33,12 +33,12 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             let children: [Element]
         }
 
         struct Branch: ShortTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
         }
 
         let doc = Document(
@@ -68,12 +68,12 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             let children: [Element]
         }
 
         struct Branch: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             let children: [Element]
         }
 
@@ -84,7 +84,7 @@ struct RendererTestSuite {
                 self.text = text
             }
 
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             var children: [Element] {
                 [
                     Text(text)
@@ -125,12 +125,12 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             let children: [Element]
         }
 
-        struct Branch: StandardTag, Mutable {
-            var attributeStore: AttributeStore = .init()
+        struct Branch: StandardTag {
+            var attributes: AttributeStore = .init()
             var children: [Element]
 
             func add(chid: Element) -> Self {
@@ -148,7 +148,7 @@ struct RendererTestSuite {
                 self.text = text
             }
 
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             var children: [Element] {
                 [
                     Text(text)
@@ -195,12 +195,12 @@ struct RendererTestSuite {
         )
 
         struct Root: StandardTag {
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             let children: [Element]
         }
 
-        struct Branch: StandardTag, Mutable {
-            var attributeStore: AttributeStore = .init()
+        struct Branch: StandardTag {
+            var attributes: AttributeStore = .init()
             var children: [Element]
 
             func add(chid: Element) -> Self {
@@ -223,7 +223,7 @@ struct RendererTestSuite {
                 self.text = text
             }
 
-            var attributeStore: AttributeStore = .init()
+            var attributes: AttributeStore = .init()
             var children: [Element] {
                 [
                     Text(text)

@@ -6,8 +6,21 @@ import Testing
 struct AttributesTestSuite {
 
     @Test
-    func html() async throws {
+    func basics() async throws {
+
+        let tag = P("lorem ipsum")
+
+        let renderer = Renderer(indent: 4)
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <p>lorem ipsum</p>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
     }
+
     //
     //    func testCustomInitWithAttribute() {
     //        let doc = Document {
