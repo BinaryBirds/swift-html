@@ -5,8 +5,8 @@ public struct Media: Attribute {
     public var value: String?
 
     public init(
-        _ value: MediaQuery
+        _ value: String?
     ) {
-        self.value = value.value
+        self.value = value
     }
 }

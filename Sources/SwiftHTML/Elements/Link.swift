@@ -31,9 +31,9 @@ extension Link {
 
     /// Specifies on what device the linked document will be displayed.
     public func media(
-        _ query: MediaQuery
+        _ value: String
     ) -> Self {
-        setAttribute(Media(query))
+        setAttribute(Media(value))
     }
 
     //
