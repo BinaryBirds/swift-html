@@ -6,7 +6,7 @@ public struct Url: StandardTag {
     public enum Builder {
 
         public static func buildBlock(
-            _ children: UrlContent...,
+            _ children: UrlContent...
         ) -> Url {
             .init(children: children)
         }

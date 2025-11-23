@@ -8,7 +8,7 @@ public struct Rss: StandardTag {
     public enum Builder {
 
         public static func buildBlock(
-            _ channels: Channel...,
+            _ channels: Channel...
         ) -> [Channel] {
             channels
         }

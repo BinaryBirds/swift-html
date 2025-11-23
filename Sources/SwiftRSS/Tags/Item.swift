@@ -6,7 +6,7 @@ public struct Item: StandardTag, ChannelContent {
     public enum Builder {
 
         public static func buildBlock(
-            _ children: ItemContent...,
+            _ children: ItemContent...
         ) -> Item {
             .init(children: children)
         }
