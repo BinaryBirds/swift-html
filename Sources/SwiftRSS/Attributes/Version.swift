@@ -1,5 +1,3 @@
-import SGML
-
 public struct Version: Attribute {
 
     public var value: String?

@@ -1,6 +1,6 @@
-import DOM
-import SGML
 import Testing
+
+@testable import SGML
 
 @Suite
 struct TagTestSuite {

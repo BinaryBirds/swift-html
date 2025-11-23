@@ -1,6 +1,6 @@
-import SGML
-import SwiftHTML
 import Testing
+
+@testable import SwiftHTML
 
 @Suite
 struct AttributesTestSuite {

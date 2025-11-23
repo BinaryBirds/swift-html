@@ -1,4 +1,3 @@
-import SGML
 import SwiftSitemap
 import Testing
 

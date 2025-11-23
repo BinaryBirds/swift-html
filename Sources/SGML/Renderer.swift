@@ -24,9 +24,9 @@ public struct Renderer: Sendable {
         return doctype + doc
     }
 
-    // MARK: - internal
+    // MARK: - private
 
-    func render(
+    private func render(
         type: DocType
     ) -> String {
         switch type {

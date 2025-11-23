@@ -1,6 +1,6 @@
-import SGML
-import SwiftHTML
 import Testing
+
+@testable import SwiftHTML
 
 @Suite
 struct PTagTestSuite {
@@ -8,13 +8,15 @@ struct PTagTestSuite {
     @Test
     func initializationWithText() async throws {
         let tag = P("Lorem ipsum")
-            .class("foo")
+            .setClass("foo")
+            .addClass("bar")
+        //            .addChild(Comment("foo"))
 
         let renderer = Renderer()
         let doc = Document(type: .unspecified, root: tag)
 
         let expectation = #"""
-            <p class="foo">Lorem ipsum</p>
+            <p class="bar foo">Lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)

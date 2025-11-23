@@ -1,5 +1,3 @@
-import SGML
-
 public struct Guid: StandardTag, ItemContent {
 
     public var attributes: AttributeStore

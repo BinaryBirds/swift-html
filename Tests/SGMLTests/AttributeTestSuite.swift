@@ -1,5 +1,6 @@
-import SGML
 import Testing
+
+@testable import SGML
 
 @Suite
 struct AttributeTestSuite {
@@ -48,10 +49,7 @@ struct AttributeTestSuite {
 
     @Test
     func custom() async throws {
-        let renderer = Renderer()
-
         let doc = Document(
-            type: .unspecified,
             root: Root(
                 attributes: .init(
                     [
@@ -65,17 +63,13 @@ struct AttributeTestSuite {
             <root class="custom"></root>
             """#
 
-        let result = renderer.render(document: doc)
+        let result = doc.render()
         #expect(result == expectation)
     }
 
     @Test
     func customNilValue() async throws {
-
-        let renderer = Renderer()
-
         let doc = Document(
-            type: .unspecified,
             root: Root(
                 attributes: .init(
                     [
@@ -89,17 +83,13 @@ struct AttributeTestSuite {
             <root enabled></root>
             """#
 
-        let result = renderer.render(document: doc)
+        let result = doc.render()
         #expect(result == expectation)
     }
 
     @Test
     func mutation() async throws {
-
-        let renderer = Renderer()
-
         let doc = Document(
-            type: .unspecified,
             root: Root(
                 attributes: .init(
                     [
@@ -133,7 +123,7 @@ struct AttributeTestSuite {
             <root class="bar foo" style="bar" enabled></root>
             """#
 
-        let result = renderer.render(document: doc)
+        let result = doc.render()
         #expect(result == expectation)
     }
 }

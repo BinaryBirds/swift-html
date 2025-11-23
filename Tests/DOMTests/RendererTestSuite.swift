@@ -6,6 +6,20 @@ import Testing
 struct RendererTestSuite {
 
     @Test
+    func nodeRendering() async throws {
+        let node = CommentNode(
+            value: "this is a comment"
+        )
+
+        let expectation = #"""
+            <!-- this is a comment -->
+            """#
+
+        let result = node.render()
+        #expect(result == expectation)
+    }
+
+    @Test
     func commentNode() async throws {
         let renderer = Renderer()
         let node = CommentNode(

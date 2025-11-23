@@ -1,5 +1,3 @@
-import SGML
-
 public struct Urlset: StandardTag {
 
     public var attributes: AttributeStore

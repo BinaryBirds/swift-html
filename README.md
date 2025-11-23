@@ -26,9 +26,7 @@ let html = Html {
     }
 }
 
-let renderer = Renderer(indent: 4)
-let doc = Document(type: .html, root: html)
-let result = renderer.render(document: doc)
+let result = Document(type: .html, root: html).render(indent: 4)
 print(result) // HTML output
 ```
 
@@ -89,8 +87,6 @@ You can define your own elements by conforming to one of the following protocols
 Here is a minimal example of defining a custom short tag:
 
 ```swift
-import SGML
-
 public struct Br: ShortTag {
 
     public var attributes: AttributeStore
@@ -104,8 +100,6 @@ public struct Br: ShortTag {
 A standard tag can be represented as follows, including result-builder support provided by the `@ElementBuilder` attribute:
 
 ```swift
-import SGML
-
 public struct P: StandardTag {
 
     public var attributes: AttributeStore

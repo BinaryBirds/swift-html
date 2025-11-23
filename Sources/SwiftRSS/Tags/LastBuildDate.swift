@@ -1,5 +1,3 @@
-import SGML
-
 public struct LastBuildDate: StandardTag, ChannelContent {
 
     public static let name = "lastBuildDate"

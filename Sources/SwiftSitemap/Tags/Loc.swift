@@ -1,5 +1,3 @@
-import SGML
-
 public struct Loc: StandardTag, UrlContent {
 
     public var attributes: AttributeStore

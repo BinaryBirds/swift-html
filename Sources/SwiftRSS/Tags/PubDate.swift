@@ -1,5 +1,3 @@
-import SGML
-
 public struct PubDate: StandardTag, ItemContent, ChannelContent {
 
     public static let name = "pubDate"

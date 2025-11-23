@@ -1,4 +1,3 @@
-import SGML
 import SwiftRSS
 import Testing
 

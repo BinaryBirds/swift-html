@@ -1,5 +1,3 @@
-import SGML
-
 /// [Specification](https://html.spec.whatwg.org/#metadata-content).
 public protocol MetadataContent: Element {
     // base 1x

@@ -1,5 +1,4 @@
 import DOM
-import SGML
 
 public struct CDataText: Element {
 
