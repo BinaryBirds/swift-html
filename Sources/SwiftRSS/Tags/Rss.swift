@@ -14,7 +14,7 @@ public struct Rss: StandardTag {
         let attributes: [Attribute] =
             if let version {
                 [
-                    Version(value: version)
+                    Version(version)
                 ]
             }
             else {

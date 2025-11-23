@@ -12,7 +12,7 @@ public struct Urlset: StandardTag {
         let attributes: [Attribute] =
             if let xmlns {
                 [
-                    Xmlns(value: xmlns)
+                    Xmlns(xmlns)
                 ]
             }
             else {

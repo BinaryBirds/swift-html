@@ -5,16 +5,165 @@ import Testing
 @Suite
 struct AttributesTestSuite {
 
+    struct Class: Attribute {
+        var value: String?
+
+        init(_ value: String? = nil) {
+            self.value = value
+        }
+    }
+
+    struct Style: Attribute {
+        var value: String?
+
+        init(_ value: String? = nil) {
+            self.value = value
+        }
+    }
+
+    struct Alignment: Attribute {
+
+        enum Value: String {
+            case left
+            case right
+            case middle
+            case justify
+        }
+
+        static let name = "align"
+        var value: String?
+
+        init(_ value: Value) {
+            self.value = value.rawValue
+        }
+    }
+
     @Test
-    func basics() async throws {
+    func set() async throws {
 
         let tag = P("lorem ipsum")
+            .setAttribute(Class("text"))
+            .setAttributeValueBy(name: "align", value: "left")
+
+        let renderer = Renderer(indent: 4)
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <p align="left" class="text">lorem ipsum</p>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func setOverride() async throws {
+
+        let tag = P("lorem ipsum")
+            .setAttribute(Class("text"))
+            .setAttributeValueBy(name: "align", value: "left")
+            .setAttributes([
+                Class("note")
+            ])
+            .setAttributeValueBy(name: "align", value: "right")
+
+        let renderer = Renderer(indent: 4)
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <p align="right" class="note">lorem ipsum</p>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func addValues() async throws {
+
+        let tag = P("lorem ipsum")
+            .addAttributeValue(Class("foo"))
+            .addAttributeValue(Class("bar"))
+            .addAttributeValues([
+                Class("baz")
+            ])
+
+        let renderer = Renderer(indent: 4)
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <p class="bar baz foo">lorem ipsum</p>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func removeValues() async throws {
+
+        let tag = P("lorem ipsum")
+            .addAttributeValues([
+                Class("foo"),
+                Class("baz"),
+                Class("bar"),
+            ])
+            .addAttributeValues([
+                Style("a"),
+                Style("b"),
+                Style("c"),
+            ])
+            .addAttributeValue(Alignment(.left))
+            .removeAttributeBy(Class.self)
+            .removeAttributeBy(name: "style")
+            .removeAttributeValueBy(
+                Alignment(
+                    .left
+                )
+            )
 
         let renderer = Renderer(indent: 4)
         let doc = Document(type: .unspecified, root: tag)
 
         let expectation = #"""
             <p>lorem ipsum</p>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func removeValuesPreserving() async throws {
+
+        let tag = P("lorem ipsum")
+            .addAttributeValues([
+                Class("foo")
+            ])
+            .addAttributeValues([
+                Style("a")
+            ])
+            .addAttributeValue(Alignment(.left))
+            .removeAttributeValueBy(
+                Class("foo"),
+                preservingEmptyAttribute: true
+            )
+            .removeAttributeValueBy(
+                name: "style",
+                value: "a",
+                preservingEmptyAttribute: true
+            )
+            .removeAttributeValueBy(
+                Alignment(
+                    .right
+                )
+            )
+
+        let renderer = Renderer(indent: 4)
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <p align="left" class style>lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)

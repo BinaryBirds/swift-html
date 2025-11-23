@@ -12,24 +12,10 @@ public struct AttributeStore: Sendable {
         _ attirbutes: [Attribute]
     ) {
         self.storage = [:]
-        self.set(attributes: attirbutes)
+        self.set(attirbutes)
     }
 
     // MARK: - set
-
-    public mutating func set<T: Attribute>(
-        attribute: T
-    ) {
-        storage[T.name] = [attribute.value]
-    }
-
-    public mutating func set(
-        attributes: [Attribute]
-    ) {
-        for attribute in attributes {
-            set(attribute: attribute)
-        }
-    }
 
     public mutating func setValueBy(
         name: String,
@@ -38,49 +24,92 @@ public struct AttributeStore: Sendable {
         storage[name] = [value]
     }
 
+    public mutating func set<T: Attribute>(
+        _ attribute: T
+    ) {
+        setValueBy(
+            name: T.name,
+            value: attribute.value
+        )
+    }
+
+    public mutating func set(
+        _ attributes: [Attribute]
+    ) {
+        for attribute in attributes {
+            set(attribute)
+        }
+    }
+
     // MARK: - add
 
-    public mutating func add<T: Attribute>(
-        attribute: T
+    public mutating func addValueBy(
+        name: String,
+        value: String?
     ) {
-        if storage[T.name] == nil {
-            storage[T.name] = []
+        if storage[name] == nil {
+            storage[name] = []
         }
-        guard !storage[T.name]!.contains(attribute.value) else {
+        guard !storage[name]!.contains(value) else {
             return
         }
-        storage[T.name]?.append(attribute.value)
+        storage[name]?.append(value)
+    }
+
+    public mutating func addValue<T: Attribute>(
+        _ attribute: T
+    ) {
+        addValueBy(name: T.name, value: attribute.value)
+    }
+
+    public mutating func addValues<T: Attribute>(
+        _ attributes: [T]
+    ) {
+        for attribute in attributes {
+            addValueBy(name: T.name, value: attribute.value)
+        }
     }
 
     // MARK: - remove
 
-    public mutating func removeAttributeBy(
+    public mutating func removeBy(
         name: String
     ) {
         storage[name] = nil
     }
 
-    public mutating func removeAttributeBy<T: Attribute>(
-        attribute: T
+    public mutating func removeBy<T: Attribute>(
+        _: T.Type
     ) {
-        storage[T.name] = nil
+        removeBy(name: T.name)
     }
 
-    public mutating func removeValueBy<T: Attribute>(
-        attribute: T,
-        keepEmptyAttribute: Bool = false
+    public mutating func removeValueBy(
+        name: String,
+        value: String?,
+        preservingEmptyAttribute: Bool = false
     ) {
-        guard storage[T.name] != nil else {
+        guard storage[name] != nil else {
             return
         }
-        storage[T.name] = storage[T.name]!
-            .filter { $0 != attribute.value }
+        storage[name] = storage[name]!.filter { $0 != value }
 
-        if !keepEmptyAttribute {
-            if storage[T.name]!.isEmpty {
-                storage[T.name] = nil
+        if !preservingEmptyAttribute {
+            if storage[name]!.isEmpty {
+                storage[name] = nil
             }
         }
+    }
+
+    public mutating func removeValue<T: Attribute>(
+        _ attribute: T,
+        preservingEmptyAttribute: Bool = false
+    ) {
+        removeValueBy(
+            name: T.name,
+            value: attribute.value,
+            preservingEmptyAttribute: preservingEmptyAttribute
+        )
     }
 
     // MARK: - DOM

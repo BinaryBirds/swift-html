@@ -4,26 +4,58 @@ import Testing
 @Suite
 struct AttributeTestSuite {
 
+    struct Root: StandardTag {
+        var attributes: AttributeStore = .init()
+        var children: [Element] = []
+    }
+
+    // MARK: -
+
+    struct Class: Attribute {
+        var value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    struct Style: Attribute {
+        var value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    struct Enabled: Attribute {
+        let value: String?
+
+        init() {
+            self.value = nil
+        }
+    }
+
+    struct Alignment: Attribute {
+        static let name = "align"
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    // MARK: -
+
     @Test
     func custom() async throws {
         let renderer = Renderer()
-
-        struct Root: StandardTag {
-            var attributes: AttributeStore = .init()
-            var children: [Element] = []
-        }
-
-        struct Class: Attribute {
-            static let name = "class"
-            var value: String?
-        }
 
         let doc = Document(
             type: .unspecified,
             root: Root(
                 attributes: .init(
                     [
-                        Class(value: "custom")
+                        Class("custom")
                     ]
                 )
             )
@@ -41,16 +73,6 @@ struct AttributeTestSuite {
     func customNilValue() async throws {
 
         let renderer = Renderer()
-
-        struct Root: StandardTag {
-            var attributes: AttributeStore = .init()
-            var children: [Element] = []
-        }
-
-        struct Enabled: Attribute {
-            static let name = "enabled"
-            let value: String? = nil
-        }
 
         let doc = Document(
             type: .unspecified,
@@ -76,31 +98,6 @@ struct AttributeTestSuite {
 
         let renderer = Renderer()
 
-        struct Root: StandardTag {
-            var attributes: AttributeStore = .init()
-            var children: [Element] = []
-        }
-
-        struct Class: Attribute {
-            static let name = "class"
-            var value: String?
-        }
-
-        struct Style: Attribute {
-            static let name = "style"
-            var value: String?
-        }
-
-        struct Enabled: Attribute {
-            static let name = "enabled"
-            let value: String? = nil
-        }
-
-        struct Alignment: Attribute {
-            static let name = "align"
-            let value: String?
-        }
-
         let doc = Document(
             type: .unspecified,
             root: Root(
@@ -111,44 +108,24 @@ struct AttributeTestSuite {
                 )
             )
             .modify {
-                $0.attributes.add(
-                    attribute: Class(
-                        value: "foo"
-                    )
-                )
-                $0.attributes.add(
-                    attribute: Class(
-                        value: "bar"
-                    )
-                )
-                $0.attributes.add(
-                    attribute: Class(
-                        value: "baz"
-                    )
-                )
-                $0.attributes.removeValueBy(
-                    attribute: Class(
-                        value: "baz"
-                    )
-                )
-                $0.attributes.add(
-                    attribute: Style(
-                        value: "foo"
-                    )
-                )
-                $0.attributes.set(
-                    attribute: Style(
-                        value: "bar"
-                    )
-                )
-                $0.attributes.add(
-                    attribute: Alignment(
-                        value: "left"
-                    )
-                )
-                $0.attributes.removeAttributeBy(
-                    attribute: Alignment(value: nil)
-                )
+                $0.attributes.addValue(Class("foo"))
+                $0.attributes.addValue(Class("baz"))
+                $0.attributes.removeValue(Class("baz"))
+                $0.attributes.addValue(Style("foo"))
+
+                // TODO: variadic generic support
+                $0.attributes.addValue(Class("bar"))
+                $0.attributes.addValue(Style("bar"))
+                //                $0.attributes.addValues(
+                //                    [
+                //                        Class("bar"),
+                //                        Style("bar"),
+                //                    ]
+                //                )
+
+                $0.attributes.removeValue(Style("foo"))
+                $0.attributes.addValue(Alignment("left"))
+                $0.attributes.removeBy(Alignment.self)
             }
         )
 
