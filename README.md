@@ -149,73 +149,73 @@ struct LastBuildDate: StandardTag {
 }
 ```
 
+### Attributes
+
+You can define custom element attributes by conforming to the `Attribute` protocol.  
+By default, the attribute name is automatically derived from the type name, but this behavior can be overridden when needed:
+
+```swift
+// very simple attribute
+struct Class: Attribute {
+    var value: String?
+    
+    init(_ value: Value) {
+        self.value = value
+    }
+}
+
+// custom name and value type
+struct Alignment: Attribute {
+
+    enum Value: String {
+        case left
+        case right
+    }
+
+    static let name = "align"
+    var value: String?
+
+    init(_ value: Value) {
+        self.value = value.rawValue
+    }
+}
+```
+
+You can set, add, or remove attributes—or even modify individual attribute values—on any tag that supports attributes:
+
+```swift
+P("lorem ipsum")
+    // set (override) the current attributes
+    .setAttribute(Class("note"))
+    .setAttributeValueBy(name: "style", value: "color: white;")
+    .setAttributes([
+        Alignment(.left)
+    ])
+    // add attribute or value(s) 
+    .addAttributeValue(Class("important"))
+    .addAttributeValueBy(name: "style", value: "background: black;")
+    .addAttributeValues([
+        Class("large")
+    ])
+    // remove attribute or value(s)
+    .removeAttributeBy(Class.self)
+    .removeAttributeBy(name: "style")
+    .removeAttributeValueBy(
+        Alignment(.left)
+    )
+```
+
+There are built-in, type-safe attributes and helper modifiers available for the standard tags.
+
+
 ### Container elements
 
-It is also possible to create tags with altered content or default attributes.
+It is also possible to define tags that contain child elements; these are referred to as *container elements*.  
+All standard tags support child elements by default.
 
 ```swift
-open class Description: Tag {
-    
-    public init(_ contents: String) {
-        super.init()
-        setContents("<![CDATA[" + contents + "]]>")
-    }
-}
-// <description><![CDATA[lorem ipsum]]></description> - content wrapped in CDATA
+// TODO
 ```
-
-### Attribute management
-
-You can set, add or delete the attributes of a given tag.
-
-```swift
-Leaf("example")
-    // set (override) the current attributes
-    .setAttributes([
-        .init(key: "a", value: "foo"),
-        .init(key: "b", value: "bar"),
-        .init(key: "c", value: "baz"),
-    ])
-    // add a new attribute using a key & value 
-    .attribute("foo", "example")
-    // add a new flag attribute (without a value)
-    .flagAttribute("bar")
-    // delete an attribute by using a key
-    .deleteAttribute("b")
-    
-// <leaf a="foo" c="baz" foo="example" bar></leaf>
-```
-
-You can also manage the class atrribute through helper methods.
-
-```swift
-Span("foo")
-    // set (override) class values 
-    .class("a", "b", "c")
-    // add new class values   
-    .class(add: ["d", "e", "f"])
-    // add new class value if the condition is true
-    .class(add: "b", true)
-    /// remove multiple class values
-    .class(remove: ["b", "c", "d"])
-    /// remove a class value if the condition is true
-    .class(remove: "e", true)
-
-// <span class="a f"></span>
-```
-
-You can create your own attribute modifier via an extension.
-
-```swift
-public extension Guid {
-    
-    func isPermalink(_ value: Bool = true) -> Self {
-        attribute("isPermalink", String(value))
-    }
-}
-```
-
-There are other built-in type-safe attribute modifiers available on tags.
 
 
 ## Credits & references
