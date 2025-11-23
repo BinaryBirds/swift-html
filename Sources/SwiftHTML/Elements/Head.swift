@@ -17,18 +17,6 @@ import SGML
 /// - `<noscript>`
 public struct Head: StandardTag {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ elements: MetadataContent...
-        ) -> Head {
-            .init(elements: elements)
-        }
-    }
-
-    // MARK: -
-
     public var attributes: AttributeStore
     public var children: [Element]
 
@@ -49,8 +37,8 @@ public struct Head: StandardTag {
     }
 
     public init(
-        @Builder _ block: () -> Self
+        @Builder<MetadataContent> _ block: () -> [MetadataContent]
     ) {
-        self = block()
+        self.init(elements: block())
     }
 }

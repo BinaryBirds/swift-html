@@ -2,16 +2,6 @@ import SGML
 
 public struct Urlset: StandardTag {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ children: Url...
-        ) -> [Url] {
-            children
-        }
-    }
-
     public var attributes: AttributeStore
     public var children: [Element]
 
@@ -36,7 +26,7 @@ public struct Urlset: StandardTag {
 
     public init(
         xmlns: String? = nil,
-        @Builder _ block: () -> [Url]
+        @Builder<Url> _ block: () -> [Url]
     ) {
         self.init(
             xmlns: xmlns,

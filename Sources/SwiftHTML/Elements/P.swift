@@ -29,7 +29,7 @@ public struct P: StandardTag {
     }
 
     public init(
-        @ElementBuilder _ block: () -> [Element]
+        @Builder<Element> _ block: () -> [Element]
     ) {
         self.init(children: block())
     }

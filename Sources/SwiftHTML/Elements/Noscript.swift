@@ -27,7 +27,7 @@ public struct Noscript: StandardTag, MetadataContent {
     }
 
     public init(
-        @ElementBuilder _ block: () -> [Element]
+        @Builder<Element> _ block: () -> [Element]
     ) {
         self.init(children: block())
     }

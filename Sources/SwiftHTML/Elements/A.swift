@@ -39,7 +39,7 @@
 //        /// ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
 //        case nofollow
 //        /// Requires that any browsing context created by following the hyperlink must not have an opener browsing context
-//        case noopener
+//        case noopenero
 //        /// Makes the referrer unknown. No referer header will be included when the user clicks the hyperlink
 //        case noreferrer
 //        /// The previous document in a selection

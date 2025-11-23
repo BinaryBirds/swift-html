@@ -4,16 +4,6 @@ import SGML
 // NOTE: xmlns:atom="http://www.w3.org/2005/Atom" support?
 public struct Rss: StandardTag {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ channels: Channel...
-        ) -> [Channel] {
-            channels
-        }
-    }
-
     public var attributes: AttributeStore
     public var children: [Element]
 
@@ -38,11 +28,12 @@ public struct Rss: StandardTag {
 
     public init(
         version: String? = nil,
-        @Builder _ block: () -> [Channel]
+        @Builder<Channel> _ block: () -> [Channel]
     ) {
         self.init(
             version: version,
             channels: block()
         )
     }
+
 }

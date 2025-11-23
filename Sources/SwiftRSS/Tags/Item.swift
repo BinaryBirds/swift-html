@@ -2,16 +2,6 @@ import SGML
 
 public struct Item: StandardTag, ChannelContent {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ children: ItemContent...
-        ) -> Item {
-            .init(children: children)
-        }
-    }
-
     public var attributes: AttributeStore
     public var children: [Element]
 
@@ -23,8 +13,8 @@ public struct Item: StandardTag, ChannelContent {
     }
 
     public init(
-        @Builder _ block: () -> Self
+        @Builder<ItemContent> _ block: () -> [ItemContent]
     ) {
-        self = block()
+        self.init(children: block())
     }
 }

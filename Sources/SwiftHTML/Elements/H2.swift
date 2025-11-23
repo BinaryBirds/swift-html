@@ -30,7 +30,7 @@ public struct H2: StandardTag, HeadingContent {
     }
 
     public init(
-        @ElementBuilder _ block: () -> [Element]
+        @Builder<Element> _ block: () -> [Element]
     ) {
         self.init(children: block())
     }

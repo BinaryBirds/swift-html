@@ -14,12 +14,12 @@ public struct Body: StandardTag {
         attributes: AttributeStore = .init(),
         children: [Element]
     ) {
-        self.attributes = .init()
+        self.attributes = attributes
         self.children = children
     }
 
     public init(
-        @ElementBuilder _ block: () -> [Element]
+        @Builder<Element> _ block: () -> [Element]
     ) {
         self.init(children: block())
     }
