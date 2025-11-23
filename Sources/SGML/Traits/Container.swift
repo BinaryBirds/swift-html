@@ -11,7 +11,7 @@ extension Container where Self: Mutable {
             $0.children.append(element)
         }
     }
-    
+
     public func addChildren<T: Element>(
         _ elements: [T]
     ) -> Self {
