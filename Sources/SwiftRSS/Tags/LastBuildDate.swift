@@ -2,7 +2,7 @@ import SGML
 
 public struct LastBuildDate: StandardTag, ChannelContent {
 
-    public let name: String = "lastBuildDate"
+    public static let name = "lastBuildDate"
 
     public var attributes: AttributeStore
     public var children: [Element]

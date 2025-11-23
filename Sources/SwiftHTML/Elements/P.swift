@@ -7,18 +7,6 @@ import SGML
 /// **Tip:** Use CSS to style paragraphs.
 public struct P: StandardTag {
 
-    @resultBuilder
-    public enum Builder {
-
-        public static func buildBlock(
-            _ elements: Element...
-        ) -> [Element] {
-            elements
-        }
-    }
-
-    // MARK: -
-
     public var attributes: AttributeStore
     public var children: [Element]
 
@@ -39,7 +27,7 @@ public struct P: StandardTag {
     }
 
     public init(
-        @Builder _ block: () -> [Element]
+        @ElementBuilder _ block: () -> [Element]
     ) {
         self.init(children: block())
     }

@@ -8,7 +8,7 @@ extension ShortTag {
 
     public var node: Node {
         ShortNode(
-            name: name,
+            name: Self.name,
             properties: attributes.properties
         )
     }

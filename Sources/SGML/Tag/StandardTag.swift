@@ -8,7 +8,7 @@ extension StandardTag {
 
     public var node: Node {
         StandardNode(
-            name: name,
+            name: Self.name,
             properties: attributes.properties,
             children: children.map(\.node)
         )

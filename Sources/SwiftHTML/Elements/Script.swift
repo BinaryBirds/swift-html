@@ -36,7 +36,7 @@ public struct Script: Tag, MetadataContent {
         switch kind {
         case .standard(let contents):
             StandardNode(
-                name: name,
+                name: Self.name,
                 properties: attributes.properties,
                 children: [
                     TextNode(value: contents)
@@ -44,7 +44,7 @@ public struct Script: Tag, MetadataContent {
             )
         case .void:
             ShortNode(
-                name: name,
+                name: Self.name,
                 properties: attributes.properties
             )
         }

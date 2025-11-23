@@ -1,17 +1,12 @@
 import DOM
 
 public protocol Tag: Element, Mutable {
-    var name: String { get }
+    static var name: String { get }
 }
 
 extension Tag {
 
-    public var name: String {
-        String(
-            describing: type(
-                of: self
-            )
-        )
-        .lowercased()
+    public static var name: String {
+        .init(describing: self).lowercased()
     }
 }

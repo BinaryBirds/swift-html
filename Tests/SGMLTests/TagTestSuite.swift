@@ -12,14 +12,12 @@ struct TagTestSuite {
             var attributes: AttributeStore = .init()
             var children: [Element] = []
         }
-        let div = Div()
-        #expect(div.name == "div")
+        #expect(Div.name == "div")
 
         struct Br: ShortTag {
             var attributes: AttributeStore = .init()
         }
-        let br = Br()
-        #expect(br.name == "br")
+        #expect(Br.name == "br")
     }
 
     @Test
@@ -29,18 +27,16 @@ struct TagTestSuite {
             var attributes: AttributeStore = .init()
             var children: [Element] = []
 
-            var name = "DIV"
+            static let name = "DIV"
         }
-        let div = Div()
-        #expect(div.name == "DIV")
+        #expect(Div.name == "DIV")
 
         struct Br: ShortTag {
             var attributes: AttributeStore = .init()
             var children: [Element] = []
 
-            var name = "BR"
+            static let name = "BR"
         }
-        let br = Br()
-        #expect(br.name == "BR")
+        #expect(Br.name == "BR")
     }
 }

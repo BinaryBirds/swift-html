@@ -34,59 +34,122 @@ print(result) // HTML output
 
 ## Installation
 
-You can use `SwiftHTML` as a dependency via Swift Package Manager:
+`SwiftHTML` is distributed through **Swift Package Manager**.
+
+Add the package to your `Package.swift`:
 
 ```swift
 .package(url: "https://github.com/binarybirds/swift-html", from: "2.0.0"),
 ```
 
-Add the `SwiftHTML` product from the `swift-html` package as a dependency to your target:
+Then include the `SwiftHTML` product as a dependency for your target:
 
 ```swift
 .product(name: "SwiftHTML", package: "swift-html"),
 ```
 
-Import the framework:
+Import the module in your source files:
 
 ```swift
 import SwiftHTML
 ```
 
-That's it.
+The package is now ready to use.
 
 
-## Custom tags
+## DOM vs. SGML
 
-You can define your own custom tags by subclassing the `Tag` or `EmptyTag` class. 
+The **DOM** library provides the foundational data structures used to construct and render a `Node`-based object tree.  
+This tree is composed of the following node types:
 
-You can follow the same pattern if you take a look at the core tags.
+- **`CommentNode`** — represents an HTML/XML-style comment (`<!-- comment -->`)
+- **`ListNode`** — a container node used to group child nodes
+- **`ShortNode`** — a void (self-closing) element representation (`<node>`)
+- **`StandardNode`** — a normal element with opening and closing tags (`<node></node>`)
+- **`TextNode`** — raw textual content within the tree
+
+These node types form the low-level DOM representation used by the renderer.
+
+---
+
+## SGML Elements
+
+The **SGML** library provides a higher-level API for defining and constructing markup languages.  
+It is designed to support the creation of any XML-based format—including **HTML**, **RSS**, **SVG**, and custom schemas.
+
+You can define your own elements by conforming to one of the following protocols:
+
+- **`Element`** — the base protocol representing a generic element backed by a `Node`
+- **`Tag`** — a named element; inherits from `Element`
+- **`ShortTag`** — a named, void (self-closing) tag; inherits from `Tag`
+- **`StandardTag`** — a named element with both opening and closing tags; inherits from `Tag`
+
+### Examples
+
+Here is a minimal example of defining a custom short tag:
 
 ```swift
-open class Div: Tag {
+import SGML
 
-}
+public struct Br: ShortTag {
 
-// <div></div> - standard tag
+    public var attributes: AttributeStore
 
-open class Br: EmptyTag {
-    
-}
-// <br> - no closing tag
-
-```
-
-By default the name of the tag is automatically derived from the class name (lowercased), but you can also create your own tag type & name by overriding the `createNode()` class function.
-
-```swift
-open class LastBuildDate: Tag {
-
-    open override class func createNode() -> Node {
-        Node(type: .standard, name: "lastBuildDate")
+    public init() {
+        attributes = .init()
     }
 }
-
-// <lastBuildDate></lastBuildDate> - standard tag with custom name
 ```
+
+A standard tag can be represented as follows, including result-builder support provided by the `@ElementBuilder` attribute:
+
+```swift
+import SGML
+
+public struct P: StandardTag {
+
+    public var attributes: AttributeStore
+    public var children: [Element]
+
+    public init(
+        _ contents: String
+    ) {
+        self.attributes = .init()
+        self.children = [
+            Text(contents)
+        ]
+    }
+
+    public init(
+        children: [Element]
+    ) {
+        self.attributes = .init()
+        self.children = children
+    }
+
+    public init(
+        @ElementBuilder _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
+```
+
+### Custom tag names
+
+By default, the tag name is automatically derived from the type name (converted to lowercase).  
+It is also possible to override the static `name` property manually:
+
+```swift
+struct LastBuildDate: StandardTag {
+    
+    static let name = "lastBuildDate"
+    
+    // ...
+}
+```
+
+### Container elements
 
 It is also possible to create tags with altered content or default attributes.
 
@@ -99,20 +162,9 @@ open class Description: Tag {
     }
 }
 // <description><![CDATA[lorem ipsum]]></description> - content wrapped in CDATA
-
-open class Rss: Tag {
-    
-    public init(@TagBuilder _ builder: () -> Tag) {
-        super.init(builder())
-        setAttributes([
-            .init(key: "version", value: "2.0"),
-        ])
-    }
-}
-// <rss version="2.0">...</rss> - tag with a default attribute
 ```
 
-## Attribute management
+### Attribute management
 
 You can set, add or delete the attributes of a given tag.
 
@@ -164,66 +216,6 @@ public extension Guid {
 ```
 
 There are other built-in type-safe attribute modifiers available on tags.
-
-
-## Composing tags
-
-You can come up with your own `Tag` composition system by introducing a new protocol.
-
-```swift
-protocol TagRepresentable {
-
-    @TagBuilder
-    func build() -> Tag
-}
-
-struct ListComponent: TagRepresentable {
-
-    let items: [String]
-    
-    init(_ items: [String]) {
-        self.items = items
-    }
-
-    func build() -> Tag {
-        Ul {
-            for item in items {
-                Li(item)
-            }
-        }
-    }
-}
-
-let tag = ListComponent(["a", "b", "c"]).build()
-```
-
-This way it is also possible to extend the `TagBuilder` to support the new protocol.
-
-```swift
-extension TagBuilder {
-
-    static func buildExpression(_ expression: Tag) -> Tag {
-        expression
-    }
-    
-    static func buildExpression(_ expression: TagRepresentable) -> Tag {
-        expression.build()
-    }
-}
-```
-
-Sometimes you'll need extra parameters for the build function, so you have to call the build method by hand.
-
-In those cases it is recommended to introduce a `render` function instead of using build.
-
-```swift
-
-let tag = WebIndexTemplate(ctx) {
-    ListComponent(["a", "b", "c"])
-        .render(req)
-}
-.render(req)
-```
 
 
 ## Credits & references
