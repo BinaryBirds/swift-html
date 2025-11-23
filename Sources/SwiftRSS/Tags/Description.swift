@@ -3,7 +3,7 @@ import SGML
 public struct Description: StandardTag, ItemContent, ChannelContent {
 
     public var attributes: AttributeStore
-    public internal(set) var children: [Element]
+    public var children: [Element]
 
     public init(
         _ value: String

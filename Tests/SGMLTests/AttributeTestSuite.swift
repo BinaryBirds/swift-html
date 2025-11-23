@@ -9,7 +9,8 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributes: AttributeStore
+            var attributes: AttributeStore = .init()
+            var children: [Element] = []
         }
 
         struct Class: Attribute {
@@ -42,7 +43,8 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributes: AttributeStore
+            var attributes: AttributeStore = .init()
+            var children: [Element] = []
         }
 
         struct Enabled: Attribute {
@@ -75,7 +77,8 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributes: AttributeStore
+            var attributes: AttributeStore = .init()
+            var children: [Element] = []
         }
 
         struct Class: Attribute {

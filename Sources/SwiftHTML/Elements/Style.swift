@@ -3,11 +3,10 @@ import SGML
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
-public struct Style: StandardTextTag, MetadataContent {
+public struct Style: StandardTag, MetadataContent {
 
-    public let text: String
     public var attributes: AttributeStore
-    public internal(set) var children: [Element]
+    public var children: [Element]
 
     public init(
         _ text: String
@@ -16,7 +15,6 @@ public struct Style: StandardTextTag, MetadataContent {
         self.children = [
             Text(text)
         ]
-        self.text = text
     }
 }
 

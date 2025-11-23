@@ -22,11 +22,10 @@ import SGML
 /// So, try to make the title as accurate and meaningful as possible!
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
-public struct Title: StandardTextTag, MetadataContent {
+public struct Title: StandardTag, MetadataContent {
 
-    public let text: String
     public var attributes: AttributeStore
-    public internal(set) var children: [Element]
+    public var children: [Element]
 
     public init(
         _ text: String
@@ -35,6 +34,5 @@ public struct Title: StandardTextTag, MetadataContent {
         self.children = [
             Text(text)
         ]
-        self.text = text
     }
 }

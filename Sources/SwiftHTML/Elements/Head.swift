@@ -30,7 +30,7 @@ public struct Head: StandardTag {
     // MARK: -
 
     public var attributes: AttributeStore
-    public internal(set) var children: [Element]
+    public var children: [Element]
 
     public init(
         elements: [MetadataContent]

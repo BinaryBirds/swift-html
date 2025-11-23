@@ -1,12 +1,10 @@
 import DOM
 
-public protocol StandardTag: Tag, Attributes {
-    var children: [Element] { get }
+public protocol StandardTag: Tag, Container, Attributes {
+
 }
 
 extension StandardTag {
-
-    public var children: [Element] { [] }
 
     public var node: Node {
         StandardNode(

@@ -20,7 +20,7 @@ public struct P: StandardTag {
     // MARK: -
 
     public var attributes: AttributeStore
-    public internal(set) var children: [Element]
+    public var children: [Element]
 
     public init(
         _ contents: String

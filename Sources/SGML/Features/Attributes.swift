@@ -4,13 +4,13 @@ public protocol Attributes {
 
 extension Attributes where Self: Mutable {
 
-    func add(attributes: [Attribute]) -> Self {
+    public func add(attributes: [Attribute]) -> Self {
         modify {
             $0.attributes.set(attributes: attributes)
         }
     }
 
-    func add(attribute: Attribute) -> Self {
+    public func add(attribute: Attribute) -> Self {
         modify {
             $0.attributes.add(attribute: attribute)
         }

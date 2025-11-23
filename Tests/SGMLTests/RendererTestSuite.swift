@@ -11,6 +11,7 @@ struct RendererTestSuite {
 
         struct Root: StandardTag {
             var attributes: AttributeStore = .init()
+            var children: [Element] = []
         }
 
         let doc = Document(
@@ -34,7 +35,7 @@ struct RendererTestSuite {
 
         struct Root: StandardTag {
             var attributes: AttributeStore = .init()
-            let children: [Element]
+            var children: [Element] = []
         }
 
         struct Branch: ShortTag {
@@ -69,24 +70,23 @@ struct RendererTestSuite {
 
         struct Root: StandardTag {
             var attributes: AttributeStore = .init()
-            let children: [Element]
+            var children: [Element] = []
         }
 
         struct Branch: StandardTag {
             var attributes: AttributeStore = .init()
-            let children: [Element]
+            var children: [Element] = []
         }
 
         struct Leaf: StandardTag {
-            var text: String
+            var attributes: AttributeStore
+            var children: [Element]
 
-            init(text: String) {
-                self.text = text
-            }
-
-            var attributes: AttributeStore = .init()
-            var children: [Element] {
-                [
+            init(
+                text: String
+            ) {
+                self.attributes = .init()
+                self.children = [
                     Text(text)
                 ]
             }
@@ -126,12 +126,12 @@ struct RendererTestSuite {
 
         struct Root: StandardTag {
             var attributes: AttributeStore = .init()
-            let children: [Element]
+            var children: [Element] = []
         }
 
         struct Branch: StandardTag {
             var attributes: AttributeStore = .init()
-            var children: [Element]
+            var children: [Element] = []
 
             func add(chid: Element) -> Self {
                 modify {
@@ -141,16 +141,14 @@ struct RendererTestSuite {
         }
 
         struct Leaf: StandardTag {
+            var attributes: AttributeStore
+            var children: [Element]
 
-            var text: String
-
-            init(text: String) {
-                self.text = text
-            }
-
-            var attributes: AttributeStore = .init()
-            var children: [Element] {
-                [
+            init(
+                text: String
+            ) {
+                self.attributes = .init()
+                self.children = [
                     Text(text)
                 ]
             }
@@ -196,7 +194,7 @@ struct RendererTestSuite {
 
         struct Root: StandardTag {
             var attributes: AttributeStore = .init()
-            let children: [Element]
+            var children: [Element] = []
         }
 
         struct Branch: StandardTag {
@@ -217,15 +215,14 @@ struct RendererTestSuite {
         }
 
         struct Leaf: StandardTag {
-            var text: String
+            var attributes: AttributeStore
+            var children: [Element]
 
-            init(text: String) {
-                self.text = text
-            }
-
-            var attributes: AttributeStore = .init()
-            var children: [Element] {
-                [
+            init(
+                text: String
+            ) {
+                self.attributes = .init()
+                self.children = [
                     Text(text)
                 ]
             }

@@ -3,7 +3,7 @@ import SGML
 public struct Guid: StandardTag, ItemContent {
 
     public var attributes: AttributeStore
-    public internal(set) var children: [Element]
+    public var children: [Element]
 
     public init(
         _ value: String,
