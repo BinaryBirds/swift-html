@@ -14,6 +14,8 @@ struct SwiftHTMLTestSuite {
                 Meta().charset("utf-8")
                 Style("body { background: red; }")
                 Link(rel: .stylesheet)
+                    .href("./css/style.css")
+
                 Script()
 
             }
@@ -33,14 +35,8 @@ struct SwiftHTMLTestSuite {
             }
         }
 
-        let renderer = Renderer(
-            indent: 4
-        )
-
-        let doc = Document(
-            type: .html,
-            root: html
-        )
+        let renderer = Renderer(indent: 4)
+        let doc = Document(type: .html, root: html)
 
         let expectation = #"""
             <!doctype html>
@@ -49,7 +45,7 @@ struct SwiftHTMLTestSuite {
                     <title>foo</title>
                     <meta charset="utf-8">
                     <style>body { background: red; }</style>
-                    <link rel="stylesheet">
+                    <link href="./css/style.css" rel="stylesheet">
                     <script>
                 </head>
                 <body>

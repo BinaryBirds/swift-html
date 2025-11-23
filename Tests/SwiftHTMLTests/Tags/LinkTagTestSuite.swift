@@ -6,19 +6,37 @@ import Testing
 struct LinkTagTestSuite {
 
     @Test
-    func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+    func basics() async throws {
+        let tag = Link(rel: .stylesheet)
+            .href("./css/style.css")
 
         let renderer = Renderer()
         let doc = Document(type: .unspecified, root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <link href="./css/style.css" rel="stylesheet">
             """#
 
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
+
+    @Test
+    func mediaQuery() async throws {
+        let tag = Link(rel: .stylesheet)
+            .media(.screen)
+
+        let renderer = Renderer()
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <link media="screen" rel="stylesheet">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
     //
     //    func testMediaQuery() {
     //        let doc = Document {
