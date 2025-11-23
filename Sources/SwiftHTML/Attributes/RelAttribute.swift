@@ -1,8 +1,8 @@
 import SGML
 
-public struct Rel: Attribute {
+public struct RelAttribute: HTMLAttribute {
 
-    public enum Value: String {
+    public enum Value: String, Sendable {
         /// Provides a link to an alternate version of the document (i.e. print page, translated or mirror).
         ///
         /// Example: `<link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">`

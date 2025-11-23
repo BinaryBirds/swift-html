@@ -1,11 +1,11 @@
 import SGML
 
-public struct Href: Attribute {
+public struct IntegrityAttribute: HTMLAttribute {
 
     public var value: String?
 
     public init(
-        _ value: String? = nil
+        _ value: String?
     ) {
         self.value = value
     }

@@ -1,11 +1,11 @@
 import SGML
 
-public struct Media: Attribute {
+public struct IdAttribute: HTMLAttribute {
 
     public var value: String?
 
     public init(
-        _ value: String?
+        _ value: String? = nil
     ) {
         self.value = value
     }

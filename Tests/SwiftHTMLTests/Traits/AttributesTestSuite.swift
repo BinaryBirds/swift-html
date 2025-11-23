@@ -34,7 +34,7 @@ struct AttributesTestSuite {
     func set() async throws {
 
         let tag = P("lorem ipsum")
-            .setAttribute(Class("text"))
+            .setAttribute(ClassAttribute("text"))
             .setAttributeValueBy(name: "align", value: "left")
 
         let renderer = Renderer(indent: 4)
@@ -52,10 +52,10 @@ struct AttributesTestSuite {
     func setOverride() async throws {
 
         let tag = P("lorem ipsum")
-            .setAttribute(Class("text"))
+            .setAttribute(ClassAttribute("text"))
             .setAttributeValueBy(name: "align", value: "left")
             .setAttributes([
-                Class("note")
+                ClassAttribute("note")
             ])
             .setAttributeValueBy(name: "align", value: "right")
 
@@ -74,10 +74,10 @@ struct AttributesTestSuite {
     func addValues() async throws {
 
         let tag = P("lorem ipsum")
-            .addAttributeValue(Class("foo"))
-            .addAttributeValue(Class("bar"))
+            .addAttributeValue(ClassAttribute("foo"))
+            .addAttributeValue(ClassAttribute("bar"))
             .addAttributeValues([
-                Class("baz")
+                ClassAttribute("baz")
             ])
 
         let renderer = Renderer(indent: 4)
@@ -96,9 +96,9 @@ struct AttributesTestSuite {
 
         let tag = P("lorem ipsum")
             .addAttributeValues([
-                Class("foo"),
-                Class("baz"),
-                Class("bar"),
+                ClassAttribute("foo"),
+                ClassAttribute("baz"),
+                ClassAttribute("bar"),
             ])
             .addAttributeValues([
                 Style("a"),
@@ -106,7 +106,7 @@ struct AttributesTestSuite {
                 Style("c"),
             ])
             .addAttributeValue(Alignment(.left))
-            .removeAttributeBy(Class.self)
+            .removeAttributeBy(ClassAttribute.self)
             .removeAttributeBy(name: "style")
             .removeAttributeValueBy(
                 Alignment(
@@ -130,14 +130,14 @@ struct AttributesTestSuite {
 
         let tag = P("lorem ipsum")
             .addAttributeValues([
-                Class("foo")
+                ClassAttribute("foo")
             ])
             .addAttributeValues([
                 Style("a")
             ])
             .addAttributeValue(Alignment(.left))
             .removeAttributeValueBy(
-                Class("foo"),
+                ClassAttribute("foo"),
                 preservingEmptyAttribute: true
             )
             .removeAttributeValueBy(

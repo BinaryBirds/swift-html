@@ -5,7 +5,7 @@ import SGML
 /// Browsers automatically add a single blank line before and after each `<p>` element.
 ///
 /// **Tip:** Use CSS to style paragraphs.
-public struct P: StandardTag {
+public struct P: StandardTag, ClassAttributeModifier {
 
     public var attributes: AttributeStore
     public var children: [Element]

@@ -6,14 +6,14 @@ import Testing
 struct MetaTagTestSuite {
 
     @Test
-    func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+    func basics() async throws {
+        let tag = Meta()
 
         let renderer = Renderer()
         let doc = Document(type: .unspecified, root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <meta>
             """#
 
         let result = renderer.render(document: doc)

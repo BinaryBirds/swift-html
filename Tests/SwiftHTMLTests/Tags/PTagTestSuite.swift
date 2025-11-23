@@ -7,13 +7,14 @@ struct PTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+        let tag = P("Lorem ipsum")
+            .class("foo")
 
         let renderer = Renderer()
         let doc = Document(type: .unspecified, root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <p class="foo">Lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)

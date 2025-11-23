@@ -40,22 +40,24 @@ struct LinkTagTestSuite {
 
     @Test
     func misc() async throws {
-        //        let tag = Link(rel: .stylesheet)
-        //            .media("screen")
-        //            .href("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
-        //            .integrity(
-        //                "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        //            )
-        //            .crossorigin(.anonymous)
-        //
-        //        let renderer = Renderer()
-        //        let doc = Document(type: .unspecified, root: tag)
-        //
-        //        let expectation = #"""
-        //            <link crossorigin="anonymous" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" href="./css/style.css" media="screen" rel="stylesheet">
-        //            """#
-        //
-        //        let result = renderer.render(document: doc)
-        //        #expect(result == expectation)
+        let tag = Link(rel: .stylesheet)
+            .media("screen")
+            .href(
+                "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            )
+            .integrity(
+                "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            )
+            .crossorigin(.anonymous)
+
+        let renderer = Renderer()
+        let doc = Document(type: .unspecified, root: tag)
+
+        let expectation = #"""
+            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" media="screen" rel="stylesheet">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
     }
 }

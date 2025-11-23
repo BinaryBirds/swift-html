@@ -1,6 +1,6 @@
 import SGML
 
-public struct Class: Attribute {
+public struct HrefAttribute: HTMLAttribute {
 
     public var value: String?
 
