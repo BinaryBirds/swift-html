@@ -1,18 +1,18 @@
 public struct StandardNode: Node {
 
     public var name: String
-    public var attributes: [Attribute]
+    public var properties: [Property]
     public var children: [Node] { list.items }
 
     private var list: ListNode
 
     public init(
         name: String,
-        attributes: [Attribute] = [],
+        properties: [Property] = [],
         children: [Node] = []
     ) {
         self.name = name
-        self.attributes = attributes
+        self.properties = properties
         self.list = .init(items: children)
     }
 }

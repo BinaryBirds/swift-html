@@ -9,7 +9,7 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributes: Attributes
+            var attributeStore: AttributeStore
         }
 
         struct Class: Attribute {
@@ -20,7 +20,7 @@ struct AttributeTestSuite {
         let doc = Document(
             type: .unspecified,
             root: Root(
-                attributes: .init(
+                attributeStore: .init(
                     [
                         Class(value: "custom")
                     ]
@@ -42,7 +42,7 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag {
-            var attributes: Attributes
+            var attributeStore: AttributeStore
         }
 
         struct Enabled: Attribute {
@@ -53,7 +53,7 @@ struct AttributeTestSuite {
         let doc = Document(
             type: .unspecified,
             root: Root(
-                attributes: .init(
+                attributeStore: .init(
                     [
                         Enabled()
                     ]
@@ -75,7 +75,7 @@ struct AttributeTestSuite {
         let renderer = Renderer()
 
         struct Root: StandardTag, Mutable {
-            var attributes: Attributes
+            var attributeStore: AttributeStore
         }
 
         struct Class: Attribute {
@@ -101,49 +101,49 @@ struct AttributeTestSuite {
         let doc = Document(
             type: .unspecified,
             root: Root(
-                attributes: .init(
+                attributeStore: .init(
                     [
                         Enabled()
                     ]
                 )
             )
             .modify {
-                $0.attributes.add(
+                $0.attributeStore.add(
                     attribute: Class(
                         value: "foo"
                     )
                 )
-                $0.attributes.add(
+                $0.attributeStore.add(
                     attribute: Class(
                         value: "bar"
                     )
                 )
-                $0.attributes.add(
+                $0.attributeStore.add(
                     attribute: Class(
                         value: "baz"
                     )
                 )
-                $0.attributes.removeValue(
+                $0.attributeStore.removeValue(
                     attribute: Class(
                         value: "baz"
                     )
                 )
-                $0.attributes.add(
+                $0.attributeStore.add(
                     attribute: Style(
                         value: "foo"
                     )
                 )
-                $0.attributes.set(
+                $0.attributeStore.set(
                     attribute: Style(
                         value: "bar"
                     )
                 )
-                $0.attributes.add(
+                $0.attributeStore.add(
                     attribute: Alignment(
                         value: "left"
                     )
                 )
-                $0.attributes.remove(
+                $0.attributeStore.remove(
                     attribute: Alignment(value: nil)
                 )
             }

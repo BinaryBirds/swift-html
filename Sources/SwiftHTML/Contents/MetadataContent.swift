@@ -1,6 +1,6 @@
 import SGML
 
-/// https://html.spec.whatwg.org/#metadata-content
+/// [Specification](https://html.spec.whatwg.org/#metadata-content).
 public protocol MetadataContent: Element {
     // base 1x
     // title 1x

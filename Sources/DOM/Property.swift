@@ -1,4 +1,4 @@
-public struct Attribute: Sendable {
+public struct Property: Sendable {
 
     public var name: String
     public var value: String?

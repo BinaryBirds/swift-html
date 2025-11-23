@@ -1,6 +1,6 @@
 import SGML
 
-/// https://html.spec.whatwg.org/#interactive-content
+/// [Specification](https://html.spec.whatwg.org/#interactive-content).
 public protocol InteractiveContent: Element {
 
 }

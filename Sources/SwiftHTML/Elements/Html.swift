@@ -19,14 +19,14 @@ public struct Html: StandardTag {
         }
     }
 
-    public var attributes: Attributes
-    public let children: [Element]
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         head: Head,
         body: Body
     ) {
-        self.attributes = .init()
+        self.attributeStore = .init()
         self.children = [
             head,
             body,
@@ -34,11 +34,9 @@ public struct Html: StandardTag {
     }
 
     public init(
-        @Builder _ block: () -> Html  //,
-            //        @AttributeBuilder attributes: () -> [A] = { [] }
+        @Builder _ block: () -> Self
     ) {
         self = block()
-        //        print(attributes())
     }
 }
 

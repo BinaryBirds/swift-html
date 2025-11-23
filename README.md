@@ -2,78 +2,60 @@
 
 An awesome Swift HTML DSL library using result builders that closely follows the W3C standards.
 
-
 ```swift
-import SwiftHtml 
+import SwiftHTML
 
-let doc = Document(.html) {
-    Html {
-        Head {
-            Title("Hello Swift HTML DSL")
-            
-            Meta().charset("utf-8")
-            Meta().name(.viewport).content("width=device-width, initial-scale=1")
-
-            Link(rel: .stylesheet).href("./css/style.css")
+let html = Html {
+    Head {
+        Title("Hello, SwiftHTML!")
+        Meta().charset("utf-8")
+        Meta().name(.viewport).content("width=device-width, initial-scale=1")
+        Link(rel: .stylesheet).href("./css/style.css")
+    }
+    Body {
+        H1("Hello, SwiftHTML!")
+        Ul {
+            Li("Type-safe HTML DSL for Swift 6+")
+            Li("Concurrency-safety; sendable support")
+            Li("Contains all the HTML tag definitions")
+            Li("RSS, Sitemap, SVG support as well")
         }
-        Body {
-            Main {
-                Div {
-                    Section {
-                        Img(src: "./images/swift.png", alt: "Swift Logo")
-                            .title("Picture of the Swift Logo")
-                        H1("Lorem ipsum")
-                            .class("red")
-                        P("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-                            .class(["green", "blue"])
-                            .spellcheck(false)
-                    }
 
-                    A("Download SwiftHtml now!")
-                        .href("https://github.com/binarybirds/swift-html/")
-                        .target(.blank)
-                        .download()
-                        
-                    Abbr("WTFPL")
-                        .title("Do What The Fuck You Want To Public License")
-                }
-            }
-            .class("container")
-
-            Script().src("./js/main.js").async()
-        }
+        Script(#"console.log("Hello, SwiftHTML!")"#)
+        Script().src("./js/main.js").async()
     }
 }
 
-let html = DocumentRenderer(minify: false, indent: 2).render(doc)
-print(html)
+let renderer = Renderer(indent: 4)
+let doc = Document(type: .html, root: html)
+let result = renderer.render(document: doc)
+print(result) // HTML output
 ```
 
+## Installation
 
-## Install
-
-You can simply use `SwiftHtml` as a dependency via the Swift Package Manager:
+You can use `SwiftHTML` as a dependency via Swift Package Manager:
 
 ```swift
-.package(url: "https://github.com/binarybirds/swift-html", from: "1.6.0"),
+.package(url: "https://github.com/binarybirds/swift-html", from: "2.0.0"),
 ```
 
-Add the `SwiftHtml` product from the `swift-html` package as a dependency to your target:
+Add the `SwiftHTML` product from the `swift-html` package as a dependency to your target:
 
 ```swift
-.product(name: "SwiftHtml", package: "swift-html"),
+.product(name: "SwiftHTML", package: "swift-html"),
 ```
 
 Import the framework:
 
 ```swift
-import SwiftHtml
+import SwiftHTML
 ```
 
 That's it.
 
 
-## Creating custom tags
+## Custom tags
 
 You can define your own custom tags by subclassing the `Tag` or `EmptyTag` class. 
 
@@ -242,8 +224,6 @@ let tag = WebIndexTemplate(ctx) {
 }
 .render(req)
 ```
-
-If you want to create a lightweight template engine for the [Vapor](https://vapor.codes/) web framework using SwiftHtml, you can see a working example inside the [Feather CMS core](https://github.com/FeatherCMS/feather-core) repository. 
 
 
 ## Credits & references

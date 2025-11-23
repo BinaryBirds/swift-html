@@ -20,7 +20,6 @@ public struct Head: StandardTag {
     @resultBuilder
     public enum Builder {
 
-        // Enforce exactly: Head, Body
         public static func buildBlock(
             _ elements: MetadataContent...
         ) -> Head {
@@ -28,13 +27,15 @@ public struct Head: StandardTag {
         }
     }
 
-    public var attributes: Attributes
-    public let children: [Element]
+    // MARK: -
+
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         elements: [MetadataContent]
     ) {
-        self.attributes = .init()
+        self.attributeStore = .init()
         self.children = elements
 
         precondition(
@@ -48,10 +49,8 @@ public struct Head: StandardTag {
     }
 
     public init(
-        @Builder _ block: () -> Head  //,
-            //        @AttributeBuilder attributes: () -> [A] = { [] }
+        @Builder _ block: () -> Self
     ) {
         self = block()
-        //        print(attributes())
     }
 }

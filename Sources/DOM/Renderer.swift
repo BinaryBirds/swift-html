@@ -26,7 +26,7 @@ public struct Renderer {
     }
 
     func renderAttributeList(
-        _ attributes: [Attribute]
+        _ attributes: [Property]
     ) -> String {
         let attributesList =
             attributes
@@ -39,7 +39,7 @@ public struct Renderer {
     }
 
     func renderAttribute(
-        _ attribute: Attribute
+        _ attribute: Property
     ) -> String {
         if let value = attribute.value {
             return #"\#(attribute.name)="\#(value)""#
@@ -50,7 +50,7 @@ public struct Renderer {
     func renderStandardOpening(
         _ node: StandardNode
     ) -> String {
-        let attributesList = renderAttributeList(node.attributes)
+        let attributesList = renderAttributeList(node.properties)
         return "<\(node.name)\(attributesList)>"
     }
 
@@ -63,7 +63,7 @@ public struct Renderer {
     func renderShort(
         _ node: ShortNode
     ) -> String {
-        let attributesList = renderAttributeList(node.attributes)
+        let attributesList = renderAttributeList(node.properties)
         return "<\(node.name)\(attributesList)>"
     }
 

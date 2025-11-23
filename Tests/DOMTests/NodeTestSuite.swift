@@ -12,7 +12,7 @@ struct NodeTestSuite {
         )
 
         #expect(node.name == "p")
-        #expect(node.attributes.isEmpty)
+        #expect(node.properties.isEmpty)
         #expect(node.children.isEmpty)
     }
 
@@ -23,7 +23,7 @@ struct NodeTestSuite {
         )
 
         #expect(node.name == "br")
-        #expect(node.attributes.isEmpty)
+        #expect(node.properties.isEmpty)
     }
 
     @Test

@@ -6,10 +6,16 @@ import SGML
 public struct Style: StandardTextTag, MetadataContent {
 
     public let text: String
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         _ text: String
     ) {
+        self.attributeStore = .init()
+        self.children = [
+            Text(text)
+        ]
         self.text = text
     }
 }

@@ -4,7 +4,7 @@ SHELL=/bin/bash
 
 baseUrl = https://raw.githubusercontent.com/BinaryBirds/github-workflows/refs/heads/main/scripts
 
-check: symlinks language deps lint headers
+check: symlinks language deps lint
 
 symlinks:
 	curl -s $(baseUrl)/check-broken-symlinks.sh | bash

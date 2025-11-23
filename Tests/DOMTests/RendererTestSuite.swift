@@ -80,11 +80,11 @@ struct RendererTestSuite {
     }
 
     @Test
-    func standardNodeAttributes() async throws {
+    func standardNodeProperties() async throws {
         let renderer = Renderer()
         let node = StandardNode(
             name: "p",
-            attributes: [
+            properties: [
                 .init(name: "style", value: "")
             ]
         )
@@ -135,11 +135,11 @@ struct RendererTestSuite {
     }
 
     @Test
-    func shortNodeAttributes() async throws {
+    func shortNodeProperties() async throws {
         let renderer = Renderer()
         let node = ShortNode(
             name: "input",
-            attributes: [
+            properties: [
                 .init(name: "type", value: "checkbox"),
                 .init(name: "checked", value: nil),
             ]

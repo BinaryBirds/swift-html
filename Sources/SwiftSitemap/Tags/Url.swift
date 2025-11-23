@@ -12,11 +12,13 @@ public struct Url: StandardTag {
         }
     }
 
-    public let children: [Element]
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         children: [UrlContent]
     ) {
+        self.attributeStore = .init()
         self.children = children
     }
 

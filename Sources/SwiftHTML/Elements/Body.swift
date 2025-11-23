@@ -10,7 +10,6 @@ public struct Body: StandardTag {
     @resultBuilder
     public enum Builder {
 
-        // Enforce exactly: Head, Body
         public static func buildBlock(
             _ elements: Element...
         ) -> Body {
@@ -18,21 +17,19 @@ public struct Body: StandardTag {
         }
     }
 
-    public var attributes: Attributes
-    public let children: [Element]
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         elements: [Element]
     ) {
-        self.attributes = .init()
+        self.attributeStore = .init()
         self.children = elements
     }
 
     public init(
-        @Builder _ block: () -> Body  //,
-            //        @AttributeBuilder attributes: () -> [A] = { [] }
+        @Builder _ block: () -> Body
     ) {
         self = block()
-        //        print(attributes())
     }
 }

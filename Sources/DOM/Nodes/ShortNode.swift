@@ -1,13 +1,13 @@
 public struct ShortNode: Node {
 
     public var name: String
-    public var attributes: [Attribute]
+    public var properties: [Property]
 
     public init(
         name: String,
-        attributes: [Attribute] = []
+        properties: [Property] = []
     ) {
         self.name = name
-        self.attributes = attributes
+        self.properties = properties
     }
 }

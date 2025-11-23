@@ -21,23 +21,28 @@ public struct H1: StandardTag, HeadingContent {
 
     // MARK: -
 
-    public let children: [Element]
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
-        @Builder _ block: () -> Self  //,
-            //        @AttributeBuilder attributes: () -> [A] = { [] }
+        @Builder _ block: () -> Self
     ) {
         self = block()
-        //        print(attributes())
     }
 
-    public init(_ contents: String) {
+    public init(
+        _ contents: String
+    ) {
+        self.attributeStore = .init()
         self.children = [
             Text(contents)
         ]
     }
 
-    public init(children: [Element]) {
+    public init(
+        children: [Element]
+    ) {
+        self.attributeStore = .init()
         self.children = children
     }
 }

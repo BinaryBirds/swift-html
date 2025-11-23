@@ -1,6 +1,7 @@
 import SGML
 
 /// The `<title>` tag defines the title of the document.
+///
 /// The title must be text-only, and it is shown in the browser's title bar or in the page's tab.
 ///
 /// The `<title>` tag is required in HTML documents!
@@ -24,10 +25,16 @@ import SGML
 public struct Title: StandardTextTag, MetadataContent {
 
     public let text: String
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         _ text: String
     ) {
+        self.attributeStore = .init()
+        self.children = [
+            Text(text)
+        ]
         self.text = text
     }
 }

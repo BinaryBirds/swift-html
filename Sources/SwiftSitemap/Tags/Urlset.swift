@@ -12,24 +12,25 @@ public struct Urlset: StandardTag {
         }
     }
 
-    public var attributes: Attributes
-    public let children: [Element]
+    public internal(set) var attributeStore: AttributeStore
+    public internal(set) var children: [Element]
 
     public init(
         xmlns: String? = nil,
         children: [Url]
     ) {
-        let attributes: [Attribute] = if let xmlns {
-            [
-                Xmlns(value: xmlns)
-            ]
-        }
-        else {
-            [
-                Xmlns()
-            ]
-        }
-        self.attributes = .init(attributes)
+        let attributes: [Attribute] =
+            if let xmlns {
+                [
+                    Xmlns(value: xmlns)
+                ]
+            }
+            else {
+                [
+                    Xmlns()
+                ]
+            }
+        self.attributeStore = .init(attributes)
         self.children = children
     }
 
@@ -43,4 +44,3 @@ public struct Urlset: StandardTag {
         )
     }
 }
-
