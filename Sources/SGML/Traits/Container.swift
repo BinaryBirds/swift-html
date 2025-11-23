@@ -4,9 +4,19 @@ public protocol Container {
 
 extension Container where Self: Mutable {
 
-    public func add(child: Element) -> Self {
+    public func addChild(
+        _ element: Element
+    ) -> Self {
         modify {
-            $0.children.append(child)
+            $0.children.append(element)
+        }
+    }
+    
+    public func addChildren<T: Element>(
+        _ elements: [T]
+    ) -> Self {
+        modify {
+            $0.children.append(contentsOf: elements)
         }
     }
 }
