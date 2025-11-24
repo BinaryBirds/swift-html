@@ -132,12 +132,33 @@ public struct Renderer {
                     result += newline
                 }
             }
-            // Special case: begins with a TextNode -> inline entire subtree
-            else if let first = items.first, first is TextNode {
-                result += spaces
-                result += renderInline(node)
-                if level > 0 {
-                    result += newline
+            // Special case: begins with a TextNode
+            else if let firstText = items.first as? TextNode {
+                // Ignore render identation is true for the text node
+                if firstText.ignoreRenderIndentation {
+                    result += spaces
+                    result += openingTag
+                    for child in items {
+                        if let text = child as? TextNode,
+                            text.ignoreRenderIndentation
+                        {
+                            result += text.value
+                        }
+                        else {
+                            result += renderInline(child)
+                        }
+                    }
+                    result += closingTag
+                    if level > 0 {
+                        result += newline
+                    }
+                }
+                else {
+                    result += spaces
+                    result += renderInline(node)
+                    if level > 0 {
+                        result += newline
+                    }
                 }
             }
             // Block form: children on their own lines
@@ -169,7 +190,16 @@ public struct Renderer {
             result += commentTag
             result += isInsideList ? newline : ""
         case let node as TextNode:
-            result += node.value
+            if node.ignoreRenderIndentation {
+                result += node.value
+            }
+            else {
+                result += spaces
+                result += node.value
+                if isInsideList {
+                    result += newline
+                }
+            }
         default:
             fatalError("Unknown node type `\(String(describing: node))`.")
         }

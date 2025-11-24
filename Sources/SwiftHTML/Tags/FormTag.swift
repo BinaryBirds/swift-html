@@ -1,26 +1,35 @@
-////
-////  Form.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<form>` tag is used to create an HTML form for user input.
-/////
-///// The `<form>` element can contain one or more of the following form elements:
-/////
-///// - `<input>`
-///// - `<textarea>`
-///// - `<button>`
-///// - `<select>`
-///// - `<option>`
-///// - `<optgroup>`
-///// - `<fieldset>`
-///// - `<label>`
-///// - `<output>`
-//open class Form: Tag {
-//
-//}
+/// The `<form>` tag is used to create an HTML form for user input.
+///
+/// The `<form>` element can contain one or more of the following form elements:
+///
+/// - `<input>`
+/// - `<textarea>`
+/// - `<button>`
+/// - `<select>`
+/// - `<option>`
+/// - `<optgroup>`
+/// - `<fieldset>`
+/// - `<label>`
+/// - `<output>`
+public struct Form: StandardTag, GlobalAttributeModifier {
+
+    public var attributes: AttributeStore
+    public var children: [Element]
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
 //
 //extension Form {
 //

@@ -1,16 +1,25 @@
-////
-////  Optgroup.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<optgroup>` tag is used to group related options in a `<select>` element (drop-down list).
-/////
-///// If you have a long list of options, groups of related options are easier to handle for a user.
-//open class Optgroup: Tag {
-//
-//}
+/// The `<optgroup>` tag is used to group related options in a `<select>` element (drop-down list).
+///
+/// If you have a long list of options, groups of related options are easier to handle for a user.
+public struct Optgroup: StandardTag, GlobalAttributeModifier {
+
+    public var attributes: AttributeStore
+    public var children: [Element]
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
 //
 //extension Optgroup {
 //

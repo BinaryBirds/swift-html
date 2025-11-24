@@ -376,4 +376,41 @@ struct RendererTestSuite {
         let result = renderer.render(node: node)
         #expect(result == expectation)
     }
+
+    @Test
+    func preTagSupport() async throws {
+        let renderer = Renderer(
+            indent: 4
+        )
+        let node = StandardNode(
+            name: "div",
+            children: [
+                StandardNode(
+                    name: "pre",
+                    children: [
+                        TextNode(
+                            value: #"""
+                                func main() -> String {
+                                    return "Hello, World!"
+                                }
+                                """#,
+                            ignoreRenderIndentation: true
+                        )
+                    ]
+                )
+            ]
+
+        )
+
+        let expectation = #"""
+            <div>
+                <pre>func main() -> String {
+                return "Hello, World!"
+            }</pre>
+            </div>
+            """#
+
+        let result = renderer.render(node: node)
+        #expect(result == expectation)
+    }
 }
