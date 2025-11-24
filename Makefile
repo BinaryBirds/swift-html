@@ -44,3 +44,9 @@ test-with-coverage:
 
 clean:
 	rm -rf .build
+
+docker-run:
+	docker run --rm -v $(pwd):/app -it swift:6.0
+
+docker-tests:
+	docker build -t swift-html-tests . -f ./docker/Dockerfile.testing && docker run --rm swift-html-tests
