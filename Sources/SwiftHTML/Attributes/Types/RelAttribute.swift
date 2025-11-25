@@ -1,4 +1,4 @@
-public struct ARelAttribute: HTMLAttribute {
+public struct RelAttribute: HTMLAttribute {
     public static let name = "rel"
 
     public enum Value: String, Sendable {

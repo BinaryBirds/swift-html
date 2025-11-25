@@ -11,7 +11,7 @@ public struct A:
     StandardTag,
     GlobalAttributeModifier,
     HrefAttributeModifier,
-    ARelAttributeModifier,
+    RelAttributeModifier,
     MediaAttributeModifier,
     TargetAttributeModifier
 {

@@ -8,9 +8,49 @@
 /// Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services.
 ///
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
-public struct Meta: ShortTag, MetadataContent, MediaAttributeModifier,
-    MetaNameAttributeModifier
+public struct Meta:
+    ShortTag,
+    MetadataContent,
+    MediaAttributeModifier
 {
+
+    public struct Name: Attribute {
+
+        public static let name = "name"
+
+        public enum Value: String, Sendable {
+            /// Specifies the name of the Web application that the page represents
+            case applicationName = "application-name"
+            /// Specifies the name of the author of the document.
+            case author
+            /// Specifies a description of the page. Search engines can pick up this description to show with the results of searches.
+            case description
+            /// Specifies one of the software packages used to generate the document (not used on hand-authored pages).
+            case generator
+            /// Specifies a comma-separated list of keywords - relevant to the page (Informs search engines what the page is about).
+            case keywords
+            /// Controls the viewport (the user's visible area of a web page).
+            case viewport
+            /// robots
+            case robots
+
+            /// https://css-tricks.com/meta-theme-color-and-trickery/
+            case colorScheme = "color-scheme"
+            case themeColor = "theme-color"
+            case appleMobileWebAppTitle = "apple-mobile-web-app-title"
+            case appleMobileWebAppCapable = "apple-mobile-web-app-capable"
+            case appleMobileWebAppStatusBarStyle =
+                "apple-mobile-web-app-status-bar-style"
+        }
+
+        public var value: String?
+
+        public init(
+            _ value: Value
+        ) {
+            self.value = value.rawValue
+        }
+    }
 
     public var attributes: AttributeStore
 
@@ -28,6 +68,13 @@ public struct Meta: ShortTag, MetadataContent, MediaAttributeModifier,
                 value: value
             )
         }
+    }
+
+    /// Set a custom name for the given meta tag.
+    public func name(
+        _ value: Name.Value
+    ) -> Self {
+        setAttribute(Name(value))
     }
 }
 

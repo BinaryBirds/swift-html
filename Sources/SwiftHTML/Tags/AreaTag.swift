@@ -11,8 +11,18 @@
 public struct Area:
     ShortTag,
     FlowContent,
-    GlobalAttributeModifier
+    GlobalAttributeModifier,
+    AltAttributeModifier,
+    HrefAttributeModifier,
+    TargetAttributeModifier,
+    RelAttributeModifier
 {
+
+    //    download — Whether to download the resource instead of navigating to it, and its filename if so
+    //    ping — URLs to ping
+    //    referrerpolicy — Referrer policy for fetches initiated by the element
+
+    // MARK: - attributes
 
     public struct Shape: Attribute {
 
@@ -29,12 +39,45 @@ public struct Area:
 
         public var value: String?
 
-        public init(
+        init(
             _ value: Value? = nil
         ) {
             self.value = value?.rawValue
         }
     }
+
+    // MARK: -
+
+    public struct Coords: Attribute {
+
+        public var value: String?
+
+        init(
+            _ value: String? = nil
+        ) {
+            self.value = value
+        }
+
+        init(
+            _ values: [Int]
+        ) {
+            self.value = values.map { "\($0)" }.joined(separator: ",")
+        }
+
+        init(
+            _ values: [Float]
+        ) {
+            self.value = values.map { "\($0)" }.joined(separator: ",")
+        }
+
+        init(
+            _ values: [Double]
+        ) {
+            self.value = values.map { "\($0)" }.joined(separator: ",")
+        }
+    }
+
+    // MARK: - tag
 
     public var attributes: AttributeStore
 
@@ -47,37 +90,34 @@ public struct Area:
     ) -> Self {
         setAttribute(Shape(value))
     }
+
+    public func coords(
+        _ value: String?
+    ) -> Self {
+        setAttribute(Coords(value))
+    }
+
+    public func coords(
+        _ values: Int...
+    ) -> Self {
+        setAttribute(Coords(values))
+    }
+
+    public func coords(
+        _ values: Float...
+    ) -> Self {
+        setAttribute(Coords(values))
+    }
+
+    public func double(
+        _ values: Double...
+    ) -> Self {
+        setAttribute(Coords(values))
+    }
 }
 
 //open class Area: EmptyTag {
 //
-//    public enum Rel: String {
-//        /// Links to an alternate version of the document (i.e. print page, translated or mirror)
-//        case alternate
-//        /// Links to the author of the document
-//        case author
-//        /// Permanent URL used for bookmarking
-//        case bookmark
-//        /// Links to a help document
-//        case help
-//        /// Links to copyright information for the document
-//        case license
-//        /// The next document in a selection
-//        case next
-//        /// Links to an unendorsed document, like a paid link.
-//        /// ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
-//        case nofollow
-//        /// Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink
-//        case noreferrer
-//        /// Specifies that the target document should be cached
-//        case prefetch
-//        /// The previous document in a selection
-//        case prev
-//        /// Links to a search tool for the document
-//        case search
-//        /// A tag (keyword) for the current document
-//        case tag
-//    }
 //}
 //
 //extension Area {
