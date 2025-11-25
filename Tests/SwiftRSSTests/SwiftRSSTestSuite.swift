@@ -9,7 +9,7 @@ struct SwiftRSSTestSuite {
         let tag = Title("foo")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <title><![CDATA[foo]]></title>
@@ -24,7 +24,7 @@ struct SwiftRSSTestSuite {
         let tag = Description("foo")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <description><![CDATA[foo]]></description>
@@ -39,7 +39,7 @@ struct SwiftRSSTestSuite {
         let tag = Link("http://localhost/")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <link>http://localhost/</link>
@@ -54,7 +54,7 @@ struct SwiftRSSTestSuite {
         let tag = Language("en_US")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <language>en_US</language>
@@ -69,7 +69,7 @@ struct SwiftRSSTestSuite {
         let tag = LastBuildDate("2021-12-19")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <lastBuildDate>2021-12-19</lastBuildDate>
@@ -84,7 +84,7 @@ struct SwiftRSSTestSuite {
         let tag = PubDate("2021-12-19")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <pubDate>2021-12-19</pubDate>
@@ -99,7 +99,7 @@ struct SwiftRSSTestSuite {
         let tag = Ttl(250)
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <ttl>250</ttl>
@@ -114,7 +114,7 @@ struct SwiftRSSTestSuite {
         let tag = Guid("http://localhost/")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <guid>http://localhost/</guid>
@@ -129,7 +129,7 @@ struct SwiftRSSTestSuite {
         let tag = Guid("http://localhost/", isPermalink: true)
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <guid isPermalink="true">http://localhost/</guid>
@@ -149,7 +149,7 @@ struct SwiftRSSTestSuite {
         }
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <item>
@@ -184,7 +184,7 @@ struct SwiftRSSTestSuite {
         }
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <channel>

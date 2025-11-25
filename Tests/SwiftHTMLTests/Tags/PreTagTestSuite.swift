@@ -12,7 +12,7 @@ struct PreTagTestSuite {
         }
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <div>
@@ -37,7 +37,7 @@ struct PreTagTestSuite {
         }
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <div>
@@ -67,7 +67,7 @@ struct PreTagTestSuite {
         }
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <div>

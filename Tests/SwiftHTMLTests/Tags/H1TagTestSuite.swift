@@ -10,7 +10,7 @@ struct H1TagTestSuite {
         let tag = H1("Lorem ipsum")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <h1>Lorem ipsum</h1>
@@ -27,7 +27,7 @@ struct H1TagTestSuite {
         }
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <h1><br></h1>

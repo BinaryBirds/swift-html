@@ -9,7 +9,7 @@ struct SwiftSVGTestSuite {
     //        let tag = Loc("foo")
     //
     //        let renderer = Renderer()
-    //        let doc = Document(type: .unspecified, root: tag)
+    //        let doc = Document(root: tag)
     //
     //        let expectation = #"""
     //            <loc>foo</loc>

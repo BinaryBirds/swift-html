@@ -13,7 +13,7 @@ struct ContainerTestSuite {
             .addChild(Text("foo"))
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p>lorem ipsum<br>foo</p>
@@ -40,7 +40,7 @@ struct ContainerTestSuite {
             )
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p>lorem ipsum dolor sit amet.</p>

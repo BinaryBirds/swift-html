@@ -10,7 +10,7 @@ struct MetaTagTestSuite {
         let tag = Meta()
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <meta>

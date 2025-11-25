@@ -9,7 +9,7 @@ struct SwiftRSSTestSuite {
         let tag = Loc("foo")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <loc>foo</loc>
@@ -24,7 +24,7 @@ struct SwiftRSSTestSuite {
         let tag = LastMod("2016-09-01")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <lastmod>2016-09-01</lastmod>
@@ -39,7 +39,7 @@ struct SwiftRSSTestSuite {
         let tag = ChangeFreq(.daily)
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <changefreq>daily</changefreq>
@@ -54,7 +54,7 @@ struct SwiftRSSTestSuite {
         let tag = Priority(0.5)
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <priority>0.5</priority>
@@ -74,7 +74,7 @@ struct SwiftRSSTestSuite {
         }
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <url>

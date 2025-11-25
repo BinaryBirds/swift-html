@@ -11,7 +11,7 @@ struct LinkTagTestSuite {
             .href("./css/style.css")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <link href="./css/style.css" rel="stylesheet">
@@ -28,7 +28,7 @@ struct LinkTagTestSuite {
             .href("./css/style.css")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <link href="./css/style.css" media="screen" rel="stylesheet">
@@ -51,7 +51,7 @@ struct LinkTagTestSuite {
             .crossorigin(.anonymous)
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" media="screen" rel="stylesheet">

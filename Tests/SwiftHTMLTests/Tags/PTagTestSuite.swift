@@ -13,7 +13,7 @@ struct PTagTestSuite {
         //            .addChild(Comment("foo"))
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p class="bar foo">Lorem ipsum</p>

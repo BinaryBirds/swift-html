@@ -10,7 +10,7 @@ struct BrTagTestSuite {
         let tag = Br()
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <br>

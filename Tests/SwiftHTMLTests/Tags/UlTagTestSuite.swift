@@ -10,7 +10,7 @@ struct UlTagTestSuite {
         let tag = H1("Lorem ipsum")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <h1>Lorem ipsum</h1>

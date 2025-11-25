@@ -10,7 +10,7 @@ struct CommentTagTestSuite {
         let tag = Comment("this is a comment")
 
         let renderer = Renderer()
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <!-- this is a comment -->

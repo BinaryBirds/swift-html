@@ -38,7 +38,7 @@ struct AttributesTestSuite {
             .setAttributeValueBy(name: "align", value: "left")
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p align="left" class="text">lorem ipsum</p>
@@ -60,7 +60,7 @@ struct AttributesTestSuite {
             .setAttributeValueBy(name: "align", value: "right")
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p align="right" class="note">lorem ipsum</p>
@@ -81,7 +81,7 @@ struct AttributesTestSuite {
             ])
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p class="bar baz foo">lorem ipsum</p>
@@ -115,7 +115,7 @@ struct AttributesTestSuite {
             )
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p>lorem ipsum</p>
@@ -152,7 +152,7 @@ struct AttributesTestSuite {
             )
 
         let renderer = Renderer(indent: 4)
-        let doc = Document(type: .unspecified, root: tag)
+        let doc = Document(root: tag)
 
         let expectation = #"""
             <p align="left" class style>lorem ipsum</p>
