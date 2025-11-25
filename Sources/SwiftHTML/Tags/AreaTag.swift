@@ -1,15 +1,54 @@
-////
-////  Area.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The <area> tag defines an area inside an image map (an image map is an image with clickable areas).
-/////
-///// <area> elements are always nested inside a <map> tag.
-/////
-///// **Note:** The usemap attribute in <img> is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
+///
+/// The <area> tag defines an area inside an image map (an image map is an image with clickable areas).
+///
+/// <area> elements are always nested inside a <map> tag.
+///
+/// **Note:** The usemap attribute in <img> is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
+///
+/// [HTML Standard - The area element](https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element)
+/// [W3C Reference - HTML area tag](https://www.w3schools.com/tags/tag_area.asp)
+///
+public struct Area:
+    ShortTag,
+    FlowContent,
+    GlobalAttributeModifier
+{
+
+    public struct Shape: Attribute {
+
+        public enum Value: String {
+            /// Specifies the entire region
+            case `default`
+            /// Defines a rectangular region
+            case rect
+            /// Defines a circular region
+            case circle
+            /// Defines a polygonal region
+            case poly
+        }
+
+        public var value: String?
+
+        public init(
+            _ value: Value? = nil
+        ) {
+            self.value = value?.rawValue
+        }
+    }
+
+    public var attributes: AttributeStore
+
+    public init() {
+        self.attributes = .init()
+    }
+
+    public func shape(
+        _ value: Shape.Value?
+    ) -> Self {
+        setAttribute(Shape(value))
+    }
+}
+
 //open class Area: EmptyTag {
 //
 //    public enum Rel: String {
@@ -39,18 +78,6 @@
 //        /// A tag (keyword) for the current document
 //        case tag
 //    }
-//
-//    public enum Shape: String {
-//        /// Specifies the entire region
-//        case `default`
-//        /// Defines a rectangular region
-//        case rect
-//        /// Defines a circular region
-//        case circle
-//        /// Defines a polygonal region
-//        case poly
-//    }
-//
 //}
 //
 //extension Area {
@@ -79,24 +106,6 @@
 //        attribute("hreflang", value)
 //    }
 //
-//    /// Specifies what media/device the target URL is optimized for
-//    public func media(_ value: String) -> Self {
-//        attribute("media", value)
-//    }
-//
-//    /// Specifies what media/device the linked document is optimized for
-//    ///
-//    /// If multiple queries were provided they're going to be concatenated with an `and` operand
-//    public func media(_ queries: MediaQuery...) -> Self {
-//        media(queries)
-//    }
-//
-//    /// Specifies what media/device the linked document is optimized for
-//    ///
-//    /// If multiple queries were provided they're going to be concatenated with an `and` operand
-//    public func media(_ queries: [MediaQuery]) -> Self {
-//        media(queries.map(\.value).joined(separator: " and "))
-//    }
 //
 //    /// Specifies which referrer information to send with the link
 //    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
@@ -106,11 +115,6 @@
 //    /// Specifies the relationship between the current document and the target URL
 //    public func rel(_ value: Rel) -> Self {
 //        attribute("rel", value.rawValue)
-//    }
-//
-//    /// Specifies the shape of the area
-//    public func shape(_ value: Shape) -> Self {
-//        attribute("shape", value.rawValue)
 //    }
 //
 //    /// Specifies where to open the target URL

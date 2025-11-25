@@ -214,4 +214,5 @@ All standard tags support child elements by default.
 
 ## Credits & references
 
+- [HTML Standard](https://html.spec.whatwg.org/multipage/)
 - [HTML Reference](https://www.w3schools.com/tags/default.asp)
