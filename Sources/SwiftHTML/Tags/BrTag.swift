@@ -5,6 +5,7 @@
 /// The `<br>` tag is an empty tag which means that it has no end tag.
 public struct Br: ShortTag {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
     public init() {

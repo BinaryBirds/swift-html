@@ -3,9 +3,19 @@
 /// The `<base>` tag must have either an href or a target attribute present, or both.
 ///
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
-public struct Base: ShortTag, MetadataContent {
+public struct Base:
+    HTMLShortTag
+{
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .heading
+        ]
+    }
 
     public init() {
         self.attributes = .init()

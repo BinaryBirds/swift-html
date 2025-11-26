@@ -4,8 +4,7 @@
 ///
 /// The `<link>` element is an empty element, it contains attributes only.
 public struct Link:
-    ShortTag,
-    MetadataContent,
+    HTMLShortTag,
     MediaAttributeModifier
 {
 
@@ -72,6 +71,13 @@ public struct Link:
     }
 
     public var attributes: AttributeStore
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .metadata
+        ]
+    }
 
     public init(
         rel value: Rel.Value

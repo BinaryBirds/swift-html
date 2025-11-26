@@ -10,10 +10,24 @@
 ///
 /// **Note:** The `<article>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<article>` element (see example below).
-public struct Article: StandardTag, GlobalAttributeModifier {
+public struct Article:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .flow, .sectioning, .palpable,
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),
@@ -26,6 +40,7 @@ public struct Article: StandardTag, GlobalAttributeModifier {
     public init(
         @Builder<Element> _ block: () -> [Element]
     ) {
+        // Flow content.
         self.init(children: block())
     }
 }

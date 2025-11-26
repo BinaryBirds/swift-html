@@ -9,8 +9,7 @@
 ///
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
 public struct Meta:
-    ShortTag,
-    MetadataContent,
+    HTMLShortTag,
     MediaAttributeModifier
 {
 
@@ -53,6 +52,13 @@ public struct Meta:
     }
 
     public var attributes: AttributeStore
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .heading
+        ]
+    }
 
     public init() {
         self.attributes = .init()

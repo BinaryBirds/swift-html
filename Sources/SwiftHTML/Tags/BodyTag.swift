@@ -5,7 +5,10 @@
 /// **Note:** There can only be one `<body>` element in an HTML document.
 public struct Body: StandardTag {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     init(

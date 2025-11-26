@@ -8,15 +8,30 @@
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
 public struct A:
-    StandardTag,
+    HTMLStandardTag,
+    /// attribute modifiers
     GlobalAttributeModifier,
     HrefAttributeModifier,
     RelAttributeModifier,
     MediaAttributeModifier,
     TargetAttributeModifier
 {
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        var contentModel: ContentModel = [
+            .flow, .phrasing,
+        ]
+        if hasAttribute(HrefAttribute.self) {
+            contentModel.insert(.palpable)
+        }
+        return contentModel
+    }
 
     init(
         attributes: AttributeStore = .init(),

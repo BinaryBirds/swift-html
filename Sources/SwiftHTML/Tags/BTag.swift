@@ -1,7 +1,10 @@
 /// Make some text bold (without marking it as important).
 public struct B: StandardTag, GlobalAttributeModifier {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     init(

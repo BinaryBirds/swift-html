@@ -20,10 +20,19 @@
 /// So, try to make the title as accurate and meaningful as possible!
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
-public struct Title: StandardTag, MetadataContent {
+public struct Title:
+    HTMLStandardTag
+{
 
     public var attributes: AttributeStore
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .heading
+        ]
+    }
 
     public init(
         _ text: String

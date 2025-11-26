@@ -11,7 +11,10 @@
 /// - `<pre>`    Defines preformatted text
 public struct Code: StandardTag, GlobalAttributeModifier {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     init(

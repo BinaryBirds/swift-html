@@ -5,7 +5,9 @@ import DOM
 /// The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
-public struct Script: Tag, MetadataContent {
+public struct Script:
+    HTMLTag
+{
 
     public enum `Type`: String {
         case javascript = "text/javascript"
@@ -18,6 +20,13 @@ public struct Script: Tag, MetadataContent {
 
     private var kind: Kind
     public var attributes: AttributeStore
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .metadata
+        ]
+    }
 
     public init(
         _ contents: String

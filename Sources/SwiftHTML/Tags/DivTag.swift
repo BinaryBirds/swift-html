@@ -9,7 +9,10 @@
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 public struct Div: StandardTag, GlobalAttributeModifier {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     init(

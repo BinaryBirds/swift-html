@@ -9,19 +9,17 @@
 /// [W3C Reference - HTML area tag](https://www.w3schools.com/tags/tag_area.asp)
 ///
 public struct Area:
-    ShortTag,
-    FlowContent,
+    HTMLShortTag,
+    // attribute modifiers
     GlobalAttributeModifier,
     AltAttributeModifier,
     HrefAttributeModifier,
     TargetAttributeModifier,
-    RelAttributeModifier
+    RelAttributeModifier,
+    DownloadAttributeModifier,
+    PingAttributeModifier,
+    ReferrerPolicyAttributeModifier
 {
-
-    //    download — Whether to download the resource instead of navigating to it, and its filename if so
-    //    ping — URLs to ping
-    //    referrerpolicy — Referrer policy for fetches initiated by the element
-
     // MARK: - attributes
 
     public struct Shape: Attribute {
@@ -61,25 +59,33 @@ public struct Area:
         init(
             _ values: [Int]
         ) {
-            self.value = values.map { "\($0)" }.joined(separator: ",")
+            self.value = values.joinedElementsAsString()
         }
 
         init(
             _ values: [Float]
         ) {
-            self.value = values.map { "\($0)" }.joined(separator: ",")
+            self.value = values.joinedElementsAsString()
         }
 
         init(
             _ values: [Double]
         ) {
-            self.value = values.map { "\($0)" }.joined(separator: ",")
+            self.value = values.joinedElementsAsString()
         }
     }
 
     // MARK: - tag
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .flow
+        ]
+    }
 
     public init() {
         self.attributes = .init()
@@ -115,30 +121,3 @@ public struct Area:
         setAttribute(Coords(values))
     }
 }
-
-
-//extension Area {
-//    /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-//    public func download(_ value: String) -> Self {
-//        attribute("download", value)
-//    }
-//    /// Specifies the language of the target URL
-//    public func hreflang(_ value: String) -> Self {
-//        attribute("hreflang", value)
-//    }
-//
-//    /// Specifies which referrer information to send with the link
-//    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-//        attribute("referrerpolicy", value.rawValue)
-//    }
-//
-//    /// Specifies the relationship between the current document and the target URL
-//    public func rel(_ value: Rel) -> Self {
-//        attribute("rel", value.rawValue)
-//    }
-//
-//    /// Specifies the media type of the target URL
-//    public func type(_ value: String) -> Self {
-//        attribute("type", value)
-//    }
-//}

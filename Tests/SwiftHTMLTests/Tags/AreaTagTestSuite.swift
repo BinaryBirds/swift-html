@@ -11,12 +11,20 @@ struct AreaTagTestSuite {
             .shape(.rect)
             .alt("foo")
             .coords(0, 0, 82, 126)
+            .download()
+            .ping("http://localhost:8080/ping")
+            .referrerPolicy(.noReferrer)
+        //            .check(false) {
+        //                $0.ping("foo")
+        //            } else: {
+        //                $0.ping("bar")
+        //            }
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <area alt="foo" coords="0,0,82,126" shape="rect">
+            <area alt="foo" coords="0,0,82,126" ping="http://localhost:8080/ping" referrerpolicy="no-referrer" shape="rect" download>
             """#
 
         let result = renderer.render(document: doc)

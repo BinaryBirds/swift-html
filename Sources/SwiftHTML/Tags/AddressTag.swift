@@ -8,20 +8,22 @@
 /// [HTML Standard - The address element](https://html.spec.whatwg.org/multipage/sections.html#the-address-element)
 ///
 public struct Address:
-    StandardTag,
-    FlowContent,
-    PalpableContent,
+    HTMLStandardTag,
+    // attribute modifiers
     GlobalAttributeModifier
 {
-    /// The attribute storage for the `<abbr>` element.
-    ///
-    /// Use this to configure global HTML attributes such as `id`, `class`, `style`, and others.
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
-    /// The child elements contained within the `<abbr>` tag.
-    ///
-    /// Typically this holds text nodes, but any valid phrasing content is allowed.
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .flow, .palpable,
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),
@@ -31,10 +33,9 @@ public struct Address:
         self.children = children
     }
 
-    /// Creates an `<abbr>` element containing the given text.
+    /// Creates a tag containing the given text.
     ///
-    /// - Parameter contents: The textual content representing the abbreviation.
-    ///   For example: `"HTML"` or `"CSS"`.
+    /// - Parameter contents: The textual content.
     public init(
         _ contents: String
     ) {
@@ -53,6 +54,10 @@ public struct Address:
     public init(
         @Builder<Element> _ block: () -> [Element]
     ) {
+        // Flow content,
+        // but with no heading content descendants,
+        // no sectioning content descendants,
+        // and no header, footer, or address element descendants.
         self.init(children: block())
     }
 }

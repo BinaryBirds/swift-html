@@ -6,21 +6,22 @@
 /// [HTML Standard - The abbr element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element)
 ///
 public struct Abbr:
-    StandardTag,
-    FlowContent,
-    PhrasingContent,
-    PalpableContent,
+    HTMLStandardTag,
+    // attribute modifiers
     GlobalAttributeModifier
 {
-    /// The attribute storage for the `<abbr>` element.
-    ///
-    /// Use this to configure global HTML attributes such as `id`, `class`, `style`, and others.
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
-    /// The child elements contained within the `<abbr>` tag.
-    ///
-    /// Typically this holds text nodes, but any valid phrasing content is allowed.
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .flow, .phrasing, .palpable,
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),
@@ -30,13 +31,13 @@ public struct Abbr:
         self.children = children
     }
 
-    /// Creates an `<abbr>` element containing the given text.
+    /// Creates a tag containing the given text.
     ///
     /// - Parameter contents: The textual content representing the abbreviation.
-    ///   For example: `"HTML"` or `"CSS"`.
     public init(
         _ contents: String
     ) {
+        // Phrasing content.
         self.init(
             children: [
                 Text(contents)

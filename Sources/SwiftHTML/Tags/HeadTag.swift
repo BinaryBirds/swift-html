@@ -19,7 +19,7 @@ public struct Head: StandardTag {
     public var children: [Element]
 
     public init(
-        elements: [MetadataContent]
+        elements: [Element]
     ) {
         self.attributes = .init()
         self.children = elements
@@ -35,7 +35,7 @@ public struct Head: StandardTag {
     }
 
     public init(
-        @Builder<MetadataContent> _ block: () -> [MetadataContent]
+        @Builder<Element> _ block: () -> [Element]
     ) {
         self.init(elements: block())
     }

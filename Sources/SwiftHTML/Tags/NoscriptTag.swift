@@ -1,10 +1,19 @@
 /// The `<noscript>` tag defines an alternate content to be displayed to users that have disabled scripts in their browser or have a browser that doesn't support script.
 ///
 /// The `<noscript>` element can be used in both `<head>` and `<body>`. When used inside `<head>`, the `<noscript>` element could only contain `<link>`, `<style>`, and `<meta>` elements.
-public struct Noscript: StandardTag, MetadataContent {
+public struct Noscript:
+    HTMLStandardTag
+{
 
     public var attributes: AttributeStore
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .heading
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),

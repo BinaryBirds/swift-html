@@ -1,10 +1,19 @@
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
-public struct Style: StandardTag, MetadataContent {
+public struct Style:
+    HTMLStandardTag
+{
 
     public var attributes: AttributeStore
     public var children: [Element]
+
+    /// The content model for the tag.
+    public var contentModel: ContentModel {
+        [
+            .metadata
+        ]
+    }
 
     public init(
         _ text: String
