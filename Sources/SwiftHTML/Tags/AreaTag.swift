@@ -13,12 +13,12 @@ public struct Area:
     // attribute modifiers
     GlobalAttributeModifier,
     AltAttributeModifier,
-    HrefAttributeModifier,
-    TargetAttributeModifier,
-    RelAttributeModifier,
     DownloadAttributeModifier,
+    HrefAttributeModifier,
     PingAttributeModifier,
-    ReferrerPolicyAttributeModifier
+    ReferrerPolicyAttributeModifier,
+    RelAttributeModifier,
+    TargetAttributeModifier
 {
     // MARK: - attributes
 

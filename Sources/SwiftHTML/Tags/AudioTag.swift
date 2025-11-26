@@ -18,7 +18,13 @@ public struct Audio:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
-    ControlsAttributeModifier
+    ControlsAttributeModifier,
+    SrcAttributeModifier,
+    CrossoriginAttributeModifier,
+    PreloadAttributeModifier,
+    AutoplayAttributeModifier,
+    MutedAttributeModifier,
+    LoopAttributeModifier
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

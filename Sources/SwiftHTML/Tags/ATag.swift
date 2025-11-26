@@ -11,10 +11,15 @@ public struct A:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
+    DownloadAttributeModifier,
     HrefAttributeModifier,
+    HreflangAttributeModifier,
+    MediaAttributeModifier,  // NOTE: W3C, but not spec
+    PingAttributeModifier,
+    ReferrerPolicyAttributeModifier,
     RelAttributeModifier,
-    MediaAttributeModifier,
-    TargetAttributeModifier
+    TargetAttributeModifier,
+    TypeAttributeModifier
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

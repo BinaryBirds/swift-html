@@ -7,18 +7,21 @@ struct ATagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+        let tag = A("link")
+            .href("http://localhost/")
+            .target(.blank)
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <a href="http://localhost/" target="_blank">link</a>
             """#
 
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
+
     //
     //    func testA() {
     //
