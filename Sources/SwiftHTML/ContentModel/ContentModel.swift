@@ -30,7 +30,7 @@ public struct ContentModel: Sendable, OptionSet {
 }
 
 public protocol ContentModelRepresentable {
-    var contentModel: ContentModel { get }
+    var categories: ContentModel { get }
 }
 
 protocol HTMLTag: Tag, ContentModelRepresentable {}

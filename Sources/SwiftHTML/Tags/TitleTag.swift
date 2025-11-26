@@ -27,8 +27,8 @@ public struct Title:
     public var attributes: AttributeStore
     public var children: [Element]
 
-    /// The content model for the tag.
-    public var contentModel: ContentModel {
+    /// The content model category for the tag.
+    public var categories: ContentModel {
         [
             .heading
         ]

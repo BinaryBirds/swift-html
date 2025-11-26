@@ -22,8 +22,8 @@ public struct A:
     /// The child elements contained within the tag.
     public var children: [Element]
 
-    /// The content model for the tag.
-    public var contentModel: ContentModel {
+    /// The content model category for the tag.
+    public var categories: ContentModel {
         var contentModel: ContentModel = [
             .flow, .phrasing,
         ]

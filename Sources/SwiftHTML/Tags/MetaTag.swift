@@ -53,8 +53,8 @@ public struct Meta:
 
     public var attributes: AttributeStore
 
-    /// The content model for the tag.
-    public var contentModel: ContentModel {
+    /// The content model category for the tag.
+    public var categories: ContentModel {
         [
             .heading
         ]
