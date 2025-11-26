@@ -70,7 +70,7 @@ public struct AttributeStore: Sendable {
     }
 
     public func get(
-        name: String,
+        name: String
     ) -> String? {
         storage[name]?.compactMap { $0 }.sorted().joined(separator: " ")
     }

@@ -129,7 +129,7 @@ extension Attributes where Self: Mutable {
     // MARK: - get
 
     public func getAttribute(
-        name: String,
+        name: String
     ) -> String? {
         attributes.get(name: name)
     }
