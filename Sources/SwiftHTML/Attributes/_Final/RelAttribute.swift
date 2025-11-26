@@ -39,3 +39,17 @@ public struct RelAttribute: HTMLAttribute {
         self.value = value.rawValue
     }
 }
+
+public protocol RelAttributeModifier {
+
+}
+
+extension RelAttributeModifier where Self: Attributes & Mutable {
+
+    /// Set a rel attribute.
+    public func rel(
+        _ value: RelAttribute.Value
+    ) -> Self {
+        setAttribute(RelAttribute(value))
+    }
+}

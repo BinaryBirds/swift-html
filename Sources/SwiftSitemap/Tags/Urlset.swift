@@ -7,19 +7,15 @@ public struct Urlset: StandardTag {
         xmlns: String? = nil,
         children: [Url]
     ) {
-        let attributes: [Attribute] =
-            if let xmlns {
-                [
-                    Xmlns(xmlns)
-                ]
-            }
-            else {
-                [
-                    Xmlns()
-                ]
-            }
-        self.attributes = .init(attributes)
+        self.attributes = .init()
         self.children = children
+
+        if let xmlns {
+            self = addAttribute(Xmlns(xmlns))
+        }
+        else {
+            self = addAttribute(Xmlns())
+        }
     }
 
     public init(

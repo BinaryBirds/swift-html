@@ -35,7 +35,7 @@ struct AttributesTestSuite {
 
         let tag = P("lorem ipsum")
             .setAttribute(ClassAttribute("text"))
-            .setAttributeValueBy(name: "align", value: "left")
+            .setAttribute(name: "align", value: "left")
 
         let renderer = Renderer(indent: 4)
         let doc = Document(root: tag)
@@ -53,11 +53,11 @@ struct AttributesTestSuite {
 
         let tag = P("lorem ipsum")
             .setAttribute(ClassAttribute("text"))
-            .setAttributeValueBy(name: "align", value: "left")
+            .setAttribute(name: "align", value: "left")
             .setAttributes([
                 ClassAttribute("note")
             ])
-            .setAttributeValueBy(name: "align", value: "right")
+            .setAttribute(name: "align", value: "right")
 
         let renderer = Renderer(indent: 4)
         let doc = Document(root: tag)
@@ -74,9 +74,9 @@ struct AttributesTestSuite {
     func addValues() async throws {
 
         let tag = P("lorem ipsum")
-            .addAttributeValue(ClassAttribute("foo"))
-            .addAttributeValue(ClassAttribute("bar"))
-            .addAttributeValues([
+            .addAttribute(ClassAttribute("foo"))
+            .addAttribute(ClassAttribute("bar"))
+            .addAttributes([
                 ClassAttribute("baz")
             ])
 
@@ -95,20 +95,20 @@ struct AttributesTestSuite {
     func removeValues() async throws {
 
         let tag = P("lorem ipsum")
-            .addAttributeValues([
+            .addAttributes([
                 ClassAttribute("foo"),
                 ClassAttribute("baz"),
                 ClassAttribute("bar"),
             ])
-            .addAttributeValues([
+            .addAttributes([
                 Style("a"),
                 Style("b"),
                 Style("c"),
             ])
-            .addAttributeValue(Alignment(.left))
-            .removeAttributeBy(ClassAttribute.self)
-            .removeAttributeBy(name: "style")
-            .removeAttributeValueBy(
+            .addAttribute(Alignment(.left))
+            .removeAttribute(ClassAttribute.self)
+            .removeAttribute(name: "style")
+            .removeAttribute(
                 Alignment(
                     .left
                 )
@@ -129,23 +129,23 @@ struct AttributesTestSuite {
     func removeValuesPreserving() async throws {
 
         let tag = P("lorem ipsum")
-            .addAttributeValues([
+            .addAttributes([
                 ClassAttribute("foo")
             ])
-            .addAttributeValues([
+            .addAttributes([
                 Style("a")
             ])
-            .addAttributeValue(Alignment(.left))
-            .removeAttributeValueBy(
+            .addAttribute(Alignment(.left))
+            .removeAttribute(
                 ClassAttribute("foo"),
                 preservingEmptyAttribute: true
             )
-            .removeAttributeValueBy(
+            .removeAttribute(
                 name: "style",
                 value: "a",
                 preservingEmptyAttribute: true
             )
-            .removeAttributeValueBy(
+            .removeAttribute(
                 Alignment(
                     .right
                 )

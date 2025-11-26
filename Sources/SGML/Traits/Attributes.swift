@@ -4,83 +4,81 @@ public protocol Attributes {
 
 extension Attributes where Self: Mutable {
 
-    public func setAttributeValueBy(
+    public func setAttribute(
         name: String,
         value: String?
     ) -> Self {
         modify {
-            $0.attributes.setValueBy(name: name, value: value)
+            $0.attributes.set(name: name, value: value)
         }
     }
 
-    public func setAttribute(
-        _ attribute: Attribute
+    public func setAttribute<T: Attribute>(
+        _ attribute: T
     ) -> Self {
-        modify {
-            $0.attributes.set(attribute)
-        }
+        setAttribute(name: T.name, value: attribute.value)
     }
 
-    public func setAttributes(
-        _ attributes: [Attribute]
+    public func setAttributes<T: Attribute>(
+        _ attributes: [T]
     ) -> Self {
         modify {
-            $0.attributes.set(attributes)
+            for attribute in attributes {
+                $0.attributes.set(name: T.name, value: attribute.value)
+            }
         }
     }
 
     // MARK: - add
 
-    public func addAttributeValueBy(
+    public func addAttribute(
         name: String,
         value: String?
     ) -> Self {
         modify {
-            $0.attributes.addValueBy(name: name, value: value)
+            $0.attributes.add(name: name, value: value)
         }
     }
 
-    public func addAttributeValue(
-        _ attribute: Attribute
+    public func addAttribute<T: Attribute>(
+        _ attribute: T
     ) -> Self {
-        modify {
-            $0.attributes.addValue(attribute)
-        }
+        addAttribute(name: T.name, value: attribute.value)
     }
 
-    public func addAttributeValues<T: Attribute>(
+    public func addAttributes<T: Attribute>(
         _ attributes: [T]
     ) -> Self {
         modify {
-            $0.attributes.addValues(attributes)
+            for attribute in attributes {
+                $0.attributes.add(name: T.name, value: attribute.value)
+            }
         }
     }
 
     // MARK: - remove
 
-    public func removeAttributeBy(
+    public func removeAttribute(
         name: String
     ) -> Self {
         modify {
-            $0.attributes.removeBy(name: name)
+            $0.attributes.remove(name: name)
         }
     }
 
-    public func removeAttributeBy<T: Attribute>(
-        _ attribute: T.Type
+    public func removeAttribute<T: Attribute>(
+        _: T.Type
     ) -> Self {
-        modify {
-            $0.attributes.removeBy(attribute)
-        }
+        removeAttribute(name: T.name)
     }
 
-    public func removeAttributeValueBy(
+    public func removeAttribute(
         name: String,
         value: String?,
         preservingEmptyAttribute: Bool = false
     ) -> Self {
         modify {
-            $0.attributes.removeValueBy(
+            $0.attributes.remove(
                 name: name,
                 value: value,
                 preservingEmptyAttribute: preservingEmptyAttribute
@@ -88,15 +86,57 @@ extension Attributes where Self: Mutable {
         }
     }
 
-    public func removeAttributeValueBy<T: Attribute>(
+    public func removeAttribute<T: Attribute>(
         _ attribute: T,
         preservingEmptyAttribute: Bool = false
     ) -> Self {
-        modify {
-            $0.attributes.removeValue(
-                attribute,
-                preservingEmptyAttribute: preservingEmptyAttribute
-            )
-        }
+        removeAttribute(
+            name: T.name,
+            value: attribute.value,
+            preservingEmptyAttribute: preservingEmptyAttribute
+        )
+    }
+
+    // MARK: - has
+
+    public func hasAttribute(
+        name: String
+    ) -> Bool {
+        attributes.has(name: name)
+
+    }
+
+    public func hasAttribute<T: Attribute>(
+        _: T.Type
+    ) -> Bool {
+        hasAttribute(name: T.name)
+    }
+
+    public func hasAttribute(
+        name: String,
+        value: String?
+    ) -> Bool {
+        attributes.has(name: name, value: value)
+
+    }
+
+    public func hasAttribute<T: Attribute>(
+        _ attribute: T
+    ) -> Bool {
+        hasAttribute(name: T.name, value: attribute.value)
+    }
+
+    // MARK: - get
+
+    public func getAttribute(
+        name: String,
+    ) -> String? {
+        attributes.get(name: name)
+    }
+
+    public func getAttribute<T: Attribute>(
+        _: T.Type
+    ) -> String? {
+        getAttribute(name: T.name)
     }
 }

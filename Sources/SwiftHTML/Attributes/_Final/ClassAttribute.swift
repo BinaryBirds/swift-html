@@ -1,3 +1,13 @@
+public struct ClassAttribute: HTMLAttribute {
+    public var value: String?
+
+    public init(
+        _ value: String? = nil
+    ) {
+        self.value = value
+    }
+}
+
 public protocol ClassAttributeModifier {
 
 }
@@ -15,13 +25,21 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
     public func addClass(
         _ value: String?
     ) -> Self {
-        addAttributeValue(ClassAttribute(value))
+        addAttribute(ClassAttribute(value))
     }
 
     /// Removes a class attribute.
     public func removeClass(
         _ value: String?
     ) -> Self {
-        removeAttributeValueBy(ClassAttribute(value))
+        removeAttribute(ClassAttribute(value))
+    }
+
+    /// Toggles a class attribute.
+    public func toggleClass(
+        _ value: String?
+    ) -> Self {
+
+        removeAttribute(ClassAttribute(value))
     }
 }

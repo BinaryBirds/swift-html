@@ -4,7 +4,7 @@ public struct IsPermalink: Attribute {
     public var value: String?
 
     public init(
-        value: Bool
+        _ value: Bool
     ) {
         self.value = String(value)
     }

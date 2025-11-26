@@ -63,7 +63,7 @@ public struct Meta:
         _ value: String
     ) -> Self {
         modify {
-            $0.attributes.setValueBy(
+            $0.attributes.set(
                 name: "charset",
                 value: value
             )

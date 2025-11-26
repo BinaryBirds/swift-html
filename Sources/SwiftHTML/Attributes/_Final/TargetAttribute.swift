@@ -19,3 +19,17 @@ public struct TargetAttribute: HTMLAttribute {
         self.value = value.rawValue
     }
 }
+
+public protocol TargetAttributeModifier {
+
+}
+
+extension TargetAttributeModifier where Self: Attributes & Mutable {
+
+    /// Sets a target attribute.
+    public func target(
+        _ value: TargetAttribute.Value
+    ) -> Self {
+        setAttribute(TargetAttribute(value))
+    }
+}

@@ -8,42 +8,16 @@ public struct AttributeStore: Sendable {
         self.storage = [:]
     }
 
-    public init(
-        _ attirbutes: [Attribute]
-    ) {
-        self.storage = [:]
-        self.set(attirbutes)
-    }
+    // MARK: - api
 
-    // MARK: - set
-
-    public mutating func setValueBy(
+    public mutating func set(
         name: String,
         value: String?
     ) {
         storage[name] = [value]
     }
 
-    public mutating func set<T: Attribute>(
-        _ attribute: T
-    ) {
-        setValueBy(
-            name: T.name,
-            value: attribute.value
-        )
-    }
-
-    public mutating func set(
-        _ attributes: [Attribute]
-    ) {
-        for attribute in attributes {
-            set(attribute)
-        }
-    }
-
-    // MARK: - add
-
-    public mutating func addValueBy(
+    public mutating func add(
         name: String,
         value: String?
     ) {
@@ -56,35 +30,13 @@ public struct AttributeStore: Sendable {
         storage[name]?.append(value)
     }
 
-    public mutating func addValue<T: Attribute>(
-        _ attribute: T
-    ) {
-        addValueBy(name: T.name, value: attribute.value)
-    }
-
-    public mutating func addValues<T: Attribute>(
-        _ attributes: [T]
-    ) {
-        for attribute in attributes {
-            addValueBy(name: T.name, value: attribute.value)
-        }
-    }
-
-    // MARK: - remove
-
-    public mutating func removeBy(
+    public mutating func remove(
         name: String
     ) {
         storage[name] = nil
     }
 
-    public mutating func removeBy<T: Attribute>(
-        _: T.Type
-    ) {
-        removeBy(name: T.name)
-    }
-
-    public mutating func removeValueBy(
+    public mutating func remove(
         name: String,
         value: String?,
         preservingEmptyAttribute: Bool = false
@@ -101,15 +53,26 @@ public struct AttributeStore: Sendable {
         }
     }
 
-    public mutating func removeValue<T: Attribute>(
-        _ attribute: T,
-        preservingEmptyAttribute: Bool = false
-    ) {
-        removeValueBy(
-            name: T.name,
-            value: attribute.value,
-            preservingEmptyAttribute: preservingEmptyAttribute
-        )
+    public func has(
+        name: String
+    ) -> Bool {
+        storage[name] != nil
+    }
+
+    public func has(
+        name: String,
+        value: String?
+    ) -> Bool {
+        if let values = storage[name] {
+            return values.contains(value)
+        }
+        return false
+    }
+
+    public func get(
+        name: String,
+    ) -> String? {
+        storage[name]?.compactMap { $0 }.sorted().joined(separator: " ")
     }
 
     // MARK: - DOM

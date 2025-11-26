@@ -1,3 +1,7 @@
+public protocol GlobalAttributeModifier: ClassAttributeModifier {
+
+}
+
 public protocol HTMLAttribute: Attribute {
 
 }

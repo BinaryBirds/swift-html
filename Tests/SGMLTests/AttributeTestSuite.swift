@@ -50,13 +50,12 @@ struct AttributeTestSuite {
     @Test
     func custom() async throws {
         let doc = Document(
-            root: Root(
-                attributes: .init(
+            root: Root()
+                .setAttributes(
                     [
                         Class("custom")
                     ]
                 )
-            )
         )
 
         let expectation = #"""
@@ -70,13 +69,12 @@ struct AttributeTestSuite {
     @Test
     func customNilValue() async throws {
         let doc = Document(
-            root: Root(
-                attributes: .init(
+            root: Root()
+                .setAttributes(
                     [
                         Enabled()
                     ]
                 )
-            )
         )
 
         let expectation = #"""
@@ -90,33 +88,25 @@ struct AttributeTestSuite {
     @Test
     func mutation() async throws {
         let doc = Document(
-            root: Root(
-                attributes: .init(
+            root: Root()
+                .setAttributes(
                     [
                         Enabled()
                     ]
                 )
-            )
-            .modify {
-                $0.attributes.addValue(Class("foo"))
-                $0.attributes.addValue(Class("baz"))
-                $0.attributes.removeValue(Class("baz"))
-                $0.attributes.addValue(Style("foo"))
+                .modify {
+                    $0.attributes.add(name: "class", value: "foo")
+                    $0.attributes.add(name: "class", value: "baz")
+                    $0.attributes.remove(name: "class", value: "baz")
+                    $0.attributes.add(name: "style", value: "foo")
 
-                // TODO: variadic generic support
-                $0.attributes.addValue(Class("bar"))
-                $0.attributes.addValue(Style("bar"))
-                //                $0.attributes.addValues(
-                //                    [
-                //                        Class("bar"),
-                //                        Style("bar"),
-                //                    ]
-                //                )
+                    $0.attributes.add(name: "class", value: "bar")
+                    $0.attributes.add(name: "style", value: "bar")
 
-                $0.attributes.removeValue(Style("foo"))
-                $0.attributes.addValue(Alignment("left"))
-                $0.attributes.removeBy(Alignment.self)
-            }
+                    $0.attributes.remove(name: "style", value: "foo")
+                    $0.attributes.add(name: "alignment", value: "left")
+                    $0.attributes.remove(name: "alignment")
+                }
         )
 
         let expectation = #"""
@@ -125,5 +115,37 @@ struct AttributeTestSuite {
 
         let result = doc.render()
         #expect(result == expectation)
+    }
+
+    @Test
+    func has() async throws {
+        let tag = Root()
+            .setAttribute(Enabled())
+            .setAttribute(Class("foo"))
+
+        #expect(tag.hasAttribute(name: "class") == true)
+        #expect(tag.hasAttribute(Class.self) == true)
+
+        #expect(tag.hasAttribute(name: "style") == false)
+        #expect(tag.hasAttribute(Style.self) == false)
+
+        #expect(tag.hasAttribute(name: "class", value: "foo") == true)
+        #expect(tag.hasAttribute(Class("bar")) == false)
+
+        #expect(tag.hasAttribute(name: "class", value: "foo") == true)
+        #expect(tag.hasAttribute(Class("bar")) == false)
+    }
+
+    @Test
+    func get() async throws {
+        let tag = Root()
+            .setAttribute(Enabled())
+            .setAttribute(Class("foo"))
+
+        #expect(tag.getAttribute(name: "class") == "foo")
+        #expect(tag.getAttribute(Class.self) == "foo")
+
+        #expect(tag.getAttribute(name: "style") == nil)
+        #expect(tag.getAttribute(Style.self) == nil)
     }
 }

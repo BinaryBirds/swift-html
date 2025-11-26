@@ -9,19 +9,15 @@ public struct Rss: StandardTag {
         version: String? = nil,
         channels: [Channel]
     ) {
-        let attributes: [Attribute] =
-            if let version {
-                [
-                    Version(version)
-                ]
-            }
-            else {
-                [
-                    Version()
-                ]
-            }
-        self.attributes = .init(attributes)
+        self.attributes = .init()
         self.children = channels
+
+        if let version {
+            self = addAttribute(Version(version))
+        }
+        else {
+            self = addAttribute(Version())
+        }
     }
 
     public init(

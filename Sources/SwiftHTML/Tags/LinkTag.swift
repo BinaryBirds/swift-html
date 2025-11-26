@@ -76,11 +76,8 @@ public struct Link:
     public init(
         rel value: Rel.Value
     ) {
-        self.attributes = .init(
-            [
-                Rel(value)
-            ]
-        )
+        self.attributes = .init()
+        self = addAttribute(Rel(value))
     }
 }
 
