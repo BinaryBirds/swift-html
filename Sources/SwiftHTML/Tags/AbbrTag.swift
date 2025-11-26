@@ -10,8 +10,7 @@ public struct Abbr:
     FlowContent,
     PhrasingContent,
     PalpableContent,
-    GlobalAttributeModifier,
-    TitleAttributeModifier
+    GlobalAttributeModifier
 {
     /// The attribute storage for the `<abbr>` element.
     ///
