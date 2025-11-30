@@ -3,7 +3,11 @@
 /// The `<html>` tag is the container for all other HTML elements (except for the `<!DOCTYPE>` tag).
 ///
 /// **Note:** You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
-public struct Html: StandardTag {
+public struct Html:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
 
     @resultBuilder
     public enum Builder {
@@ -17,8 +21,16 @@ public struct Html: StandardTag {
         }
     }
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        []
+    }
 
     public init(
         head: Head,

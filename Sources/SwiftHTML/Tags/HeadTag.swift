@@ -13,10 +13,22 @@
 /// - `<meta>`
 /// - `<script>`
 /// - `<noscript>`
-public struct Head: StandardTag {
+public struct Head:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        []
+    }
 
     public init(
         elements: [Element]

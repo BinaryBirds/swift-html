@@ -1,7 +1,28 @@
-public struct Hgroup: StandardTag {  //, HeadingContent */ {
+/// The <hgroup> tag is used to surround a heading and one or more <p> elements.
+///
+/// The heading inside the <hgroup> element can be any of the <h1> to <h6> headings.
+///
+/// Note: The <hgroup> element does not render as anything special in a browser. However, you can use CSS to style the <hgroup> element and its content.
+public struct Hgroup:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .heading,
+            .palpable,
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),
