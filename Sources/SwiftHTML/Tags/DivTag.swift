@@ -8,7 +8,7 @@
 ///
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 public struct Div:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

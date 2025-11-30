@@ -6,7 +6,7 @@
 ///
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
 public struct Details:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
     NameAttributeModifier,

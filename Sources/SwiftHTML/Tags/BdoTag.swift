@@ -2,7 +2,7 @@
 ///
 /// The `<bdo>` tag is used to override the current text direction.
 public struct Bdo:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

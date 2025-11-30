@@ -2,7 +2,7 @@
 ///
 /// Browsers usually indent `<blockquote>` elements (look at example below to see how to remove the indentation).
 public struct Blockquote:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
     CiteAttributeModifier

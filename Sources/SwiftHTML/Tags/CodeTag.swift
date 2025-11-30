@@ -10,7 +10,7 @@
 /// - `<var>`    Defines a variable
 /// - `<pre>`    Defines preformatted text
 public struct Code:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

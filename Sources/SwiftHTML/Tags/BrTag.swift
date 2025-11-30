@@ -4,7 +4,7 @@
 ///
 /// The `<br>` tag is an empty tag which means that it has no end tag.
 public struct Br:
-    ShortTag,
+    HTMLShortTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

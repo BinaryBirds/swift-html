@@ -1,6 +1,6 @@
 /// Make some text bold (without marking it as important).
 public struct B:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

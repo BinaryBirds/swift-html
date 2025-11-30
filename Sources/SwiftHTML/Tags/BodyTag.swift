@@ -4,7 +4,7 @@
 ///
 /// **Note:** There can only be one `<body>` element in an HTML document.
 public struct Body:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 // TODO: -

@@ -7,7 +7,7 @@
 /// **Note:** The `<aside>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<aside>` element (see example below).
 public struct Aside:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

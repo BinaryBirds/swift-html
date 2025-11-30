@@ -6,7 +6,7 @@
 ///
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
 public struct Colgroup:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
     SpanAttributeModifier

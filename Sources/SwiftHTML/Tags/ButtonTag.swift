@@ -6,7 +6,7 @@
 ///
 /// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
 public struct Button:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 // TODO: -

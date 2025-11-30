@@ -2,7 +2,7 @@
 ///
 /// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
 public struct Dialog:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
     ClosedbyAttributeModifier,

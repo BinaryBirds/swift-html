@@ -4,7 +4,7 @@
 ///
 /// The `<datalist>` element's id attribute must be equal to the `<input>` element's list attribute (this binds them together).
 public struct Datalist:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier
 {

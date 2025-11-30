@@ -2,7 +2,7 @@
 ///
 /// Browsers will usually strike a line through deleted text.
 public struct Del:
-    StandardTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
     CiteAttributeModifier,
