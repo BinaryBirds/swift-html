@@ -2,10 +2,20 @@
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
 public struct Style:
-    HTMLStandardTag
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    MediaAttributeModifier,
+    TitleAttributeModifier
+//✅media — Applicable media
+//blocking — Whether the element is potentially render-blocking
+//✅Also, the title attribute has special semantics on this element: CSS style sheet set name
 {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     /// The content model category for the tag.
@@ -13,6 +23,14 @@ public struct Style:
         [
             .metadata
         ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
     }
 
     public init(
@@ -25,26 +43,6 @@ public struct Style:
     }
 }
 
-//extension Style {
-//
-//    /// Specifies what media/device the media resource is optimized for
-//    public func media(_ value: String) -> Self {
-//        attribute("media", value)
-//    }
-//
-//    /// Specifies what media/device the linked document is optimized for
-//    ///
-//    /// If multiple queries were provided they're going to be concatenated with an `and` operand
-//    public func media(_ queries: MediaQuery...) -> Self {
-//        media(queries)
-//    }
-//
-//    /// Specifies what media/device the linked document is optimized for
-//    ///
-//    /// If multiple queries were provided they're going to be concatenated with an `and` operand
-//    public func media(_ queries: [MediaQuery]) -> Self {
-//        media(queries.map(\.value).joined(separator: " and "))
-//    }
 //
 //    /// Specifies the media type (text/css) of the `<style>` tag
 //    public func css() -> Self {

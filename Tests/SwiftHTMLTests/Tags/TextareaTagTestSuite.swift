@@ -7,13 +7,13 @@ struct TextareaTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+        let tag = Textarea("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <textarea></textarea>
             """#
 
         let result = renderer.render(document: doc)

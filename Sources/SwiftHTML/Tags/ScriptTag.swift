@@ -6,7 +6,23 @@ import DOM
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 public struct Script:
-    HTMLTag
+    HTMLTag,
+    Attributes,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    TypeAttributeModifier,
+    SrcAttributeModifier,
+    ReferrerPolicyAttributeModifier
+//    ✅type — Type of script
+//    ✅src — Address of the resource
+//    nomodule — Prevents execution in user agents that support module scripts
+//    async — Execute script when available, without blocking while fetching
+//    defer — Defer script execution
+//    blocking — Whether the element is potentially render-blocking
+//    crossorigin — How the element handles crossorigin requests
+//    ✅referrerpolicy — Referrer policy for fetches initiated by the element
+//    integrity — Integrity metadata used in Subresource Integrity checks [SRI]
+//    fetchpriority — Sets the priority for fetches initiated by the element
 {
 
     public enum `Type`: String {
@@ -19,12 +35,17 @@ public struct Script:
     }
 
     private var kind: Kind
+
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
     /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .metadata
+            .metadata,
+            .flow,
+            .phrasing,
+            //            Script-supporting element.
         ]
     }
 
@@ -59,8 +80,6 @@ public struct Script:
     }
 }
 
-//extension Script {
-//
 //    /// Specifies that the script is executed asynchronously (only for external scripts)
 //    public func async(_ condition: Bool = true) -> Self {
 //        flagAttribute("async", nil, condition)
@@ -86,27 +105,3 @@ public struct Script:
 //    public func nomodule(_ value: Bool) -> Self {
 //        attribute("nomodule", String(value))
 //    }
-//
-//    /// Specifies which referrer information to send when fetching a script
-//    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-//        attribute("referrerpolicy", value.rawValue)
-//    }
-//
-//    /// The URL of the external script file.
-//    public func src(_ value: String) -> Self {
-//        attribute("src", value)
-//    }
-//
-//    /// Specifies the media type of the script
-//    public func type(_ value: String) -> Self {
-//        attribute("type", value)
-//    }
-//}
-//
-//extension Script {
-//
-//    /// Specifies the media type of the script
-//    public func type(_ value: `Type`) -> Self {
-//        type(value.rawValue)
-//    }
-//}

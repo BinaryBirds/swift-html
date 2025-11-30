@@ -1,13 +1,48 @@
-////
-////  Strong.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<strong>` tag is used to define text with strong importance. The content inside is typically displayed in bold.
-/////
-///// **Tip:** Use the `<b>` tag to specify bold text without any extra importance!
-//open class Strong: Tag {
-//
-//}
+/// The `<strong>` tag is used to define text with strong importance.
+///
+/// **Tip:** Use the `<b>` tag to specify bold text without any extra importance!
+public struct Strong:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}

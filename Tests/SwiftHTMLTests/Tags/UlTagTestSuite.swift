@@ -6,14 +6,14 @@ import Testing
 struct UlTagTestSuite {
 
     @Test
-    func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+    func initialization() async throws {
+        let tag = Ul {}
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <ul></ul>
             """#
 
         let result = renderer.render(document: doc)

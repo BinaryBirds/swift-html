@@ -7,34 +7,35 @@ struct ScriptTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+        let tag = Script("console.log();")
+            .type("text/javascript")
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <script type="text/javascript">console.log();</script>
             """#
 
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    //
-    //    func testScript() {
-    //        let doc = Document(.html) {
-    //            Script()
-    //                .src("./js/main.js")
-    //                .async()
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            #"""
-    //            <!DOCTYPE html>
-    //            <script src="./js/main.js" async></script>
-    //            """#
-    //        )
-    //    }
+
+    func shortTagVersion() {
+        let tag = Script()
+            .src("main.js")
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <script src="main.js">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
     //
     //    func testIntegrity() {
     //        let doc = Document {

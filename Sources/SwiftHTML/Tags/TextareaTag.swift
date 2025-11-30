@@ -1,27 +1,80 @@
-////
-////  Textarea.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<textarea>` tag defines a multi-line text input control.
-/////
-///// The `<textarea>` element is often used in a form, to collect user inputs like comments or reviews.
-/////
-///// A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).
-/////
-///// The size of a text area is specified by the `<cols>` and `<rows>` attributes (or with CSS).
-/////
-///// The name attribute is needed to reference the form data after the form is submitted (if you omit the name attribute, no data from the text area will be submitted).
-/////
-///// The id attribute is needed to associate the text area with a label.
-/////
-///// **Tip:** Always add the `<label>` tag for best accessibility practices!
-//open class Textarea: Tag {
-//
-//}
-//
+/// The `<textarea>` tag defines a multi-line text input control.
+///
+/// The `<textarea>` element is often used in a form, to collect user inputs like comments or reviews.
+///
+/// A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).
+///
+/// The size of a text area is specified by the `<cols>` and `<rows>` attributes (or with CSS).
+///
+/// The name attribute is needed to reference the form data after the form is submitted (if you omit the name attribute, no data from the text area will be submitted).
+///
+/// The id attribute is needed to associate the text area with a label.
+///
+/// **Tip:** Always add the `<label>` tag for best accessibility practices!
+public struct Textarea:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    DisabledAttributeModifier,
+    FormAttributeModifier,
+    NameAttributeModifier
+//autocomplete — Hint for form autofill feature
+//cols — Maximum number of characters per line
+//dirname — Name of form control to use for sending the element's directionality in form submission
+//✅disabled — Whether the form control is disabled
+//✅form — Associates the element with a form element
+//maxlength — Maximum length of value
+//minlength — Minimum length of value
+//✅name — Name of the element to use for form submission and in the form.elements API
+//placeholder — User-visible label to be placed within the form control
+//readonly — Whether to allow the value to be edited by the user
+//required — Whether the control is required for form submission
+//rows — Number of lines to show
+//wrap — How the value of the form control is to be wrapped for form submission
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .interactive,
+            //            Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
+
 //extension Textarea {
 //
 //    public enum Wrap: String {
@@ -46,24 +99,10 @@
 //        attribute("dirname", value)
 //    }
 //
-//    /// Specifies that a text area should be disabled
-//    public func disabled(_ condition: Bool = true) -> Self {
-//        flagAttribute("disabled", nil, condition)
-//    }
-//
-//    /// Specifies which form the text area belongs to
-//    public func form(_ value: String) -> Self {
-//        attribute("form", value)
-//    }
-//
+
 //    /// Specifies the maximum number of characters allowed in the text area
 //    public func maxlength(_ value: Int) -> Self {
 //        attribute("maxlength", String(value))
-//    }
-//
-//    /// Specifies a name for a text area
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
 //    }
 //
 //    /// Specifies a short hint that describes the expected value of a text area

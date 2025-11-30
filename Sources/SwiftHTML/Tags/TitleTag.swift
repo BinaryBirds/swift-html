@@ -21,16 +21,21 @@
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
 public struct Title:
-    HTMLStandardTag
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
 {
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .heading
+            .metadata
         ]
     }
 

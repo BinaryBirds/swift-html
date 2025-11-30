@@ -1,13 +1,49 @@
-////
-////  Samp.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<samp>` tag is used to define sample output from a computer program. The content inside is displayed in the browser's default monospace font.
-/////
-///// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
-//open class Samp: Tag {
-//
-//}
+/// The `<samp>` tag is used to define sample output from a computer program.
+///
+/// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
+public struct Samp:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+
+}

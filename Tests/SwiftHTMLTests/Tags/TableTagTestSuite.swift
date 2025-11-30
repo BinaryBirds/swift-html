@@ -6,14 +6,14 @@ import Testing
 struct TableTagTestSuite {
 
     @Test
-    func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+    func initialization() async throws {
+        let tag = Table {}
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <table></table>
             """#
 
         let result = renderer.render(document: doc)

@@ -1,25 +1,38 @@
-////
-////  Track.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<track>` tag specifies text tracks for `<audio>` or `<video>` elements.
-/////
-///// This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.
-/////
-///// Tracks are formatted in WebVTT format (.vtt files).
-//open class Track: EmptyTag {
-//
-//    public init(src: String) {
-//        super.init()
-//        setAttributes([
-//            .init(key: "src", value: src)
-//        ])
-//    }
-//}
-//
+/// The `<track>` tag specifies text tracks for `<audio>` or `<video>` elements.
+///
+/// This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.
+///
+/// Tracks are formatted in WebVTT format (.vtt files).
+public struct Track:
+    HTMLShortTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    SrcAttributeModifier
+
+//kind — The type of text track
+//✅src — Address of the resource
+//srclang — Language of the text track
+//label — User-visible label
+//default — Enable the track if no other text track is more suitable
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        []
+    }
+
+    public init(
+        src: String
+    ) {
+        self.attributes = .init()
+        self = setAttribute(SrcAttribute(src))
+    }
+
+}
+
 //extension Track {
 //
 //    public enum Kind: String {
@@ -48,11 +61,6 @@
 //    /// Specifies the title of the text track
 //    public func label(_ value: String) -> Self {
 //        attribute("label", value)
-//    }
-//
-//    /// Required. Specifies the URL of the track file
-//    public func src(_ value: String) -> Self {
-//        attribute("src", value)
 //    }
 //
 //    /// Specifies the language of the track text data (required if kind="subtitles")
