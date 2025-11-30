@@ -4,7 +4,11 @@
 ///
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 public struct Base:
-    HTMLShortTag
+    HTMLShortTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    HrefAttributeModifier,
+    TargetAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -13,7 +17,7 @@ public struct Base:
     /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .heading
+            .metadata
         ]
     }
 
@@ -21,15 +25,3 @@ public struct Base:
         self.attributes = .init()
     }
 }
-
-//extension Base {
-//    /// Specifies the base URL for all relative URLs in the page
-//    public func href(_ value: String) -> Self {
-//        attribute("href", value)
-//    }
-//
-//    /// Specifies the default target for all hyperlinks and forms in the page
-//    public func target(_ value: Target) -> Self {
-//        attribute("target", value.rawValue)
-//    }
-//}

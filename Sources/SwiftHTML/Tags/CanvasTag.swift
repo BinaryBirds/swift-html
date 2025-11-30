@@ -1,28 +1,53 @@
-////
-////  Canvas.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<canvas>` tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
-/////
-///// The `<canvas>` tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.
-/////
-///// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
-//open class Canvas: Tag {
-//
-//}
-//
-//extension Canvas {
-//
-//    /// Specifies the height of the canvas. Default value is 150
-//    public func height(_ value: Double) -> Self {
-//        attribute("height", String(value))
-//    }
-//
-//    /// Specifies the width of the canvas Default value is 300
-//    public func width(_ value: Double) -> Self {
-//        attribute("width", String(value))
-//    }
-//}
+/// The `<canvas>` tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
+///
+/// The `<canvas>` tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.
+///
+/// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
+public struct Canvas:
+    StandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    WidthAttributeModifier,
+    HeightAttributeModifier
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .embedded,
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}

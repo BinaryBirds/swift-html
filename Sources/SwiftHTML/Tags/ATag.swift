@@ -62,37 +62,3 @@ public struct A:
         self.init(children: block())
     }
 }
-
-//extension A {
-
-//    /// Specifies that the target will be downloaded when a user clicks on the hyperlink
-//    public func download(_ value: String? = nil) -> Self {
-//        flagAttribute("download", value)
-//    }
-//
-//    /// Specifies the language of the linked document
-//    public func hreflang(_ value: String) -> Self {
-//        attribute("hreflang", value)
-//    }
-//    /// Specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background).
-//    ///
-//    /// Typically used for tracking.
-//    public func ping(_ value: [String]) -> Self {
-//        attribute("ping", value.joined(separator: " "))
-//    }
-//
-//    /// Specifies which referrer information to send with the link
-//    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-//        attribute("referrerpolicy", value.rawValue)
-//    }
-//
-//    /// Specifies where to open the linked document
-//    public func target(_ value: TargetFrame, _ condition: Bool = true) -> Self {
-//        attribute("target", value.rawValue, condition)
-//    }
-//
-//    /// The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document.
-//    public func type(_ value: String) -> Self {
-//        attribute("type", value)
-//    }
-//}

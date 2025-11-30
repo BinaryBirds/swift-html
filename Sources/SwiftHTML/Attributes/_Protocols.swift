@@ -3,7 +3,8 @@ public protocol GlobalAttributeModifier:
     IdAttributeModifier,
     ClassAttributeModifier,
     StyleAttributeModifier,
-    TitleAttributeModifier
+    TitleAttributeModifier,
+    DirAttributeModifier
 {
 
 }
@@ -27,7 +28,7 @@ extension HTMLAttribute {
 // autocorrect
 // autofocus
 // contenteditable
-// dir
+// ✅ dir
 // draggable
 // enterkeyhint
 // headingoffset

@@ -22,30 +22,41 @@ struct ATagTestSuite {
         #expect(result == expectation)
     }
 
-    //
-    //    func testA() {
-    //
-    //        let doc = Document {
-    //            A {
-    //                P("Hello")
-    //            }
-    //            .href("world")
-    //        }
-    //        XCTAssertEqual(
-    //            DocumentRenderer(minify: true).render(doc),
-    //            #"<a href="world"><p>Hello</p></a>"#
-    //        )
-    //    }
-    //
-    //    func testSelfTarget() {
-    //        let doc = Document {
-    //            A("foo")
-    //                .href("bar")
-    //                .target(.default)
-    //        }
-    //        XCTAssertEqual(
-    //            DocumentRenderer(minify: true).render(doc),
-    //            #"<a href="bar" target="_self">foo</a>"#
-    //        )
-    //    }
+    @Test
+    func initializationWithTag() async throws {
+        let tag = A {
+            P("Link")
+        }
+        .href("http://localhost/")
+        .target(.blank)
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <a href="http://localhost/" target="_blank"><p>Link</p></a>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func selfTarget() async throws {
+        let tag = A {
+            P("Anchor")
+        }
+        .id("foo")
+        .target(.self)
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <a id="foo" target="_self"><p>Anchor</p></a>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
 }

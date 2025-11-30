@@ -1,20 +1,73 @@
-////
-////  Button.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<button>` tag defines a clickable button.
-/////
-///// Inside a `<button>` element you can put text (and tags like `<i>`, `<b>`, `<strong>`, `<br>`, `<img>`, etc.). That is not possible with a button created with the `<input>` element!
-/////
-///// **Tip:** Always specify the type attribute for a `<button>` element, to tell browsers what type of button it is.
-/////
-///// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
-//open class Button: Tag {
-//
-//}
+/// The `<button>` tag defines a clickable button.
+///
+/// Inside a `<button>` element you can put text (and tags like `<i>`, `<b>`, `<strong>`, `<br>`, `<img>`, etc.). That is not possible with a button created with the `<input>` element!
+///
+/// **Tip:** Always specify the type attribute for a `<button>` element, to tell browsers what type of button it is.
+///
+/// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
+public struct Button:
+    StandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+// TODO: -
+//command — Indicates to the targeted element which action to take.
+//commandfor — Targets another element to be invoked.
+//disabled — Whether the form control is disabled
+//form — Associates the element with a form element
+//formaction — URL to use for form submission
+//formenctype — Entry list encoding type to use for form submission
+//formmethod — Variant to use for form submission
+//formnovalidate — Bypass form control validation for form submission
+//formtarget — Navigable for form submission
+//name — Name of the element to use for form submission and in the form.elements API
+//popovertarget — Targets a popover element to toggle, show, or hide
+//popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
+//type — Type of button
+//value — Value to be used for form submission
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .interactive,
+            // Listed, labelable, submittable, and autocapitalize-and-autocorrect inheriting form-associated element.
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
+
 //
 //extension Button {
 //
