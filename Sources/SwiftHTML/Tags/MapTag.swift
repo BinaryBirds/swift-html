@@ -1,29 +1,41 @@
-////
-////  Map.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<map>` tag is used to define an image map. An image map is an image with clickable areas.
-/////
-///// The required name attribute of the `<map>` element is associated with the `<img>`'s usemap attribute and creates a relationship between the image and the map.
-/////
-///// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
-//open class Map: Tag {
-//
-//    public init(name: String, @TagBuilder _ builder: () -> Tag) {
-//        super.init([builder()])
-//        setAttributes([
-//            .init(key: "name", value: name)
-//        ])
-//    }
-//}
-//
-//extension Map {
-//
-//    /// Specifies the name of an <input> element
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
-//    }
-//}
+/// The `<map>` tag is used to define an image map.
+///
+/// The required name attribute of the `<map>` element is associated with the `<img>`'s usemap attribute and creates a relationship between the image and the map.
+///
+/// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
+public struct Map:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    NameAttributeModifier
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}

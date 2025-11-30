@@ -1,29 +1,50 @@
-////
-////  Output.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
-//open class Output: Tag {
-//
-//}
-//
-//extension Output {
-//
-//    /// Specifies the relationship between the result of the calculation, and the elements used in the calculation
-//    public func `for`(_ value: String) -> Self {
-//        attribute("for", value)
-//    }
-//
-//    /// Specifies which form the output element belongs to
-//    public func form(_ value: String) -> Self {
-//        attribute("form", value)
-//    }
-//
-//    /// Specifies a name for the output element
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
-//    }
-//}
+/// The `<output>` tag is used to represent the result of a calculation (like one performed by a script).
+public struct Output:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    ForAttributeModifier,
+    FormAttributeModifier,
+    NameAttributeModifier
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            //            Listed, labelable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}

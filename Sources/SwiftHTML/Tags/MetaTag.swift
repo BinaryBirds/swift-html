@@ -10,7 +10,14 @@
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
 public struct Meta:
     HTMLShortTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
     MediaAttributeModifier
+//✅ name — Metadata name
+//http-equiv — Pragma directive
+//content — Value of the element
+//charset — Character encoding declaration
+//✅ media — Applicable media
 {
 
     public struct Name: Attribute {
@@ -56,7 +63,9 @@ public struct Meta:
     /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .heading
+            .metadata
+            //            If the itemprop attribute is present: flow content.
+            //            If the itemprop attribute is present: phrasing content.
         ]
     }
 

@@ -2,16 +2,24 @@
 ///
 /// The `<noscript>` element can be used in both `<head>` and `<body>`. When used inside `<head>`, the `<noscript>` element could only contain `<link>`, `<style>`, and `<meta>` elements.
 public struct Noscript:
-    HTMLStandardTag
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
 {
-
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
 
     /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .heading
+            .metadata,
+            .flow,
+            .phrasing,
+            //            select element inner content elements.
+            //            optgroup element inner content elements.
         ]
     }
 

@@ -1,10 +1,27 @@
 /// The `<optgroup>` tag is used to group related options in a `<select>` element (drop-down list).
 ///
 /// If you have a long list of options, groups of related options are easier to handle for a user.
-public struct Optgroup: StandardTag, GlobalAttributeModifier {
+public struct Optgroup:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    DisabledAttributeModifier
+//✅ disabled — Whether the form control is disabled
+//label — User-visible label
+{
 
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            //            select element inner content elements.
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),

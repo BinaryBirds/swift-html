@@ -1,17 +1,64 @@
-////
-////  Meter.s`wift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<meter>` tag defines a scalar measurement within a known range, or a fractional value. This is also known as a gauge.
-/////
-///// Examples: Disk usage, the relevance of a query result, etc.
-/////
-///// **Note:** The `<meter>` tag should not be used to indicate progress (as in a progress bar). For progress bars, use the `<progress>` tag.
-/////
-///// **Tip:** Always add the `<label>` tag for best accessibility practices!
+/// The `<meter>` tag defines a scalar measurement within a known range, or a fractional value.
+///
+/// Examples: Disk usage, the relevance of a query result, etc.
+///
+/// **Note:** The `<meter>` tag should not be used to indicate progress (as in a progress bar). For progress bars, use the `<progress>` tag.
+///
+/// **Tip:** Always add the `<label>` tag for best accessibility practices!
+public struct Meter:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    ValueAttributeModifier
+//✅value — Current value of the element
+//min — Lower bound of range
+//max — Upper bound of range
+//low — High limit of low range
+//high — Low limit of high range
+//optimum — Optimum value in gauge
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            // Labelable element.
+            .palpable,
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
+
 //open class Meter: Tag {
 //
 //    public init(value: Int, _ contents: String) {
@@ -56,10 +103,5 @@
 //    /// Specifies what value is the optimal value for the gauge
 //    public func optimum(_ value: Int) -> Self {
 //        attribute("optimum", String(value))
-//    }
-//
-//    /// Required. Specifies the current value of the gauge
-//    public func value(_ value: Int) -> Self {
-//        attribute("value", String(value))
 //    }
 //}

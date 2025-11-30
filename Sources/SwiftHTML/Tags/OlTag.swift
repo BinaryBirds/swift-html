@@ -1,21 +1,58 @@
-////
-////  Ol.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<ol>` tag defines an ordered list. An ordered list can be numerical or alphabetical.
-/////
-///// The `<li>` tag is used to define each list item.
-/////
-///// **Tip:** Use CSS to style lists.
-/////
-///// **Tip:** For unordered list, use the `<ul>` tag.
-//open class Ol: Tag {
-//
-//}
-//
+/// The `<ol>` tag defines an ordered list.
+///
+/// The `<li>` tag is used to define each list item.
+///
+/// **Tip:** Use CSS to style lists.
+///
+/// **Tip:** For unordered list, use the `<ul>` tag.
+public struct Ol:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+//reversed — Number the list backwards
+//start — Starting value of the list
+//type — Kind of list marker
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow
+            // If the element's children include at least one li element: Palpable content.
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}
+
 //extension Ol {
 //
 //    public enum `Type`: String {
