@@ -1,0 +1,24 @@
+import Testing
+
+@testable import SwiftHTML
+
+@Suite
+struct DialogTagTestSuite {
+
+    @Test
+    func initialization() async throws {
+        let tag = Dialog("test")
+            .closedby(.any)
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <dialog closedby="any">test</dialog>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+}

@@ -1,21 +1,48 @@
-////
-////  Dialog.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<dialog>` tag defines a dialog box or subwindow.
-/////
-///// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
-//open class Dialog: Tag {
-//
-//}
-//
-//extension Dialog {
-//
-//    /// Specifies that the dialog element is active and that the user can interact with it
-//    public func open(_ condition: Bool = true) -> Self {
-//        flagAttribute("open", nil, condition)
-//    }
-//}
+/// The `<dialog>` tag defines a dialog box or subwindow.
+///
+/// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
+public struct Dialog:
+    StandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    ClosedbyAttributeModifier,
+    OpenAttributeModifier
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
+    public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow
+        ]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
+    }
+}

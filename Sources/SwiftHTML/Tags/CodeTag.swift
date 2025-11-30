@@ -9,13 +9,26 @@
 /// - `<kbd>`    Defines keyboard input
 /// - `<var>`    Defines a variable
 /// - `<pre>`    Defines preformatted text
-public struct Code: StandardTag, GlobalAttributeModifier {
+public struct Code:
+    StandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier
+{
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
     /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .palpable,
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),
