@@ -11,10 +11,37 @@
 /// - `<fieldset>`
 /// - `<label>`
 /// - `<output>`
-public struct Form: StandardTag, GlobalAttributeModifier {
+public struct Form:
+    HTMLStandardTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    NameAttributeModifier,
+    TargetAttributeModifier
 
+//accept-charset — Character encodings to use for form submission
+//action — URL to use for form submission
+//autocomplete — Default setting for autofill feature for controls in the form
+//enctype — Entry list encoding type to use for form submission
+//method — Variant to use for form submission
+//✅name — Name of form to use in the document.forms API
+//novalidate — Bypass form control validation for form submission
+//✅ target — Navigable for form submission
+//rel
+
+{
+    /// The attribute storage for the tag.
     public var attributes: AttributeStore
+
+    /// The child elements contained within the tag.
     public var children: [Element]
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .palpable,
+        ]
+    }
 
     init(
         attributes: AttributeStore = .init(),
@@ -22,6 +49,16 @@ public struct Form: StandardTag, GlobalAttributeModifier {
     ) {
         self.attributes = attributes
         self.children = children
+    }
+
+    public init(
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
+        )
     }
 
     public init(
@@ -81,11 +118,6 @@ public struct Form: StandardTag, GlobalAttributeModifier {
 //        attribute("method", value?.rawValue)
 //    }
 //
-//    /// Specifies the name of a form
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
-//    }
-//
 //    /// Specifies that the form should not be validated when submitted
 //    public func novalidate(_ condition: Bool = true) -> Self {
 //        flagAttribute("novalidate", nil, condition)
@@ -95,9 +127,3 @@ public struct Form: StandardTag, GlobalAttributeModifier {
 //    public func rel(_ value: Rel) -> Self {
 //        attribute("rel", value.rawValue)
 //    }
-//
-//    /// Specifies where to display the response that is received after submitting the form
-//    public func target(_ value: Target) -> Self {
-//        attribute("target", value.rawValue)
-//    }
-//}
