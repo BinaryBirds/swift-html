@@ -1,20 +1,54 @@
-////
-////  Iframe.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
-//
-///// The `<iframe>` tag specifies an inline frame.
-/////
-///// An inline frame is used to embed another document within the current HTML document.
-/////
-///// **Tip:** Use CSS to style the `<iframe>` (see example below).
-/////
-///// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
-//open class Iframe: Tag {
-//
-//}
+/// The `<iframe>` tag specifies an inline frame.
+///
+/// An inline frame is used to embed another document within the current HTML document.
+///
+/// **Tip:** Use CSS to style the `<iframe>` (see example below).
+///
+/// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
+public struct Iframe:
+    HTMLShortTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    SrcAttributeModifier,
+    NameAttributeModifier,
+    WidthAttributeModifier,
+    HeightAttributeModifier,
+    ReferrerPolicyAttributeModifier
+//✅ src — Address of the resource
+//srcdoc — A document to render in the iframe
+//✅name — Name of content navigable
+//sandbox — Security rules for nested content
+//allow — Permissions policy to be applied to the iframe's contents
+//allowfullscreen — Whether to allow the iframe's contents to use requestFullscreen()
+//✅width — Horizontal dimension
+//✅height — Vertical dimension
+//✅referrerpolicy — Referrer policy for fetches initiated by the element
+//loading — Used when determining loading deferral
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            .embedded,
+            .interactive,
+            .palpable,
+        ]
+    }
+
+    public init(
+
+        )
+    {
+        self.attributes = .init()
+    }
+
+}
+
 //
 //extension Iframe {
 //    public enum Sandbox {
@@ -88,24 +122,9 @@
 //        attribute("allowpaymentrequest", String(value))
 //    }
 //
-//    /// Specifies the height of an `<iframe>`. Default height is 150 pixels
-//    public func height(_ value: Double) -> Self {
-//        attribute("height", String(value))
-//    }
-//
 //    /// Specifies whether a browser should load an iframe immediately or to defer loading of iframes until some conditions are met
 //    public func loading(_ value: Loading) -> Self {
 //        attribute("loading", value.rawValue)
-//    }
-//
-//    /// Specifies the name of an `<iframe>`
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
-//    }
-//
-//    /// Specifies which referrer information to send when fetching the iframe
-//    public func refererPolicy(_ value: RefererPolicy = .origin) -> Self {
-//        attribute("referrerpolicy", value.rawValue)
 //    }
 //
 //    /// Enables an extra set of restrictions for the content in an `<iframe>`
@@ -113,18 +132,9 @@
 //        attribute("sandbox", value.rawValue)
 //    }
 //
-//    /// Specifies the address of the document to embed in the `<iframe>`
-//    public func src(_ value: String) -> Self {
-//        attribute("src", value)
-//    }
-//
 //    /// Specifies the HTML content of the page to show in the `<iframe>`
 //    public func srcdoc(_ value: String) -> Self {
 //        attribute("srcdoc", value)
 //    }
-//
-//    /// Specifies the width of an `<iframe>`. Default width is 300 pixels
-//    public func width(_ value: Double) -> Self {
-//        attribute("width", String(value))
-//    }
+
 //}

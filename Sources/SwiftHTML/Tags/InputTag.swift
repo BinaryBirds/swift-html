@@ -1,18 +1,76 @@
-////
-////  Input.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 19..
-////
-//
-///// The `<input>` tag specifies an input field where the user can enter data.
-/////
-///// The `<input>` element is the most important form element.
-/////
-///// The `<input>` element can be displayed in several ways, depending on the type attribute.
-//open class Input: EmptyTag {
-//
-//}
+/// The `<input>` tag specifies an input field where the user can enter data.
+///
+/// The `<input>` element is the most important form element.
+///
+/// The `<input>` element can be displayed in several ways, depending on the type attribute.
+public struct Input:
+    HTMLShortTag,
+    /// attribute modifiers
+    GlobalAttributeModifier,
+    AltAttributeModifier,
+    NameAttributeModifier,
+    FormAttributeModifier,
+    WidthAttributeModifier,
+    HeightAttributeModifier,
+    SrcAttributeModifier,
+    ValueAttributeModifier
+//accept — Hint for expected file type in file upload controls
+//alpha — Allow the color's alpha component to be set
+//✅alt — Replacement text for use when images are not available
+//autocomplete — Hint for form autofill feature
+//checked — Whether the control is checked
+//colorspace — The color space of the serialized color
+//dirname — Name of form control to use for sending the element's directionality in form submission
+//disabled — Whether the form control is disabled
+//✅form — Associates the element with a form element
+//formaction — URL to use for form submission
+//formenctype — Entry list encoding type to use for form submission
+//formmethod — Variant to use for form submission
+//formnovalidate — Bypass form control validation for form submission
+//formtarget — Navigable for form submission
+//✅height — Vertical dimension
+//list — List of autocomplete options
+//max — Maximum value
+//maxlength — Maximum length of value
+//min — Minimum value
+//minlength — Minimum length of value
+//multiple — Whether to allow multiple values
+//✅name — Name of the element to use for form submission and in the form.elements API
+//pattern — Pattern to be matched by the form control's value
+//placeholder — User-visible label to be placed within the form control
+//popovertarget — Targets a popover element to toggle, show, or hide
+//popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
+//readonly — Whether to allow the value to be edited by the user
+//required — Whether the control is required for form submission
+//size — Size of the control
+//✅src — Address of the resource
+//step — Granularity to be matched by the form control's value
+//type — Type of form control
+//✅value — Value of the form control
+//✅width — Horizontal dimension
+//Also, the title attribute has special semantics on this element: Description of pattern (when used with pattern attribute)
+{
+
+    /// The attribute storage for the tag.
+    public var attributes: AttributeStore
+
+    /// The content model category for the tag.
+    public var categories: ContentModel {
+        [
+            .flow,
+            .phrasing,
+            //            If the type attribute is not in the Hidden state: Interactive content.
+            //            If the type attribute is not in the Hidden state: Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
+            //            If the type attribute is in the Hidden state: Listed, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
+            //            If the type attribute is not in the Hidden state: Palpable content.
+        ]
+    }
+
+    public init() {
+        self.attributes = .init()
+    }
+}
+
 //
 //extension Input {
 //
@@ -85,11 +143,6 @@
 //        flagAttribute("disabled", nil, condition)
 //    }
 //
-//    /// Specifies the form the <input> element belongs to
-//    public func form(_ value: String) -> Self {
-//        attribute("form", value)
-//    }
-//
 //    /// Specifies the URL of the file that will process the input control when the form is submitted (for type="submit" and type="image")
 //    public func formaction(_ value: String) -> Self {
 //        attribute("formaction", value)
@@ -113,11 +166,6 @@
 //    /// Specifies where to display the response that is received after submitting the form (for type="submit" and type="image")
 //    public func formtarget(_ value: TargetFrame) -> Self {
 //        attribute("formtarget", value.rawValue)
-//    }
-//
-//    /// Specifies the height of an <input> element (only for type="image")
-//    public func height(_ value: Double) -> Self {
-//        attribute("height", String(value))
 //    }
 //
 //    /// Refers to a `<datalist>` element that contains pre-defined options for an `<input>` element
@@ -149,11 +197,7 @@
 //    public func multiple(_ condition: Bool = true) -> Self {
 //        flagAttribute("multiple", nil, condition)
 //    }
-//
-//    /// Specifies the name of an `<input>` element
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
-//    }
+
 //
 //    /// Specifies a regular expression that an `<input>` element's value is checked against
 //    public func pattern(_ value: String) -> Self {
@@ -180,11 +224,6 @@
 //        attribute("size", String(value))
 //    }
 //
-//    /// Specifies the URL of the image to use as a submit button (only for type="image")
-//    public func src(_ value: String) -> Self {
-//        attribute("src", value)
-//    }
-//
 //    /// Specifies the interval between legal numbers in an input field
 //    public func step(_ value: Int) -> Self {
 //        attribute("step", String(value))
@@ -194,14 +233,5 @@
 //    public func type(_ value: Type) -> Self {
 //        attribute("type", value.rawValue)
 //    }
-//
-//    /// Specifies the value of an `<input>` element
-//    public func value(_ value: String?) -> Self {
-//        attribute("value", value)
-//    }
-//
-//    /// Specifies the width of an `<input>` element (only for type="image")
-//    public func width(_ value: Double) -> Self {
-//        attribute("width", String(value))
-//    }
+
 //}

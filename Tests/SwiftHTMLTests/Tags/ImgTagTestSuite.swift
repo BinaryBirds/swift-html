@@ -1,0 +1,23 @@
+import Testing
+
+@testable import SwiftHTML
+
+@Suite
+struct ImgTagTestSuite {
+
+    @Test
+    func initialization() async throws {
+        let tag = Img(src: "foo.jpg", alt: "Foo")
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <img alt="Foo" src="foo.jpg">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+}

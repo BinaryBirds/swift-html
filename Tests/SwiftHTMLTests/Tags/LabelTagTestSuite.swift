@@ -7,32 +7,20 @@ struct LabelTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+        let tag = Label("Lorem ipsum")
+            .for("foo")
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <label for="foo">Lorem ipsum</label>
             """#
 
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    //
-    //    func testLabelContents() {
-    //        let doc = Document {
-    //            Label("foo")
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            #"""
-    //            <label>foo</label>
-    //            """#
-    //        )
-    //    }
-    //
+
     //    func testLabelChildrenWithContents() {
     //        let isRequired = true
     //        let doc = Document {

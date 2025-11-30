@@ -7,13 +7,13 @@ struct InputTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = H1("Lorem ipsum")
+        let tag = Input()
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1>Lorem ipsum</h1>
+            <input>
             """#
 
         let result = renderer.render(document: doc)
