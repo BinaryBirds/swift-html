@@ -23,45 +23,18 @@ struct H1TagTestSuite {
     @Test
     func initializationWithChildren() async throws {
         let tag = H1 {
-            Br()
+            A("foo")
+                .id("bar")
         }
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <h1><br></h1>
+            <h1><a id="bar">foo</a></h1>
             """#
 
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    // @Test
-    //    func testInitWithTag() {
-    //        let doc = Document {
-    //            H1 {
-    //                A("foo")
-    //                    .id("bar")
-    //            }
-    //        }
-    //        XCTAssertEqual(
-    //            DocumentRenderer(minify: true).render(doc),
-    //            #"<h1><a id="bar">foo</a></h1>"#
-    //        )
-    //    }
-
-    // @Test
-    //    func testInitWithChildren() {
-    //        let doc = Document {
-    //            H1([
-    //                A("foo")
-    //            ])
-    //        }
-    //        XCTAssertEqual(
-    //            DocumentRenderer(minify: true).render(doc),
-    //            #"<h1><a>foo</a></h1>"#
-    //        )
-    //    }
-    //
-    //}
 }

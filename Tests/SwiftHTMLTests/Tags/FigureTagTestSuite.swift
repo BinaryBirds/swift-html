@@ -7,9 +7,7 @@ struct FigureTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Figure {
-
-        }
+        let tag = Figure("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

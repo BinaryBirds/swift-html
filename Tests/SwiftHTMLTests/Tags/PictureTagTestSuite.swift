@@ -7,7 +7,7 @@ struct PictureTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Picture {}
+        let tag = Picture("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

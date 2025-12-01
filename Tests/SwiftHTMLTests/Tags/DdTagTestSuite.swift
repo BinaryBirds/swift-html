@@ -7,9 +7,7 @@ struct DdTagTestSuite {
 
     @Test
     func initialization() async throws {
-        let tag = Dd {
-
-        }
+        let tag = Dd("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

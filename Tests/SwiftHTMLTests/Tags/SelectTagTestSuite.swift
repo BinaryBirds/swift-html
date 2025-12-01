@@ -7,7 +7,7 @@ struct SelectTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Select {}
+        let tag = Select("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

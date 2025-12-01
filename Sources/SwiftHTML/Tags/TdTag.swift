@@ -11,9 +11,11 @@
 public struct Td:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
-//colspan — Number of columns that the cell is to span
-//rowspan — Number of rows that the cell is to span
+    GlobalAttributeModifier,
+    ColspanAttributeModifier,
+    RowspanAttributeModifier
+//✅colspan — Number of columns that the cell is to span
+//✅rowspan — Number of rows that the cell is to span
 //headers — The header cells for this cell
 {
 
@@ -52,11 +54,3 @@ public struct Td:
         self.init(children: block())
     }
 }
-
-//extension Td {
-//
-//    /// Specifies the number of columns a data cell should span
-//    public func colspan(_ value: Int) -> Self {
-//        attribute("colspan", String(value))
-//    }
-//}

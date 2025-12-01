@@ -7,9 +7,7 @@ struct FigcaptionTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Figcaption {
-
-        }
+        let tag = Figcaption("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

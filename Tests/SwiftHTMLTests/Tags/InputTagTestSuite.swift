@@ -6,7 +6,7 @@ import Testing
 struct InputTagTestSuite {
 
     @Test
-    func initializationWithText() async throws {
+    func initialization() async throws {
         let tag = Input()
 
         let renderer = Renderer()
@@ -19,73 +19,42 @@ struct InputTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    // @Test
-    //    func testCheckedInput() {
-    //        let doc = Document {
-    //            Input()
-    //                .type(.checkbox)
-    //                .checked()
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            """
-    //            <input type="checkbox" checked>
-    //            """
-    //        )
-    //        XCTAssertEqual(
-    //            DocumentRenderer(selfClose: true).render(doc),
-    //            """
-    //            <input type="checkbox" checked />
-    //            """
-    //        )
-    //    }
-    //
-    // @Test
-    //    func testUncheckedInput() {
-    //        let doc = Document {
-    //            Input()
-    //                .type(.checkbox)
-    //                // first add checked attribute
-    //                .checked()
-    //                // this should remove the checked attribute
-    //                .checked(false)
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            """
-    //            <input type="checkbox">
-    //            """
-    //        )
-    //        XCTAssertEqual(
-    //            DocumentRenderer(selfClose: true).render(doc),
-    //            """
-    //            <input type="checkbox" />
-    //            """
-    //        )
-    //    }
-    //
-    // @Test
-    //    func testKey() {
-    //        let doc = Document {
-    //            Input()
-    //                .type(.text)
-    //                .key("email")
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            """
-    //            <input type="text" id="email" name="email">
-    //            """
-    //        )
-    //        XCTAssertEqual(
-    //            DocumentRenderer(selfClose: true).render(doc),
-    //            """
-    //            <input type="text" id="email" name="email" />
-    //            """
-    //        )
-    //    }
-    //
+
+    @Test
+    func checkedInput() async throws {
+        let tag = Input()
+            .type(.checkbox)
+            .checked()
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <input type="checkbox" checked>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func checkedInputFalse() async throws {
+        let condition = false
+
+        let tag = Input()
+            .type(.checkbox)
+            .check(condition) {
+                $0.checked()
+            }
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <input type="checkbox">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
 }

@@ -7,7 +7,7 @@ struct OlTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Ol {}
+        let tag = Ol("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

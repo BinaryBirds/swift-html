@@ -7,9 +7,7 @@ struct HeaderTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Header {
-
-        }
+        let tag = Header("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

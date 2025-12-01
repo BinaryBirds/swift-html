@@ -19,30 +19,31 @@ struct UlTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    // @Test
-    //    func testUl() {
-    //        let doc = Document {
-    //            Ul {
-    //                Li("a")
-    //                Li("b")
-    //                Li {
-    //                    P("c")
-    //                }
-    //            }
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            #"""
-    //            <ul>
-    //                <li>a</li>
-    //                <li>b</li>
-    //                <li>
-    //                    <p>c</p>
-    //                </li>
-    //            </ul>
-    //            """#
-    //        )
-    //    }
-    //
+
+    @Test
+    func list() async throws {
+        let tag = Ul {
+            Li("a")
+            Li("b")
+            Li {
+                P("c")
+            }
+        }
+
+        let renderer = Renderer(indent: 4)
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <ul>
+                <li>a</li>
+                <li>b</li>
+                <li>
+                    <p>c</p>
+                </li>
+            </ul>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
 }

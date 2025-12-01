@@ -7,7 +7,7 @@ struct TheadTagTestSuite {
 
     @Test
     func initialization() async throws {
-        let tag = Thead {}
+        let tag = Thead("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

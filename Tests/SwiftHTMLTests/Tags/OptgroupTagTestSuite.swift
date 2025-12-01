@@ -7,7 +7,9 @@ struct OptgroupTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Optgroup {}
+        let tag = Optgroup {
+
+        }
 
         let renderer = Renderer()
         let doc = Document(root: tag)

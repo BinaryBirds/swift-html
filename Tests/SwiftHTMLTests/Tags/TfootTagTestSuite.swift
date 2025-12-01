@@ -7,7 +7,7 @@ struct TfootTagTestSuite {
 
     @Test
     func initialization() async throws {
-        let tag = Tfoot {}
+        let tag = Tfoot("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

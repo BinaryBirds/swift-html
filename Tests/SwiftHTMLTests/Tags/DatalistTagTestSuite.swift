@@ -7,9 +7,7 @@ struct DatalistTagTestSuite {
 
     @Test
     func initialization() async throws {
-        let tag = Datalist {
-
-        }
+        let tag = Datalist("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

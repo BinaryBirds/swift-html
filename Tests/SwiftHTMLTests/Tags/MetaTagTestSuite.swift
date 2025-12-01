@@ -19,63 +19,56 @@ struct MetaTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    // @Test
-    //    func testColorScheme() {
-    //        let doc = Document {
-    //            Meta()
-    //                .name(.colorScheme)
-    //                .content("light dark")
-    //        }
-    //        var html = DocumentRenderer(minify: true).render(doc)
-    //        XCTAssertEqual(
-    //            #"<meta name="color-scheme" content="light dark">"#,
-    //            html
-    //        )
-    //
-    //        html = DocumentRenderer(minify: true, selfClose: true).render(doc)
-    //        XCTAssertEqual(
-    //            #"<meta name="color-scheme" content="light dark" />"#,
-    //            html
-    //        )
-    //    }
-    // @Test
-    //    func testMediaColorScheme() {
-    //        let doc = Document {
-    //            Meta()
-    //                .name(.themeColor)
-    //                .content("#fff")
-    //                .media(.prefersColorScheme(.light))
-    //        }
-    //        var html = DocumentRenderer(minify: true).render(doc)
-    //        XCTAssertEqual(
-    //            ##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">"##,
-    //            html
-    //        )
-    //
-    //        html = DocumentRenderer(minify: true, selfClose: true).render(doc)
-    //        XCTAssertEqual(
-    //            ##"<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />"##,
-    //            html
-    //        )
-    //    }
-    // @Test
-    //    func testAppleStatusBarStyle() {
-    //        let doc = Document {
-    //            Meta()
-    //                .name(.appleMobileWebAppStatusBarStyle)
-    //                .content("default")
-    //        }
-    //        var html = DocumentRenderer(minify: true).render(doc)
-    //        XCTAssertEqual(
-    //            ##"<meta name="apple-mobile-web-app-status-bar-style" content="default">"##,
-    //            html
-    //        )
-    //
-    //        html = DocumentRenderer(minify: true, selfClose: true).render(doc)
-    //        XCTAssertEqual(
-    //            ##"<meta name="apple-mobile-web-app-status-bar-style" content="default" />"##,
-    //            html
-    //        )
-    //    }
-    //
+
+    @Test
+    func colorScheme() async throws {
+        let tag = Meta()
+            .name(.colorScheme)
+            .content("light dark")
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <meta content="light dark" name="color-scheme">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func mediaColorScheme() async throws {
+        let tag = Meta()
+            .name(.themeColor)
+            .content("#fff")
+            .media("(prefers-color-scheme: light)")
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <meta content="#fff" media="(prefers-color-scheme: light)" name="theme-color">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
+    @Test
+    func appleStatusBarStyle() async throws {
+        let tag = Meta()
+            .name(.appleMobileWebAppStatusBarStyle)
+            .content("default")
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <meta content="default" name="apple-mobile-web-app-status-bar-style">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
 }

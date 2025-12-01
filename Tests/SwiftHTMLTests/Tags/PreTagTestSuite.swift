@@ -62,7 +62,7 @@ struct PreTagTestSuite {
                     }
                     """#
                 )
-                .setClass("language-swift")
+                .class("language-swift")
             }
         }
 

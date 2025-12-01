@@ -22,8 +22,6 @@ public struct Meta:
 
     public struct Name: Attribute {
 
-        public static let name = "name"
-
         public enum Value: String, Sendable {
             /// Specifies the name of the Web application that the page represents
             case applicationName = "application-name"
@@ -47,6 +45,40 @@ public struct Meta:
             case appleMobileWebAppCapable = "apple-mobile-web-app-capable"
             case appleMobileWebAppStatusBarStyle =
                 "apple-mobile-web-app-status-bar-style"
+        }
+
+        public var value: String?
+
+        public init(
+            _ value: Value
+        ) {
+            self.value = value.rawValue
+        }
+    }
+
+    public struct Content: Attribute {
+        public var value: String?
+
+        public init(
+            _ value: String? = nil
+        ) {
+            self.value = value
+        }
+    }
+
+    public struct HttpEquiv: Attribute {
+
+        public static let name = "http-equiv"
+
+        public enum Value: String, Sendable {
+            /// Specifies a content policy for the document.
+            case contentSecurityPolicy = "content-security-policy"
+            /// Specifies the character encoding for the document.
+            case contentType = "content-type"
+            /// Specified the preferred style sheet to use.
+            case defaultStyle = "default-style"
+            /// Defines a time interval for the document to refresh itself.
+            case refresh
         }
 
         public var value: String?
@@ -91,32 +123,18 @@ public struct Meta:
     ) -> Self {
         setAttribute(Name(value))
     }
-}
 
-extension Meta {
+    /// Set a custom name for the given meta tag.
+    public func content(
+        _ value: String?
+    ) -> Self {
+        setAttribute(Content(value))
+    }
 
-    //
-    //    public enum HttpEquiv: String {
-    //        /// Specifies a content policy for the document.
-    //        case contentSecurityPolicy = "content-security-policy"
-    //        /// Specifies the character encoding for the document.
-    //        case contentType = "content-type"
-    //        /// Specified the preferred style sheet to use.
-    //        case defaultStyle = "default-style"
-    //        /// Defines a time interval for the document to refresh itself.
-    //        case refresh
-    //    }
-    //
-
-    //
-    //    /// Specifies the value associated with the http-equiv or name attribute
-    //    public func content(_ value: String) -> Self {
-    //        attribute("content", value)
-    //    }
-    //
-    //    /// Provides an HTTP header for the information/value of the content attribute
-    //    public func httpEquiv(_ value: HttpEquiv) -> Self {
-    //        attribute("http-equiv", value.rawValue)
-    //    }
-    //
+    /// Provides an HTTP header for the information/value of the content attribute.
+    public func httpEquiv(
+        _ value: HttpEquiv.Value
+    ) -> Self {
+        setAttribute(HttpEquiv(value))
+    }
 }

@@ -7,9 +7,7 @@ struct FooterTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Footer {
-
-        }
+        let tag = Footer("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

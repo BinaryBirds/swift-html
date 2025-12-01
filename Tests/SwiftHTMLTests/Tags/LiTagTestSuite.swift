@@ -7,7 +7,7 @@ struct LiTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Li {}
+        let tag = Li("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

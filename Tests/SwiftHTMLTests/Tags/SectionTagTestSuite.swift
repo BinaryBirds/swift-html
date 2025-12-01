@@ -7,7 +7,7 @@ struct SectionTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Section {}
+        let tag = Section("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

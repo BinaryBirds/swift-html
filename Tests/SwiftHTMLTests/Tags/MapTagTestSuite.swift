@@ -7,7 +7,9 @@ struct MapTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Map {}
+        let tag = Map {
+
+        }
 
         let renderer = Renderer()
         let doc = Document(root: tag)

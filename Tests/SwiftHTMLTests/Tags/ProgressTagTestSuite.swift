@@ -7,7 +7,7 @@ struct ProgressTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Progress {}
+        let tag = Progress("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

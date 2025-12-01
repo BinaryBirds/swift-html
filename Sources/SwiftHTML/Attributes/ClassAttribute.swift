@@ -15,6 +15,13 @@ public protocol ClassAttributeModifier {
 extension ClassAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets a class attribute.
+    public func `class`(
+        _ value: String?
+    ) -> Self {
+        setClass(value)
+    }
+
+    /// Sets a class attribute.
     public func setClass(
         _ value: String?
     ) -> Self {
@@ -39,7 +46,6 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
     public func toggleClass(
         _ value: String?
     ) -> Self {
-
         removeAttribute(ClassAttribute(value))
     }
 }

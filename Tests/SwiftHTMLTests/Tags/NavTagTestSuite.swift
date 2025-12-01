@@ -7,7 +7,9 @@ struct NavTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Nav {}
+        let tag = Nav {
+
+        }
 
         let renderer = Renderer()
         let doc = Document(root: tag)

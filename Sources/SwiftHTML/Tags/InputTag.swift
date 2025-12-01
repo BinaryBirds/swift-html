@@ -8,6 +8,7 @@ public struct Input:
     /// attribute modifiers
     GlobalAttributeModifier,
     AltAttributeModifier,
+    CheckedAttributeModifier,
     NameAttributeModifier,
     FormAttributeModifier,
     FormActionAttributeModifier,
@@ -25,7 +26,7 @@ public struct Input:
 //alpha — Allow the color's alpha component to be set
 //✅alt — Replacement text for use when images are not available
 //autocomplete — Hint for form autofill feature
-//checked — Whether the control is checked
+//✅checked — Whether the control is checked
 //colorspace — The color space of the serialized color
 //dirname — Name of form control to use for sending the element's directionality in form submission
 //✅disabled — Whether the form control is disabled
@@ -132,15 +133,6 @@ public struct Input:
 //    /// Specifies that an <input> element should automatically get focus when the page loads
 //    public func autofocus(_ condition: Bool = true) -> Self {
 //        flagAttribute("autofocus", nil, condition)
-//    }
-//
-//    /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")
-//    public func checked(_ value: Bool = true) -> Self {
-//        guard value else {
-//            deleteAttribute("checked")
-//            return self
-//        }
-//        return flagAttribute("checked")
 //    }
 //
 //    /// Specifies that the text direction will be submitted

@@ -21,28 +21,27 @@ struct LabelTagTestSuite {
         #expect(result == expectation)
     }
 
-    // @Test
-    //    func testLabelChildrenWithContents() {
-    //        let isRequired = true
-    //        let doc = Document {
-    //            Label {
-    //                Span("(bar)").class("more")
-    //                if isRequired {
-    //                    Span("*").class("required")
-    //                }
-    //            }
-    //            .setContents("foo")
-    //        }
-    //
-    //        XCTAssertEqual(
-    //            DocumentRenderer().render(doc),
-    //            #"""
-    //            <label>foo
-    //                <span class="more">(bar)</span>
-    //                <span class="required">*</span>
-    //            </label>
-    //            """#
-    //        )
-    //    }
-    //
+    @Test
+    func initializationWithChildren() async throws {
+        let isRequired = true
+
+        let tag = Label {
+            Text("foo")
+            Span("(bar)").class("more")
+            if isRequired {
+                Span("*").class("required")
+            }
+        }
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <label>foo<span class="more">(bar)</span><span class="required">*</span></label>
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+    }
+
 }

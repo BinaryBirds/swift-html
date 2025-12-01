@@ -7,7 +7,7 @@ struct TemplateTagTestSuite {
 
     @Test
     func initialization() async throws {
-        let tag = Template {}
+        let tag = Template("")
 
         let renderer = Renderer()
         let doc = Document(root: tag)
