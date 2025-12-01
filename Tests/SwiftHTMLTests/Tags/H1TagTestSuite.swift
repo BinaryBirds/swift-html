@@ -36,7 +36,7 @@ struct H1TagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-
+    // @Test
     //    func testInitWithTag() {
     //        let doc = Document {
     //            H1 {
@@ -50,6 +50,7 @@ struct H1TagTestSuite {
     //        )
     //    }
 
+    // @Test
     //    func testInitWithChildren() {
     //        let doc = Document {
     //            H1([

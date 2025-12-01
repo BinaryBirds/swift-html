@@ -20,7 +20,7 @@ struct SourceTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    //
+    // @Test
     //    func testColorScheme() {
     //        let doc = Document {
     //            Source()

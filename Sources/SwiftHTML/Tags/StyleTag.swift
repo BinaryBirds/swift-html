@@ -5,11 +5,9 @@ public struct Style:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
-    MediaAttributeModifier,
-    TitleAttributeModifier
+    MediaAttributeModifier
 //✅media — Applicable media
 //blocking — Whether the element is potentially render-blocking
-//✅Also, the title attribute has special semantics on this element: CSS style sheet set name
 {
 
     /// The attribute storage for the tag.

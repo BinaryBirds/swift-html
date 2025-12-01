@@ -15,14 +15,17 @@ public struct Form:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
+    ActionAttributeModifier,
+    EnctypeAttributeModifier,
+    MethodAttributeModifier,
     NameAttributeModifier,
     TargetAttributeModifier
 
 //accept-charset — Character encodings to use for form submission
-//action — URL to use for form submission
+//✅action — URL to use for form submission
 //autocomplete — Default setting for autofill feature for controls in the form
-//enctype — Entry list encoding type to use for form submission
-//method — Variant to use for form submission
+//✅enctype — Entry list encoding type to use for form submission
+//✅method — Variant to use for form submission
 //✅name — Name of form to use in the document.forms API
 //novalidate — Bypass form control validation for form submission
 //✅ target — Navigable for form submission
@@ -98,24 +101,10 @@ public struct Form:
 //        attribute("accept-charset", value)
 //    }
 //
-//    /// Specifies where to send the form-data when a form is submitted
-//    public func action(_ value: String?) -> Self {
-//        attribute("action", value)
-//    }
 //
 //    /// Specifies whether a form should have autocomplete on or off
 //    public func autocomplete(_ value: Bool = true) -> Self {
 //        attribute("autocomplete", value ? "on" : "off")
-//    }
-//
-//    /// Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
-//    public func enctype(_ value: Enctype?, _ condition: Bool = true) -> Self {
-//        attribute("enctype", value?.rawValue, condition)
-//    }
-//
-//    /// Specifies the HTTP method to use when sending form-data
-//    public func method(_ value: Method?) -> Self {
-//        attribute("method", value?.rawValue)
 //    }
 //
 //    /// Specifies that the form should not be validated when submitted

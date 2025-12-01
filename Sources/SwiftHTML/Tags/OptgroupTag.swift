@@ -37,16 +37,8 @@ public struct Optgroup:
         self.init(children: block())
     }
 }
-//
-//extension Optgroup {
-//
-//    /// Specifies that an option-group should be disabled
-//    public func disabled(_ condition: Bool = true) -> Self {
-//        flagAttribute("disabled", nil, condition)
-//    }
-//
+
 //    /// Specifies a label for an option-group
 //    public func label(_ value: String) -> Self {
 //        attribute("label", value)
 //    }
-//}

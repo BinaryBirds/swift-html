@@ -13,7 +13,8 @@ public struct Iframe:
     NameAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
-    ReferrerPolicyAttributeModifier
+    ReferrerPolicyAttributeModifier,
+    LoadingAttributeModifier
 //✅ src — Address of the resource
 //srcdoc — A document to render in the iframe
 //✅name — Name of content navigable
@@ -23,7 +24,7 @@ public struct Iframe:
 //✅width — Horizontal dimension
 //✅height — Vertical dimension
 //✅referrerpolicy — Referrer policy for fetches initiated by the element
-//loading — Used when determining loading deferral
+//✅loading — Used when determining loading deferral
 {
 
     /// The attribute storage for the tag.
@@ -120,11 +121,6 @@ public struct Iframe:
 //    /// Set to true if a cross-origin `<iframe>` should be allowed to invoke the Payment Request API
 //    public func allowpaymentrequest(_ value: Bool) -> Self {
 //        attribute("allowpaymentrequest", String(value))
-//    }
-//
-//    /// Specifies whether a browser should load an iframe immediately or to defer loading of iframes until some conditions are met
-//    public func loading(_ value: Loading) -> Self {
-//        attribute("loading", value.rawValue)
 //    }
 //
 //    /// Enables an extra set of restrictions for the content in an `<iframe>`

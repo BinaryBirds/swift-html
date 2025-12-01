@@ -17,7 +17,8 @@ public struct Textarea:
     GlobalAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
-    NameAttributeModifier
+    NameAttributeModifier,
+    PlaceholderAttributeModifier
 //autocomplete — Hint for form autofill feature
 //cols — Maximum number of characters per line
 //dirname — Name of form control to use for sending the element's directionality in form submission
@@ -26,7 +27,7 @@ public struct Textarea:
 //maxlength — Maximum length of value
 //minlength — Minimum length of value
 //✅name — Name of the element to use for form submission and in the form.elements API
-//placeholder — User-visible label to be placed within the form control
+//✅placeholder — User-visible label to be placed within the form control
 //readonly — Whether to allow the value to be edited by the user
 //required — Whether the control is required for form submission
 //rows — Number of lines to show
@@ -104,12 +105,7 @@ public struct Textarea:
 //    public func maxlength(_ value: Int) -> Self {
 //        attribute("maxlength", String(value))
 //    }
-//
-//    /// Specifies a short hint that describes the expected value of a text area
-//    public func placeholder(_ value: String?) -> Self {
-//        attribute("placeholder", value)
-//    }
-//
+
 //    /// Specifies that a text area should be read-only
 //    public func readonly(_ condition: Bool = true) -> Self {
 //        flagAttribute("readonly", nil, condition)

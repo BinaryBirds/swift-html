@@ -8,16 +8,19 @@ public struct Link:
     /// attribute modifiers
     GlobalAttributeModifier,
     HrefAttributeModifier,
+    CrossoriginAttributeModifier,
     HreflangAttributeModifier,
     MediaAttributeModifier,
+    IntegrityAttributeModifier,
     TypeAttributeModifier,
-    ReferrerPolicyAttributeModifier
+    ReferrerPolicyAttributeModifier,
+    DisabledAttributeModifier
 
 //✅href — Address of the hyperlink
-//crossorigin — How the element handles crossorigin requests
+//✅crossorigin — How the element handles crossorigin requests
 //✅rel — Relationship between the document containing the hyperlink and the destination resource
 //✅media — Applicable media
-//integrity — Integrity metadata used in Subresource Integrity checks [SRI]
+//✅integrity — Integrity metadata used in Subresource Integrity checks [SRI]
 //✅hreflang — Language of the linked resource
 //✅type — Hint for the type of the referenced resource
 //✅referrerpolicy — Referrer policy for fetches initiated by the element
@@ -27,7 +30,7 @@ public struct Link:
 //as — Potential destination for a preload request (for rel="preload" and rel="modulepreload")
 //blocking — Whether the element is potentially render-blocking
 //color — Color to use when customizing a site's icon (for rel="mask-icon")
-//disabled — Whether the link is disabled
+//✅disabled — Whether the link is disabled
 //fetchpriority — Sets the priority for fetches initiated by the element
 //Also, the title attribute has special semantics on this element: Title of the link; CSS style sheet set name
 {
@@ -111,43 +114,12 @@ public struct Link:
     }
 }
 
-extension Link {
-
-    /// Specifies the location of the linked document.
-    public func href(
-        _ value: String?
-    ) -> Self {
-        setAttribute(HrefAttribute(value))
-    }
-
-    /// Specifies how the element handles cross-origin requests.
-    public func crossorigin(
-        _ value: CrossoriginAttribute.Value
-    ) -> Self {
-        setAttribute(CrossoriginAttribute(value))
-    }
-
-    /// Allows a browser to check the fetched link to ensure that the code is never loaded if the source has been manipulated.
-    public func integrity(
-        _ value: String
-    ) -> Self {
-        setAttribute(IntegrityAttribute(value))
-    }
-
-    //
-    //    /// Specifies the language of the text in the linked document
-    //    public func hreflang(_ value: String) -> Self {
-    //        attribute("hreflang", value)
-    //    }
-
-    //    /// Specifies the size of the linked resource. Only for `rel="icon"`
-    //    public func sizes(_ value: String) -> Self {
-    //        attribute("sizes", value)
-    //    }
-    //
-    //    /// Specifies the size of the linked resource. For example `57x57` if the value is `57`.
-    //    public func sizes(_ value: Int) -> Self {
-    //        sizes(String(value) + "x" + String(value))
-    //    }
-
-}
+//    /// Specifies the size of the linked resource. Only for `rel="icon"`
+//    public func sizes(_ value: String) -> Self {
+//        attribute("sizes", value)
+//    }
+//
+//    /// Specifies the size of the linked resource. For example `57x57` if the value is `57`.
+//    public func sizes(_ value: Int) -> Self {
+//        sizes(String(value) + "x" + String(value))
+//    }

@@ -22,7 +22,7 @@ struct PTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    //
+    // @Test
     //    func testParagraph() {
     //        let tag = P("Hello, world!")
     //
@@ -31,7 +31,7 @@ struct PTagTestSuite {
     //            #"<p>Hello, world!</p>"#
     //        )
     //    }
-    //
+    // @Test
     //    func testParagraphWithLink() {
     //        let tag = P {
     //            Text("lorem")

@@ -12,16 +12,18 @@ public struct Script:
     GlobalAttributeModifier,
     TypeAttributeModifier,
     SrcAttributeModifier,
-    ReferrerPolicyAttributeModifier
+    CrossoriginAttributeModifier,
+    ReferrerPolicyAttributeModifier,
+    IntegrityAttributeModifier
 //    ✅type — Type of script
 //    ✅src — Address of the resource
 //    nomodule — Prevents execution in user agents that support module scripts
 //    async — Execute script when available, without blocking while fetching
 //    defer — Defer script execution
 //    blocking — Whether the element is potentially render-blocking
-//    crossorigin — How the element handles crossorigin requests
+//    ✅crossorigin — How the element handles crossorigin requests
 //    ✅referrerpolicy — Referrer policy for fetches initiated by the element
-//    integrity — Integrity metadata used in Subresource Integrity checks [SRI]
+//    ✅integrity — Integrity metadata used in Subresource Integrity checks [SRI]
 //    fetchpriority — Sets the priority for fetches initiated by the element
 {
 
@@ -85,19 +87,9 @@ public struct Script:
 //        flagAttribute("async", nil, condition)
 //    }
 //
-//    /// Sets the mode of the request to an HTTP CORS Request
-//    public func crossorigin(_ value: Crossorigin) -> Self {
-//        attribute("crossorigin", value.rawValue)
-//    }
-//
 //    /// Specifies that the script is executed when the page has finished parsing (only for external scripts)
 //    public func `defer`(_ condition: Bool = true) -> Self {
 //        flagAttribute("defer", nil, condition)
-//    }
-//
-//    /// Allows a browser to check the fetched script to ensure that the code is never loaded if the source has been manipulated
-//    public func integrity(_ value: String) -> Self {
-//        attribute("integrity", value)
 //    }
 //
 //    // @NOTE: auto capitalize string value?

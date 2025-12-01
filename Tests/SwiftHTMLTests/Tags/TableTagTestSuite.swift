@@ -19,7 +19,7 @@ struct TableTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    //
+    // @Test
     //    func testTable() {
     //        let doc = Document(.html) {
     //            Table {
@@ -78,7 +78,7 @@ struct TableTagTestSuite {
     //        )
     //
     //    }
-    //
+    // @Test
     //    func testTablewithAttributes() {
     //        let doc = Document(.html) {
     //            Table {

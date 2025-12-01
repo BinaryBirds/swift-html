@@ -1,9 +1,114 @@
-////
-////  Events.swift
-////  SwiftHtml
-////
-////  Created by Tibor Bodecs on 2021. 07. 23..
-////
+// https://html.spec.whatwg.org/multipage/dom.html#global-attributes
+// https://www.w3schools.com/tags/ref_standardattributes.asp
+public protocol GlobalAttributeModifier:
+    IdAttributeModifier,
+    ClassAttributeModifier,
+    DirAttributeModifier,
+    StyleAttributeModifier,
+    TitleAttributeModifier,
+    DirAttributeModifier,
+    TranslateAttributeModifier
+{
+
+}
+
+public protocol HTMLAttribute: Attribute {
+
+}
+
+extension HTMLAttribute {
+
+    public static var name: String {
+        String(String(describing: self).lowercased().dropLast(9))
+    }
+}
+
+// ✅ id
+// slot
+// ✅ class
+// accesskey
+// autocapitalize
+// autocorrect
+// autofocus
+// contenteditable
+// ✅ dir
+// draggable
+// enterkeyhint
+// headingoffset
+// headingreset
+// hidden
+// inert
+// inputmode
+// is
+// itemid
+// itemprop
+// itemref
+// itemscope
+// itemtype
+// lang
+// nonce
+// popover
+// spellcheck
+// ✅ style
+// tabindex
+// ✅ title
+// ✅translate
+// writingsuggestions
+
+//public enum Draggable: String {
+//    /// Specifies that the element is draggable
+//    case `true`
+//    /// Specifies that the element is not draggable
+//    case `false`
+//    /// Uses the default behavior of the browser
+//    case auto
+//}
+//
+//
+//extension Tag {
+//
+//    // MARK: - other global attributes
+//
+//    /// Specifies a shortcut key to activate/focus an element
+//    public func accesskey(_ value: Character) -> Self {
+//        attribute("accesskey", String(value))
+//    }
+//
+//    /// Specifies whether the content of an element is editable or not
+//    public func contenteditable(_ value: Bool) -> Self {
+//        attribute("contenteditable", String(value))
+//    }
+//
+//    /// Used to store custom data private to the page or application
+//    public func data(key: String, _ value: String) -> Self {
+//        attribute("data-" + key, value)
+//    }
+//
+//    /// Specifies whether an element is draggable or not
+//    public func draggable(_ value: Draggable = .auto) -> Self {
+//        attribute("draggable", value.rawValue)
+//    }
+//
+//    /// Specifies that an element is not yet, or is no longer, relevant
+//    public func hidden(_ value: Bool? = nil) -> Self {
+//        attribute("hidden", value?.description)
+//    }
+//
+//    /// Specifies the language of the element's content
+//    public func lang(_ value: String) -> Self {
+//        attribute("lang", value)
+//    }
+//
+//    /// Specifies whether the element is to have its spelling and grammar checked or not
+//    public func spellcheck(_ value: Bool) -> Self {
+//        attribute("spellcheck", String(value))
+//    }
+//
+//    /// Specifies the tabbing order of an element
+//    public func tabindex(_ value: Int) -> Self {
+//        attribute("tabindex", String(value))
+//    }
+
 //
 //extension Tag {
 //

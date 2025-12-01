@@ -7,8 +7,7 @@
 public struct Dfn:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
-    TitleAttributeModifier
+    GlobalAttributeModifier
 {
 
     /// The attribute storage for the tag.

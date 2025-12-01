@@ -19,7 +19,7 @@ struct MetaTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
-    //
+    // @Test
     //    func testColorScheme() {
     //        let doc = Document {
     //            Meta()
@@ -38,7 +38,7 @@ struct MetaTagTestSuite {
     //            html
     //        )
     //    }
-    //
+    // @Test
     //    func testMediaColorScheme() {
     //        let doc = Document {
     //            Meta()
@@ -58,7 +58,7 @@ struct MetaTagTestSuite {
     //            html
     //        )
     //    }
-    //
+    // @Test
     //    func testAppleStatusBarStyle() {
     //        let doc = Document {
     //            Meta()

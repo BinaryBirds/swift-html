@@ -19,6 +19,7 @@ struct InputTagTestSuite {
         let result = renderer.render(document: doc)
         #expect(result == expectation)
     }
+    // @Test
     //    func testCheckedInput() {
     //        let doc = Document {
     //            Input()
@@ -40,6 +41,7 @@ struct InputTagTestSuite {
     //        )
     //    }
     //
+    // @Test
     //    func testUncheckedInput() {
     //        let doc = Document {
     //            Input()
@@ -64,6 +66,7 @@ struct InputTagTestSuite {
     //        )
     //    }
     //
+    // @Test
     //    func testKey() {
     //        let doc = Document {
     //            Input()

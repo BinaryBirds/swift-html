@@ -10,10 +10,17 @@ public struct Input:
     AltAttributeModifier,
     NameAttributeModifier,
     FormAttributeModifier,
+    FormActionAttributeModifier,
+    FormEnctypeAttributeModifier,
+    FormMethodAttributeModifier,
+    FormTargetAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
     SrcAttributeModifier,
-    ValueAttributeModifier
+    ValueAttributeModifier,
+    DisabledAttributeModifier,
+    TypeAttributeModifier,
+    PlaceholderAttributeModifier
 //accept — Hint for expected file type in file upload controls
 //alpha — Allow the color's alpha component to be set
 //✅alt — Replacement text for use when images are not available
@@ -21,13 +28,13 @@ public struct Input:
 //checked — Whether the control is checked
 //colorspace — The color space of the serialized color
 //dirname — Name of form control to use for sending the element's directionality in form submission
-//disabled — Whether the form control is disabled
+//✅disabled — Whether the form control is disabled
 //✅form — Associates the element with a form element
-//formaction — URL to use for form submission
-//formenctype — Entry list encoding type to use for form submission
-//formmethod — Variant to use for form submission
+//✅formaction — URL to use for form submission
+//✅formenctype — Entry list encoding type to use for form submission
+//✅formmethod — Variant to use for form submission
 //formnovalidate — Bypass form control validation for form submission
-//formtarget — Navigable for form submission
+//✅formtarget — Navigable for form submission
 //✅height — Vertical dimension
 //list — List of autocomplete options
 //max — Maximum value
@@ -37,7 +44,7 @@ public struct Input:
 //multiple — Whether to allow multiple values
 //✅name — Name of the element to use for form submission and in the form.elements API
 //pattern — Pattern to be matched by the form control's value
-//placeholder — User-visible label to be placed within the form control
+//✅placeholder — User-visible label to be placed within the form control
 //popovertarget — Targets a popover element to toggle, show, or hide
 //popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
 //readonly — Whether to allow the value to be edited by the user
@@ -45,11 +52,46 @@ public struct Input:
 //size — Size of the control
 //✅src — Address of the resource
 //step — Granularity to be matched by the form control's value
-//type — Type of form control
+//⚠️type — Type of form control
 //✅value — Value of the form control
 //✅width — Horizontal dimension
-//Also, the title attribute has special semantics on this element: Description of pattern (when used with pattern attribute)
 {
+
+    public struct `Type`: Attribute {
+
+        public enum Value: String {
+            case button
+            case checkbox
+            case color
+            case date
+            case datetimeLocal = "datetime-local"
+            case email
+            case file
+            case hidden
+            case image
+            case month
+            case number
+            case password
+            case radio
+            case range
+            case reset
+            case search
+            case submit
+            case tel
+            case text
+            case time
+            case url
+            case week
+        }
+
+        public var value: String?
+
+        init(
+            _ value: Value? = nil
+        ) {
+            self.value = value?.rawValue
+        }
+    }
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
@@ -69,49 +111,17 @@ public struct Input:
     public init() {
         self.attributes = .init()
     }
+
+    public func `type`(
+        _ value: `Type`.Value?
+    ) -> Self {
+        setAttribute(`Type`(value))
+    }
 }
 
-//
-//extension Input {
-//
-//    public enum `Type`: String {
-//        case button
-//        case checkbox
-//        case color
-//        case date
-//        case datetimeLocal = "datetime-local"
-//        case email
-//        case file
-//        case hidden
-//        case image
-//        case month
-//        case number
-//        case password
-//        case radio
-//        case range
-//        case reset
-//        case search
-//        case submit
-//        case tel
-//        case text
-//        case time
-//        case url
-//        case week
-//    }
-//
-//    /// Sets both the name and id
-//    public func key(_ value: String) -> Self {
-//        attribute("id", value).attribute("name", value)
-//    }
-//
 //    /// Specifies a filter for what file types the user can pick from the file input dialog box (only for type="file")
 //    public func accept(_ value: String?) -> Self {
 //        attribute("accept", value)
-//    }
-//
-//    /// Specifies an alternate text for images (only for type="image")
-//    public func alt(_ value: String) -> Self {
-//        attribute("alt", value)
 //    }
 //
 //    /// Specifies whether an <input> element should have autocomplete enabled
@@ -138,34 +148,9 @@ public struct Input:
 //        attribute("dirname", value)
 //    }
 //
-//    /// Specifies that an <input> element should be disabled
-//    public func disabled(_ condition: Bool = true) -> Self {
-//        flagAttribute("disabled", nil, condition)
-//    }
-//
-//    /// Specifies the URL of the file that will process the input control when the form is submitted (for type="submit" and type="image")
-//    public func formaction(_ value: String) -> Self {
-//        attribute("formaction", value)
-//    }
-//
-//    /// Specifies how the form-data should be encoded when submitting it to the server (for type="submit" and type="image")
-//    public func formenctype(_ value: Enctype = .urlencoded) -> Self {
-//        attribute("formenctype", value.rawValue)
-//    }
-//
-//    /// Defines the HTTP method for sending data to the action URL (for type="submit" and type="image")
-//    public func formmethod(_ value: Method = .get) -> Self {
-//        attribute("formmethod", value.rawValue)
-//    }
-//
 //    /// Defines that form elements should not be validated when submitted
 //    public func formnovalidate(_ condition: Bool = true) -> Self {
 //        flagAttribute("formnovalidate", nil, condition)
-//    }
-//
-//    /// Specifies where to display the response that is received after submitting the form (for type="submit" and type="image")
-//    public func formtarget(_ value: TargetFrame) -> Self {
-//        attribute("formtarget", value.rawValue)
 //    }
 //
 //    /// Refers to a `<datalist>` element that contains pre-defined options for an `<input>` element
@@ -204,11 +189,6 @@ public struct Input:
 //        attribute("pattern", value)
 //    }
 //
-//    /// Specifies a short hint that describes the expected value of an `<input>` element
-//    public func placeholder(_ value: String?) -> Self {
-//        attribute("placeholder", value)
-//    }
-//
 //    /// Specifies that an input field is read-only
 //    public func readonly(_ condition: Bool = true) -> Self {
 //        flagAttribute("readonly", nil, condition)
@@ -228,10 +208,3 @@ public struct Input:
 //    public func step(_ value: Int) -> Self {
 //        attribute("step", String(value))
 //    }
-//
-//    /// Specifies the type `<input>` element to display
-//    public func type(_ value: Type) -> Self {
-//        attribute("type", value.rawValue)
-//    }
-
-//}

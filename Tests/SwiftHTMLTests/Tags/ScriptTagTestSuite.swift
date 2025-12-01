@@ -21,7 +21,8 @@ struct ScriptTagTestSuite {
         #expect(result == expectation)
     }
 
-    func shortTagVersion() {
+    @Test
+    func shortTagVersion() async throws {
         let tag = Script()
             .src("main.js")
 
@@ -36,23 +37,26 @@ struct ScriptTagTestSuite {
         #expect(result == expectation)
     }
 
-    //
-    //    func testIntegrity() {
-    //        let doc = Document {
-    //            Script()
-    //                .src(
-    //                    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    //                )
-    //                .integrity(
-    //                    "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    //                )
-    //                .crossorigin(.anonymous)
-    //        }
-    //        let html = DocumentRenderer(minify: true).render(doc)
-    //        XCTAssertEqual(
-    //            #"<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>"#,
-    //            html
-    //        )
-    //    }
-    //
+    @Test
+    func integrity() async throws {
+        let tag = Script()
+            .src(
+                "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            )
+            .integrity(
+                "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            )
+            .crossorigin(.anonymous)
+
+        let renderer = Renderer()
+        let doc = Document(root: tag)
+
+        let expectation = #"""
+            <script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+            """#
+
+        let result = renderer.render(document: doc)
+        #expect(result == expectation)
+
+    }
 }

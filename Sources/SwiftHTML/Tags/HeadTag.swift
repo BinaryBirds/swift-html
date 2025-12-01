@@ -36,11 +36,11 @@ public struct Head:
         self.attributes = .init()
         self.children = elements
 
-        precondition(
+        assert(
             elements.count(where: { $0 is Base }) <= 1,
             "There can be only one `base` element in the head."
         )
-        precondition(
+        assert(
             elements.count(where: { $0 is Title }) <= 1,
             "There can be only one `title` element in the head."
         )
