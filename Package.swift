@@ -19,6 +19,9 @@ let package = Package(
         .library(name: "SwiftSitemap", targets: ["SwiftSitemap"]),
         .library(name: "SwiftSVG", targets: ["SwiftSVG"]),
     ],
+    dependencies: [
+//        .package(url: "https://github.com/apple/swift-collections", .upToNextMinor(from: "1.3.0")),
+    ],
     targets: [
         .target(
             name: "DOM",
@@ -27,35 +30,36 @@ let package = Package(
         .target(
             name: "SGML",
             dependencies: [
-                .target(name: "DOM")
+//                .product(name: "Collections", package: "swift-collections"),
+                .target(name: "DOM"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
             name: "SwiftHTML",
             dependencies: [
-                .target(name: "SGML")
+                .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
             name: "SwiftRSS",
             dependencies: [
-                .target(name: "SGML")
+                .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
             name: "SwiftSitemap",
             dependencies: [
-                .target(name: "SGML")
+                .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
             name: "SwiftSVG",
             dependencies: [
-                .target(name: "SGML")
+                .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
@@ -63,37 +67,37 @@ let package = Package(
         .testTarget(
             name: "DOMTests",
             dependencies: [
-                .target(name: "DOM")
+                .target(name: "DOM"),
             ]
         ),
         .testTarget(
             name: "SGMLTests",
             dependencies: [
-                .target(name: "SGML")
+                .target(name: "SGML"),
             ]
         ),
         .testTarget(
             name: "SwiftHTMLTests",
             dependencies: [
-                .target(name: "SwiftHTML")
+                .target(name: "SwiftHTML"),
             ]
         ),
         .testTarget(
             name: "SwiftRSSTests",
             dependencies: [
-                .target(name: "SwiftRSS")
+                .target(name: "SwiftRSS"),
             ]
         ),
         .testTarget(
             name: "SwiftSitemapTests",
             dependencies: [
-                .target(name: "SwiftSitemap")
+                .target(name: "SwiftSitemap"),
             ]
         ),
         .testTarget(
             name: "SwiftSVGTests",
             dependencies: [
-                .target(name: "SwiftSVG")
+                .target(name: "SwiftSVG"),
             ]
         ),
     ]

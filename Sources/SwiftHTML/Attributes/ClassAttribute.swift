@@ -46,6 +46,11 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
     public func toggleClass(
         _ value: String?
     ) -> Self {
-        removeAttribute(ClassAttribute(value))
+        if hasAttribute(ClassAttribute(value)) {
+            removeAttribute(ClassAttribute(value))
+        }
+        else {
+            addAttribute(ClassAttribute(value))
+        }
     }
 }

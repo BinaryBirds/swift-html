@@ -178,7 +178,7 @@ struct Alignment: Attribute {
 You can set, add, or remove attributes—or even modify individual attribute values—on any tag that supports attributes:
 
 ```swift
-P("lorem ipsum")
+P("Lorem ipsum")
     // set (override) the current attributes
     .setAttribute(Class("note"))
     .setAttributeValueBy(name: "style", value: "color: white;")
@@ -201,6 +201,20 @@ P("lorem ipsum")
 
 There are built-in, type-safe attributes and helper modifiers available for the standard tags.
 
+### Conditions
+
+Use the `check` modifier to evaluate a condition and update an element when the condition is met:
+
+```swift
+let condition = false
+
+H1("Lorem ipsum")
+    .check(condition) {
+        $0.class("foo")
+    } else: {
+        $0.class("bar")
+    }
+```
 
 ### Container elements
 

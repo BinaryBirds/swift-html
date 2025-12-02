@@ -1,5 +1,7 @@
 import DOM
 
+//import Collections
+
 public struct AttributeStore: Sendable {
 
     private var storage: [String: [String?]]
@@ -23,6 +25,9 @@ public struct AttributeStore: Sendable {
     ) {
         if storage[name] == nil {
             storage[name] = []
+        }
+        guard let value, !value.isEmpty else {
+            return
         }
         guard !storage[name]!.contains(value) else {
             return
