@@ -179,8 +179,8 @@ struct AttributesTestSuite {
     @Test
     func classModifiersOverride() async throws {
         let tag = P("Lorem ipsum.")
-            .setClass("a")
-            .class("b")
+            .class("a", "b", "c")
+            .setClass("b")
 
         let renderer = Renderer(indent: 4)
         let doc = Document(root: tag)
@@ -196,12 +196,7 @@ struct AttributesTestSuite {
     @Test
     func removeClassModifier() async throws {
         let tag = P("Lorem ipsum.")
-            .addClass("a")
-            .addClass("b")
-            .addClass("c")
-            .addClass("d")
-            .addClass("e")
-            .addClass("f")
+            .class(["a", "b", "c", "d", "e", "f"])
             .removeClass("e")
             .removeClass("c")
 

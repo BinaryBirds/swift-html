@@ -49,14 +49,7 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
 
     // MARK: -
 
-    /// Sets a class attribute.
-    public func `class`(
-        _ value: String?
-    ) -> Self {
-        setClass(value)
-    }
-
-    /// Sets a class attribute.
+    /// Add class attribute values.
     public func `class`(
         _ values: [String]
     ) -> Self {
@@ -67,7 +60,7 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
         return mutatingSelf
     }
 
-    /// Sets a class attribute.
+    /// Add class attribute values.
     public func `class`(
         _ values: String...
     ) -> Self {
