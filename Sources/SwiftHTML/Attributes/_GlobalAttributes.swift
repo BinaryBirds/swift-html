@@ -13,6 +13,15 @@ public protocol GlobalAttributeModifier:
 
 }
 
+extension GlobalAttributeModifier where Self: Attributes & Mutable {
+
+    public func spellcheck(
+        _ value: Bool
+    ) -> Self {
+        setAttribute(name: "spellcheck", value: String(value))
+    }
+}
+
 public protocol HTMLAttribute: Attribute {
 
 }
@@ -49,7 +58,7 @@ extension HTMLAttribute {
 // lang
 // nonce
 // popover
-// spellcheck
+// ✅spellcheck
 // ✅ style
 // tabindex
 // ✅ title
@@ -101,9 +110,7 @@ extension HTMLAttribute {
 //    }
 //
 //    /// Specifies whether the element is to have its spelling and grammar checked or not
-//    public func spellcheck(_ value: Bool) -> Self {
-//        attribute("spellcheck", String(value))
-//    }
+
 //
 //    /// Specifies the tabbing order of an element
 //    public func tabindex(_ value: Int) -> Self {

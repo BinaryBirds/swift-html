@@ -227,8 +227,12 @@ All standard tags support child elements by default.
 
 ## Future improvements
 
+- [ ] Finish attributes (global, event)
+- [ ] Finish content models (use `assert` & types)
+- [ ] Get rid of public enums  
 - [ ] Get rid of `@_exported SGML`
 - [ ] Add `OrderedDictionary` support?
+
 
 ## Credits & references
 

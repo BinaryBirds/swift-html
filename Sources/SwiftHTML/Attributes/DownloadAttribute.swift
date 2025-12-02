@@ -20,4 +20,8 @@ extension DownloadAttributeModifier where Self: Attributes & Mutable {
     ) -> Self {
         setAttribute(DownloadAttribute(value))
     }
+
+    public func download() -> Self {
+        setAttribute(DownloadAttribute(nil))
+    }
 }
