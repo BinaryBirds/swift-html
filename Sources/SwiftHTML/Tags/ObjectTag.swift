@@ -5,17 +5,14 @@ public struct Object:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
+    DataAttributeModifier,
     TypeAttributeModifier,
     NameAttributeModifier,
     FormAttributeModifier,
     WidthAttributeModifier,
-    HeightAttributeModifier
-//data — Address of the resource
-//✅type — Type of embedded resource
-//✅name — Name of content navigable
-//✅form — Associates the element with a form element
-//✅width — Horizontal dimension
-//✅height — Vertical dimension
+    HeightAttributeModifier,
+    UsemapAttributeModifier,  // W3C but not in spec
+    TypemustmatchAttributeModifier  // W3C but not in spec
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
@@ -64,20 +61,3 @@ public struct Object:
         self.init(children: block())
     }
 }
-
-//
-//    /// Specifies the URL of the resource to be used by the object
-//    public func data(_ value: String) -> Self {
-//        attribute("data", value)
-//    }
-//
-//    /// Specifies whether the type attribute and the actual content of the resource must match to be displayed
-//    public func typemustmatch(_ value: Bool) -> Self {
-//        attribute("typemustmatch", String(value))
-//    }
-//
-//    /// Specifies the name of a client-side image map to be used with the object
-//    public func usemap(_ value: String) -> Self {
-//        attribute("usemap", "#" + value)
-//    }
-//

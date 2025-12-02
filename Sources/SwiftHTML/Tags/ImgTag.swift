@@ -21,14 +21,17 @@ public struct Img:
     WidthAttributeModifier,
     HeightAttributeModifier,
     ReferrerPolicyAttributeModifier,
+    SizesAttributeModifier,
+    SrcsetAttributeModifier,
+    UsemapAttributeModifier,
     LoadingAttributeModifier
 
 //✅alt — Replacement text for use when images are not available
 //✅src — Address of the resource
-//srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
-//sizes — Image sizes for different page layouts
+//✅srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+//✅sizes — Image sizes for different page layouts
 //✅crossorigin — How the element handles crossorigin requests
-//usemap — Name of image map to use
+//✅usemap — Name of image map to use
 //ismap — Whether the image is a server-side image map
 //✅width — Horizontal dimension
 //✅height — Vertical dimension
@@ -64,33 +67,14 @@ public struct Img:
             .setAttribute(SrcAttribute(src))
             .setAttribute(AltAttribute(alt))
     }
+
 }
 
-//    /// Allow images from third-party sites that allow cross-origin access to be used with canvas
-//    public func crossorigin(_ value: Crossorigin) -> Self {
-//        attribute("crossorigin", value.rawValue)
-//    }
-//
-//    /// Specifies an image as a server-side image map
-//    public func ismap(_ condition: Bool = true) -> Self {
-//        flagAttribute("ismap", nil, condition)
-//    }
-//    /// Specifies a URL to a detailed description of an image
-//    public func longdesc(_ value: String) -> Self {
-//        attribute("longdesc", value)
-//    }
-//
-//    /// Specifies image sizes for different page layouts
-//    public func sizes(_ value: String) -> Self {
-//        attribute("sizes", value)
-//    }
-//
-//    /// Specifies a list of image files to use in different situations
-//    public func srcset(_ value: String) -> Self {
-//        attribute("srcset", value)
-//    }
-//
-//    /// Specifies an image as a client-side image map
-//    public func usemap(_ value: String) -> Self {
-//        attribute("usemap", "#" + value)
-//    }
+///// Specifies an image as a server-side image map.
+//public func ismap(_ condition: Bool = true) -> Self {
+//    flagAttribute("ismap", nil, condition)
+//}
+///// Specifies a URL to a detailed description of an image.
+//public func longdesc(_ value: String) -> Self {
+//    attribute("longdesc", value)
+//}

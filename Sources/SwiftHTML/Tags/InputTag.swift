@@ -8,6 +8,7 @@ public struct Input:
     /// attribute modifiers
     GlobalAttributeModifier,
     AltAttributeModifier,
+    AutocompleteAttributeModifier,
     CheckedAttributeModifier,
     NameAttributeModifier,
     FormAttributeModifier,
@@ -17,15 +18,19 @@ public struct Input:
     FormTargetAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
+    MultipleAttributeModifier,
     SrcAttributeModifier,
     ValueAttributeModifier,
     DisabledAttributeModifier,
     TypeAttributeModifier,
-    PlaceholderAttributeModifier
+    PlaceholderAttributeModifier,
+    ReadonlyAttributeModifier,
+    RequiredAttributeModifier,
+    SizeAttributeModifier
 //accept — Hint for expected file type in file upload controls
 //alpha — Allow the color's alpha component to be set
 //✅alt — Replacement text for use when images are not available
-//autocomplete — Hint for form autofill feature
+//✅autocomplete — Hint for form autofill feature
 //✅checked — Whether the control is checked
 //colorspace — The color space of the serialized color
 //dirname — Name of form control to use for sending the element's directionality in form submission
@@ -42,15 +47,15 @@ public struct Input:
 //maxlength — Maximum length of value
 //min — Minimum value
 //minlength — Minimum length of value
-//multiple — Whether to allow multiple values
+//✅multiple — Whether to allow multiple values
 //✅name — Name of the element to use for form submission and in the form.elements API
 //pattern — Pattern to be matched by the form control's value
 //✅placeholder — User-visible label to be placed within the form control
 //popovertarget — Targets a popover element to toggle, show, or hide
 //popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
-//readonly — Whether to allow the value to be edited by the user
-//required — Whether the control is required for form submission
-//size — Size of the control
+//✅readonly — Whether to allow the value to be edited by the user
+//✅required — Whether the control is required for form submission
+//✅size — Size of the control
 //✅src — Address of the resource
 //step — Granularity to be matched by the form control's value
 //⚠️type — Type of form control
@@ -124,17 +129,7 @@ public struct Input:
 //    public func accept(_ value: String?) -> Self {
 //        attribute("accept", value)
 //    }
-//
-//    /// Specifies whether an <input> element should have autocomplete enabled
-//    public func autocomplete(_ value: Bool = true) -> Self {
-//        attribute("autocomplete", value ? "on" : "off")
-//    }
-//
-//    /// Specifies that an <input> element should automatically get focus when the page loads
-//    public func autofocus(_ condition: Bool = true) -> Self {
-//        flagAttribute("autofocus", nil, condition)
-//    }
-//
+
 //    /// Specifies that the text direction will be submitted
 //    public func dirname(_ value: String) -> Self {
 //        attribute("dirname", value)
@@ -170,32 +165,12 @@ public struct Input:
 //        attribute("minlength", String(value))
 //    }
 //
-//    /// Specifies that a user can enter more than one value in an `<input>` element
-//    public func multiple(_ condition: Bool = true) -> Self {
-//        flagAttribute("multiple", nil, condition)
-//    }
-
-//
 //    /// Specifies a regular expression that an `<input>` element's value is checked against
 //    public func pattern(_ value: String) -> Self {
 //        attribute("pattern", value)
 //    }
 //
-//    /// Specifies that an input field is read-only
-//    public func readonly(_ condition: Bool = true) -> Self {
-//        flagAttribute("readonly", nil, condition)
-//    }
-//
-//    /// Specifies that an input field must be filled out before submitting the form
-//    public func required(_ condition: Bool = true) -> Self {
-//        flagAttribute("required", nil, condition)
-//    }
-//
-//    /// Specifies the width, in characters, of an `<input>` element
-//    public func size(_ value: Int) -> Self {
-//        attribute("size", String(value))
-//    }
-//
+
 //    /// Specifies the interval between legal numbers in an input field
 //    public func step(_ value: Int) -> Self {
 //        attribute("step", String(value))

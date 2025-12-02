@@ -5,11 +5,9 @@ public struct Style:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
-    MediaAttributeModifier
-//✅media — Applicable media
-//blocking — Whether the element is potentially render-blocking
+    MediaAttributeModifier,
+    BlockingAttributeModifier
 {
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -39,11 +37,9 @@ public struct Style:
             Text(text)
         ]
     }
-}
 
-//
-//    /// Specifies the media type (text/css) of the `<style>` tag
-//    public func css() -> Self {
-//        attribute("type", "text/css")
-//    }
-//}
+    /// Specifies the media type (text/css) of the `<style>` tag.
+    public func css() -> Self {
+        setAttribute(TypeAttribute("text/css"))
+    }
+}

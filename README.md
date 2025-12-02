@@ -225,6 +225,10 @@ All standard tags support child elements by default.
 // TODO
 ```
 
+## Future improvements
+
+- [ ] Get rid of `@_exported SGML`
+- [ ] Add `OrderedDictionary` support?
 
 ## Credits & references
 

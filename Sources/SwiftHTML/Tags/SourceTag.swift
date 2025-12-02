@@ -9,17 +9,11 @@ public struct Source:
     TypeAttributeModifier,
     MediaAttributeModifier,
     SrcAttributeModifier,
+    SrcsetAttributeModifier,
     WidthAttributeModifier,
-    HeightAttributeModifier
-//✅type — Type of embedded resource
-//✅media — Applicable media
-//✅src (in audio or video) — Address of the resource
-//srcset (in picture) — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
-//sizes (in picture) — Image sizes for different page layouts
-//✅width (in picture) — Horizontal dimension
-//✅height (in picture) — Vertical dimension
+    HeightAttributeModifier,
+    SizesAttributeModifier
 {
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -32,14 +26,3 @@ public struct Source:
         self.attributes = .init()
     }
 }
-
-//
-//    /// Specifies image sizes for different page layouts
-//    public func sizes(value: String) -> Self {
-//        attribute("sizes", value)
-//    }
-//
-//    /// Required when <source> is used in <picture>. Specifies the URL of the image to use in different situations
-//    public func srcset(_ value: String) -> Self {
-//        attribute("srcset", value)
-//    }

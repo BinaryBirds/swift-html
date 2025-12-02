@@ -15,11 +15,14 @@ public struct Textarea:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
+    AutocompleteAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
     NameAttributeModifier,
-    PlaceholderAttributeModifier
-//autocomplete — Hint for form autofill feature
+    PlaceholderAttributeModifier,
+    ReadonlyAttributeModifier,
+    RequiredAttributeModifier
+//✅autocomplete — Hint for form autofill feature
 //cols — Maximum number of characters per line
 //dirname — Name of form control to use for sending the element's directionality in form submission
 //✅disabled — Whether the form control is disabled
@@ -28,8 +31,8 @@ public struct Textarea:
 //minlength — Minimum length of value
 //✅name — Name of the element to use for form submission and in the form.elements API
 //✅placeholder — User-visible label to be placed within the form control
-//readonly — Whether to allow the value to be edited by the user
-//required — Whether the control is required for form submission
+//✅readonly — Whether to allow the value to be edited by the user
+//✅required — Whether the control is required for form submission
 //rows — Number of lines to show
 //wrap — How the value of the form control is to be wrapped for form submission
 {
@@ -85,11 +88,6 @@ public struct Textarea:
 //        case hard
 //    }
 //
-//    /// Specifies that a text area should automatically get focus when the page loads
-//    public func autofocus(_ condition: Bool = true) -> Self {
-//        flagAttribute("autofocus", nil, condition)
-//    }
-//
 //    /// Specifies the visible width of a text area
 //    public func cols(_ value: Int) -> Self {
 //        attribute("cols", String(value))
@@ -100,20 +98,9 @@ public struct Textarea:
 //        attribute("dirname", value)
 //    }
 //
-
 //    /// Specifies the maximum number of characters allowed in the text area
 //    public func maxlength(_ value: Int) -> Self {
 //        attribute("maxlength", String(value))
-//    }
-
-//    /// Specifies that a text area should be read-only
-//    public func readonly(_ condition: Bool = true) -> Self {
-//        flagAttribute("readonly", nil, condition)
-//    }
-//
-//    /// Specifies that a text area is required/must be filled out
-//    public func required(_ condition: Bool = true) -> Self {
-//        flagAttribute("required", nil, condition)
 //    }
 //
 //    /// Specifies the visible width of a text area

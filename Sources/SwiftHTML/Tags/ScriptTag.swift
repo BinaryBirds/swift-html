@@ -12,24 +12,12 @@ public struct Script:
     GlobalAttributeModifier,
     TypeAttributeModifier,
     SrcAttributeModifier,
+    BlockingAttributeModifier,
     CrossoriginAttributeModifier,
     ReferrerPolicyAttributeModifier,
-    IntegrityAttributeModifier
-//    ✅type — Type of script
-//    ✅src — Address of the resource
-//    nomodule — Prevents execution in user agents that support module scripts
-//    async — Execute script when available, without blocking while fetching
-//    defer — Defer script execution
-//    blocking — Whether the element is potentially render-blocking
-//    ✅crossorigin — How the element handles crossorigin requests
-//    ✅referrerpolicy — Referrer policy for fetches initiated by the element
-//    ✅integrity — Integrity metadata used in Subresource Integrity checks [SRI]
-//    fetchpriority — Sets the priority for fetches initiated by the element
+    IntegrityAttributeModifier,
+    FetchpriorityAttributeModifier
 {
-
-    public enum `Type`: String {
-        case javascript = "text/javascript"
-    }
 
     private enum Kind {
         case standard(String)
@@ -80,20 +68,27 @@ public struct Script:
             )
         }
     }
-}
 
-//    /// Specifies that the script is executed asynchronously (only for external scripts)
-//    public func async(_ condition: Bool = true) -> Self {
-//        flagAttribute("async", nil, condition)
-//    }
-//
-//    /// Specifies that the script is executed when the page has finished parsing (only for external scripts)
-//    public func `defer`(_ condition: Bool = true) -> Self {
-//        flagAttribute("defer", nil, condition)
-//    }
-//
-//    // @NOTE: auto capitalize string value?
-//    /// Specifies that the script should not be executed in browsers supporting ES2015 modules
-//    public func nomodule(_ value: Bool) -> Self {
-//        attribute("nomodule", String(value))
-//    }
+    public func javaScript() -> Self {
+        setAttribute(TypeAttribute("text/javascript"))
+    }
+
+    // MARK: -
+
+    /// Specifies that the script is executed asynchronously (only for external scripts).
+    public func async() -> Self {
+        setAttribute(name: "async", value: nil)
+    }
+
+    /// Specifies that the script is executed when the page has finished parsing (only for external scripts).
+    public func `defer`() -> Self {
+        setAttribute(name: "defer", value: nil)
+    }
+
+    /// Specifies that the script should not be executed in browsers supporting ES2015 modules.
+    public func nomodule(
+        _ value: Bool
+    ) -> Self {
+        setAttribute(name: "nomodule", value: String(value))
+    }
+}

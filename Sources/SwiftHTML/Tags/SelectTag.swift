@@ -13,18 +13,14 @@ public struct Select:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
+    AutocompleteAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
-    NameAttributeModifier
-//autocomplete — Hint for form autofill feature
-//✅disabled — Whether the form control is disabled
-//✅form — Associates the element with a form element
-//multiple — Whether to allow multiple values
-//✅name — Name of the element to use for form submission and in the form.elements API
-//required — Whether the control is required for form submission
-//size — Size of the control
+    MultipleAttributeModifier,
+    NameAttributeModifier,
+    RequiredAttributeModifier,
+    SizeAttributeModifier
 {
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -65,43 +61,4 @@ public struct Select:
     ) {
         self.init(children: block())
     }
-
 }
-
-//extension Select {
-//
-//    /// Specifies that the drop-down list should automatically get focus when the page loads
-//    public func autofocus(_ condition: Bool = true) -> Self {
-//        flagAttribute("autofocus", nil, condition)
-//    }
-//
-//    /// Specifies that a drop-down list should be disabled
-//    public func disabled(_ condition: Bool = true) -> Self {
-//        flagAttribute("disabled", nil, condition)
-//    }
-//
-//    /// Defines which form the drop-down list belongs to
-//    public func form(_ value: String) -> Self {
-//        attribute("form", value)
-//    }
-//
-//    /// Specifies that multiple options can be selected at once
-//    public func multiple(_ condition: Bool = true) -> Self {
-//        flagAttribute("multiple", nil, condition)
-//    }
-//
-//    /// Defines a name for the drop-down list
-//    public func name(_ value: String) -> Self {
-//        attribute("name", value)
-//    }
-//
-//    /// Specifies that the user is required to select a value before submitting the form
-//    public func required(_ condition: Bool = true) -> Self {
-//        flagAttribute("required", nil, condition)
-//    }
-//
-//    /// Defines the number of visible options in a drop-down list
-//    public func size(_ value: Int) -> Self {
-//        attribute("size", String(value))
-//    }
-//}

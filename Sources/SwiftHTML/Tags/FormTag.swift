@@ -16,6 +16,7 @@ public struct Form:
     /// attribute modifiers
     GlobalAttributeModifier,
     ActionAttributeModifier,
+    AutocompleteAttributeModifier,
     EnctypeAttributeModifier,
     MethodAttributeModifier,
     NameAttributeModifier,
@@ -23,7 +24,7 @@ public struct Form:
 
 //accept-charset — Character encodings to use for form submission
 //✅action — URL to use for form submission
-//autocomplete — Default setting for autofill feature for controls in the form
+//✅autocomplete — Default setting for autofill feature for controls in the form
 //✅enctype — Entry list encoding type to use for form submission
 //✅method — Variant to use for form submission
 //✅name — Name of form to use in the document.forms API
@@ -99,12 +100,6 @@ public struct Form:
 //    /// Specifies the character encodings that are to be used for the form submission
 //    public func acceptCharset(_ value: String) -> Self {
 //        attribute("accept-charset", value)
-//    }
-//
-//
-//    /// Specifies whether a form should have autocomplete on or off
-//    public func autocomplete(_ value: Bool = true) -> Self {
-//        attribute("autocomplete", value ? "on" : "off")
 //    }
 //
 //    /// Specifies that the form should not be validated when submitted

@@ -14,7 +14,9 @@ public struct Link:
     IntegrityAttributeModifier,
     TypeAttributeModifier,
     ReferrerPolicyAttributeModifier,
-    DisabledAttributeModifier
+    BlockingAttributeModifier,
+    DisabledAttributeModifier,
+    SizesAttributeModifier
 
 //✅href — Address of the hyperlink
 //✅crossorigin — How the element handles crossorigin requests
@@ -24,11 +26,11 @@ public struct Link:
 //✅hreflang — Language of the linked resource
 //✅type — Hint for the type of the referenced resource
 //✅referrerpolicy — Referrer policy for fetches initiated by the element
-//sizes — Sizes of the icons (for rel="icon")
+//✅sizes — Sizes of the icons (for rel="icon")
 //imagesrcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel="preload")
 //imagesizes — Image sizes for different page layouts (for rel="preload")
 //as — Potential destination for a preload request (for rel="preload" and rel="modulepreload")
-//blocking — Whether the element is potentially render-blocking
+//✅blocking — Whether the element is potentially render-blocking
 //color — Color to use when customizing a site's icon (for rel="mask-icon")
 //✅disabled — Whether the link is disabled
 //fetchpriority — Sets the priority for fetches initiated by the element
@@ -113,13 +115,3 @@ public struct Link:
         self = addAttribute(Rel(value))
     }
 }
-
-//    /// Specifies the size of the linked resource. Only for `rel="icon"`
-//    public func sizes(_ value: String) -> Self {
-//        attribute("sizes", value)
-//    }
-//
-//    /// Specifies the size of the linked resource. For example `57x57` if the value is `57`.
-//    public func sizes(_ value: Int) -> Self {
-//        sizes(String(value) + "x" + String(value))
-//    }

@@ -7,7 +7,8 @@ public protocol GlobalAttributeModifier:
     StyleAttributeModifier,
     TitleAttributeModifier,
     DirAttributeModifier,
-    TranslateAttributeModifier
+    TranslateAttributeModifier,
+    AutofocusAttributeModifier
 {
 
 }
@@ -29,7 +30,7 @@ extension HTMLAttribute {
 // accesskey
 // autocapitalize
 // autocorrect
-// autofocus
+// ✅autofocus
 // contenteditable
 // ✅ dir
 // draggable

@@ -103,17 +103,6 @@ public struct Button:
     }
 }
 
-//
-//    /// Specifies that a button should automatically get focus when the page loads
-//    public func autofocus(_ condition: Bool = true) -> Self {
-//        flagAttribute("autofocus", nil, condition)
-//    }
-
-//    /// Specifies which form the button belongs to
-//    public func form(_ value: String) -> Self {
-//        attribute("form", value)
-//    }
-//
 //    /// Specifies that the form-data should not be validated on submission. Only for type="submit"
 //    public func formnovalidate(_ condition: Bool = true) -> Self {
 //        flagAttribute("formnovalidate", nil, condition)

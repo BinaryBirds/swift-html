@@ -5,11 +5,9 @@ public struct Optgroup:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributeModifier,
-    DisabledAttributeModifier
-//✅ disabled — Whether the form control is disabled
-//label — User-visible label
+    DisabledAttributeModifier,
+    LabelAttributeModifier
 {
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -37,8 +35,3 @@ public struct Optgroup:
         self.init(children: block())
     }
 }
-
-//    /// Specifies a label for an option-group
-//    public func label(_ value: String) -> Self {
-//        attribute("label", value)
-//    }

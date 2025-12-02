@@ -3,7 +3,7 @@ import PackageDescription
 
 let defaultSwiftSettings: [SwiftSetting] = [
     .swiftLanguageMode(.v6),
-    .enableExperimentalFeature("AvailabilityMacro=swiftHTML 1.0:macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0"),
+    .enableExperimentalFeature("AvailabilityMacro=SwiftHTML 1.0:macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0"),
 
     // https://github.com/swiftlang/swift-evolution/blob/main/proposals/0444-member-import-visibility.md
     .enableUpcomingFeature("MemberImportVisibility"),

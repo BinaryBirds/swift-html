@@ -26,17 +26,6 @@ public struct Video:
     WidthAttributeModifier,
     HeightAttributeModifier,
     PreloadAttributeModifier
-//✅src — Address of the resource
-//✅crossorigin — How the element handles crossorigin requests
-//poster — Poster frame to show prior to video playback
-//✅preload — Hints how much buffering the media resource will likely need
-//✅autoplay — Hint that the media resource can be started automatically when the page is loaded
-//playsinline — Encourage the user agent to display video content within the element's playback area
-//✅loop — Whether to loop the media resource
-//✅muted — Whether to mute the media resource by default
-//✅controls — Show user agent controls
-//✅width — Horizontal dimension
-//✅height — Vertical dimension
 {
 
     /// The attribute storage for the tag.
@@ -79,9 +68,14 @@ public struct Video:
     ) {
         self.init(children: block())
     }
-}
 
-//    /// Specifies an image to be shown while the video is downloading, or until the user hits the play button
-//    public func poster(_ value: String) -> Self {
-//        attribute("poster", value)
-//    }
+    public func poster(
+        _ value: String?
+    ) -> Self {
+        setAttribute(name: "poster", value: value)
+    }
+
+    public func playsinline() -> Self {
+        setAttribute(name: "playsinline", value: nil)
+    }
+}

@@ -10,11 +10,8 @@ public struct Option:
     /// attribute modifiers
     GlobalAttributeModifier,
     DisabledAttributeModifier,
-    ValueAttributeModifier
-//✅disabled — Whether the form control is disabled
-//label — User-visible label
-//selected — Whether the option is selected by default
-//✅value — Value to be used for form submission
+    ValueAttributeModifier,
+    LabelAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -54,15 +51,8 @@ public struct Option:
     ) {
         self.init(children: block())
     }
-}
 
-//
-//    /// Specifies a shorter label for an option
-//    public func label(_ value: String) -> Self {
-//        attribute("label", value)
-//    }
-//
-//    /// Specifies that an option should be pre-selected when the page loads
-//    public func selected(_ condition: Bool = true) -> Self {
-//        flagAttribute("selected", nil, condition)
-//    }
+    public func selected() -> Self {
+        setAttribute(name: "selected", value: nil)
+    }
+}

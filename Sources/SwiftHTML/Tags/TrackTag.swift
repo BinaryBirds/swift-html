@@ -7,12 +7,13 @@ public struct Track:
     HTMLShortTag,
     /// attribute modifiers
     GlobalAttributeModifier,
-    SrcAttributeModifier
+    SrcAttributeModifier,
+    LabelAttributeModifier
 
 //kind — The type of text track
 //✅src — Address of the resource
 //srclang — Language of the text track
-//label — User-visible label
+//✅label — User-visible label
 //default — Enable the track if no other text track is more suitable
 {
 
@@ -57,12 +58,7 @@ public struct Track:
 //    public func kind(_ value: Kind) -> Self {
 //        attribute("kind", value.rawValue)
 //    }
-//
-//    /// Specifies the title of the text track
-//    public func label(_ value: String) -> Self {
-//        attribute("label", value)
-//    }
-//
+
 //    /// Specifies the language of the track text data (required if kind="subtitles")
 //    public func srclang(_ value: String) -> Self {
 //        attribute("srclang", value)
