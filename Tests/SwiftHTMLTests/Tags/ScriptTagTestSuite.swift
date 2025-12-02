@@ -8,13 +8,13 @@ struct ScriptTagTestSuite {
     @Test
     func initializationWithText() async throws {
         let tag = Script("console.log();")
-            .type("text/javascript")
+            .type("application/javascript")
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <script type="text/javascript">console.log();</script>
+            <script type="application/javascript">console.log();</script>
             """#
 
         let result = renderer.render(document: doc)

@@ -69,8 +69,10 @@ struct SwiftHTMLTestSuite {
             Head {
                 Title("Hello Swift DSL")
 
-                Meta().charset("utf-8")
-                Meta().name(.viewport)
+                Meta()
+                    .charset("utf-8")
+                Meta()
+                    .name(.viewport)
                     .content("width=device-width, initial-scale=1")
 
                 Link(rel: .stylesheet).href("./css/style.css")

@@ -70,7 +70,7 @@ public struct Script:
     }
 
     public func javaScript() -> Self {
-        setAttribute(TypeAttribute("text/javascript"))
+        setAttribute(TypeAttribute("application/javascript"))
     }
 
     // MARK: -
