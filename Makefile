@@ -4,7 +4,7 @@ SHELL=/bin/bash
 
 baseUrl = https://raw.githubusercontent.com/BinaryBirds/github-workflows/refs/heads/main/scripts
 
-check: symlinks language deps lint
+check: symlinks deps lint
 
 symlinks:
 	curl -s $(baseUrl)/check-broken-symlinks.sh | bash
@@ -49,4 +49,4 @@ docker-run:
 	docker run --rm -v $(pwd):/app -it swift:6.0
 
 docker-tests:
-	docker build -t swift-html-tests . -f ./docker/Dockerfile.testing && docker run --rm swift-html-tests
+	docker build -t swift-web-standards-tests . -f ./docker/Dockerfile.testing && docker run --rm swift-web-standards-tests

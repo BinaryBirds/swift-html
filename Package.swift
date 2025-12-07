@@ -3,21 +3,23 @@ import PackageDescription
 
 let defaultSwiftSettings: [SwiftSetting] = [
     .swiftLanguageMode(.v6),
-    .enableExperimentalFeature("AvailabilityMacro=SwiftHTML 1.0:macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0"),
+    .enableExperimentalFeature("AvailabilityMacro=SwiftWebStandards 1.0:macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0"),
 
     // https://github.com/swiftlang/swift-evolution/blob/main/proposals/0444-member-import-visibility.md
     .enableUpcomingFeature("MemberImportVisibility"),
 ]
 
 let package = Package(
-    name: "swift-html",
+    name: "swift-web-standards",
     products: [
         .library(name: "DOM", targets: ["DOM"]),
         .library(name: "SGML", targets: ["SGML"]),
-        .library(name: "SwiftHTML", targets: ["SwiftHTML"]),
-        .library(name: "SwiftRSS", targets: ["SwiftRSS"]),
-        .library(name: "SwiftSitemap", targets: ["SwiftSitemap"]),
-        .library(name: "SwiftSVG", targets: ["SwiftSVG"]),
+        .library(name: "HTML", targets: ["HTML"]),
+        .library(name: "RSS", targets: ["RSS"]),
+        .library(name: "Sitemap", targets: ["Sitemap"]),
+        .library(name: "SVG", targets: ["SVG"]),
+        .library(name: "MIME", targets: ["MIME"]),
+        .library(name: "WebStandards", targets: ["WebStandards"]),
     ],
     dependencies: [
 //        .package(url: "https://github.com/apple/swift-collections", .upToNextMinor(from: "1.3.0")),
@@ -36,30 +38,51 @@ let package = Package(
             swiftSettings: defaultSwiftSettings
         ),
         .target(
-            name: "SwiftHTML",
+            name: "HTML",
             dependencies: [
                 .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
-            name: "SwiftRSS",
+            name: "RSS",
             dependencies: [
                 .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
-            name: "SwiftSitemap",
+            name: "Sitemap",
             dependencies: [
                 .target(name: "SGML"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
         .target(
-            name: "SwiftSVG",
+            name: "SVG",
             dependencies: [
                 .target(name: "SGML"),
+            ],
+            swiftSettings: defaultSwiftSettings
+        ),
+        .target(
+            name: "CSS",
+            swiftSettings: defaultSwiftSettings
+        ),
+        .target(
+            name: "MIME",
+            swiftSettings: defaultSwiftSettings
+        ),
+        .target(
+            name: "WebStandards",
+            dependencies: [
+                .target(name: "DOM"),
+                .target(name: "MIME"),
+                .target(name: "SGML"),
+                .target(name: "CSS"),
+                .target(name: "HTML"),
+                .target(name: "RSS"),
+                .target(name: "Sitemap"),
             ],
             swiftSettings: defaultSwiftSettings
         ),
@@ -77,27 +100,45 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "SwiftHTMLTests",
+            name: "HTMLTests",
             dependencies: [
-                .target(name: "SwiftHTML"),
+                .target(name: "HTML"),
             ]
         ),
         .testTarget(
-            name: "SwiftRSSTests",
+            name: "RSSTests",
             dependencies: [
-                .target(name: "SwiftRSS"),
+                .target(name: "RSS"),
             ]
         ),
         .testTarget(
-            name: "SwiftSitemapTests",
+            name: "SitemapTests",
             dependencies: [
-                .target(name: "SwiftSitemap"),
+                .target(name: "Sitemap"),
             ]
         ),
         .testTarget(
-            name: "SwiftSVGTests",
+            name: "SVGTests",
             dependencies: [
-                .target(name: "SwiftSVG"),
+                .target(name: "SVG"),
+            ]
+        ),
+        .testTarget(
+            name: "CSSTests",
+            dependencies: [
+                .target(name: "CSS"),
+            ]
+        ),
+        .testTarget(
+            name: "MIMETests",
+            dependencies: [
+                .target(name: "MIME"),
+            ]
+        ),
+        .testTarget(
+            name: "WebStandardsTests",
+            dependencies: [
+                .target(name: "WebStandards"),
             ]
         ),
     ]

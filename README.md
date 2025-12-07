@@ -1,9 +1,13 @@
-# SwiftHTML
+# Swift Web Standards
 
-An awesome Swift HTML DSL library using result builders that closely follows the W3C standards.
+An awesome Swift library that closely follows the [W3C web standards](https://www.w3.org/standards/).
+
+- HTML DSL using result builders
+- CSS DSL using result builders
+- SVG, RSS, Sitemap, MIME types
 
 ```swift
-import SwiftHTML
+import HTML
 
 let html = Html {
     Head {
@@ -32,27 +36,37 @@ print(result) // HTML output
 
 ## Installation
 
-`SwiftHTML` is distributed through **Swift Package Manager**.
+The Swift Web Standards package is distributed through **Swift Package Manager**.
 
 Add the package to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/binarybirds/swift-html", from: "2.0.0"),
+.package(url: "https://github.com/binarybirds/swift-web-standards", from: "2.0.0"),
 ```
 
-Then include the `SwiftHTML` product as a dependency for your target:
+Then include the required product as a dependency for your target:
 
 ```swift
-.product(name: "SwiftHTML", package: "swift-html"),
+.product(name: "HTML", package: "swift-web-standards"),
 ```
 
 Import the module in your source files:
 
 ```swift
-import SwiftHTML
+import HTML
 ```
 
-The package is now ready to use.
+The `HTML` package is now ready to use.
+
+Available libraries:
+
+- `HTML`
+- `CSS`
+- `RSS`
+- `SVG`
+- `Sitemap`
+- `MIME`
+- `WebStandards` (bundles everything)
 
 
 ## DOM vs. SGML
@@ -225,6 +239,48 @@ All standard tags support child elements by default.
 // TODO
 ```
 
+## CSS
+
+An awesome Swift CSS DSL library using result builders.
+
+```swift
+let css = Stylesheet {            
+    Media {
+        All {
+            Background("#222")
+        }
+        Root {
+            Color(.blue)
+        }
+        Element(.div) {
+            BackgroundColor(.red)
+            Color(.white)
+            TextAlign(.left)
+        }
+        .pseudo(.nthChild(2))
+    }
+    Media("only screen and (max-width: 600px)") {
+        Id("custom-identifier") {
+            Background("#222")
+            Color(.cyan)
+        }
+        Class("custom-class") {
+            Background("#333")
+            Color(.aliceBlue)
+        }
+        Selector("ul > li > a") {
+            Background("black")
+            Color(.red)
+                .important()
+        }
+        .pseudo(.hover)
+    }
+}
+    
+print(StylesheetRenderer(minify: false, indent: 4).render(css))
+```
+
+
 ## Future improvements
 
 - [ ] Finish attributes (global, event)
@@ -238,3 +294,18 @@ All standard tags support child elements by default.
 
 - [HTML Standard](https://html.spec.whatwg.org/multipage/)
 - [HTML Reference](https://www.w3schools.com/tags/default.asp)
+
+- [Cascading Style Sheets](https://www.w3.org/Style/CSS/)
+- [CSS Snapshot 2020](https://www.w3.org/TR/css-2020/) 
+- [CSS Working Group Editor Drafts](https://drafts.csswg.org/)
+- [W3Schools CSS reference](https://www.w3schools.com/cssref/)
+- [CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [CSS3](https://www.quackit.com/css/css3/)
+
+- [Mime types for JavaScript](https://github.com/broofa/mime)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
+- [mimetype.io](https://mimetype.io/all-types/)
+- [All known MIME types](https://www.digipres.org/formats/mime-types/)
+- [What Is a File Extension and MIME Type?](https://www.lifewire.com/file-extensions-and-mime-types-3469109)
+
+
