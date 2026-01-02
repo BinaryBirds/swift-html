@@ -82,9 +82,8 @@ public struct Input:
     public init() {
         self.attributes = .init()
     }
-    
+
     // MARK: - attributes
-    
 
     public enum Types: String, AttributeValueRepresentable {
         case button

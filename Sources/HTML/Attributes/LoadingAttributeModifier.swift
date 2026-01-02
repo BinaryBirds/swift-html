@@ -1,12 +1,14 @@
 import SGML
 
-public enum LoadingAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum LoadingAttributeValue: String, Sendable, AttributeValueRepresentable
+{
     case eager
     case lazy
 }
 
 public protocol LoadingAttributeModifier {
-    associatedtype LoadingAttributeValueType: AttributeValueRepresentable = LoadingAttributeValue
+    associatedtype LoadingAttributeValueType: AttributeValueRepresentable =
+        LoadingAttributeValue
 }
 
 extension LoadingAttributeModifier where Self: Attributes & Mutable {

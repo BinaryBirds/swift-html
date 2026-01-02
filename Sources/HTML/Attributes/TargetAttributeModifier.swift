@@ -1,6 +1,7 @@
 import SGML
 
-public enum TargetAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum TargetAttributeValue: String, Sendable, AttributeValueRepresentable
+{
     /// Opens the link in a new window or tab.
     case blank = "_blank"
     /// Default; opens the link in the same frame as it was clicked.
@@ -12,7 +13,8 @@ public enum TargetAttributeValue: String, Sendable, AttributeValueRepresentable 
 }
 
 public protocol TargetAttributeModifier {
-    associatedtype TargetAttributeValueType: AttributeValueRepresentable = TargetAttributeValue
+    associatedtype TargetAttributeValueType: AttributeValueRepresentable =
+        TargetAttributeValue
 }
 
 extension TargetAttributeModifier where Self: Attributes & Mutable {

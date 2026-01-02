@@ -1,7 +1,8 @@
 import SGML
 
 public protocol FormEnctypeAttributeModifier {
-    associatedtype FormEnctypeAttributeValueType: AttributeValueRepresentable = EnctypeAttributeValue
+    associatedtype FormEnctypeAttributeValueType: AttributeValueRepresentable =
+        EnctypeAttributeValue
 }
 
 extension FormEnctypeAttributeModifier where Self: Attributes & Mutable {

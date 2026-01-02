@@ -1,7 +1,8 @@
 import SGML
 
 public protocol PlaceholderAttributeModifier {
-    associatedtype PlaceholderAttributeValueType: AttributeValueRepresentable = String
+    associatedtype PlaceholderAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension PlaceholderAttributeModifier where Self: Attributes & Mutable {

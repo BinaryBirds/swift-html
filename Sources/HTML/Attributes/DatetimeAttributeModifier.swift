@@ -1,7 +1,8 @@
 import SGML
 
 public protocol DatetimeAttributeModifier {
-    associatedtype DatetimeAttributeValueType: AttributeValueRepresentable = String
+    associatedtype DatetimeAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension DatetimeAttributeModifier where Self: Attributes & Mutable {

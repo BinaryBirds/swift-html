@@ -1,6 +1,8 @@
 import SGML
 
-public enum ReferrerPolicyAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum ReferrerPolicyAttributeValue: String, Sendable,
+    AttributeValueRepresentable
+{
     /// No referrer information is sent
     case noReferrer = "no-referrer"
     /// Default. Sends the origin, path, and query string if the protocol security level stays the same or is higher (HTTP to HTTP, HTTPS to HTTPS, HTTP to HTTPS is ok). Sends nothing to less secure level (HTTPS to HTTP is not ok)
@@ -20,7 +22,9 @@ public enum ReferrerPolicyAttributeValue: String, Sendable, AttributeValueRepres
 }
 
 public protocol ReferrerPolicyAttributeModifier {
-    associatedtype ReferrerPolicyAttributeValueType: AttributeValueRepresentable = ReferrerPolicyAttributeValue
+    associatedtype
+        ReferrerPolicyAttributeValueType: AttributeValueRepresentable =
+        ReferrerPolicyAttributeValue
 }
 
 extension ReferrerPolicyAttributeModifier where Self: Attributes & Mutable {

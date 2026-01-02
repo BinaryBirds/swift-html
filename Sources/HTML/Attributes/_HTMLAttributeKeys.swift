@@ -12,7 +12,9 @@ enum AttributeKeys: String {
     case `class`
     case closedby
     case colspan
+    case content
     case controls
+    case coords
     case crossorigin
     case data
     case datetime
@@ -28,6 +30,7 @@ enum AttributeKeys: String {
     case formmethod
     case formtarget
     case height
+    case httpEquiv = "http-equiv"
     case href
     case hreflang
     case id
@@ -49,6 +52,8 @@ enum AttributeKeys: String {
     case rel
     case required
     case rowspan
+    case scope
+    case shape
     case size
     case sizes
     case span
@@ -67,7 +72,7 @@ enum AttributeKeys: String {
 }
 
 extension Attributes where Self: Mutable {
-    
+
     func setAttribute(
         key: AttributeKeys,
         value: String? = nil
@@ -99,7 +104,7 @@ extension Attributes where Self: Mutable {
             preservingEmptyAttribute: preservingEmptyAttribute
         )
     }
-    
+
     func getAttribute(
         key: AttributeKeys
     ) -> String? {
@@ -125,10 +130,10 @@ extension Attributes where Self: Mutable {
     ) -> Self {
         setAttribute(name: key.rawValue, value: value.map(String.init))
     }
-    
+
     func getAttribute(
         key: AttributeKeys
     ) -> Int? {
         getAttribute(name: key.rawValue).flatMap { Int($0) }
-    }    
+    }
 }

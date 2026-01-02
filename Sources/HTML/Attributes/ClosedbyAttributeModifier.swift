@@ -1,13 +1,16 @@
 import SGML
 
-public enum ClosedbyAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum ClosedbyAttributeValue: String, Sendable,
+    AttributeValueRepresentable
+{
     case any
     case closeRequest
     case none
 }
 
 public protocol ClosedbyAttributeModifier {
-    associatedtype ClosedbyAttributeValueType: AttributeValueRepresentable = ClosedbyAttributeValue
+    associatedtype ClosedbyAttributeValueType: AttributeValueRepresentable =
+        ClosedbyAttributeValue
 }
 
 extension ClosedbyAttributeModifier where Self: Attributes & Mutable {

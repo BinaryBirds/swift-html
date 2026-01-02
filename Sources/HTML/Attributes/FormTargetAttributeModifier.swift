@@ -29,7 +29,8 @@ public enum FormTargetAttributeValue: Sendable, AttributeValueRepresentable {
 }
 
 public protocol FormTargetAttributeModifier {
-    associatedtype FormTargetAttributeValueType: AttributeValueRepresentable = FormTargetAttributeValue
+    associatedtype FormTargetAttributeValueType: AttributeValueRepresentable =
+        FormTargetAttributeValue
 }
 
 extension FormTargetAttributeModifier where Self: Attributes & Mutable {

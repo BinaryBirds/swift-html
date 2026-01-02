@@ -1,7 +1,8 @@
 import SGML
 
 public protocol SrcsetAttributeModifier {
-    associatedtype SrcsetAttributeValueType: AttributeValueRepresentable = String
+    associatedtype SrcsetAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension SrcsetAttributeModifier where Self: Attributes & Mutable {

@@ -1,6 +1,5 @@
 import SGML
 
-
 public protocol TypeAttributeModifier {
     associatedtype TypeAttributeValueType: AttributeValueRepresentable = String
 }

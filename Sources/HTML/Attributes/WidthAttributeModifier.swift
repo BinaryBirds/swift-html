@@ -11,7 +11,7 @@ extension WidthAttributeModifier where Self: Attributes & Mutable {
     ) -> Self {
         setAttribute(key: .width, value: value?.attributeValue)
     }
-    
+
     public func width() -> Int? {
         getAttribute(key: .width)
     }

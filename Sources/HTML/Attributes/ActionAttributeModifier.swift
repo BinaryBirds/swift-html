@@ -1,7 +1,8 @@
 import SGML
 
 public protocol ActionAttributeModifier {
-    associatedtype ActionAttributeValueType: AttributeValueRepresentable = String
+    associatedtype ActionAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension ActionAttributeModifier where Self: Attributes & Mutable {

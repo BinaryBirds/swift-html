@@ -1,7 +1,8 @@
 import SGML
 
 public protocol IntegrityAttributeModifier {
-    associatedtype IntegrityAttributeValueType: AttributeValueRepresentable = String
+    associatedtype IntegrityAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension IntegrityAttributeModifier where Self: Attributes & Mutable {

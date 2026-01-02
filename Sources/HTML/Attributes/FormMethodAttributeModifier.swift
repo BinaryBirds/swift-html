@@ -1,7 +1,8 @@
 import SGML
 
 public protocol FormMethodAttributeModifier {
-    associatedtype FormMethodAttributeValueType: AttributeValueRepresentable = MethodAttributeValue
+    associatedtype FormMethodAttributeValueType: AttributeValueRepresentable =
+        MethodAttributeValue
 }
 
 extension FormMethodAttributeModifier where Self: Attributes & Mutable {

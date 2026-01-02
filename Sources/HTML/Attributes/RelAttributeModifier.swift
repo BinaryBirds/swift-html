@@ -31,7 +31,8 @@ public enum RelAttributeValue: String, Sendable, AttributeValueRepresentable {
 }
 
 public protocol RelAttributeModifier {
-    associatedtype RelAttributeValueType: AttributeValueRepresentable = RelAttributeValue
+    associatedtype RelAttributeValueType: AttributeValueRepresentable =
+        RelAttributeValue
 }
 
 extension RelAttributeModifier where Self: Attributes & Mutable {

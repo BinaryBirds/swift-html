@@ -1,13 +1,15 @@
 import SGML
 
-public enum EnctypeAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum EnctypeAttributeValue: String, Sendable, AttributeValueRepresentable
+{
     case urlencoded = "application/x-www-form-urlencoded"
     case multipart = "multipart/form-data"
     case plain = "text/plain"
 }
 
 public protocol EnctypeAttributeModifier {
-    associatedtype EnctypeAttributeValueType: AttributeValueRepresentable = EnctypeAttributeValue
+    associatedtype EnctypeAttributeValueType: AttributeValueRepresentable =
+        EnctypeAttributeValue
 }
 
 extension EnctypeAttributeModifier where Self: Attributes & Mutable {

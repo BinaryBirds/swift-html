@@ -1,7 +1,8 @@
 import SGML
 
 public protocol UsemapAttributeModifier {
-    associatedtype UsemapAttributeValueType: AttributeValueRepresentable = String
+    associatedtype UsemapAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension UsemapAttributeModifier where Self: Attributes & Mutable {

@@ -1,12 +1,14 @@
 import SGML
 
-public enum MethodAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum MethodAttributeValue: String, Sendable, AttributeValueRepresentable
+{
     case get
     case post
 }
 
 public protocol MethodAttributeModifier {
-    associatedtype MethodAttributeValueType: AttributeValueRepresentable = MethodAttributeValue
+    associatedtype MethodAttributeValueType: AttributeValueRepresentable =
+        MethodAttributeValue
 }
 
 extension MethodAttributeModifier where Self: Attributes & Mutable {

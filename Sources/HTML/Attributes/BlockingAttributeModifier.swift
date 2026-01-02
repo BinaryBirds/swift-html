@@ -1,11 +1,14 @@
 import SGML
 
-public enum BlockingAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum BlockingAttributeValue: String, Sendable,
+    AttributeValueRepresentable
+{
     case render
 }
 
 public protocol BlockingAttributeModifier {
-    associatedtype BlockingAttributeValueType: AttributeValueRepresentable = BlockingAttributeValue
+    associatedtype BlockingAttributeValueType: AttributeValueRepresentable =
+        BlockingAttributeValue
 }
 
 extension BlockingAttributeModifier where Self: Attributes & Mutable {

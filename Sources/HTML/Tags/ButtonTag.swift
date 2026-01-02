@@ -78,7 +78,7 @@ public struct Button:
     }
 
     // MARK: -
-    
+
     public enum Types: String, AttributeValueRepresentable {
         /// The button is a clickable button
         case button

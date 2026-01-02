@@ -1,7 +1,8 @@
 import SGML
 
 public protocol HreflangAttributeModifier {
-    associatedtype HreflangAttributeValueType: AttributeValueRepresentable = String
+    associatedtype HreflangAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension HreflangAttributeModifier where Self: Attributes & Mutable {

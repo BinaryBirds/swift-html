@@ -1,7 +1,8 @@
 import SGML
 
 public protocol DownloadAttributeModifier {
-    associatedtype DownloadAttributeValueType: AttributeValueRepresentable = String
+    associatedtype DownloadAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension DownloadAttributeModifier where Self: Attributes & Mutable {

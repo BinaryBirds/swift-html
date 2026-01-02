@@ -1,7 +1,8 @@
 import SGML
 
 public protocol FormActionAttributeModifier {
-    associatedtype FormActionAttributeValueType: AttributeValueRepresentable = String
+    associatedtype FormActionAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension FormActionAttributeModifier where Self: Attributes & Mutable {

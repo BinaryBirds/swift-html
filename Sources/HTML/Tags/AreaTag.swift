@@ -18,67 +18,12 @@ public struct Area:
     DownloadAttributeModifier,
     HrefAttributeModifier,
     PingAttributeModifier,
+    ShapeAttributeModifier,
+    CoordsAttributeModifier,
     ReferrerPolicyAttributeModifier,
     RelAttributeModifier,
     TargetAttributeModifier
 {
-    // MARK: - attributes
-
-    public struct Shape: Attribute {
-
-        public enum Value: String {
-            /// Specifies the entire region
-            case `default`
-            /// Defines a rectangular region
-            case rect
-            /// Defines a circular region
-            case circle
-            /// Defines a polygonal region
-            case poly
-        }
-
-        public var value: String?
-
-        init(
-            _ value: Value? = nil
-        ) {
-            self.value = value?.rawValue
-        }
-    }
-
-    // MARK: -
-
-    public struct Coords: Attribute {
-
-        public var value: String?
-
-        init(
-            _ value: String? = nil
-        ) {
-            self.value = value
-        }
-
-        init(
-            _ values: [Int]
-        ) {
-            self.value = values.joinedElementsAsString()
-        }
-
-        init(
-            _ values: [Float]
-        ) {
-            self.value = values.joinedElementsAsString()
-        }
-
-        init(
-            _ values: [Double]
-        ) {
-            self.value = values.joinedElementsAsString()
-        }
-    }
-
-    // MARK: - tag
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -93,33 +38,4 @@ public struct Area:
         self.attributes = .init()
     }
 
-    public func shape(
-        _ value: Shape.Value?
-    ) -> Self {
-        setAttribute(Shape(value))
-    }
-
-    public func coords(
-        _ value: String?
-    ) -> Self {
-        setAttribute(Coords(value))
-    }
-
-    public func coords(
-        _ values: Int...
-    ) -> Self {
-        setAttribute(Coords(values))
-    }
-
-    public func coords(
-        _ values: Float...
-    ) -> Self {
-        setAttribute(Coords(values))
-    }
-
-    public func double(
-        _ values: Double...
-    ) -> Self {
-        setAttribute(Coords(values))
-    }
 }
