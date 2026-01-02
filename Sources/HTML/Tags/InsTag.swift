@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<ins>` tag defines a text that has been inserted into a document.
 ///
 /// **Tip:** Also look at the `<del>` tag to markup deleted text.

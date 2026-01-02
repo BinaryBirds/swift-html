@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<dialog>` tag defines a dialog box or subwindow.
 ///
 /// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.

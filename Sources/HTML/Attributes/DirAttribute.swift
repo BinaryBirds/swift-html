@@ -1,3 +1,5 @@
+import SGML
+
 public struct DirAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

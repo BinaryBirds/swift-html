@@ -1,3 +1,5 @@
+import SGML
+
 /// BDI stands for Bi-Directional Isolation.
 ///
 /// The `<bdi>` tag isolates a part of text that might be formatted in a different direction from other text outside it.

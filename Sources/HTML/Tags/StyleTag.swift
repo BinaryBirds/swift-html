@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<style>` tag is used to define style information (CSS) for a document.
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.

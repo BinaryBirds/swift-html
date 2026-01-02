@@ -1,3 +1,5 @@
+import SGML
+
 public struct FormActionAttribute: HTMLAttribute {
     public var value: String?
 

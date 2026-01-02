@@ -1,4 +1,5 @@
 import DOM
+import SGML
 
 /// The `<script>` tag is used to embed a client-side script (JavaScript).
 ///

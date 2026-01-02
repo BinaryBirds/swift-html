@@ -1,3 +1,5 @@
+import SGML
+
 public struct AltAttribute: HTMLAttribute {
     public var value: String?
 

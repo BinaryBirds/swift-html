@@ -1,3 +1,5 @@
+import SGML
+
 public struct LastMod: StandardTag, UrlContent {
 
     public var attributes: AttributeStore

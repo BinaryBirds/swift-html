@@ -1,3 +1,5 @@
+import SGML
+
 public struct Xmlns: Attribute {
 
     public var value: String?

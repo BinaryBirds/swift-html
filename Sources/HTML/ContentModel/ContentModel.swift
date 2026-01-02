@@ -1,3 +1,5 @@
+import SGML
+
 public struct ContentModel: Sendable, OptionSet {
 
     public let rawValue: UInt8

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<audio>` tag is used to embed sound content in a document, such as music or other audio streams.
 ///
 /// The `<audio>` tag contains one or more `<source>` tags with different audio sources. The browser will choose the first source it supports.

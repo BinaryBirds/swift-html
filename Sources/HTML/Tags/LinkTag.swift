@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<link>` tag defines the relationship between the current document and an external resource.
 ///
 /// The `<link>` tag is most often used to link to external style sheets.

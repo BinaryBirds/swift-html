@@ -1,3 +1,5 @@
+import SGML
+
 public struct LoopAttribute: HTMLAttribute {
     public var value: String?
 

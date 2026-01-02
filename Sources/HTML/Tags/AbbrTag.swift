@@ -1,3 +1,5 @@
+import SGML
+
 ///
 /// The `<abbr>` tag defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
 ///

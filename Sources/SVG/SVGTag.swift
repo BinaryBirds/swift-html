@@ -1,3 +1,5 @@
+import SGML
+
 public protocol SVGTag: StandardTag {
 
 }

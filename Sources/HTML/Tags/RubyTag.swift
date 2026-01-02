@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<ruby>` tag specifies a ruby annotation.
 ///
 /// A ruby annotation is a small extra text, attached to the main text to indicate the pronunciation or meaning of the corresponding characters. This kind of annotation is often used in Japanese publications.

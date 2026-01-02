@@ -1,3 +1,5 @@
+import SGML
+
 public struct ClosedbyAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

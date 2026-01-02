@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<form>` tag is used to create an HTML form for user input.
 ///
 /// The `<form>` element can contain one or more of the following form elements:

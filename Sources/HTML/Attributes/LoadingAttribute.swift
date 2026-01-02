@@ -1,3 +1,5 @@
+import SGML
+
 public struct LoadingAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

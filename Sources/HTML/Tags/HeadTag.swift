@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<head>` element is a container for metadata (data about data) and is placed between the `<html>` tag and the `<body>` tag.
 ///
 /// Metadata is data about the HTML document. Metadata is not displayed.

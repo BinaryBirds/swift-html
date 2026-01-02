@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<dfn>` tag stands for the "definition element", and it specifies a term that is going to be defined within the content.
 ///
 /// The nearest parent of the `<dfn>` tag must also contain the definition/explanation for the term.

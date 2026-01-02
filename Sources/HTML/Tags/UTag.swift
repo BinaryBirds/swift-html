@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<u>` tag represents some text that is unarticulated and styled differently from normal text, such as misspelled words or proper names in Chinese text.
 ///
 /// The content inside is typically displayed with an underline.

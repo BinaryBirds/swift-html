@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<label>` tag defines a label for several elements.
 ///
 /// - `<input type="checkbox">`

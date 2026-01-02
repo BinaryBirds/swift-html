@@ -1,3 +1,5 @@
+import SGML
+
 public struct ReferrerPolicyAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<span>` tag is an inline container used to mark up a part of a text, or a part of a document.
 ///
 /// The `<span>` tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.

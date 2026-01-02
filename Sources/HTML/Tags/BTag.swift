@@ -1,3 +1,5 @@
+import SGML
+
 /// Make some text bold (without marking it as important).
 public struct B:
     HTMLStandardTag,

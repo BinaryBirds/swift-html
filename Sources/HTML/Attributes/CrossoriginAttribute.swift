@@ -1,3 +1,5 @@
+import SGML
+
 public struct CrossoriginAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

@@ -1,3 +1,5 @@
+import SGML
+
 public struct ChangeFreq: StandardTag, UrlContent {
 
     public enum Frequency: String {

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<input>` tag specifies an input field where the user can enter data.
 ///
 /// The `<input>` element is the most important form element.

@@ -1,4 +1,5 @@
 import RSS
+import SGML
 import Testing
 
 @Suite

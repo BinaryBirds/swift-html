@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<select>` element is used to create a drop-down list.
 ///
 /// The `<select>` element is most often used in a form, to collect user input.

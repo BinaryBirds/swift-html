@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<textarea>` tag defines a multi-line text input control.
 ///
 /// The `<textarea>` element is often used in a form, to collect user inputs like comments or reviews.

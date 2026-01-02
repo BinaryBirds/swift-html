@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<sub>` tag defines subscript text.
 ///
 /// Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font.

@@ -1,3 +1,5 @@
+import SGML
+
 public struct BlockingAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

@@ -1,3 +1,5 @@
+import SGML
+
 public struct Language: StandardTag, ChannelContent {
 
     public var attributes: AttributeStore

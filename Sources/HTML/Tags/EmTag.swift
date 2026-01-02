@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<em>` tag is used to define emphasized text.
 ///
 /// A screen reader will pronounce the words in `<em>` with an emphasis, using verbal stress.

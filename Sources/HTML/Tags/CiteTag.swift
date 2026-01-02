@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<cite>` tag defines the title of a creative work.
 ///
 /// **Note:** A person's name is not the title of a work.

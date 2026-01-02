@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<tfoot>` tag is used to group footer content in an HTML table.
 ///
 /// The `<tfoot>` element is used in conjunction with the `<thead>` and `<tbody>` elements to specify each part of a table (footer, header, body).

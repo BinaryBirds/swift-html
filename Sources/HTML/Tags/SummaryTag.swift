@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<summary>` tag defines a visible heading for the `<details>` element.
 ///
 /// **Note:** The `<summary>` element should be the first child element of the `<details>` element.

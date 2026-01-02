@@ -1,3 +1,5 @@
+import SGML
+
 public struct PlaceholderAttribute: HTMLAttribute {
 
     public var value: String?

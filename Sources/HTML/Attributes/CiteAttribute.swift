@@ -1,3 +1,5 @@
+import SGML
+
 public struct CiteAttribute: HTMLAttribute {
 
     public var value: String?

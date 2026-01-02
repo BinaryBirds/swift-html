@@ -1,3 +1,4 @@
+import SGML
 import Testing
 
 @testable import SVG

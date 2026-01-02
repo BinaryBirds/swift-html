@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<samp>` tag is used to define sample output from a computer program.
 ///
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.

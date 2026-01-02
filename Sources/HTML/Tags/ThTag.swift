@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<th>` tag defines a header cell in an HTML table.
 ///
 /// An HTML table has two kinds of cells:

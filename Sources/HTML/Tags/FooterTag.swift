@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<footer>` tag defines a footer for a document or section.
 ///
 /// A `<footer>` element typically contains:

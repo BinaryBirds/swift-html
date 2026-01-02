@@ -1,3 +1,5 @@
+import SGML
+
 public struct AutofocusAttribute: HTMLAttribute {
     public var value: String?
 

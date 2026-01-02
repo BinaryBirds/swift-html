@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<tbody>` tag is used to group the body content in an HTML table.
 ///
 /// The `<tbody>` element is used in conjunction with the `<thead>` and `<tfoot>` elements to specify each part of a table (body, header, footer).

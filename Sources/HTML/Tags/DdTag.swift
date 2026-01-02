@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<dd>` tag is used to describe a term/name in a description list.
 ///
 /// The `<dd>` tag is used in conjunction with `<dl>` (defines a description list) and `<dt>` (defines terms/names).

@@ -1,3 +1,5 @@
+import SGML
+
 /// BDO stands for Bi-Directional Override.
 ///
 /// The `<bdo>` tag is used to override the current text direction.

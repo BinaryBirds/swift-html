@@ -1,3 +1,5 @@
+import SGML
+
 public struct MutedAttribute: HTMLAttribute {
     public var value: String?
 

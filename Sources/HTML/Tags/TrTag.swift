@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<tr>` tag defines a row in an HTML table.
 ///
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.

@@ -1,3 +1,5 @@
+import SGML
+
 public struct RowspanAttribute: HTMLAttribute {
 
     public var value: String?

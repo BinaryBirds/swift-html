@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<button>` tag defines a clickable button.
 ///
 /// Inside a `<button>` element you can put text (and tags like `<i>`, `<b>`, `<strong>`, `<br>`, `<img>`, etc.). That is not possible with a button created with the `<input>` element!

@@ -1,3 +1,5 @@
+import SGML
+
 public struct Priority: StandardTag, UrlContent {
 
     public var attributes: AttributeStore

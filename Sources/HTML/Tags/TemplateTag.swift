@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<template>` tag is used as a container to hold some HTML content hidden from the user when the page loads.
 ///
 /// The content inside `<template>` can be rendered later with a JavaScript.

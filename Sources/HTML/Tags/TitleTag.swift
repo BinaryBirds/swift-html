@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<title>` tag defines the title of the document.
 ///
 /// The title must be text-only, and it is shown in the browser's title bar or in the page's tab.

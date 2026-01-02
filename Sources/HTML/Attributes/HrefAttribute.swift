@@ -1,3 +1,5 @@
+import SGML
+
 public struct HrefAttribute: HTMLAttribute {
 
     public var value: String?

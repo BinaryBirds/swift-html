@@ -1,3 +1,5 @@
+import SGML
+
 public struct EnctypeAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

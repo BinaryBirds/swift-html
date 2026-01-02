@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<object>` tag defines a container for an external resource.
 ///
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.

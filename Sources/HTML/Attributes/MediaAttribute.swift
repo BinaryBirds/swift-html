@@ -1,3 +1,5 @@
+import SGML
+
 public struct MediaAttribute: HTMLAttribute {
 
     public var value: String?

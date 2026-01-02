@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<li>` tag defines a list item.
 ///
 /// The `<li>` tag is used inside ordered lists(`<ol>`), unordered lists (`<ul>`), and in menu lists (`<menu>`).

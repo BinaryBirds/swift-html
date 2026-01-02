@@ -1,3 +1,5 @@
+import SGML
+
 public struct RelAttribute: HTMLAttribute {
     public static let name = "rel"
 

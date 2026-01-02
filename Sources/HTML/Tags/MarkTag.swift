@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<mark>` tag defines text that should be marked or highlighted.
 public struct Mark:
     HTMLStandardTag,

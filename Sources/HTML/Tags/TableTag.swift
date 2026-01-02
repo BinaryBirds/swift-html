@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<table>` tag defines an HTML table.
 ///
 /// An HTML table consists of one `<table>` element and one or more `<tr>`, `<th>`, and `<td>` elements.

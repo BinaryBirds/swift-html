@@ -1,3 +1,5 @@
+import SGML
+
 public struct WidthAttribute: HTMLAttribute {
 
     public var value: String?

@@ -1,3 +1,5 @@
+import SGML
+
 public struct DownloadAttribute: HTMLAttribute {
 
     public var value: String?

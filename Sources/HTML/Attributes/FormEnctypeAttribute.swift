@@ -1,3 +1,5 @@
+import SGML
+
 public struct FormEnctypeAttribute: HTMLAttribute {
 
     public var value: String?

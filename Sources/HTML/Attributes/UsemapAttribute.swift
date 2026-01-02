@@ -1,3 +1,5 @@
+import SGML
+
 public struct UsemapAttribute: HTMLAttribute {
 
     public var value: String?

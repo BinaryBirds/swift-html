@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<section>` tag defines a section in a document.
 public struct Section:
     HTMLStandardTag,

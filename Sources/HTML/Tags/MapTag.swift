@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<map>` tag is used to define an image map.
 ///
 /// The required name attribute of the `<map>` element is associated with the `<img>`'s usemap attribute and creates a relationship between the image and the map.

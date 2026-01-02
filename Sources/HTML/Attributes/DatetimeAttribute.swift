@@ -1,3 +1,5 @@
+import SGML
+
 public struct DatetimeAttribute: HTMLAttribute {
 
     public var value: String?

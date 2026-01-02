@@ -1,3 +1,4 @@
+import SGML
 import Sitemap
 import Testing
 

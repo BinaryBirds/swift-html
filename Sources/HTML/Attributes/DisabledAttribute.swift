@@ -1,3 +1,5 @@
+import SGML
+
 public struct DisabledAttribute: HTMLAttribute {
     public var value: String?
 

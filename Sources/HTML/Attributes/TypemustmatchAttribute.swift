@@ -1,3 +1,5 @@
+import SGML
+
 public struct TypemustmatchAttribute: HTMLAttribute {
     public var value: String?
 

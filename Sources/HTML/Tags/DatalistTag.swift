@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<datalist>` tag specifies a list of pre-defined options for an `<input>` element.
 ///
 /// The `<datalist>` tag is used to provide an "autocomplete" feature for `<input>` elements. Users will see a drop-down list of pre-defined options as they input data.

@@ -1,3 +1,5 @@
+import SGML
+
 // https://validator.w3.org/feed/docs/rss2.html#ltttlgtSubelementOfLtchannelgt
 // NOTE: xmlns:atom="http://www.w3.org/2005/Atom" support?
 public struct Rss: StandardTag {

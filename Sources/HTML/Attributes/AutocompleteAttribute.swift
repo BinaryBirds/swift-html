@@ -1,3 +1,5 @@
+import SGML
+
 public struct AutocompleteAttribute: HTMLAttribute {
     public var value: String?
 

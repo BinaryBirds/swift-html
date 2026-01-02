@@ -1,3 +1,5 @@
+import SGML
+
 public struct FetchpriorityAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

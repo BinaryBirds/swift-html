@@ -1,3 +1,5 @@
+import SGML
+
 public struct HeightAttribute: HTMLAttribute {
 
     public var value: String?

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<track>` tag specifies text tracks for `<audio>` or `<video>` elements.
 ///
 /// This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.

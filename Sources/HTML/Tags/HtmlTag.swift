@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<html>` tag represents the root of an HTML document.
 ///
 /// The `<html>` tag is the container for all other HTML elements (except for the `<!DOCTYPE>` tag).

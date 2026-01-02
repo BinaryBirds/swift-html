@@ -1,3 +1,5 @@
+import SGML
+
 /// The <hgroup> tag is used to surround a heading and one or more <p> elements.
 ///
 /// The heading inside the <hgroup> element can be any of the <h1> to <h6> headings.

@@ -1,3 +1,5 @@
+import SGML
+
 public struct PreloadAttribute: HTMLAttribute {
 
     public enum Value: String, Sendable {

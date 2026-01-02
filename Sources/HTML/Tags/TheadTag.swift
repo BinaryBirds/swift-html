@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<thead>` tag is used to group header content in an HTML table.
 ///
 /// The `<thead>` element is used in conjunction with the `<tbody>` and `<tfoot>` elements to specify each part of a table (header, body, footer).

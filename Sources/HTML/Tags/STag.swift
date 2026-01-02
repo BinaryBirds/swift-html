@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<s>` tag specifies text that is no longer correct, accurate or relevant.
 ///
 /// The `<s>` tag should not be used to define deleted text in a document, use the `<del>` tag for that.

@@ -1,3 +1,5 @@
+import SGML
+
 public struct FormTargetAttribute: HTMLAttribute {
 
     public enum Value {

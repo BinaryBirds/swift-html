@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<br>` tag inserts a single line break.
 ///
 /// The `<br>` tag is useful for writing addresses or poems.

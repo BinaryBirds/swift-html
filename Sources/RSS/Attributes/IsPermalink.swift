@@ -1,3 +1,5 @@
+import SGML
+
 public struct IsPermalink: Attribute {
 
     public static let name = "isPermalink"

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<meta>` tag defines metadata about an HTML document.
 ///
 /// Metadata is data (information) about data.

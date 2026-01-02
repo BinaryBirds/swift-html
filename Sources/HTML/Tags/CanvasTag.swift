@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<canvas>` tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
 ///
 /// The `<canvas>` tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.

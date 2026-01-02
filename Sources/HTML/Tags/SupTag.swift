@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<sup>` tag defines superscript text.
 ///
 /// Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font.

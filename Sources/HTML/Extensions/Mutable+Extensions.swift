@@ -1,3 +1,5 @@
+import SGML
+
 extension Mutable {
 
     public func check(

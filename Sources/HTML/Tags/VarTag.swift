@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<var>` tag is used to defines a variable in programming or in a mathematical expression.
 ///
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.

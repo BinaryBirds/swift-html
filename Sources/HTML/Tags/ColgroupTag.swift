@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<colgroup>` tag specifies a group of one or more columns in a table for formatting.
 ///
 /// The `<colgroup>` tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.

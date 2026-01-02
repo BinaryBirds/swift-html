@@ -1,3 +1,5 @@
+import SGML
+
 public struct MultipleAttribute: HTMLAttribute {
     public var value: String?
 

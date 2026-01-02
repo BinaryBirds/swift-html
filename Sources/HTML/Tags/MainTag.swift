@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<main>` tag specifies the main content of a document.
 ///
 /// The content inside the `<main>` element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms.

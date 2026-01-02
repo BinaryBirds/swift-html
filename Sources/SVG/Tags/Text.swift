@@ -1,3 +1,5 @@
+import SGML
+
 /// Text tag.
 ///
 /// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/Text

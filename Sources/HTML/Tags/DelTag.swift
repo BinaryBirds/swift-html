@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<del>` tag defines text that has been deleted from a document.
 ///
 /// Browsers will usually strike a line through deleted text.

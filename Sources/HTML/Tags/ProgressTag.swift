@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<progress>` tag represents the completion progress of a task.
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!

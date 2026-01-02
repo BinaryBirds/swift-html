@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<caption>` tag defines a table caption.
 ///
 /// The `<caption>` tag must be inserted immediately after the `<table>` tag.

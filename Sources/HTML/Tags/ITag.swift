@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<i>` tag defines a part of text in an alternate voice or mood.
 ///
 /// The `<i>` tag is often used to indicate a technical term, a phrase from another language, a thought, a ship name, etc.

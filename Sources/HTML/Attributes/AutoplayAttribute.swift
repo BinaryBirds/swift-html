@@ -1,3 +1,5 @@
+import SGML
+
 public struct AutoplayAttribute: HTMLAttribute {
     public var value: String?
 

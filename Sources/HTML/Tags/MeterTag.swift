@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<meter>` tag defines a scalar measurement within a known range, or a fractional value.
 ///
 /// Examples: Disk usage, the relevance of a query result, etc.

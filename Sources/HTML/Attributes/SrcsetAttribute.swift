@@ -1,3 +1,5 @@
+import SGML
+
 public struct SrcsetAttribute: HTMLAttribute {
 
     public var value: String?

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<option>` tag defines an option in a select list.
 ///
 /// `<option>` elements go inside a `<select>`, `<optgroup>`, or `<datalist>` element.

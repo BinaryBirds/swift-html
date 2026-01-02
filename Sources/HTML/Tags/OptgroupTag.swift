@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<optgroup>` tag is used to group related options in a `<select>` element (drop-down list).
 ///
 /// If you have a long list of options, groups of related options are easier to handle for a user.

@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<picture>` tag gives web developers more flexibility in specifying image resources.
 ///
 /// The most common use of the `<picture>` element will be for art direction in responsive designs.

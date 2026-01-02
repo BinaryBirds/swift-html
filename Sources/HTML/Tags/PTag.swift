@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<p>` tag defines a paragraph.
 ///
 /// Browsers automatically add a single blank line before and after each `<p>` element.

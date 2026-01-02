@@ -1,3 +1,5 @@
+import SGML
+
 // https://html.spec.whatwg.org/multipage/dom.html#global-attributes
 // https://www.w3schools.com/tags/ref_standardattributes.asp
 public protocol GlobalAttributeModifier:

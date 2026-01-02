@@ -1,3 +1,5 @@
+import SGML
+
 /// The `<td>` tag defines a standard data cell in an HTML table.
 ///
 /// An HTML table has two kinds of cells:

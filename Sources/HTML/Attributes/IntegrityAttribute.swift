@@ -1,3 +1,5 @@
+import SGML
+
 public struct IntegrityAttribute: HTMLAttribute {
 
     public var value: String?

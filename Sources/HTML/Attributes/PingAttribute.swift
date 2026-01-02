@@ -1,3 +1,5 @@
+import SGML
+
 public struct PingAttribute: HTMLAttribute {
     public var value: String?
 

@@ -1,3 +1,5 @@
+import SGML
+
 ///
 /// The <area> tag defines an area inside an image map (an image map is an image with clickable areas).
 ///
