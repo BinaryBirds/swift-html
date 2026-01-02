@@ -1,6 +1,6 @@
 import SGML
 
-public enum MethodAttributeValue: String, Sendable, AttributeValueRepresentable
+public enum MethodAttributeValue: String, AttributeValueRepresentable
 {
     case get
     case post

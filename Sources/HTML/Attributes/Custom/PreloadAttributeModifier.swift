@@ -1,6 +1,6 @@
 import SGML
 
-public enum PreloadAttributeValue: String, Sendable, AttributeValueRepresentable
+public enum PreloadAttributeValue: String, AttributeValueRepresentable
 {
     case auto
     case metadata

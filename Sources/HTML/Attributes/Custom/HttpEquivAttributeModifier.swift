@@ -1,6 +1,6 @@
 import SGML
 
-public enum HttpEquivAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum HttpEquivAttributeValue: String, AttributeValueRepresentable {
     /// Specifies a content policy for the document.
     case contentSecurityPolicy = "content-security-policy"
     /// Specifies the character encoding for the document.

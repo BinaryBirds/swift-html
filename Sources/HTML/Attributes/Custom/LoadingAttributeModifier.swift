@@ -1,6 +1,6 @@
 import SGML
 
-public enum LoadingAttributeValue: String, Sendable, AttributeValueRepresentable
+public enum LoadingAttributeValue: String, AttributeValueRepresentable
 {
     case eager
     case lazy

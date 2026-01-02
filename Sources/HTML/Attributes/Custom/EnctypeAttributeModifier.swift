@@ -1,6 +1,6 @@
 import SGML
 
-public enum EnctypeAttributeValue: String, Sendable, AttributeValueRepresentable
+public enum EnctypeAttributeValue: String, AttributeValueRepresentable
 {
     case urlencoded = "application/x-www-form-urlencoded"
     case multipart = "multipart/form-data"

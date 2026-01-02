@@ -1,6 +1,6 @@
 import SGML
 
-public enum NameAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum NameAttributeValue: String, AttributeValueRepresentable {
     /// Specifies the name of the Web application that the page represents
     case applicationName = "application-name"
     /// Specifies the name of the author of the document.

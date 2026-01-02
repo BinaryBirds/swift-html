@@ -1,6 +1,6 @@
 import SGML
 
-public enum RelAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum RelAttributeValue: String, AttributeValueRepresentable {
     /// Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)
     case alternate
     /// Provides a link to the author of the document

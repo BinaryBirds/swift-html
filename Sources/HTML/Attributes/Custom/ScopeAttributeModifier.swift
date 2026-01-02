@@ -1,6 +1,6 @@
 import SGML
 
-public enum ScopeAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum ScopeAttributeValue: String, AttributeValueRepresentable {
     /// Specifies that the cell is a header for a column.
     case col
     /// Specifies that the cell is a header for a row.

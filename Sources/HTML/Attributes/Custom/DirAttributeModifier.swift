@@ -1,6 +1,6 @@
 import SGML
 
-public enum DirAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum DirAttributeValue: String, AttributeValueRepresentable {
     /// The contents of the element are explicitly directionally isolated left-to-right text.
     case ltr
     /// The contents of the element are explicitly directionally isolated right-to-left text.

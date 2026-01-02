@@ -50,7 +50,7 @@ public struct Link:
 
     // MARK: -
 
-    public enum RelAttributeValue: String, Sendable, AttributeValueRepresentable
+    public enum RelAttributeValue: String, AttributeValueRepresentable
     {
         /// Provides a link to an alternate version of the document (i.e. print page, translated or mirror).
         ///

@@ -1,6 +1,6 @@
 import SGML
 
-public enum ShapeAttributeValue: String, Sendable, AttributeValueRepresentable {
+public enum ShapeAttributeValue: String, AttributeValueRepresentable {
     /// Specifies the entire region
     case `default`
     /// Defines a rectangular region

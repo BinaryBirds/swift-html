@@ -1,6 +1,6 @@
 import SGML
 
-public enum FormTargetAttributeValue: Sendable, AttributeValueRepresentable {
+public enum FormTargetAttributeValue: AttributeValueRepresentable {
     /// Opens the linked document in a new window or tab
     case blank
     /// Opens the linked document in the same frame as it was clicked (this is default)

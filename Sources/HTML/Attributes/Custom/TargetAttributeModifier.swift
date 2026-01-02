@@ -1,6 +1,6 @@
 import SGML
 
-public enum TargetAttributeValue: String, Sendable, AttributeValueRepresentable
+public enum TargetAttributeValue: String, AttributeValueRepresentable
 {
     /// Opens the link in a new window or tab.
     case blank = "_blank"

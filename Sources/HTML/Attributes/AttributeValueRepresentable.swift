@@ -1,9 +1,10 @@
-public protocol AttributeValueRepresentable {
+public protocol AttributeValueRepresentable: Sendable {
     var attributeValue: String { get }
 }
 
 extension AttributeValueRepresentable
-where Self: RawRepresentable, RawValue == String {
+    where
+Self: RawRepresentable, RawValue == String {
     public var attributeValue: String { rawValue }
 }
 
