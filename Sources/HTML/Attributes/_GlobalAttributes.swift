@@ -20,7 +20,7 @@ extension GlobalAttributeModifier where Self: Attributes & Mutable {
     public func spellcheck(
         _ value: Bool
     ) -> Self {
-        setAttribute(name: "spellcheck", value: String(value))
+        setAttribute(key: .spellcheck, value: String(value))
     }
 }
 
