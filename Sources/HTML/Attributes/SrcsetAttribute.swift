@@ -1,25 +1,14 @@
 import SGML
 
-public struct SrcsetAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol SrcsetAttributeModifier {
-
+    associatedtype SrcsetAttributeValue: AttributeValueRepresentable = String
 }
 
 extension SrcsetAttributeModifier where Self: Attributes & Mutable {
 
     public func srcset(
-        _ value: String?
+        _ value: SrcsetAttributeValue?
     ) -> Self {
-        setAttribute(SrcsetAttribute(value))
+        setAttribute(name: "srcset", value: value?.attributeValue)
     }
 }

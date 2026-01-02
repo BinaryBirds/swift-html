@@ -1,25 +1,14 @@
 import SGML
 
-public struct SpanAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: Int? = nil
-    ) {
-        self.value = value.map { String($0) }
-    }
-}
-
 public protocol SpanAttributeModifier {
-
+    associatedtype SpanAttributeValue: AttributeValueRepresentable = Int
 }
 
 extension SpanAttributeModifier where Self: Attributes & Mutable {
 
     public func span(
-        _ value: Int?
+        _ value: SpanAttributeValue?
     ) -> Self {
-        setAttribute(SpanAttribute(value))
+        setAttribute(name: "span", value: value?.attributeValue)
     }
 }

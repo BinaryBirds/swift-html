@@ -1,30 +1,14 @@
 import SGML
 
-public struct UsemapAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        if let value, !value.isEmpty {
-            self.value = "#" + value
-        }
-        else {
-            self.value = nil
-        }
-    }
-}
-
 public protocol UsemapAttributeModifier {
-
+    associatedtype UsemapAttributeValue: AttributeValueRepresentable = String
 }
 
 extension UsemapAttributeModifier where Self: Attributes & Mutable {
 
     public func usemap(
-        _ value: String?
+        _ value: UsemapAttributeValue?
     ) -> Self {
-        setAttribute(UsemapAttribute(value))
+        setAttribute(name: "usemap", value: value?.attributeValue)
     }
 }

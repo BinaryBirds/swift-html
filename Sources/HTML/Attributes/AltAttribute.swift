@@ -1,24 +1,14 @@
 import SGML
 
-public struct AltAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol AltAttributeModifier {
-
+    associatedtype AltAttributeValue: AttributeValueRepresentable = String
 }
 
 extension AltAttributeModifier where Self: Attributes & Mutable {
 
     public func alt(
-        _ value: String?
+        _ value: AltAttributeValue?
     ) -> Self {
-        setAttribute(AltAttribute(value))
+        setAttribute(name: "alt", value: value?.attributeValue)
     }
 }

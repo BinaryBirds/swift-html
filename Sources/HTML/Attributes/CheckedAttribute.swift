@@ -1,13 +1,5 @@
 import SGML
 
-public struct CheckedAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init() {
-        self.value = nil
-    }
-}
-
 public protocol CheckedAttributeModifier {
 
 }
@@ -15,6 +7,6 @@ public protocol CheckedAttributeModifier {
 extension CheckedAttributeModifier where Self: Attributes & Mutable {
 
     public func checked() -> Self {
-        setAttribute(CheckedAttribute())
+        setAttribute(name: "checked", value: nil)
     }
 }

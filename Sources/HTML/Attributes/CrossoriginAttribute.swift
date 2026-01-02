@@ -1,30 +1,19 @@
 import SGML
 
-public struct CrossoriginAttribute: HTMLAttribute {
-
-    public enum Value: String, Sendable {
-        case anonymous
-        case useCredentials = "use-credentials"
-    }
-
-    public var value: String?
-
-    public init(
-        _ value: Value?
-    ) {
-        self.value = value?.rawValue
-    }
+public enum CrossoriginValue: String, Sendable, AttributeValueRepresentable {
+    case anonymous
+    case useCredentials = "use-credentials"
 }
 
 public protocol CrossoriginAttributeModifier {
-
+    associatedtype CrossoriginAttributeValue: AttributeValueRepresentable = CrossoriginValue
 }
 
 extension CrossoriginAttributeModifier where Self: Attributes & Mutable {
 
     public func crossorigin(
-        _ value: CrossoriginAttribute.Value?
+        _ value: CrossoriginAttributeValue?
     ) -> Self {
-        setAttribute(CrossoriginAttribute(value))
+        setAttribute(name: "crossorigin", value: value?.attributeValue)
     }
 }

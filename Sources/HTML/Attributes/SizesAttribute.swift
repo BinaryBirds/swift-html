@@ -1,25 +1,14 @@
 import SGML
 
-public struct SizesAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol SizesAttributeModifier {
-
+    associatedtype SizesAttributeValue: AttributeValueRepresentable = String
 }
 
 extension SizesAttributeModifier where Self: Attributes & Mutable {
 
     public func sizes(
-        _ value: String?
+        _ value: SizesAttributeValue?
     ) -> Self {
-        setAttribute(SizesAttribute(value))
+        setAttribute(name: "sizes", value: value?.attributeValue)
     }
 }

@@ -66,8 +66,8 @@ public struct Img:
 
         self =
             self
-            .setAttribute(SrcAttribute(src))
-            .setAttribute(AltAttribute(alt))
+            .setAttribute(name: "src", value: src)
+            .setAttribute(name: "alt", value: alt)
     }
 
 }

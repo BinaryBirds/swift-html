@@ -1,26 +1,15 @@
 import SGML
 
-public struct DatetimeAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol DatetimeAttributeModifier {
-
+    associatedtype DatetimeAttributeValue: AttributeValueRepresentable = String
 }
 
 extension DatetimeAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets an Datetime attribute.
     public func datetime(
-        _ value: String?
+        _ value: DatetimeAttributeValue?
     ) -> Self {
-        setAttribute(DatetimeAttribute(value))
+        setAttribute(name: "datetime", value: value?.attributeValue)
     }
 }

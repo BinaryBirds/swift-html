@@ -1,30 +1,19 @@
 import SGML
 
-public struct MethodAttribute: HTMLAttribute {
-
-    public enum Value: String, Sendable {
-        case get
-        case post
-    }
-
-    public var value: String?
-
-    public init(
-        _ value: Value?
-    ) {
-        self.value = value?.rawValue
-    }
+public enum MethodValue: String, Sendable, AttributeValueRepresentable {
+    case get
+    case post
 }
 
 public protocol MethodAttributeModifier {
-
+    associatedtype MethodAttributeValue: AttributeValueRepresentable = MethodValue
 }
 
 extension MethodAttributeModifier where Self: Attributes & Mutable {
 
     public func method(
-        _ value: MethodAttribute.Value?
+        _ value: MethodAttributeValue?
     ) -> Self {
-        setAttribute(MethodAttribute(value))
+        setAttribute(name: "method", value: value?.attributeValue)
     }
 }

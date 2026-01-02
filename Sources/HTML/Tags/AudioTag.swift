@@ -39,7 +39,7 @@ public struct Audio:
         var contentModel: ContentModel = [
             .flow, .phrasing, .embedded,
         ]
-        if hasAttribute(ControlsAttribute.self) {
+        if hasAttribute(name: "controls") {
             contentModel.insert([.interactive, .palpable])
         }
         return contentModel

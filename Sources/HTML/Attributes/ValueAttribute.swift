@@ -1,25 +1,14 @@
 import SGML
 
-public struct ValueAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol ValueAttributeModifier {
-
+    associatedtype ValueAttributeValue: AttributeValueRepresentable = String
 }
 
 extension ValueAttributeModifier where Self: Attributes & Mutable {
 
     public func value(
-        _ value: String?
+        _ value: ValueAttributeValue?
     ) -> Self {
-        setAttribute(ValueAttribute(value))
+        setAttribute(name: "value", value: value?.attributeValue)
     }
 }

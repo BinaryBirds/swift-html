@@ -1,29 +1,18 @@
 import SGML
 
-public struct BlockingAttribute: HTMLAttribute {
-
-    public enum Value: String, Sendable {
-        case render
-    }
-
-    public var value: String?
-
-    public init(
-        _ value: Value?
-    ) {
-        self.value = value?.rawValue
-    }
+public enum BlockingValue: String, Sendable, AttributeValueRepresentable {
+    case render
 }
 
 public protocol BlockingAttributeModifier {
-
+    associatedtype BlockingAttributeValue: AttributeValueRepresentable = BlockingValue
 }
 
 extension BlockingAttributeModifier where Self: Attributes & Mutable {
 
     public func blocking(
-        _ value: BlockingAttribute.Value? = .render
+        _ value: BlockingAttributeValue?
     ) -> Self {
-        setAttribute(BlockingAttribute(value))
+        setAttribute(name: "blocking", value: value?.attributeValue)
     }
 }

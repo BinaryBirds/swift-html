@@ -1,26 +1,15 @@
 import SGML
 
-public struct StyleAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol StyleAttributeModifier {
-
+    associatedtype StyleAttributeValue: AttributeValueRepresentable = String
 }
 
 extension StyleAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets an style attribute.
     public func style(
-        _ value: String?
+        _ value: StyleAttributeValue?
     ) -> Self {
-        setAttribute(StyleAttribute(value))
+        setAttribute(name: "style", value: value?.attributeValue)
     }
 }

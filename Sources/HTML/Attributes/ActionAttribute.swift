@@ -1,24 +1,14 @@
 import SGML
 
-public struct ActionAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol ActionAttributeModifier {
-
+    associatedtype ActionAttributeValue: AttributeValueRepresentable = String
 }
 
 extension ActionAttributeModifier where Self: Attributes & Mutable {
 
     public func action(
-        _ value: String?
+        _ value: ActionAttributeValue?
     ) -> Self {
-        setAttribute(ActionAttribute(value))
+        setAttribute(name: "action", value: value?.attributeValue)
     }
 }

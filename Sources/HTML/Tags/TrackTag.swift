@@ -31,7 +31,7 @@ public struct Track:
         src: String
     ) {
         self.attributes = .init()
-        self = setAttribute(SrcAttribute(src))
+        self = setAttribute(name: "src", value: src)
     }
 
 }

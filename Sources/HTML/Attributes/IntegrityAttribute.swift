@@ -1,25 +1,14 @@
 import SGML
 
-public struct IntegrityAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol IntegrityAttributeModifier {
-
+    associatedtype IntegrityAttributeValue: AttributeValueRepresentable = String
 }
 
 extension IntegrityAttributeModifier where Self: Attributes & Mutable {
 
     public func integrity(
-        _ value: String?
+        _ value: IntegrityAttributeValue?
     ) -> Self {
-        setAttribute(IntegrityAttribute(value))
+        setAttribute(name: "integrity", value: value?.attributeValue)
     }
 }

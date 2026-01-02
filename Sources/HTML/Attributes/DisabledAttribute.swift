@@ -1,13 +1,5 @@
 import SGML
 
-public struct DisabledAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init() {
-        self.value = nil
-    }
-}
-
 public protocol DisabledAttributeModifier {
 
 }
@@ -15,6 +7,6 @@ public protocol DisabledAttributeModifier {
 extension DisabledAttributeModifier where Self: Attributes & Mutable {
 
     public func disabled() -> Self {
-        setAttribute(DisabledAttribute())
+        setAttribute(name: "disabled", value: nil)
     }
 }

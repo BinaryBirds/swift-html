@@ -1,26 +1,15 @@
 import SGML
 
-public struct HrefAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol HrefAttributeModifier {
-
+    associatedtype HrefAttributeValue: AttributeValueRepresentable = String
 }
 
 extension HrefAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets a href attribute.
     public func href(
-        _ value: String?
+        _ value: HrefAttributeValue?
     ) -> Self {
-        setAttribute(HrefAttribute(value))
+        setAttribute(name: "href", value: value?.attributeValue)
     }
 }

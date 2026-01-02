@@ -1,26 +1,15 @@
 import SGML
 
-public struct MediaAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String?
-    ) {
-        self.value = value
-    }
-}
-
 public protocol MediaAttributeModifier {
-
+    associatedtype MediaAttributeValue: AttributeValueRepresentable = String
 }
 
 extension MediaAttributeModifier where Self: Attributes & Mutable {
 
     /// Specifies on what device the linked document will be displayed.
     public func media(
-        _ value: String
+        _ value: MediaAttributeValue?
     ) -> Self {
-        setAttribute(MediaAttribute(value))
+        setAttribute(name: "media", value: value?.attributeValue)
     }
 }

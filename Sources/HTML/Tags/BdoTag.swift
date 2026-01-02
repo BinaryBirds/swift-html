@@ -27,17 +27,17 @@ public struct Bdo:
     init(
         attributes: AttributeStore = .init(),
         children: [Element],
-        dir value: DirAttribute.Value
+        dir value: DirValue
     ) {
         self.attributes = attributes
         self.children = children
 
-        self = self.setAttribute(DirAttribute(value))
+        self = self.setAttribute(name: "dir", value: value.attributeValue)
     }
 
     public init(
         _ contents: String,
-        dir: DirAttribute.Value
+        dir: DirValue
     ) {
         self.init(
             children: [
@@ -49,7 +49,7 @@ public struct Bdo:
 
     public init(
         @Builder<Element> _ block: () -> [Element],
-        dir: DirAttribute.Value
+        dir: DirValue
     ) {
         self.init(
             children: block(),

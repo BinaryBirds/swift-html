@@ -1,26 +1,15 @@
 import SGML
 
-public struct IdAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol IdAttributeModifier {
-
+    associatedtype IdAttributeValue: AttributeValueRepresentable = String
 }
 
 extension IdAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets an id attribute.
     public func id(
-        _ value: String?
+        _ value: IdAttributeValue?
     ) -> Self {
-        setAttribute(IdAttribute(value))
+        setAttribute(name: "id", value: value?.attributeValue)
     }
 }

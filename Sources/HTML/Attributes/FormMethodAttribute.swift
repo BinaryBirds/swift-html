@@ -1,25 +1,14 @@
 import SGML
 
-public struct FormMethodAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: MethodAttribute.Value?
-    ) {
-        self.value = value?.rawValue
-    }
-}
-
 public protocol FormMethodAttributeModifier {
-
+    associatedtype FormMethodAttributeValue: AttributeValueRepresentable = MethodValue
 }
 
 extension FormMethodAttributeModifier where Self: Attributes & Mutable {
 
     public func formMethod(
-        _ value: MethodAttribute.Value?
+        _ value: FormMethodAttributeValue?
     ) -> Self {
-        setAttribute(FormMethodAttribute(value))
+        setAttribute(name: "formmethod", value: value?.attributeValue)
     }
 }

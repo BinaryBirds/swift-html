@@ -1,51 +1,41 @@
 import SGML
 
-public struct ClassAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol ClassAttributeModifier {
-
+    associatedtype ClassAttributeValue: AttributeValueRepresentable = String
 }
 
 extension ClassAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets a class attribute.
     public func setClass(
-        _ value: String?
+        _ value: ClassAttributeValue?
     ) -> Self {
-        setAttribute(ClassAttribute(value))
+        setAttribute(name: "class", value: value?.attributeValue)
     }
 
     /// Adds a class attribute.
     public func addClass(
-        _ value: String?
+        _ value: ClassAttributeValue?
     ) -> Self {
-        addAttribute(ClassAttribute(value))
+        addAttribute(name: "class", value: value?.attributeValue)
     }
 
     /// Removes a class attribute.
     public func removeClass(
-        _ value: String?
+        _ value: ClassAttributeValue?
     ) -> Self {
-        removeAttribute(ClassAttribute(value))
+        removeAttribute(name: "class", value: value?.attributeValue)
     }
 
     /// Toggles a class attribute.
     public func toggleClass(
-        _ value: String?
+        _ value: ClassAttributeValue?
     ) -> Self {
-        if hasAttribute(ClassAttribute(value)) {
-            removeAttribute(ClassAttribute(value))
+        if hasAttribute(name: "class", value: value?.attributeValue) {
+            removeAttribute(name: "class", value: value?.attributeValue)
         }
         else {
-            addAttribute(ClassAttribute(value))
+            addAttribute(name: "class", value: value?.attributeValue)
         }
     }
 
@@ -53,7 +43,7 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
 
     /// Add class attribute values.
     public func `class`(
-        _ values: [String]
+        _ values: [ClassAttributeValue]
     ) -> Self {
         var mutatingSelf = self
         for item in values {
@@ -64,7 +54,7 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
 
     /// Add class attribute values.
     public func `class`(
-        _ values: String...
+        _ values: ClassAttributeValue...
     ) -> Self {
         `class`(values)
     }

@@ -1,24 +1,14 @@
 import SGML
 
-public struct FormActionAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol FormActionAttributeModifier {
-
+    associatedtype FormActionAttributeValue: AttributeValueRepresentable = String
 }
 
 extension FormActionAttributeModifier where Self: Attributes & Mutable {
 
     public func formAction(
-        _ value: String?
+        _ value: FormActionAttributeValue?
     ) -> Self {
-        setAttribute(FormActionAttribute(value))
+        setAttribute(name: "formaction", value: value?.attributeValue)
     }
 }

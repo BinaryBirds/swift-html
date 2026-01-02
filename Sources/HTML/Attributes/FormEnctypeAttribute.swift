@@ -1,25 +1,14 @@
 import SGML
 
-public struct FormEnctypeAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: EnctypeAttribute.Value?
-    ) {
-        self.value = value?.rawValue
-    }
-}
-
 public protocol FormEnctypeAttributeModifier {
-
+    associatedtype FormEnctypeAttributeValue: AttributeValueRepresentable = EnctypeValue
 }
 
 extension FormEnctypeAttributeModifier where Self: Attributes & Mutable {
 
     public func formEnctype(
-        _ value: EnctypeAttribute.Value?
+        _ value: FormEnctypeAttributeValue?
     ) -> Self {
-        setAttribute(FormEnctypeAttribute(value))
+        setAttribute(name: "formenctype", value: value?.attributeValue)
     }
 }

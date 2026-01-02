@@ -1,29 +1,18 @@
 import SGML
 
-public struct DownloadAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol DownloadAttributeModifier {
-
+    associatedtype DownloadAttributeValue: AttributeValueRepresentable = String
 }
 
 extension DownloadAttributeModifier where Self: Attributes & Mutable {
 
     public func download(
-        _ value: String?
+        _ value: DownloadAttributeValue?
     ) -> Self {
-        setAttribute(DownloadAttribute(value))
+        setAttribute(name: "download", value: value?.attributeValue)
     }
 
     public func download() -> Self {
-        setAttribute(DownloadAttribute(nil))
+        setAttribute(name: "download", value: nil)
     }
 }

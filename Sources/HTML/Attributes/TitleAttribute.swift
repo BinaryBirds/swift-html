@@ -1,22 +1,7 @@
 import SGML
 
-public struct TitleAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
-/// A type that can modify the `title` attribute on an element.
-///
-/// Conform to this protocol to gain the `title(_:)` convenience API
-/// for setting the HTML `title` attribute via attribute storage.
 public protocol TitleAttributeModifier {
-
+    associatedtype TitleAttributeValue: AttributeValueRepresentable = String
 }
 
 extension TitleAttributeModifier where Self: Attributes & Mutable {
@@ -31,8 +16,8 @@ extension TitleAttributeModifier where Self: Attributes & Mutable {
     ///
     /// - Returns: A modified copy of the element with the updated `title` attribute.
     public func title(
-        _ value: String?
+        _ value: TitleAttributeValue?
     ) -> Self {
-        setAttribute(TitleAttribute(value))
+        setAttribute(name: "title", value: value?.attributeValue)
     }
 }

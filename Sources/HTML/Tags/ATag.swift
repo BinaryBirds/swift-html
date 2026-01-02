@@ -34,7 +34,7 @@ public struct A:
         var contentModel: ContentModel = [
             .flow, .phrasing,
         ]
-        if hasAttribute(HrefAttribute.self) {
+        if hasAttribute(name: "href") {
             contentModel.insert(.palpable)
         }
         return contentModel

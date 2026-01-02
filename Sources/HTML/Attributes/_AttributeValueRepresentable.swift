@@ -9,3 +9,7 @@ extension AttributeValueRepresentable where Self: RawRepresentable, RawValue == 
 extension String: AttributeValueRepresentable {
     public var attributeValue: String { self }
 }
+
+extension Int: AttributeValueRepresentable {
+    public var attributeValue: String { String(self) }
+}

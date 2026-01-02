@@ -1,24 +1,14 @@
 import SGML
 
-public struct ForAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol ForAttributeModifier {
-
+    associatedtype ForAttributeValue: AttributeValueRepresentable = String
 }
 
 extension ForAttributeModifier where Self: Attributes & Mutable {
 
     public func `for`(
-        _ value: String?
+        _ value: ForAttributeValue?
     ) -> Self {
-        setAttribute(ForAttribute(value))
+        setAttribute(name: "for", value: value?.attributeValue)
     }
 }

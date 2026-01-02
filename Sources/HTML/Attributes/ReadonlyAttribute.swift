@@ -1,13 +1,5 @@
 import SGML
 
-public struct ReadonlyAttribute: HTMLAttribute {
-    public var value: String?
-
-    public init() {
-        self.value = nil
-    }
-}
-
 public protocol ReadonlyAttributeModifier {
 
 }
@@ -15,6 +7,6 @@ public protocol ReadonlyAttributeModifier {
 extension ReadonlyAttributeModifier where Self: Attributes & Mutable {
 
     public func readonly() -> Self {
-        setAttribute(ReadonlyAttribute())
+        setAttribute(name: "readonly", value: nil)
     }
 }

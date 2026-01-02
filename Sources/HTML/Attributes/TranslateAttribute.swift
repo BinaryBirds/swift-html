@@ -1,32 +1,21 @@
 import SGML
 
-public struct TranslateAttribute: HTMLAttribute {
-
-    public enum Value: String, Sendable {
-        /// Specifies that the content of the element should be translated.
-        case yes
-        /// Specifies that the content of the element must not be translated.
-        case no
-    }
-
-    public var value: String?
-
-    public init(
-        _ value: Value?
-    ) {
-        self.value = value?.rawValue
-    }
+public enum TranslateValue: String, Sendable, AttributeValueRepresentable {
+    /// Specifies that the content of the element should be translated.
+    case yes
+    /// Specifies that the content of the element must not be translated.
+    case no
 }
 
 public protocol TranslateAttributeModifier {
-
+    associatedtype TranslateAttributeValue: AttributeValueRepresentable = TranslateValue
 }
 
 extension TranslateAttributeModifier where Self: Attributes & Mutable {
 
     public func translate(
-        _ value: TranslateAttribute.Value?
+        _ value: TranslateAttributeValue?
     ) -> Self {
-        setAttribute(TranslateAttribute(value))
+        setAttribute(name: "translate", value: value?.attributeValue)
     }
 }

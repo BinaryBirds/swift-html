@@ -1,30 +1,19 @@
 import SGML
 
-public struct LoadingAttribute: HTMLAttribute {
-
-    public enum Value: String, Sendable {
-        case eager
-        case lazy
-    }
-
-    public var value: String?
-
-    public init(
-        _ value: Value?
-    ) {
-        self.value = value?.rawValue
-    }
+public enum LoadingValue: String, Sendable, AttributeValueRepresentable {
+    case eager
+    case lazy
 }
 
 public protocol LoadingAttributeModifier {
-
+    associatedtype LoadingAttributeValue: AttributeValueRepresentable = LoadingValue
 }
 
 extension LoadingAttributeModifier where Self: Attributes & Mutable {
 
     public func loading(
-        _ value: LoadingAttribute.Value?
+        _ value: LoadingAttributeValue?
     ) -> Self {
-        setAttribute(LoadingAttribute(value))
+        setAttribute(name: "loading", value: value?.attributeValue)
     }
 }

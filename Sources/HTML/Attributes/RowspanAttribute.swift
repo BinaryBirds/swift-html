@@ -1,25 +1,14 @@
 import SGML
 
-public struct RowspanAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: Int? = nil
-    ) {
-        self.value = value.map { String($0) }
-    }
-}
-
 public protocol RowspanAttributeModifier {
-
+    associatedtype RowspanAttributeValue: AttributeValueRepresentable = Int
 }
 
 extension RowspanAttributeModifier where Self: Attributes & Mutable {
 
     public func rowspan(
-        _ value: Int?
+        _ value: RowspanAttributeValue?
     ) -> Self {
-        setAttribute(RowspanAttribute(value))
+        setAttribute(name: "rowspan", value: value?.attributeValue)
     }
 }

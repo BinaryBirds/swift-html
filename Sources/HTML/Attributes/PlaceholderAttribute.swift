@@ -1,25 +1,14 @@
 import SGML
 
-public struct PlaceholderAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: String? = nil
-    ) {
-        self.value = value
-    }
-}
-
 public protocol PlaceholderAttributeModifier {
-
+    associatedtype PlaceholderAttributeValue: AttributeValueRepresentable = String
 }
 
 extension PlaceholderAttributeModifier where Self: Attributes & Mutable {
 
     public func placeholder(
-        _ value: String?
+        _ value: PlaceholderAttributeValue?
     ) -> Self {
-        setAttribute(PlaceholderAttribute(value))
+        setAttribute(name: "placeholder", value: value?.attributeValue)
     }
 }

@@ -1,26 +1,15 @@
 import SGML
 
-
-
-public struct WidthAttribute: HTMLAttribute {
-
-    public var value: String?
-
-    public init(
-        _ value: Int? = nil
-    ) {
-        self.value = value.map { String($0) }
-    }
+public protocol WidthAttributeModifier {
+    associatedtype WidthAttributeValue: AttributeValueRepresentable = Int
 }
-
-public protocol WidthAttributeModifier {}
 
 extension WidthAttributeModifier where Self: Attributes & Mutable {
 
     public func width(
-        _ value: Int?
+        _ value: WidthAttributeValue?
     ) -> Self {
-        setAttribute(key: .width, value: value)
+        setAttribute(key: .width, value: value?.attributeValue)
     }
     
     public func width() -> Int? {
