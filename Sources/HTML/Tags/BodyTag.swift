@@ -8,26 +8,8 @@ import SGML
 public struct Body:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
-// TODO: -
-//onafterprint
-//onbeforeprint
-//onbeforeunload
-//onhashchange
-//onlanguagechange
-//onmessage
-//onmessageerror
-//onoffline
-//ononline
-//onpageswap
-//onpagehide
-//onpagereveal
-//onpageshow
-//onpopstate
-//onrejectionhandled
-//onstorage
-//onunhandledrejection
-//onunload
+    GlobalAttributesModifier,
+    EventAttributesModifier
 {
 
     /// The attribute storage for the tag.
