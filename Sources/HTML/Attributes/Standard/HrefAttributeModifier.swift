@@ -10,6 +10,6 @@ extension HrefAttributeModifier where Self: Attributes & Mutable {
     public func href(
         _ value: HrefAttributeValueType?
     ) -> Self {
-        setAttribute(key: .href, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.href, value: value?.attributeValue)
     }
 }

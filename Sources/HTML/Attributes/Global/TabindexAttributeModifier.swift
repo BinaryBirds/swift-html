@@ -1,14 +1,14 @@
 import SGML
 
-public protocol TabindexAttributeModifier {
-    associatedtype TabindexAttributeValueType: AttributeValueRepresentable = Int
+public protocol TabIndexAttributeModifier {
+    associatedtype TabIndexAttributeValueType: AttributeValueRepresentable = Int
 }
 
-extension TabindexAttributeModifier where Self: Attributes & Mutable {
+extension TabIndexAttributeModifier where Self: Attributes & Mutable {
 
-    public func tabindex(
-        _ value: TabindexAttributeValueType?
+    public func tabIndex(
+        _ value: TabIndexAttributeValueType?
     ) -> Self {
-        setAttribute(key: .tabindex, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.tabindex, value: value?.attributeValue)
     }
 }

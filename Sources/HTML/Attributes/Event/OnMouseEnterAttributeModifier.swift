@@ -9,6 +9,6 @@ extension OnMouseEnterAttributeModifier where Self: Attributes & Mutable {
     public func onMouseEnter(
         _ value: OnMouseEnterAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onmouseenter, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onmouseenter, value: value?.attributeValue)
     }
 }

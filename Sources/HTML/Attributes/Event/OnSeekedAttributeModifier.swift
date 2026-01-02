@@ -9,6 +9,6 @@ extension OnSeekedAttributeModifier where Self: Attributes & Mutable {
     public func onSeeked(
         _ value: OnSeekedAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onseeked, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onseeked, value: value?.attributeValue)
     }
 }

@@ -36,6 +36,6 @@ extension NameAttributeModifier where Self: Attributes & Mutable {
     public func name(
         _ value: NameAttributeValueType?
     ) -> Self {
-        setAttribute(key: .name, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.name, value: value?.attributeValue)
     }
 }

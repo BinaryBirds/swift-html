@@ -17,12 +17,12 @@ public struct Textarea:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    AutocompleteAttributeModifier,
+    AutoCompleteAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
     NameAttributeModifier,
     PlaceholderAttributeModifier,
-    ReadonlyAttributeModifier,
+    ReadOnlyAttributeModifier,
     RequiredAttributeModifier
 //✅autocomplete — Hint for form autofill feature
 //cols — Maximum number of characters per line

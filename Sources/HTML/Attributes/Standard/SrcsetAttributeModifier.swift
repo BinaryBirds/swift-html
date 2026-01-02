@@ -1,15 +1,15 @@
 import SGML
 
-public protocol SrcsetAttributeModifier {
-    associatedtype SrcsetAttributeValueType: AttributeValueRepresentable =
+public protocol SrcSetAttributeModifier {
+    associatedtype SrcSetAttributeValueType: AttributeValueRepresentable =
         String
 }
 
-extension SrcsetAttributeModifier where Self: Attributes & Mutable {
+extension SrcSetAttributeModifier where Self: Attributes & Mutable {
 
-    public func srcset(
-        _ value: SrcsetAttributeValueType?
+    public func srcSet(
+        _ value: SrcSetAttributeValueType?
     ) -> Self {
-        setAttribute(key: .srcset, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.srcset, value: value?.attributeValue)
     }
 }

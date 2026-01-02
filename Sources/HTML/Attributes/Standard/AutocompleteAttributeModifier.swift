@@ -1,12 +1,12 @@
 import SGML
 
-public protocol AutocompleteAttributeModifier {
+public protocol AutoCompleteAttributeModifier {
 
 }
 
-extension AutocompleteAttributeModifier where Self: Attributes & Mutable {
+extension AutoCompleteAttributeModifier where Self: Attributes & Mutable {
 
-    public func autocomplete() -> Self {
-        setAttribute(key: .autocomplete)
+    public func autoComplete() -> Self {
+        setAttribute(key: StandardAttributeKey.autocomplete)
     }
 }

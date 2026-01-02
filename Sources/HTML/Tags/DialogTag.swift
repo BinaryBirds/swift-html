@@ -7,7 +7,7 @@ public struct Dialog:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    ClosedbyAttributeModifier,
+    ClosedByAttributeModifier,
     OpenAttributeModifier
 {
 

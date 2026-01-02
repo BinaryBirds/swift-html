@@ -47,7 +47,7 @@ struct ScriptTagTestSuite {
             .integrity(
                 "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             )
-            .crossorigin(.anonymous)
+            .crossOrigin(.anonymous)
 
         let renderer = Renderer()
         let doc = Document(root: tag)

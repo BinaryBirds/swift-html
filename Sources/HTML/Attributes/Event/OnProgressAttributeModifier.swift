@@ -9,6 +9,6 @@ extension OnProgressAttributeModifier where Self: Attributes & Mutable {
     public func onProgress(
         _ value: OnProgressAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onprogress, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onprogress, value: value?.attributeValue)
     }
 }

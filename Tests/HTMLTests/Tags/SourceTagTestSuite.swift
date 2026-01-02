@@ -25,7 +25,7 @@ struct SourceTagTestSuite {
     @Test
     func basics() async throws {
         let tag = Source()
-            .srcset("img.png")
+            .srcSet("img.png")
             .media("(prefers-color-scheme: dark)")
 
         let renderer = Renderer()

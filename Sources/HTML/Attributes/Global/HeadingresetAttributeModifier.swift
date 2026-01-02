@@ -1,14 +1,14 @@
 import SGML
 
-public protocol HeadingresetAttributeModifier {
-    associatedtype HeadingresetAttributeValueType: AttributeValueRepresentable = Int
+public protocol HeadingResetAttributeModifier {
+    associatedtype HeadingResetAttributeValueType: AttributeValueRepresentable = Int
 }
 
-extension HeadingresetAttributeModifier where Self: Attributes & Mutable {
+extension HeadingResetAttributeModifier where Self: Attributes & Mutable {
 
-    public func headingreset(
-        _ value: HeadingresetAttributeValueType?
+    public func headingReset(
+        _ value: HeadingResetAttributeValueType?
     ) -> Self {
-        setAttribute(key: .headingreset, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.headingreset, value: value?.attributeValue)
     }
 }

@@ -38,6 +38,6 @@ extension FormTargetAttributeModifier where Self: Attributes & Mutable {
     public func formTarget(
         _ value: FormTargetAttributeValueType?
     ) -> Self {
-        setAttribute(key: .formtarget, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.formtarget, value: value?.attributeValue)
     }
 }

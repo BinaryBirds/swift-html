@@ -10,32 +10,32 @@ extension ClassAttributeModifier where Self: Attributes & Mutable {
     public func setClass(
         _ value: ClassAttributeValueType?
     ) -> Self {
-        setAttribute(key: .`class`, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.`class`, value: value?.attributeValue)
     }
 
     /// Adds a class attribute.
     public func addClass(
         _ value: ClassAttributeValueType?
     ) -> Self {
-        addAttribute(key: .`class`, value: value?.attributeValue)
+        addAttribute(key: GlobalAttributeKey.`class`, value: value?.attributeValue)
     }
 
     /// Removes a class attribute.
     public func removeClass(
         _ value: ClassAttributeValueType?
     ) -> Self {
-        removeAttribute(key: .`class`, value: value?.attributeValue)
+        removeAttribute(key: GlobalAttributeKey.`class`, value: value?.attributeValue)
     }
 
     /// Toggles a class attribute.
     public func toggleClass(
         _ value: ClassAttributeValueType?
     ) -> Self {
-        if hasAttribute(key: .`class`, value: value?.attributeValue) {
-            removeAttribute(key: .`class`, value: value?.attributeValue)
+        if hasAttribute(key: GlobalAttributeKey.`class`, value: value?.attributeValue) {
+            removeAttribute(key: GlobalAttributeKey.`class`, value: value?.attributeValue)
         }
         else {
-            addAttribute(key: .`class`, value: value?.attributeValue)
+            addAttribute(key: GlobalAttributeKey.`class`, value: value?.attributeValue)
         }
     }
 

@@ -9,6 +9,6 @@ extension OnPauseAttributeModifier where Self: Attributes & Mutable {
     public func onPause(
         _ value: OnPauseAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onpause, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onpause, value: value?.attributeValue)
     }
 }

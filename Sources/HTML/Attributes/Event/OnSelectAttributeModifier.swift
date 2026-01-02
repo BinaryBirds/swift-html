@@ -9,6 +9,6 @@ extension OnSelectAttributeModifier where Self: Attributes & Mutable {
     public func onSelect(
         _ value: OnSelectAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onselect, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onselect, value: value?.attributeValue)
     }
 }

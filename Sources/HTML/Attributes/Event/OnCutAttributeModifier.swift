@@ -9,6 +9,6 @@ extension OnCutAttributeModifier where Self: Attributes & Mutable {
     public func onCut(
         _ value: OnCutAttributeValueType?
     ) -> Self {
-        setAttribute(key: .oncut, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.oncut, value: value?.attributeValue)
     }
 }

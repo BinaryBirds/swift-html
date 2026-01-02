@@ -1,12 +1,12 @@
 import SGML
 
-public protocol AutofocusAttributeModifier {
+public protocol AutoFocusAttributeModifier {
 
 }
 
-extension AutofocusAttributeModifier where Self: Attributes & Mutable {
+extension AutoFocusAttributeModifier where Self: Attributes & Mutable {
 
-    public func autofocus() -> Self {
-        setAttribute(key: .autofocus)
+    public func autoFocus() -> Self {
+        setAttribute(key: GlobalAttributeKey.autofocus)
     }
 }

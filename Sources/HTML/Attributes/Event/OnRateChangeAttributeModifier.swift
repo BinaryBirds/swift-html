@@ -9,6 +9,6 @@ extension OnRateChangeAttributeModifier where Self: Attributes & Mutable {
     public func onRateChange(
         _ value: OnRateChangeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onratechange, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onratechange, value: value?.attributeValue)
     }
 }

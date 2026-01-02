@@ -16,6 +16,6 @@ extension LoadingAttributeModifier where Self: Attributes & Mutable {
     public func loading(
         _ value: LoadingAttributeValueType?
     ) -> Self {
-        setAttribute(key: .loading, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.loading, value: value?.attributeValue)
     }
 }

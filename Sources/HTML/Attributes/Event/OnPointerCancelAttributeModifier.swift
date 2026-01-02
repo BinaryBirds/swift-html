@@ -9,6 +9,6 @@ extension OnPointerCancelAttributeModifier where Self: Attributes & Mutable {
     public func onPointerCancel(
         _ value: OnPointerCancelAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onpointercancel, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onpointercancel, value: value?.attributeValue)
     }
 }

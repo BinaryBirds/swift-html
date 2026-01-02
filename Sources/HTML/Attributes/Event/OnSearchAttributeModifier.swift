@@ -9,6 +9,6 @@ extension OnSearchAttributeModifier where Self: Attributes & Mutable {
     public func onSearch(
         _ value: OnSearchAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onsearch, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onsearch, value: value?.attributeValue)
     }
 }

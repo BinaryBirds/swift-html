@@ -1,14 +1,14 @@
 import SGML
 
-public protocol ItemrefAttributeModifier {
-    associatedtype ItemrefAttributeValueType: AttributeValueRepresentable = String
+public protocol ItemRefAttributeModifier {
+    associatedtype ItemRefAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension ItemrefAttributeModifier where Self: Attributes & Mutable {
+extension ItemRefAttributeModifier where Self: Attributes & Mutable {
 
-    public func itemref(
-        _ value: ItemrefAttributeValueType?
+    public func itemRef(
+        _ value: ItemRefAttributeValueType?
     ) -> Self {
-        setAttribute(key: .itemref, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.itemref, value: value?.attributeValue)
     }
 }

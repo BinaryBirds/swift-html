@@ -15,7 +15,7 @@ public struct Th:
     /// attribute modifiers
     GlobalAttributesModifier,
     ColspanAttributeModifier,
-    RowspanAttributeModifier,
+    RowSpanAttributeModifier,
     ScopeAttributeModifier
 //✅colspan — Number of columns that the cell is to span
 //✅rowspan — Number of rows that the cell is to span

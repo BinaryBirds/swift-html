@@ -9,6 +9,6 @@ extension OnContextMenuAttributeModifier where Self: Attributes & Mutable {
     public func onContextMenu(
         _ value: OnContextMenuAttributeValueType?
     ) -> Self {
-        setAttribute(key: .oncontextmenu, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.oncontextmenu, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnInputAttributeModifier where Self: Attributes & Mutable {
     public func onInput(
         _ value: OnInputAttributeValueType?
     ) -> Self {
-        setAttribute(key: .oninput, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.oninput, value: value?.attributeValue)
     }
 }

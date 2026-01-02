@@ -9,6 +9,6 @@ extension OnDragEndAttributeModifier where Self: Attributes & Mutable {
     public func onDragEnd(
         _ value: OnDragEndAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ondragend, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ondragend, value: value?.attributeValue)
     }
 }

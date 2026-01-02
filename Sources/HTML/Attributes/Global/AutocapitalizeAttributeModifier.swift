@@ -1,14 +1,14 @@
 import SGML
 
-public protocol AutocapitalizeAttributeModifier {
-    associatedtype AutocapitalizeAttributeValueType: AttributeValueRepresentable = String
+public protocol AutoCapitalizeAttributeModifier {
+    associatedtype AutoCapitalizeAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension AutocapitalizeAttributeModifier where Self: Attributes & Mutable {
+extension AutoCapitalizeAttributeModifier where Self: Attributes & Mutable {
 
-    public func autocapitalize(
-        _ value: AutocapitalizeAttributeValueType?
+    public func autoCapitalize(
+        _ value: AutoCapitalizeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .autocapitalize, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.autocapitalize, value: value?.attributeValue)
     }
 }

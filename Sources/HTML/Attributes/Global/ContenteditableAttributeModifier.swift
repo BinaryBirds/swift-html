@@ -1,14 +1,14 @@
 import SGML
 
-public protocol ContenteditableAttributeModifier {
-    associatedtype ContenteditableAttributeValueType: AttributeValueRepresentable = String
+public protocol ContentEditableAttributeModifier {
+    associatedtype ContentEditableAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension ContenteditableAttributeModifier where Self: Attributes & Mutable {
+extension ContentEditableAttributeModifier where Self: Attributes & Mutable {
 
-    public func contenteditable(
-        _ value: ContenteditableAttributeValueType?
+    public func contentEditable(
+        _ value: ContentEditableAttributeValueType?
     ) -> Self {
-        setAttribute(key: .contenteditable, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.contenteditable, value: value?.attributeValue)
     }
 }

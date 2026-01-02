@@ -9,25 +9,25 @@ extension CoordsAttributeModifier where Self: Attributes & Mutable {
     public func coords(
         _ value: CoordsAttributeValueType?
     ) -> Self {
-        setAttribute(key: .coords, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.coords, value: value?.attributeValue)
     }
 
     public func coords(
         _ values: [Int]
     ) -> Self {
-        setAttribute(key: .coords, value: values.joinedElementsAsString())
+        setAttribute(key: StandardAttributeKey.coords, value: values.joinedElementsAsString())
     }
 
     public func coords(
         _ values: [Float]
     ) -> Self {
-        setAttribute(key: .coords, value: values.joinedElementsAsString())
+        setAttribute(key: StandardAttributeKey.coords, value: values.joinedElementsAsString())
     }
 
     public func coords(
         _ values: [Double]
     ) -> Self {
-        setAttribute(key: .coords, value: values.joinedElementsAsString())
+        setAttribute(key: StandardAttributeKey.coords, value: values.joinedElementsAsString())
     }
 
     public func coords(

@@ -9,6 +9,6 @@ extension OnVolumeChangeAttributeModifier where Self: Attributes & Mutable {
     public func onVolumeChange(
         _ value: OnVolumeChangeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onvolumechange, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onvolumechange, value: value?.attributeValue)
     }
 }

@@ -10,6 +10,6 @@ extension IntegrityAttributeModifier where Self: Attributes & Mutable {
     public func integrity(
         _ value: IntegrityAttributeValueType?
     ) -> Self {
-        setAttribute(key: .integrity, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.integrity, value: value?.attributeValue)
     }
 }

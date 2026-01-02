@@ -1,12 +1,12 @@
 import SGML
 
-public protocol ReadonlyAttributeModifier {
+public protocol ReadOnlyAttributeModifier {
 
 }
 
-extension ReadonlyAttributeModifier where Self: Attributes & Mutable {
+extension ReadOnlyAttributeModifier where Self: Attributes & Mutable {
 
-    public func readonly() -> Self {
-        setAttribute(key: .readonly)
+    public func readOnly() -> Self {
+        setAttribute(key: StandardAttributeKey.readonly)
     }
 }

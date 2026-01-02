@@ -13,8 +13,8 @@ public struct Object:
     FormAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
-    UsemapAttributeModifier,  // W3C but not in spec
-    TypemustmatchAttributeModifier  // W3C but not in spec
+    UseMapAttributeModifier,  // W3C but not in spec
+    TypeMustMatchAttributeModifier  // W3C but not in spec
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

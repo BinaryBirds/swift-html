@@ -1,15 +1,15 @@
 import SGML
 
-public protocol UsemapAttributeModifier {
-    associatedtype UsemapAttributeValueType: AttributeValueRepresentable =
+public protocol UseMapAttributeModifier {
+    associatedtype UseMapAttributeValueType: AttributeValueRepresentable =
         String
 }
 
-extension UsemapAttributeModifier where Self: Attributes & Mutable {
+extension UseMapAttributeModifier where Self: Attributes & Mutable {
 
-    public func usemap(
-        _ value: UsemapAttributeValueType?
+    public func useMap(
+        _ value: UseMapAttributeValueType?
     ) -> Self {
-        setAttribute(key: .usemap, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.usemap, value: value?.attributeValue)
     }
 }

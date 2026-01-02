@@ -15,7 +15,7 @@ public struct Select:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    AutocompleteAttributeModifier,
+    AutoCompleteAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
     MultipleAttributeModifier,

@@ -1,14 +1,14 @@
 import SGML
 
-public protocol InputmodeAttributeModifier {
-    associatedtype InputmodeAttributeValueType: AttributeValueRepresentable = String
+public protocol InputModeAttributeModifier {
+    associatedtype InputModeAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension InputmodeAttributeModifier where Self: Attributes & Mutable {
+extension InputModeAttributeModifier where Self: Attributes & Mutable {
 
-    public func inputmode(
-        _ value: InputmodeAttributeValueType?
+    public func inputMode(
+        _ value: InputModeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .inputmode, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.inputmode, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnFocusAttributeModifier where Self: Attributes & Mutable {
     public func onFocus(
         _ value: OnFocusAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onfocus, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onfocus, value: value?.attributeValue)
     }
 }

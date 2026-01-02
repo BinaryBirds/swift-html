@@ -17,6 +17,6 @@ extension PreloadAttributeModifier where Self: Attributes & Mutable {
     public func preload(
         _ value: PreloadAttributeValueType?
     ) -> Self {
-        setAttribute(key: .preload, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.preload, value: value?.attributeValue)
     }
 }

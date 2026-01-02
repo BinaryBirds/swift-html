@@ -9,6 +9,6 @@ extension IsAttributeModifier where Self: Attributes & Mutable {
     public func `is`(
         _ value: IsAttributeValueType?
     ) -> Self {
-        setAttribute(key: .is, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.`is`, value: value?.attributeValue)
     }
 }

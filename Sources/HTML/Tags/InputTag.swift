@@ -10,12 +10,12 @@ public struct Input:
     /// attribute modifiers
     GlobalAttributesModifier,
     AltAttributeModifier,
-    AutocompleteAttributeModifier,
+    AutoCompleteAttributeModifier,
     CheckedAttributeModifier,
     NameAttributeModifier,
     FormAttributeModifier,
     FormActionAttributeModifier,
-    FormEnctypeAttributeModifier,
+    FormEncTypeAttributeModifier,
     FormMethodAttributeModifier,
     FormTargetAttributeModifier,
     WidthAttributeModifier,
@@ -26,7 +26,7 @@ public struct Input:
     DisabledAttributeModifier,
     TypeAttributeModifier,
     PlaceholderAttributeModifier,
-    ReadonlyAttributeModifier,
+    ReadOnlyAttributeModifier,
     RequiredAttributeModifier,
     SizeAttributeModifier
 //accept — Hint for expected file type in file upload controls

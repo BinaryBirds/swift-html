@@ -9,6 +9,6 @@ extension OnWheelAttributeModifier where Self: Attributes & Mutable {
     public func onWheel(
         _ value: OnWheelAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onwheel, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onwheel, value: value?.attributeValue)
     }
 }

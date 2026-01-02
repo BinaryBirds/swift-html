@@ -12,12 +12,12 @@ extension PingAttributeModifier where Self: Attributes & Mutable {
         if let value {
             return ping([value.attributeValue])
         }
-        return setAttribute(key: .ping)
+        return setAttribute(key: StandardAttributeKey.ping)
     }
 
     public func ping(
         _ value: [String]
     ) -> Self {
-        setAttribute(key: .ping, value: value.joined(separator: " "))
+        setAttribute(key: StandardAttributeKey.ping, value: value.joined(separator: " "))
     }
 }

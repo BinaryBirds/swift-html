@@ -9,6 +9,6 @@ extension OnCanPlayThroughAttributeModifier where Self: Attributes & Mutable {
     public func onCanPlayThrough(
         _ value: OnCanPlayThroughAttributeValueType?
     ) -> Self {
-        setAttribute(key: .oncanplaythrough, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.oncanplaythrough, value: value?.attributeValue)
     }
 }

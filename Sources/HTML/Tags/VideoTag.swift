@@ -20,8 +20,8 @@ public struct Video:
     /// attribute modifiers
     GlobalAttributesModifier,
     SrcAttributeModifier,
-    CrossoriginAttributeModifier,
-    AutoplayAttributeModifier,
+    CrossOriginAttributeModifier,
+    AutoPlayAttributeModifier,
     LoopAttributeModifier,
     MutedAttributeModifier,
     ControlsAttributeModifier,

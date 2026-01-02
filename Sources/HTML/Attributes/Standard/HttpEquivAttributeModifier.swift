@@ -21,6 +21,6 @@ extension HttpEquivAttributeModifier where Self: Attributes & Mutable {
     public func httpEquiv(
         _ value: HttpEquivAttributeValueType?
     ) -> Self {
-        setAttribute(key: .httpEquiv, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.httpEquiv, value: value?.attributeValue)
     }
 }

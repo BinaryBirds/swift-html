@@ -114,7 +114,7 @@ struct TableTagTestSuite {
                     Th("3")
                         .scope(.row)
                     Td("Larry the Bird")
-                        .colspan(2)
+                        .colSpan(2)
                     Td("@twitter")
                 }
             }

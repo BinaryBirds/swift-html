@@ -16,6 +16,6 @@ extension BlockingAttributeModifier where Self: Attributes & Mutable {
     public func blocking(
         _ value: BlockingAttributeValueType?
     ) -> Self {
-        setAttribute(key: .blocking, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.blocking, value: value?.attributeValue)
     }
 }

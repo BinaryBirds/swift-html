@@ -9,6 +9,6 @@ extension OnBeforeUnloadAttributeModifier where Self: Attributes & Mutable {
     public func onBeforeUnload(
         _ value: OnBeforeUnloadAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onbeforeunload, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onbeforeunload, value: value?.attributeValue)
     }
 }

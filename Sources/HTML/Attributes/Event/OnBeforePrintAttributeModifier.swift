@@ -9,6 +9,6 @@ extension OnBeforePrintAttributeModifier where Self: Attributes & Mutable {
     public func onBeforePrint(
         _ value: OnBeforePrintAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onbeforeprint, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onbeforeprint, value: value?.attributeValue)
     }
 }

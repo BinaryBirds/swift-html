@@ -20,6 +20,6 @@ extension ScopeAttributeModifier where Self: Attributes & Mutable {
     public func scope(
         _ value: ScopeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .scope, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.scope, value: value?.attributeValue)
     }
 }

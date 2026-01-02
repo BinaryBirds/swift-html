@@ -9,6 +9,6 @@ extension OnPointerOverAttributeModifier where Self: Attributes & Mutable {
     public func onPointerOver(
         _ value: OnPointerOverAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onpointerover, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onpointerover, value: value?.attributeValue)
     }
 }

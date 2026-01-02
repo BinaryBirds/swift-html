@@ -1,14 +1,14 @@
 import SGML
 
-public protocol WritingsuggestionsAttributeModifier {
-    associatedtype WritingsuggestionsAttributeValueType: AttributeValueRepresentable = String
+public protocol WritingSuggestionsAttributeModifier {
+    associatedtype WritingSuggestionsAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension WritingsuggestionsAttributeModifier where Self: Attributes & Mutable {
+extension WritingSuggestionsAttributeModifier where Self: Attributes & Mutable {
 
-    public func writingsuggestions(
-        _ value: WritingsuggestionsAttributeValueType?
+    public func writingSuggestions(
+        _ value: WritingSuggestionsAttributeValueType?
     ) -> Self {
-        setAttribute(key: .writingsuggestions, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.writingsuggestions, value: value?.attributeValue)
     }
 }

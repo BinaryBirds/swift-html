@@ -9,6 +9,6 @@ extension OnPageRevealAttributeModifier where Self: Attributes & Mutable {
     public func onPageReveal(
         _ value: OnPageRevealAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onpagereveal, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onpagereveal, value: value?.attributeValue)
     }
 }

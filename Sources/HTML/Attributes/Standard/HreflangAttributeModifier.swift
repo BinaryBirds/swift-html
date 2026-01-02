@@ -1,15 +1,15 @@
 import SGML
 
-public protocol HreflangAttributeModifier {
-    associatedtype HreflangAttributeValueType: AttributeValueRepresentable =
+public protocol HrefLangAttributeModifier {
+    associatedtype HrefLangAttributeValueType: AttributeValueRepresentable =
         String
 }
 
-extension HreflangAttributeModifier where Self: Attributes & Mutable {
+extension HrefLangAttributeModifier where Self: Attributes & Mutable {
 
-    public func hreflang(
-        _ value: HreflangAttributeValueType?
+    public func hrefLang(
+        _ value: HrefLangAttributeValueType?
     ) -> Self {
-        setAttribute(key: .hreflang, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.hreflang, value: value?.attributeValue)
     }
 }

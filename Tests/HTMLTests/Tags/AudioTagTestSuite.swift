@@ -13,9 +13,9 @@ struct AudioTagTestSuite {
         }
         .src("test.mp3")
         .controls()
-        .crossorigin(.anonymous)
+        .crossOrigin(.anonymous)
         .preload(.auto)
-        .autoplay()
+        .autoPlay()
         .muted()
         .loop()
 

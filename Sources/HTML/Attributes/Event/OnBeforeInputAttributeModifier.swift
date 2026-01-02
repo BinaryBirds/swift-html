@@ -9,6 +9,6 @@ extension OnBeforeInputAttributeModifier where Self: Attributes & Mutable {
     public func onBeforeInput(
         _ value: OnBeforeInputAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onbeforeinput, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onbeforeinput, value: value?.attributeValue)
     }
 }

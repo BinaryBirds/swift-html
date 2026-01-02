@@ -1,14 +1,14 @@
 import SGML
 
-public protocol EnterkeyhintAttributeModifier {
-    associatedtype EnterkeyhintAttributeValueType: AttributeValueRepresentable = String
+public protocol EnterKeyHintAttributeModifier {
+    associatedtype EnterKeyHintAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension EnterkeyhintAttributeModifier where Self: Attributes & Mutable {
+extension EnterKeyHintAttributeModifier where Self: Attributes & Mutable {
 
-    public func enterkeyhint(
-        _ value: EnterkeyhintAttributeValueType?
+    public func enterKeyHint(
+        _ value: EnterKeyHintAttributeValueType?
     ) -> Self {
-        setAttribute(key: .enterkeyhint, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.enterkeyhint, value: value?.attributeValue)
     }
 }

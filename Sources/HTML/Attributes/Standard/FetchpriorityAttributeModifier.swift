@@ -1,6 +1,6 @@
 import SGML
 
-public enum FetchpriorityAttributeValue: String, Sendable,
+public enum FetchPriorityAttributeValue: String, Sendable,
     AttributeValueRepresentable
 {
     /// Fetch the external script at a high priority relative to other external scripts.
@@ -11,17 +11,17 @@ public enum FetchpriorityAttributeValue: String, Sendable,
     case auto
 }
 
-public protocol FetchpriorityAttributeModifier {
+public protocol FetchPriorityAttributeModifier {
     associatedtype
-        FetchpriorityAttributeValueType: AttributeValueRepresentable =
-        FetchpriorityAttributeValue
+        FetchPriorityAttributeValueType: AttributeValueRepresentable =
+        FetchPriorityAttributeValue
 }
 
-extension FetchpriorityAttributeModifier where Self: Attributes & Mutable {
+extension FetchPriorityAttributeModifier where Self: Attributes & Mutable {
 
-    public func fetchpriority(
-        _ value: FetchpriorityAttributeValueType?
+    public func fetchPriority(
+        _ value: FetchPriorityAttributeValueType?
     ) -> Self {
-        setAttribute(key: .fetchpriority, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.fetchpriority, value: value?.attributeValue)
     }
 }

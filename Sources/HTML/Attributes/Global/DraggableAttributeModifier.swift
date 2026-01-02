@@ -18,6 +18,6 @@ extension DraggableAttributeModifier where Self: Attributes & Mutable {
     public func draggable(
         _ value: DraggableAttributeValueType?
     ) -> Self {
-        setAttribute(key: .draggable, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.draggable, value: value?.attributeValue)
     }
 }

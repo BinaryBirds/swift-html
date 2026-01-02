@@ -41,6 +41,6 @@ extension RelAttributeModifier where Self: Attributes & Mutable {
     public func rel(
         _ value: RelAttributeValueType
     ) -> Self {
-        setAttribute(key: .rel, value: value.attributeValue)
+        setAttribute(key: StandardAttributeKey.rel, value: value.attributeValue)
     }
 }

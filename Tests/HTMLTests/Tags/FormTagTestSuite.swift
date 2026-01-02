@@ -50,7 +50,7 @@ struct FormTagTestSuite {
                     .value("Sign in")
             }
         }
-        .enctype(.multipart)
+        .encType(.multipart)
         .method(.post)
         .action("/sign-in/")
 

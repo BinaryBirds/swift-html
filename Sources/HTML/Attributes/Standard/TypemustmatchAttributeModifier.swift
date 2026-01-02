@@ -1,12 +1,12 @@
 import SGML
 
-public protocol TypemustmatchAttributeModifier {
+public protocol TypeMustMatchAttributeModifier {
 
 }
 
-extension TypemustmatchAttributeModifier where Self: Attributes & Mutable {
+extension TypeMustMatchAttributeModifier where Self: Attributes & Mutable {
 
-    public func typemustmatch() -> Self {
-        setAttribute(key: .typemustmatch)
+    public func typeMustMatch() -> Self {
+        setAttribute(key: StandardAttributeKey.typemustmatch)
     }
 }

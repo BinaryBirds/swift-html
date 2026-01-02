@@ -18,6 +18,6 @@ extension TranslateAttributeModifier where Self: Attributes & Mutable {
     public func translate(
         _ value: TranslateAttributeValueType?
     ) -> Self {
-        setAttribute(key: .translate, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.translate, value: value?.attributeValue)
     }
 }

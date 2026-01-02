@@ -1,6 +1,6 @@
 import SGML
 
-public enum ClosedbyAttributeValue: String, Sendable,
+public enum ClosedByAttributeValue: String, Sendable,
     AttributeValueRepresentable
 {
     case any
@@ -8,16 +8,16 @@ public enum ClosedbyAttributeValue: String, Sendable,
     case none
 }
 
-public protocol ClosedbyAttributeModifier {
-    associatedtype ClosedbyAttributeValueType: AttributeValueRepresentable =
-        ClosedbyAttributeValue
+public protocol ClosedByAttributeModifier {
+    associatedtype ClosedByAttributeValueType: AttributeValueRepresentable =
+        ClosedByAttributeValue
 }
 
-extension ClosedbyAttributeModifier where Self: Attributes & Mutable {
+extension ClosedByAttributeModifier where Self: Attributes & Mutable {
 
-    public func closedby(
-        _ value: ClosedbyAttributeValueType?
+    public func closedBy(
+        _ value: ClosedByAttributeValueType?
     ) -> Self {
-        setAttribute(key: .closedby, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.closedby, value: value?.attributeValue)
     }
 }

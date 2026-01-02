@@ -9,6 +9,6 @@ extension OnClickAttributeModifier where Self: Attributes & Mutable {
     public func onClick(
         _ value: OnClickAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onclick, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onclick, value: value?.attributeValue)
     }
 }

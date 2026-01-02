@@ -10,6 +10,6 @@ extension StyleAttributeModifier where Self: Attributes & Mutable {
     public func style(
         _ value: StyleAttributeValueType?
     ) -> Self {
-        setAttribute(key: .style, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.style, value: value?.attributeValue)
     }
 }

@@ -1,14 +1,14 @@
 import SGML
 
-public protocol SpellcheckAttributeModifier {
+public protocol SpellCheckAttributeModifier {
 
 }
 
-extension SpellcheckAttributeModifier where Self: Attributes & Mutable {
+extension SpellCheckAttributeModifier where Self: Attributes & Mutable {
 
-    public func spellcheck(
+    public func spellCheck(
         _ value: Bool
     ) -> Self {
-        setAttribute(key: .spellcheck, value: String(value))
+        setAttribute(key: GlobalAttributeKey.spellcheck, value: String(value))
     }
 }

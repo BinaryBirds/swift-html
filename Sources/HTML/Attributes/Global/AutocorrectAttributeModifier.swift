@@ -1,14 +1,14 @@
 import SGML
 
-public protocol AutocorrectAttributeModifier {
-    associatedtype AutocorrectAttributeValueType: AttributeValueRepresentable = String
+public protocol AutoCorrectAttributeModifier {
+    associatedtype AutoCorrectAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension AutocorrectAttributeModifier where Self: Attributes & Mutable {
+extension AutoCorrectAttributeModifier where Self: Attributes & Mutable {
 
-    public func autocorrect(
-        _ value: AutocorrectAttributeValueType?
+    public func autoCorrect(
+        _ value: AutoCorrectAttributeValueType?
     ) -> Self {
-        setAttribute(key: .autocorrect, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.autocorrect, value: value?.attributeValue)
     }
 }

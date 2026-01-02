@@ -22,9 +22,9 @@ public struct Audio:
     GlobalAttributesModifier,
     ControlsAttributeModifier,
     SrcAttributeModifier,
-    CrossoriginAttributeModifier,
+    CrossOriginAttributeModifier,
     PreloadAttributeModifier,
-    AutoplayAttributeModifier,
+    AutoPlayAttributeModifier,
     MutedAttributeModifier,
     LoopAttributeModifier
 {

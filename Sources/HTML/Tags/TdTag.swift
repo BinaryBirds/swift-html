@@ -15,7 +15,7 @@ public struct Td:
     /// attribute modifiers
     GlobalAttributesModifier,
     ColspanAttributeModifier,
-    RowspanAttributeModifier
+    RowSpanAttributeModifier
 //✅colspan — Number of columns that the cell is to span
 //✅rowspan — Number of rows that the cell is to span
 //headers — The header cells for this cell

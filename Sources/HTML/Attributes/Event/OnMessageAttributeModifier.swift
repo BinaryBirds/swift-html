@@ -9,6 +9,6 @@ extension OnMessageAttributeModifier where Self: Attributes & Mutable {
     public func onMessage(
         _ value: OnMessageAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onmessage, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onmessage, value: value?.attributeValue)
     }
 }

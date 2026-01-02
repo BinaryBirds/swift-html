@@ -19,13 +19,13 @@ public struct Img:
     GlobalAttributesModifier,
     AltAttributeModifier,
     SrcAttributeModifier,
-    CrossoriginAttributeModifier,
+    CrossOriginAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
     ReferrerPolicyAttributeModifier,
     SizesAttributeModifier,
-    SrcsetAttributeModifier,
-    UsemapAttributeModifier,
+    SrcSetAttributeModifier,
+    UseMapAttributeModifier,
     LoadingAttributeModifier
 
 //✅alt — Replacement text for use when images are not available

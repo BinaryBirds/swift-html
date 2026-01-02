@@ -18,6 +18,6 @@ extension DirAttributeModifier where Self: Attributes & Mutable {
     public func dir(
         _ value: DirAttributeValueType?
     ) -> Self {
-        setAttribute(key: .dir, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.dir, value: value?.attributeValue)
     }
 }

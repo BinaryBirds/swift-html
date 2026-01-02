@@ -9,6 +9,6 @@ extension OnDragEnterAttributeModifier where Self: Attributes & Mutable {
     public func onDragEnter(
         _ value: OnDragEnterAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ondragenter, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ondragenter, value: value?.attributeValue)
     }
 }

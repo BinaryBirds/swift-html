@@ -9,6 +9,6 @@ extension OnLoadedMetadataAttributeModifier where Self: Attributes & Mutable {
     public func onLoadedMetadata(
         _ value: OnLoadedMetadataAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onloadedmetadata, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onloadedmetadata, value: value?.attributeValue)
     }
 }

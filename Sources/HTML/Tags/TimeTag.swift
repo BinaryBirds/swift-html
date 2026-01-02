@@ -7,7 +7,7 @@ public struct Time:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    DatetimeAttributeModifier
+    DateTimeAttributeModifier
 {
 
     /// The attribute storage for the tag.

@@ -1,16 +1,16 @@
 import SGML
 
-public protocol DatetimeAttributeModifier {
-    associatedtype DatetimeAttributeValueType: AttributeValueRepresentable =
+public protocol DateTimeAttributeModifier {
+    associatedtype DateTimeAttributeValueType: AttributeValueRepresentable =
         String
 }
 
-extension DatetimeAttributeModifier where Self: Attributes & Mutable {
+extension DateTimeAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets an Datetime attribute.
-    public func datetime(
-        _ value: DatetimeAttributeValueType?
+    public func dateTime(
+        _ value: DateTimeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .datetime, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.datetime, value: value?.attributeValue)
     }
 }

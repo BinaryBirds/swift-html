@@ -9,6 +9,6 @@ extension OnDropAttributeModifier where Self: Attributes & Mutable {
     public func onDrop(
         _ value: OnDropAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ondrop, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ondrop, value: value?.attributeValue)
     }
 }

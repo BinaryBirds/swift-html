@@ -10,6 +10,6 @@ extension MediaAttributeModifier where Self: Attributes & Mutable {
     public func media(
         _ value: MediaAttributeValueType?
     ) -> Self {
-        setAttribute(key: .media, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.media, value: value?.attributeValue)
     }
 }

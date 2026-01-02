@@ -15,7 +15,7 @@ public struct A:
     GlobalAttributesModifier,
     DownloadAttributeModifier,
     HrefAttributeModifier,
-    HreflangAttributeModifier,
+    HrefLangAttributeModifier,
     MediaAttributeModifier,  // NOTE: W3C, but not spec
     PingAttributeModifier,
     ReferrerPolicyAttributeModifier,

@@ -6,9 +6,9 @@ public protocol ColspanAttributeModifier {
 
 extension ColspanAttributeModifier where Self: Attributes & Mutable {
 
-    public func colspan(
+    public func colSpan(
         _ value: ColspanAttributeValueType?
     ) -> Self {
-        setAttribute(key: .colspan, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.colspan, value: value?.attributeValue)
     }
 }

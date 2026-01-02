@@ -1,22 +1,22 @@
 import SGML
 
-public enum EnctypeAttributeValue: String, AttributeValueRepresentable
+public enum EncTypeAttributeValue: String, AttributeValueRepresentable
 {
     case urlencoded = "application/x-www-form-urlencoded"
     case multipart = "multipart/form-data"
     case plain = "text/plain"
 }
 
-public protocol EnctypeAttributeModifier {
-    associatedtype EnctypeAttributeValueType: AttributeValueRepresentable =
-        EnctypeAttributeValue
+public protocol EncTypeAttributeModifier {
+    associatedtype EncTypeAttributeValueType: AttributeValueRepresentable =
+        EncTypeAttributeValue
 }
 
-extension EnctypeAttributeModifier where Self: Attributes & Mutable {
+extension EncTypeAttributeModifier where Self: Attributes & Mutable {
 
-    public func enctype(
-        _ value: EnctypeAttributeValueType?
+    public func encType(
+        _ value: EncTypeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .enctype, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.enctype, value: value?.attributeValue)
     }
 }

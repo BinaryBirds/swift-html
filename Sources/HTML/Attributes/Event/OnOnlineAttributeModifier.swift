@@ -9,6 +9,6 @@ extension OnOnlineAttributeModifier where Self: Attributes & Mutable {
     public func onOnline(
         _ value: OnOnlineAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ononline, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ononline, value: value?.attributeValue)
     }
 }

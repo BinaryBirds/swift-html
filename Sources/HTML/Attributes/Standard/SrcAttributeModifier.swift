@@ -9,6 +9,6 @@ extension SrcAttributeModifier where Self: Attributes & Mutable {
     public func src(
         _ value: SrcAttributeValueType?
     ) -> Self {
-        setAttribute(key: .src, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.src, value: value?.attributeValue)
     }
 }

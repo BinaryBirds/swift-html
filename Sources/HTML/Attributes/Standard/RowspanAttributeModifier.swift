@@ -1,14 +1,14 @@
 import SGML
 
-public protocol RowspanAttributeModifier {
-    associatedtype RowspanAttributeValueType: AttributeValueRepresentable = Int
+public protocol RowSpanAttributeModifier {
+    associatedtype RowSpanAttributeValueType: AttributeValueRepresentable = Int
 }
 
-extension RowspanAttributeModifier where Self: Attributes & Mutable {
+extension RowSpanAttributeModifier where Self: Attributes & Mutable {
 
-    public func rowspan(
-        _ value: RowspanAttributeValueType?
+    public func rowSpan(
+        _ value: RowSpanAttributeValueType?
     ) -> Self {
-        setAttribute(key: .rowspan, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.rowspan, value: value?.attributeValue)
     }
 }

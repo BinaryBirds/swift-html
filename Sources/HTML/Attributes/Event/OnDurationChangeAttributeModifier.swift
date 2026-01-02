@@ -9,6 +9,6 @@ extension OnDurationChangeAttributeModifier where Self: Attributes & Mutable {
     public func onDurationChange(
         _ value: OnDurationChangeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ondurationchange, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ondurationchange, value: value?.attributeValue)
     }
 }

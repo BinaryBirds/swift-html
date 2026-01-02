@@ -9,7 +9,7 @@ struct DialogTagTestSuite {
     @Test
     func initialization() async throws {
         let tag = Dialog("test")
-            .closedby(.any)
+            .closedBy(.any)
 
         let renderer = Renderer()
         let doc = Document(root: tag)

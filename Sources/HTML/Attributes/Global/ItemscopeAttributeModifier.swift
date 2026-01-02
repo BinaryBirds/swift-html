@@ -1,11 +1,11 @@
 import SGML
 
-public protocol ItemscopeAttributeModifier {
+public protocol ItemScopeAttributeModifier {
 }
 
-extension ItemscopeAttributeModifier where Self: Attributes & Mutable {
+extension ItemScopeAttributeModifier where Self: Attributes & Mutable {
 
-    public func itemscope() -> Self {
-        setAttribute(key: .itemscope)
+    public func itemScope() -> Self {
+        setAttribute(key: GlobalAttributeKey.itemscope)
     }
 }

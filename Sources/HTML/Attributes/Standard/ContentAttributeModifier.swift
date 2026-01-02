@@ -9,6 +9,6 @@ extension ContentAttributeModifier where Self: Attributes & Mutable {
     public func content(
         _ value: ContentAttributeValueType?
     ) -> Self {
-        setAttribute(key: .content, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.content, value: value?.attributeValue)
     }
 }

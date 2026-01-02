@@ -9,6 +9,6 @@ extension OnSubmitAttributeModifier where Self: Attributes & Mutable {
     public func onSubmit(
         _ value: OnSubmitAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onsubmit, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onsubmit, value: value?.attributeValue)
     }
 }

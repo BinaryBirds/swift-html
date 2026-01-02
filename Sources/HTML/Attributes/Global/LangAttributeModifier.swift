@@ -9,6 +9,6 @@ extension LangAttributeModifier where Self: Attributes & Mutable {
     public func lang(
         _ value: LangAttributeValueType?
     ) -> Self {
-        setAttribute(key: .lang, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.lang, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension TypeAttributeModifier where Self: Attributes & Mutable {
     public func type(
         _ value: TypeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .type, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.type, value: value?.attributeValue)
     }
 }

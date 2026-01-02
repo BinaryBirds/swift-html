@@ -1,14 +1,14 @@
 import SGML
 
-public protocol AccesskeyAttributeModifier {
-    associatedtype AccesskeyAttributeValueType: AttributeValueRepresentable = String
+public protocol AccessKeyAttributeModifier {
+    associatedtype AccessKeyAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension AccesskeyAttributeModifier where Self: Attributes & Mutable {
+extension AccessKeyAttributeModifier where Self: Attributes & Mutable {
 
-    public func accesskey(
-        _ value: AccesskeyAttributeValueType?
+    public func accessKey(
+        _ value: AccessKeyAttributeValueType?
     ) -> Self {
-        setAttribute(key: .accesskey, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.accesskey, value: value?.attributeValue)
     }
 }

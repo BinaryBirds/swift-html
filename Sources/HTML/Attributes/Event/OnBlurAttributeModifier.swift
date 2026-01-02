@@ -9,6 +9,6 @@ extension OnBlurAttributeModifier where Self: Attributes & Mutable {
     public func onBlur(
         _ value: OnBlurAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onblur, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onblur, value: value?.attributeValue)
     }
 }

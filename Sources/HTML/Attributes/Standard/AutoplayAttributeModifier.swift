@@ -1,12 +1,12 @@
 import SGML
 
-public protocol AutoplayAttributeModifier {
+public protocol AutoPlayAttributeModifier {
 
 }
 
-extension AutoplayAttributeModifier where Self: Attributes & Mutable {
+extension AutoPlayAttributeModifier where Self: Attributes & Mutable {
 
-    public func autoplay() -> Self {
-        setAttribute(key: .autoplay)
+    public func autoPlay() -> Self {
+        setAttribute(key: StandardAttributeKey.autoplay)
     }
 }

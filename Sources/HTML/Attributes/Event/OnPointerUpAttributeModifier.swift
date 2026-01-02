@@ -9,6 +9,6 @@ extension OnPointerUpAttributeModifier where Self: Attributes & Mutable {
     public func onPointerUp(
         _ value: OnPointerUpAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onpointerup, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onpointerup, value: value?.attributeValue)
     }
 }

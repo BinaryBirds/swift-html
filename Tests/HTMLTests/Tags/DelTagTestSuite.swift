@@ -11,7 +11,7 @@ struct DelTagTestSuite {
         let tag = Del {
             Text("Lorem ipsum")
         }
-        .datetime("2009-10-11T01:25-07:00")
+        .dateTime("2009-10-11T01:25-07:00")
 
         let renderer = Renderer()
         let doc = Document(root: tag)

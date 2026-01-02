@@ -7,6 +7,6 @@ public protocol LoopAttributeModifier {
 extension LoopAttributeModifier where Self: Attributes & Mutable {
 
     public func loop() -> Self {
-        setAttribute(key: .loop)
+        setAttribute(key: StandardAttributeKey.loop)
     }
 }

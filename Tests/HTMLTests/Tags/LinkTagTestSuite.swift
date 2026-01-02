@@ -49,7 +49,7 @@ struct LinkTagTestSuite {
             .integrity(
                 "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             )
-            .crossorigin(.anonymous)
+            .crossOrigin(.anonymous)
 
         let renderer = Renderer()
         let doc = Document(root: tag)

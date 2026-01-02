@@ -10,6 +10,6 @@ extension FormActionAttributeModifier where Self: Attributes & Mutable {
     public func formAction(
         _ value: FormActionAttributeValueType?
     ) -> Self {
-        setAttribute(key: .formaction, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.formaction, value: value?.attributeValue)
     }
 }

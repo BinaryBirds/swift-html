@@ -9,6 +9,6 @@ extension OnMouseOverAttributeModifier where Self: Attributes & Mutable {
     public func onMouseOver(
         _ value: OnMouseOverAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onmouseover, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onmouseover, value: value?.attributeValue)
     }
 }

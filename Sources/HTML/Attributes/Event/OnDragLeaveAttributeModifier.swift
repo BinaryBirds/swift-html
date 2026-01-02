@@ -9,6 +9,6 @@ extension OnDragLeaveAttributeModifier where Self: Attributes & Mutable {
     public func onDragLeave(
         _ value: OnDragLeaveAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ondragleave, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ondragleave, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension PopoverAttributeModifier where Self: Attributes & Mutable {
     public func popover(
         _ value: PopoverAttributeValueType?
     ) -> Self {
-        setAttribute(key: .popover, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.popover, value: value?.attributeValue)
     }
 }

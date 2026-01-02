@@ -9,6 +9,6 @@ extension OnSuspendAttributeModifier where Self: Attributes & Mutable {
     public func onSuspend(
         _ value: OnSuspendAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onsuspend, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onsuspend, value: value?.attributeValue)
     }
 }

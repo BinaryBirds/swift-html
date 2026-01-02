@@ -18,8 +18,8 @@ public struct Form:
     /// attribute modifiers
     GlobalAttributesModifier,
     ActionAttributeModifier,
-    AutocompleteAttributeModifier,
-    EnctypeAttributeModifier,
+    AutoCompleteAttributeModifier,
+    EncTypeAttributeModifier,
     MethodAttributeModifier,
     NameAttributeModifier,
     TargetAttributeModifier

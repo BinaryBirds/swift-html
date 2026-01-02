@@ -9,6 +9,6 @@ extension OnCanPlayAttributeModifier where Self: Attributes & Mutable {
     public func onCanPlay(
         _ value: OnCanPlayAttributeValueType?
     ) -> Self {
-        setAttribute(key: .oncanplay, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.oncanplay, value: value?.attributeValue)
     }
 }

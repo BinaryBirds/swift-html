@@ -23,6 +23,6 @@ extension TargetAttributeModifier where Self: Attributes & Mutable {
     public func target(
         _ value: TargetAttributeValueType
     ) -> Self {
-        setAttribute(key: .target, value: value.attributeValue)
+        setAttribute(key: StandardAttributeKey.target, value: value.attributeValue)
     }
 }

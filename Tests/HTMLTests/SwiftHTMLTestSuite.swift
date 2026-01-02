@@ -93,7 +93,7 @@ struct SwiftHTMLTestSuite {
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta."
                             )
                             .class(["green", "blue"])
-                            .spellcheck(false)
+                            .spellCheck(false)
                         }
                         A("Hello Swift HTML DSL!")
                             .href("https://swift.org")

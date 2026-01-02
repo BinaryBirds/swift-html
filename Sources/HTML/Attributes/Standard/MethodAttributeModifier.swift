@@ -16,6 +16,6 @@ extension MethodAttributeModifier where Self: Attributes & Mutable {
     public func method(
         _ value: MethodAttributeValueType?
     ) -> Self {
-        setAttribute(key: .method, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.method, value: value?.attributeValue)
     }
 }

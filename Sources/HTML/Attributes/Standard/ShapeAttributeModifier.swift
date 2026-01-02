@@ -20,6 +20,6 @@ extension ShapeAttributeModifier where Self: Attributes & Mutable {
     public func shape(
         _ value: ShapeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .shape, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.shape, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnAbortAttributeModifier where Self: Attributes & Mutable {
     public func onAbort(
         _ value: OnAbortAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onabort, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onabort, value: value?.attributeValue)
     }
 }

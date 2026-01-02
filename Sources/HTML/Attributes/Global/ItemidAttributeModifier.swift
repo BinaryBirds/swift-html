@@ -1,14 +1,14 @@
 import SGML
 
-public protocol ItemidAttributeModifier {
-    associatedtype ItemidAttributeValueType: AttributeValueRepresentable = String
+public protocol ItemIdAttributeModifier {
+    associatedtype ItemIdAttributeValueType: AttributeValueRepresentable = String
 }
 
-extension ItemidAttributeModifier where Self: Attributes & Mutable {
+extension ItemIdAttributeModifier where Self: Attributes & Mutable {
 
-    public func itemid(
-        _ value: ItemidAttributeValueType?
+    public func itemId(
+        _ value: ItemIdAttributeValueType?
     ) -> Self {
-        setAttribute(key: .itemid, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.itemid, value: value?.attributeValue)
     }
 }

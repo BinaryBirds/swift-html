@@ -10,8 +10,8 @@ public struct Link:
     /// attribute modifiers
     GlobalAttributesModifier,
     HrefAttributeModifier,
-    CrossoriginAttributeModifier,
-    HreflangAttributeModifier,
+    CrossOriginAttributeModifier,
+    HrefLangAttributeModifier,
     MediaAttributeModifier,
     IntegrityAttributeModifier,
     TypeAttributeModifier,

@@ -9,6 +9,6 @@ extension SpanAttributeModifier where Self: Attributes & Mutable {
     public func span(
         _ value: SpanAttributeValueType?
     ) -> Self {
-        setAttribute(key: .span, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.span, value: value?.attributeValue)
     }
 }

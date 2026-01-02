@@ -6,6 +6,6 @@ public protocol InertAttributeModifier {
 extension InertAttributeModifier where Self: Attributes & Mutable {
 
     public func inert() -> Self {
-        setAttribute(key: .inert)
+        setAttribute(key: GlobalAttributeKey.inert)
     }
 }

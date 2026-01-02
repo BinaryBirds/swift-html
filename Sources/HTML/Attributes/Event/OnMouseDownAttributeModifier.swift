@@ -9,6 +9,6 @@ extension OnMouseDownAttributeModifier where Self: Attributes & Mutable {
     public func onMouseDown(
         _ value: OnMouseDownAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onmousedown, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onmousedown, value: value?.attributeValue)
     }
 }

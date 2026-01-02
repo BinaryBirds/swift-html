@@ -9,6 +9,6 @@ extension OnCueChangeAttributeModifier where Self: Attributes & Mutable {
     public func onCueChange(
         _ value: OnCueChangeAttributeValueType?
     ) -> Self {
-        setAttribute(key: .oncuechange, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.oncuechange, value: value?.attributeValue)
     }
 }

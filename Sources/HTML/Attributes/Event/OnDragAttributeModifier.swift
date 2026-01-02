@@ -9,6 +9,6 @@ extension OnDragAttributeModifier where Self: Attributes & Mutable {
     public func onDrag(
         _ value: OnDragAttributeValueType?
     ) -> Self {
-        setAttribute(key: .ondrag, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ondrag, value: value?.attributeValue)
     }
 }

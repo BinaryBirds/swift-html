@@ -8,7 +8,7 @@ public struct Ins:
     /// attribute modifiers
     GlobalAttributesModifier,
     CiteAttributeModifier,
-    DatetimeAttributeModifier
+    DateTimeAttributeModifier
 {
 
     /// The attribute storage for the tag.

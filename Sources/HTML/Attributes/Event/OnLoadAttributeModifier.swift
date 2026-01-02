@@ -9,6 +9,6 @@ extension OnLoadAttributeModifier where Self: Attributes & Mutable {
     public func onLoad(
         _ value: OnLoadAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onload, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onload, value: value?.attributeValue)
     }
 }

@@ -11,7 +11,7 @@ public struct Source:
     TypeAttributeModifier,
     MediaAttributeModifier,
     SrcAttributeModifier,
-    SrcsetAttributeModifier,
+    SrcSetAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
     SizesAttributeModifier

@@ -14,7 +14,7 @@ public struct Button:
     DisabledAttributeModifier,
     FormAttributeModifier,
     FormActionAttributeModifier,
-    FormEnctypeAttributeModifier,
+    FormEncTypeAttributeModifier,
     FormMethodAttributeModifier,
     FormTargetAttributeModifier,
     NameAttributeModifier,

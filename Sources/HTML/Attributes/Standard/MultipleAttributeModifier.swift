@@ -7,6 +7,6 @@ public protocol MultipleAttributeModifier {
 extension MultipleAttributeModifier where Self: Attributes & Mutable {
 
     public func multiple() -> Self {
-        setAttribute(key: .multiple)
+        setAttribute(key: StandardAttributeKey.multiple)
     }
 }

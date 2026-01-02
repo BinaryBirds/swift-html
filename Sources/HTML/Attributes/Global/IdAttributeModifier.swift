@@ -10,6 +10,6 @@ extension IdAttributeModifier where Self: Attributes & Mutable {
     public func id(
         _ value: IdAttributeValueType?
     ) -> Self {
-        setAttribute(key: .id, value: value?.attributeValue)
+        setAttribute(key: GlobalAttributeKey.id, value: value?.attributeValue)
     }
 }

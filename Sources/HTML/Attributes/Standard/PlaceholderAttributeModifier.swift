@@ -10,6 +10,6 @@ extension PlaceholderAttributeModifier where Self: Attributes & Mutable {
     public func placeholder(
         _ value: PlaceholderAttributeValueType?
     ) -> Self {
-        setAttribute(key: .placeholder, value: value?.attributeValue)
+        setAttribute(key: StandardAttributeKey.placeholder, value: value?.attributeValue)
     }
 }

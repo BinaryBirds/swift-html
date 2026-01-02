@@ -9,6 +9,6 @@ extension OnErrorAttributeModifier where Self: Attributes & Mutable {
     public func onError(
         _ value: OnErrorAttributeValueType?
     ) -> Self {
-        setAttribute(key: .onerror, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.onerror, value: value?.attributeValue)
     }
 }

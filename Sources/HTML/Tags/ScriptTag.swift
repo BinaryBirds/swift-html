@@ -14,10 +14,10 @@ public struct Script:
     TypeAttributeModifier,
     SrcAttributeModifier,
     BlockingAttributeModifier,
-    CrossoriginAttributeModifier,
+    CrossOriginAttributeModifier,
     ReferrerPolicyAttributeModifier,
     IntegrityAttributeModifier,
-    FetchpriorityAttributeModifier
+    FetchPriorityAttributeModifier
 {
 
     private enum Kind {
@@ -71,7 +71,7 @@ public struct Script:
     }
 
     public func javaScript() -> Self {
-        setAttribute(key: .type, value: "application/javascript")
+        setAttribute(key: StandardAttributeKey.type, value: "application/javascript")
     }
 
     // MARK: -
