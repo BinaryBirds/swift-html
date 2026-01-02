@@ -1,13 +1,13 @@
 import SGML
 
 public protocol AltAttributeModifier {
-    associatedtype AltAttributeValue: AttributeValueRepresentable = String
+    associatedtype AltAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension AltAttributeModifier where Self: Attributes & Mutable {
 
     public func alt(
-        _ value: AltAttributeValue?
+        _ value: AltAttributeValueType?
     ) -> Self {
         setAttribute(key: .alt, value: value?.attributeValue)
     }

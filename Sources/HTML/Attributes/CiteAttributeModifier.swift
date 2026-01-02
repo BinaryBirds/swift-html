@@ -1,14 +1,14 @@
 import SGML
 
 public protocol CiteAttributeModifier {
-    associatedtype CiteAttributeValue: AttributeValueRepresentable = String
+    associatedtype CiteAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension CiteAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets a cite attribute.
     public func cite(
-        _ value: CiteAttributeValue?
+        _ value: CiteAttributeValueType?
     ) -> Self {
         setAttribute(key: .cite, value: value?.attributeValue)
     }

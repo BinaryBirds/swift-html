@@ -1,18 +1,18 @@
 import SGML
 
-public enum CrossoriginValue: String, Sendable, AttributeValueRepresentable {
+public enum CrossoriginAttributeValue: String, Sendable, AttributeValueRepresentable {
     case anonymous
     case useCredentials = "use-credentials"
 }
 
 public protocol CrossoriginAttributeModifier {
-    associatedtype CrossoriginAttributeValue: AttributeValueRepresentable = CrossoriginValue
+    associatedtype CrossoriginAttributeValueType: AttributeValueRepresentable = CrossoriginAttributeValue
 }
 
 extension CrossoriginAttributeModifier where Self: Attributes & Mutable {
 
     public func crossorigin(
-        _ value: CrossoriginAttributeValue?
+        _ value: CrossoriginAttributeValueType?
     ) -> Self {
         setAttribute(key: .crossorigin, value: value?.attributeValue)
     }

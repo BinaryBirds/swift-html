@@ -1,6 +1,6 @@
 import SGML
 
-public enum FormTargetValue: Sendable, AttributeValueRepresentable {
+public enum FormTargetAttributeValue: Sendable, AttributeValueRepresentable {
     /// Opens the linked document in a new window or tab
     case blank
     /// Opens the linked document in the same frame as it was clicked (this is default)
@@ -29,13 +29,13 @@ public enum FormTargetValue: Sendable, AttributeValueRepresentable {
 }
 
 public protocol FormTargetAttributeModifier {
-    associatedtype FormTargetAttributeValue: AttributeValueRepresentable = FormTargetValue
+    associatedtype FormTargetAttributeValueType: AttributeValueRepresentable = FormTargetAttributeValue
 }
 
 extension FormTargetAttributeModifier where Self: Attributes & Mutable {
 
     public func formTarget(
-        _ value: FormTargetAttributeValue?
+        _ value: FormTargetAttributeValueType?
     ) -> Self {
         setAttribute(key: .formtarget, value: value?.attributeValue)
     }

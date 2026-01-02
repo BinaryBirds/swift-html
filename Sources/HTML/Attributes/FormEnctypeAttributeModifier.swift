@@ -1,13 +1,13 @@
 import SGML
 
 public protocol FormEnctypeAttributeModifier {
-    associatedtype FormEnctypeAttributeValue: AttributeValueRepresentable = EnctypeValue
+    associatedtype FormEnctypeAttributeValueType: AttributeValueRepresentable = EnctypeAttributeValue
 }
 
 extension FormEnctypeAttributeModifier where Self: Attributes & Mutable {
 
     public func formEnctype(
-        _ value: FormEnctypeAttributeValue?
+        _ value: FormEnctypeAttributeValueType?
     ) -> Self {
         setAttribute(key: .formenctype, value: value?.attributeValue)
     }

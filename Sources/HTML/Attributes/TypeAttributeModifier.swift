@@ -2,13 +2,13 @@ import SGML
 
 
 public protocol TypeAttributeModifier {
-    associatedtype TypeAttributeValue: AttributeValueRepresentable = String
+    associatedtype TypeAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension TypeAttributeModifier where Self: Attributes & Mutable {
 
     public func type(
-        _ value: TypeAttributeValue?
+        _ value: TypeAttributeValueType?
     ) -> Self {
         setAttribute(key: .type, value: value?.attributeValue)
     }

@@ -1,14 +1,14 @@
 import SGML
 
 public protocol HrefAttributeModifier {
-    associatedtype HrefAttributeValue: AttributeValueRepresentable = String
+    associatedtype HrefAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension HrefAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets a href attribute.
     public func href(
-        _ value: HrefAttributeValue?
+        _ value: HrefAttributeValueType?
     ) -> Self {
         setAttribute(key: .href, value: value?.attributeValue)
     }

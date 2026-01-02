@@ -36,28 +36,6 @@ public struct Button:
 //⚠️type — Type of button
 //✅value — Value to be used for form submission
 {
-    public typealias TypeValue = Type.Value
-
-    public struct `Type`: Attribute {
-
-        public enum Value: String, AttributeValueRepresentable {
-            /// The button is a clickable button
-            case button
-            /// The button is a submit button (submits form-data)
-            case submit
-            /// The button is a reset button (resets the form-data to its initial values)
-            case reset
-        }
-
-        public var value: String?
-
-        init(
-            _ value: Value? = nil
-        ) {
-            self.value = value?.rawValue
-        }
-    }
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -99,6 +77,18 @@ public struct Button:
         self.init(children: block())
     }
 
+    // MARK: -
+    
+    public enum Types: String, AttributeValueRepresentable {
+        /// The button is a clickable button
+        case button
+        /// The button is a submit button (submits form-data)
+        case submit
+        /// The button is a reset button (resets the form-data to its initial values)
+        case reset
+    }
+
+    public typealias TypeAttributeValueType = Types
 }
 
 //    /// Specifies that the form-data should not be validated on submission. Only for type="submit"

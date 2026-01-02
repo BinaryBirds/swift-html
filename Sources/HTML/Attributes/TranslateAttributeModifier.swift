@@ -1,6 +1,6 @@
 import SGML
 
-public enum TranslateValue: String, Sendable, AttributeValueRepresentable {
+public enum TranslateAttributeValue: String, Sendable, AttributeValueRepresentable {
     /// Specifies that the content of the element should be translated.
     case yes
     /// Specifies that the content of the element must not be translated.
@@ -8,13 +8,13 @@ public enum TranslateValue: String, Sendable, AttributeValueRepresentable {
 }
 
 public protocol TranslateAttributeModifier {
-    associatedtype TranslateAttributeValue: AttributeValueRepresentable = TranslateValue
+    associatedtype TranslateAttributeValueType: AttributeValueRepresentable = TranslateAttributeValue
 }
 
 extension TranslateAttributeModifier where Self: Attributes & Mutable {
 
     public func translate(
-        _ value: TranslateAttributeValue?
+        _ value: TranslateAttributeValueType?
     ) -> Self {
         setAttribute(key: .translate, value: value?.attributeValue)
     }

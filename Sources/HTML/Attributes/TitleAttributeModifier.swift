@@ -1,7 +1,7 @@
 import SGML
 
 public protocol TitleAttributeModifier {
-    associatedtype TitleAttributeValue: AttributeValueRepresentable = String
+    associatedtype TitleAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension TitleAttributeModifier where Self: Attributes & Mutable {
@@ -16,7 +16,7 @@ extension TitleAttributeModifier where Self: Attributes & Mutable {
     ///
     /// - Returns: A modified copy of the element with the updated `title` attribute.
     public func title(
-        _ value: TitleAttributeValue?
+        _ value: TitleAttributeValueType?
     ) -> Self {
         setAttribute(key: .title, value: value?.attributeValue)
     }

@@ -1,19 +1,19 @@
 import SGML
 
-public enum ClosedbyValue: String, Sendable, AttributeValueRepresentable {
+public enum ClosedbyAttributeValue: String, Sendable, AttributeValueRepresentable {
     case any
     case closeRequest
     case none
 }
 
 public protocol ClosedbyAttributeModifier {
-    associatedtype ClosedbyAttributeValue: AttributeValueRepresentable = ClosedbyValue
+    associatedtype ClosedbyAttributeValueType: AttributeValueRepresentable = ClosedbyAttributeValue
 }
 
 extension ClosedbyAttributeModifier where Self: Attributes & Mutable {
 
     public func closedby(
-        _ value: ClosedbyAttributeValue?
+        _ value: ClosedbyAttributeValueType?
     ) -> Self {
         setAttribute(key: .closedby, value: value?.attributeValue)
     }

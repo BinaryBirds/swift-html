@@ -1,13 +1,13 @@
 import SGML
 
 public protocol SizesAttributeModifier {
-    associatedtype SizesAttributeValue: AttributeValueRepresentable = String
+    associatedtype SizesAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension SizesAttributeModifier where Self: Attributes & Mutable {
 
     public func sizes(
-        _ value: SizesAttributeValue?
+        _ value: SizesAttributeValueType?
     ) -> Self {
         setAttribute(key: .sizes, value: value?.attributeValue)
     }

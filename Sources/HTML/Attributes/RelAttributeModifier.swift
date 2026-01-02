@@ -1,6 +1,6 @@
 import SGML
 
-public enum RelValue: String, Sendable, AttributeValueRepresentable {
+public enum RelAttributeValue: String, Sendable, AttributeValueRepresentable {
     /// Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)
     case alternate
     /// Provides a link to the author of the document
@@ -31,14 +31,14 @@ public enum RelValue: String, Sendable, AttributeValueRepresentable {
 }
 
 public protocol RelAttributeModifier {
-    associatedtype RelAttributeValue: AttributeValueRepresentable = RelValue
+    associatedtype RelAttributeValueType: AttributeValueRepresentable = RelAttributeValue
 }
 
 extension RelAttributeModifier where Self: Attributes & Mutable {
 
     /// Set a rel attribute.
     public func rel(
-        _ value: RelAttributeValue
+        _ value: RelAttributeValueType
     ) -> Self {
         setAttribute(key: .rel, value: value.attributeValue)
     }

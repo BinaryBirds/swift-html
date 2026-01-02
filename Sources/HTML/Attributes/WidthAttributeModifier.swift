@@ -1,13 +1,13 @@
 import SGML
 
 public protocol WidthAttributeModifier {
-    associatedtype WidthAttributeValue: AttributeValueRepresentable = Int
+    associatedtype WidthAttributeValueType: AttributeValueRepresentable = Int
 }
 
 extension WidthAttributeModifier where Self: Attributes & Mutable {
 
     public func width(
-        _ value: WidthAttributeValue?
+        _ value: WidthAttributeValueType?
     ) -> Self {
         setAttribute(key: .width, value: value?.attributeValue)
     }

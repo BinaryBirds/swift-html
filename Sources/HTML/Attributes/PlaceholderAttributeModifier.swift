@@ -1,13 +1,13 @@
 import SGML
 
 public protocol PlaceholderAttributeModifier {
-    associatedtype PlaceholderAttributeValue: AttributeValueRepresentable = String
+    associatedtype PlaceholderAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension PlaceholderAttributeModifier where Self: Attributes & Mutable {
 
     public func placeholder(
-        _ value: PlaceholderAttributeValue?
+        _ value: PlaceholderAttributeValueType?
     ) -> Self {
         setAttribute(key: .placeholder, value: value?.attributeValue)
     }

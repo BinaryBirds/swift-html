@@ -1,13 +1,13 @@
 import SGML
 
 public protocol HeightAttributeModifier {
-    associatedtype HeightAttributeValue: AttributeValueRepresentable = Int
+    associatedtype HeightAttributeValueType: AttributeValueRepresentable = Int
 }
 
 extension HeightAttributeModifier where Self: Attributes & Mutable {
 
     public func height(
-        _ value: HeightAttributeValue?
+        _ value: HeightAttributeValueType?
     ) -> Self {
         setAttribute(key: .height, value: value?.attributeValue)
     }

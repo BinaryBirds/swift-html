@@ -1,13 +1,13 @@
 import SGML
 
 public protocol SrcAttributeModifier {
-    associatedtype SrcAttributeValue: AttributeValueRepresentable = String
+    associatedtype SrcAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension SrcAttributeModifier where Self: Attributes & Mutable {
 
     public func src(
-        _ value: SrcAttributeValue?
+        _ value: SrcAttributeValueType?
     ) -> Self {
         setAttribute(key: .src, value: value?.attributeValue)
     }

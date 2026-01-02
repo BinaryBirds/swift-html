@@ -1,13 +1,13 @@
 import SGML
 
 public protocol FormMethodAttributeModifier {
-    associatedtype FormMethodAttributeValue: AttributeValueRepresentable = MethodValue
+    associatedtype FormMethodAttributeValueType: AttributeValueRepresentable = MethodAttributeValue
 }
 
 extension FormMethodAttributeModifier where Self: Attributes & Mutable {
 
     public func formMethod(
-        _ value: FormMethodAttributeValue?
+        _ value: FormMethodAttributeValueType?
     ) -> Self {
         setAttribute(key: .formmethod, value: value?.attributeValue)
     }

@@ -1,14 +1,14 @@
 import SGML
 
 public protocol FormAttributeModifier {
-    associatedtype FormAttributeValue: AttributeValueRepresentable = String
+    associatedtype FormAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension FormAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets an Form attribute.
     public func form(
-        _ value: FormAttributeValue?
+        _ value: FormAttributeValueType?
     ) -> Self {
         setAttribute(key: .form, value: value?.attributeValue)
     }

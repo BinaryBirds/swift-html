@@ -111,7 +111,7 @@ public struct Input:
         case week
     }
 
-    public typealias TypeAttributeValue = Types
+    public typealias TypeAttributeValueType = Types
 
 }
 

@@ -1,13 +1,13 @@
 import SGML
 
 public protocol PingAttributeModifier {
-    associatedtype PingAttributeValue: AttributeValueRepresentable = String
+    associatedtype PingAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension PingAttributeModifier where Self: Attributes & Mutable {
 
     public func ping(
-        _ value: PingAttributeValue?
+        _ value: PingAttributeValueType?
     ) -> Self {
         if let value {
             return ping([value.attributeValue])

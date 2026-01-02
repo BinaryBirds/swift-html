@@ -1,13 +1,13 @@
 import SGML
 
 public protocol ForAttributeModifier {
-    associatedtype ForAttributeValue: AttributeValueRepresentable = String
+    associatedtype ForAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension ForAttributeModifier where Self: Attributes & Mutable {
 
     public func `for`(
-        _ value: ForAttributeValue?
+        _ value: ForAttributeValueType?
     ) -> Self {
         setAttribute(key: .`for`, value: value?.attributeValue)
     }

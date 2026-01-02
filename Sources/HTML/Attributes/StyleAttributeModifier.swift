@@ -1,14 +1,14 @@
 import SGML
 
 public protocol StyleAttributeModifier {
-    associatedtype StyleAttributeValue: AttributeValueRepresentable = String
+    associatedtype StyleAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension StyleAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets an style attribute.
     public func style(
-        _ value: StyleAttributeValue?
+        _ value: StyleAttributeValueType?
     ) -> Self {
         setAttribute(key: .style, value: value?.attributeValue)
     }

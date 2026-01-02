@@ -1,17 +1,17 @@
 import SGML
 
-public enum BlockingValue: String, Sendable, AttributeValueRepresentable {
+public enum BlockingAttributeValue: String, Sendable, AttributeValueRepresentable {
     case render
 }
 
 public protocol BlockingAttributeModifier {
-    associatedtype BlockingAttributeValue: AttributeValueRepresentable = BlockingValue
+    associatedtype BlockingAttributeValueType: AttributeValueRepresentable = BlockingAttributeValue
 }
 
 extension BlockingAttributeModifier where Self: Attributes & Mutable {
 
     public func blocking(
-        _ value: BlockingAttributeValue?
+        _ value: BlockingAttributeValueType?
     ) -> Self {
         setAttribute(key: .blocking, value: value?.attributeValue)
     }

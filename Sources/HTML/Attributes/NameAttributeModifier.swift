@@ -1,14 +1,14 @@
 import SGML
 
 public protocol NameAttributeModifier {
-    associatedtype NameAttributeValue: AttributeValueRepresentable = String
+    associatedtype NameAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension NameAttributeModifier where Self: Attributes & Mutable {
 
     /// Sets a name attribute.
     public func name(
-        _ value: NameAttributeValue?
+        _ value: NameAttributeValueType?
     ) -> Self {
         setAttribute(key: .name, value: value?.attributeValue)
     }

@@ -1,13 +1,13 @@
 import SGML
 
 public protocol LabelAttributeModifier {
-    associatedtype LabelAttributeValue: AttributeValueRepresentable = String
+    associatedtype LabelAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension LabelAttributeModifier where Self: Attributes & Mutable {
 
     public func label(
-        _ value: LabelAttributeValue?
+        _ value: LabelAttributeValueType?
     ) -> Self {
         setAttribute(key: .label, value: value?.attributeValue)
     }

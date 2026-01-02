@@ -1,18 +1,18 @@
 import SGML
 
-public enum MethodValue: String, Sendable, AttributeValueRepresentable {
+public enum MethodAttributeValue: String, Sendable, AttributeValueRepresentable {
     case get
     case post
 }
 
 public protocol MethodAttributeModifier {
-    associatedtype MethodAttributeValue: AttributeValueRepresentable = MethodValue
+    associatedtype MethodAttributeValueType: AttributeValueRepresentable = MethodAttributeValue
 }
 
 extension MethodAttributeModifier where Self: Attributes & Mutable {
 
     public func method(
-        _ value: MethodAttributeValue?
+        _ value: MethodAttributeValueType?
     ) -> Self {
         setAttribute(key: .method, value: value?.attributeValue)
     }
