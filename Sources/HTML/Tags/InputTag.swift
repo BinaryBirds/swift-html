@@ -64,43 +64,6 @@ public struct Input:
 //✅value — Value of the form control
 //✅width — Horizontal dimension
 {
-
-    public struct `Type`: Attribute {
-
-        public enum Value: String {
-            case button
-            case checkbox
-            case color
-            case date
-            case datetimeLocal = "datetime-local"
-            case email
-            case file
-            case hidden
-            case image
-            case month
-            case number
-            case password
-            case radio
-            case range
-            case reset
-            case search
-            case submit
-            case tel
-            case text
-            case time
-            case url
-            case week
-        }
-
-        public var value: String?
-
-        init(
-            _ value: Value? = nil
-        ) {
-            self.value = value?.rawValue
-        }
-    }
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
@@ -119,12 +82,37 @@ public struct Input:
     public init() {
         self.attributes = .init()
     }
+    
+    // MARK: - attributes
+    
 
-    public func `type`(
-        _ value: `Type`.Value?
-    ) -> Self {
-        setAttribute(`Type`(value))
+    public enum Types: String, AttributeValueRepresentable {
+        case button
+        case checkbox
+        case color
+        case date
+        case datetimeLocal = "datetime-local"
+        case email
+        case file
+        case hidden
+        case image
+        case month
+        case number
+        case password
+        case radio
+        case range
+        case reset
+        case search
+        case submit
+        case tel
+        case text
+        case time
+        case url
+        case week
     }
+
+    public typealias TypeAttributeValue = Types
+
 }
 
 //    /// Specifies a filter for what file types the user can pick from the file input dialog box (only for type="file")

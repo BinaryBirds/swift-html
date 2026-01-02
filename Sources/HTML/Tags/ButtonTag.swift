@@ -36,10 +36,11 @@ public struct Button:
 //⚠️type — Type of button
 //✅value — Value to be used for form submission
 {
+    public typealias TypeValue = Type.Value
 
     public struct `Type`: Attribute {
 
-        public enum Value: String {
+        public enum Value: String, AttributeValueRepresentable {
             /// The button is a clickable button
             case button
             /// The button is a submit button (submits form-data)
@@ -98,11 +99,6 @@ public struct Button:
         self.init(children: block())
     }
 
-    public func `type`(
-        _ value: `Type`.Value?
-    ) -> Self {
-        setAttribute(`Type`(value))
-    }
 }
 
 //    /// Specifies that the form-data should not be validated on submission. Only for type="submit"
