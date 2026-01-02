@@ -9,6 +9,6 @@ extension OnMouseOutAttributeModifier where Self: Attributes & Mutable {
     public func onMouseOut(
         _ value: OnMouseOutAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onmouseout, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.mouseOut, value: value?.attributeValue)
     }
 }

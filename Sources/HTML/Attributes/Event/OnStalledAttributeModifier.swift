@@ -9,6 +9,6 @@ extension OnStalledAttributeModifier where Self: Attributes & Mutable {
     public func onStalled(
         _ value: OnStalledAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onstalled, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.stalled, value: value?.attributeValue)
     }
 }

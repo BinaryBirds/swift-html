@@ -9,6 +9,6 @@ extension OnPointerDownAttributeModifier where Self: Attributes & Mutable {
     public func onPointerDown(
         _ value: OnPointerDownAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onpointerdown, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.pointerDown, value: value?.attributeValue)
     }
 }

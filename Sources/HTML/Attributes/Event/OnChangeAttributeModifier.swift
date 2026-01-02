@@ -9,6 +9,6 @@ extension OnChangeAttributeModifier where Self: Attributes & Mutable {
     public func onChange(
         _ value: OnChangeAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onchange, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.change, value: value?.attributeValue)
     }
 }

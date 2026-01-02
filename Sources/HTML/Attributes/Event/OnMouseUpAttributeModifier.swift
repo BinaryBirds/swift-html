@@ -9,6 +9,6 @@ extension OnMouseUpAttributeModifier where Self: Attributes & Mutable {
     public func onMouseUp(
         _ value: OnMouseUpAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onmouseup, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.mouseUp, value: value?.attributeValue)
     }
 }

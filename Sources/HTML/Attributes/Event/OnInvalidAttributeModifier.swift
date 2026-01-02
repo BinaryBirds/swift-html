@@ -9,6 +9,6 @@ extension OnInvalidAttributeModifier where Self: Attributes & Mutable {
     public func onInvalid(
         _ value: OnInvalidAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.oninvalid, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.invalid, value: value?.attributeValue)
     }
 }

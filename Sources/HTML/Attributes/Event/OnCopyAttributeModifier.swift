@@ -9,6 +9,6 @@ extension OnCopyAttributeModifier where Self: Attributes & Mutable {
     public func onCopy(
         _ value: OnCopyAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.oncopy, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.copy, value: value?.attributeValue)
     }
 }

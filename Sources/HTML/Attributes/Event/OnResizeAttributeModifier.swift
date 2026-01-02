@@ -9,6 +9,6 @@ extension OnResizeAttributeModifier where Self: Attributes & Mutable {
     public func onResize(
         _ value: OnResizeAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onresize, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.resize, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnMouseLeaveAttributeModifier where Self: Attributes & Mutable {
     public func onMouseLeave(
         _ value: OnMouseLeaveAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onmouseleave, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.mouseLeave, value: value?.attributeValue)
     }
 }

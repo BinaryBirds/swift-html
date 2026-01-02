@@ -9,6 +9,6 @@ extension OnScrollAttributeModifier where Self: Attributes & Mutable {
     public func onScroll(
         _ value: OnScrollAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onscroll, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.scroll, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnMouseMoveAttributeModifier where Self: Attributes & Mutable {
     public func onMouseMove(
         _ value: OnMouseMoveAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onmousemove, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.mouseMove, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnUnhandledRejectionAttributeModifier where Self: Attributes & Mutable
     public func onUnhandledRejection(
         _ value: OnUnhandledRejectionAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onunhandledrejection, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.unhandledRejection, value: value?.attributeValue)
     }
 }

@@ -9,6 +9,6 @@ extension OnKeyPressAttributeModifier where Self: Attributes & Mutable {
     public func onKeyPress(
         _ value: OnKeyPressAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onkeypress, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.keyPress, value: value?.attributeValue)
     }
 }

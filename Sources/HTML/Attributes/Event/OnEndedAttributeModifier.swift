@@ -9,6 +9,6 @@ extension OnEndedAttributeModifier where Self: Attributes & Mutable {
     public func onEnded(
         _ value: OnEndedAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onended, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.ended, value: value?.attributeValue)
     }
 }

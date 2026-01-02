@@ -9,6 +9,6 @@ extension OnPasteAttributeModifier where Self: Attributes & Mutable {
     public func onPaste(
         _ value: OnPasteAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onpaste, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.paste, value: value?.attributeValue)
     }
 }

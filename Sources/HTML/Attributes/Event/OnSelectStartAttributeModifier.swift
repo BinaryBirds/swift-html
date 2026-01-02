@@ -9,6 +9,6 @@ extension OnSelectStartAttributeModifier where Self: Attributes & Mutable {
     public func onSelectStart(
         _ value: OnSelectStartAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onselectstart, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.selectStart, value: value?.attributeValue)
     }
 }

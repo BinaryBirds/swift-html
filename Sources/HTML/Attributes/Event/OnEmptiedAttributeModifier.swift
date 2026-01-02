@@ -9,6 +9,6 @@ extension OnEmptiedAttributeModifier where Self: Attributes & Mutable {
     public func onEmptied(
         _ value: OnEmptiedAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onemptied, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.emptied, value: value?.attributeValue)
     }
 }

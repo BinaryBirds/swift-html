@@ -9,6 +9,6 @@ extension OnPageShowAttributeModifier where Self: Attributes & Mutable {
     public func onPageShow(
         _ value: OnPageShowAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onpageshow, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.pageShow, value: value?.attributeValue)
     }
 }

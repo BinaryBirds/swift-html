@@ -9,6 +9,6 @@ extension OnHashChangeAttributeModifier where Self: Attributes & Mutable {
     public func onHashChange(
         _ value: OnHashChangeAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onhashchange, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.hashChange, value: value?.attributeValue)
     }
 }

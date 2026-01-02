@@ -9,6 +9,6 @@ extension OnLostPointerCaptureAttributeModifier where Self: Attributes & Mutable
     public func onLostPointerCapture(
         _ value: OnLostPointerCaptureAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onlostpointercapture, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.lostPointerCapture, value: value?.attributeValue)
     }
 }

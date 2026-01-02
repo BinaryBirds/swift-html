@@ -9,6 +9,6 @@ extension OnOfflineAttributeModifier where Self: Attributes & Mutable {
     public func onOffline(
         _ value: OnOfflineAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onoffline, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.offline, value: value?.attributeValue)
     }
 }

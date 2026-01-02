@@ -9,6 +9,6 @@ extension OnStorageAttributeModifier where Self: Attributes & Mutable {
     public func onStorage(
         _ value: OnStorageAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onstorage, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.storage, value: value?.attributeValue)
     }
 }

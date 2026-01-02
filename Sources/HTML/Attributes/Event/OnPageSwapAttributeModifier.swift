@@ -9,6 +9,6 @@ extension OnPageSwapAttributeModifier where Self: Attributes & Mutable {
     public func onPageSwap(
         _ value: OnPageSwapAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onpageswap, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.pageSwap, value: value?.attributeValue)
     }
 }

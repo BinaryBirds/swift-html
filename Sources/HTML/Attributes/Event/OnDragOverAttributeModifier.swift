@@ -9,6 +9,6 @@ extension OnDragOverAttributeModifier where Self: Attributes & Mutable {
     public func onDragOver(
         _ value: OnDragOverAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.ondragover, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.dragOver, value: value?.attributeValue)
     }
 }

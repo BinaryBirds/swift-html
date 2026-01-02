@@ -9,6 +9,6 @@ extension OnKeyUpAttributeModifier where Self: Attributes & Mutable {
     public func onKeyUp(
         _ value: OnKeyUpAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onkeyup, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.keyUp, value: value?.attributeValue)
     }
 }

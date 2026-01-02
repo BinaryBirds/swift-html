@@ -9,6 +9,6 @@ extension OnWaitingAttributeModifier where Self: Attributes & Mutable {
     public func onWaiting(
         _ value: OnWaitingAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.onwaiting, value: value?.attributeValue)
+        setAttribute(key: EventAttributeKey.waiting, value: value?.attributeValue)
     }
 }
