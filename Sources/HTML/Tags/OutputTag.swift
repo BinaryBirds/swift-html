@@ -4,7 +4,7 @@ import SGML
 public struct Output:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ForAttributeModifier,
     FormAttributeModifier,
     NameAttributeModifier

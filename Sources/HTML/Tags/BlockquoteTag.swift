@@ -6,7 +6,7 @@ import SGML
 public struct Blockquote:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     CiteAttributeModifier
 {
 

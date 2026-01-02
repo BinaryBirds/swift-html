@@ -18,7 +18,7 @@ import SGML
 public struct Video:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     SrcAttributeModifier,
     CrossoriginAttributeModifier,
     AutoplayAttributeModifier,

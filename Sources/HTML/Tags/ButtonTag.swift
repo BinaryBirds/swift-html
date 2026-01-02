@@ -10,7 +10,7 @@ import SGML
 public struct Button:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
     FormActionAttributeModifier,

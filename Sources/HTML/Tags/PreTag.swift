@@ -7,7 +7,7 @@ import SGML
 public struct Pre:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
 
     /// The attribute storage for the tag.

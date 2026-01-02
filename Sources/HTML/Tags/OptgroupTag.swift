@@ -6,7 +6,7 @@ import SGML
 public struct Optgroup:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     DisabledAttributeModifier,
     LabelAttributeModifier
 {

@@ -10,7 +10,7 @@ import SGML
 public struct Option:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     DisabledAttributeModifier,
     ValueAttributeModifier,
     LabelAttributeModifier

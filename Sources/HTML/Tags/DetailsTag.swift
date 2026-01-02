@@ -10,7 +10,7 @@ import SGML
 public struct Details:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     NameAttributeModifier,
     OpenAttributeModifier
 {

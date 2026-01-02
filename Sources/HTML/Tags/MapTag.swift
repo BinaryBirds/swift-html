@@ -8,7 +8,7 @@ import SGML
 public struct Map:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     NameAttributeModifier
 {
 

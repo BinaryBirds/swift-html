@@ -10,7 +10,7 @@ public struct Script:
     HTMLTag,
     Attributes,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     TypeAttributeModifier,
     SrcAttributeModifier,
     BlockingAttributeModifier,

@@ -2,8 +2,11 @@ import SGML
 
 enum AttributeKeys: String {
     case action
+    case accesskey
     case alt
     case autocomplete
+    case autocapitalize
+    case autocorrect
     case autofocus
     case autoplay
     case blocking
@@ -13,6 +16,7 @@ enum AttributeKeys: String {
     case closedby
     case colspan
     case content
+    case contenteditable
     case controls
     case coords
     case crossorigin
@@ -20,8 +24,10 @@ enum AttributeKeys: String {
     case datetime
     case dir
     case disabled
+    case draggable
     case download
     case enctype
+    case enterkeyhint
     case fetchpriority
     case `for`
     case form
@@ -29,13 +35,25 @@ enum AttributeKeys: String {
     case formenctype
     case formmethod
     case formtarget
+    case headingoffset
+    case headingreset
     case height
+    case hidden
     case httpEquiv = "http-equiv"
     case href
     case hreflang
     case id
+    case inert
+    case inputmode
     case integrity
+    case `is`
+    case itemid
+    case itemprop
+    case itemref
+    case itemscope
+    case itemtype
     case label
+    case lang
     case loading
     case loop
     case media
@@ -43,9 +61,11 @@ enum AttributeKeys: String {
     case multiple
     case muted
     case name
+    case nonce
     case `open`
     case ping
     case placeholder
+    case popover
     case preload
     case readonly
     case referrerpolicy
@@ -56,11 +76,13 @@ enum AttributeKeys: String {
     case shape
     case size
     case sizes
+    case slot
     case span
     case spellcheck
     case src
     case srcset
     case style
+    case tabindex
     case target
     case title
     case translate
@@ -69,6 +91,7 @@ enum AttributeKeys: String {
     case usemap
     case value
     case width
+    case writingsuggestions
 }
 
 extension Attributes where Self: Mutable {

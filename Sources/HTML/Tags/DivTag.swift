@@ -12,7 +12,7 @@ import SGML
 public struct Div:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

@@ -6,7 +6,7 @@ import SGML
 public struct Fieldset:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
     NameAttributeModifier

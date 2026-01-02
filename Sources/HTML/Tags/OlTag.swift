@@ -10,7 +10,7 @@ import SGML
 public struct Ol:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 //reversed — Number the list backwards
 //start — Starting value of the list
 //type — Kind of list marker

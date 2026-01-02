@@ -18,7 +18,7 @@ import SGML
 public struct Head:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
 
     /// The attribute storage for the tag.

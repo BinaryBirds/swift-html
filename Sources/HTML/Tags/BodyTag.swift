@@ -8,7 +8,7 @@ import SGML
 public struct Body:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 // TODO: -
 //onafterprint
 //onbeforeprint

@@ -10,7 +10,7 @@ import SGML
 public struct Meter:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ValueAttributeModifier
 //✅value — Current value of the element
 //min — Lower bound of range

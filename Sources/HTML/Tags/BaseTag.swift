@@ -8,7 +8,7 @@ import SGML
 public struct Base:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     HrefAttributeModifier,
     TargetAttributeModifier
 {

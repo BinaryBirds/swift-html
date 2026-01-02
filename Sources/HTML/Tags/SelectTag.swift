@@ -14,7 +14,7 @@ import SGML
 public struct Select:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     AutocompleteAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,

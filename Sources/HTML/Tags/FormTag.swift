@@ -16,7 +16,7 @@ import SGML
 public struct Form:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ActionAttributeModifier,
     AutocompleteAttributeModifier,
     EnctypeAttributeModifier,

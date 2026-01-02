@@ -9,7 +9,7 @@ import SGML
 public struct H1:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
 
     /// The attribute storage for the tag.

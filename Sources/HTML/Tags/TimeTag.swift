@@ -6,7 +6,7 @@ import SGML
 public struct Time:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     DatetimeAttributeModifier
 {
 

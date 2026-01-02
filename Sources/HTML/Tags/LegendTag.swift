@@ -4,7 +4,7 @@ import SGML
 public struct Legend:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
 
     /// The attribute storage for the tag.

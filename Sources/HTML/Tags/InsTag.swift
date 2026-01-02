@@ -6,7 +6,7 @@ import SGML
 public struct Ins:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     CiteAttributeModifier,
     DatetimeAttributeModifier
 {

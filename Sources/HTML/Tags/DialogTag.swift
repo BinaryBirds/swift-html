@@ -6,7 +6,7 @@ import SGML
 public struct Dialog:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ClosedbyAttributeModifier,
     OpenAttributeModifier
 {

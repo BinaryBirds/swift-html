@@ -6,7 +6,7 @@ import SGML
 public struct Progress:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ValueAttributeModifier
 //✅value — Current value of the element
 // max — Upper bound of range

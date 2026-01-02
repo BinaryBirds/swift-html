@@ -6,7 +6,7 @@ import SGML
 public struct Style:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     MediaAttributeModifier,
     BlockingAttributeModifier
 {

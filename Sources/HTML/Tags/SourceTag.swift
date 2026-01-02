@@ -7,7 +7,7 @@ import SGML
 public struct Source:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     TypeAttributeModifier,
     MediaAttributeModifier,
     SrcAttributeModifier,

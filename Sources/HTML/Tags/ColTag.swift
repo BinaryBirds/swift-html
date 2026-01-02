@@ -6,7 +6,7 @@ import SGML
 public struct Col:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     SpanAttributeModifier
 {
 

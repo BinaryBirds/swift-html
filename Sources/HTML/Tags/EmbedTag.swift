@@ -4,7 +4,7 @@ import SGML
 public struct Embed:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
     SrcAttributeModifier,

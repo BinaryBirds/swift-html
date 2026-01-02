@@ -8,7 +8,7 @@ import SGML
 public struct Input:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     AltAttributeModifier,
     AutocompleteAttributeModifier,
     CheckedAttributeModifier,

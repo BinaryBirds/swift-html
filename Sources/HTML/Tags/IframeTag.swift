@@ -10,7 +10,7 @@ import SGML
 public struct Iframe:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     SrcAttributeModifier,
     NameAttributeModifier,
     WidthAttributeModifier,

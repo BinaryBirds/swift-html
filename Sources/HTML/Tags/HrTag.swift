@@ -6,7 +6,7 @@ import SGML
 public struct Hr:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

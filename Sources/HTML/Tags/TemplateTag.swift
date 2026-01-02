@@ -9,7 +9,7 @@ import SGML
 public struct Template:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 //shadowrootmode — Enables streaming declarative shadow roots
 //shadowrootdelegatesfocus — Sets delegates focus on a declarative shadow root
 //shadowrootclonable — Sets clonable on a declarative shadow root

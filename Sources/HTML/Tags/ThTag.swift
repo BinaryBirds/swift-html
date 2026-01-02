@@ -13,7 +13,7 @@ import SGML
 public struct Th:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ColspanAttributeModifier,
     RowspanAttributeModifier,
     ScopeAttributeModifier

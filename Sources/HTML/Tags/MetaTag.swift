@@ -13,7 +13,7 @@ import SGML
 public struct Meta:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ContentAttributeModifier,
     NameAttributeModifier,
     MediaAttributeModifier,

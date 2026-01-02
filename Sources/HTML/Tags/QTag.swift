@@ -8,7 +8,7 @@ import SGML
 public struct Q:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     CiteAttributeModifier
 {
 

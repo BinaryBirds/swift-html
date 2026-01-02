@@ -13,7 +13,7 @@ import SGML
 public struct Area:
     HTMLShortTag,
     // attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     AltAttributeModifier,
     DownloadAttributeModifier,
     HrefAttributeModifier,

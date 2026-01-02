@@ -10,8 +10,7 @@ public enum TranslateAttributeValue: String, Sendable,
 }
 
 public protocol TranslateAttributeModifier {
-    associatedtype TranslateAttributeValueType: AttributeValueRepresentable =
-        TranslateAttributeValue
+    associatedtype TranslateAttributeValueType: AttributeValueRepresentable = TranslateAttributeValue
 }
 
 extension TranslateAttributeModifier where Self: Attributes & Mutable {

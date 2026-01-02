@@ -8,7 +8,7 @@ import SGML
 public struct Br:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier
+    GlobalAttributesModifier
 {
 
     /// The attribute storage for the tag.

@@ -16,7 +16,7 @@ import SGML
 public struct Img:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     AltAttributeModifier,
     SrcAttributeModifier,
     CrossoriginAttributeModifier,

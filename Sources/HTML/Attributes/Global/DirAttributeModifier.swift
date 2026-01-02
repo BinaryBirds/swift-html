@@ -10,8 +10,7 @@ public enum DirAttributeValue: String, AttributeValueRepresentable {
 }
 
 public protocol DirAttributeModifier {
-    associatedtype DirAttributeValueType: AttributeValueRepresentable =
-        DirAttributeValue
+    associatedtype DirAttributeValueType: AttributeValueRepresentable = DirAttributeValue
 }
 
 extension DirAttributeModifier where Self: Attributes & Mutable {

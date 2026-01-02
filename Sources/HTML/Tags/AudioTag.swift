@@ -19,7 +19,7 @@ import SGML
 public struct Audio:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ControlsAttributeModifier,
     SrcAttributeModifier,
     CrossoriginAttributeModifier,

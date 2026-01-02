@@ -8,7 +8,7 @@ import SGML
 public struct Track:
     HTMLShortTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     SrcAttributeModifier,
     LabelAttributeModifier
 

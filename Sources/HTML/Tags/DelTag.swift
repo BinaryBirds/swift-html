@@ -6,7 +6,7 @@ import SGML
 public struct Del:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     CiteAttributeModifier,
     DatetimeAttributeModifier
 {

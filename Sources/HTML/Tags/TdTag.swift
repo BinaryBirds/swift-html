@@ -13,7 +13,7 @@ import SGML
 public struct Td:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ColspanAttributeModifier,
     RowspanAttributeModifier
 //✅colspan — Number of columns that the cell is to span

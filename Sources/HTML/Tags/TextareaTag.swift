@@ -16,7 +16,7 @@ import SGML
 public struct Textarea:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     AutocompleteAttributeModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,

@@ -8,7 +8,7 @@ import SGML
 public struct Canvas:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     WidthAttributeModifier,
     HeightAttributeModifier
 {

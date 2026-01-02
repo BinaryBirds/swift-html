@@ -2,20 +2,43 @@ import SGML
 
 // https://html.spec.whatwg.org/multipage/dom.html#global-attributes
 // https://www.w3schools.com/tags/ref_standardattributes.asp
-public protocol GlobalAttributeModifier:
+public protocol GlobalAttributesModifier:
+    AccesskeyAttributeModifier,
+    AutocapitalizeAttributeModifier,
+    AutocorrectAttributeModifier,
     IdAttributeModifier,
     ClassAttributeModifier,
+    ContenteditableAttributeModifier,
     DirAttributeModifier,
+    DraggableAttributeModifier,
+    EnterkeyhintAttributeModifier,
+    HeadingoffsetAttributeModifier,
+    HeadingresetAttributeModifier,
+    HiddenAttributeModifier,
+    InertAttributeModifier,
+    InputmodeAttributeModifier,
+    IsAttributeModifier,
+    ItemidAttributeModifier,
+    ItempropAttributeModifier,
+    ItemrefAttributeModifier,
+    ItemscopeAttributeModifier,
+    ItemtypeAttributeModifier,
+    LangAttributeModifier,
+    NonceAttributeModifier,
+    PopoverAttributeModifier,
+    SlotAttributeModifier,
     StyleAttributeModifier,
+    TabindexAttributeModifier,
     TitleAttributeModifier,
     DirAttributeModifier,
     TranslateAttributeModifier,
-    AutofocusAttributeModifier
+    AutofocusAttributeModifier,
+    WritingsuggestionsAttributeModifier
 {
 
 }
 
-extension GlobalAttributeModifier where Self: Attributes & Mutable {
+extension GlobalAttributesModifier where Self: Attributes & Mutable {
 
     public func spellcheck(
         _ value: Bool
@@ -35,50 +58,7 @@ extension HTMLAttribute {
     }
 }
 
-// ✅ id
-// slot
-// ✅ class
-// accesskey
-// autocapitalize
-// autocorrect
-// ✅autofocus
-// contenteditable
-// ✅ dir
-// draggable
-// enterkeyhint
-// headingoffset
-// headingreset
-// hidden
-// inert
-// inputmode
-// is
-// itemid
-// itemprop
-// itemref
-// itemscope
-// itemtype
-// lang
-// nonce
-// popover
-// ✅spellcheck
-// ✅ style
-// tabindex
-// ✅ title
-// ✅translate
-// writingsuggestions
 
-//public enum Draggable: String {
-//    /// Specifies that the element is draggable
-//    case `true`
-//    /// Specifies that the element is not draggable
-//    case `false`
-//    /// Uses the default behavior of the browser
-//    case auto
-//}
-//
-//
-//extension Tag {
-//
 //    // MARK: - other global attributes
 //
 //    /// Specifies a shortcut key to activate/focus an element
@@ -105,15 +85,6 @@ extension HTMLAttribute {
 //    public func hidden(_ value: Bool? = nil) -> Self {
 //        attribute("hidden", value?.description)
 //    }
-//
-//    /// Specifies the language of the element's content
-//    public func lang(_ value: String) -> Self {
-//        attribute("lang", value)
-//    }
-//
-//    /// Specifies whether the element is to have its spelling and grammar checked or not
-
-//
 //    /// Specifies the tabbing order of an element
 //    public func tabindex(_ value: Int) -> Self {
 //        attribute("tabindex", String(value))

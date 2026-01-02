@@ -31,7 +31,7 @@ import SGML
 public struct Label:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ForAttributeModifier
 {
 

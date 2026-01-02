@@ -10,7 +10,7 @@ import SGML
 public struct Colgroup:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     SpanAttributeModifier
 {
 

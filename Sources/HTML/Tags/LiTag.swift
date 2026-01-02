@@ -12,7 +12,7 @@ import SGML
 public struct Li:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     ValueAttributeModifier
 {
 

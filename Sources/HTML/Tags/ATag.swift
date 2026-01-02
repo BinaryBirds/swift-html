@@ -12,7 +12,7 @@ import SGML
 public struct A:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributeModifier,
+    GlobalAttributesModifier,
     DownloadAttributeModifier,
     HrefAttributeModifier,
     HreflangAttributeModifier,
