@@ -13,15 +13,10 @@ public struct Noscript:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .metadata,
-            .flow,
-            .phrasing,
-            //            select element inner content elements.
-            //            optgroup element inner content elements.
+            .metadata, .flow, .phrasing, .selectInnerContent,
+            .optgroupInnerContent,
         ]
     }
 

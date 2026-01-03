@@ -16,14 +16,8 @@ public struct Hgroup:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow,
-            .heading,
-            .palpable,
-        ]
+        [.flow, .heading, .palpable]
     }
 
     init(

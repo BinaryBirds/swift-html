@@ -9,6 +9,9 @@ extension ColorAttributeModifier where Self: Attributes & Mutable {
     public func color(
         _ value: ColorAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.color, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.color,
+            value: value?.attributeValue
+        )
     }
 }

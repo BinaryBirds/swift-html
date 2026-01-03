@@ -34,17 +34,14 @@ public struct Img:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow,
-            .phrasing,
-            .embedded,
-            // Form-associated element.
-            // If the element has a usemap attribute: Interactive content.
-            .palpable,
+        var contentModel: ContentModel = [
+            .flow, .phrasing, .embedded, .formAssociated, .palpable,
         ]
+        if hasAttribute(name: "usemap") {
+            contentModel.insert(.interactive)
+        }
+        return contentModel
     }
 
     public init(

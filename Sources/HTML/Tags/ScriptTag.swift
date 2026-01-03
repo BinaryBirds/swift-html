@@ -7,8 +7,7 @@ import SGML
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 public struct Script:
-    HTMLTag,
-    Attributes,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     TypeAttributeModifier,
@@ -22,55 +21,27 @@ public struct Script:
     DeferAttributeModifier,
     NoModuleAttributeModifier
 {
-
-    private enum Kind {
-        case standard(String)
-        case void
-    }
-
-    private var kind: Kind
-
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
-    /// The content model category for the tag.
+    /// The child elements contained within the tag.
+    public var children: [Element]
     public var categories: ContentModel {
-        [
-            .metadata,
-            .flow,
-            .phrasing,
-            //            Script-supporting element.
-        ]
+        [.metadata, .flow, .phrasing, .scriptSupporting]
     }
 
     public init(
         _ contents: String
     ) {
         self.attributes = .init()
-        self.kind = .standard(contents)
+        self.children = [
+            Text(contents, isRaw: true)
+        ]
     }
 
     public init() {
-        self.kind = .void
         self.attributes = .init()
-    }
-
-    public var node: Node {
-        switch kind {
-        case .standard(let contents):
-            StandardNode(
-                name: Self.name,
-                properties: attributes.properties,
-                children: [
-                    TextNode(value: contents)
-                ]
-            )
-        case .void:
-            ShortNode(
-                name: Self.name,
-                properties: attributes.properties
-            )
-        }
+        self.children = []
     }
 
     public func javaScript() -> Self {

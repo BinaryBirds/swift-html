@@ -37,15 +37,11 @@ public struct Textarea:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .flow,
-            .phrasing,
-            .interactive,
-            //            Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
-            .palpable,
+            .flow, .phrasing, .interactive, .formAssociated, .listed,
+            .labelable, .submittable, .resettable,
+            .autocapitalizeAndAutocorrectInheriting, .palpable,
         ]
     }
 
@@ -72,7 +68,6 @@ public struct Textarea:
     ) {
         self.init(children: block())
     }
-
 
     public enum WrapAttributeValue: String, AttributeValueRepresentable {
         /// The text in the textarea is not wrapped when submitted in a form. This is default.

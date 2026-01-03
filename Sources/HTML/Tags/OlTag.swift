@@ -21,13 +21,13 @@ public struct Ol:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow
-            // If the element's children include at least one li element: Palpable content.
-        ]
+        var contentModel: ContentModel = [.flow]
+        let hasLiChild = children.contains { $0 is Li }
+        if hasLiChild {
+            contentModel.insert(.palpable)
+        }
+        return contentModel
     }
 
     init(
@@ -37,9 +37,9 @@ public struct Ol:
         self.attributes = attributes
         self.children = children
     }
-    
+
     // MARK: -
-    
+
     public enum OlTypeAttributeValue: String, AttributeValueRepresentable {
         /// Default. Decimal numbers (1, 2, 3, 4)
         case decimal = "1"
@@ -54,8 +54,8 @@ public struct Ol:
     }
 
     public typealias TypeAttributeValueType = OlTypeAttributeValue
-    
-    // MARK: - 
+
+    // MARK: -
 
     public init(
         _ contents: String
@@ -73,5 +73,4 @@ public struct Ol:
         self.init(children: block())
     }
 
-    
 }

@@ -19,15 +19,10 @@ public struct Div:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .flow,
-            .palpable,
-            //            select element inner content elements.
-            //            optgroup element inner content elements.
-            //            option element inner content elements.
+            .flow, .palpable, .selectInnerContent, .optgroupInnerContent,
+            .optionInnerContent,
         ]
     }
 

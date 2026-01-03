@@ -21,14 +21,15 @@ public struct Meta:
     CharsetAttributeModifier
 {
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .metadata
-            //            If the itemprop attribute is present: flow content.
-            //            If the itemprop attribute is present: phrasing content.
-        ]
+        var contentModel: ContentModel = [.metadata]
+        if hasAttribute(name: "itemprop") {
+            contentModel.insert(.flow)
+        }
+        if hasAttribute(name: "itemprop") {
+            contentModel.insert(.phrasing)
+        }
+        return contentModel
     }
 
     public init() {

@@ -27,12 +27,16 @@ public struct Link:
     ColorAttributeModifier
 {
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .metadata
-        ]
+        var contentModel: ContentModel = [.metadata]
+        let isAllowedInBody = true
+        if isAllowedInBody {
+            contentModel.insert(.flow)
+        }
+        if isAllowedInBody {
+            contentModel.insert(.phrasing)
+        }
+        return contentModel
     }
 
     // MARK: -
@@ -89,7 +93,7 @@ public struct Link:
     }
 
     public typealias RelAttributeValueType = RelAttributeValue
-    
+
     // MARK: -
 
     public init(

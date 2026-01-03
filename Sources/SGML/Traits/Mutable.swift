@@ -14,7 +14,7 @@ extension Mutable {
         block(&mutableSelf)
         return mutableSelf
     }
-    
+
     public func `if`(
         _ condition: Bool,
         _ trueBlock: (Self) -> Self,
@@ -26,4 +26,3 @@ extension Mutable {
         return falseBlock?(self) ?? self
     }
 }
-

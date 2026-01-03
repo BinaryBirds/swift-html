@@ -47,7 +47,7 @@ struct SwiftHTMLTestSuite {
                     <meta charset="utf-8">
                     <style>body { background: red; }</style>
                     <link rel="stylesheet" href="./css/style.css">
-                    <script>
+                    <script></script>
                 </head>
                 <body>
                     <p>Hello,<br>World!</p>
@@ -134,7 +134,7 @@ struct SwiftHTMLTestSuite {
                             <abbr title="World Health Organization">WHO</abbr>
                         </div>
                     </main>
-                    <script src="./javascript/main.js">
+                    <script src="./javascript/main.js"></script>
                 </body>
             </html>
             """#

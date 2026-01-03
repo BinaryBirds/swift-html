@@ -1,7 +1,7 @@
 import SGML
 
 public protocol NoModuleAttributeModifier {
-    
+
 }
 
 extension NoModuleAttributeModifier where Self: Attributes & Mutable {

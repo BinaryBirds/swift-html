@@ -8,13 +8,13 @@ struct WbrTagTestSuite {
 
     @Test
     func initializationWithText() async throws {
-        let tag = Wbr("hello")
+        let tag = Wbr()
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <wbr>hello</wbr>
+            <wbr>
             """#
 
         let result = renderer.render(document: doc)

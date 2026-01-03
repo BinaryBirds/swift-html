@@ -1,0 +1,872 @@
+{
+  "a": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "If the element has an href attribute: Interactive content.",
+      "Palpable content."
+    ],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": [
+      "Transparent, but there must be no interactive content descendant, a element descendant, or descendant with the tabindex attribute specified."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "abbr": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "address": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": [
+      "Flow content, but with no heading content descendants, no sectioning content descendants, and no header, footer, or address element descendants."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "area": {
+    "categories": ["Flow content.", "Phrasing content."],
+    "context": ["Where phrasing content is expected, but only if there is a map element ancestor."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "article": {
+    "categories": ["Flow content.", "Sectioning content.", "Palpable content."],
+    "context": ["Where sectioning content is expected."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "aside": {
+    "categories": ["Flow content.", "Sectioning content.", "Palpable content."],
+    "context": ["Where sectioning content is expected."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "audio": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Embedded content.",
+      "If the element has a controls attribute: Interactive content.",
+      "If the element has a controls attribute: Palpable content."
+    ],
+    "context": ["Where embedded content is expected."],
+    "contentModel": [
+      "If the element has a src attribute: zero or more track elements, then transparent, but with no media element descendants.",
+      "If the element does not have a src attribute: zero or more source elements, then zero or more track elements, then transparent, but with no media element descendants."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "b": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "base": {
+    "categories": ["Metadata content."],
+    "context": ["In a head element containing no other base elements."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "bdi": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "bdo": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "blockquote": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "body": {
+    "categories": ["None."],
+    "context": ["As the second element in an html element."],
+    "contentModel": ["Flow content."],
+    "tagOmission": [
+      "A body element's start tag can be omitted if the element is empty, or if the first thing inside the body element is not ASCII whitespace or a comment, except if the first thing inside the body element is a meta, noscript, link, script, style, or template element.",
+      "A body element's end tag can be omitted if the body element is not immediately followed by a comment."
+    ]
+  },
+  "br": {
+    "categories": ["Flow content.", "Phrasing content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "button": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Interactive content.",
+      "Listed, labelable, submittable, and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "Palpable content."
+    ],
+    "context": ["Where phrasing content is expected.", "As the first child of a select element."],
+    "contentModel": [
+      "Phrasing content, but there must be no interactive content descendant and no descendant with the tabindex attribute specified. If the element is the first child of a select element, then it may also have zero or one descendant selectedcontent element."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "canvas": {
+    "categories": ["Flow content.", "Phrasing content.", "Embedded content.", "Palpable content."],
+    "context": ["Where embedded content is expected."],
+    "contentModel": [
+      "Transparent, but with no interactive content descendants except for a elements, img elements with usemap attributes, button elements, input elements whose type attribute are in the Checkbox or Radio Button states, input elements that are buttons, and select elements with a multiple attribute or a display size greater than 1."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "caption": {
+    "categories": ["None."],
+    "context": ["As the first element child of a table element."],
+    "contentModel": ["Flow content, but with no descendant table elements."],
+    "tagOmission": [
+      "A caption element's end tag can be omitted if the caption element is not immediately followed by ASCII whitespace or a comment."
+    ]
+  },
+  "cite": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "code": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "col": {
+    "categories": ["None."],
+    "context": ["As a child of a colgroup element that doesn't have a span attribute."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "colgroup": {
+    "categories": ["None."],
+    "context": [
+      "As a child of a table element, after any caption elements and before any thead, tbody, tfoot, and tr elements."
+    ],
+    "contentModel": [
+      "If the span attribute is present: Nothing.",
+      "If the span attribute is absent: Zero or more col and template elements."
+    ],
+    "tagOmission": [
+      "A colgroup element's start tag can be omitted if the first thing inside the colgroup element is a col element, and if the element is not immediately preceded by another colgroup element whose end tag has been omitted. (It can't be omitted if the element is empty.)",
+      "A colgroup element's end tag can be omitted if the colgroup element is not immediately followed by ASCII whitespace or a comment."
+    ]
+  },
+  "data": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "datalist": {
+    "categories": ["Flow content.", "Phrasing content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Either: phrasing content.", "Or: Zero or more option and script-supporting elements."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "dd": {
+    "categories": ["None."],
+    "context": [
+      "After dt or dd elements inside dl elements.",
+      "After dt or dd elements inside div elements that are children of a dl element."
+    ],
+    "contentModel": ["Flow content."],
+    "tagOmission": [
+      "A dd element's end tag can be omitted if the dd element is immediately followed by another dd element or a dt element, or if there is no more content in the parent element."
+    ]
+  },
+  "del": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Transparent."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "details": {
+    "categories": ["Flow content.", "Interactive content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["One summary element followed by flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "dfn": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content, but there must be no dfn element descendants."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "dialog": {
+    "categories": ["Flow content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "div": {
+    "categories": [
+      "Flow content.",
+      "Palpable content.",
+      "select element inner content elements.",
+      "optgroup element inner content elements.",
+      "option element inner content elements."
+    ],
+    "context": ["Where flow content is expected.", "As a child of a dl element."],
+    "contentModel": [
+      "If the element is a child of a dl element: One or more dt elements followed by one or more dd elements, optionally intermixed with script-supporting elements.",
+      "Otherwise, if the element is a descendant of an option element: Zero or more option element inner content elements.",
+      "Otherwise, if the element is a descendant of an optgroup element: Zero or more optgroup element inner content elements.",
+      "Otherwise, if the element is a descendant of a select element: Zero or more select element inner content elements.",
+      "Otherwise: flow content."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "dl": {
+    "categories": ["Flow content.", "If the element's children include at least one name-value group: Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": [
+      "Either: Zero or more groups each consisting of one or more dt elements followed by one or more dd elements, optionally intermixed with script-supporting elements.",
+      "Or: One or more div elements, optionally intermixed with script-supporting elements."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "dt": {
+    "categories": ["None."],
+    "context": [
+      "Before dd or dt elements inside dl elements.",
+      "Before dd or dt elements inside div elements that are children of a dl element."
+    ],
+    "contentModel": ["Flow content, but with no header, footer, sectioning content, or heading content descendants."],
+    "tagOmission": [
+      "A dt element's end tag can be omitted if the dt element is immediately followed by another dt element or a dd element."
+    ]
+  },
+  "em": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "embed": {
+    "categories": ["Flow content.", "Phrasing content.", "Embedded content.", "Interactive content.", "Palpable content."],
+    "context": ["Where embedded content is expected."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "fieldset": {
+    "categories": [
+      "Flow content.",
+      "Listed and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "Palpable content."
+    ],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Optionally, a legend element, followed by flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "figcaption": {
+    "categories": ["None."],
+    "context": ["As the first or last child of a figure element."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "figure": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": [
+      "Either: one figcaption element followed by flow content.",
+      "Or: flow content followed by one figcaption element.",
+      "Or: flow content."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "footer": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Flow content, but with no header or footer element descendants."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "form": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Flow content, but with no form element descendants."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "h1": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["As a child of an hgroup element.", "Where heading content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "h2": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["As a child of an hgroup element.", "Where heading content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "h3": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["As a child of an hgroup element.", "Where heading content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "h4": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["As a child of an hgroup element.", "Where heading content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "h5": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["As a child of an hgroup element.", "Where heading content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "h6": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["As a child of an hgroup element.", "Where heading content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "head": {
+    "categories": ["None."],
+    "context": ["As the first element in an html element."],
+    "contentModel": [
+      "If the document is an iframe srcdoc document or if title information is available from a higher-level protocol: Zero or more elements of metadata content, of which no more than one is a title element and no more than one is a base element.",
+      "Otherwise: One or more elements of metadata content, of which exactly one is a title element and no more than one is a base element."
+    ],
+    "tagOmission": [
+      "A head element's start tag can be omitted if the element is empty, or if the first thing inside the head element is an element.",
+      "A head element's end tag can be omitted if the head element is not immediately followed by ASCII whitespace or a comment."
+    ]
+  },
+  "header": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Flow content, but with no header or footer element descendants."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "hgroup": {
+    "categories": ["Flow content.", "Heading content.", "Palpable content."],
+    "context": ["Where heading content is expected."],
+    "contentModel": [
+      "Zero or more p elements, followed by one h1, h2, h3, h4, h5, or h6 element, followed by zero or more p elements, optionally intermixed with script-supporting elements."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "hr": {
+    "categories": ["Flow content.", "select element inner content elements."],
+    "context": ["Where flow content is expected.", "As a child of a select element."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "html": {
+    "categories": ["None."],
+    "context": ["As document's document element.", "Wherever a subdocument fragment is allowed in a compound document."],
+    "contentModel": ["A head element followed by a body element."],
+    "tagOmission": [
+      "An html element's start tag can be omitted if the first thing inside the html element is not a comment.",
+      "An html element's end tag can be omitted if the html element is not immediately followed by a comment."
+    ]
+  },
+  "i": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "iframe": {
+    "categories": ["Flow content.", "Phrasing content.", "Embedded content.", "Interactive content.", "Palpable content."],
+    "context": ["Where embedded content is expected."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "img": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Embedded content.",
+      "Form-associated element.",
+      "If the element has a usemap attribute: Interactive content.",
+      "Palpable content."
+    ],
+    "context": ["Where embedded content is expected.", "As a child of a picture element, after all source elements."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "input": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "If the type attribute is not in the Hidden state: Interactive content.",
+      "If the type attribute is not in the Hidden state: Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "If the type attribute is in the Hidden state: Listed, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "If the type attribute is not in the Hidden state: Palpable content."
+    ],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "ins": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Transparent."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "kbd": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "label": {
+    "categories": ["Flow content.", "Phrasing content.", "Interactive content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": [
+      "Phrasing content, but with no descendant labelable elements unless it is the element's labeled control, and no descendant label elements."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "legend": {
+    "categories": ["None."],
+    "context": ["As the first child of a fieldset element.", "As the first child of an optgroup element."],
+    "contentModel": [
+      "If the element is a child of an optgroup element: Phrasing content, but there must be no interactive content and no descendant with the tabindex attribute.",
+      "Otherwise: Phrasing content, optionally intermixed with heading content."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "li": {
+    "categories": ["None."],
+    "context": ["Inside ol elements.", "Inside ul elements.", "Inside menu elements."],
+    "contentModel": ["Flow content."],
+    "tagOmission": [
+      "An li element's end tag can be omitted if the li element is immediately followed by another li element or if there is no more content in the parent element."
+    ]
+  },
+  "link": {
+    "categories": ["Metadata content.", "If the element is allowed in the body: flow content.", "If the element is allowed in the body: phrasing content."],
+    "context": [
+      "Where metadata content is expected.",
+      "In a noscript element that is a child of a head element.",
+      "If the element is allowed in the body: where phrasing content is expected."
+    ],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "main": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected, but only if it is a hierarchically correct main element."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "map": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Transparent."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "mark": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "meta": {
+    "categories": [
+      "Metadata content.",
+      "If the itemprop attribute is present: flow content.",
+      "If the itemprop attribute is present: phrasing content."
+    ],
+    "context": [
+      "If the charset attribute is present, or if the element's http-equiv attribute is in the Encoding declaration state: in a head element.",
+      "If the http-equiv attribute is present but not in the Encoding declaration state: in a head element.",
+      "If the http-equiv attribute is present but not in the Encoding declaration state: in a noscript element that is a child of a head element.",
+      "If the name attribute is present: where metadata content is expected.",
+      "If the itemprop attribute is present: where metadata content is expected.",
+      "If the itemprop attribute is present: where phrasing content is expected."
+    ],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "meter": {
+    "categories": ["Flow content.", "Phrasing content.", "Labelable element.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content, but there must be no meter element descendants."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "nav": {
+    "categories": ["Flow content.", "Sectioning content.", "Palpable content."],
+    "context": ["Where sectioning content is expected."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "noscript": {
+    "categories": [
+      "Metadata content.",
+      "Flow content.",
+      "Phrasing content.",
+      "select element inner content elements.",
+      "optgroup element inner content elements."
+    ],
+    "context": [
+      "In a head element of an HTML document, if there are no ancestor noscript elements.",
+      "Where phrasing content is expected in HTML documents, if there are no ancestor noscript elements."
+    ],
+    "contentModel": [
+      "When scripting is disabled, in a head element: in any order, zero or more link elements, zero or more style elements, and zero or more meta elements.",
+      "When scripting is disabled, not in a head element: transparent, but there must be no noscript element descendants.",
+      "Otherwise: text that conforms to the requirements given in the prose."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "object": {
+    "categories": ["Flow content.", "Phrasing content.", "Embedded content.", "Listed form-associated element.", "Palpable content."],
+    "context": ["Where embedded content is expected."],
+    "contentModel": ["Transparent."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "ol": {
+    "categories": ["Flow content.", "If the element's children include at least one li element: Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Zero or more li and script-supporting elements."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "optgroup": {
+    "categories": ["select element inner content elements."],
+    "context": ["As a descendant of a select element."],
+    "contentModel": ["Zero or one legend element followed by zero or more optgroup element inner content elements."],
+    "tagOmission": [
+      "An optgroup element's end tag can be omitted if the optgroup element is immediately followed by another optgroup element, if it is immediately followed by an hr element, or if there is no more content in the parent element."
+    ]
+  },
+  "option": {
+    "categories": ["select element inner content elements.", "optgroup element inner content elements."],
+    "context": ["As a descendant of a select element.", "As a descendant of a datalist element.", "As a descendant of an optgroup element."],
+    "contentModel": [
+      "If the element has a label attribute and a value attribute: Nothing.",
+      "If the element has a label attribute but no value attribute: Text.",
+      "If the element has no label attribute and is not a descendant of a datalist element: Zero or more option element inner content elements.",
+      "If the element has no label attribute and is a descendant of a datalist element: Text."
+    ],
+    "tagOmission": [
+      "An option element's end tag can be omitted if the option element is immediately followed by another option element, if it is immediately followed by an optgroup element, if it is immediately followed by an hr element, or if there is no more content in the parent element."
+    ]
+  },
+  "output": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Listed, labelable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "Palpable content."
+    ],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "p": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected.", "As a child of an hgroup element."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": [
+      "A p element's end tag can be omitted if the p element is immediately followed by an address, article, aside, blockquote, details, dialog, div, dl, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, main, menu, nav, ol, p, pre, search, section, table, or ul element, or if there is no more content in the parent element and the parent element is an HTML element that is not an a, audio, del, ins, map, noscript, or video element, or an autonomous custom element."
+    ]
+  },
+  "picture": {
+    "categories": ["Flow content.", "Phrasing content.", "Embedded content.", "Palpable content."],
+    "context": ["Where embedded content is expected."],
+    "contentModel": ["Zero or more source elements, followed by one img element, optionally intermixed with script-supporting elements."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "pre": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "progress": {
+    "categories": ["Flow content.", "Phrasing content.", "Labelable element.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content, but there must be no progress element descendants."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "q": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "rp": {
+    "categories": ["None."],
+    "context": ["As a child of a ruby element, either immediately before or immediately after an rt element."],
+    "contentModel": ["Text."],
+    "tagOmission": [
+      "An rp element's end tag can be omitted if the rp element is immediately followed by an rt or rp element, or if there is no more content in the parent element."
+    ]
+  },
+  "rt": {
+    "categories": ["None."],
+    "context": ["As a child of a ruby element."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": [
+      "An rt element's end tag can be omitted if the rt element is immediately followed by an rt or rp element, or if there is no more content in the parent element."
+    ]
+  },
+  "ruby": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["See prose."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "s": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "samp": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "script": {
+    "categories": ["Metadata content.", "Flow content.", "Phrasing content.", "Script-supporting element."],
+    "context": ["Where metadata content is expected.", "Where phrasing content is expected.", "Where script-supporting elements are expected."],
+    "contentModel": [
+      "If there is no src attribute, depends on the value of the type attribute, but must match script content restrictions.",
+      "If there is a src attribute, the element must be either empty or contain only script documentation that also matches script content restrictions."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "section": {
+    "categories": ["Flow content.", "Sectioning content.", "Palpable content."],
+    "context": ["Where sectioning content is expected."],
+    "contentModel": ["Flow content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "select": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Interactive content.",
+      "Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "Palpable content."
+    ],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": [
+      "Zero or one button elements if the select is a drop-down box, followed by zero or more select element inner content elements."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "small": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "source": {
+    "categories": ["None."],
+    "context": [
+      "As a child of a picture element, before the img element.",
+      "As a child of a media element, before any flow content or track elements."
+    ],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "span": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": [
+      "If the element is a descendant of an option element: Zero or more option element inner content elements, except div elements.",
+      "Otherwise: Phrasing content."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "strong": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "style": {
+    "categories": ["Metadata content."],
+    "context": ["Where metadata content is expected.", "In a noscript element that is a child of a head element."],
+    "contentModel": ["Text that gives a conformant style sheet."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "sub": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "summary": {
+    "categories": ["None."],
+    "context": ["As the first child of a details element."],
+    "contentModel": ["Phrasing content, optionally intermixed with heading content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "sup": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "table": {
+    "categories": ["Flow content.", "Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": [
+      "In this order: optionally a caption element, followed by zero or more colgroup elements, followed optionally by a thead element, followed by either zero or more tbody elements or one or more tr elements, followed optionally by a tfoot element, optionally intermixed with one or more script-supporting elements."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "tbody": {
+    "categories": ["None."],
+    "context": [
+      "As a child of a table element, after any caption, colgroup, and thead elements, but only if there are no tr elements that are children of the table element."
+    ],
+    "contentModel": ["Zero or more tr and script-supporting elements."],
+    "tagOmission": [
+      "A tbody element's start tag can be omitted if the first thing inside the tbody element is a tr element, and if the element is not immediately preceded by a tbody, thead, or tfoot element whose end tag has been omitted. (It can't be omitted if the element is empty.)",
+      "A tbody element's end tag can be omitted if the tbody element is immediately followed by a tbody or tfoot element, or if there is no more content in the parent element."
+    ]
+  },
+  "td": {
+    "categories": ["None."],
+    "context": ["As a child of a tr element."],
+    "contentModel": ["Flow content."],
+    "tagOmission": [
+      "A td element's end tag can be omitted if the td element is immediately followed by a td or th element, or if there is no more content in the parent element."
+    ]
+  },
+  "template": {
+    "categories": ["Metadata content.", "Flow content.", "Phrasing content.", "Script-supporting element."],
+    "context": [
+      "Where metadata content is expected.",
+      "Where phrasing content is expected.",
+      "Where script-supporting elements are expected.",
+      "As a child of a colgroup element that doesn't have a span attribute."
+    ],
+    "contentModel": ["Nothing (for clarification, see example)."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "textarea": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Interactive content.",
+      "Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.",
+      "Palpable content."
+    ],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Text."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "tfoot": {
+    "categories": ["None."],
+    "context": [
+      "As a child of a table element, after any caption, colgroup, thead, tbody, and tr elements, but only if there are no other tfoot elements that are children of the table element."
+    ],
+    "contentModel": ["Zero or more tr and script-supporting elements."],
+    "tagOmission": ["A tfoot element's end tag can be omitted if there is no more content in the parent element."]
+  },
+  "th": {
+    "categories": ["None."],
+    "context": ["As a child of a tr element."],
+    "contentModel": ["Flow content, but with no header, footer, sectioning content, or heading content descendants."],
+    "tagOmission": [
+      "A th element's end tag can be omitted if the th element is immediately followed by a td or th element, or if there is no more content in the parent element."
+    ]
+  },
+  "thead": {
+    "categories": ["None."],
+    "context": [
+      "As a child of a table element, after any caption, and colgroup elements and before any tbody, tfoot, and tr elements, but only if there are no other thead elements that are children of the table element."
+    ],
+    "contentModel": ["Zero or more tr and script-supporting elements."],
+    "tagOmission": ["A thead element's end tag can be omitted if the thead element is immediately followed by a tbody or tfoot element."]
+  },
+  "time": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": [
+      "If the element has a datetime attribute: Phrasing content.",
+      "Otherwise: Text, but must match requirements described in prose below."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "title": {
+    "categories": ["Metadata content."],
+    "context": ["In a head element containing no other title elements."],
+    "contentModel": ["Text that is not inter-element whitespace."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "tr": {
+    "categories": ["None."],
+    "context": [
+      "As a child of a thead element.",
+      "As a child of a tbody element.",
+      "As a child of a tfoot element.",
+      "As a child of a table element, after any caption, colgroup, and thead elements, but only if there are no tbody elements that are children of the table element."
+    ],
+    "contentModel": ["Zero or more td, th, and script-supporting elements."],
+    "tagOmission": [
+      "A tr element's end tag can be omitted if the tr element is immediately followed by another tr element, or if there is no more content in the parent element."
+    ]
+  },
+  "track": {
+    "categories": ["None."],
+    "context": ["As a child of a media element, before any flow content."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  },
+  "u": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "ul": {
+    "categories": ["Flow content.", "If the element's children include at least one li element: Palpable content."],
+    "context": ["Where flow content is expected."],
+    "contentModel": ["Zero or more li and script-supporting elements."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "var": {
+    "categories": ["Flow content.", "Phrasing content.", "Palpable content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Phrasing content."],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "video": {
+    "categories": [
+      "Flow content.",
+      "Phrasing content.",
+      "Embedded content.",
+      "If the element has a controls attribute: Interactive content.",
+      "Palpable content."
+    ],
+    "context": ["Where embedded content is expected."],
+    "contentModel": [
+      "If the element has a src attribute: zero or more track elements, then transparent, but with no media element descendants.",
+      "If the element does not have a src attribute: zero or more source elements, then zero or more track elements, then transparent, but with no media element descendants."
+    ],
+    "tagOmission": ["Neither tag is omissible."]
+  },
+  "wbr": {
+    "categories": ["Flow content.", "Phrasing content."],
+    "context": ["Where phrasing content is expected."],
+    "contentModel": ["Nothing."],
+    "tagOmission": ["No end tag."]
+  }
+}

@@ -17,14 +17,8 @@ public struct Sub:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow,
-            .phrasing,
-            .palpable,
-        ]
+        [.flow, .phrasing, .palpable]
     }
 
     init(

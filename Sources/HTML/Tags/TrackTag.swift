@@ -18,8 +18,6 @@ public struct Track:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         []
     }
@@ -47,4 +45,3 @@ public struct Track:
     public typealias KindAttributeValueType = KindAttributeValue
 
 }
-

@@ -46,17 +46,29 @@ public struct Input:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow,
-            .phrasing,
-            //            If the type attribute is not in the Hidden state: Interactive content.
-            //            If the type attribute is not in the Hidden state: Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
-            //            If the type attribute is in the Hidden state: Listed, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
-            //            If the type attribute is not in the Hidden state: Palpable content.
-        ]
+        var contentModel: ContentModel = [.flow, .phrasing]
+        let typeValue = getAttribute(name: "type")?.lowercased()
+        let isHiddenType = typeValue == "hidden"
+        if !isHiddenType {
+            contentModel.insert(.interactive)
+        }
+        if !isHiddenType {
+            contentModel.insert([
+                .formAssociated, .listed, .labelable, .submittable, .resettable,
+                .autocapitalizeAndAutocorrectInheriting,
+            ])
+        }
+        if isHiddenType {
+            contentModel.insert([
+                .formAssociated, .listed, .submittable, .resettable,
+                .autocapitalizeAndAutocorrectInheriting,
+            ])
+        }
+        if !isHiddenType {
+            contentModel.insert(.palpable)
+        }
+        return contentModel
     }
 
     public init() {

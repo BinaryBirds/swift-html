@@ -31,14 +31,10 @@ public struct Button:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .flow,
-            .phrasing,
-            .interactive,
-            // Listed, labelable, submittable, and autocapitalize-and-autocorrect inheriting form-associated element.
+            .flow, .phrasing, .interactive, .formAssociated, .listed,
+            .labelable, .submittable, .autocapitalizeAndAutocorrectInheriting,
             .palpable,
         ]
     }

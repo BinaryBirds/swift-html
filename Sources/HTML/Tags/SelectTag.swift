@@ -28,15 +28,11 @@ public struct Select:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .flow,
-            .phrasing,
-            .interactive,
-            //            Listed, labelable, submittable, resettable, and autocapitalize-and-autocorrect inheriting form-associated element.
-            .palpable,
+            .flow, .phrasing, .interactive, .formAssociated, .listed,
+            .labelable, .submittable, .resettable,
+            .autocapitalizeAndAutocorrectInheriting, .palpable,
         ]
     }
 

@@ -33,14 +33,13 @@ public struct Audio:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        var contentModel: ContentModel = [
-            .flow, .phrasing, .embedded,
-        ]
+        var contentModel: ContentModel = [.flow, .phrasing, .embedded]
         if hasAttribute(name: "controls") {
-            contentModel.insert([.interactive, .palpable])
+            contentModel.insert(.interactive)
+        }
+        if hasAttribute(name: "controls") {
+            contentModel.insert(.palpable)
         }
         return contentModel
     }

@@ -17,13 +17,10 @@ public struct Fieldset:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
         [
-            .flow,
-            // Listed and autocapitalize-and-autocorrect inheriting form-associated element.
-            .palpable,
+            .flow, .formAssociated, .listed,
+            .autocapitalizeAndAutocorrectInheriting, .palpable,
         ]
     }
 

@@ -14,13 +14,14 @@ public struct Dl:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow
-            // If the element's children include at least one name-value group: Palpable content.
-        ]
+        var contentModel: ContentModel = [.flow]
+        let hasNameValueGroup =
+            children.contains { $0 is Dt } && children.contains { $0 is Dd }
+        if hasNameValueGroup {
+            contentModel.insert(.palpable)
+        }
+        return contentModel
     }
 
     init(

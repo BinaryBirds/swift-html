@@ -8,13 +8,13 @@ struct IframeTagTestSuite {
 
     @Test
     func initialization() async throws {
-        let tag = Iframe()
+        let tag = Iframe {}
 
         let renderer = Renderer()
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <iframe>
+            <iframe></iframe>
             """#
 
         let result = renderer.render(document: doc)

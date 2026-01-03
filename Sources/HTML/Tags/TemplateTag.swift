@@ -22,15 +22,8 @@ public struct Template:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .metadata,
-            .flow,
-            .phrasing,
-            //            Script-supporting element.
-        ]
+        [.metadata, .flow, .phrasing, .scriptSupporting]
     }
 
     init(

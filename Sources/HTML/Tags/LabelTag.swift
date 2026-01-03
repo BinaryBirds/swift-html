@@ -40,15 +40,8 @@ public struct Label:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow,
-            .phrasing,
-            .interactive,
-            .palpable,
-        ]
+        [.flow, .phrasing, .interactive, .palpable]
     }
 
     init(

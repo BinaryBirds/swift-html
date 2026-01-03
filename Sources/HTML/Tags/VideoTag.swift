@@ -37,16 +37,14 @@ public struct Video:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow,
-            .phrasing,
-            .embedded,
-            //            If the element has a controls attribute: Interactive content.
-            .palpable,
+        var contentModel: ContentModel = [
+            .flow, .phrasing, .embedded, .palpable,
         ]
+        if hasAttribute(name: "controls") {
+            contentModel.insert(.interactive)
+        }
+        return contentModel
     }
 
     init(

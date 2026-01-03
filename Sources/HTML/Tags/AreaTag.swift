@@ -26,12 +26,8 @@ public struct Area:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow
-        ]
+        [.flow, .phrasing]
     }
 
     public init() {

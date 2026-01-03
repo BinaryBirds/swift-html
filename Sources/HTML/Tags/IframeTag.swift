@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** It is a good practice to always include a title attribute for the `<iframe>`. This is used by screen readers to read out what the content of the `<iframe>` is.
 public struct Iframe:
-    HTMLShortTag,
+    HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     AllowAttributeModifier,
@@ -26,22 +26,34 @@ public struct Iframe:
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
 
-    /// The content model category for the tag.
+    /// The child elements contained within the tag.
+    public var children: [Element]
     public var categories: ContentModel {
-        [
-            .flow,
-            .phrasing,
-            .embedded,
-            .interactive,
-            .palpable,
-        ]
+        [.flow, .phrasing, .embedded, .interactive, .palpable]
+    }
+
+    init(
+        attributes: AttributeStore = .init(),
+        children: [Element]
+    ) {
+        self.attributes = attributes
+        self.children = children
     }
 
     public init(
-
+        _ contents: String
+    ) {
+        self.init(
+            children: [
+                Text(contents)
+            ]
         )
-    {
-        self.attributes = .init()
+    }
+
+    public init(
+        @Builder<Element> _ block: () -> [Element]
+    ) {
+        self.init(children: block())
     }
 
 }

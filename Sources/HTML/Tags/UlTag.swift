@@ -18,13 +18,13 @@ public struct Ul:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow
-            // If the element's children include at least one li element: Palpable content.
-        ]
+        var contentModel: ContentModel = [.flow]
+        let hasLiChild = children.contains { $0 is Li }
+        if hasLiChild {
+            contentModel.insert(.palpable)
+        }
+        return contentModel
     }
 
     init(

@@ -10,13 +10,8 @@ public struct Hr:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-
-    /// The content model category for the tag.
     public var categories: ContentModel {
-        [
-            .flow
-            // select element inner content elements.
-        ]
+        [.flow, .selectInnerContent]
     }
 
     public init() {
