@@ -38,7 +38,7 @@ public struct Kbd:
     }
 
     public init(
-        @Builder<Element> _ block: () -> [Element]
+        @Builder<PhrasingContent> _ block: () -> [any PhrasingContent]
     ) {
         self.init(children: block())
     }

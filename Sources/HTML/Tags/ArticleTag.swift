@@ -37,7 +37,7 @@ public struct Article:
     }
 
     public init(
-        @Builder<Element> _ block: () -> [Element]
+        @Builder<FlowContent> _ block: () -> [any FlowContent]
     ) {
         // Flow content.
         self.init(children: block())

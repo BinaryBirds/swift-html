@@ -36,7 +36,7 @@ public struct Dd:
     }
 
     public init(
-        @Builder<Element> _ block: () -> [Element]
+        @Builder<FlowContent> _ block: () -> [any FlowContent]
     ) {
         self.init(children: block())
     }

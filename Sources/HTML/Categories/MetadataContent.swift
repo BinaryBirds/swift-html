@@ -1,3 +1,3 @@
 import SGML
 
-protocol MetadataContent: Tag {}
+public protocol MetadataContent: Tag {}

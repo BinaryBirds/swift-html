@@ -1,3 +1,3 @@
 import SGML
 
-protocol InteractiveContent: Tag {}
+public protocol InteractiveContent: Tag {}

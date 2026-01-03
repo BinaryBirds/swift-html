@@ -1,3 +1,3 @@
 import SGML
 
-protocol SectioningContent: Tag {}
+public protocol SectioningContent: Tag {}

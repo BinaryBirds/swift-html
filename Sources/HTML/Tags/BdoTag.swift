@@ -43,7 +43,7 @@ public struct Bdo:
     }
 
     public init(
-        @Builder<Element> _ block: () -> [Element],
+        @Builder<PhrasingContent> _ block: () -> [any PhrasingContent],
         dir: DirAttributeValue
     ) {
         self.init(

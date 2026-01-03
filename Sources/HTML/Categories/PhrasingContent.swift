@@ -1,3 +1,3 @@
 import SGML
 
-protocol PhrasingContent: Tag {}
+public protocol PhrasingContent: Tag {}

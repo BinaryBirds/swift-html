@@ -1,3 +1,3 @@
 import SGML
 
-protocol EmbeddedContent: Tag {}
+public protocol EmbeddedContent: Tag {}

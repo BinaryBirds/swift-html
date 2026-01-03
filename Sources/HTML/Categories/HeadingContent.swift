@@ -1,3 +1,3 @@
 import SGML
 
-protocol HeadingContent: Tag {}
+public protocol HeadingContent: Tag {}

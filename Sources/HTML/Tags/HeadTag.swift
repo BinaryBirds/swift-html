@@ -28,7 +28,7 @@ public struct Head:
     public var children: [Element]
 
     public init(
-        elements: [Element]
+        elements: [any MetadataContent]
     ) {
         self.attributes = .init()
         self.children = elements
@@ -44,7 +44,7 @@ public struct Head:
     }
 
     public init(
-        @Builder<Element> _ block: () -> [Element]
+        @Builder<MetadataContent> _ block: () -> [any MetadataContent]
     ) {
         self.init(elements: block())
     }

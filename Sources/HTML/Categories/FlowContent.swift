@@ -1,3 +1,3 @@
 import SGML
 
-protocol FlowContent: Tag {}
+public protocol FlowContent: Tag {}
