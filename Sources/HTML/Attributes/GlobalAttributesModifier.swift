@@ -3,11 +3,10 @@ import SGML
 // https://html.spec.whatwg.org/multipage/dom.html#global-attributes
 // https://www.w3schools.com/tags/ref_standardattributes.asp
 public protocol GlobalAttributesModifier:
-    EventAttributesModifier,
     AccessKeyAttributeModifier,
     AutoCapitalizeAttributeModifier,
     AutoCorrectAttributeModifier,
-    IdAttributeModifier,
+    AutoFocusAttributeModifier,
     ClassAttributeModifier,
     ContentEditableAttributeModifier,
     DirAttributeModifier,
@@ -16,6 +15,7 @@ public protocol GlobalAttributesModifier:
     HeadingOffsetAttributeModifier,
     HeadingResetAttributeModifier,
     HiddenAttributeModifier,
+    IdAttributeModifier,
     InertAttributeModifier,
     InputModeAttributeModifier,
     IsAttributeModifier,
@@ -26,16 +26,14 @@ public protocol GlobalAttributesModifier:
     ItemTypeAttributeModifier,
     LangAttributeModifier,
     NonceAttributeModifier,
-    RoleAttributeModifier,
     PopoverAttributeModifier,
+    RoleAttributeModifier,
     SlotAttributeModifier,
     SpellCheckAttributeModifier,
     StyleAttributeModifier,
     TabIndexAttributeModifier,
     TitleAttributeModifier,
-    DirAttributeModifier,
     TranslateAttributeModifier,
-    AutoFocusAttributeModifier,
     WritingSuggestionsAttributeModifier
 {
 
