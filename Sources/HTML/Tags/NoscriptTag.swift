@@ -6,7 +6,13 @@ import SGML
 public struct Noscript:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    MetadataContent,
+    FlowContent,
+    PhrasingContent,
+    SelectInnerContent,
+    OptgroupInnerContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

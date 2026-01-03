@@ -14,7 +14,14 @@ public struct Template:
     ShadowRootDelegatesFocusAttributeModifier,
     ShadowRootClonableAttributeModifier,
     ShadowRootSerializableAttributeModifier,
-    ShadowRootCustomElementRegistryAttributeModifier
+    ShadowRootCustomElementRegistryAttributeModifier,
+    // categories
+    MetadataContent,
+    FlowContent,
+    PhrasingContent,
+    ScriptSupportingContent,
+    SelectInnerContent,
+    OptgroupInnerContent
 {
 
     /// The attribute storage for the tag.

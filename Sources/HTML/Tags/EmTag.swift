@@ -6,7 +6,11 @@ import SGML
 public struct Em:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

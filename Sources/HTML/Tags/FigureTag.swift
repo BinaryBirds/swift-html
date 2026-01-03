@@ -8,7 +8,10 @@ import SGML
 public struct Figure:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

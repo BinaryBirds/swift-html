@@ -7,7 +7,10 @@ public struct Blockquote:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    CiteAttributeModifier
+    CiteAttributeModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

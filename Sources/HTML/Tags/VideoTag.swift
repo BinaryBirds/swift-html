@@ -29,7 +29,13 @@ public struct Video:
     HeightAttributeModifier,
     PreloadAttributeModifier,
     PosterAttributeModifier,
-    PlaysInlineAttributeModifier
+    PlaysInlineAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

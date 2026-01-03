@@ -10,7 +10,10 @@ import SGML
 public struct Ul:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

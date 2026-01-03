@@ -25,7 +25,10 @@ public struct Form:
     NameAttributeModifier,
     NoValidateAttributeModifier,
     RelAttributeModifier,
-    TargetAttributeModifier
+    TargetAttributeModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

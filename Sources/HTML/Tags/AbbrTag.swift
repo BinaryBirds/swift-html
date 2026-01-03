@@ -10,7 +10,11 @@ import SGML
 public struct Abbr:
     StandardTag,
     // attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

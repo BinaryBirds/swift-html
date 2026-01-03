@@ -25,7 +25,9 @@ import SGML
 public struct Title:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    MetadataContent
 {
 
     /// The attribute storage for the tag.

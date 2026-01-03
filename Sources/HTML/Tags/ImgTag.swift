@@ -29,7 +29,13 @@ public struct Img:
     LoadingAttributeModifier,
     IsMapAttributeModifier,
     DecodingAttributeModifier,
-    FetchPriorityAttributeModifier
+    FetchPriorityAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

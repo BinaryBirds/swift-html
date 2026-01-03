@@ -8,7 +8,11 @@ import SGML
 public struct Nav:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    SectioningContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

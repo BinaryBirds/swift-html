@@ -8,7 +8,10 @@ import SGML
 public struct Br:
     ShortTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PhrasingContent
 {
 
     /// The attribute storage for the tag.

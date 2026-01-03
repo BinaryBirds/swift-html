@@ -5,7 +5,10 @@ public struct Slot:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    NameAttributeModifier
+    NameAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

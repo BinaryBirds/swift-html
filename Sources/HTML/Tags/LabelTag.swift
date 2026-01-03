@@ -32,7 +32,12 @@ public struct Label:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    ForAttributeModifier
+    ForAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

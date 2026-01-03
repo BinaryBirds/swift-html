@@ -10,7 +10,9 @@ public struct Base:
     /// attribute modifiers
     GlobalAttributesModifier,
     HrefAttributeModifier,
-    TargetAttributeModifier
+    TargetAttributeModifier,
+    // categories
+    MetadataContent
 {
 
     /// The attribute storage for the tag.

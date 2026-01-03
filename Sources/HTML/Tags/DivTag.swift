@@ -12,7 +12,12 @@ import SGML
 public struct Div:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PalpableContent,
+    SelectInnerContent,
+    OptgroupInnerContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

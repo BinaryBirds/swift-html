@@ -22,7 +22,10 @@ public struct Area:
     CoordsAttributeModifier,
     ReferrerPolicyAttributeModifier,
     RelAttributeModifier,
-    TargetAttributeModifier
+    TargetAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

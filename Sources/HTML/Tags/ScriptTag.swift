@@ -19,7 +19,14 @@ public struct Script:
     FetchPriorityAttributeModifier,
     AsyncAttributeModifier,
     DeferAttributeModifier,
-    NoModuleAttributeModifier
+    NoModuleAttributeModifier,
+    // categories
+    MetadataContent,
+    FlowContent,
+    PhrasingContent,
+    ScriptSupportingContent,
+    SelectInnerContent,
+    OptgroupInnerContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

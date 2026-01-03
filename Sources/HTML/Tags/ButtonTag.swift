@@ -24,7 +24,12 @@ public struct Button:
     PopoverTargetAttributeModifier,
     PopoverTargetActionAttributeModifier,
     TypeAttributeModifier,
-    ValueAttributeModifier
+    ValueAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    InteractiveContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

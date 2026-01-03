@@ -13,7 +13,10 @@ public struct Option:
     GlobalAttributesModifier,
     DisabledAttributeModifier,
     ValueAttributeModifier,
-    LabelAttributeModifier
+    LabelAttributeModifier,
+    // categories
+    SelectInnerContent,
+    OptgroupInnerContent
 {
 
     /// The attribute storage for the tag.

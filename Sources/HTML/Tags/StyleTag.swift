@@ -8,7 +8,9 @@ public struct Style:
     /// attribute modifiers
     GlobalAttributesModifier,
     MediaAttributeModifier,
-    BlockingAttributeModifier
+    BlockingAttributeModifier,
+    // categories
+    MetadataContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

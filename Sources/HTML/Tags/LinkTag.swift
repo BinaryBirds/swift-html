@@ -24,7 +24,11 @@ public struct Link:
     FetchPriorityAttributeModifier,
     ImageSrcSetAttributeModifier,
     ImageSizesAttributeModifier,
-    ColorAttributeModifier
+    ColorAttributeModifier,
+    // categories
+    MetadataContent,
+    FlowContent,
+    PhrasingContent
 {
     public var attributes: AttributeStore
 

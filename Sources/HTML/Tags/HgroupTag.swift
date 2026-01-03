@@ -8,7 +8,11 @@ import SGML
 public struct Hgroup:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    HeadingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

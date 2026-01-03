@@ -26,7 +26,13 @@ public struct Audio:
     PreloadAttributeModifier,
     AutoPlayAttributeModifier,
     MutedAttributeModifier,
-    LoopAttributeModifier
+    LoopAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    InteractiveContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

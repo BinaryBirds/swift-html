@@ -18,7 +18,11 @@ public struct Meta:
     NameAttributeModifier,
     MediaAttributeModifier,
     HttpEquivAttributeModifier,
-    CharsetAttributeModifier
+    CharsetAttributeModifier,
+    // categories
+    MetadataContent,
+    FlowContent,
+    PhrasingContent
 {
     public var attributes: AttributeStore
 

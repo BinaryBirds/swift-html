@@ -9,7 +9,11 @@ public struct Q:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    CiteAttributeModifier
+    CiteAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

@@ -8,7 +8,11 @@ public struct Progress:
     /// attribute modifiers
     GlobalAttributesModifier,
     ValueAttributeModifier,
-    MaxAttributeModifier
+    MaxAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

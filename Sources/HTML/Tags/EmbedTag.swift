@@ -8,7 +8,13 @@ public struct Embed:
     WidthAttributeModifier,
     HeightAttributeModifier,
     SrcAttributeModifier,
-    TypeAttributeModifier
+    TypeAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

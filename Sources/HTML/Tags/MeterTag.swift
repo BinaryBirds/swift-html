@@ -17,7 +17,11 @@ public struct Meter:
     LowAttributeModifier,
     HighAttributeModifier,
     OptimumAttributeModifier,
-    FormAttributeModifier
+    FormAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

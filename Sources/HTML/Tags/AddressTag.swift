@@ -12,7 +12,10 @@ import SGML
 public struct Address:
     StandardTag,
     // attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

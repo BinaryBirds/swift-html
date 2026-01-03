@@ -14,7 +14,12 @@ import SGML
 public struct Picture:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

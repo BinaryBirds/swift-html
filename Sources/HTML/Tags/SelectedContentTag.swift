@@ -4,7 +4,9 @@ import SGML
 public struct SelectedContent:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    PhrasingContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

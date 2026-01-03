@@ -8,7 +8,9 @@ public struct Dialog:
     /// attribute modifiers
     GlobalAttributesModifier,
     ClosedByAttributeModifier,
-    OpenAttributeModifier
+    OpenAttributeModifier,
+    // categories
+    FlowContent
 {
 
     /// The attribute storage for the tag.

@@ -12,7 +12,11 @@ public struct Details:
     /// attribute modifiers
     GlobalAttributesModifier,
     NameAttributeModifier,
-    OpenAttributeModifier
+    OpenAttributeModifier,
+    // categories
+    FlowContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

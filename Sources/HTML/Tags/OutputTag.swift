@@ -7,7 +7,11 @@ public struct Output:
     GlobalAttributesModifier,
     ForAttributeModifier,
     FormAttributeModifier,
-    NameAttributeModifier
+    NameAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

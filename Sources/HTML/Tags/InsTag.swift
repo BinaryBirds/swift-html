@@ -8,7 +8,11 @@ public struct Ins:
     /// attribute modifiers
     GlobalAttributesModifier,
     CiteAttributeModifier,
-    DateTimeAttributeModifier
+    DateTimeAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

@@ -6,7 +6,10 @@ import SGML
 public struct Hr:
     ShortTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    SelectInnerContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

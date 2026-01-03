@@ -13,7 +13,10 @@ public struct Ol:
     GlobalAttributesModifier,
     ReversedAttributeModifier,
     StartAttributeModifier,
-    TypeAttributeModifier
+    TypeAttributeModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

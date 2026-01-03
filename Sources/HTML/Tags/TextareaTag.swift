@@ -29,7 +29,12 @@ public struct Textarea:
     ReadOnlyAttributeModifier,
     RequiredAttributeModifier,
     RowsAttributeModifier,
-    WrapAttributeModifier
+    WrapAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

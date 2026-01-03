@@ -20,7 +20,13 @@ public struct Iframe:
     WidthAttributeModifier,
     HeightAttributeModifier,
     ReferrerPolicyAttributeModifier,
-    LoadingAttributeModifier
+    LoadingAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    InteractiveContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

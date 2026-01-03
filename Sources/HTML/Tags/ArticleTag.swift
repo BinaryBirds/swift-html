@@ -15,7 +15,11 @@ import SGML
 public struct Article:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    SectioningContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

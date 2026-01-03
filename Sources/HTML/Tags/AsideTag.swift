@@ -11,7 +11,11 @@ import SGML
 public struct Aside:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    SectioningContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

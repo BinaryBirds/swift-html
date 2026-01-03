@@ -10,7 +10,12 @@ public struct Canvas:
     /// attribute modifiers
     GlobalAttributesModifier,
     WidthAttributeModifier,
-    HeightAttributeModifier
+    HeightAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

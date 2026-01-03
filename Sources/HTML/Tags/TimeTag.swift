@@ -7,7 +7,11 @@ public struct Time:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    DateTimeAttributeModifier
+    DateTimeAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

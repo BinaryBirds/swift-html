@@ -8,7 +8,9 @@ public struct Optgroup:
     /// attribute modifiers
     GlobalAttributesModifier,
     DisabledAttributeModifier,
-    LabelAttributeModifier
+    LabelAttributeModifier,
+    // categories
+    SelectInnerContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

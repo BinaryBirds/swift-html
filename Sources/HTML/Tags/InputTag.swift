@@ -42,7 +42,12 @@ public struct Input:
     ReadOnlyAttributeModifier,
     RequiredAttributeModifier,
     SizeAttributeModifier,
-    StepAttributeModifier
+    StepAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    InteractiveContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

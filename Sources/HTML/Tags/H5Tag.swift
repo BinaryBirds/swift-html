@@ -9,7 +9,11 @@ import SGML
 public struct H5:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    HeadingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

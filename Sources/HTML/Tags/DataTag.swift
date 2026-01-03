@@ -9,7 +9,11 @@ public struct Data:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    ValueAttributeModifier
+    ValueAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

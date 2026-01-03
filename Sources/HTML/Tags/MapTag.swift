@@ -9,7 +9,11 @@ public struct Map:
     StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    NameAttributeModifier
+    NameAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

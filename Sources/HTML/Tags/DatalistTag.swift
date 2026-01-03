@@ -8,7 +8,10 @@ import SGML
 public struct Datalist:
     StandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PhrasingContent
 {
 
     /// The attribute storage for the tag.

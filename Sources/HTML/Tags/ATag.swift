@@ -21,7 +21,12 @@ public struct A:
     ReferrerPolicyAttributeModifier,
     RelAttributeModifier,
     TargetAttributeModifier,
-    TypeAttributeModifier
+    TypeAttributeModifier,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    InteractiveContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

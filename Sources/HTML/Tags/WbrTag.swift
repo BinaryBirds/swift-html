@@ -6,7 +6,10 @@ import SGML
 public struct Wbr:
     ShortTag,
     /// attribute modifiers
-    GlobalAttributesModifier
+    GlobalAttributesModifier,
+    // categories
+    FlowContent,
+    PhrasingContent
 {
 
     /// The attribute storage for the tag.

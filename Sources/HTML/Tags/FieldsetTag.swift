@@ -9,7 +9,10 @@ public struct Fieldset:
     GlobalAttributesModifier,
     DisabledAttributeModifier,
     FormAttributeModifier,
-    NameAttributeModifier
+    NameAttributeModifier,
+    // categories
+    FlowContent,
+    PalpableContent
 {
 
     /// The attribute storage for the tag.

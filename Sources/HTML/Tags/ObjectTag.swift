@@ -14,7 +14,12 @@ public struct Object:
     WidthAttributeModifier,
     HeightAttributeModifier,
     UseMapAttributeModifier,  // W3C but not in spec
-    TypeMustMatchAttributeModifier  // W3C but not in spec
+    TypeMustMatchAttributeModifier,  // W3C but not in spec,
+    // categories
+    FlowContent,
+    PhrasingContent,
+    EmbeddedContent,
+    PalpableContent
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
