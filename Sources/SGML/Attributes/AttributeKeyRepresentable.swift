@@ -1,5 +1,3 @@
-import SGML
-
 public protocol AttributeKeyRepresentable {
     var attributeKey: String { get }
 }

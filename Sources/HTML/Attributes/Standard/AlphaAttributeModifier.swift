@@ -9,6 +9,9 @@ extension AlphaAttributeModifier where Self: Attributes & Mutable {
     public func alpha(
         _ value: AlphaAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.alpha, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.alpha,
+            value: value?.attributeValue
+        )
     }
 }

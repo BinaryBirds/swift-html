@@ -9,6 +9,9 @@ extension AllowAttributeModifier where Self: Attributes & Mutable {
     public func allow(
         _ value: AllowAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.allow, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.allow,
+            value: value?.attributeValue
+        )
     }
 }
