@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** To define different properties to a column within a `<colgroup>`, use the `<col>` tag within the `<colgroup>` tag.
 public struct Colgroup:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     SpanAttributeModifier
@@ -19,9 +19,6 @@ public struct Colgroup:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

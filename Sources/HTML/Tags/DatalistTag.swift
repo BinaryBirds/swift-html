@@ -6,7 +6,7 @@ import SGML
 ///
 /// The `<datalist>` element's id attribute must be equal to the `<input>` element's list attribute (this binds them together).
 public struct Datalist:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -16,9 +16,6 @@ public struct Datalist:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing]
-    }
 
     init(
         attributes: AttributeStore = .init(),

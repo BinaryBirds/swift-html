@@ -2,7 +2,7 @@ import SGML
 
 /// Make some text bold (without marking it as important).
 public struct B:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -12,9 +12,6 @@ public struct B:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

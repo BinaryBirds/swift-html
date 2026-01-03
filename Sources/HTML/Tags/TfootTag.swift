@@ -13,7 +13,7 @@ import SGML
 ///
 /// **Tip:** The `<thead>`, `<tbody>`, and `<tfoot>` elements will not affect the layout of the table by default. However, you can use CSS to style these elements (see example below)!
 public struct Tfoot:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -23,9 +23,6 @@ public struct Tfoot:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

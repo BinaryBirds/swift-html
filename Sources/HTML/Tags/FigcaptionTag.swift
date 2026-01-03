@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<figcaption>` element can be placed as the first or last child of the `<figure>` element.
 public struct Figcaption:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,9 +14,6 @@ public struct Figcaption:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

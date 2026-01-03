@@ -6,7 +6,7 @@ import SGML
 ///
 /// The `<input>` element can be displayed in several ways, depending on the type attribute.
 public struct Input:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     AltAttributeModifier,
@@ -46,30 +46,6 @@ public struct Input:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [.flow, .phrasing]
-        let typeValue = getAttribute(name: "type")?.lowercased()
-        let isHiddenType = typeValue == "hidden"
-        if !isHiddenType {
-            contentModel.insert(.interactive)
-        }
-        if !isHiddenType {
-            contentModel.insert([
-                .formAssociated, .listed, .labelable, .submittable, .resettable,
-                .autocapitalizeAndAutocorrectInheriting,
-            ])
-        }
-        if isHiddenType {
-            contentModel.insert([
-                .formAssociated, .listed, .submittable, .resettable,
-                .autocapitalizeAndAutocorrectInheriting,
-            ])
-        }
-        if !isHiddenType {
-            contentModel.insert(.palpable)
-        }
-        return contentModel
-    }
 
     public init() {
         self.attributes = .init()

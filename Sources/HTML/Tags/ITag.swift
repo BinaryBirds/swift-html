@@ -12,7 +12,7 @@ import SGML
 /// - `<cite>` (the title of a work)
 /// - `<dfn>` (a definition term)
 public struct I:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -22,9 +22,6 @@ public struct I:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

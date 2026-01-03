@@ -6,7 +6,7 @@ import SGML
 ///
 /// The `<span>` tag is much like the `<div>` element, but `<div>` is a block-level element and `<span>` is an inline element.
 public struct Span:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -16,9 +16,6 @@ public struct Span:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

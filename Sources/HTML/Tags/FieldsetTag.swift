@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<fieldset>` tag draws a box around the related elements.
 public struct Fieldset:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     DisabledAttributeModifier,
@@ -17,12 +17,6 @@ public struct Fieldset:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [
-            .flow, .formAssociated, .listed,
-            .autocapitalizeAndAutocorrectInheriting, .palpable,
-        ]
-    }
 
     init(
         attributes: AttributeStore = .init(),

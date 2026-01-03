@@ -4,7 +4,7 @@ import SGML
 ///
 /// **Tip:** Also look at the `<del>` tag to markup deleted text.
 public struct Ins:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     CiteAttributeModifier,
@@ -16,9 +16,6 @@ public struct Ins:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

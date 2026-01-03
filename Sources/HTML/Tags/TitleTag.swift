@@ -23,7 +23,7 @@ import SGML
 ///
 /// **Note:** You can NOT have more than one `<title>` element in an HTML document.
 public struct Title:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -33,9 +33,6 @@ public struct Title:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.metadata]
-    }
 
     public init(
         _ text: String

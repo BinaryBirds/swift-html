@@ -7,7 +7,7 @@ import SGML
 /// **Note:** Only use one `<h1>` per page - this should represent the main heading/subject for the whole page.
 /// Also, do not skip heading levels - start with `<h1>`, then use `<h2>`, and so on.
 public struct H3:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -17,9 +17,6 @@ public struct H3:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .heading, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

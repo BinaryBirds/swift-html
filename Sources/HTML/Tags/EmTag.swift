@@ -4,7 +4,7 @@ import SGML
 ///
 /// A screen reader will pronounce the words in `<em>` with an emphasis, using verbal stress.
 public struct Em:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,9 +14,6 @@ public struct Em:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -12,7 +12,7 @@ import SGML
 ///
 /// **Tip:** The `<picture>` element works "similar" to `<video>` and `<audio>`. You set up different sources, and the first source that fits the preferences is the one being used.
 public struct Picture:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -22,9 +22,6 @@ public struct Picture:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .embedded, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

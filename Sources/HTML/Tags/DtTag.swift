@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<dt>` tag is used in conjunction with `<dl>` (defines a description list) and `<dd>` (describes each term/name).
 public struct Dt:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,9 +14,6 @@ public struct Dt:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -6,7 +6,7 @@ import SGML
 ///
 /// **Note:** There must not be more than one `<main>` element in a document. The `<main>` element must NOT be a descendant of an `<article>`, `<aside>`, `<footer>`, `<header>`, or `<nav>` element.
 public struct Main:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ValueAttributeModifier
@@ -17,9 +17,6 @@ public struct Main:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

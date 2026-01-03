@@ -6,7 +6,7 @@ import SGML
 ///
 /// There can only be one single `<base>` element in a document, and it must be inside the `<head>` element.
 public struct Base:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     HrefAttributeModifier,
@@ -15,9 +15,6 @@ public struct Base:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        [.metadata]
-    }
 
     public init() {
         self.attributes = .init()

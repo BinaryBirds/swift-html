@@ -11,7 +11,7 @@ import SGML
 ///
 /// The text in `<th>` elements are bold and centered by default.
 public struct Td:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ColSpanAttributeModifier,
@@ -24,9 +24,6 @@ public struct Td:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -4,7 +4,7 @@ import SGML
 ///
 /// **Tip:** This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.
 public struct Samp:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,9 +14,6 @@ public struct Samp:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

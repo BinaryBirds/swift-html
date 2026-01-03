@@ -5,7 +5,7 @@ import SGML
 /// The `<source>` tag allows you to specify alternative video/audio/image files which the browser may choose from, based on browser support or viewport width.
 /// The browser will choose the first `<source>` it supports.
 public struct Source:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     TypeAttributeModifier,
@@ -18,9 +18,6 @@ public struct Source:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        []
-    }
 
     public init() {
         self.attributes = .init()

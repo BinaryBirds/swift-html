@@ -12,7 +12,7 @@ import SGML
 /// - `<var>`    Defines a variable
 /// - `<pre>`    Defines preformatted text
 public struct Code:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -22,9 +22,6 @@ public struct Code:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<col>` tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
 public struct Col:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     SpanAttributeModifier
@@ -12,9 +12,6 @@ public struct Col:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        []
-    }
 
     public init() {
         self.attributes = .init()

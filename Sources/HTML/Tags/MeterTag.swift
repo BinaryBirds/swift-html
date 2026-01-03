@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 public struct Meter:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ValueAttributeModifier,
@@ -25,9 +25,6 @@ public struct Meter:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .labelable, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -9,7 +9,7 @@ import SGML
 /// - authorship information
 /// **Note:** You can have several` <header>` elements in one HTML document. However,` <header>` cannot be placed within a` <footer>`,` <address>` or another` <header>` element.
 public struct Header:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -19,9 +19,6 @@ public struct Header:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

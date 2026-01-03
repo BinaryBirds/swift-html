@@ -7,7 +7,7 @@ import SGML
 ///
 /// Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
 public struct Script:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     TypeAttributeModifier,
@@ -26,9 +26,6 @@ public struct Script:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.metadata, .flow, .phrasing, .scriptSupporting]
-    }
 
     public init(
         _ contents: String

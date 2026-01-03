@@ -5,7 +5,7 @@ import SGML
 /// Text in a `<pre>` element is displayed in a fixed-width font, and the text preserves both spaces and line breaks.
 /// The text will be displayed exactly as written in the HTML source code.
 public struct Pre:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -15,9 +15,6 @@ public struct Pre:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -12,7 +12,7 @@ import SGML
 /// - related documents
 /// You can have several `<footer>` elements in one document.
 public struct Footer:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -22,9 +22,6 @@ public struct Footer:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

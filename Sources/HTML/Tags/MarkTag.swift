@@ -2,7 +2,7 @@ import SGML
 
 /// The `<mark>` tag defines text that should be marked or highlighted.
 public struct Mark:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -12,9 +12,6 @@ public struct Mark:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

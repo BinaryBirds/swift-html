@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** If you have a long list of options, you can group related options within the `<optgroup>` tag.
 public struct Option:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     DisabledAttributeModifier,
@@ -21,9 +21,6 @@ public struct Option:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.selectInnerContent, .optgroupInnerContent]
-    }
 
     init(
         attributes: AttributeStore = .init(),

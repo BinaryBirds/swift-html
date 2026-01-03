@@ -11,7 +11,7 @@ import SGML
 ///
 /// There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the `<meta>` tag (See "Setting The Viewport" example below).
 public struct Meta:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ContentAttributeModifier,
@@ -21,16 +21,6 @@ public struct Meta:
     CharsetAttributeModifier
 {
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [.metadata]
-        if hasAttribute(name: "itemprop") {
-            contentModel.insert(.flow)
-        }
-        if hasAttribute(name: "itemprop") {
-            contentModel.insert(.phrasing)
-        }
-        return contentModel
-    }
 
     public init() {
         self.attributes = .init()

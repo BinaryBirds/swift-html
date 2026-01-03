@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<dl>` tag is used in conjunction with `<dt>` (defines terms/names) and `<dd>` (describes each term/name).
 public struct Dl:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,15 +14,6 @@ public struct Dl:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [.flow]
-        let hasNameValueGroup =
-            children.contains { $0 is Dt } && children.contains { $0 is Dd }
-        if hasNameValueGroup {
-            contentModel.insert(.palpable)
-        }
-        return contentModel
-    }
 
     init(
         attributes: AttributeStore = .init(),

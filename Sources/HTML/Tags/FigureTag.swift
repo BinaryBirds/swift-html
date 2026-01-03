@@ -6,7 +6,7 @@ import SGML
 ///
 /// **Tip:** The `<figcaption>` element is used to add a caption for the `<figure>` element.
 public struct Figure:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -16,9 +16,6 @@ public struct Figure:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

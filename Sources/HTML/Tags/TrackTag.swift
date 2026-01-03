@@ -6,7 +6,7 @@ import SGML
 ///
 /// Tracks are formatted in WebVTT format (.vtt files).
 public struct Track:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     SrcAttributeModifier,
@@ -18,9 +18,6 @@ public struct Track:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        []
-    }
 
     public init(
         src: String

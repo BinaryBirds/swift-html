@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<dialog>` element makes it easy to create popup dialogs and modals on a web page.
 public struct Dialog:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ClosedByAttributeModifier,
@@ -16,9 +16,6 @@ public struct Dialog:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow]
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -6,7 +6,7 @@ import SGML
 ///
 /// **Note:** There can only be one `<body>` element in an HTML document.
 public struct Body:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     EventAttributesModifier
@@ -17,9 +17,6 @@ public struct Body:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -4,7 +4,7 @@ import SGML
 ///
 /// A `<tr>` element contains one or more `<th>` or `<td>` elements.
 public struct Tr:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -13,9 +13,6 @@ public struct Tr:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

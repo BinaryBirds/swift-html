@@ -6,7 +6,7 @@ import SGML
 ///
 /// **Tip:** If the content is time- or date-related, use the `<time>` element instead.
 public struct Data:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ValueAttributeModifier
@@ -17,9 +17,6 @@ public struct Data:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

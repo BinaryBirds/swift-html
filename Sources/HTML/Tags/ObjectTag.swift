@@ -4,7 +4,7 @@ import SGML
 ///
 /// The external resource can be a web page, a picture, a media player, or a plug-in application.
 public struct Object:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     DataAttributeModifier,
@@ -21,9 +21,6 @@ public struct Object:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .embedded, .formAssociated, .listed, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

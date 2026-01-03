@@ -6,7 +6,7 @@ import SGML
 ///
 /// **Tip:** Use `<blockquote>` for long quotations.
 public struct Q:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     CiteAttributeModifier
@@ -17,9 +17,6 @@ public struct Q:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

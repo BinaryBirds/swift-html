@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.
 public struct Button:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     DisabledAttributeModifier,
@@ -31,13 +31,6 @@ public struct Button:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [
-            .flow, .phrasing, .interactive, .formAssociated, .listed,
-            .labelable, .submittable, .autocapitalizeAndAutocorrectInheriting,
-            .palpable,
-        ]
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -2,7 +2,7 @@ import SGML
 
 /// The `<section>` tag defines a section in a document.
 public struct Section:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -12,9 +12,6 @@ public struct Section:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .sectioning, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

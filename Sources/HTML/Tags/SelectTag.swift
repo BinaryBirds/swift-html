@@ -12,7 +12,7 @@ import SGML
 ///
 /// **Tip:** Always add the `<label>` tag for best accessibility practices!
 public struct Select:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     AutoCompleteAttributeModifier,
@@ -28,13 +28,6 @@ public struct Select:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [
-            .flow, .phrasing, .interactive, .formAssociated, .listed,
-            .labelable, .submittable, .resettable,
-            .autocapitalizeAndAutocorrectInheriting, .palpable,
-        ]
-    }
 
     init(
         attributes: AttributeStore = .init(),

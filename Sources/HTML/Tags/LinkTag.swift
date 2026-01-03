@@ -6,7 +6,7 @@ import SGML
 ///
 /// The `<link>` element is an empty element, it contains attributes only.
 public struct Link:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     HrefAttributeModifier,
@@ -27,17 +27,6 @@ public struct Link:
     ColorAttributeModifier
 {
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [.metadata]
-        let isAllowedInBody = true
-        if isAllowedInBody {
-            contentModel.insert(.flow)
-        }
-        if isAllowedInBody {
-            contentModel.insert(.phrasing)
-        }
-        return contentModel
-    }
 
     // MARK: -
 

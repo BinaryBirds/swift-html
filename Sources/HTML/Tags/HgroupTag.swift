@@ -6,7 +6,7 @@ import SGML
 ///
 /// Note: The <hgroup> element does not render as anything special in a browser. However, you can use CSS to style the <hgroup> element and its content.
 public struct Hgroup:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -16,9 +16,6 @@ public struct Hgroup:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .heading, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

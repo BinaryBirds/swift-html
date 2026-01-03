@@ -10,7 +10,7 @@ import SGML
 /// - A visited link is underlined and purple
 /// - An active link is underlined and red
 public struct A:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     DownloadAttributeModifier,
@@ -28,13 +28,6 @@ public struct A:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [.flow, .phrasing, .palpable]
-        if hasAttribute(name: "href") {
-            contentModel.insert(.interactive)
-        }
-        return contentModel
-    }
 
     init(
         attributes: AttributeStore = .init(),

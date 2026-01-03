@@ -11,7 +11,7 @@ import SGML
 /// [W3C Reference - HTML area tag](https://www.w3schools.com/tags/tag_area.asp)
 ///
 public struct Area:
-    HTMLShortTag,
+    ShortTag,
     // attribute modifiers
     GlobalAttributesModifier,
     AltAttributeModifier,
@@ -26,9 +26,6 @@ public struct Area:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        [.flow, .phrasing]
-    }
 
     public init() {
         self.attributes = .init()

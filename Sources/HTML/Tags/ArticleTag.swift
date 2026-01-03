@@ -13,7 +13,7 @@ import SGML
 /// **Note:** The `<article>` element does not render as anything special in a browser.
 /// However, you can use CSS to style the `<article>` element (see example below).
 public struct Article:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -23,9 +23,6 @@ public struct Article:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .sectioning, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

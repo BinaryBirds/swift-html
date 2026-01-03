@@ -16,7 +16,7 @@ import SGML
 /// - `<script>`
 /// - `<noscript>`
 public struct Head:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -26,9 +26,6 @@ public struct Head:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     public init(
         elements: [Element]

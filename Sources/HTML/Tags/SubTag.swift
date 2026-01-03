@@ -7,7 +7,7 @@ import SGML
 ///
 /// **Tip:** Use the `<sup>` tag to define superscripted text.
 public struct Sub:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -17,9 +17,6 @@ public struct Sub:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

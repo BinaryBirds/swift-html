@@ -11,7 +11,7 @@ import SGML
 ///
 /// The text in `<td>` elements are regular and left-aligned by default.
 public struct Th:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ColSpanAttributeModifier,
@@ -25,9 +25,6 @@ public struct Th:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

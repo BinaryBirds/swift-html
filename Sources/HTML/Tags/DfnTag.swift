@@ -7,7 +7,7 @@ import SGML
 /// The term inside the `<dfn>` tag can be any of the following:
 /// `<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>`
 public struct Dfn:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -17,9 +17,6 @@ public struct Dfn:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

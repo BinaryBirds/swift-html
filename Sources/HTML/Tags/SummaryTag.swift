@@ -4,7 +4,7 @@ import SGML
 ///
 /// **Note:** The `<summary>` element should be the first child element of the `<details>` element.
 public struct Summary:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,9 +14,6 @@ public struct Summary:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

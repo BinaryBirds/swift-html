@@ -4,7 +4,7 @@ import SGML
 ///
 /// Inside the `<style>` element you specify how HTML elements should render in a browser.
 public struct Style:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     MediaAttributeModifier,
@@ -15,9 +15,6 @@ public struct Style:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.metadata]
-    }
 
     init(
         attributes: AttributeStore = .init(),

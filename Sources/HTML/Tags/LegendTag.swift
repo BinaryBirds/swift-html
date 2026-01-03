@@ -2,7 +2,7 @@ import SGML
 
 /// The `<legend>` tag defines a caption for the `<fieldset>` element.
 public struct Legend:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -12,9 +12,6 @@ public struct Legend:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

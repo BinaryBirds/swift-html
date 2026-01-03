@@ -4,7 +4,7 @@ import SGML
 ///
 /// Browsers usually indent `<blockquote>` elements (look at example below to see how to remove the indentation).
 public struct Blockquote:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     CiteAttributeModifier
@@ -15,9 +15,6 @@ public struct Blockquote:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

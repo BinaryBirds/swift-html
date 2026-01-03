@@ -14,7 +14,7 @@ import SGML
 /// - `<label>`
 /// - `<output>`
 public struct Form:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ActionAttributeModifier,
@@ -32,9 +32,6 @@ public struct Form:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

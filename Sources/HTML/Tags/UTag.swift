@@ -7,7 +7,7 @@ import SGML
 ///
 /// **Tip:** Avoid using the `<u>` element where it could be confused for a hyperlink!
 public struct U:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -17,9 +17,6 @@ public struct U:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

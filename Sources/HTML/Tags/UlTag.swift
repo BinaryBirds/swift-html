@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** For ordered lists, use the `<ol>` tag.
 public struct Ul:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -18,14 +18,6 @@ public struct Ul:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [.flow]
-        let hasLiChild = children.contains { $0 is Li }
-        if hasLiChild {
-            contentModel.insert(.palpable)
-        }
-        return contentModel
-    }
 
     init(
         attributes: AttributeStore = .init(),

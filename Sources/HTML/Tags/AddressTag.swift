@@ -10,7 +10,7 @@ import SGML
 /// [HTML Standard - The address element](https://html.spec.whatwg.org/multipage/sections.html#the-address-element)
 ///
 public struct Address:
-    HTMLStandardTag,
+    StandardTag,
     // attribute modifiers
     GlobalAttributesModifier
 {
@@ -19,9 +19,6 @@ public struct Address:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

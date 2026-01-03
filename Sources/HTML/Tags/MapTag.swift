@@ -6,7 +6,7 @@ import SGML
 ///
 /// The `<map>` element contains a number of `<area>` elements, that defines the clickable areas in the image map.
 public struct Map:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     NameAttributeModifier
@@ -17,9 +17,6 @@ public struct Map:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

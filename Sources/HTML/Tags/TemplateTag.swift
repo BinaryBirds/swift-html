@@ -7,7 +7,7 @@ import SGML
 /// You can use the `<template>` tag if you have some HTML code you want to use over and over again, but not until you ask for it.
 /// To do this without the `<template>` tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.
 public struct Template:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ShadowRootModeAttributeModifier,
@@ -22,9 +22,6 @@ public struct Template:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.metadata, .flow, .phrasing, .scriptSupporting]
-    }
 
     init(
         attributes: AttributeStore = .init(),

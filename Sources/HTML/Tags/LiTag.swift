@@ -10,7 +10,7 @@ import SGML
 ///
 /// **Tip:** Use CSS to style lists.
 public struct Li:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ValueAttributeModifier
@@ -21,9 +21,6 @@ public struct Li:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

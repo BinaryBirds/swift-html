@@ -6,7 +6,7 @@ import SGML
 ///
 /// Any text inside the `<canvas>` element will be displayed in browsers with JavaScript disabled and in browsers that do not support <canvas>.
 public struct Canvas:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     WidthAttributeModifier,
@@ -18,9 +18,6 @@ public struct Canvas:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .embedded, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

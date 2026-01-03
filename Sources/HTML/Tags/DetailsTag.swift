@@ -8,7 +8,7 @@ import SGML
 ///
 /// **Tip:** The `<summary>` tag is used in conjuction with `<details>` to specify a visible heading for the details.
 public struct Details:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     NameAttributeModifier,
@@ -20,9 +20,6 @@ public struct Details:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .interactive, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

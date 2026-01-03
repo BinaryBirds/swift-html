@@ -6,7 +6,7 @@ import SGML
 ///
 /// Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content.
 public struct Nav:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -16,9 +16,6 @@ public struct Nav:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .sectioning, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

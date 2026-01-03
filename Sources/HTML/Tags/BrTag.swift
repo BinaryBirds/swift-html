@@ -6,16 +6,13 @@ import SGML
 ///
 /// The `<br>` tag is an empty tag which means that it has no end tag.
 public struct Br:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        [.flow, .phrasing]
-    }
 
     public init() {
         self.attributes = .init()

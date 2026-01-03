@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<s>` tag should not be used to define deleted text in a document, use the `<del>` tag for that.
 public struct S:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -14,9 +14,6 @@ public struct S:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

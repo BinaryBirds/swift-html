@@ -2,7 +2,7 @@ import SGML
 
 /// The `<embed>` tag defines a container for an external resource, such as a web page, a picture, a media player, or a plug-in application.
 public struct Embed:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     WidthAttributeModifier,
@@ -13,9 +13,6 @@ public struct Embed:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        [.flow, .phrasing, .embedded, .interactive, .palpable]
-    }
 
     public init() {
         self.attributes = .init()

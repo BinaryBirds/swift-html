@@ -10,7 +10,7 @@ import SGML
 ///
 /// **Note:** By default, browsers always place a line break before and after the `<div>` element.
 public struct Div:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -19,12 +19,6 @@ public struct Div:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [
-            .flow, .palpable, .selectInnerContent, .optgroupInnerContent,
-            .optionInnerContent,
-        ]
-    }
 
     init(
         attributes: AttributeStore = .init(),

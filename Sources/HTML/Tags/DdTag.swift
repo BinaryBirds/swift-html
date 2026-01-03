@@ -6,7 +6,7 @@ import SGML
 ///
 /// Inside a `<dd>` tag you can put paragraphs, line breaks, images, links, lists, etc.
 public struct Dd:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -16,9 +16,6 @@ public struct Dd:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        []
-    }
 
     init(
         attributes: AttributeStore = .init(),

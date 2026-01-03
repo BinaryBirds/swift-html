@@ -14,7 +14,7 @@ import SGML
 ///
 /// **Tip:** To link an image to another document, simply nest the `<img>` tag inside an `<a>` tag (see example below).
 public struct Img:
-    HTMLShortTag,
+    ShortTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     AltAttributeModifier,
@@ -34,15 +34,6 @@ public struct Img:
 
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [
-            .flow, .phrasing, .embedded, .formAssociated, .palpable,
-        ]
-        if hasAttribute(name: "usemap") {
-            contentModel.insert(.interactive)
-        }
-        return contentModel
-    }
 
     public init(
         src: String?,

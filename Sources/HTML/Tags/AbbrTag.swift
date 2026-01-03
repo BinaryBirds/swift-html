@@ -8,7 +8,7 @@ import SGML
 /// [HTML Standard - The abbr element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element)
 ///
 public struct Abbr:
-    HTMLStandardTag,
+    StandardTag,
     // attribute modifiers
     GlobalAttributesModifier
 {
@@ -17,9 +17,6 @@ public struct Abbr:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),

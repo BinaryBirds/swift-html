@@ -16,7 +16,7 @@ import SGML
 ///     Safari  | YES | YES  | NO
 ///     Opera   | YES | YES  | YES
 public struct Video:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     SrcAttributeModifier,
@@ -37,15 +37,6 @@ public struct Video:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        var contentModel: ContentModel = [
-            .flow, .phrasing, .embedded, .palpable,
-        ]
-        if hasAttribute(name: "controls") {
-            contentModel.insert(.interactive)
-        }
-        return contentModel
-    }
 
     init(
         attributes: AttributeStore = .init(),

@@ -4,7 +4,7 @@ import SGML
 ///
 /// The `<noscript>` element can be used in both `<head>` and `<body>`. When used inside `<head>`, the `<noscript>` element could only contain `<link>`, `<style>`, and `<meta>` elements.
 public struct Noscript:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier
 {
@@ -13,12 +13,6 @@ public struct Noscript:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [
-            .metadata, .flow, .phrasing, .selectInnerContent,
-            .optgroupInnerContent,
-        ]
-    }
 
     init(
         attributes: AttributeStore = .init(),

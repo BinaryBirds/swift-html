@@ -29,7 +29,7 @@ import SGML
 /// Screen reader users (will read out loud the label, when the user is focused on the element)
 /// Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the `<label>` element, it toggles the input (this increases the hit area).
 public struct Label:
-    HTMLStandardTag,
+    StandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
     ForAttributeModifier
@@ -40,9 +40,6 @@ public struct Label:
 
     /// The child elements contained within the tag.
     public var children: [Element]
-    public var categories: ContentModel {
-        [.flow, .phrasing, .interactive, .palpable]
-    }
 
     init(
         attributes: AttributeStore = .init(),
