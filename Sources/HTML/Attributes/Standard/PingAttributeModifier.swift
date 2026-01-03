@@ -18,6 +18,9 @@ extension PingAttributeModifier where Self: Attributes & Mutable {
     public func ping(
         _ value: [String]
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.ping, value: value.joined(separator: " "))
+        setAttribute(
+            key: StandardAttributeKey.ping,
+            value: value.joined(separator: " ")
+        )
     }
 }

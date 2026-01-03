@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaDetailsAttributeModifier {
-    associatedtype AriaDetailsAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaDetailsAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaDetailsAttributeModifier where Self: Attributes & Mutable {
@@ -9,6 +10,9 @@ extension AriaDetailsAttributeModifier where Self: Attributes & Mutable {
     public func ariaDetails(
         _ value: AriaDetailsAttributeValueType?
     ) -> Self {
-        setAttribute(key: AriaAttributeKey.details, value: value?.attributeValue)
+        setAttribute(
+            key: AriaAttributeKey.details,
+            value: value?.attributeValue
+        )
     }
 }

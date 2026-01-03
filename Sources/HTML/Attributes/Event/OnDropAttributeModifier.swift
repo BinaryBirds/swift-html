@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnDropAttributeModifier {
-    associatedtype OnDropAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnDropAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnDropAttributeModifier where Self: Attributes & Mutable {

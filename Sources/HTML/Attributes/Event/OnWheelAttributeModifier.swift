@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnWheelAttributeModifier {
-    associatedtype OnWheelAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnWheelAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnWheelAttributeModifier where Self: Attributes & Mutable {

@@ -14,7 +14,7 @@ public struct Th:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    ColspanAttributeModifier,
+    ColSpanAttributeModifier,
     RowSpanAttributeModifier,
     ScopeAttributeModifier
 //✅colspan — Number of columns that the cell is to span

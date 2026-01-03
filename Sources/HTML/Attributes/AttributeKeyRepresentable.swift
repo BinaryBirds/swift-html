@@ -5,7 +5,9 @@ public protocol AttributeKeyRepresentable {
 }
 
 extension AttributeKeyRepresentable
-    where
-Self: RawRepresentable, RawValue == String {
+where
+    Self: RawRepresentable,
+    RawValue == String
+{
     public var attributeKey: String { rawValue }
 }

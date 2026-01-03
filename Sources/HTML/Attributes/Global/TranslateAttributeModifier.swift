@@ -10,7 +10,8 @@ public enum TranslateAttributeValue: String, Sendable,
 }
 
 public protocol TranslateAttributeModifier {
-    associatedtype TranslateAttributeValueType: AttributeValueRepresentable = TranslateAttributeValue
+    associatedtype TranslateAttributeValueType: AttributeValueRepresentable =
+        TranslateAttributeValue
 }
 
 extension TranslateAttributeModifier where Self: Attributes & Mutable {
@@ -18,6 +19,9 @@ extension TranslateAttributeModifier where Self: Attributes & Mutable {
     public func translate(
         _ value: TranslateAttributeValueType?
     ) -> Self {
-        setAttribute(key: GlobalAttributeKey.translate, value: value?.attributeValue)
+        setAttribute(
+            key: GlobalAttributeKey.translate,
+            value: value?.attributeValue
+        )
     }
 }

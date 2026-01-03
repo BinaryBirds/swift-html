@@ -10,6 +10,9 @@ extension ColsAttributeModifier where Self: Attributes & Mutable {
 
         _ value: ColsAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.cols, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.cols,
+            value: value?.attributeValue
+        )
     }
 }

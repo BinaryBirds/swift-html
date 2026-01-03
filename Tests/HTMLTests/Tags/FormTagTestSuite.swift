@@ -58,14 +58,14 @@ struct FormTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <form action="/sign-in/" enctype="multipart/form-data" method="post">
+            <form enctype="multipart/form-data" method="post" action="/sign-in/">
                 <section>
                     <label for="email">Email address</label>
-                    <input id="email" placeholder="Your email address" type="email" value="root@localhost.com">
+                    <input type="email" id="email" placeholder="Your email address" value="root@localhost.com">
                 </section>
                 <section>
                     <label for="password">Password</label>
-                    <input id="password" placeholder="Your password" type="password">
+                    <input type="password" id="password" placeholder="Your password">
                 </section>
                 <section>
                     <input type="submit" value="Sign in">

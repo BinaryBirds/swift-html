@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnClickAttributeModifier {
-    associatedtype OnClickAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnClickAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnClickAttributeModifier where Self: Attributes & Mutable {

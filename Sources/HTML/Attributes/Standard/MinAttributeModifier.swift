@@ -10,6 +10,9 @@ extension MinAttributeModifier where Self: Attributes & Mutable {
 
         _ value: MinAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.min, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.min,
+            value: value?.attributeValue
+        )
     }
 }

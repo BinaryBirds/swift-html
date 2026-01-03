@@ -9,6 +9,9 @@ extension DataAttributeModifier where Self: Attributes & Mutable {
     public func data(
         _ value: DataAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.data, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.data,
+            value: value?.attributeValue
+        )
     }
 }

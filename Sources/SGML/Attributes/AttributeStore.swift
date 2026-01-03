@@ -1,10 +1,9 @@
+import Collections
 import DOM
-
-//import Collections
 
 public struct AttributeStore: Sendable {
 
-    private var storage: [String: [String?]]
+    private var storage: OrderedDictionary<String, [String?]>
 
     public init() {
         self.storage = [:]
@@ -77,28 +76,18 @@ public struct AttributeStore: Sendable {
     public func get(
         name: String
     ) -> String? {
-        storage[name]?.compactMap { $0 }.sorted().joined(separator: " ")
+        storage[name]?.compactMap { $0 }.joined(separator: " ")
     }
 
     // MARK: - DOM
 
     public var properties: [Property] {
         storage.map { name, value in
-            let values = value.compactMap { $0 }.sorted()
+            let values = value.compactMap { $0 }
             return .init(
                 name: name,
                 value: values.isEmpty ? nil : values.joined(separator: " ")
             )
-        }
-        .sorted { lhs, rhs in
-            let lhsNil = (lhs.value == nil)
-            let rhsNil = (rhs.value == nil)
-
-            // valued first, nil-valued at end
-            if lhsNil != rhsNil {
-                return !lhsNil && rhsNil
-            }
-            return lhs.name < rhs.name
         }
     }
 }

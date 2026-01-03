@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnAbortAttributeModifier {
-    associatedtype OnAbortAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnAbortAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnAbortAttributeModifier where Self: Attributes & Mutable {

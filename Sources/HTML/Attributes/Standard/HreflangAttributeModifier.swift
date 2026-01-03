@@ -10,6 +10,9 @@ extension HrefLangAttributeModifier where Self: Attributes & Mutable {
     public func hrefLang(
         _ value: HrefLangAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.hreflang, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.hreflang,
+            value: value?.attributeValue
+        )
     }
 }

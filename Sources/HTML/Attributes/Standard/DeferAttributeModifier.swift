@@ -9,6 +9,9 @@ extension DeferAttributeModifier where Self: Attributes & Mutable {
     public func `defer`(
         _ value: DeferAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.defer, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.defer,
+            value: value?.attributeValue
+        )
     }
 }

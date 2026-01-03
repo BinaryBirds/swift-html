@@ -1,7 +1,8 @@
 import SGML
 
 public protocol NoValidateAttributeModifier {
-    associatedtype NoValidateAttributeValueType: AttributeValueRepresentable = String
+    associatedtype NoValidateAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension NoValidateAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension NoValidateAttributeModifier where Self: Attributes & Mutable {
 
         _ value: NoValidateAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.novalidate, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.novalidate,
+            value: value?.attributeValue
+        )
     }
 }

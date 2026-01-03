@@ -1,7 +1,8 @@
 import SGML
 
 public protocol PosterAttributeModifier {
-    associatedtype PosterAttributeValueType: AttributeValueRepresentable = String
+    associatedtype PosterAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension PosterAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension PosterAttributeModifier where Self: Attributes & Mutable {
 
         _ value: PosterAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.poster, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.poster,
+            value: value?.attributeValue
+        )
     }
 }

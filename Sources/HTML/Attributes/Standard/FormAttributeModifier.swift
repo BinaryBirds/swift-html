@@ -10,6 +10,9 @@ extension FormAttributeModifier where Self: Attributes & Mutable {
     public func form(
         _ value: FormAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.form, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.form,
+            value: value?.attributeValue
+        )
     }
 }

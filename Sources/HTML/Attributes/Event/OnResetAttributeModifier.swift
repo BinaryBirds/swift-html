@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnResetAttributeModifier {
-    associatedtype OnResetAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnResetAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnResetAttributeModifier where Self: Attributes & Mutable {

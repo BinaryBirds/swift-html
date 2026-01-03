@@ -12,7 +12,8 @@ public enum HttpEquivAttributeValue: String, AttributeValueRepresentable {
 }
 
 public protocol HttpEquivAttributeModifier {
-    associatedtype HttpEquivAttributeValueType: AttributeValueRepresentable = HttpEquivAttributeValue
+    associatedtype HttpEquivAttributeValueType: AttributeValueRepresentable =
+        HttpEquivAttributeValue
 }
 
 extension HttpEquivAttributeModifier where Self: Attributes & Mutable {
@@ -21,6 +22,9 @@ extension HttpEquivAttributeModifier where Self: Attributes & Mutable {
     public func httpEquiv(
         _ value: HttpEquivAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.httpEquiv, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.httpEquiv,
+            value: value?.attributeValue
+        )
     }
 }

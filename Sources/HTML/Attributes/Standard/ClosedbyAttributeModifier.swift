@@ -18,6 +18,9 @@ extension ClosedByAttributeModifier where Self: Attributes & Mutable {
     public func closedBy(
         _ value: ClosedByAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.closedby, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.closedby,
+            value: value?.attributeValue
+        )
     }
 }

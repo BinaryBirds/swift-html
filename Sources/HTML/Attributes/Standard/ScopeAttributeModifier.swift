@@ -12,7 +12,8 @@ public enum ScopeAttributeValue: String, AttributeValueRepresentable {
 }
 
 public protocol ScopeAttributeModifier {
-    associatedtype ScopeAttributeValueType: AttributeValueRepresentable = ScopeAttributeValue
+    associatedtype ScopeAttributeValueType: AttributeValueRepresentable =
+        ScopeAttributeValue
 }
 
 extension ScopeAttributeModifier where Self: Attributes & Mutable {
@@ -20,6 +21,9 @@ extension ScopeAttributeModifier where Self: Attributes & Mutable {
     public func scope(
         _ value: ScopeAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.scope, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.scope,
+            value: value?.attributeValue
+        )
     }
 }

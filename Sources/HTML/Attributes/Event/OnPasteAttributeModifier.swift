@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnPasteAttributeModifier {
-    associatedtype OnPasteAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnPasteAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnPasteAttributeModifier where Self: Attributes & Mutable {

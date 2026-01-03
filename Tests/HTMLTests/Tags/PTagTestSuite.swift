@@ -17,7 +17,7 @@ struct PTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <p class="bar foo">Lorem ipsum</p>
+            <p class="foo bar">Lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)

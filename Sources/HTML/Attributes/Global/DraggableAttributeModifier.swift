@@ -10,7 +10,8 @@ import SGML
 //}
 
 public protocol DraggableAttributeModifier {
-    associatedtype DraggableAttributeValueType: AttributeValueRepresentable = String
+    associatedtype DraggableAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension DraggableAttributeModifier where Self: Attributes & Mutable {
@@ -18,6 +19,9 @@ extension DraggableAttributeModifier where Self: Attributes & Mutable {
     public func draggable(
         _ value: DraggableAttributeValueType?
     ) -> Self {
-        setAttribute(key: GlobalAttributeKey.draggable, value: value?.attributeValue)
+        setAttribute(
+            key: GlobalAttributeKey.draggable,
+            value: value?.attributeValue
+        )
     }
 }

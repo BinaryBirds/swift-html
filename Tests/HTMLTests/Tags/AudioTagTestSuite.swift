@@ -23,7 +23,7 @@ struct AudioTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <audio crossorigin="anonymous" preload="auto" src="test.mp3" autoplay controls loop muted>Lorem ipsum.</audio>
+            <audio src="test.mp3" controls crossorigin="anonymous" preload="auto" autoplay muted loop>Lorem ipsum.</audio>
             """#
 
         let result = renderer.render(document: doc)

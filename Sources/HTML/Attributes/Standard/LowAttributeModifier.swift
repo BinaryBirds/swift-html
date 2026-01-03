@@ -10,6 +10,9 @@ extension LowAttributeModifier where Self: Attributes & Mutable {
 
         _ value: LowAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.low, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.low,
+            value: value?.attributeValue
+        )
     }
 }

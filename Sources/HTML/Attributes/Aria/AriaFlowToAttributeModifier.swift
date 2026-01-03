@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaFlowToAttributeModifier {
-    associatedtype AriaFlowToAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaFlowToAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaFlowToAttributeModifier where Self: Attributes & Mutable {

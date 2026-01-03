@@ -34,7 +34,7 @@ struct AttributesTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <p align="left" class="text">lorem ipsum</p>
+            <p class="text" align="left">lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)
@@ -54,7 +54,7 @@ struct AttributesTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <p align="right" class="note">lorem ipsum</p>
+            <p class="note" align="right">lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)
@@ -73,7 +73,7 @@ struct AttributesTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <p class="bar baz foo">lorem ipsum</p>
+            <p class="foo bar baz">lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)
@@ -137,7 +137,7 @@ struct AttributesTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <p align="left" class style>lorem ipsum</p>
+            <p class style align="left">lorem ipsum</p>
             """#
 
         let result = renderer.render(document: doc)

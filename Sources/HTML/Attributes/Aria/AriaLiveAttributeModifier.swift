@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaLiveAttributeModifier {
-    associatedtype AriaLiveAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaLiveAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaLiveAttributeModifier where Self: Attributes & Mutable {

@@ -14,7 +14,7 @@ struct ImgTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <img alt="Foo" src="foo.jpg">
+            <img src="foo.jpg" alt="Foo">
             """#
 
         let result = renderer.render(document: doc)

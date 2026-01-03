@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnPauseAttributeModifier {
-    associatedtype OnPauseAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnPauseAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnPauseAttributeModifier where Self: Attributes & Mutable {

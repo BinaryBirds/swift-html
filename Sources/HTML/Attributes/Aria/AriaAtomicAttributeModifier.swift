@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaAtomicAttributeModifier {
-    associatedtype AriaAtomicAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaAtomicAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaAtomicAttributeModifier where Self: Attributes & Mutable {

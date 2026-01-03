@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnDragAttributeModifier {
-    associatedtype OnDragAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnDragAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnDragAttributeModifier where Self: Attributes & Mutable {

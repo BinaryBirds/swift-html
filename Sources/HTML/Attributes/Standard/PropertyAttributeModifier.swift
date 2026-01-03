@@ -1,7 +1,8 @@
 import SGML
 
 public protocol PropertyAttributeModifier {
-    associatedtype PropertyAttributeValueType: AttributeValueRepresentable = String
+    associatedtype PropertyAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension PropertyAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension PropertyAttributeModifier where Self: Attributes & Mutable {
 
         _ value: PropertyAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.property, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.property,
+            value: value?.attributeValue
+        )
     }
 }

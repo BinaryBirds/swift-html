@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnBlurAttributeModifier {
-    associatedtype OnBlurAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnBlurAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnBlurAttributeModifier where Self: Attributes & Mutable {

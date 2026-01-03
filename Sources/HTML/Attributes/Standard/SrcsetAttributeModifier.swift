@@ -10,6 +10,9 @@ extension SrcSetAttributeModifier where Self: Attributes & Mutable {
     public func srcSet(
         _ value: SrcSetAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.srcset, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.srcset,
+            value: value?.attributeValue
+        )
     }
 }

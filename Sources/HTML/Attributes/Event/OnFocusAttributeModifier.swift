@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnFocusAttributeModifier {
-    associatedtype OnFocusAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnFocusAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnFocusAttributeModifier where Self: Attributes & Mutable {

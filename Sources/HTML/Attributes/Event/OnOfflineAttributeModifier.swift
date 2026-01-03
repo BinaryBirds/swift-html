@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnOfflineAttributeModifier {
-    associatedtype OnOfflineAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnOfflineAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnOfflineAttributeModifier where Self: Attributes & Mutable {
@@ -9,6 +10,9 @@ extension OnOfflineAttributeModifier where Self: Attributes & Mutable {
     public func onOffline(
         _ value: OnOfflineAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.offline, value: value?.attributeValue)
+        setAttribute(
+            key: EventAttributeKey.offline,
+            value: value?.attributeValue
+        )
     }
 }

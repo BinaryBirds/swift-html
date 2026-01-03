@@ -1,7 +1,8 @@
 import SGML
 
 public protocol HeadersAttributeModifier {
-    associatedtype HeadersAttributeValueType: AttributeValueRepresentable = String
+    associatedtype HeadersAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension HeadersAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension HeadersAttributeModifier where Self: Attributes & Mutable {
 
         _ value: HeadersAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.headers, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.headers,
+            value: value?.attributeValue
+        )
     }
 }

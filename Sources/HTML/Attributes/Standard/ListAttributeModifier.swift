@@ -10,6 +10,9 @@ extension ListAttributeModifier where Self: Attributes & Mutable {
 
         _ value: ListAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.list, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.list,
+            value: value?.attributeValue
+        )
     }
 }

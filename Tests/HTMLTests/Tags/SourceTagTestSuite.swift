@@ -31,7 +31,7 @@ struct SourceTagTestSuite {
         let renderer = Renderer()
         let doc = Document(root: tag)
         let expectation = #"""
-            <source media="(prefers-color-scheme: dark)" srcset="img.png">
+            <source srcset="img.png" media="(prefers-color-scheme: dark)">
             """#
 
         let result = renderer.render(document: doc)

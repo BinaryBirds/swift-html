@@ -1,7 +1,8 @@
 import SGML
 
 public protocol ItemRefAttributeModifier {
-    associatedtype ItemRefAttributeValueType: AttributeValueRepresentable = String
+    associatedtype ItemRefAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension ItemRefAttributeModifier where Self: Attributes & Mutable {
@@ -9,6 +10,9 @@ extension ItemRefAttributeModifier where Self: Attributes & Mutable {
     public func itemRef(
         _ value: ItemRefAttributeValueType?
     ) -> Self {
-        setAttribute(key: GlobalAttributeKey.itemref, value: value?.attributeValue)
+        setAttribute(
+            key: GlobalAttributeKey.itemref,
+            value: value?.attributeValue
+        )
     }
 }

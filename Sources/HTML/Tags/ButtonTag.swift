@@ -16,25 +16,15 @@ public struct Button:
     FormActionAttributeModifier,
     FormEncTypeAttributeModifier,
     FormMethodAttributeModifier,
+    FormNoValidateAttributeModifier,
     FormTargetAttributeModifier,
     NameAttributeModifier,
+    CommandAttributeModifier,
+    CommandForAttributeModifier,
+    PopoverTargetAttributeModifier,
+    PopoverTargetActionAttributeModifier,
     TypeAttributeModifier,
     ValueAttributeModifier
-// TODO: -
-//command — Indicates to the targeted element which action to take.
-//commandfor — Targets another element to be invoked.
-//✅disabled — Whether the form control is disabled
-//✅form — Associates the element with a form element
-//✅formaction — URL to use for form submission
-//✅formenctype — Entry list encoding type to use for form submission
-//✅formmethod — Variant to use for form submission
-//formnovalidate — Bypass form control validation for form submission
-//✅formtarget — Navigable for form submission
-//✅name — Name of the element to use for form submission and in the form.elements API
-//popovertarget — Targets a popover element to toggle, show, or hide
-//popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
-//⚠️type — Type of button
-//✅value — Value to be used for form submission
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
@@ -90,9 +80,3 @@ public struct Button:
 
     public typealias TypeAttributeValueType = Types
 }
-
-//    /// Specifies that the form-data should not be validated on submission. Only for type="submit"
-//    public func formnovalidate(_ condition: Bool = true) -> Self {
-//        flagAttribute("formnovalidate", nil, condition)
-//    }
-//

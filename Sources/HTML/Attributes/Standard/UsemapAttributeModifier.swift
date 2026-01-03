@@ -10,6 +10,9 @@ extension UseMapAttributeModifier where Self: Attributes & Mutable {
     public func useMap(
         _ value: UseMapAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.usemap, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.usemap,
+            value: value?.attributeValue
+        )
     }
 }

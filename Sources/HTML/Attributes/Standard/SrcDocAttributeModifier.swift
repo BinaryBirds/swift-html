@@ -1,7 +1,8 @@
 import SGML
 
 public protocol SrcDocAttributeModifier {
-    associatedtype SrcDocAttributeValueType: AttributeValueRepresentable = String
+    associatedtype SrcDocAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension SrcDocAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension SrcDocAttributeModifier where Self: Attributes & Mutable {
 
         _ value: SrcDocAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.srcdoc, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.srcdoc,
+            value: value?.attributeValue
+        )
     }
 }

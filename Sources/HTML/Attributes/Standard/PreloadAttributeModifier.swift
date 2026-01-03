@@ -1,7 +1,6 @@
 import SGML
 
-public enum PreloadAttributeValue: String, AttributeValueRepresentable
-{
+public enum PreloadAttributeValue: String, AttributeValueRepresentable {
     case auto
     case metadata
     case none
@@ -17,6 +16,9 @@ extension PreloadAttributeModifier where Self: Attributes & Mutable {
     public func preload(
         _ value: PreloadAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.preload, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.preload,
+            value: value?.attributeValue
+        )
     }
 }

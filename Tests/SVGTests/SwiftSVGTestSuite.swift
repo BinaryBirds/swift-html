@@ -19,7 +19,7 @@ struct SwiftSVGTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <line x1="1.01" x2="3.33" y1="2" y2="4"></line>
+            <line x1="1.01" y1="2" x2="3.33" y2="4"></line>
             """#
 
         let result = renderer.render(document: doc)
@@ -79,7 +79,7 @@ struct SwiftSVGTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <rect height="4" width="3" x="1" y="2"></rect>
+            <rect x="1" y="2" width="3" height="4"></rect>
             """#
 
         let result = renderer.render(document: doc)
@@ -102,7 +102,7 @@ struct SwiftSVGTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <rect height="4" pathLength="7" rx="5" ry="6" width="3" x="1" y="2"></rect>
+            <rect x="1" y="2" width="3" height="4" rx="5" ry="6" pathLength="7"></rect>
             """#
 
         let result = renderer.render(document: doc)
@@ -232,8 +232,8 @@ struct SwiftSVGTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <svg height="200" viewBox="0 10 200 100" width="300">
-                <text fill="red" transform="rotate(30 20 40)" x="0" y="15">I love SVG</text>
+            <svg viewBox="0 10 200 100" width="300" height="200">
+                <text x="0" y="15" fill="red" transform="rotate(30 20 40)">I love SVG</text>
                 <circle cx="40" cy="40" r="20" stroke="green" stroke-width="5"></circle>
             </svg>
             """#

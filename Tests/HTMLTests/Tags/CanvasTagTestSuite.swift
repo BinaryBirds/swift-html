@@ -16,7 +16,7 @@ struct CanvasTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <canvas height="150" width="300">Your browser does not support the canvas tag.</canvas>
+            <canvas width="300" height="150">Your browser does not support the canvas tag.</canvas>
             """#
 
         let result = renderer.render(document: doc)

@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnPlayAttributeModifier {
-    associatedtype OnPlayAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnPlayAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnPlayAttributeModifier where Self: Attributes & Mutable {

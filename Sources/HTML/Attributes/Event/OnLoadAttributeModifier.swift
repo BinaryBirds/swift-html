@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnLoadAttributeModifier {
-    associatedtype OnLoadAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnLoadAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnLoadAttributeModifier where Self: Attributes & Mutable {

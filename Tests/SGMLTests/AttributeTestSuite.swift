@@ -110,7 +110,7 @@ struct AttributeTestSuite {
         )
 
         let expectation = #"""
-            <root class="bar foo" style="bar" enabled></root>
+            <root enabled class="foo bar" style="bar"></root>
             """#
 
         let result = doc.render()

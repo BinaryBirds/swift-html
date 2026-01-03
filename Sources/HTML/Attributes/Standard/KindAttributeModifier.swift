@@ -10,6 +10,9 @@ extension KindAttributeModifier where Self: Attributes & Mutable {
 
         _ value: KindAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.kind, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.kind,
+            value: value?.attributeValue
+        )
     }
 }

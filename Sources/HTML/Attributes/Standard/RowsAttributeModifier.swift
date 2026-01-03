@@ -10,6 +10,9 @@ extension RowsAttributeModifier where Self: Attributes & Mutable {
 
         _ value: RowsAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.rows, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.rows,
+            value: value?.attributeValue
+        )
     }
 }

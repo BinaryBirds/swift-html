@@ -22,6 +22,9 @@ extension FetchPriorityAttributeModifier where Self: Attributes & Mutable {
     public func fetchPriority(
         _ value: FetchPriorityAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.fetchpriority, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.fetchpriority,
+            value: value?.attributeValue
+        )
     }
 }

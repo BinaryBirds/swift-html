@@ -11,6 +11,9 @@ extension DateTimeAttributeModifier where Self: Attributes & Mutable {
     public func dateTime(
         _ value: DateTimeAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.datetime, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.datetime,
+            value: value?.attributeValue
+        )
     }
 }

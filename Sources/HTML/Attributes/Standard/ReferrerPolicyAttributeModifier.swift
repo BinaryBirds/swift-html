@@ -33,6 +33,9 @@ extension ReferrerPolicyAttributeModifier where Self: Attributes & Mutable {
     public func referrerPolicy(
         _ value: ReferrerPolicyAttributeValueType
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.referrerpolicy, value: value.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.referrerpolicy,
+            value: value.attributeValue
+        )
     }
 }

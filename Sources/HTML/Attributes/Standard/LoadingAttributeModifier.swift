@@ -1,7 +1,6 @@
 import SGML
 
-public enum LoadingAttributeValue: String, AttributeValueRepresentable
-{
+public enum LoadingAttributeValue: String, AttributeValueRepresentable {
     case eager
     case lazy
 }
@@ -16,6 +15,9 @@ extension LoadingAttributeModifier where Self: Attributes & Mutable {
     public func loading(
         _ value: LoadingAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.loading, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.loading,
+            value: value?.attributeValue
+        )
     }
 }

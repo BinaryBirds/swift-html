@@ -10,6 +10,9 @@ extension WrapAttributeModifier where Self: Attributes & Mutable {
 
         _ value: WrapAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.wrap, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.wrap,
+            value: value?.attributeValue
+        )
     }
 }

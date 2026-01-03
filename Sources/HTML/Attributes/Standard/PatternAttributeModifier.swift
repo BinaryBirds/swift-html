@@ -1,7 +1,8 @@
 import SGML
 
 public protocol PatternAttributeModifier {
-    associatedtype PatternAttributeValueType: AttributeValueRepresentable = String
+    associatedtype PatternAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension PatternAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension PatternAttributeModifier where Self: Attributes & Mutable {
 
         _ value: PatternAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.pattern, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.pattern,
+            value: value?.attributeValue
+        )
     }
 }

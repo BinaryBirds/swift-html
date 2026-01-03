@@ -1,7 +1,8 @@
 import SGML
 
 public protocol DecodingAttributeModifier {
-    associatedtype DecodingAttributeValueType: AttributeValueRepresentable = String
+    associatedtype DecodingAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension DecodingAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension DecodingAttributeModifier where Self: Attributes & Mutable {
 
         _ value: DecodingAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.decoding, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.decoding,
+            value: value?.attributeValue
+        )
     }
 }

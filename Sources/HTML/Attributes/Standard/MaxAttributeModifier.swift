@@ -10,6 +10,9 @@ extension MaxAttributeModifier where Self: Attributes & Mutable {
 
         _ value: MaxAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.max, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.max,
+            value: value?.attributeValue
+        )
     }
 }

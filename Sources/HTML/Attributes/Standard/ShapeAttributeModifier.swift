@@ -12,7 +12,8 @@ public enum ShapeAttributeValue: String, AttributeValueRepresentable {
 }
 
 public protocol ShapeAttributeModifier {
-    associatedtype ShapeAttributeValueType: AttributeValueRepresentable = ShapeAttributeValue
+    associatedtype ShapeAttributeValueType: AttributeValueRepresentable =
+        ShapeAttributeValue
 }
 
 extension ShapeAttributeModifier where Self: Attributes & Mutable {
@@ -20,6 +21,9 @@ extension ShapeAttributeModifier where Self: Attributes & Mutable {
     public func shape(
         _ value: ShapeAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.shape, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.shape,
+            value: value?.attributeValue
+        )
     }
 }

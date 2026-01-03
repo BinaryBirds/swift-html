@@ -54,7 +54,7 @@ extension Attributes where Self: Mutable {
     }
 
     // MARK: -
-    
+
     func setAttribute<Key: AttributeKeyRepresentable>(
         key: Key,
         value: Int?

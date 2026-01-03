@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OptimumAttributeModifier {
-    associatedtype OptimumAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OptimumAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OptimumAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension OptimumAttributeModifier where Self: Attributes & Mutable {
 
         _ value: OptimumAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.optimum, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.optimum,
+            value: value?.attributeValue
+        )
     }
 }

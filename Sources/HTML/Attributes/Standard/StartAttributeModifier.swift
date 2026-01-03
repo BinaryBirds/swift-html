@@ -10,6 +10,9 @@ extension StartAttributeModifier where Self: Attributes & Mutable {
 
         _ value: StartAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.start, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.start,
+            value: value?.attributeValue
+        )
     }
 }

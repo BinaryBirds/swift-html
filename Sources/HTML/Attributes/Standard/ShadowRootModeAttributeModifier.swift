@@ -1,7 +1,8 @@
 import SGML
 
 public protocol ShadowRootModeAttributeModifier {
-    associatedtype ShadowRootModeAttributeValueType: AttributeValueRepresentable = String
+    associatedtype
+        ShadowRootModeAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension ShadowRootModeAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension ShadowRootModeAttributeModifier where Self: Attributes & Mutable {
 
         _ value: ShadowRootModeAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.shadowrootmode, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.shadowrootmode,
+            value: value?.attributeValue
+        )
     }
 }

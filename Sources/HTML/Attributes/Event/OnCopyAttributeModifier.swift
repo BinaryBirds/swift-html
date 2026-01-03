@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnCopyAttributeModifier {
-    associatedtype OnCopyAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnCopyAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnCopyAttributeModifier where Self: Attributes & Mutable {

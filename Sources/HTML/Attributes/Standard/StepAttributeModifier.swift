@@ -1,7 +1,7 @@
 import SGML
 
 public protocol StepAttributeModifier {
-    associatedtype StepAttributeValueType: AttributeValueRepresentable = String
+    associatedtype StepAttributeValueType: AttributeValueRepresentable = Int
 }
 
 extension StepAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +10,9 @@ extension StepAttributeModifier where Self: Attributes & Mutable {
 
         _ value: StepAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.step, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.step,
+            value: value?.attributeValue
+        )
     }
 }

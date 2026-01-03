@@ -1,7 +1,8 @@
 import SGML
 
 public protocol PopoverTargetAttributeModifier {
-    associatedtype PopoverTargetAttributeValueType: AttributeValueRepresentable = String
+    associatedtype
+        PopoverTargetAttributeValueType: AttributeValueRepresentable = String
 }
 
 extension PopoverTargetAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension PopoverTargetAttributeModifier where Self: Attributes & Mutable {
 
         _ value: PopoverTargetAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.popovertarget, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.popovertarget,
+            value: value?.attributeValue
+        )
     }
 }

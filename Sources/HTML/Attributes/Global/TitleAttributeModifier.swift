@@ -18,6 +18,9 @@ extension TitleAttributeModifier where Self: Attributes & Mutable {
     public func title(
         _ value: TitleAttributeValueType?
     ) -> Self {
-        setAttribute(key: GlobalAttributeKey.title, value: value?.attributeValue)
+        setAttribute(
+            key: GlobalAttributeKey.title,
+            value: value?.attributeValue
+        )
     }
 }

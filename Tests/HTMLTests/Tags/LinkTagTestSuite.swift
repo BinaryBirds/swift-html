@@ -15,7 +15,7 @@ struct LinkTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <link href="./css/style.css" rel="stylesheet">
+            <link rel="stylesheet" href="./css/style.css">
             """#
 
         let result = renderer.render(document: doc)
@@ -32,7 +32,7 @@ struct LinkTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <link href="./css/style.css" media="screen" rel="stylesheet">
+            <link rel="stylesheet" media="screen" href="./css/style.css">
             """#
 
         let result = renderer.render(document: doc)
@@ -55,7 +55,7 @@ struct LinkTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" media="screen" rel="stylesheet">
+            <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             """#
 
         let result = renderer.render(document: doc)

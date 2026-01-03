@@ -1,7 +1,6 @@
 import SGML
 
-public enum TargetAttributeValue: String, AttributeValueRepresentable
-{
+public enum TargetAttributeValue: String, AttributeValueRepresentable {
     /// Opens the link in a new window or tab.
     case blank = "_blank"
     /// Default; opens the link in the same frame as it was clicked.
@@ -23,6 +22,9 @@ extension TargetAttributeModifier where Self: Attributes & Mutable {
     public func target(
         _ value: TargetAttributeValueType
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.target, value: value.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.target,
+            value: value.attributeValue
+        )
     }
 }

@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaBusyAttributeModifier {
-    associatedtype AriaBusyAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaBusyAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaBusyAttributeModifier where Self: Attributes & Mutable {

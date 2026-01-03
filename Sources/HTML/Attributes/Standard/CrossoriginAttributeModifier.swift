@@ -17,6 +17,9 @@ extension CrossOriginAttributeModifier where Self: Attributes & Mutable {
     public func crossOrigin(
         _ value: CrossOriginAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.crossorigin, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.crossorigin,
+            value: value?.attributeValue
+        )
     }
 }

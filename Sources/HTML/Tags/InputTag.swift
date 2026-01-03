@@ -10,13 +10,18 @@ public struct Input:
     /// attribute modifiers
     GlobalAttributesModifier,
     AltAttributeModifier,
+    AcceptAttributeModifier,
+    AlphaAttributeModifier,
     AutoCompleteAttributeModifier,
     CheckedAttributeModifier,
+    ColorspaceAttributeModifier,
     NameAttributeModifier,
+    DirnameAttributeModifier,
     FormAttributeModifier,
     FormActionAttributeModifier,
     FormEncTypeAttributeModifier,
     FormMethodAttributeModifier,
+    FormNoValidateAttributeModifier,
     FormTargetAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
@@ -26,40 +31,49 @@ public struct Input:
     DisabledAttributeModifier,
     TypeAttributeModifier,
     PlaceholderAttributeModifier,
+    ListAttributeModifier,
+    MaxAttributeModifier,
+    MaxLengthAttributeModifier,
+    MinAttributeModifier,
+    MinLengthAttributeModifier,
+    PatternAttributeModifier,
+    PopoverTargetAttributeModifier,
+    PopoverTargetActionAttributeModifier,
     ReadOnlyAttributeModifier,
     RequiredAttributeModifier,
-    SizeAttributeModifier
-//accept — Hint for expected file type in file upload controls
-//alpha — Allow the color's alpha component to be set
+    SizeAttributeModifier,
+    StepAttributeModifier
+//✅accept — Hint for expected file type in file upload controls
+//✅alpha — Allow the color's alpha component to be set
 //✅alt — Replacement text for use when images are not available
 //✅autocomplete — Hint for form autofill feature
 //✅checked — Whether the control is checked
-//colorspace — The color space of the serialized color
-//dirname — Name of form control to use for sending the element's directionality in form submission
+//✅colorspace — The color space of the serialized color
+//✅dirname — Name of form control to use for sending the element's directionality in form submission
 //✅disabled — Whether the form control is disabled
 //✅form — Associates the element with a form element
 //✅formaction — URL to use for form submission
 //✅formenctype — Entry list encoding type to use for form submission
 //✅formmethod — Variant to use for form submission
-//formnovalidate — Bypass form control validation for form submission
+//✅formnovalidate — Bypass form control validation for form submission
 //✅formtarget — Navigable for form submission
 //✅height — Vertical dimension
-//list — List of autocomplete options
-//max — Maximum value
-//maxlength — Maximum length of value
-//min — Minimum value
-//minlength — Minimum length of value
+//✅list — List of autocomplete options
+//✅max — Maximum value
+//✅maxlength — Maximum length of value
+//✅min — Minimum value
+//✅minlength — Minimum length of value
 //✅multiple — Whether to allow multiple values
 //✅name — Name of the element to use for form submission and in the form.elements API
-//pattern — Pattern to be matched by the form control's value
+//✅pattern — Pattern to be matched by the form control's value
 //✅placeholder — User-visible label to be placed within the form control
-//popovertarget — Targets a popover element to toggle, show, or hide
-//popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
+//✅popovertarget — Targets a popover element to toggle, show, or hide
+//✅popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
 //✅readonly — Whether to allow the value to be edited by the user
 //✅required — Whether the control is required for form submission
 //✅size — Size of the control
 //✅src — Address of the resource
-//step — Granularity to be matched by the form control's value
+//✅step — Granularity to be matched by the form control's value
 //⚠️type — Type of form control
 //✅value — Value of the form control
 //✅width — Horizontal dimension
@@ -113,54 +127,3 @@ public struct Input:
     public typealias TypeAttributeValueType = Types
 
 }
-
-//    /// Specifies a filter for what file types the user can pick from the file input dialog box (only for type="file")
-//    public func accept(_ value: String?) -> Self {
-//        attribute("accept", value)
-//    }
-
-//    /// Specifies that the text direction will be submitted
-//    public func dirname(_ value: String) -> Self {
-//        attribute("dirname", value)
-//    }
-//
-//    /// Defines that form elements should not be validated when submitted
-//    public func formnovalidate(_ condition: Bool = true) -> Self {
-//        flagAttribute("formnovalidate", nil, condition)
-//    }
-//
-//    /// Refers to a `<datalist>` element that contains pre-defined options for an `<input>` element
-//    public func list(_ value: String) -> Self {
-//        attribute("list", value)
-//    }
-//
-//    /// Specifies the maximum value for an `<input>` element
-//    public func max(_ value: String) -> Self {
-//        attribute("max", value)
-//    }
-//
-//    /// Specifies the maximum number of characters allowed in an `<input>` element
-//    public func maxlength(_ value: Int) -> Self {
-//        attribute("maxlength", String(value))
-//    }
-//
-//    /// Specifies a minimum value for an `<input>` element
-//    public func min(_ value: String) -> Self {
-//        attribute("min", value)
-//    }
-//
-//    /// Specifies the minimum number of characters required in an `<input>` element
-//    public func minlength(_ value: Int) -> Self {
-//        attribute("minlength", String(value))
-//    }
-//
-//    /// Specifies a regular expression that an `<input>` element's value is checked against
-//    public func pattern(_ value: String) -> Self {
-//        attribute("pattern", value)
-//    }
-//
-
-//    /// Specifies the interval between legal numbers in an input field
-//    public func step(_ value: Int) -> Self {
-//        attribute("step", String(value))
-//    }

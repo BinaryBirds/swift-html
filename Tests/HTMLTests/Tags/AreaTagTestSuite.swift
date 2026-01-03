@@ -25,7 +25,7 @@ struct AreaTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <area alt="foo" coords="0,0,82,126" download="foo.jpg" ping="http://localhost:8080/ping" referrerpolicy="no-referrer" shape="rect">
+            <area shape="rect" alt="foo" coords="0,0,82,126" download="foo.jpg" ping="http://localhost:8080/ping" referrerpolicy="no-referrer">
             """#
 
         let result = renderer.render(document: doc)

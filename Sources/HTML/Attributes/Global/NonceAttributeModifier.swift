@@ -9,6 +9,9 @@ extension NonceAttributeModifier where Self: Attributes & Mutable {
     public func nonce(
         _ value: NonceAttributeValueType?
     ) -> Self {
-        setAttribute(key: GlobalAttributeKey.nonce, value: value?.attributeValue)
+        setAttribute(
+            key: GlobalAttributeKey.nonce,
+            value: value?.attributeValue
+        )
     }
 }

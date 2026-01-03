@@ -46,7 +46,7 @@ struct SwiftHTMLTestSuite {
                     <title>foo</title>
                     <meta charset="utf-8">
                     <style>body { background: red; }</style>
-                    <link href="./css/style.css" rel="stylesheet">
+                    <link rel="stylesheet" href="./css/style.css">
                     <script>
                 </head>
                 <body>
@@ -119,16 +119,16 @@ struct SwiftHTMLTestSuite {
                 <head>
                     <title>Hello Swift DSL</title>
                     <meta charset="utf-8">
-                    <meta content="width=device-width, initial-scale=1" name="viewport">
-                    <link href="./css/style.css" rel="stylesheet">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="./css/style.css">
                 </head>
                 <body>
                     <main class="container">
                         <div>
                             <section>
-                                <img alt="Swift Logo" src="./images/swift.png" title="Picture of the Swift Logo">
+                                <img src="./images/swift.png" alt="Swift Logo" title="Picture of the Swift Logo">
                                 <h1 class="red">Lorem ipsum</h1>
-                                <p class="blue green" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
+                                <p class="green blue" spellcheck="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium leo eu euismod porta.</p>
                             </section>
                             <a href="https://swift.org" target="_blank" download>Hello Swift HTML DSL!</a>
                             <abbr title="World Health Organization">WHO</abbr>

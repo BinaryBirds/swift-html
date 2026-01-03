@@ -2,7 +2,10 @@ import SGML
 
 enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case accept
+    case acceptCharset = "accept-charset"
     case action
+    case allow
+    case allowfullscreen
     case alt
     case `as`
     case `async`
@@ -14,6 +17,8 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case cite
     case closedby
     case cols
+    case command
+    case commandfor
     case colspan
     case content
     case controls
@@ -22,6 +27,9 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case data
     case datetime
     case decoding
+    case dirname
+    case alpha
+    case colorspace
     case `default`
     case `defer`
     case disabled
@@ -33,6 +41,7 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case formaction
     case formenctype
     case formmethod
+    case formnovalidate
     case formtarget
     case headers
     case height

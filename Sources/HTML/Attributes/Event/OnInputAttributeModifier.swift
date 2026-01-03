@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnInputAttributeModifier {
-    associatedtype OnInputAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnInputAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnInputAttributeModifier where Self: Attributes & Mutable {

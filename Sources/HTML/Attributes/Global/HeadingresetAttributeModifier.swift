@@ -1,7 +1,8 @@
 import SGML
 
 public protocol HeadingResetAttributeModifier {
-    associatedtype HeadingResetAttributeValueType: AttributeValueRepresentable = Int
+    associatedtype HeadingResetAttributeValueType: AttributeValueRepresentable =
+        Int
 }
 
 extension HeadingResetAttributeModifier where Self: Attributes & Mutable {
@@ -9,6 +10,9 @@ extension HeadingResetAttributeModifier where Self: Attributes & Mutable {
     public func headingReset(
         _ value: HeadingResetAttributeValueType?
     ) -> Self {
-        setAttribute(key: GlobalAttributeKey.headingreset, value: value?.attributeValue)
+        setAttribute(
+            key: GlobalAttributeKey.headingreset,
+            value: value?.attributeValue
+        )
     }
 }

@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaLabelAttributeModifier {
-    associatedtype AriaLabelAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaLabelAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaLabelAttributeModifier where Self: Attributes & Mutable {

@@ -1,14 +1,17 @@
 import SGML
 
-public protocol ColspanAttributeModifier {
-    associatedtype ColspanAttributeValueType: AttributeValueRepresentable = Int
+public protocol ColSpanAttributeModifier {
+    associatedtype ColSpanAttributeValueType: AttributeValueRepresentable = Int
 }
 
-extension ColspanAttributeModifier where Self: Attributes & Mutable {
+extension ColSpanAttributeModifier where Self: Attributes & Mutable {
 
     public func colSpan(
-        _ value: ColspanAttributeValueType?
+        _ value: ColSpanAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.colspan, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.colspan,
+            value: value?.attributeValue
+        )
     }
 }

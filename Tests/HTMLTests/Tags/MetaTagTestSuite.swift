@@ -31,7 +31,7 @@ struct MetaTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <meta content="light dark" name="color-scheme">
+            <meta name="color-scheme" content="light dark">
             """#
 
         let result = renderer.render(document: doc)
@@ -49,7 +49,7 @@ struct MetaTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <meta content="#fff" media="(prefers-color-scheme: light)" name="theme-color">
+            <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
             """#
 
         let result = renderer.render(document: doc)
@@ -66,7 +66,7 @@ struct MetaTagTestSuite {
         let doc = Document(root: tag)
 
         let expectation = #"""
-            <meta content="default" name="apple-mobile-web-app-status-bar-style">
+            <meta name="apple-mobile-web-app-status-bar-style" content="default">
             """#
 
         let result = renderer.render(document: doc)

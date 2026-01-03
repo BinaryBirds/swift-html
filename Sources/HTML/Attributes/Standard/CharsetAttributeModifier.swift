@@ -1,7 +1,8 @@
 import SGML
 
 public protocol CharsetAttributeModifier {
-    associatedtype CharsetAttributeValueType: AttributeValueRepresentable = String
+    associatedtype CharsetAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension CharsetAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension CharsetAttributeModifier where Self: Attributes & Mutable {
 
         _ value: CharsetAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.charset, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.charset,
+            value: value?.attributeValue
+        )
     }
 }

@@ -9,7 +9,10 @@ extension WidthAttributeModifier where Self: Attributes & Mutable {
     public func width(
         _ value: WidthAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.width, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.width,
+            value: value?.attributeValue
+        )
     }
 
     public func width() -> Int? {

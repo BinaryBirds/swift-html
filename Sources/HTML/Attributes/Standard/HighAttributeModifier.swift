@@ -10,6 +10,9 @@ extension HighAttributeModifier where Self: Attributes & Mutable {
 
         _ value: HighAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.high, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.high,
+            value: value?.attributeValue
+        )
     }
 }

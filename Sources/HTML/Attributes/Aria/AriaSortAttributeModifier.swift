@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaSortAttributeModifier {
-    associatedtype AriaSortAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaSortAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaSortAttributeModifier where Self: Attributes & Mutable {

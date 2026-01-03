@@ -10,7 +10,10 @@ extension DownloadAttributeModifier where Self: Attributes & Mutable {
     public func download(
         _ value: DownloadAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.download, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.download,
+            value: value?.attributeValue
+        )
     }
 
     public func download() -> Self {

@@ -10,6 +10,9 @@ extension CiteAttributeModifier where Self: Attributes & Mutable {
     public func cite(
         _ value: CiteAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.cite, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.cite,
+            value: value?.attributeValue
+        )
     }
 }

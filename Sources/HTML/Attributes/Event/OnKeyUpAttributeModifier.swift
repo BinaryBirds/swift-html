@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnKeyUpAttributeModifier {
-    associatedtype OnKeyUpAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnKeyUpAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnKeyUpAttributeModifier where Self: Attributes & Mutable {

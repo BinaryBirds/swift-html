@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnEndedAttributeModifier {
-    associatedtype OnEndedAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnEndedAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnEndedAttributeModifier where Self: Attributes & Mutable {

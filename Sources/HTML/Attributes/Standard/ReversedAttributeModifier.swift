@@ -1,7 +1,8 @@
 import SGML
 
 public protocol ReversedAttributeModifier {
-    associatedtype ReversedAttributeValueType: AttributeValueRepresentable = String
+    associatedtype ReversedAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension ReversedAttributeModifier where Self: Attributes & Mutable {
@@ -10,6 +11,9 @@ extension ReversedAttributeModifier where Self: Attributes & Mutable {
 
         _ value: ReversedAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.reversed, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.reversed,
+            value: value?.attributeValue
+        )
     }
 }

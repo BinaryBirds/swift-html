@@ -1,7 +1,8 @@
 import SGML
 
 public protocol AriaHiddenAttributeModifier {
-    associatedtype AriaHiddenAttributeValueType: AttributeValueRepresentable = String
+    associatedtype AriaHiddenAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension AriaHiddenAttributeModifier where Self: Attributes & Mutable {

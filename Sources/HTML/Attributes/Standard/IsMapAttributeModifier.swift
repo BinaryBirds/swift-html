@@ -10,6 +10,9 @@ extension IsMapAttributeModifier where Self: Attributes & Mutable {
 
         _ value: IsMapAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.ismap, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.ismap,
+            value: value?.attributeValue
+        )
     }
 }

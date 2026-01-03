@@ -10,6 +10,9 @@ extension PartAttributeModifier where Self: Attributes & Mutable {
 
         _ value: PartAttributeValueType?
     ) -> Self {
-        setAttribute(key: StandardAttributeKey.part, value: value?.attributeValue)
+        setAttribute(
+            key: StandardAttributeKey.part,
+            value: value?.attributeValue
+        )
     }
 }

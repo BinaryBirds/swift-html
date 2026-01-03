@@ -1,7 +1,8 @@
 import SGML
 
 public protocol OnUnloadAttributeModifier {
-    associatedtype OnUnloadAttributeValueType: AttributeValueRepresentable = String
+    associatedtype OnUnloadAttributeValueType: AttributeValueRepresentable =
+        String
 }
 
 extension OnUnloadAttributeModifier where Self: Attributes & Mutable {
@@ -9,6 +10,9 @@ extension OnUnloadAttributeModifier where Self: Attributes & Mutable {
     public func onUnload(
         _ value: OnUnloadAttributeValueType?
     ) -> Self {
-        setAttribute(key: EventAttributeKey.unload, value: value?.attributeValue)
+        setAttribute(
+            key: EventAttributeKey.unload,
+            value: value?.attributeValue
+        )
     }
 }
