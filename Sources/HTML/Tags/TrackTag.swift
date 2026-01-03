@@ -10,13 +10,10 @@ public struct Track:
     /// attribute modifiers
     GlobalAttributesModifier,
     SrcAttributeModifier,
-    LabelAttributeModifier
-
-//kind — The type of text track
-//✅src — Address of the resource
-//srclang — Language of the text track
-//✅label — User-visible label
-//default — Enable the track if no other text track is more suitable
+    LabelAttributeModifier,
+    KindAttributeModifier,
+    SrcLangAttributeModifier,
+    DefaultAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -34,35 +31,20 @@ public struct Track:
         self = setAttribute(name: "src", value: src)
     }
 
+    public enum KindAttributeValue: String, AttributeValueRepresentable {
+        /// The track defines translation of dialogue and sound effects (suitable for deaf users).
+        case captions
+        /// The track defines chapter titles (suitable for navigating the media resource).
+        case chapters
+        /// The track defines a textual description of the video content (suitable for blind users).
+        case descriptions
+        /// The track defines content used by scripts. Not visible for the user.
+        case metadata
+        /// The track defines subtitles, used to display subtitles in a video.
+        case subtitles
+    }
+
+    public typealias KindAttributeValueType = KindAttributeValue
+
 }
 
-//extension Track {
-//
-//    public enum Kind: String {
-//        /// The track defines translation of dialogue and sound effects (suitable for deaf users)
-//        case captions
-//        /// The track defines chapter titles (suitable for navigating the media resource)
-//        case chapters
-//        /// The track defines a textual description of the video content (suitable for blind users)
-//        case descriptions
-//        /// The track defines content used by scripts. Not visible for the user
-//        case metadata
-//        /// The track defines subtitles, used to display subtitles in a video
-//        case subtitles
-//    }
-//
-//    /// Specifies that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
-//    public func `default`(_ condition: Bool = true) -> Self {
-//        flagAttribute("default", nil, condition)
-//    }
-//
-//    /// Specifies the kind of text track
-//    public func kind(_ value: Kind) -> Self {
-//        attribute("kind", value.rawValue)
-//    }
-
-//    /// Specifies the language of the track text data (required if kind="subtitles")
-//    public func srclang(_ value: String) -> Self {
-//        attribute("srclang", value)
-//    }
-//}

@@ -16,12 +16,9 @@ public struct Th:
     GlobalAttributesModifier,
     ColSpanAttributeModifier,
     RowSpanAttributeModifier,
-    ScopeAttributeModifier
-//✅colspan — Number of columns that the cell is to span
-//✅rowspan — Number of rows that the cell is to span
-//headers — The header cells for this cell
-//scope — Specifies which cells the header cell applies to
-//abbr — Alternative label to use for the header cell when referencing the cell in other contexts
+    ScopeAttributeModifier,
+    HeadersAttributeModifier,
+    AbbrAttributeModifier
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
@@ -57,16 +54,4 @@ public struct Th:
     ) {
         self.init(children: block())
     }
-
 }
-
-//    /// Specifies an abbreviated version of the content in a header cell
-//    public func abbr(_ value: String) -> Self {
-//        attribute("abbr", value)
-//    }
-//
-//    /// Specifies one or more header cells a cell is related to
-//    public func headers(_ value: String) -> Self {
-//        attribute("headers", value)
-//    }
-//

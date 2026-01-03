@@ -17,27 +17,14 @@ public struct Link:
     TypeAttributeModifier,
     ReferrerPolicyAttributeModifier,
     BlockingAttributeModifier,
+    AsAttributeModifier,
     RelAttributeModifier,
     DisabledAttributeModifier,
-    SizesAttributeModifier
-
-//✅href — Address of the hyperlink
-//✅crossorigin — How the element handles crossorigin requests
-//✅rel — Relationship between the document containing the hyperlink and the destination resource
-//✅media — Applicable media
-//✅integrity — Integrity metadata used in Subresource Integrity checks [SRI]
-//✅hreflang — Language of the linked resource
-//✅type — Hint for the type of the referenced resource
-//✅referrerpolicy — Referrer policy for fetches initiated by the element
-//✅sizes — Sizes of the icons (for rel="icon")
-//imagesrcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel="preload")
-//imagesizes — Image sizes for different page layouts (for rel="preload")
-//as — Potential destination for a preload request (for rel="preload" and rel="modulepreload")
-//✅blocking — Whether the element is potentially render-blocking
-//color — Color to use when customizing a site's icon (for rel="mask-icon")
-//✅disabled — Whether the link is disabled
-//fetchpriority — Sets the priority for fetches initiated by the element
-//Also, the title attribute has special semantics on this element: Title of the link; CSS style sheet set name
+    SizesAttributeModifier,
+    FetchPriorityAttributeModifier,
+    ImageSrcSetAttributeModifier,
+    ImageSizesAttributeModifier,
+    ColorAttributeModifier
 {
     public var attributes: AttributeStore
 
@@ -102,7 +89,7 @@ public struct Link:
     }
 
     public typealias RelAttributeValueType = RelAttributeValue
-
+    
     // MARK: -
 
     public init(

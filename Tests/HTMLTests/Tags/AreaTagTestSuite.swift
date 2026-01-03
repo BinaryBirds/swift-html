@@ -15,7 +15,7 @@ struct AreaTagTestSuite {
             .download("foo.jpg")
             .ping("http://localhost:8080/ping")
             .referrerPolicy(.noReferrer)
-        //            .check(false) {
+        //            .if(false) {
         //                $0.ping("foo")
         //            } else: {
         //                $0.ping("bar")

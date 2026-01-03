@@ -17,7 +17,10 @@ public struct Script:
     CrossOriginAttributeModifier,
     ReferrerPolicyAttributeModifier,
     IntegrityAttributeModifier,
-    FetchPriorityAttributeModifier
+    FetchPriorityAttributeModifier,
+    AsyncAttributeModifier,
+    DeferAttributeModifier,
+    NoModuleAttributeModifier
 {
 
     private enum Kind {
@@ -75,24 +78,5 @@ public struct Script:
             key: StandardAttributeKey.type,
             value: "application/javascript"
         )
-    }
-
-    // MARK: -
-
-    /// Specifies that the script is executed asynchronously (only for external scripts).
-    public func async() -> Self {
-        setAttribute(name: "async", value: nil)
-    }
-
-    /// Specifies that the script is executed when the page has finished parsing (only for external scripts).
-    public func `defer`() -> Self {
-        setAttribute(name: "defer", value: nil)
-    }
-
-    /// Specifies that the script should not be executed in browsers supporting ES2015 modules.
-    public func nomodule(
-        _ value: Bool
-    ) -> Self {
-        setAttribute(name: "nomodule", value: String(value))
     }
 }

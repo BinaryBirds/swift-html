@@ -11,13 +11,13 @@ public struct Meter:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    ValueAttributeModifier
-//✅value — Current value of the element
-//min — Lower bound of range
-//max — Upper bound of range
-//low — High limit of low range
-//high — Low limit of high range
-//optimum — Optimum value in gauge
+    ValueAttributeModifier,
+    MinAttributeModifier,
+    MaxAttributeModifier,
+    LowAttributeModifier,
+    HighAttributeModifier,
+    OptimumAttributeModifier,
+    FormAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -44,6 +44,10 @@ public struct Meter:
         self.children = children
     }
 
+    // MARK: -
+    
+    public typealias ValueAttributeValueType = Double
+
     public init(
         _ contents: String
     ) {
@@ -60,50 +64,3 @@ public struct Meter:
         self.init(children: block())
     }
 }
-
-//open class Meter: Tag {
-//
-//    public init(value: Int, _ contents: String) {
-//        super.init()
-//        setContents(contents)
-//        setAttributes([
-//            .init(key: "value", value: String(value))
-//        ])
-//    }
-//}
-//
-//extension Meter {
-//
-//    /// Specifies which form the <meter> element belongs to
-//    public func form(_ value: String) -> Self {
-//        attribute("form", value)
-//    }
-//
-//    /// Specifies the range that is considered to be a high value
-//    public func high(_ value: Int) -> Self {
-//        attribute("high", String(value))
-//
-//    }
-//
-//    /// Specifies the range that is considered to be a low value
-//    public func low(_ value: Int) -> Self {
-//        attribute("low", String(value))
-//
-//    }
-//
-//    /// Specifies the maximum value of the range
-//    public func max(_ value: Int) -> Self {
-//        attribute("max", String(value))
-//
-//    }
-//
-//    /// Specifies the minimum value of the range. Default value is 0
-//    public func min(_ value: Int = 0) -> Self {
-//        attribute("min", String(value))
-//    }
-//
-//    /// Specifies what value is the optimal value for the gauge
-//    public func optimum(_ value: Int) -> Self {
-//        attribute("optimum", String(value))
-//    }
-//}

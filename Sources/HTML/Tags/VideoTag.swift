@@ -27,7 +27,9 @@ public struct Video:
     ControlsAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
-    PreloadAttributeModifier
+    PreloadAttributeModifier,
+    PosterAttributeModifier,
+    PlaysInlineAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -71,13 +73,4 @@ public struct Video:
         self.init(children: block())
     }
 
-    public func poster(
-        _ value: String?
-    ) -> Self {
-        setAttribute(name: "poster", value: value)
-    }
-
-    public func playsinline() -> Self {
-        setAttribute(name: "playsinline", value: nil)
-    }
 }

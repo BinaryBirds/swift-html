@@ -2,6 +2,7 @@ import SGML
 
 enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case accept
+    case abbr
     case acceptCharset = "accept-charset"
     case action
     case allow
@@ -45,6 +46,9 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case formtarget
     case headers
     case height
+    case imagesizes
+    case imagesrcset
+    case color
     case high
     case href
     case hreflang
@@ -66,6 +70,7 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case multiple
     case muted
     case name
+    case nomodule
     case novalidate
     case `open`
     case optimum
@@ -73,6 +78,7 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case pattern
     case ping
     case placeholder
+    case playsinline
     case popovertarget
     case popovertargetaction
     case poster
@@ -89,6 +95,10 @@ enum StandardAttributeKey: String, AttributeKeyRepresentable {
     case scope
     case selected
     case shadowrootmode
+    case shadowrootdelegatesfocus
+    case shadowrootclonable
+    case shadowrootserializable
+    case shadowrootcustomelementregistry
     case shape
     case size
     case sizes

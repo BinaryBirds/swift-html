@@ -1,5 +1,6 @@
 import SGML
 
+
 public struct ContentModel: Sendable, OptionSet {
 
     public let rawValue: UInt8
@@ -31,10 +32,5 @@ public struct ContentModel: Sendable, OptionSet {
     public static let sectioning: Self = .init(rawValue: 1 << 7)
 }
 
-public protocol ContentModelRepresentable {
-    var categories: ContentModel { get }
-}
 
-protocol HTMLTag: Tag, ContentModelRepresentable {}
-protocol HTMLShortTag: ShortTag, ContentModelRepresentable {}
-protocol HTMLStandardTag: StandardTag, ContentModelRepresentable {}
+

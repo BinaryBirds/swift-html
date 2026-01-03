@@ -10,10 +10,10 @@ import SGML
 public struct Ol:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
-//reversed — Number the list backwards
-//start — Starting value of the list
-//type — Kind of list marker
+    GlobalAttributesModifier,
+    ReversedAttributeModifier,
+    StartAttributeModifier,
+    TypeAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -37,6 +37,25 @@ public struct Ol:
         self.attributes = attributes
         self.children = children
     }
+    
+    // MARK: -
+    
+    public enum OlTypeAttributeValue: String, AttributeValueRepresentable {
+        /// Default. Decimal numbers (1, 2, 3, 4)
+        case decimal = "1"
+        /// Alphabetically ordered list, lowercase (a, b, c, d)
+        case lowerAlpha = "a"
+        /// Alphabetically ordered list, uppercase (A, B, C, D)
+        case upperAlpha = "A"
+        /// Roman numbers, lowercase (i, ii, iii, iv)
+        case lowerRoman = "i"
+        /// Roman numbers, uppercase (I, II, III, IV)
+        case upperRoman = "I"
+    }
+
+    public typealias TypeAttributeValueType = OlTypeAttributeValue
+    
+    // MARK: - 
 
     public init(
         _ contents: String
@@ -53,35 +72,6 @@ public struct Ol:
     ) {
         self.init(children: block())
     }
-}
 
-//extension Ol {
-//
-//    public enum `Type`: String {
-//        /// Default. Decimal numbers (1, 2, 3, 4)
-//        case `default` = "1"
-//        /// Alphabetically ordered list, lowercase (a, b, c, d)
-//        case lowerAlpa = "a"
-//        /// Alphabetically ordered list, uppercase (A, B, C, D)
-//        case upperAlpha = "A"
-//        /// Roman numbers, lowercase (i, ii, iii, iv)
-//        case lowerRoman = "i"
-//        /// Roman numbers, uppercase (I, II, III, IV)
-//        case upperRoman = "I"
-//    }
-//
-//    /// Specifies that the list order should be reversed (9,8,7...)
-//    public func reversed(_ value: Double) -> Self {
-//        attribute("reversed", String(value))
-//    }
-//
-//    /// Specifies the start value of an ordered list
-//    public func start(_ value: Int) -> Self {
-//        attribute("start", String(value))
-//    }
-//
-//    /// Specifies the kind of marker to use in the list
-//    public func type(_ value: `Type`) -> Self {
-//        attribute("type", value.rawValue)
-//    }
-//}
+    
+}

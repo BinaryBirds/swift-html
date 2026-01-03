@@ -7,9 +7,8 @@ public struct Progress:
     HTMLStandardTag,
     /// attribute modifiers
     GlobalAttributesModifier,
-    ValueAttributeModifier
-//✅value — Current value of the element
-// max — Upper bound of range
+    ValueAttributeModifier,
+    MaxAttributeModifier
 {
 
     /// The attribute storage for the tag.
@@ -51,9 +50,7 @@ public struct Progress:
     ) {
         self.init(children: block())
     }
-}
 
-//    /// Specifies how much work the task requires in total. Default value is 1
-//    public func max(_ value: String) -> Self {
-//        attribute("max", value)
-//    }
+    public typealias ValueAttributeValueType = Double
+
+}

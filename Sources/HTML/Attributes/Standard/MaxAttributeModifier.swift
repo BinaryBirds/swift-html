@@ -1,7 +1,7 @@
 import SGML
 
 public protocol MaxAttributeModifier {
-    associatedtype MaxAttributeValueType: AttributeValueRepresentable = String
+    associatedtype MaxAttributeValueType: AttributeValueRepresentable = Double
 }
 
 extension MaxAttributeModifier where Self: Attributes & Mutable {

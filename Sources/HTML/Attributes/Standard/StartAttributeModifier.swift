@@ -1,7 +1,7 @@
 import SGML
 
 public protocol StartAttributeModifier {
-    associatedtype StartAttributeValueType: AttributeValueRepresentable = String
+    associatedtype StartAttributeValueType: AttributeValueRepresentable = Int
 }
 
 extension StartAttributeModifier where Self: Attributes & Mutable {

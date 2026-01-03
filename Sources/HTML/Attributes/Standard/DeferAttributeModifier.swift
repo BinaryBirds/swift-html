@@ -1,17 +1,14 @@
 import SGML
 
 public protocol DeferAttributeModifier {
-    associatedtype DeferAttributeValueType: AttributeValueRepresentable = String
+    
 }
 
 extension DeferAttributeModifier where Self: Attributes & Mutable {
 
-    public func `defer`(
-        _ value: DeferAttributeValueType?
-    ) -> Self {
+    public func `defer`() -> Self {
         setAttribute(
-            key: StandardAttributeKey.defer,
-            value: value?.attributeValue
+            key: StandardAttributeKey.defer
         )
     }
 }

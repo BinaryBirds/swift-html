@@ -9,12 +9,12 @@ import SGML
 public struct Template:
     HTMLStandardTag,
     /// attribute modifiers
-    GlobalAttributesModifier
-//shadowrootmode — Enables streaming declarative shadow roots
-//shadowrootdelegatesfocus — Sets delegates focus on a declarative shadow root
-//shadowrootclonable — Sets clonable on a declarative shadow root
-//shadowrootserializable — Sets serializable on a declarative shadow root
-//shadowrootcustomelementregistry — Enables declarative shadow roots to indicate they will use a custom element registry
+    GlobalAttributesModifier,
+    ShadowRootModeAttributeModifier,
+    ShadowRootDelegatesFocusAttributeModifier,
+    ShadowRootClonableAttributeModifier,
+    ShadowRootSerializableAttributeModifier,
+    ShadowRootCustomElementRegistryAttributeModifier
 {
 
     /// The attribute storage for the tag.

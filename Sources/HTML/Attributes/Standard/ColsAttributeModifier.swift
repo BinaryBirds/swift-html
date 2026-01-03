@@ -1,7 +1,7 @@
 import SGML
 
 public protocol ColsAttributeModifier {
-    associatedtype ColsAttributeValueType: AttributeValueRepresentable = String
+    associatedtype ColsAttributeValueType: AttributeValueRepresentable = Int
 }
 
 extension ColsAttributeModifier where Self: Attributes & Mutable {

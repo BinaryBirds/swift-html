@@ -1,7 +1,7 @@
 import SGML
 
 public protocol MinAttributeModifier {
-    associatedtype MinAttributeValueType: AttributeValueRepresentable = String
+    associatedtype MinAttributeValueType: AttributeValueRepresentable = Double
 }
 
 extension MinAttributeModifier where Self: Attributes & Mutable {

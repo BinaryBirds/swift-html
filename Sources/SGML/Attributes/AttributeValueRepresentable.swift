@@ -17,3 +17,7 @@ extension String: AttributeValueRepresentable {
 extension Int: AttributeValueRepresentable {
     public var attributeValue: String { String(self) }
 }
+
+extension Double: AttributeValueRepresentable {
+    public var attributeValue: String { String(self) }
+}

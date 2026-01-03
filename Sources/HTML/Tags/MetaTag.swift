@@ -17,12 +17,8 @@ public struct Meta:
     ContentAttributeModifier,
     NameAttributeModifier,
     MediaAttributeModifier,
-    HttpEquivAttributeModifier
-//✅ name — Metadata name
-//http-equiv — Pragma directive
-//content — Value of the element
-//charset — Character encoding declaration
-//✅ media — Applicable media
+    HttpEquivAttributeModifier,
+    CharsetAttributeModifier
 {
     public var attributes: AttributeStore
 
@@ -37,18 +33,6 @@ public struct Meta:
 
     public init() {
         self.attributes = .init()
-    }
-
-    /// Specifies the character encoding for the HTML document.
-    public func charset(
-        _ value: String
-    ) -> Self {
-        modify {
-            $0.attributes.set(
-                name: "charset",
-                value: value
-            )
-        }
     }
 
 }

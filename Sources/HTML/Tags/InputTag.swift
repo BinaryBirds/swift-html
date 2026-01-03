@@ -43,40 +43,6 @@ public struct Input:
     RequiredAttributeModifier,
     SizeAttributeModifier,
     StepAttributeModifier
-//✅accept — Hint for expected file type in file upload controls
-//✅alpha — Allow the color's alpha component to be set
-//✅alt — Replacement text for use when images are not available
-//✅autocomplete — Hint for form autofill feature
-//✅checked — Whether the control is checked
-//✅colorspace — The color space of the serialized color
-//✅dirname — Name of form control to use for sending the element's directionality in form submission
-//✅disabled — Whether the form control is disabled
-//✅form — Associates the element with a form element
-//✅formaction — URL to use for form submission
-//✅formenctype — Entry list encoding type to use for form submission
-//✅formmethod — Variant to use for form submission
-//✅formnovalidate — Bypass form control validation for form submission
-//✅formtarget — Navigable for form submission
-//✅height — Vertical dimension
-//✅list — List of autocomplete options
-//✅max — Maximum value
-//✅maxlength — Maximum length of value
-//✅min — Minimum value
-//✅minlength — Minimum length of value
-//✅multiple — Whether to allow multiple values
-//✅name — Name of the element to use for form submission and in the form.elements API
-//✅pattern — Pattern to be matched by the form control's value
-//✅placeholder — User-visible label to be placed within the form control
-//✅popovertarget — Targets a popover element to toggle, show, or hide
-//✅popovertargetaction — Indicates whether a targeted popover element is to be toggled, shown, or hidden
-//✅readonly — Whether to allow the value to be edited by the user
-//✅required — Whether the control is required for form submission
-//✅size — Size of the control
-//✅src — Address of the resource
-//✅step — Granularity to be matched by the form control's value
-//⚠️type — Type of form control
-//✅value — Value of the form control
-//✅width — Horizontal dimension
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore

@@ -1,7 +1,7 @@
 import SGML
 
 public protocol RowsAttributeModifier {
-    associatedtype RowsAttributeValueType: AttributeValueRepresentable = String
+    associatedtype RowsAttributeValueType: AttributeValueRepresentable = Int
 }
 
 extension RowsAttributeModifier where Self: Attributes & Mutable {

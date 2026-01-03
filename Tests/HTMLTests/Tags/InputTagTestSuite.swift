@@ -44,7 +44,7 @@ struct InputTagTestSuite {
 
         let tag = Input()
             .type(.checkbox)
-            .check(condition) {
+            .if(condition) {
                 $0.checked()
             }
 

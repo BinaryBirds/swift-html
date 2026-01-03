@@ -223,7 +223,7 @@ Use the `check` modifier to evaluate a condition and update an element when the 
 let condition = false
 
 H1("Lorem ipsum")
-    .check(condition) {
+    .if(condition) {
         $0.class("foo")
     } else: {
         $0.class("bar")

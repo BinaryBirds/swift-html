@@ -1,7 +1,7 @@
 import SGML
 
 public protocol LowAttributeModifier {
-    associatedtype LowAttributeValueType: AttributeValueRepresentable = String
+    associatedtype LowAttributeValueType: AttributeValueRepresentable = Double
 }
 
 extension LowAttributeModifier where Self: Attributes & Mutable {

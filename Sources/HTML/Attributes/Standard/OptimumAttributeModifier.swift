@@ -2,7 +2,7 @@ import SGML
 
 public protocol OptimumAttributeModifier {
     associatedtype OptimumAttributeValueType: AttributeValueRepresentable =
-        String
+        Double
 }
 
 extension OptimumAttributeModifier where Self: Attributes & Mutable {

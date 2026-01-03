@@ -15,10 +15,8 @@ public struct Td:
     /// attribute modifiers
     GlobalAttributesModifier,
     ColSpanAttributeModifier,
-    RowSpanAttributeModifier
-//✅colspan — Number of columns that the cell is to span
-//✅rowspan — Number of rows that the cell is to span
-//headers — The header cells for this cell
+    RowSpanAttributeModifier,
+    HeadersAttributeModifier
 {
 
     /// The attribute storage for the tag.
