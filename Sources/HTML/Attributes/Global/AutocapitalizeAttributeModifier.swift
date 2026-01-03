@@ -1,8 +1,29 @@
 import SGML
 
+public enum AutoCapitalizeAttributeValue: String, AttributeValueRepresentable {
+    /// Keyword: off. State: none.
+    case off = "off"
+
+    /// Keyword: none. State: none.
+    case none = "none"
+
+    /// Keyword: on. State: sentences.
+    case on = "on"
+
+    /// Keyword: sentences. State: sentences.
+    case sentences = "sentences"
+
+    /// Keyword: words. State: words.
+    case words = "words"
+
+    /// Keyword: characters. State: characters.
+    case characters = "characters"
+}
+
 public protocol AutoCapitalizeAttributeModifier {
     associatedtype
-        AutoCapitalizeAttributeValueType: AttributeValueRepresentable = String
+        AutoCapitalizeAttributeValueType: AttributeValueRepresentable =
+        AutoCapitalizeAttributeValue
 }
 
 extension AutoCapitalizeAttributeModifier where Self: Attributes & Mutable {
