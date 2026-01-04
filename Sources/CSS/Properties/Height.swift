@@ -28,7 +28,9 @@ public struct Height: Property {
     public var isImportant: Bool
 
     /// Sets the height of an element
-    public init(_ value: Height.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "height"
         self.value = value.rawValue
         self.isImportant = false

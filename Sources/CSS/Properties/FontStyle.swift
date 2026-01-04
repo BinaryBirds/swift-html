@@ -17,7 +17,9 @@ public struct FontStyle: Property {
     public var isImportant: Bool
 
     /// Specifies the font style for text
-    public init(_ value: FontStyle.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-style"
         self.value = value.rawValue
         self.isImportant = false

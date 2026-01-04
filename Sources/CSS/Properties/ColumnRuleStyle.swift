@@ -31,7 +31,9 @@ public struct ColumnRuleStyle: Property {
     public var isImportant: Bool
 
     /// Specifies the style of the rule between columns
-    public init(_ value: ColumnRuleStyle.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "column-rule-style"
         self.value = value.rawValue
         self.isImportant = false

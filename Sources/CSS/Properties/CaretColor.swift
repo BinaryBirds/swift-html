@@ -28,7 +28,9 @@ public struct CaretColor: Property {
     public var isImportant: Bool
 
     /// Specifies the color of the cursor (caret) in inputs, textareas, or any element that is editable
-    public init(_ value: CaretColor.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "caret-color"
         self.value = value.rawValue
         self.isImportant = false

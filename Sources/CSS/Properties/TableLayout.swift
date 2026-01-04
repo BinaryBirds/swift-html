@@ -15,7 +15,9 @@ public struct TableLayout: Property {
     public var isImportant: Bool
 
     /// Defines the algorithm used to lay out table cells, rows, and columns
-    public init(_ value: TableLayout.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "table-layout"
         self.value = value.rawValue
         self.isImportant = false

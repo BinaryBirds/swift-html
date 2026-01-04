@@ -33,7 +33,9 @@ public struct ColumnCount: Property {
     public var isImportant: Bool
 
     /// Specifies the number of columns an element should be divided into
-    public init(_ value: ColumnCount.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "column-count"
         self.value = value.rawValue
         self.isImportant = false

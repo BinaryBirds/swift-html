@@ -36,7 +36,9 @@ public struct ColumnRuleWidth: Property {
     public var isImportant: Bool
 
     /// Specifies the width of the rule between columns
-    public init(_ value: ColumnRuleWidth.Value = .medium) {
+    public init(
+        _ value: Value = .medium
+    ) {
         self.name = "column-rule-width"
         self.value = value.rawValue
         self.isImportant = false

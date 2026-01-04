@@ -39,7 +39,9 @@ public struct TransformOrigin: Property {
     public var isImportant: Bool
 
     /// Allows you to change the position on transformed elements
-    public init(_ value: TransformOrigin.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "transform-origin"
         self.value = value.rawValue
         self.isImportant = false

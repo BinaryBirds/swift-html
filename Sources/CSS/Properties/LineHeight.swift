@@ -32,7 +32,9 @@ public struct LineHeight: Property {
     public var isImportant: Bool
 
     /// Sets the line height
-    public init(_ value: LineHeight.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "line-height"
         self.value = value.rawValue
         self.isImportant = false

@@ -1,4 +1,4 @@
-public struct AllProps: Property {
+public struct All: Property {
     public enum Value: String, Sendable {
         /// Changes all the properties applied to the element or the element's parent to their initial value
         case initial
@@ -13,7 +13,9 @@ public struct AllProps: Property {
     public var isImportant: Bool
 
     /// Resets all properties (except unicode-bidi and direction)
-    public init(_ value: Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "all"
         self.value = value.rawValue
         self.isImportant = false

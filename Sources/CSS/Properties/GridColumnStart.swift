@@ -24,7 +24,9 @@ public struct GridColumnStart: Property {
     public var isImportant: Bool
 
     /// Specifies where to start the grid item
-    public init(_ value: GridColumnStart.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "grid-column-start"
         self.value = value.rawValue
         self.isImportant = false

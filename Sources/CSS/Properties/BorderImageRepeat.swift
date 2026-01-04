@@ -19,7 +19,9 @@ public struct BorderImageRepeat: Property {
     public var isImportant: Bool
 
     /// Specifies whether the border image should be repeated, rounded or stretched
-    public init(_ value: BorderImageRepeat.Value = .stretch) {
+    public init(
+        _ value: Value = .stretch
+    ) {
         self.name = "border-image-repeat"
         self.value = value.rawValue
         self.isImportant = false

@@ -56,7 +56,9 @@ public struct ListStyleType: Property {
     public let value: String
     public var isImportant: Bool
 
-    public init(_ value: ListStyleType.Value = .disc) {
+    public init(
+        _ value: Value = .disc
+    ) {
         self.name = "list-style-type"
         self.value = value.rawValue
         self.isImportant = false

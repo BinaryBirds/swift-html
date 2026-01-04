@@ -67,7 +67,7 @@ public struct TransitionTimingFunction: Property {
 
     /// Specifies the speed curve of the transition effect
     public init(
-        _ value: TransitionTimingFunction.Value = .ease
+        _ value: Value = .ease
     ) {
         self.name = "transition-timing-function"
         self.value = value.rawValue

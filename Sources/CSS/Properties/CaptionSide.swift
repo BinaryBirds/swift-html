@@ -15,7 +15,9 @@ public struct CaptionSide: Property {
     public var isImportant: Bool
 
     /// Specifies the placement of a table caption
-    public init(_ value: CaptionSide.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "caption-side"
         self.value = value.rawValue
         self.isImportant = false

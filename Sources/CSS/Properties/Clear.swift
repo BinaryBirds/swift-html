@@ -19,7 +19,9 @@ public struct Clear: Property {
     public var isImportant: Bool
 
     /// Specifies what should happen with the element that is next to a floating element
-    public init(_ value: Clear.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "clear"
         self.value = value.rawValue
         self.isImportant = false

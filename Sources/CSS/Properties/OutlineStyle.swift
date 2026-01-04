@@ -31,7 +31,9 @@ public struct OutlineStyle: Property {
     public var isImportant: Bool
 
     /// Sets the style of an outline
-    public init(_ value: OutlineStyle.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "outline-style"
         self.value = value.rawValue
         self.isImportant = false

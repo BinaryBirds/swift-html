@@ -18,7 +18,9 @@ public struct GridRowGap: Property {
     public var isImportant: Bool
 
     /// Specifies the size of the gap between rows
-    public init(_ value: GridRowGap.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "grid-row-gap"
         self.value = value.rawValue
         self.isImportant = false

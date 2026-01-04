@@ -21,7 +21,9 @@ public struct AlignItems: Property {
     public var isImportant: Bool
 
     /// Specifies the alignment for items inside a flexible container
-    public init(_ value: AlignItems.Value = .stretch) {
+    public init(
+        _ value: Value = .stretch
+    ) {
         self.name = "align-items"
         self.value = value.rawValue
         self.isImportant = false

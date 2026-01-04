@@ -15,7 +15,9 @@ public struct FontVariant: Property {
     public var isImportant: Bool
 
     /// Specifies whether or not a text should be displayed in a small-caps font
-    public init(_ value: FontVariant.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-variant"
         self.value = value.rawValue
         self.isImportant = false

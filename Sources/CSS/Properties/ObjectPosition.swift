@@ -29,7 +29,7 @@ public struct ObjectPosition: Property {
 
     /// Specifies the alignment of the replaced element inside its box
     public init(
-        _ value: ObjectPosition.Value = .position(.percent(50), .percent(50))
+        _ value: Value = .position(.percent(50), .percent(50))
     ) {
         self.name = "object-position"
         self.value = value.rawValue

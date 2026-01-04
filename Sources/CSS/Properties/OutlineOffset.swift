@@ -24,7 +24,9 @@ public struct OutlineOffset: Property {
     public var isImportant: Bool
 
     /// Offsets an outline, and draws it beyond the border edge
-    public init(_ value: OutlineOffset.Value = .length(.zero)) {
+    public init(
+        _ value: Value = .length(.zero)
+    ) {
         self.name = "outline-offset"
         self.value = value.rawValue
         self.isImportant = false

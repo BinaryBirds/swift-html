@@ -44,7 +44,9 @@ public struct BorderImage: Property {
     public var isImportant: Bool
 
     /// A shorthand property for all the border-image-* properties
-    public init(_ value: BorderImage.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-image"
         self.value = value.rawValue
         self.isImportant = false

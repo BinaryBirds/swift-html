@@ -24,7 +24,9 @@ public struct TextIndent: Property {
     public var isImportant: Bool
 
     /// Specifies the indentation of the first line in a text-block
-    public init(_ value: TextIndent.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-indent"
         self.value = value.rawValue
         self.isImportant = false

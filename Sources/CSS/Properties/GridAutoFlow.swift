@@ -17,7 +17,9 @@ public struct GridAutoFlow: Property {
     public var isImportant: Bool
 
     /// Specifies how auto-placed items are inserted in the grid
-    public init(_ value: GridAutoFlow.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "grid-auto-flow"
         self.value = value.rawValue
         self.isImportant = false

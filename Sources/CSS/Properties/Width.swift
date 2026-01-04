@@ -28,7 +28,9 @@ public struct Width: Property {
     public var isImportant: Bool
 
     /// Sets the width of an element
-    public init(_ value: Width.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "width"
         self.value = value.rawValue
         self.isImportant = false

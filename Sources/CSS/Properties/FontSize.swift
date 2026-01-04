@@ -60,7 +60,9 @@ public struct FontSize: Property {
     public var isImportant: Bool
 
     /// Specifies the font size of text
-    public init(_ value: FontSize.Value = .medium) {
+    public init(
+        _ value: Value = .medium
+    ) {
         self.name = "font-size"
         self.value = value.rawValue
         self.isImportant = false

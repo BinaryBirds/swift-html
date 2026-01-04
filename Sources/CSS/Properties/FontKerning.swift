@@ -13,7 +13,9 @@ public struct FontKerning: Property {
     public var isImportant: Bool
 
     /// Controls the usage of the kerning information (how letters are spaced)
-    public init(_ value: FontKerning.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "font-kerning"
         self.value = value.rawValue
         self.isImportant = false

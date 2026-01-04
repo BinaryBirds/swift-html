@@ -17,7 +17,9 @@ public struct ColumnFill: Property {
     public var isImportant: Bool
 
     /// Specifies how to fill columns, balanced or not
-    public init(_ value: ColumnFill.Value = .balance) {
+    public init(
+        _ value: Value = .balance
+    ) {
         self.name = "column-fill"
         self.value = value.rawValue
         self.isImportant = false

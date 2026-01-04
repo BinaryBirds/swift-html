@@ -83,7 +83,9 @@ public struct BackgroundPosition: Property {
     public var isImportant: Bool
 
     /// Specifies the position of a background image
-    public init(_ value: BackgroundPosition.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "background-position"
         self.value = value.rawValue
         self.isImportant = false

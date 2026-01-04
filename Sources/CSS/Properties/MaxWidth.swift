@@ -28,7 +28,9 @@ public struct MaxWidth: Property {
     public var isImportant: Bool
 
     /// Sets the maximum width of an element
-    public init(_ value: MaxWidth.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "max-width"
         self.value = value.rawValue
         self.isImportant = false

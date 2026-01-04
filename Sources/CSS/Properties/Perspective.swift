@@ -28,7 +28,9 @@ public struct Perspective: Property {
     public var isImportant: Bool
 
     /// Gives a 3D-positioned element some perspective
-    public init(_ value: Perspective.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "perspective"
         self.value = value.rawValue
         self.isImportant = false

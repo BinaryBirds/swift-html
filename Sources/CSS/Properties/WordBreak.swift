@@ -19,7 +19,9 @@ public struct WordBreak: Property {
     public var isImportant: Bool
 
     /// Specifies how words should break when reaching the end of a line
-    public init(_ value: WordBreak.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "word-break"
         self.value = value.rawValue
         self.isImportant = false

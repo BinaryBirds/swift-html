@@ -30,7 +30,9 @@ public struct BorderSpacing: Property {
     public var isImportant: Bool
 
     /// Sets the distance between the borders of adjacent cells
-    public init(_ value: BorderSpacing.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-spacing"
         self.value = value.rawValue
         self.isImportant = false

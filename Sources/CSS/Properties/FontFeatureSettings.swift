@@ -20,7 +20,9 @@ public struct FontFeatureSettings: Property {
     public var isImportant: Bool
 
     /// Allows control over advanced typographic features in OpenType fonts
-    public init(_ value: FontFeatureSettings.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-feature-settings"
         self.value = value.rawValue
         self.isImportant = false

@@ -33,7 +33,9 @@ public struct GridTemplate: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
-    public init(_ value: GridTemplate.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "grid-template"
         self.value = value.rawValue
         self.isImportant = false

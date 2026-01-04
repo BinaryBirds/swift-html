@@ -33,7 +33,9 @@ public struct BackgroundImage: Property {
     public var isImportant: Bool
 
     /// Specifies one or more background images for an element
-    public init(_ value: BackgroundImage.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "background-image"
         self.value = value.rawValue
         self.isImportant = false

@@ -64,7 +64,7 @@ public struct AnimationTimingFunction: Property {
 
     /// Specifies the speed curve of an animation
     public init(
-        _ value: AnimationTimingFunction.Value = .linear
+        _ value: Value = .linear
     ) {
         self.name = "animation-timing-function"
         self.value = value.rawValue

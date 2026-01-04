@@ -24,7 +24,9 @@ public struct MinWidth: Property {
     public var isImportant: Bool
 
     /// Sets the minimum width of an element
-    public init(_ value: MinWidth.Value = .length(.zero)) {
+    public init(
+        _ value: Value = .length(.zero)
+    ) {
         self.name = "min-width"
         self.value = value.rawValue
         self.isImportant = false

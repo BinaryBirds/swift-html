@@ -15,7 +15,9 @@ public struct PointerEvents: Property {
     public var isImportant: Bool
 
     /// Defines whether or not an element reacts to pointer events
-    public init(_ value: PointerEvents.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "pointer-events"
         self.value = value.rawValue
         self.isImportant = false

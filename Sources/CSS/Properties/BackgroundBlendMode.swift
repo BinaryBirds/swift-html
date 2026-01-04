@@ -27,7 +27,9 @@ public struct BackgroundBlendMode: Property {
     public var isImportant: Bool
 
     /// Specifies the blending mode of each background layer (color/image)
-    public init(_ value: BackgroundBlendMode.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "background-blend-mode"
         self.value = value.rawValue
         self.isImportant = false

@@ -15,7 +15,9 @@ public struct EmptyCells: Property {
     public var isImportant: Bool
 
     /// Specifies whether or not to display borders and background on empty cells in a table
-    public init(_ value: EmptyCells.Value = .show) {
+    public init(
+        _ value: Value = .show
+    ) {
         self.name = "empty-cells"
         self.value = value.rawValue
         self.isImportant = false

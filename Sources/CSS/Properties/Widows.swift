@@ -24,7 +24,9 @@ public struct Widows: Property {
     public var isImportant: Bool
 
     /// Sets the minimum number of lines that must be left at the top of a page when a page break occurs inside an element
-    public init(_ value: Widows.Value = .number(2)) {
+    public init(
+        _ value: Value = .number(2)
+    ) {
         self.name = "widows"
         self.value = value.rawValue
         self.isImportant = false

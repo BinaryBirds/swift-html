@@ -13,7 +13,9 @@ public struct WritingMode: Property {
     public var isImportant: Bool
 
     /// Specifies whether lines of text are laid out horizontally or vertically
-    public init(_ value: WritingMode.Value = .horizontalTb) {
+    public init(
+        _ value: Value = .horizontalTb
+    ) {
         self.name = "writing-mode"
         self.value = value.rawValue
         self.isImportant = false

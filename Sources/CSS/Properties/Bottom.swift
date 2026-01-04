@@ -28,7 +28,9 @@ public struct Bottom: Property {
     public var isImportant: Bool
 
     /// Sets the elements position, from the bottom of its parent element
-    public init(_ value: Bottom.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "bottom"
         self.value = value.rawValue
         self.isImportant = false

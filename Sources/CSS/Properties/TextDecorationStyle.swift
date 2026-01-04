@@ -21,7 +21,9 @@ public struct TextDecorationStyle: Property {
     public var isImportant: Bool
 
     /// Specifies the style of the line in a text decoration
-    public init(_ value: TextDecorationStyle.Value = .solid) {
+    public init(
+        _ value: Value = .solid
+    ) {
         self.name = "text-decoration-style"
         self.value = value.rawValue
         self.isImportant = false

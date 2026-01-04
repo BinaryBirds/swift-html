@@ -19,7 +19,9 @@ public struct TextJustify: Property {
     public var isImportant: Bool
 
     /// Specifies the justification method used when text-align is "justify"
-    public init(_ value: TextJustify.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "text-justify"
         self.value = value.rawValue
         self.isImportant = false

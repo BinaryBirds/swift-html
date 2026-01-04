@@ -19,7 +19,9 @@ public struct FlexDirection: Property {
     public var isImportant: Bool
 
     /// Specifies the direction of the flexible items
-    public init(_ value: FlexDirection.Value = .row) {
+    public init(
+        _ value: Value = .row
+    ) {
         self.name = "flex-direction"
         self.value = value.rawValue
         self.isImportant = false

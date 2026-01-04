@@ -21,7 +21,9 @@ public struct UnicodeBidi: Property {
     public var isImportant: Bool
 
     /// Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document
-    public init(_ value: UnicodeBidi.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "unicode-bidi"
         self.value = value.rawValue
         self.isImportant = false

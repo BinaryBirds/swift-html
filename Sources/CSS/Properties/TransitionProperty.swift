@@ -32,7 +32,9 @@ public struct TransitionProperty: Property {
     public var isImportant: Bool
 
     /// Specifies the name of the CSS property the transition effect is for
-    public init(_ value: TransitionProperty.Value = .all) {
+    public init(
+        _ value: Value = .all
+    ) {
         self.name = "transition-property"
         self.value = value.rawValue
         self.isImportant = false

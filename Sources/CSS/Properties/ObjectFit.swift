@@ -21,7 +21,9 @@ public struct ObjectFit: Property {
     public var isImportant: Bool
 
     /// Specifies how the contents of a replaced element should be fitted to the box established by its used height and width
-    public init(_ value: ObjectFit.Value = .fill) {
+    public init(
+        _ value: Value = .fill
+    ) {
         self.name = "object-fit"
         self.value = value.rawValue
         self.isImportant = false

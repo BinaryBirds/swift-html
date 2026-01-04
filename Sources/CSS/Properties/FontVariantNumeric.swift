@@ -21,7 +21,9 @@ public struct FontVariantNumeric: Property {
     public var isImportant: Bool
 
     /// Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers
-    public init(_ value: FontVariantNumeric.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-variant-numeric"
         self.value = value.rawValue
         self.isImportant = false

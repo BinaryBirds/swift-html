@@ -40,7 +40,9 @@ public struct GridTemplateColumns: Property {
     public var isImportant: Bool
 
     /// Specifies the size of the columns, and how many columns in a grid layout
-    public init(_ value: GridTemplateColumns.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "grid-template-columns"
         self.value = value.rawValue
         self.isImportant = false

@@ -24,7 +24,9 @@ public struct FlexFlow: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the flex-direction and the flex-wrap properties
-    public init(_ value: FlexFlow.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "flex-flow"
         self.value = value.rawValue
         self.isImportant = false

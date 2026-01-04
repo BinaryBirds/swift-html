@@ -53,7 +53,9 @@ public struct Animation: Property {
     public var isImportant: Bool
 
     /// A shorthand property for all the animation-* properties
-    public init(_ value: Animation.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "animation"
         self.value = value.rawValue
         self.isImportant = false

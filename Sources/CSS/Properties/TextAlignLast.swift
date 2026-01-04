@@ -25,7 +25,9 @@ public struct TextAlignLast: Property {
     public var isImportant: Bool
 
     /// Describes how the last line of a block or a line right before a forced line break is aligned when text-align is "justify"
-    public init(_ value: TextAlignLast.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "text-align-last"
         self.value = value.rawValue
         self.isImportant = false

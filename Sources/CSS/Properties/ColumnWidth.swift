@@ -28,7 +28,9 @@ public struct ColumnWidth: Property {
     public var isImportant: Bool
 
     /// Specifies the column width
-    public init(_ value: ColumnWidth.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "column-width"
         self.value = value.rawValue
         self.isImportant = false

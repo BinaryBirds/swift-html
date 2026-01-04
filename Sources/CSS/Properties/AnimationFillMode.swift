@@ -19,7 +19,9 @@ public struct AnimationFillMode: Property {
     public var isImportant: Bool
 
     /// Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)
-    public init(_ value: AnimationFillMode.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "animation-fill-mode"
         self.value = value.rawValue
         self.isImportant = false

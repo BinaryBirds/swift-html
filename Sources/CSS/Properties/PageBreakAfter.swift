@@ -21,7 +21,9 @@ public struct PageBreakAfter: Property {
     public var isImportant: Bool
 
     /// Sets the page-break behavior after an element
-    public init(_ value: PageBreakAfter.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "page-break-after"
         self.value = value.rawValue
         self.isImportant = false

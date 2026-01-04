@@ -47,7 +47,8 @@ public struct StylesheetRenderer {
                         .joined(separator: newline)
                     if let query = media.query {
                         selectors =
-                            "@media " + query + singleSpace + "{" + newline
+                            "@media " + query.rawValue + singleSpace + "{"
+                            + newline
                             + selectors + newline + "}"
                     }
                     return selectors

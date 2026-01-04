@@ -27,7 +27,9 @@ public struct FontLanguageOverride: Property {
     public var isImportant: Bool
 
     /// Controls the usage of language-specific glyphs in a typeface
-    public init(_ value: FontLanguageOverride.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-language-override"
         self.value = value.rawValue
         self.isImportant = false

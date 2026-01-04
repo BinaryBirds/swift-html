@@ -16,7 +16,9 @@ public struct LineBreak: Property {
     public var isImportant: Bool
 
     /// Specifies how/if to break lines
-    public init(_ value: LineBreak.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "line-break"
         self.value = value.rawValue
         self.isImportant = false

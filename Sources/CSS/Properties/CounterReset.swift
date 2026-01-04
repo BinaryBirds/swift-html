@@ -31,7 +31,9 @@ public struct CounterReset: Property {
     public let value: String
     public var isImportant: Bool
 
-    public init(_ value: CounterReset.Value = .none, ) {
+    public init(
+        _ value: Value = .none,
+    ) {
         self.name = "counter-reset"
         self.value = value.rawValue
         self.isImportant = false

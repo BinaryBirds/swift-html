@@ -25,7 +25,9 @@ public struct FlexShrink: Property {
     public var isImportant: Bool
 
     /// Specifies how the item will shrink relative to the rest
-    public init(_ value: FlexShrink.Value = .number(1)) {
+    public init(
+        _ value: Value = .number(1)
+    ) {
         self.name = "flex-shrink"
         self.value = value.rawValue
         self.isImportant = false

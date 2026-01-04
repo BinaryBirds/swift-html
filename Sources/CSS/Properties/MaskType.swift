@@ -15,7 +15,9 @@ public struct MaskType: Property {
     public var isImportant: Bool
 
     /// Specifies whether a mask element is used as a luminance or an alpha mask
-    public init(_ value: Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "mask-type"
         self.value = value.rawValue
         self.isImportant = false

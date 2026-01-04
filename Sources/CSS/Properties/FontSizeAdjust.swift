@@ -28,7 +28,9 @@ public struct FontSizeAdjust: Property {
     public var isImportant: Bool
 
     /// Preserves the readability of text when font fallback occurs
-    public init(_ value: FontSizeAdjust.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "font-size-adjust"
         self.value = value.rawValue
         self.isImportant = false

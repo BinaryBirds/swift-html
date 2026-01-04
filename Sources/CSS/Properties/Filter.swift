@@ -110,7 +110,9 @@ public struct Filter: Property {
     public var isImportant: Bool
 
     /// Defines effects (e.g. blurring or color shifting) on an element before the element is displayed
-    public init(_ value: Filter.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "filter"
         self.value = value.rawValue
         self.isImportant = false

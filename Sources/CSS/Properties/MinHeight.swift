@@ -24,7 +24,9 @@ public struct MinHeight: Property {
     public var isImportant: Bool
 
     /// Sets the minimum height of an element
-    public init(_ value: MinHeight.Value = .length(.zero)) {
+    public init(
+        _ value: Value = .length(.zero)
+    ) {
         self.name = "min-height"
         self.value = value.rawValue
         self.isImportant = false

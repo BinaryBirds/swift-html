@@ -15,7 +15,9 @@ public struct BorderCollapse: Property {
     public var isImportant: Bool
 
     /// Sets whether table borders should collapse into a single border or be separated
-    public init(_ value: BorderCollapse.Value = .separate) {
+    public init(
+        _ value: Value = .separate
+    ) {
         self.name = "border-collapse"
         self.value = value.rawValue
         self.isImportant = false

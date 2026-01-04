@@ -21,7 +21,9 @@ public struct FontVariantLigatures: Property {
     public var isImportant: Bool
 
     /// Controls which ligatures and contextual forms are used in textual content of the elements it applies to
-    public init(_ value: FontVariantLigatures.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-variant-ligatures"
         self.value = value.rawValue
         self.isImportant = false

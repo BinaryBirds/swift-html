@@ -21,7 +21,9 @@ public struct PageBreakBefore: Property {
     public var isImportant: Bool
 
     /// Sets the page-break behavior before an element
-    public init(_ value: PageBreakBefore.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "page-break-before"
         self.value = value.rawValue
         self.isImportant = false

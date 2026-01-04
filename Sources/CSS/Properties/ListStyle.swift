@@ -31,7 +31,9 @@ public struct ListStyle: Property {
     public var isImportant: Bool
 
     /// Sets all the properties for a list in one declaration
-    public init(_ value: ListStyle.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "list-style"
         self.value = value.rawValue
         self.isImportant = false

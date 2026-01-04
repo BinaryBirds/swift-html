@@ -24,7 +24,9 @@ public struct TextDecorationColor: Property {
     public var isImportant: Bool
 
     /// Specifies the color of the text-decoration
-    public init(_ value: TextDecorationColor.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-decoration-color"
         self.value = value.rawValue
         self.isImportant = false

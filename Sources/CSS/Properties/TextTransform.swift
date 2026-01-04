@@ -19,7 +19,9 @@ public struct TextTransform: Property {
     public var isImportant: Bool
 
     /// Controls the capitalization of text
-    public init(_ value: TextTransform.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-transform"
         self.value = value.rawValue
         self.isImportant = false

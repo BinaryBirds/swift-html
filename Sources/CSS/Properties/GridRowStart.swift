@@ -20,7 +20,9 @@ public struct GridRowStart: Property {
     public var isImportant: Bool
 
     /// Specifies where to start the grid item
-    public init(_ value: GridRowStart.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "grid-row-start"
         self.value = value.rawValue
         self.isImportant = false

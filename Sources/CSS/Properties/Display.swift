@@ -53,7 +53,9 @@ public struct Display: Property {
     public var isImportant: Bool
 
     /// Specifies how a certain HTML element should be displayed
-    public init(_ value: Display.Value = .initial) {
+    public init(
+        _ value: Value = .initial
+    ) {
         self.name = "display"
         self.value = value.rawValue
         self.isImportant = false

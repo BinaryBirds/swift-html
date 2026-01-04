@@ -15,7 +15,9 @@ public struct FontSynthesis: Property {
     public var isImportant: Bool
 
     /// Controls which missing typefaces (bold or italic) may be synthesized by the browser
-    public init(_ value: FontSynthesis.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "font-synthesis"
         self.value = value.rawValue
         self.isImportant = false

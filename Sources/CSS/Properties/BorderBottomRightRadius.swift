@@ -24,7 +24,9 @@ public struct BorderBottomRightRadius: Property {
     public var isImportant: Bool
 
     /// Defines the radius of the border of the bottom-right corner
-    public init(_ value: Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-bottom-right-radius"
         self.value = value.rawValue
         self.isImportant = false

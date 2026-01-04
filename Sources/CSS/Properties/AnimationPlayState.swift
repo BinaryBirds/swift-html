@@ -15,7 +15,9 @@ public struct AnimationPlayState: Property {
     public var isImportant: Bool
 
     /// Specifies whether the animation is running or paused
-    public init(_ value: AnimationPlayState.Value = .running) {
+    public init(
+        _ value: Value = .running
+    ) {
         self.name = "animation-play-state"
         self.value = value.rawValue
         self.isImportant = false

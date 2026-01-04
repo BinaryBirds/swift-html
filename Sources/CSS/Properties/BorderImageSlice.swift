@@ -28,7 +28,9 @@ public struct BorderImageSlice: Property {
     public var isImportant: Bool
 
     /// Specifies how to slice the border image
-    public init(_ value: BorderImageSlice.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-image-slice"
         self.value = value.rawValue
         self.isImportant = false

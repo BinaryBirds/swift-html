@@ -15,7 +15,9 @@ public struct ScrollBehavior: Property {
     public var isImportant: Bool
 
     /// Specifies whether to smoothly animate the scroll position in a scrollable box, instead of a straight jump
-    public init(_ value: ScrollBehavior.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "scroll-behavior"
         self.value = value.rawValue
         self.isImportant = false

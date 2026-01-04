@@ -17,7 +17,9 @@ public struct BackgroundClip: Property {
     public var isImportant: Bool
 
     /// Defines how far the background (color or image) should extend within an element
-    public init(_ value: BackgroundClip.Value = .borderBox) {
+    public init(
+        _ value: Value = .borderBox
+    ) {
         self.name = "background-clip"
         self.value = value.rawValue
         self.isImportant = false

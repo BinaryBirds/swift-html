@@ -19,7 +19,9 @@ public struct TextAlign: Property {
     public var isImportant: Bool
 
     /// Specifies the horizontal alignment of text
-    public init(_ value: TextAlign.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-align"
         self.value = value.rawValue
         self.isImportant = false

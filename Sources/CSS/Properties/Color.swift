@@ -24,7 +24,9 @@ public struct Color: Property {
     public var isImportant: Bool
 
     /// Sets the color of text
-    public init(_ value: Color.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "color"
         self.value = value.rawValue
         self.isImportant = false

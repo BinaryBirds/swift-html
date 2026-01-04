@@ -15,7 +15,9 @@ public struct BoxDecorationBreak: Property {
     public var isImportant: Bool
 
     /// Sets the behavior of the background and border of an element at page-break, or, for in-line elements, at line-break.
-    public init(_ value: BoxDecorationBreak.Value = .slice) {
+    public init(
+        _ value: Value = .slice
+    ) {
         self.name = "box-decoration-break"
         self.value = value.rawValue
         self.isImportant = false

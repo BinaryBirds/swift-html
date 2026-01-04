@@ -28,7 +28,9 @@ public struct Clip: Property {
     public var isImportant: Bool
 
     /// Clips an absolutely positioned element
-    public init(_ value: Clip.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "clip"
         self.value = value.rawValue
         self.isImportant = false

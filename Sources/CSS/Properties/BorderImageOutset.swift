@@ -28,7 +28,9 @@ public struct BorderImageOutset: Property {
     public var isImportant: Bool
 
     /// Specifies the amount by which the border image area extends beyond the border box
-    public init(_ value: BorderImageOutset.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-image-outset"
         self.value = value.rawValue
         self.isImportant = false

@@ -30,7 +30,9 @@ public struct FontWeight: Property {
     public var isImportant: Bool
 
     /// Specifies the weight of a font
-    public init(_ value: FontWeight.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "font-weight"
         self.value = value.rawValue
         self.isImportant = false

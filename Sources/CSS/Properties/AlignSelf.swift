@@ -23,7 +23,9 @@ public struct AlignSelf: Property {
     public var isImportant: Bool
 
     /// Specifies the alignment for selected items inside a flexible container
-    public init(_ value: AlignSelf.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "align-self"
         self.value = value.rawValue
         self.isImportant = false

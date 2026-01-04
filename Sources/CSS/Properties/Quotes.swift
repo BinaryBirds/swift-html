@@ -44,7 +44,9 @@ public struct Quotes: Property {
     public var isImportant: Bool
 
     /// Sets the type of quotation marks for embedded quotations
-    public init(_ value: Quotes.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "quotes"
         self.value = value.rawValue
         self.isImportant = false

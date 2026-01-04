@@ -33,7 +33,9 @@ public struct CounterIncrement: Property {
     public let value: String
     public var isImportant: Bool
 
-    public init(_ value: CounterIncrement.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "counter-increment"
         self.value = value.rawValue
         self.isImportant = false

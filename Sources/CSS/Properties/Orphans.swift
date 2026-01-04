@@ -24,7 +24,9 @@ public struct Orphans: Property {
     public var isImportant: Bool
 
     /// Sets the minimum number of lines that must be left at the bottom of a page
-    public init(_ value: Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "orphans"
         self.value = value.rawValue
         self.isImportant = false

@@ -19,7 +19,9 @@ public struct Overflow: Property {
     public var isImportant: Bool
 
     /// Specifies what happens if content overflows an element's box
-    public init(_ value: Overflow.Value = .visible) {
+    public init(
+        _ value: Value = .visible
+    ) {
         self.name = "overflow"
         self.value = value.rawValue
         self.isImportant = false

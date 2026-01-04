@@ -45,7 +45,7 @@ public struct PerspectiveOrigin: Property {
 
     /// Defines at which position the user is looking at the 3D-positioned element
     public init(
-        _ value: PerspectiveOrigin.Value = .axis(.percent(50), .percent(50))
+        _ value: Value = .axis(.percent(50), .percent(50))
     ) {
         self.name = "perspective-origin"
         self.value = value.rawValue

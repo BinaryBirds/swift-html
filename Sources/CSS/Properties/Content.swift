@@ -58,7 +58,9 @@ public struct Content: Property {
     public var isImportant: Bool
 
     /// Used with the :before and :after pseudo-elements, to insert generated content
-    public init(_ value: Content.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "content"
         self.value = value.rawValue
         self.isImportant = false

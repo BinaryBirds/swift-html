@@ -24,7 +24,9 @@ public struct GridColumnEnd: Property {
     public var isImportant: Bool
 
     /// Specifies where to end the grid item
-    public init(_ value: GridColumnEnd.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "grid-column-end"
         self.value = value.rawValue
         self.isImportant = false

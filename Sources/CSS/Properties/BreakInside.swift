@@ -21,7 +21,9 @@ public struct BreakInside: Property {
     public var isImportant: Bool
 
     /// Specifies whether or not a page-, column-, or region-break should occur inside the specified element
-    public init(_ value: BreakInside.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "break-inside"
         self.value = value.rawValue
         self.isImportant = false

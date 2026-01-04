@@ -73,7 +73,9 @@ public struct Font: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the font-style, font-variant, font-weight, font-size/line-height, and the font-family properties
-    public init(_ value: Font.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "font"
         self.value = value.rawValue
         self.isImportant = false

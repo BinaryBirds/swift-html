@@ -1,4 +1,5 @@
 public struct Stylesheet: Sendable {
+
     public var rules: [Rule]
 
     public init(

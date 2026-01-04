@@ -27,7 +27,9 @@ public struct FontVariantCaps: Property {
     public var isImportant: Bool
 
     /// Controls the usage of alternate glyphs for capital letters
-    public init(_ value: FontVariantCaps.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-variant-caps"
         self.value = value.rawValue
         self.isImportant = false

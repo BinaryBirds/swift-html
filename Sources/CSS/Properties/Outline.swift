@@ -27,7 +27,9 @@ public struct Outline: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the outline-width, outline-style, and the outline-color properties
-    public init(_ value: Outline.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "outline"
         self.value = value.rawValue
         self.isImportant = false

@@ -14,7 +14,9 @@ public struct FontVariantPosition: Property {
     public var isImportant: Bool
 
     /// Controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font
-    public init(_ value: FontVariantPosition.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-variant-position"
         self.value = value.rawValue
         self.isImportant = false

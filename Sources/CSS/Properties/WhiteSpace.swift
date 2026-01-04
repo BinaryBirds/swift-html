@@ -21,7 +21,9 @@ public struct WhiteSpace: Property {
     public var isImportant: Bool
 
     /// Specifies how white-space inside an element is handled
-    public init(_ value: WhiteSpace.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "white-space"
         self.value = value.rawValue
         self.isImportant = false

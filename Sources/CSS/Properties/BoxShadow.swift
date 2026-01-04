@@ -53,7 +53,9 @@ public struct BoxShadow: Property {
     public var isImportant: Bool
 
     /// Attaches one or more shadows to an element
-    public init(_ value: BoxShadow.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "box-shadow"
         self.value = value.rawValue
         self.isImportant = false
@@ -65,7 +67,7 @@ public struct BoxShadow: Property {
         blur: Unit? = nil,
         spread: Unit? = nil,
         color: CSSColor,
-        type: BoxShadow.Value.ShadowType = .outset
+        type: Value.ShadowType = .outset
     ) {
         self.init(.values(hOffset, vOffset, blur, spread, color, type))
     }

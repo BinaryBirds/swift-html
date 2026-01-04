@@ -28,7 +28,9 @@ public struct ListStyleImage: Property {
     public var isImportant: Bool
 
     /// Specifies an image as the list-item marker
-    public init(_ value: ListStyleImage.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "list-style-image"
         self.value = value.rawValue
         self.isImportant = false

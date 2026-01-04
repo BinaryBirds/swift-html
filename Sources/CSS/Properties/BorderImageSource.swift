@@ -28,7 +28,9 @@ public struct BorderImageSource: Property {
     public var isImportant: Bool
 
     /// Specifies the path to the image to be used as a border
-    public init(_ value: BorderImageSource.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-image-source"
         self.value = value.rawValue
         self.isImportant = false

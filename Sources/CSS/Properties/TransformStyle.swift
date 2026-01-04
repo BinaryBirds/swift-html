@@ -15,7 +15,9 @@ public struct TransformStyle: Property {
     public var isImportant: Bool
 
     /// Specifies how nested elements are rendered in 3D space
-    public init(_ value: TransformStyle.Value = .flat) {
+    public init(
+        _ value: Value = .flat
+    ) {
         self.name = "transform-style"
         self.value = value.rawValue
         self.isImportant = false

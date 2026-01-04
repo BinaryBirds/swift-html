@@ -52,7 +52,9 @@ public struct Background: Property {
     public var isImportant: Bool
 
     /// A shorthand property for all the background-* properties
-    public init(_ value: Background.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "background"
         self.value = value.rawValue
         self.isImportant = false

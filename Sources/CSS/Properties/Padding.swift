@@ -24,7 +24,9 @@ public struct Padding: Property {
     public var isImportant: Bool
 
     /// Sets all the Padding properties in one declaration
-    public init(_ value: Padding.Value = .length(.zero)) {
+    public init(
+        _ value: Value = .length(.zero)
+    ) {
         self.name = "padding"
         self.value = value.rawValue
         self.isImportant = false
@@ -35,8 +37,8 @@ public struct Padding: Property {
     }
 
     public init(
-        horizontal: Padding.Value = .length(.zero),
-        vertical: Padding.Value = .length(.zero)
+        horizontal: Value = .length(.zero),
+        vertical: Value = .length(.zero)
     ) {
         self.name = "padding"
         self.value = horizontal.rawValue + " " + vertical.rawValue
@@ -51,10 +53,10 @@ public struct Padding: Property {
     }
 
     public init(
-        top: Padding.Value = .length(.zero),
-        right: Padding.Value = .length(.zero),
-        bottom: Padding.Value = .length(.zero),
-        left: Padding.Value = .length(.zero)
+        top: Value = .length(.zero),
+        right: Value = .length(.zero),
+        bottom: Value = .length(.zero),
+        left: Value = .length(.zero)
     ) {
         self.name = "padding"
         self.value =

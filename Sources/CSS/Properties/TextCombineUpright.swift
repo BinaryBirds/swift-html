@@ -33,7 +33,9 @@ public struct TextCombineUpright: Property {
     public var isImportant: Bool
 
     /// Specifies the combination of multiple characters into the space of a single character
-    public init(_ value: TextCombineUpright.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-combine-upright"
         self.value = value.rawValue
         self.isImportant = false

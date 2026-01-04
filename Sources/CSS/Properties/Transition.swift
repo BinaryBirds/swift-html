@@ -41,7 +41,9 @@ public struct Transition: Property {
     public let value: String
     public var isImportant: Bool
 
-    public init(_ value: Transition.Value, ) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "transition"
         self.value = value.rawValue
         self.isImportant = false

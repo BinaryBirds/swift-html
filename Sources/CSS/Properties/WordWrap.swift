@@ -15,7 +15,9 @@ public struct WordWrap: Property {
     public var isImportant: Bool
 
     /// Allows long, unbreakable words to be broken and wrap to the next line
-    public init(_ value: WordWrap.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "word-wrap"
         self.value = value.rawValue
         self.isImportant = false

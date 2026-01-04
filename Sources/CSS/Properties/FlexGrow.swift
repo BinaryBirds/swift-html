@@ -25,7 +25,9 @@ public struct FlexGrow: Property {
     public var isImportant: Bool
 
     /// Specifies how much the item will grow relative to the rest
-    public init(_ value: FlexGrow.Value = .number(0)) {
+    public init(
+        _ value: Value = .number(0)
+    ) {
         self.name = "flex-grow"
         self.value = value.rawValue
         self.isImportant = false

@@ -38,7 +38,9 @@ public struct AnimationDuration: Property {
     public var isImportant: Bool
 
     /// Specifies how long an animation should take to complete one cycle
-    public init(_ value: AnimationDuration.Value = .zero) {
+    public init(
+        _ value: Value = .zero
+    ) {
         self.name = "animation-duration"
         self.value = value.rawValue
         self.isImportant = false

@@ -46,7 +46,9 @@ public struct Grid: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
-    public init(_ value: Grid.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "grid"
         self.value = value.rawValue
         self.isImportant = false

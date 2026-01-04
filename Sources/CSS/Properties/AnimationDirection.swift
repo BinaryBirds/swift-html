@@ -19,7 +19,9 @@ public struct AnimationDirection: Property {
     public var isImportant: Bool
 
     /// Specifies whether an animation should be played forwards, backwards or in alternate cycles
-    public init(_ value: AnimationDirection.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "animation-direction"
         self.value = value.rawValue
         self.isImportant = false

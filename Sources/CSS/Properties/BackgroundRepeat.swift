@@ -23,7 +23,9 @@ public struct BackgroundRepeat: Property {
     public var isImportant: Bool
 
     /// Sets if/how a background image will be repeated
-    public init(_ value: BackgroundRepeat.Value = .repeat) {
+    public init(
+        _ value: Value = .repeat
+    ) {
         self.name = "background-repeat"
         self.value = value.rawValue
         self.isImportant = false

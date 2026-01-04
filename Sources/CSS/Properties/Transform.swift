@@ -159,7 +159,9 @@ public struct Transform: Property {
     public var isImportant: Bool
 
     /// Applies a 2D or 3D transformation to an element
-    public init(_ value: Transform.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "transform"
         self.value = value.rawValue
         self.isImportant = false

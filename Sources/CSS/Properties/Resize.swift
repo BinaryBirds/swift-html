@@ -19,7 +19,9 @@ public struct Resize: Property {
     public var isImportant: Bool
 
     /// Defines if (and how) an element is resizable by the user
-    public init(_ value: Resize.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "resize"
         self.value = value.rawValue
         self.isImportant = false

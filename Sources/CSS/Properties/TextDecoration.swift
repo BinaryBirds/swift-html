@@ -32,7 +32,9 @@ public struct TextDecoration: Property {
     public var isImportant: Bool
 
     /// Specifies the decoration added to text
-    public init(_ value: TextDecoration.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-decoration"
         self.value = value.rawValue
         self.isImportant = false

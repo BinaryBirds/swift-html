@@ -29,7 +29,9 @@ public struct ColumnGap: Property {
     public var isImportant: Bool
 
     /// Specifies the gap between the columns
-    public init(_ value: ColumnGap.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "column-gap"
         self.value = value.rawValue
         self.isImportant = false

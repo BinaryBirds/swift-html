@@ -29,7 +29,9 @@ public struct FontStretch: Property {
     public var isImportant: Bool
 
     /// Selects a normal, condensed, or expanded face from a font family
-    public init(_ value: FontStretch.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-stretch"
         self.value = value.rawValue
         self.isImportant = false

@@ -15,7 +15,9 @@ public struct BoxSizing: Property {
     public var isImportant: Bool
 
     /// Defines how the width and height of an element are calculated: should they include padding and borders, or not
-    public init(_ value: BoxSizing.Value = .contentBox) {
+    public init(
+        _ value: Value = .contentBox
+    ) {
         self.name = "box-sizing"
         self.value = value.rawValue
         self.isImportant = false

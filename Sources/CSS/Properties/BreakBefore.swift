@@ -39,7 +39,9 @@ public struct BreakBefore: Property {
     public var isImportant: Bool
 
     /// Specifies whether or not a page-, column-, or region-break should occur before the specified element
-    public init(_ value: BreakBefore.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "break-before"
         self.value = value.rawValue
         self.isImportant = false

@@ -24,7 +24,9 @@ public struct Opacity: Property {
     public var isImportant: Bool
 
     /// Sets the opacity level for an element
-    public init(_ value: Opacity.Value = .number(1)) {
+    public init(
+        _ value: Value = .number(1)
+    ) {
         self.name = "opacity"
         self.value = value.rawValue
         self.isImportant = false

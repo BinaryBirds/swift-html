@@ -30,7 +30,9 @@ public struct BorderRadius: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the four border-*-radius properties
-    public init(_ value: BorderRadius.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-radius"
         self.value = value.rawValue
         self.isImportant = false

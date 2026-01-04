@@ -37,7 +37,9 @@ public struct TransitionDuration: Property {
     public var isImportant: Bool
 
     /// Specifies how many seconds or milliseconds a transition effect takes to complete
-    public init(_ value: TransitionDuration.Value = .zero) {
+    public init(
+        _ value: Value = .zero
+    ) {
         self.name = "transition-duration"
         self.value = value.rawValue
         self.isImportant = false

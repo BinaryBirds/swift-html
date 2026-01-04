@@ -32,7 +32,9 @@ public struct GridTemplateRows: Property {
     public var isImportant: Bool
 
     /// Specifies the size of the rows in a grid layout
-    public init(_ value: GridTemplateRows.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "grid-template-rows"
         self.value = value.rawValue
         self.isImportant = false

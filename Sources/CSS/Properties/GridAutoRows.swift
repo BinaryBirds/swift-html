@@ -30,7 +30,9 @@ public struct GridAutoRows: Property {
     public var isImportant: Bool
 
     /// Specifies a default row size
-    public init(_ value: Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "grid-auto-rows"
         self.value = value.rawValue
         self.isImportant = false

@@ -24,7 +24,9 @@ public struct Order: Property {
     public var isImportant: Bool
 
     /// Sets the order of the flexible item, relative to the rest
-    public init(_ value: Order.Value = .number(1)) {
+    public init(
+        _ value: Value = .number(1)
+    ) {
         self.name = "order"
         self.value = value.rawValue
         self.isImportant = false

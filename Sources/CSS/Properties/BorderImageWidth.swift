@@ -32,7 +32,9 @@ public struct BorderImageWidth: Property {
     public var isImportant: Bool
 
     /// Specifies the width of the border image
-    public init(_ value: BorderImageWidth.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border-image-width"
         self.value = value.rawValue
         self.isImportant = false

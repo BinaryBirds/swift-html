@@ -33,7 +33,9 @@ public struct AnimationIterationCount: Property {
     public var isImportant: Bool
 
     /// Specifies the number of times an animation should be played
-    public init(_ value: AnimationIterationCount.Value = 1) {
+    public init(
+        _ value: Value = 1
+    ) {
         self.name = "animation-iteration-count"
         self.value = value.rawValue
         self.isImportant = false

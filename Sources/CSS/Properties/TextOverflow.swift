@@ -17,7 +17,9 @@ public struct TextOverflow: Property {
     public var isImportant: Bool
 
     /// Specifies what should happen when text overflows the containing element
-    public init(_ value: TextOverflow.Value = .clip) {
+    public init(
+        _ value: Value = .clip
+    ) {
         self.name = "text-overflow"
         self.value = value.rawValue
         self.isImportant = false

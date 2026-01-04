@@ -14,7 +14,9 @@ public struct TextOrientation: Property {
     public let value: String
     public var isImportant: Bool
 
-    public init(_ value: TextOrientation.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-orientation"
         self.value = value.rawValue
         self.isImportant = false

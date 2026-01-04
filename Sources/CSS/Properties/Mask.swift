@@ -24,7 +24,9 @@ public struct Mask: Property {
     public var isImportant: Bool
 
     /// Hides an element by masking or clipping the image at specific places
-    public init(_ value: Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "mask"
         self.value = value.rawValue
         self.isImportant = false

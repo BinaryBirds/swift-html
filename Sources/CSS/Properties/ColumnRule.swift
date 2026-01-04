@@ -28,7 +28,9 @@ public struct ColumnRule: Property {
     public var isImportant: Bool
 
     /// A shorthand property for all the column-rule-* properties
-    public init(_ value: ColumnRule.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "column-rule"
         self.value = value.rawValue
         self.isImportant = false

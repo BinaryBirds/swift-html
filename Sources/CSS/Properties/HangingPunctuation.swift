@@ -22,7 +22,9 @@ public struct HangingPunctuation: Property {
     public var isImportant: Bool
 
     /// Specifies whether a punctuation character may be placed outside the line box
-    public init(_ value: HangingPunctuation.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "hanging-punctuation"
         self.value = value.rawValue
         self.isImportant = false

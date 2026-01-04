@@ -32,7 +32,9 @@ public struct Flex: Property {
     public var isImportant: Bool
 
     /// A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties
-    public init(_ value: Flex.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "flex"
         self.value = value.rawValue
         self.isImportant = false

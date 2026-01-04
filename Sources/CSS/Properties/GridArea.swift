@@ -27,7 +27,9 @@ public struct GridArea: Property {
     public var isImportant: Bool
 
     /// Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties
-    public init(_ value: GridArea.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "grid-area"
         self.value = value.rawValue
         self.isImportant = false

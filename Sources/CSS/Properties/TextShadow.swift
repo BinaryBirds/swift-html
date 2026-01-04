@@ -32,7 +32,9 @@ public struct TextShadow: Property {
     public var isImportant: Bool
 
     /// Adds shadow to text
-    public init(_ value: TextShadow.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "text-shadow"
         self.value = value.rawValue
         self.isImportant = false

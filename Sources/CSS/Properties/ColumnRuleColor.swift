@@ -24,7 +24,9 @@ public struct ColumnRuleColor: Property {
     public var isImportant: Bool
 
     /// Specifies the color of the rule between columns
-    public init(_ value: ColumnRuleColor.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "column-rule-color"
         self.value = value.rawValue
         self.isImportant = false

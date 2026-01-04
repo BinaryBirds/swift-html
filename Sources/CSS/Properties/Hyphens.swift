@@ -17,7 +17,9 @@ public struct Hyphens: Property {
     public var isImportant: Bool
 
     /// Sets how to split words to improve the layout of paragraphs
-    public init(_ value: Hyphens.Value = .manual) {
+    public init(
+        _ value: Value = .manual
+    ) {
         self.name = "hyphens"
         self.value = value.rawValue
         self.isImportant = false

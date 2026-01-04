@@ -57,20 +57,18 @@ struct SwiftCssTests {
                 }
             }
 
-            Media(screen: .s) {
+            Media(.screen && .minWidth("600px")) {
                 Class("button") {
                     Color("#cafe00")
                 }
             }
-            Media(
-                screen: .dark,
-                {
-                    All {
-                        Margin(horizontal: .px(8), vertical: .px(8))
-                    }
+            Media(.screen && .prefersColorScheme(.dark)) {
+                Universal {
+                    Margin(horizontal: .px(8), vertical: .px(8))
                 }
-            )
-            Media(screen: .standalone) {
+            }
+
+            Media(.screen && .displayMode(.standalone)) {
                 Id("lead") {
                     Background(.color(.red))
                 }
@@ -110,22 +108,16 @@ struct SwiftCssTests {
                 Root {
                     Variable("size", "400px")
                 }
-
-                Selector(".container") {
-                    Width("var(--size)")
+                Class("container") {
+                    Width(.px(200))
                 }
             }
-            Media(screen: .xs) {
-                Root {
-                    Variable("size", "200px")
-                }
-            }
-            Media(screen: .dark) {
+            Media(.screen && .maxWidth("599px")) {
                 Root {
                     Variable("size", "500px")
                 }
             }
-            Media(screen: .standalone) {
+            Media(.screen && .prefersColorScheme(.dark)) {
                 Root {
                     Variable("size", "460px")
                 }
@@ -138,7 +130,7 @@ struct SwiftCssTests {
                     --size: 400px;
                 }
                 .container {
-                    width: var(--size);
+                    width: 200px;
                 }
                 @media screen and (max-width: 599px) {
                     :root {
@@ -167,18 +159,18 @@ struct SwiftCssTests {
                     Background(.color(.red))
                 }
             }
-            Media(screen: .xs) {
+            Media(.screen && .maxWidth("599px")) {
                 Root {
                     Background(.color(.blue))
                 }
             }
-            Media(screen: .dark) {
+            Media(.screen && .prefersColorScheme(.dark)) {
                 Root {
                     Background(.color(.green))
                 }
             }
-            Media(screen: .standalone) {
-                Body {
+            Media(.screen && .displayMode(.standalone)) {
+                Element("body") {
                     Background(.color(.yellow))
                 }
             }

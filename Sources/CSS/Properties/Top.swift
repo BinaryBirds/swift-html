@@ -28,7 +28,9 @@ public struct Top: Property {
     public var isImportant: Bool
 
     /// Specifies the top position of a positioned element
-    public init(_ value: Top.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "top"
         self.value = value.rawValue
         self.isImportant = false

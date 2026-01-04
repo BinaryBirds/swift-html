@@ -28,7 +28,9 @@ public struct Right: Property {
     public var isImportant: Bool
 
     /// Specifies the right position of a positioned element
-    public init(_ value: Right.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "right"
         self.value = value.rawValue
         self.isImportant = false

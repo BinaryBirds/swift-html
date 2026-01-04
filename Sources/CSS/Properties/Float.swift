@@ -17,7 +17,9 @@ public struct Float: Property {
     public var isImportant: Bool
 
     /// Specifies whether an element should float to the left, right, or not at all
-    public init(_ value: Float.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "float"
         self.value = value.rawValue
         self.isImportant = false

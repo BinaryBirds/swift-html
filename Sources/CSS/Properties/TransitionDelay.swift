@@ -37,7 +37,9 @@ public struct TransitionDelay: Property {
     public var isImportant: Bool
 
     /// Specifies when the transition effect will start
-    public init(_ value: TransitionDelay.Value = .zero) {
+    public init(
+        _ value: Value = .zero
+    ) {
         self.name = "transition-delay"
         self.value = value.rawValue
         self.isImportant = false

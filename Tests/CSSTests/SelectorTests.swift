@@ -24,7 +24,7 @@ struct SelectorTests {
     func testMarginBottom() {
         let css = Stylesheet {
             Media {
-                All {
+                Universal {
                     MarginTop(.length(.px(8)))
                     MarginBottom(.length(.percent(25)))
                 }
@@ -46,7 +46,7 @@ struct SelectorTests {
     func testPadding() {
         let css = Stylesheet {
             Media {
-                All {
+                Universal {
                     Padding(.zero)
                     Padding(.rem(8))
                     Padding(horizontal: .px(8))

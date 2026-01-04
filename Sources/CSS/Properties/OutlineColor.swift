@@ -28,7 +28,9 @@ public struct OutlineColor: Property {
     public var isImportant: Bool
 
     /// Sets the color of an outline
-    public init(_ value: OutlineColor.Value = .invert) {
+    public init(
+        _ value: Value = .invert
+    ) {
         self.name = "outline-color"
         self.value = value.rawValue
         self.isImportant = false

@@ -15,7 +15,9 @@ public struct PageBreakInside: Property {
     public var isImportant: Bool
 
     /// Sets the page-break behavior inside an element
-    public init(_ value: PageBreakInside.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "page-break-inside"
         self.value = value.rawValue
         self.isImportant = false

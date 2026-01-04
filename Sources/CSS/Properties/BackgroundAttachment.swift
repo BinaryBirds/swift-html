@@ -17,7 +17,9 @@ public struct BackgroundAttachment: Property {
     public var isImportant: Bool
 
     /// Sets whether a background image scrolls with the rest of the page, or is fixed
-    public init(_ value: BackgroundAttachment.Value = .scroll) {
+    public init(
+        _ value: Value = .scroll
+    ) {
         self.name = "background-attachment"
         self.value = value.rawValue
         self.isImportant = false

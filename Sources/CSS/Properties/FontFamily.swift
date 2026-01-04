@@ -24,7 +24,9 @@ public struct FontFamily: Property {
     public var isImportant: Bool
 
     /// Specifies the font family for text
-    public init(_ value: FontFamily.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "font-family"
         self.value = value.rawValue
         self.isImportant = false

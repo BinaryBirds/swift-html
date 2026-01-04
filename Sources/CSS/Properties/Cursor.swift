@@ -86,7 +86,9 @@ public struct Cursor: Property {
     public var isImportant: Bool
 
     /// Specifies the mouse cursor to be displayed when pointing over an element
-    public init(_ value: Cursor.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "cursor"
         self.value = value.rawValue
         self.isImportant = false

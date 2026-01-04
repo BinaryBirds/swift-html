@@ -24,7 +24,9 @@ public struct Position: Property {
     public var isImportant: Bool
 
     /// Specifies the type of positioning method used for an element (static, relative, absolute or fixed)
-    public init(_ value: Position.Value = .static) {
+    public init(
+        _ value: Value = .static
+    ) {
         self.name = "position"
         self.value = value.rawValue
         self.isImportant = false

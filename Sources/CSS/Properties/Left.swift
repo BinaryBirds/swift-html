@@ -28,7 +28,9 @@ public struct Left: Property {
     public var isImportant: Bool
 
     /// Specifies the left position of a positioned element
-    public init(_ value: Left.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "left"
         self.value = value.rawValue
         self.isImportant = false

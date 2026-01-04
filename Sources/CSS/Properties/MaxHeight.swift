@@ -28,7 +28,9 @@ public struct MaxHeight: Property {
     public var isImportant: Bool
 
     /// Sets the maximum height of an element
-    public init(_ value: MaxHeight.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "max-height"
         self.value = value.rawValue
         self.isImportant = false

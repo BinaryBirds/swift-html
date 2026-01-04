@@ -56,7 +56,9 @@ public struct VerticalAlign: Property {
     public var isImportant: Bool
 
     /// Sets the vertical alignment of an element.
-    public init(_ value: VerticalAlign.Value = .baseline) {
+    public init(
+        _ value: Value = .baseline
+    ) {
         self.name = "vertical-align"
         self.value = value.rawValue
         self.isImportant = false

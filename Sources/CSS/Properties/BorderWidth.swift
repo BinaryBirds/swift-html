@@ -36,7 +36,9 @@ public struct BorderWidth: Property {
     public var isImportant: Bool
 
     /// Sets the width of the four borders
-    public init(_ value: BorderWidth.Value = .medium) {
+    public init(
+        _ value: Value = .medium
+    ) {
         self.name = "border-width"
         self.value = value.rawValue
         self.isImportant = false

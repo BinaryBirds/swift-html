@@ -17,7 +17,9 @@ public struct BackgroundOrigin: Property {
     public var isImportant: Bool
 
     /// Specifies the origin position of a background image
-    public init(_ value: BackgroundOrigin.Value = .paddingBox) {
+    public init(
+        _ value: Value = .paddingBox
+    ) {
         self.name = "background-origin"
         self.value = value.rawValue
         self.isImportant = false

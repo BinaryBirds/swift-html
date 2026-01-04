@@ -28,7 +28,9 @@ public struct FlexBasis: Property {
     public var isImportant: Bool
 
     /// Specifies the initial length of a flexible item
-    public init(_ value: FlexBasis.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "flex-basis"
         self.value = value.rawValue
         self.isImportant = false

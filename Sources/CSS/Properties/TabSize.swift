@@ -28,7 +28,9 @@ public struct TabSize: Property {
     public var isImportant: Bool
 
     /// Specifies the width of a tab character
-    public init(_ value: TabSize.Value = .number(8)) {
+    public init(
+        _ value: Value = .number(8)
+    ) {
         self.name = "tab-size"
         self.value = value.rawValue
         self.isImportant = false

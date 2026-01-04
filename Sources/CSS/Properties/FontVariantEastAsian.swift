@@ -22,7 +22,9 @@ public struct FontVariantEastAsian: Property {
     public var isImportant: Bool
 
     /// Controls the usage of alternate glyphs for East Asian scripts (e.g Japanese and Chinese)
-    public init(_ value: FontVariantEastAsian.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "font-variant-east-asian"
         self.value = value.rawValue
         self.isImportant = false

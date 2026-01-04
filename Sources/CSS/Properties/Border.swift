@@ -26,7 +26,9 @@ public struct Border: Property {
     public var isImportant: Bool
 
     /// A shorthand property for border-width, border-style and border-color
-    public init(_ value: Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "border"
         self.value = value.rawValue
         self.isImportant = false

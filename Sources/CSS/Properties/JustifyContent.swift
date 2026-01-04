@@ -23,7 +23,9 @@ public struct JustifyContent: Property {
     public var isImportant: Bool
 
     /// Specifies the alignment between the items inside a flexible container when the items do not use all available space
-    public init(_ value: JustifyContent.Value = .flexStart) {
+    public init(
+        _ value: Value = .flexStart
+    ) {
         self.name = "justify-content"
         self.value = value.rawValue
         self.isImportant = false

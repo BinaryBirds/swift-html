@@ -15,7 +15,9 @@ public struct ColumnSpan: Property {
     public var isImportant: Bool
 
     /// Specifies how many columns an element should span across
-    public init(_ value: ColumnSpan.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "column-span"
         self.value = value.rawValue
         self.isImportant = false

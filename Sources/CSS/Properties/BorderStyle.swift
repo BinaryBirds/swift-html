@@ -31,7 +31,9 @@ public struct BorderStyle: Property {
     public var isImportant: Bool
 
     /// Sets the style of the four borders
-    public init(_ value: BorderStyle.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "border-style"
         self.value = value.rawValue
         self.isImportant = false

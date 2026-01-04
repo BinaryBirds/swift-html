@@ -15,7 +15,9 @@ public struct UserSelect: Property {
     public var isImportant: Bool
 
     /// Specifies whether the text of an element can be selected
-    public init(_ value: UserSelect.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "user-select"
         self.value = value.rawValue
         self.isImportant = false

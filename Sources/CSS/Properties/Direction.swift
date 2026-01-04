@@ -15,7 +15,9 @@ public struct Direction: Property {
     public var isImportant: Bool
 
     /// Specifies the text direction/writing direction
-    public init(_ value: Direction.Value = .ltr) {
+    public init(
+        _ value: Value = .ltr
+    ) {
         self.name = "direction"
         self.value = value.rawValue
         self.isImportant = false

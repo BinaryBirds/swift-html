@@ -15,7 +15,9 @@ public struct Isolation: Property {
     public var isImportant: Bool
 
     /// Defines whether an element must create a new stacking content
-    public init(_ value: Isolation.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "isolation"
         self.value = value.rawValue
         self.isImportant = false

@@ -35,7 +35,9 @@ public struct MixBlendMode: Property {
     public var isImportant: Bool
 
     /// Specifies how an element's content should blend with its direct parent background
-    public init(_ value: MixBlendMode.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "mix-blend-mode"
         self.value = value.rawValue
         self.isImportant = false

@@ -36,7 +36,9 @@ public struct OutlineWidth: Property {
     public var isImportant: Bool
 
     /// Sets the width of an outline
-    public init(_ value: OutlineWidth.Value = .medium) {
+    public init(
+        _ value: Value = .medium
+    ) {
         self.name = "outline-width"
         self.value = value.rawValue
         self.isImportant = false

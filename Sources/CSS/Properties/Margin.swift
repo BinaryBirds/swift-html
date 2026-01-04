@@ -28,7 +28,9 @@ public struct Margin: Property {
     public var isImportant: Bool
 
     /// Sets all the margin properties in one declaration
-    public init(_ value: Margin.Value = .length(.zero)) {
+    public init(
+        _ value: Value = .length(.zero)
+    ) {
         self.name = "margin"
         self.value = value.rawValue
         self.isImportant = false
@@ -39,8 +41,8 @@ public struct Margin: Property {
     }
 
     public init(
-        horizontal: Margin.Value = .length(.zero),
-        vertical: Margin.Value = .length(.zero)
+        horizontal: Value = .length(.zero),
+        vertical: Value = .length(.zero)
     ) {
         self.name = "margin"
         self.value = horizontal.rawValue + " " + vertical.rawValue
@@ -55,10 +57,10 @@ public struct Margin: Property {
     }
 
     public init(
-        top: Margin.Value = .length(.zero),
-        right: Margin.Value = .length(.zero),
-        bottom: Margin.Value = .length(.zero),
-        left: Margin.Value = .length(.zero)
+        top: Value = .length(.zero),
+        right: Value = .length(.zero),
+        bottom: Value = .length(.zero),
+        left: Value = .length(.zero)
     ) {
         self.name = "margin"
         self.value =

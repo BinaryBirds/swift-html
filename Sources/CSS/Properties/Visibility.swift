@@ -20,7 +20,9 @@ public struct Visibility: Property {
     public var isImportant: Bool
 
     /// Specifies whether or not an element is visible
-    public init(_ value: Visibility.Value = .visible) {
+    public init(
+        _ value: Value = .visible
+    ) {
         self.name = "visibility"
         self.value = value.rawValue
         self.isImportant = false

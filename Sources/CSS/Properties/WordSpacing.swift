@@ -28,7 +28,9 @@ public struct WordSpacing: Property {
     public var isImportant: Bool
 
     /// Increases or decreases the space between words in a text
-    public init(_ value: WordSpacing.Value = .normal) {
+    public init(
+        _ value: Value = .normal
+    ) {
         self.name = "word-spacing"
         self.value = value.rawValue
         self.isImportant = false

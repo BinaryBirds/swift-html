@@ -32,7 +32,9 @@ public struct GridAutoColumns: Property {
     public var isImportant: Bool
 
     /// Specifies a default column size
-    public init(_ value: GridAutoColumns.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "grid-auto-columns"
         self.value = value.rawValue
         self.isImportant = false

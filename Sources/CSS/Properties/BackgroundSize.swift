@@ -21,7 +21,9 @@ public struct BackgroundSize: Property {
     public var isImportant: Bool
 
     /// Specifies the size of the background images
-    public init(_ value: BackgroundSize.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "background-size"
         self.value = value.rawValue
         self.isImportant = false

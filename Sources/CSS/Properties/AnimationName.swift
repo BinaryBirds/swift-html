@@ -33,7 +33,9 @@ public struct AnimationName: Property {
     public var isImportant: Bool
 
     /// Specifies a name for the @keyframes animation
-    public init(_ value: AnimationName.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "animation-name"
         self.value = value.rawValue
         self.isImportant = false

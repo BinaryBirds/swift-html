@@ -28,7 +28,9 @@ public struct LetterSpacing: Property {
     public var isImportant: Bool
 
     /// Increases or decreases the space between characters in a text
-    public init(_ value: LetterSpacing.Value) {
+    public init(
+        _ value: Value
+    ) {
         self.name = "letter-spacing"
         self.value = value.rawValue
         self.isImportant = false

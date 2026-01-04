@@ -19,7 +19,9 @@ public struct TextDecorationLine: Property {
     public var isImportant: Bool
 
     /// Specifies the type of line in a text-decoration
-    public init(_ value: TextDecorationLine.Value = .none) {
+    public init(
+        _ value: Value = .none
+    ) {
         self.name = "text-decoration-line"
         self.value = value.rawValue
         self.isImportant = false

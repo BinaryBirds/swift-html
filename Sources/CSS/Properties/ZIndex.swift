@@ -15,7 +15,9 @@ public struct ZIndex: Property {
     public var isImportant: Bool
 
     /// Sets the stack order of a positioned element
-    public init(_ value: ZIndex.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "z-index"
         self.value = value.rawValue
         self.isImportant = false

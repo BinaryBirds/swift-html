@@ -15,7 +15,9 @@ public struct ListStylePosition: Property {
     public var isImportant: Bool
 
     /// Specifies the position of the list-item markers (bullet points)
-    public init(_ value: ListStylePosition.Value = .outside) {
+    public init(
+        _ value: Value = .outside
+    ) {
         self.name = "list-style-position"
         self.value = value.rawValue
         self.isImportant = false

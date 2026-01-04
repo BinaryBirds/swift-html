@@ -17,7 +17,9 @@ public struct FlexWrap: Property {
     public var isImportant: Bool
 
     /// Specifies whether the flexible items should wrap or not
-    public init(_ value: FlexWrap.Value = .nowrap) {
+    public init(
+        _ value: Value = .nowrap
+    ) {
         self.name = "flex-wrap"
         self.value = value.rawValue
         self.isImportant = false

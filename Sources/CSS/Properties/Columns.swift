@@ -27,7 +27,9 @@ public struct Columns: Property {
     public var isImportant: Bool
 
     /// A shorthand property for column-width and column-count
-    public init(_ value: Columns.Value = .auto) {
+    public init(
+        _ value: Value = .auto
+    ) {
         self.name = "columns"
         self.value = value.rawValue
         self.isImportant = false
