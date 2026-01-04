@@ -5,16 +5,34 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func BorderLeftColor(_ value: String) -> Property {
-    Property(name: "border-left-color", value: value)
+public struct BorderLeftColor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-left-color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderLeftColor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the color of the left border
-public func BorderLeftColor(_ value: CSSColorValue) -> Property {
-    BorderLeftColor(value.rawValue)
-}
+extension BorderLeftColor {
 
-/// Sets the color of the left border
-public func BorderLeftColor(_ value: CSSColor) -> Property {
-    BorderLeftColor(.color(value))
+    /// Sets the color of the left border
+    public init(_ value: CSSColorValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the color of the left border
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

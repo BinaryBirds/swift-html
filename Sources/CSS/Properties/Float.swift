@@ -18,11 +18,29 @@ public enum FloatValue: String {
     case inherit
 }
 
-public func Float(_ value: String) -> Property {
-    Property(name: "float", value: value)
+public struct Float: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "float" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Float {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether an element should float to the left, right, or not at all
-public func Float(_ value: FloatValue = .none) -> Property {
-    Float(value.rawValue)
+extension Float {
+
+    /// Specifies whether an element should float to the left, right, or not at all
+    public init(_ value: FloatValue = .none) {
+        self.init(value.rawValue)
+    }
 }

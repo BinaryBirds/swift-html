@@ -14,11 +14,29 @@ public enum FontKerningValue: String {
     case none
 }
 
-public func FontKerning(_ value: String) -> Property {
-    Property(name: "font-kerning", value: value)
+public struct FontKerning: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-kerning" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontKerning {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of the kerning information (how letters are spaced)
-public func FontKerning(_ value: FontKerningValue = .auto) -> Property {
-    FontKerning(value.rawValue)
+extension FontKerning {
+
+    /// Controls the usage of the kerning information (how letters are spaced)
+    public init(_ value: FontKerningValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

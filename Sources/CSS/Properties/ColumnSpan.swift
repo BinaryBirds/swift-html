@@ -16,11 +16,29 @@ public enum ColumnSpanValue: String {
     case inherit
 }
 
-public func ColumnSpan(_ value: String) -> Property {
-    Property(name: "column-span", value: value)
+public struct ColumnSpan: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-span" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnSpan {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how many columns an element should span across
-public func ColumnSpan(_ value: ColumnSpanValue = .none) -> Property {
-    ColumnSpan(value.rawValue)
+extension ColumnSpan {
+
+    /// Specifies how many columns an element should span across
+    public init(_ value: ColumnSpanValue = .none) {
+        self.init(value.rawValue)
+    }
 }

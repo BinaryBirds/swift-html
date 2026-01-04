@@ -16,11 +16,29 @@ public enum CaptionSideValue: String {
     case inherit
 }
 
-public func CaptionSide(_ value: String) -> Property {
-    Property(name: "caption-side", value: value)
+public struct CaptionSide: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "caption-side" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> CaptionSide {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the placement of a table caption
-public func CaptionSide(_ value: CaptionSideValue) -> Property {
-    CaptionSide(value.rawValue)
+extension CaptionSide {
+
+    /// Specifies the placement of a table caption
+    public init(_ value: CaptionSideValue) {
+        self.init(value.rawValue)
+    }
 }

@@ -37,11 +37,29 @@ public enum OutlineWidthValue {
     }
 }
 
-public func OutlineWidth(_ value: String) -> Property {
-    Property(name: "outline-width", value: value)
+public struct OutlineWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "outline-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> OutlineWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the width of an outline
-public func OutlineWidth(_ value: OutlineWidthValue = .medium) -> Property {
-    OutlineWidth(value.rawValue)
+extension OutlineWidth {
+
+    /// Sets the width of an outline
+    public init(_ value: OutlineWidthValue = .medium) {
+        self.init(value.rawValue)
+    }
 }

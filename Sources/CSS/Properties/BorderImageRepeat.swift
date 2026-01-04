@@ -20,13 +20,29 @@ public enum BorderImageRepeatValue: String {
     case inherit
 }
 
-public func BorderImageRepeat(_ value: String) -> Property {
-    Property(name: "border-image-repeat", value: value)
+public struct BorderImageRepeat: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-image-repeat" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderImageRepeat {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether the border image should be repeated, rounded or stretched
-public func BorderImageRepeat(_ value: BorderImageRepeatValue = .stretch)
-    -> Property
-{
-    BorderImageRepeat(value.rawValue)
+extension BorderImageRepeat {
+
+    /// Specifies whether the border image should be repeated, rounded or stretched
+    public init(_ value: BorderImageRepeatValue = .stretch) {
+        self.init(value.rawValue)
+    }
 }

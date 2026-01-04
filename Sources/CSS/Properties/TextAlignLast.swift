@@ -26,11 +26,29 @@ public enum TextAlignLastValue: String {
     case inherit
 }
 
-public func TextAlignLast(_ value: String) -> Property {
-    Property(name: "text-align-last", value: value)
+public struct TextAlignLast: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-align-last" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextAlignLast {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Describes how the last line of a block or a line right before a forced line break is aligned when text-align is "justify"
-public func TextAlignLast(_ value: TextAlignLastValue = .auto) -> Property {
-    TextAlignLast(value.rawValue)
+extension TextAlignLast {
+
+    /// Describes how the last line of a block or a line right before a forced line break is aligned when text-align is "justify"
+    public init(_ value: TextAlignLastValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

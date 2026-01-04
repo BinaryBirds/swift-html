@@ -18,13 +18,29 @@ public enum BackgroundClipValue: String {
     case inherit
 }
 
-public func BackgroundClip(_ value: String) -> Property {
-    Property(name: "background-clip", value: value)
+public struct BackgroundClip: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-clip" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundClip {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines how far the background (color or image) should extend within an element
-public func BackgroundClip(_ value: BackgroundClipValue = .borderBox)
-    -> Property
-{
-    BackgroundClip(value.rawValue)
+extension BackgroundClip {
+
+    /// Defines how far the background (color or image) should extend within an element
+    public init(_ value: BackgroundClipValue = .borderBox) {
+        self.init(value.rawValue)
+    }
 }

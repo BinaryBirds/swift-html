@@ -37,11 +37,15 @@ public enum TransitionValue {
     }
 }
 
-public func Transition(_ value: String) -> Property {
-    Property(name: "transition", value: value)
-}
+public struct Transition: Property {
+    public var value: String
+    public var isImportant: Bool
 
-/// A shorthand property for all the transition-* properties
-public func Transition(_ value: TransitionValue) -> Property {
-    Transform(value.rawValue)
+    public var name: String { "transition" }
+
+    public init(_ value: TransitionValue, isImportant: Bool = false) {
+        self.value = value.rawValue
+        self.isImportant = isImportant
+    }
+
 }

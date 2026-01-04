@@ -29,11 +29,29 @@ public enum ClipValue {
     }
 }
 
-public func Clip(_ value: String) -> Property {
-    Property(name: "clip", value: value)
+public struct Clip: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "clip" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Clip {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Clips an absolutely positioned element
-public func Clip(_ value: ClipValue = .auto) -> Property {
-    Clip(value.rawValue)
+extension Clip {
+
+    /// Clips an absolutely positioned element
+    public init(_ value: ClipValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

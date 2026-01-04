@@ -29,16 +29,34 @@ public enum WordSpacingValue {
     }
 }
 
-public func WordSpacing(_ value: String) -> Property {
-    Property(name: "word-spacing", value: value)
+public struct WordSpacing: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "word-spacing" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> WordSpacing {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Increases or decreases the space between words in a text
-public func WordSpacing(_ value: WordSpacingValue = .normal) -> Property {
-    WordSpacing(value.rawValue)
-}
+extension WordSpacing {
 
-/// Increases or decreases the space between words in a text
-public func WordSpacing(_ value: Unit) -> Property {
-    WordSpacing(.length(value))
+    /// Increases or decreases the space between words in a text
+    public init(_ value: WordSpacingValue = .normal) {
+        self.init(value.rawValue)
+    }
+
+    /// Increases or decreases the space between words in a text
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

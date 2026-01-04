@@ -31,11 +31,29 @@ public enum BorderSpacingValue {
     }
 }
 
-public func BorderSpacing(_ value: String) -> Property {
-    Property(name: "border-spacing", value: value)
+public struct BorderSpacing: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-spacing" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderSpacing {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the distance between the borders of adjacent cells
-public func BorderSpacing(_ value: BorderSpacingValue) -> Property {
-    BorderSpacing(value.rawValue)
+extension BorderSpacing {
+
+    /// Sets the distance between the borders of adjacent cells
+    public init(_ value: BorderSpacingValue) {
+        self.init(value.rawValue)
+    }
 }

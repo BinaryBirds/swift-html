@@ -29,11 +29,29 @@ public enum FontSizeAdjustValue {
     }
 }
 
-public func FontSizeAdjust(_ value: String) -> Property {
-    Property(name: "font-size-adjust", value: value)
+public struct FontSizeAdjust: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-size-adjust" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontSizeAdjust {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Preserves the readability of text when font fallback occurs
-public func FontSizeAdjust(_ value: FontSizeAdjustValue = .none) -> Property {
-    FontSizeAdjust(value.rawValue)
+extension FontSizeAdjust {
+
+    /// Preserves the readability of text when font fallback occurs
+    public init(_ value: FontSizeAdjustValue = .none) {
+        self.init(value.rawValue)
+    }
 }

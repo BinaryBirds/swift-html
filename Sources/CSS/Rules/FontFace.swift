@@ -1,8 +1,8 @@
 public struct FontFace: Rule {
 
-    var properties: [Property]
+    var properties: [any Property]
 
-    public init(@Builder<Property> _ builder: () -> [Property]) {
+    public init(@Builder<any Property> _ builder: () -> [any Property]) {
         self.properties = builder()
     }
 

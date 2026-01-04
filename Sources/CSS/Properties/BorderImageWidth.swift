@@ -33,11 +33,29 @@ public enum BorderImageWidthValue {
     }
 }
 
-public func BorderImageWidth(_ value: String) -> Property {
-    Property(name: "border-image-width", value: value)
+public struct BorderImageWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-image-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderImageWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the width of the border image
-public func BorderImageWidth(_ value: BorderImageWidthValue) -> Property {
-    BorderImageWidth(value.rawValue)
+extension BorderImageWidth {
+
+    /// Specifies the width of the border image
+    public init(_ value: BorderImageWidthValue) {
+        self.init(value.rawValue)
+    }
 }

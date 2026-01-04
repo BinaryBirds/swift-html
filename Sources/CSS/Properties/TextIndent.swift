@@ -25,16 +25,34 @@ public enum TextIndentValue {
     }
 }
 
-public func TextIndent(_ value: String) -> Property {
-    Property(name: "text-indent", value: value)
+public struct TextIndent: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-indent" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextIndent {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the indentation of the first line in a text-block
-public func TextIndent(_ value: TextIndentValue) -> Property {
-    TextIndent(value.rawValue)
-}
+extension TextIndent {
 
-/// Specifies the indentation of the first line in a text-block
-public func TextIndent(_ value: Unit) -> Property {
-    TextIndent(.length(value))
+    /// Specifies the indentation of the first line in a text-block
+    public init(_ value: TextIndentValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the indentation of the first line in a text-block
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

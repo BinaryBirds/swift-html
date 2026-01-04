@@ -16,11 +16,29 @@ public enum TableLayoutValue: String {
     case inherit
 }
 
-public func TableLayout(_ value: String) -> Property {
-    Property(name: "table-layout", value: value)
+public struct TableLayout: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "table-layout" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TableLayout {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines the algorithm used to lay out table cells, rows, and columns
-public func TableLayout(_ value: TableLayoutValue = .auto) -> Property {
-    TableLayout(value.rawValue)
+extension TableLayout {
+
+    /// Defines the algorithm used to lay out table cells, rows, and columns
+    public init(_ value: TableLayoutValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

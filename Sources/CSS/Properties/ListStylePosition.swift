@@ -16,13 +16,29 @@ public enum ListStylePositionValue: String {
     case inherit
 }
 
-public func ListStylePosition(_ value: String) -> Property {
-    Property(name: "list-style-position", value: value)
+public struct ListStylePosition: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "list-style-position" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ListStylePosition {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the position of the list-item markers (bullet points)
-public func ListStylePosition(_ value: ListStylePositionValue = .outside)
-    -> Property
-{
-    ListStylePosition(value.rawValue)
+extension ListStylePosition {
+
+    /// Specifies the position of the list-item markers (bullet points)
+    public init(_ value: ListStylePositionValue = .outside) {
+        self.init(value.rawValue)
+    }
 }

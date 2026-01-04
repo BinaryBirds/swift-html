@@ -6,14 +6,33 @@
 //
 
 /// Sets the bottom margin of an element
-public func MarginBottom(_ value: String) -> Property {
-    Property(name: "margin-bottom", value: value)
+
+public struct MarginBottom: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "margin-bottom" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MarginBottom {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-public func MarginBottom(_ value: MarginValue = .length(.zero)) -> Property {
-    MarginBottom(value.rawValue)
-}
+extension MarginBottom {
 
-public func MarginBottom(_ value: Unit = .zero) -> Property {
-    MarginBottom(.length(value))
+    public init(_ value: MarginValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

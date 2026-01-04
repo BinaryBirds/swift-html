@@ -26,7 +26,8 @@ struct ClosedByAttributeTestSuite {
                 expectation = #"""
                     <dialog closedby></dialog>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <dialog closedby="\#(raw)"></dialog>
                     """#

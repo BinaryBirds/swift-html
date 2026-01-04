@@ -28,11 +28,29 @@ public enum GridAreaValue {
     }
 }
 
-public func GridArea(_ value: String) -> Property {
-    Property(name: "grid-area", value: value)
+public struct GridArea: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-area" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridArea {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties
-public func GridArea(_ value: GridAreaValue) -> Property {
-    GridArea(value.rawValue)
+extension GridArea {
+
+    /// Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties
+    public init(_ value: GridAreaValue) {
+        self.init(value.rawValue)
+    }
 }

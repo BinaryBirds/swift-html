@@ -84,11 +84,29 @@ public enum BackgroundPositionValue {
     }
 }
 
-public func BackgroundPosition(_ value: String) -> Property {
-    Property(name: "background-position", value: value)
+public struct BackgroundPosition: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-position" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundPosition {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the position of a background image
-public func BackgroundPosition(_ value: BackgroundPositionValue) -> Property {
-    BackgroundPosition(value.rawValue)
+extension BackgroundPosition {
+
+    /// Specifies the position of a background image
+    public init(_ value: BackgroundPositionValue) {
+        self.init(value.rawValue)
+    }
 }

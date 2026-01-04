@@ -18,11 +18,29 @@ public enum ColumnFillValue: String {
     case inherit
 }
 
-public func ColumnFill(_ value: String) -> Property {
-    Property(name: "column-fill", value: value)
+public struct ColumnFill: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-fill" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnFill {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how to fill columns, balanced or not
-public func ColumnFill(_ value: ColumnFillValue = .balance) -> Property {
-    ColumnFill(value.rawValue)
+extension ColumnFill {
+
+    /// Specifies how to fill columns, balanced or not
+    public init(_ value: ColumnFillValue = .balance) {
+        self.init(value.rawValue)
+    }
 }

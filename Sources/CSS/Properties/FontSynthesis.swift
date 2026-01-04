@@ -16,11 +16,29 @@ public enum FontSynthesisValue: String {
     case unset
 }
 
-public func FontSynthesis(_ value: String) -> Property {
-    Property(name: "font-synthesis", value: value)
+public struct FontSynthesis: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-synthesis" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontSynthesis {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls which missing typefaces (bold or italic) may be synthesized by the browser
-public func FontSynthesis(_ value: FontSynthesisValue = .none) -> Property {
-    FontSynthesis(value.rawValue)
+extension FontSynthesis {
+
+    /// Controls which missing typefaces (bold or italic) may be synthesized by the browser
+    public init(_ value: FontSynthesisValue = .none) {
+        self.init(value.rawValue)
+    }
 }

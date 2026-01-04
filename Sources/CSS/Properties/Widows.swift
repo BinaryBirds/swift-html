@@ -25,11 +25,29 @@ public enum WidowsValue {
     }
 }
 
-public func Widows(_ value: String) -> Property {
-    Property(name: "widows", value: value)
+public struct Widows: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "widows" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Widows {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the minimum number of lines that must be left at the top of a page when a page break occurs inside an element
-public func Widows(_ value: WidowsValue = .number(2)) -> Property {
-    Widows(value.rawValue)
+extension Widows {
+
+    /// Sets the minimum number of lines that must be left at the top of a page when a page break occurs inside an element
+    public init(_ value: WidowsValue = .number(2)) {
+        self.init(value.rawValue)
+    }
 }

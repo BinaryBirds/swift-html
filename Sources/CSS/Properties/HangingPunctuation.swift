@@ -23,13 +23,29 @@ public enum HangingPunctuationValue: String {
 
 }
 
-public func HangingPunctuation(_ value: String) -> Property {
-    Property(name: "hanging-punctuation", value: value)
+public struct HangingPunctuation: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "hanging-punctuation" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> HangingPunctuation {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether a punctuation character may be placed outside the line box
-public func HangingPunctuation(_ value: HangingPunctuationValue = .none)
-    -> Property
-{
-    HangingPunctuation(value.rawValue)
+extension HangingPunctuation {
+
+    /// Specifies whether a punctuation character may be placed outside the line box
+    public init(_ value: HangingPunctuationValue = .none) {
+        self.init(value.rawValue)
+    }
 }

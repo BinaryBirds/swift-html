@@ -157,11 +157,29 @@ public enum TransformValue {
     }
 }
 
-public func Transform(_ value: String) -> Property {
-    Property(name: "transform", value: value)
+public struct Transform: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transform" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Transform {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Applies a 2D or 3D transformation to an element
-public func Transform(_ value: TransformValue) -> Property {
-    Transform(value.rawValue)
+extension Transform {
+
+    /// Applies a 2D or 3D transformation to an element
+    public init(_ value: TransformValue) {
+        self.init(value.rawValue)
+    }
 }

@@ -16,11 +16,29 @@ public enum FontVariantValue: String {
     case inherit
 }
 
-public func FontVariant(_ value: String) -> Property {
-    Property(name: "font-variant", value: value)
+public struct FontVariant: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariant {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not a text should be displayed in a small-caps font
-public func FontVariant(_ value: FontVariantValue = .normal) -> Property {
-    FontVariant(value.rawValue)
+extension FontVariant {
+
+    /// Specifies whether or not a text should be displayed in a small-caps font
+    public init(_ value: FontVariantValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

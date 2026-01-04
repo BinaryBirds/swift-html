@@ -54,11 +54,29 @@ public enum DisplayValue: String {
     case inherit
 }
 
-public func Display(_ value: String) -> Property {
-    Property(name: "display", value: value)
+public struct Display: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "display" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Display {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how a certain HTML element should be displayed
-public func Display(_ value: DisplayValue = .initial) -> Property {
-    Display(value.rawValue)
+extension Display {
+
+    /// Specifies how a certain HTML element should be displayed
+    public init(_ value: DisplayValue = .initial) {
+        self.init(value.rawValue)
+    }
 }

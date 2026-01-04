@@ -5,11 +5,29 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func BorderBottom(_ value: String) -> Property {
-    Property(name: "border-bottom", value: value)
+public struct BorderBottom: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-bottom" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderBottom {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for border-bottom-width, border-bottom-style and border-bottom-color
-public func BorderBottom(_ value: BorderLineValue) -> Property {
-    BorderBottom(value.rawValue)
+extension BorderBottom {
+
+    /// A shorthand property for border-bottom-width, border-bottom-style and border-bottom-color
+    public init(_ value: BorderLineValue) {
+        self.init(value.rawValue)
+    }
 }

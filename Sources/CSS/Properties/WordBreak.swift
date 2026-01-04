@@ -20,11 +20,29 @@ public enum WordBreakValue: String {
     case inherit
 }
 
-public func WordBreak(_ value: String) -> Property {
-    Property(name: "word-break", value: value)
+public struct WordBreak: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "word-break" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> WordBreak {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how words should break when reaching the end of a line
-public func WordBreak(_ value: WordBreakValue = .normal) -> Property {
-    WordBreak(value.rawValue)
+extension WordBreak {
+
+    /// Specifies how words should break when reaching the end of a line
+    public init(_ value: WordBreakValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

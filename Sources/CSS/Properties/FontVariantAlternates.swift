@@ -49,13 +49,29 @@ public enum FontVariantAlternatesValue {
     }
 }
 
-public func FontVariantAlternates(_ value: String) -> Property {
-    Property(name: "font-variant-alternates", value: value)
+public struct FontVariantAlternates: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant-alternates" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariantAlternates {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values
-public func FontVariantAlternates(_ value: FontVariantAlternatesValue = .normal)
-    -> Property
-{
-    FontVariantAlternates(value.rawValue)
+extension FontVariantAlternates {
+
+    /// Controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values
+    public init(_ value: FontVariantAlternatesValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

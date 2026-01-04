@@ -20,11 +20,29 @@ public enum TextJustifyValue: String {
     case inherit
 }
 
-public func TextJustify(_ value: String) -> Property {
-    Property(name: "text-justify", value: value)
+public struct TextJustify: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-justify" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextJustify {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the justification method used when text-align is "justify"
-public func TextJustify(_ value: TextJustifyValue = .auto) -> Property {
-    TextJustify(value.rawValue)
+extension TextJustify {
+
+    /// Specifies the justification method used when text-align is "justify"
+    public init(_ value: TextJustifyValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

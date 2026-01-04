@@ -34,11 +34,29 @@ public enum GridTemplateValue {
     }
 }
 
-public func GridTemplate(_ value: String) -> Property {
-    Property(name: "grid-template", value: value)
+public struct GridTemplate: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-template" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridTemplate {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
-public func GridTemplate(_ value: GridTemplateValue = .none) -> Property {
-    GridTemplate(value.rawValue)
+extension GridTemplate {
+
+    /// A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
+    public init(_ value: GridTemplateValue = .none) {
+        self.init(value.rawValue)
+    }
 }

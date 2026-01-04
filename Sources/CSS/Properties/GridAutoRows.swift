@@ -30,6 +30,25 @@ public enum GridAutoRowsValue {
 }
 
 /// Specifies a default row size
-public func GridAutoRows(_ value: String) -> Property {
-    Property(name: "grid-auto-rows", value: value)
+
+public struct GridAutoRows: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-auto-rows" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridAutoRows {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
+}
+
+extension GridAutoRows {
 }

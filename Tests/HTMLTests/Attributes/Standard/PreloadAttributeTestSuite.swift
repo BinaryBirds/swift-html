@@ -11,7 +11,7 @@ struct PreloadAttributeTestSuite {
         let cases: [(PreloadAttributeValue, String)] = [
             (.auto, "auto"),
             (.metadata, "metadata"),
-            (.none, "none")
+            (.none, "none"),
         ]
 
         for (value, raw) in cases {

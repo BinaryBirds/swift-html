@@ -16,13 +16,29 @@ public enum AnimationPlayStateValue: String {
     case inherit
 }
 
-public func AnimationPlayState(_ value: String) -> Property {
-    Property(name: "animation-play-state", value: value)
+public struct AnimationPlayState: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-play-state" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationPlayState {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether the animation is running or paused
-public func AnimationPlayState(_ value: AnimationPlayStateValue = .running)
-    -> Property
-{
-    AnimationPlayState(value.rawValue)
+extension AnimationPlayState {
+
+    /// Specifies whether the animation is running or paused
+    public init(_ value: AnimationPlayStateValue = .running) {
+        self.init(value.rawValue)
+    }
 }

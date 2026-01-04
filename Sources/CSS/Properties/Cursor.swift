@@ -87,11 +87,29 @@ public enum CursorValue: String {
     case inherit
 }
 
-public func Cursor(_ value: String) -> Property {
-    Property(name: "cursor", value: value)
+public struct Cursor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "cursor" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Cursor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the mouse cursor to be displayed when pointing over an element
-public func Cursor(_ value: CursorValue = .auto) -> Property {
-    Cursor(value.rawValue)
+extension Cursor {
+
+    /// Specifies the mouse cursor to be displayed when pointing over an element
+    public init(_ value: CursorValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

@@ -20,11 +20,29 @@ public enum OverflowValue: String {
     case inherit
 }
 
-public func Overflow(_ value: String) -> Property {
-    Property(name: "overflow", value: value)
+public struct Overflow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "overflow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Overflow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies what happens if content overflows an element's box
-public func Overflow(_ value: OverflowValue = .visible) -> Property {
-    Overflow(value.rawValue)
+extension Overflow {
+
+    /// Specifies what happens if content overflows an element's box
+    public init(_ value: OverflowValue = .visible) {
+        self.init(value.rawValue)
+    }
 }

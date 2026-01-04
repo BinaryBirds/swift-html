@@ -33,11 +33,29 @@ public enum LineHeightValue {
     }
 }
 
-public func LineHeight(_ value: String) -> Property {
-    Property(name: "line-height", value: value)
+public struct LineHeight: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "line-height" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> LineHeight {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the line height
-public func LineHeight(_ value: LineHeightValue = .normal) -> Property {
-    LineHeight(value.rawValue)
+extension LineHeight {
+
+    /// Sets the line height
+    public init(_ value: LineHeightValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

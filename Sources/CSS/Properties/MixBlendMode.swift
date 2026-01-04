@@ -36,11 +36,29 @@ public enum MixBlendModeValue: String {
     case luminosity
 }
 
-public func MixBlendMode(_ value: String) -> Property {
-    Property(name: "mix-blend-mode", value: value)
+public struct MixBlendMode: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "mix-blend-mode" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MixBlendMode {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how an element's content should blend with its direct parent background
-public func MixBlendMode(_ value: MixBlendModeValue = .normal) -> Property {
-    MixBlendMode(value.rawValue)
+extension MixBlendMode {
+
+    /// Specifies how an element's content should blend with its direct parent background
+    public init(_ value: MixBlendModeValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

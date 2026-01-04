@@ -29,55 +29,73 @@ public enum MarginValue {
     }
 }
 
-public func Margin(_ value: String) -> Property {
-    Property(name: "margin", value: value)
+public struct Margin: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "margin" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Margin {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets all the margin properties in one declaration
-public func Margin(_ value: MarginValue = .length(.zero)) -> Property {
-    Margin(value.rawValue)
-}
+extension Margin {
 
-public func Margin(_ value: Unit = .zero) -> Property {
-    Margin(.length(value))
-}
+    /// Sets all the margin properties in one declaration
+    public init(_ value: MarginValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
 
-public func Margin(
-    horizontal: MarginValue = .length(.zero),
-    vertical: MarginValue = .length(.zero)
-) -> Property {
-    Margin(horizontal.rawValue + " " + vertical.rawValue)
-}
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 
-public func Margin(
-    horizontal: Unit = .zero,
-    vertical: Unit = .zero
-) -> Property {
-    Margin(horizontal: .length(horizontal), vertical: .length(vertical))
-}
+    public init(
+        horizontal: MarginValue = .length(.zero),
+        vertical: MarginValue = .length(.zero)
+    ) {
+        self.init(horizontal.rawValue + " " + vertical.rawValue)
+    }
 
-public func Margin(
-    top: MarginValue = .length(.zero),
-    right: MarginValue = .length(.zero),
-    bottom: MarginValue = .length(.zero),
-    left: MarginValue = .length(.zero)
-) -> Property {
-    Margin(
-        top.rawValue + " " + right.rawValue + " " + bottom.rawValue + " "
-            + left.rawValue
-    )
-}
+    public init(
+        horizontal: Unit = .zero,
+        vertical: Unit = .zero
+    ) {
+        self.init(horizontal: .length(horizontal), vertical: .length(vertical))
+    }
 
-public func Margin(
-    top: Unit = .zero,
-    right: Unit = .zero,
-    bottom: Unit = .zero,
-    left: Unit = .zero
-) -> Property {
-    Margin(
-        top: .length(top),
-        right: .length(right),
-        bottom: .length(bottom),
-        left: .length(left)
-    )
+    public init(
+        top: MarginValue = .length(.zero),
+        right: MarginValue = .length(.zero),
+        bottom: MarginValue = .length(.zero),
+        left: MarginValue = .length(.zero)
+    ) {
+        self.init(
+            top.rawValue + " " + right.rawValue + " " + bottom.rawValue + " "
+                + left.rawValue
+        )
+    }
+
+    public init(
+        top: Unit = .zero,
+        right: Unit = .zero,
+        bottom: Unit = .zero,
+        left: Unit = .zero
+    ) {
+        self.init(
+            top: .length(top),
+            right: .length(right),
+            bottom: .length(bottom),
+            left: .length(left)
+        )
+    }
 }

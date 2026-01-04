@@ -26,16 +26,34 @@ public enum FlexShrinkValue {
     }
 }
 
-public func FlexShrink(_ value: String) -> Property {
-    Property(name: "flex-shrink", value: value)
+public struct FlexShrink: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex-shrink" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FlexShrink {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how the item will shrink relative to the rest
-public func FlexShrink(_ value: FlexShrinkValue = .number(1)) -> Property {
-    FlexShrink(value.rawValue)
-}
+extension FlexShrink {
 
-/// Specifies how the item will shrink relative to the rest
-public func FlexShrink(_ value: Int = 1) -> Property {
-    FlexShrink(.number(value))
+    /// Specifies how the item will shrink relative to the rest
+    public init(_ value: FlexShrinkValue = .number(1)) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies how the item will shrink relative to the rest
+    public init(_ value: Int = 1) {
+        self.init(.number(value))
+    }
 }

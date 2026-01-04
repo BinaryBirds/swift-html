@@ -28,16 +28,35 @@ public enum TopValue {
         }
     }
 }
-public func Top(_ value: String) -> Property {
-    Property(name: "top", value: value)
+
+public struct Top: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "top" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Top {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the top position of a positioned element
-public func Top(_ value: TopValue = .auto) -> Property {
-    Top(value.rawValue)
-}
+extension Top {
 
-/// Specifies the top position of a positioned element
-public func Top(_ value: Unit) -> Property {
-    Top(.length(value))
+    /// Specifies the top position of a positioned element
+    public init(_ value: TopValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the top position of a positioned element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

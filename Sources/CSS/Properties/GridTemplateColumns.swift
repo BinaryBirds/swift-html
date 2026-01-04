@@ -41,13 +41,29 @@ public enum GridTemplateColumnsValue {
     }
 }
 
-public func GridTemplateColumns(_ value: String) -> Property {
-    Property(name: "grid-template-columns", value: value)
+public struct GridTemplateColumns: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-template-columns" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridTemplateColumns {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the size of the columns, and how many columns in a grid layout
-public func GridTemplateColumns(_ value: GridTemplateColumnsValue = .none)
-    -> Property
-{
-    GridTemplateColumns(value.rawValue)
+extension GridTemplateColumns {
+
+    /// Specifies the size of the columns, and how many columns in a grid layout
+    public init(_ value: GridTemplateColumnsValue = .none) {
+        self.init(value.rawValue)
+    }
 }

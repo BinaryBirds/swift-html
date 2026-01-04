@@ -25,18 +25,34 @@ public enum OutlineOffsetValue {
     }
 }
 
-public func OutlineOffset(_ value: String) -> Property {
-    Property(name: "outline-offset", value: value)
+public struct OutlineOffset: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "outline-offset" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> OutlineOffset {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Offsets an outline, and draws it beyond the border edge
-public func OutlineOffset(_ value: OutlineOffsetValue = .length(.zero))
-    -> Property
-{
-    OutlineOffset(value.rawValue)
-}
+extension OutlineOffset {
 
-/// Offsets an outline, and draws it beyond the border edge
-public func OutlineOffset(_ value: Unit = .zero) -> Property {
-    OutlineOffset(.length(value))
+    /// Offsets an outline, and draws it beyond the border edge
+    public init(_ value: OutlineOffsetValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    /// Offsets an outline, and draws it beyond the border edge
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

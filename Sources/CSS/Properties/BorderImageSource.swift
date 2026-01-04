@@ -29,11 +29,29 @@ public enum BorderImageSourceValue {
     }
 }
 
-public func BorderImageSource(_ value: String) -> Property {
-    Property(name: "border-image-source", value: value)
+public struct BorderImageSource: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-image-source" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderImageSource {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the path to the image to be used as a border
-public func BorderImageSource(_ value: BorderImageSourceValue) -> Property {
-    BorderImageSource(value.rawValue)
+extension BorderImageSource {
+
+    /// Specifies the path to the image to be used as a border
+    public init(_ value: BorderImageSourceValue) {
+        self.init(value.rawValue)
+    }
 }

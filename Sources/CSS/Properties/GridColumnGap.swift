@@ -17,16 +17,34 @@ public enum GridColumnGapValue {
     }
 }
 
-public func GridColumnGap(_ value: String) -> Property {
-    Property(name: "grid-column-gap", value: value)
+public struct GridColumnGap: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-column-gap" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridColumnGap {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the size of the gap between columns
-public func GridColumnGap(_ value: GridColumnGapValue) -> Property {
-    GridColumnGap(value.rawValue)
-}
+extension GridColumnGap {
 
-/// Specifies the size of the gap between columns
-public func GridColumnGap(_ value: Unit) -> Property {
-    GridColumnGap(.length(value))
+    /// Specifies the size of the gap between columns
+    public init(_ value: GridColumnGapValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the size of the gap between columns
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

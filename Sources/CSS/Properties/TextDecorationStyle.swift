@@ -22,13 +22,29 @@ public enum TextDecorationStyleValue: String {
     case inherit
 }
 
-public func TextDecorationStyle(_ value: String) -> Property {
-    Property(name: "text-decoration-style", value: value)
+public struct TextDecorationStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-decoration-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextDecorationStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the style of the line in a text decoration
-public func TextDecorationStyle(_ value: TextDecorationStyleValue = .solid)
-    -> Property
-{
-    TextDecorationStyle(value.rawValue)
+extension TextDecorationStyle {
+
+    /// Specifies the style of the line in a text decoration
+    public init(_ value: TextDecorationStyleValue = .solid) {
+        self.init(value.rawValue)
+    }
 }

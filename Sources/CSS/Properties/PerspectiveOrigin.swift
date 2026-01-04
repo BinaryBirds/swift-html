@@ -45,13 +45,31 @@ public enum PerspectiveOriginValue {
     }
 }
 
-public func PerspectiveOrigin(_ value: String) -> Property {
-    Property(name: "perspective-origin", value: value)
+public struct PerspectiveOrigin: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "perspective-origin" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> PerspectiveOrigin {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines at which position the user is looking at the 3D-positioned element
-public func PerspectiveOrigin(
-    _ value: PerspectiveOriginValue = .axis(.percent(50), .percent(50))
-) -> Property {
-    PerspectiveOrigin(value.rawValue)
+extension PerspectiveOrigin {
+
+    /// Defines at which position the user is looking at the 3D-positioned element
+    public init(
+        _ value: PerspectiveOriginValue = .axis(.percent(50), .percent(50))
+    ) {
+        self.init(value.rawValue)
+    }
 }

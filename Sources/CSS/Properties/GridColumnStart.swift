@@ -25,11 +25,29 @@ public enum GridColumnStartValue {
     }
 }
 
-public func GridColumnStart(_ value: String) -> Property {
-    Property(name: "grid-column-start", value: value)
+public struct GridColumnStart: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-column-start" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridColumnStart {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies where to start the grid item
-public func GridColumnStart(_ value: GridColumnStartValue = .auto) -> Property {
-    GridColumnStart(value.rawValue)
+extension GridColumnStart {
+
+    /// Specifies where to start the grid item
+    public init(_ value: GridColumnStartValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

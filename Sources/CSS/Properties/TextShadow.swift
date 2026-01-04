@@ -33,11 +33,29 @@ public enum TextShadowValue {
     }
 }
 
-public func TextShadow(_ value: String) -> Property {
-    Property(name: "text-shadow", value: value)
+public struct TextShadow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-shadow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextShadow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Adds shadow to text
-public func TextShadow(_ value: TextShadowValue) -> Property {
-    TextShadow(value.rawValue)
+extension TextShadow {
+
+    /// Adds shadow to text
+    public init(_ value: TextShadowValue) {
+        self.init(value.rawValue)
+    }
 }

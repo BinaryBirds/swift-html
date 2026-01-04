@@ -29,13 +29,31 @@ public enum ObjectPositionValue {
     }
 }
 
-public func ObjectPosition(_ value: String) -> Property {
-    Property(name: "object-position", value: value)
+public struct ObjectPosition: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "object-position" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ObjectPosition {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the alignment of the replaced element inside its box
-public func ObjectPosition(
-    _ value: ObjectPositionValue = .position(.percent(50), .percent(50))
-) -> Property {
-    ObjectPosition(value.rawValue)
+extension ObjectPosition {
+
+    /// Specifies the alignment of the replaced element inside its box
+    public init(
+        _ value: ObjectPositionValue = .position(.percent(50), .percent(50))
+    ) {
+        self.init(value.rawValue)
+    }
 }

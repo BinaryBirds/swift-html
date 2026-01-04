@@ -29,11 +29,29 @@ public enum ColumnWidthValue {
     }
 }
 
-public func ColumnWidth(_ value: String) -> Property {
-    Property(name: "column-width", value: value)
+public struct ColumnWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the column width
-public func ColumnWidth(_ value: ColumnWidthValue = .auto) -> Property {
-    ColumnWidth(value.rawValue)
+extension ColumnWidth {
+
+    /// Specifies the column width
+    public init(_ value: ColumnWidthValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

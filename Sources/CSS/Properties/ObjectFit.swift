@@ -22,11 +22,29 @@ public enum ObjectFitValue: String {
     case inherit
 }
 
-public func ObjectFit(_ value: String) -> Property {
-    Property(name: "object-fit", value: value)
+public struct ObjectFit: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "object-fit" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ObjectFit {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how the contents of a replaced element should be fitted to the box established by its used height and width
-public func ObjectFit(_ value: ObjectFitValue = .fill) -> Property {
-    ObjectFit(value.rawValue)
+extension ObjectFit {
+
+    /// Specifies how the contents of a replaced element should be fitted to the box established by its used height and width
+    public init(_ value: ObjectFitValue = .fill) {
+        self.init(value.rawValue)
+    }
 }

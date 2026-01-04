@@ -5,16 +5,34 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func PaddingLeft(_ value: String) -> Property {
-    Property(name: "padding-left", value: value)
+public struct PaddingLeft: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "padding-left" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> PaddingLeft {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the left padding of an element
-public func PaddingLeft(_ value: PaddingValue = .length(.zero)) -> Property {
-    PaddingLeft(value.rawValue)
-}
+extension PaddingLeft {
 
-/// Sets the left padding of an element
-public func PaddingLeft(_ value: Unit = .zero) -> Property {
-    PaddingLeft(.length(value))
+    /// Sets the left padding of an element
+    public init(_ value: PaddingValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the left padding of an element
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

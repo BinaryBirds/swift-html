@@ -34,11 +34,29 @@ public enum ColumnCountValue: ExpressibleByIntegerLiteral {
     }
 }
 
-public func ColumnCount(_ value: String) -> Property {
-    Property(name: "column-count", value: value)
+public struct ColumnCount: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-count" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnCount {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the number of columns an element should be divided into
-public func ColumnCount(_ value: ColumnCountValue = .auto) -> Property {
-    ColumnCount(value.rawValue)
+extension ColumnCount {
+
+    /// Specifies the number of columns an element should be divided into
+    public init(_ value: ColumnCountValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

@@ -16,11 +16,29 @@ public enum ScrollBehaviorValue: String {
     case inherit
 }
 
-public func ScrollBehavior(_ value: String) -> Property {
-    Property(name: "scroll-behavior", value: value)
+public struct ScrollBehavior: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "scroll-behavior" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ScrollBehavior {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether to smoothly animate the scroll position in a scrollable box, instead of a straight jump
-public func ScrollBehavior(_ value: ScrollBehaviorValue = .auto) -> Property {
-    ScrollBehavior(value.rawValue)
+extension ScrollBehavior {
+
+    /// Specifies whether to smoothly animate the scroll position in a scrollable box, instead of a straight jump
+    public init(_ value: ScrollBehaviorValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

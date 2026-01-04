@@ -25,16 +25,34 @@ public enum MinHeightValue {
     }
 }
 
-public func MinHeight(_ value: String) -> Property {
-    Property(name: "min-height", value: value)
+public struct MinHeight: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "min-height" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MinHeight {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the minimum height of an element
-public func MinHeight(_ value: MinHeightValue = .length(.zero)) -> Property {
-    MinHeight(value.rawValue)
-}
+extension MinHeight {
 
-/// Sets the minimum height of an element
-public func MinHeight(_ value: Unit) -> Property {
-    MinHeight(.length(value))
+    /// Sets the minimum height of an element
+    public init(_ value: MinHeightValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the minimum height of an element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

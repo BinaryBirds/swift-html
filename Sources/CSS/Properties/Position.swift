@@ -25,11 +25,29 @@ public enum PositionValue: String {
     case inherit
 }
 
-public func Position(_ value: String) -> Property {
-    Property(name: "position", value: value)
+public struct Position: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "position" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Position {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the type of positioning method used for an element (static, relative, absolute or fixed)
-public func Position(_ value: PositionValue = .static) -> Property {
-    Position(value.rawValue)
+extension Position {
+
+    /// Specifies the type of positioning method used for an element (static, relative, absolute or fixed)
+    public init(_ value: PositionValue = .static) {
+        self.init(value.rawValue)
+    }
 }

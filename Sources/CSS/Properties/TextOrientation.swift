@@ -16,10 +16,28 @@ public enum TextOrientationValue: String {
     case unset
 }
 
-public func TextOrientation(_ value: String) -> Property {
-    Property(name: "text-orientation", value: value)
+public struct TextOrientation: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-orientation" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextOrientation {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-public func TextOrientation(_ value: TextOrientationValue) -> Property {
-    TextOrientation(value.rawValue)
+extension TextOrientation {
+
+    public init(_ value: TextOrientationValue) {
+        self.init(value.rawValue)
+    }
 }

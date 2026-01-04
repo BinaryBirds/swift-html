@@ -31,14 +31,32 @@ public enum BorderRadiusValue {
     }
 }
 
-public func BorderRadius(_ value: String) -> Property {
-    Property(name: "border-radius", value: value)
+public struct BorderRadius: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-radius" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderRadius {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the four border-*-radius properties
-public func BorderRadius(_ value: BorderRadiusValue) -> Property {
-    BorderRadius(value.rawValue)
-}
+extension BorderRadius {
 
-// @TODO: better API for all value cases
-// https://www.w3schools.com/cssref/css3_pr_border-radius.asp
+    /// A shorthand property for the four border-*-radius properties
+    public init(_ value: BorderRadiusValue) {
+        self.init(value.rawValue)
+    }
+
+    // @TODO: better API for all value cases
+    // https://www.w3schools.com/cssref/css3_pr_border-radius.asp
+}

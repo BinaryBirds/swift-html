@@ -18,11 +18,29 @@ public enum TextOverflowValue: String {
     case inherit
 }
 
-public func TextOverflow(_ value: String) -> Property {
-    Property(name: "text-overflow", value: value)
+public struct TextOverflow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-overflow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextOverflow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies what should happen when text overflows the containing element
-public func TextOverflow(_ value: TextOverflowValue = .clip) -> Property {
-    TextOverflow(value.rawValue)
+extension TextOverflow {
+
+    /// Specifies what should happen when text overflows the containing element
+    public init(_ value: TextOverflowValue = .clip) {
+        self.init(value.rawValue)
+    }
 }

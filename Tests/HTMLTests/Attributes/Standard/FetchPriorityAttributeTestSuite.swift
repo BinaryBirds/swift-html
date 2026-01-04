@@ -11,7 +11,7 @@ struct FetchPriorityAttributeTestSuite {
         let cases: [(FetchPriorityAttributeValue, String)] = [
             (.high, "high"),
             (.low, "low"),
-            (.auto, "auto")
+            (.auto, "auto"),
         ]
 
         for (value, raw) in cases {

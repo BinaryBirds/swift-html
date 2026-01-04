@@ -20,11 +20,29 @@ public enum TextAlignValue: String {
     case inherit
 }
 
-public func TextAlign(_ value: String) -> Property {
-    Property(name: "text-align", value: value)
+public struct TextAlign: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-align" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextAlign {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the horizontal alignment of text
-public func TextAlign(_ value: TextAlignValue) -> Property {
-    TextAlign(value.rawValue)
+extension TextAlign {
+
+    /// Specifies the horizontal alignment of text
+    public init(_ value: TextAlignValue) {
+        self.init(value.rawValue)
+    }
 }

@@ -21,13 +21,29 @@ public enum GridTemplateAreasValue {
     }
 }
 
-public func GridTemplateAreas(_ value: String) -> Property {
-    Property(name: "grid-template-areas", value: value)
+public struct GridTemplateAreas: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-template-areas" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridTemplateAreas {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how to display columns and rows, using named grid items
-public func GridTemplateAreas(_ value: GridTemplateAreasValue = .none)
-    -> Property
-{
-    GridTemplateAreas(value.rawValue)
+extension GridTemplateAreas {
+
+    /// Specifies how to display columns and rows, using named grid items
+    public init(_ value: GridTemplateAreasValue = .none) {
+        self.init(value.rawValue)
+    }
 }

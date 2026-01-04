@@ -72,7 +72,7 @@ struct AutoCompleteAttributeTestSuite {
             (.pager, "pager"),
             (.shipping, "shipping"),
             (.billing, "billing"),
-            (.webauthn, "webauthn")
+            (.webauthn, "webauthn"),
         ]
 
         for (value, raw) in cases {

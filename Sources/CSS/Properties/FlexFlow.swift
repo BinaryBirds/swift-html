@@ -24,18 +24,34 @@ public enum FlexFlowValue {
     }
 }
 
-public func FlexFlow(_ value: String) -> Property {
-    Property(name: "flex-flow", value: value)
+public struct FlexFlow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex-flow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FlexFlow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the flex-direction and the flex-wrap properties
-public func FlexFlow(_ value: FlexFlowValue) -> Property {
-    FlexFlow(value.rawValue)
-}
+extension FlexFlow {
 
-/// A shorthand property for the flex-direction and the flex-wrap properties
-public func FlexFlow(_ direction: FlexDirectionValue, _ wrap: FlexWrapValue)
-    -> Property
-{
-    FlexFlow(.values(direction, wrap))
+    /// A shorthand property for the flex-direction and the flex-wrap properties
+    public init(_ value: FlexFlowValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for the flex-direction and the flex-wrap properties
+    public init(_ direction: FlexDirectionValue, _ wrap: FlexWrapValue) {
+        self.init(.values(direction, wrap))
+    }
 }

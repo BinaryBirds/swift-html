@@ -16,11 +16,29 @@ public enum BoxSizingValue: String {
     case inherit
 }
 
-public func BoxSizing(_ value: String) -> Property {
-    Property(name: "box-sizing", value: value)
+public struct BoxSizing: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "box-sizing" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BoxSizing {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines how the width and height of an element are calculated: should they include padding and borders, or not
-public func BoxSizing(_ value: BoxSizingValue = .contentBox) -> Property {
-    BoxSizing(value.rawValue)
+extension BoxSizing {
+
+    /// Defines how the width and height of an element are calculated: should they include padding and borders, or not
+    public init(_ value: BoxSizingValue = .contentBox) {
+        self.init(value.rawValue)
+    }
 }

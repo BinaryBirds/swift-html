@@ -48,23 +48,41 @@ public enum GridValue {
     }
 }
 
-public func Grid(_ value: String) -> Property {
-    Property(name: "grid", value: value)
+public struct Grid: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Grid {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
-public func Grid(_ value: GridValue = .none) -> Property {
-    Grid(value.rawValue)
-}
+extension Grid {
 
-/// A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
-public func Grid(
-    _ tplRow: GridTemplateRowsValue,
-    _ tplCol: GridTemplateColumnsValue,
-    _ tplAreas: GridTemplateAreasValue,
-    _ autoRow: GridAutoRowsValue,
-    _ autoCol: GridAutoColumnsValue,
-    _ autoFlow: GridAutoFlowValue
-) -> Property {
-    Grid(.values(tplRow, tplCol, tplAreas, autoRow, autoCol, autoFlow))
+    /// A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
+    public init(_ value: GridValue = .none) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
+    public init(
+        _ tplRow: GridTemplateRowsValue,
+        _ tplCol: GridTemplateColumnsValue,
+        _ tplAreas: GridTemplateAreasValue,
+        _ autoRow: GridAutoRowsValue,
+        _ autoCol: GridAutoColumnsValue,
+        _ autoFlow: GridAutoFlowValue
+    ) {
+        self.init(.values(tplRow, tplCol, tplAreas, autoRow, autoCol, autoFlow))
+    }
 }

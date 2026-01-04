@@ -16,12 +16,29 @@ public enum BorderCollapseValue: String {
     case inherit
 }
 
-public func BorderCollapse(_ value: String) -> Property {
-    Property(name: "border-collapse", value: value)
+public struct BorderCollapse: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-collapse" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderCollapse {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets whether table borders should collapse into a single border or be separated
-public func BorderCollapse(_ value: BorderCollapseValue = .separate) -> Property
-{
-    BorderCollapse(value.rawValue)
+extension BorderCollapse {
+
+    /// Sets whether table borders should collapse into a single border or be separated
+    public init(_ value: BorderCollapseValue = .separate) {
+        self.init(value.rawValue)
+    }
 }

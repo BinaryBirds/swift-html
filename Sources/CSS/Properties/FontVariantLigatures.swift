@@ -22,13 +22,29 @@ public enum FontVariantLigaturesValue: String {
     case unset
 }
 
-public func FontVariantLigatures(_ value: String) -> Property {
-    Property(name: "font-variant-ligatures", value: value)
+public struct FontVariantLigatures: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant-ligatures" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariantLigatures {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls which ligatures and contextual forms are used in textual content of the elements it applies to
-public func FontVariantLigatures(_ value: FontVariantLigaturesValue = .normal)
-    -> Property
-{
-    FontVariantLigatures(value.rawValue)
+extension FontVariantLigatures {
+
+    /// Controls which ligatures and contextual forms are used in textual content of the elements it applies to
+    public init(_ value: FontVariantLigaturesValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

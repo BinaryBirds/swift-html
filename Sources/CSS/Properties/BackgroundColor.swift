@@ -5,16 +5,34 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func BackgroundColor(_ value: String) -> Property {
-    Property(name: "background-color", value: value)
+public struct BackgroundColor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundColor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the background color of an element
-public func BackgroundColor(_ value: CSSColorValue = .transparent) -> Property {
-    BackgroundColor(value.rawValue)
-}
+extension BackgroundColor {
 
-/// Specifies the background color of an element
-public func BackgroundColor(_ value: CSSColor) -> Property {
-    BackgroundColor(.color(value))
+    /// Specifies the background color of an element
+    public init(_ value: CSSColorValue = .transparent) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the background color of an element
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

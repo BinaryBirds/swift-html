@@ -11,7 +11,7 @@ struct PopoverTargetActionAttributeTestSuite {
         let cases: [(PopoverTargetActionAttributeValue, String)] = [
             (.toggle, "toggle"),
             (.show, "show"),
-            (.hide, "hide")
+            (.hide, "hide"),
         ]
 
         for (value, raw) in cases {

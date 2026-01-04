@@ -39,11 +39,29 @@ public enum TransformOriginValue {
     }
 }
 
-public func TransformOrigin(_ value: String) -> Property {
-    Property(name: "transform-origin", value: value)
+public struct TransformOrigin: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transform-origin" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TransformOrigin {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Allows you to change the position on transformed elements
-public func TransformOrigin(_ value: TransformOriginValue) -> Property {
-    TransformOrigin(value.rawValue)
+extension TransformOrigin {
+
+    /// Allows you to change the position on transformed elements
+    public init(_ value: TransformOriginValue) {
+        self.init(value.rawValue)
+    }
 }

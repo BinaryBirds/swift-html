@@ -29,11 +29,29 @@ public enum ListStyleImageValue {
     }
 }
 
-public func ListStyleImage(_ value: String) -> Property {
-    Property(name: "list-style-image", value: value)
+public struct ListStyleImage: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "list-style-image" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ListStyleImage {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies an image as the list-item marker
-public func ListStyleImage(_ value: ListStyleImageValue) -> Property {
-    ListStyleImage(value.rawValue)
+extension ListStyleImage {
+
+    /// Specifies an image as the list-item marker
+    public init(_ value: ListStyleImageValue) {
+        self.init(value.rawValue)
+    }
 }

@@ -22,11 +22,29 @@ public enum BackgroundSizeValue: String {
     case inherit
 }
 
-public func BackgroundSize(_ value: String) -> Property {
-    Property(name: "background-size", value: value)
+public struct BackgroundSize: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-size" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundSize {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the size of the background images
-public func BackgroundSize(_ value: BackgroundSizeValue = .auto) -> Property {
-    BackgroundSize(value.rawValue)
+extension BackgroundSize {
+
+    /// Specifies the size of the background images
+    public init(_ value: BackgroundSizeValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

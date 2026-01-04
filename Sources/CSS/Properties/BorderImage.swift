@@ -39,22 +39,40 @@ public enum BorderImageValue {
     }
 }
 
-public func BorderImage(_ value: String) -> Property {
-    Property(name: "border-image", value: value)
+public struct BorderImage: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-image" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderImage {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for all the border-image-* properties
-public func BorderImage(_ value: BorderImageValue) -> Property {
-    BorderImage(value.rawValue)
-}
+extension BorderImage {
 
-/// A shorthand property for all the border-image-* properties
-public func BorderImage(
-    _ source: BorderImageSourceValue,
-    slice: BorderImageSliceValue? = nil,
-    width: BorderImageWidthValue? = nil,
-    outset: BorderImageOutsetValue? = nil,
-    `repeat`: BorderImageRepeatValue? = nil
-) -> Property {
-    BorderImage(.values(source, slice, width, outset, `repeat`))
+    /// A shorthand property for all the border-image-* properties
+    public init(_ value: BorderImageValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for all the border-image-* properties
+    public init(
+        _ source: BorderImageSourceValue,
+        slice: BorderImageSliceValue? = nil,
+        width: BorderImageWidthValue? = nil,
+        outset: BorderImageOutsetValue? = nil,
+        `repeat`: BorderImageRepeatValue? = nil
+    ) {
+        self.init(.values(source, slice, width, outset, `repeat`))
+    }
 }

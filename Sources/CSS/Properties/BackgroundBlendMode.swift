@@ -28,13 +28,29 @@ public enum BackgroundBlendModeValue: String {
     case luminosity
 }
 
-public func BackgroundBlendMode(_ value: String) -> Property {
-    Property(name: "background-blend-mode", value: value)
+public struct BackgroundBlendMode: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-blend-mode" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundBlendMode {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the blending mode of each background layer (color/image)
-public func BackgroundBlendMode(_ value: BackgroundBlendModeValue = .normal)
-    -> Property
-{
-    BackgroundBlendMode(value.rawValue)
+extension BackgroundBlendMode {
+
+    /// Specifies the blending mode of each background layer (color/image)
+    public init(_ value: BackgroundBlendModeValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

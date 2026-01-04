@@ -30,16 +30,34 @@ public enum ColumnGapValue {
     }
 }
 
-public func ColumnGap(_ value: String) -> Property {
-    Property(name: "column-gap", value: value)
+public struct ColumnGap: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-gap" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnGap {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the gap between the columns
-public func ColumnGap(_ value: ColumnGapValue) -> Property {
-    ColumnGap(value.rawValue)
-}
+extension ColumnGap {
 
-/// Specifies the gap between the columns
-public func ColumnGap(_ value: Unit) -> Property {
-    ColumnGap(.length(value))
+    /// Specifies the gap between the columns
+    public init(_ value: ColumnGapValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the gap between the columns
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

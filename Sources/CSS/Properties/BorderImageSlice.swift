@@ -29,11 +29,29 @@ public enum BorderImageSliceValue {
     }
 }
 
-public func BorderImageSlice(_ value: String) -> Property {
-    Property(name: "border-image-slice", value: value)
+public struct BorderImageSlice: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-image-slice" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderImageSlice {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how to slice the border image
-public func BorderImageSlice(_ value: BorderImageSliceValue) -> Property {
-    BorderImageSlice(value.rawValue)
+extension BorderImageSlice {
+
+    /// Specifies how to slice the border image
+    public init(_ value: BorderImageSliceValue) {
+        self.init(value.rawValue)
+    }
 }

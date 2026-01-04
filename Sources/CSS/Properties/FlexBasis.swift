@@ -29,16 +29,34 @@ public enum FlexBasisValue {
     }
 }
 
-public func FlexBasis(_ value: String) -> Property {
-    Property(name: "flex-basis", value: value)
+public struct FlexBasis: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex-basis" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FlexBasis {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the initial length of a flexible item
-public func FlexBasis(_ value: FlexBasisValue = .auto) -> Property {
-    FlexBasis(value.rawValue)
-}
+extension FlexBasis {
 
-/// Specifies the initial length of a flexible item
-public func FlexBasis(_ value: Unit) -> Property {
-    FlexBasis(.number(value))
+    /// Specifies the initial length of a flexible item
+    public init(_ value: FlexBasisValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the initial length of a flexible item
+    public init(_ value: Unit) {
+        self.init(.number(value))
+    }
 }

@@ -16,11 +16,29 @@ public enum PointerEventsValue: String {
     case inherit
 }
 
-public func PointerEvents(_ value: String) -> Property {
-    Property(name: "pointer-events", value: value)
+public struct PointerEvents: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "pointer-events" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> PointerEvents {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines whether or not an element reacts to pointer events
-public func PointerEvents(_ value: PointerEventsValue = .auto) -> Property {
-    PointerEvents(value.rawValue)
+extension PointerEvents {
+
+    /// Defines whether or not an element reacts to pointer events
+    public init(_ value: PointerEventsValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

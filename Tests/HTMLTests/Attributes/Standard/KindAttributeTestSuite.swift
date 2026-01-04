@@ -13,7 +13,7 @@ struct KindAttributeTestSuite {
             (.captions, "captions"),
             (.descriptions, "descriptions"),
             (.chapters, "chapters"),
-            (.metadata, "metadata")
+            (.metadata, "metadata"),
         ]
 
         for (value, raw) in cases {

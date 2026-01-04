@@ -27,7 +27,8 @@ struct ShapeAttributeTestSuite {
                 expectation = #"""
                     <area shape>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <area shape="\#(raw)">
                     """#

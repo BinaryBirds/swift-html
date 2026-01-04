@@ -24,11 +24,29 @@ public enum AlignSelfValue: String {
     case inherit
 }
 
-public func AlignSelf(_ value: String) -> Property {
-    Property(name: "align-self", value: value)
+public struct AlignSelf: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "align-self" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AlignSelf {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the alignment for selected items inside a flexible container
-public func AlignSelf(_ value: AlignSelfValue = .auto) -> Property {
-    AlignSelf(value.rawValue)
+extension AlignSelf {
+
+    /// Specifies the alignment for selected items inside a flexible container
+    public init(_ value: AlignSelfValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

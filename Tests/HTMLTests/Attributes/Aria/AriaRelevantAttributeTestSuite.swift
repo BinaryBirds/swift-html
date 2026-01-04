@@ -12,7 +12,7 @@ struct AriaRelevantAttributeTestSuite {
             (.additions, "additions"),
             (.all, "all"),
             (.removals, "removals"),
-            (.text, "text")
+            (.text, "text"),
         ]
 
         for (value, raw) in cases {

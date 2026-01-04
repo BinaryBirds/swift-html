@@ -20,7 +20,10 @@ struct NameAttributeTestSuite {
             (.themeColor, "theme-color"),
             (.appleMobileWebAppTitle, "apple-mobile-web-app-title"),
             (.appleMobileWebAppCapable, "apple-mobile-web-app-capable"),
-            (.appleMobileWebAppStatusBarStyle, "apple-mobile-web-app-status-bar-style"),
+            (
+                .appleMobileWebAppStatusBarStyle,
+                "apple-mobile-web-app-status-bar-style"
+            ),
         ]
 
         for (value, raw) in cases {
@@ -35,7 +38,8 @@ struct NameAttributeTestSuite {
                 expectation = #"""
                     <button name></button>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <button name="\#(raw)"></button>
                     """#

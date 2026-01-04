@@ -59,11 +59,29 @@ public enum ContentValue {
     }
 }
 
-public func Content(_ value: String) -> Property {
-    Property(name: "content", value: value)
+public struct Content: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "content" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Content {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Used with the :before and :after pseudo-elements, to insert generated content
-public func Content(_ value: ContentValue = .normal) -> Property {
-    Content(value.rawValue)
+extension Content {
+
+    /// Used with the :before and :after pseudo-elements, to insert generated content
+    public init(_ value: ContentValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

@@ -16,11 +16,29 @@ public enum UserSelectValue: String {
     case all
 }
 
-public func UserSelect(_ value: String) -> Property {
-    Property(name: "user-select", value: value)
+public struct UserSelect: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "user-select" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> UserSelect {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether the text of an element can be selected
-public func UserSelect(_ value: UserSelectValue = .auto) -> Property {
-    UserSelect(value.rawValue)
+extension UserSelect {
+
+    /// Specifies whether the text of an element can be selected
+    public init(_ value: UserSelectValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

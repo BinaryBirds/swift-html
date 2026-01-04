@@ -28,18 +28,34 @@ public enum ColumnsValue {
     }
 }
 
-public func Columns(_ value: String) -> Property {
-    Property(name: "columns", value: value)
+public struct Columns: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "columns" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Columns {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for column-width and column-count
-public func Columns(_ value: ColumnsValue = .auto) -> Property {
-    Columns(value.rawValue)
-}
+extension Columns {
 
-/// A shorthand property for column-width and column-count
-public func Columns(_ width: ColumnWidthValue, _ count: ColumnCountValue)
-    -> Property
-{
-    Columns(.values(width, count))
+    /// A shorthand property for column-width and column-count
+    public init(_ value: ColumnsValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for column-width and column-count
+    public init(_ width: ColumnWidthValue, _ count: ColumnCountValue) {
+        self.init(.values(width, count))
+    }
 }

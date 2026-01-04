@@ -22,13 +22,29 @@ public enum FontVariantNumericValue: String {
     case unset
 }
 
-public func FontVariantNumeric(_ value: String) -> Property {
-    Property(name: "font-variant-numeric", value: value)
+public struct FontVariantNumeric: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant-numeric" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariantNumeric {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers
-public func FontVariantNumeric(_ value: FontVariantNumericValue = .normal)
-    -> Property
-{
-    FontVariantNumeric(value.rawValue)
+extension FontVariantNumeric {
+
+    /// Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers
+    public init(_ value: FontVariantNumericValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

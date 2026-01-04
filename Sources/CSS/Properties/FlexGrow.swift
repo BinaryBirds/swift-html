@@ -26,16 +26,34 @@ public enum FlexGrowValue {
     }
 }
 
-public func FlexGrow(_ value: String) -> Property {
-    Property(name: "flex-grow", value: value)
+public struct FlexGrow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex-grow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FlexGrow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how much the item will grow relative to the rest
-public func FlexGrow(_ value: FlexGrowValue = .number(0)) -> Property {
-    FlexGrow(value.rawValue)
-}
+extension FlexGrow {
 
-/// Specifies how much the item will grow relative to the rest
-public func FlexGrow(_ value: Int = 0) -> Property {
-    FlexGrow(.number(value))
+    /// Specifies how much the item will grow relative to the rest
+    public init(_ value: FlexGrowValue = .number(0)) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies how much the item will grow relative to the rest
+    public init(_ value: Int = 0) {
+        self.init(.number(value))
+    }
 }

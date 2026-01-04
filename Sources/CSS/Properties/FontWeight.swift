@@ -31,11 +31,29 @@ public enum FontWeightValue: String {
     case inherit
 }
 
-public func FontWeight(_ value: String) -> Property {
-    Property(name: "font-weight", value: value)
+public struct FontWeight: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-weight" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontWeight {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the weight of a font
-public func FontWeight(_ value: FontWeightValue) -> Property {
-    FontWeight(value.rawValue)
+extension FontWeight {
+
+    /// Specifies the weight of a font
+    public init(_ value: FontWeightValue) {
+        self.init(value.rawValue)
+    }
 }

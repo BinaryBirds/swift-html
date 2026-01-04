@@ -29,16 +29,34 @@ public enum MaxWidthValue {
     }
 }
 
-public func MaxWidth(_ value: String) -> Property {
-    Property(name: "max-width", value: value)
+public struct MaxWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "max-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MaxWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the maximum width of an element
-public func MaxWidth(_ value: MaxWidthValue = .none) -> Property {
-    MaxWidth(value.rawValue)
-}
+extension MaxWidth {
 
-/// Sets the maximum width of an element
-public func MaxWidth(_ value: Unit) -> Property {
-    MaxWidth(.length(value))
+    /// Sets the maximum width of an element
+    public init(_ value: MaxWidthValue = .none) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the maximum width of an element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

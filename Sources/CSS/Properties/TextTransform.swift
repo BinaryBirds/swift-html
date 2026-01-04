@@ -20,11 +20,29 @@ public enum TextTransformValue: String {
     case inherit
 }
 
-public func TextTransform(_ value: String) -> Property {
-    Property(name: "text-transform", value: value)
+public struct TextTransform: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-transform" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextTransform {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the capitalization of text
-public func TextTransform(_ value: TextTransformValue) -> Property {
-    TextTransform(value.rawValue)
+extension TextTransform {
+
+    /// Controls the capitalization of text
+    public init(_ value: TextTransformValue) {
+        self.init(value.rawValue)
+    }
 }

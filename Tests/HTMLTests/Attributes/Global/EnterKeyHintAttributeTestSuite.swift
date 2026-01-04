@@ -15,7 +15,7 @@ struct EnterKeyHintAttributeTestSuite {
             (.next, "next"),
             (.previous, "previous"),
             (.search, "search"),
-            (.send, "send")
+            (.send, "send"),
         ]
 
         for (value, raw) in cases {

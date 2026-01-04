@@ -18,13 +18,29 @@ public enum BackgroundOriginValue: String {
     case inherit
 }
 
-public func BackgroundOrigin(_ value: String) -> Property {
-    Property(name: "background-origin", value: value)
+public struct BackgroundOrigin: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-origin" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundOrigin {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the origin position of a background image
-public func BackgroundOrigin(_ value: BackgroundOriginValue = .paddingBox)
-    -> Property
-{
-    BackgroundOrigin(value.rawValue)
+extension BackgroundOrigin {
+
+    /// Specifies the origin position of a background image
+    public init(_ value: BackgroundOriginValue = .paddingBox) {
+        self.init(value.rawValue)
+    }
 }

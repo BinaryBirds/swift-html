@@ -25,16 +25,34 @@ public enum ColumnRuleColorValue {
     }
 }
 
-public func ColumnRuleColor(_ value: String) -> Property {
-    Property(name: "column-rule-color", value: value)
+public struct ColumnRuleColor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-rule-color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnRuleColor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the color of the rule between columns
-public func ColumnRuleColor(_ value: ColumnRuleColorValue) -> Property {
-    ColumnRuleColor(value.rawValue)
-}
+extension ColumnRuleColor {
 
-/// Specifies the color of the rule between columns
-public func ColumnRuleColor(_ value: CSSColor) -> Property {
-    ColumnRuleColor(.color(value))
+    /// Specifies the color of the rule between columns
+    public init(_ value: ColumnRuleColorValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the color of the rule between columns
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

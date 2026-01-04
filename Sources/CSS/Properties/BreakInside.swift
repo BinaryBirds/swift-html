@@ -22,11 +22,29 @@ public enum BreakInsideValue: String {
     case inherit
 }
 
-public func BreakInside(_ value: String) -> Property {
-    Property(name: "break-inside", value: value)
+public struct BreakInside: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "break-inside" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BreakInside {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not a page-, column-, or region-break should occur inside the specified element
-public func BreakInside(_ value: BreakInsideValue = .auto) -> Property {
-    BreakInside(value.rawValue)
+extension BreakInside {
+
+    /// Specifies whether or not a page-, column-, or region-break should occur inside the specified element
+    public init(_ value: BreakInsideValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

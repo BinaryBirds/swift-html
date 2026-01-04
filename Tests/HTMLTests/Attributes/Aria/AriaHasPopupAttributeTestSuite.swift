@@ -15,7 +15,7 @@ struct AriaHasPopupAttributeTestSuite {
             (.listbox, "listbox"),
             (.tree, "tree"),
             (.grid, "grid"),
-            (.dialog, "dialog")
+            (.dialog, "dialog"),
         ]
 
         for (value, raw) in cases {

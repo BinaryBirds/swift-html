@@ -33,11 +33,29 @@ public enum TextDecorationValue {
 
 }
 
-public func TextDecoration(_ value: String) -> Property {
-    Property(name: "text-decoration", value: value)
+public struct TextDecoration: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-decoration" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextDecoration {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the decoration added to text
-public func TextDecoration(_ value: TextDecorationValue) -> Property {
-    TextDecoration(value.rawValue)
+extension TextDecoration {
+
+    /// Specifies the decoration added to text
+    public init(_ value: TextDecorationValue) {
+        self.init(value.rawValue)
+    }
 }

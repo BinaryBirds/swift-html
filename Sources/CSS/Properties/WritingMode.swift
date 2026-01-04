@@ -14,11 +14,29 @@ public enum WritingModeValue: String {
     case verticalLr = "vertical-lr"
 }
 
-public func WritingMode(_ value: String) -> Property {
-    Property(name: "writing-mode", value: value)
+public struct WritingMode: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "writing-mode" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> WritingMode {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether lines of text are laid out horizontally or vertically
-public func WritingMode(_ value: WritingModeValue = .horizontalTb) -> Property {
-    WritingMode(value.rawValue)
+extension WritingMode {
+
+    /// Specifies whether lines of text are laid out horizontally or vertically
+    public init(_ value: WritingModeValue = .horizontalTb) {
+        self.init(value.rawValue)
+    }
 }

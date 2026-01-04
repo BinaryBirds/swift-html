@@ -23,13 +23,29 @@ public enum FontVariantEastAsianValue: String {
     case unset
 }
 
-public func FontVariantEastAsian(_ value: String) -> Property {
-    Property(name: "font-variant-east-asian", value: value)
+public struct FontVariantEastAsian: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant-east-asian" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariantEastAsian {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of alternate glyphs for East Asian scripts (e.g Japanese and Chinese)
-public func FontVariantEastAsian(_ value: FontVariantEastAsianValue = .normal)
-    -> Property
-{
-    FontVariantEastAsian(value.rawValue)
+extension FontVariantEastAsian {
+
+    /// Controls the usage of alternate glyphs for East Asian scripts (e.g Japanese and Chinese)
+    public init(_ value: FontVariantEastAsianValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

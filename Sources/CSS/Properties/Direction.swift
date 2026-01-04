@@ -16,11 +16,29 @@ public enum DirectionValue: String {
     case inherit
 }
 
-public func Direction(_ value: String) -> Property {
-    Property(name: "direction", value: value)
+public struct Direction: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "direction" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Direction {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the text direction/writing direction
-public func Direction(_ value: DirectionValue = .ltr) -> Property {
-    Direction(value.rawValue)
+extension Direction {
+
+    /// Specifies the text direction/writing direction
+    public init(_ value: DirectionValue = .ltr) {
+        self.init(value.rawValue)
+    }
 }

@@ -18,13 +18,29 @@ public enum BackgroundAttachmentValue: String {
     case inherit
 }
 
-public func BackgroundAttachment(_ value: String) -> Property {
-    Property(name: "background-attachment", value: value)
+public struct BackgroundAttachment: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-attachment" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundAttachment {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets whether a background image scrolls with the rest of the page, or is fixed
-public func BackgroundAttachment(_ value: BackgroundAttachmentValue = .scroll)
-    -> Property
-{
-    BackgroundAttachment(value.rawValue)
+extension BackgroundAttachment {
+
+    /// Sets whether a background image scrolls with the rest of the page, or is fixed
+    public init(_ value: BackgroundAttachmentValue = .scroll) {
+        self.init(value.rawValue)
+    }
 }

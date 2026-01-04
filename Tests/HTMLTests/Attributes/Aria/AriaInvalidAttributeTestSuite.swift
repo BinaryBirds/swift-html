@@ -12,7 +12,7 @@ struct AriaInvalidAttributeTestSuite {
             (.grammar, "grammar"),
             (.false, "false"),
             (.spelling, "spelling"),
-            (.true, "true")
+            (.true, "true"),
         ]
 
         for (value, raw) in cases {

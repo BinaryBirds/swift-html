@@ -33,20 +33,38 @@ public enum FlexValue {
     }
 }
 
-public func Flex(_ value: String) -> Property {
-    Property(name: "flex", value: value)
+public struct Flex: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Flex {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties
-public func Flex(_ value: FlexValue) -> Property {
-    Flex(value.rawValue)
-}
+extension Flex {
 
-/// A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties
-public func Flex(
-    _ grow: FlexGrowValue,
-    _ shrink: FlexShrinkValue,
-    _ basis: FlexBasisValue
-) -> Property {
-    Flex(.values(grow, shrink, basis))
+    /// A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties
+    public init(_ value: FlexValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties
+    public init(
+        _ grow: FlexGrowValue,
+        _ shrink: FlexShrinkValue,
+        _ basis: FlexBasisValue
+    ) {
+        self.init(.values(grow, shrink, basis))
+    }
 }

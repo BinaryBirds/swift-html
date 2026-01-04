@@ -31,13 +31,15 @@ public enum CounterResetValue {
     }
 }
 
-public func CounterReset(_ value: String) -> Property {
-    Property(name: "counter-reset", value: value)
-}
-
 /// Creates or resets one or more CSS counters
-public func CounterReset(_ name: String, _ value: CounterResetValue = .none)
-    -> Property
-{
-    CounterReset(name + " " + value.rawValue)
+public struct CounterReset: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "counter-reset" }
+
+    public init(_ value: CounterResetValue = .none, isImportant: Bool = false) {
+        self.value = value.rawValue
+        self.isImportant = isImportant
+    }
 }

@@ -10,7 +10,7 @@ struct MethodAttributeTestSuite {
     func rendersMethodValues() async throws {
         let cases: [(MethodAttributeValue, String)] = [
             (.get, "get"),
-            (.post, "post")
+            (.post, "post"),
         ]
 
         for (value, raw) in cases {

@@ -25,16 +25,34 @@ public enum OpacityValue {
     }
 }
 
-public func Opacity(_ value: String) -> Property {
-    Property(name: "opacity", value: value)
+public struct Opacity: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "opacity" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Opacity {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the opacity level for an element
-public func Opacity(_ value: OpacityValue = .number(1)) -> Property {
-    Opacity(value.rawValue)
-}
+extension Opacity {
 
-/// Sets the opacity level for an element
-public func Opacity(_ value: Double = 1) -> Property {
-    Opacity(.number(value))
+    /// Sets the opacity level for an element
+    public init(_ value: OpacityValue = .number(1)) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the opacity level for an element
+    public init(_ value: Double = 1) {
+        self.init(.number(value))
+    }
 }

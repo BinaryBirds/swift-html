@@ -10,7 +10,7 @@ struct TranslateAttributeTestSuite {
     func rendersTranslateValues() async throws {
         let cases: [(TranslateAttributeValue, String)] = [
             (.yes, "yes"),
-            (.no, "no")
+            (.no, "no"),
         ]
 
         for (value, raw) in cases {

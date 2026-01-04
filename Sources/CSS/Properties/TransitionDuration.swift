@@ -38,13 +38,29 @@ public enum TransitionDurationValue {
     }
 }
 
-public func TransitionDuration(_ value: String) -> Property {
-    Property(name: "transition-duration", value: value)
+public struct TransitionDuration: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transition-duration" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TransitionDuration {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how many seconds or milliseconds a transition effect takes to complete
-public func TransitionDuration(_ value: TransitionDurationValue = .zero)
-    -> Property
-{
-    TransitionDuration(value.rawValue)
+extension TransitionDuration {
+
+    /// Specifies how many seconds or milliseconds a transition effect takes to complete
+    public init(_ value: TransitionDurationValue = .zero) {
+        self.init(value.rawValue)
+    }
 }

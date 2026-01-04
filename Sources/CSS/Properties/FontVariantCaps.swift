@@ -28,12 +28,29 @@ public enum FontVariantCapsValue: String {
     case unset
 }
 
-public func FontVariantCaps(_ value: String) -> Property {
-    Property(name: "font-variant-caps", value: value)
+public struct FontVariantCaps: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant-caps" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariantCaps {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of alternate glyphs for capital letters
-public func FontVariantCaps(_ value: FontVariantCapsValue = .normal) -> Property
-{
-    FontVariantCaps(value.rawValue)
+extension FontVariantCaps {
+
+    /// Controls the usage of alternate glyphs for capital letters
+    public init(_ value: FontVariantCapsValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

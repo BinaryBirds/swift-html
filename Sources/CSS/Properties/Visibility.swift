@@ -21,11 +21,29 @@ public enum VisibilityValue: String {
     case inherit
 }
 
-public func Visibility(_ value: String) -> Property {
-    Property(name: "visibility", value: value)
+public struct Visibility: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "visibility" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Visibility {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not an element is visible
-public func Visibility(_ value: VisibilityValue = .visible) -> Property {
-    Visibility(value.rawValue)
+extension Visibility {
+
+    /// Specifies whether or not an element is visible
+    public init(_ value: VisibilityValue = .visible) {
+        self.init(value.rawValue)
+    }
 }

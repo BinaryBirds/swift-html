@@ -29,16 +29,34 @@ public enum MaxHeightValue {
     }
 }
 
-public func MaxHeight(_ value: String) -> Property {
-    Property(name: "max-height", value: value)
+public struct MaxHeight: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "max-height" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MaxHeight {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the maximum height of an element
-public func MaxHeight(_ value: MaxHeightValue = .none) -> Property {
-    MaxHeight(value.rawValue)
-}
+extension MaxHeight {
 
-/// Sets the maximum height of an element
-public func MaxHeight(_ value: Unit) -> Property {
-    MaxHeight(.length(value))
+    /// Sets the maximum height of an element
+    public init(_ value: MaxHeightValue = .none) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the maximum height of an element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

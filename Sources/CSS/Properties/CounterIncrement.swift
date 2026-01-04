@@ -33,14 +33,15 @@ public enum CounterIncrementValue {
     }
 }
 
-public func CounterIncrement(_ value: String) -> Property {
-    Property(name: "counter-increment", value: value)
-}
-
 /// Increases or decreases the value of one or more CSS counters
-public func CounterIncrement(
-    _ name: String,
-    _ value: CounterIncrementValue = .none
-) -> Property {
-    CounterIncrement(name + " " + value.rawValue)
+public struct CounterIncrement: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "counter-increment" }
+
+    public init(_ value: CounterIncrementValue = .none) {
+        self.value = value.rawValue
+        self.isImportant = false
+    }
 }

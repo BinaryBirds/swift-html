@@ -53,36 +53,54 @@ public enum BackgroundValue {
     }
 }
 
-public func Background(_ value: String) -> Property {
-    Property(name: "background", value: value)
+public struct Background: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Background {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for all the background-* properties
-public func Background(_ value: BackgroundValue) -> Property {
-    Background(value.rawValue)
-}
+extension Background {
 
-/// A shorthand property for all the background-* properties
-public func Background(
-    _ color: CSSColorValue? = nil,
-    image: BackgroundImageValue? = nil,
-    position: BackgroundPositionValue? = nil,
-    size: BackgroundSizeValue? = nil,
-    `repeat`: BackgroundRepeatValue? = nil,
-    origin: BackgroundOriginValue? = nil,
-    clip: BackgroundClipValue? = nil,
-    attachment: BackgroundAttachmentValue? = nil
-) -> Property {
-    Background(
-        .values(
-            color,
-            image,
-            position,
-            size,
-            `repeat`,
-            origin,
-            clip,
-            attachment
+    /// A shorthand property for all the background-* properties
+    public init(_ value: BackgroundValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for all the background-* properties
+    public init(
+        _ color: CSSColorValue? = nil,
+        image: BackgroundImageValue? = nil,
+        position: BackgroundPositionValue? = nil,
+        size: BackgroundSizeValue? = nil,
+        `repeat`: BackgroundRepeatValue? = nil,
+        origin: BackgroundOriginValue? = nil,
+        clip: BackgroundClipValue? = nil,
+        attachment: BackgroundAttachmentValue? = nil
+    ) {
+        self.init(
+            .values(
+                color,
+                image,
+                position,
+                size,
+                `repeat`,
+                origin,
+                clip,
+                attachment
+            )
         )
-    )
+    }
 }

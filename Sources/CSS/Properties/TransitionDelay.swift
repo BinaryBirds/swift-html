@@ -38,11 +38,29 @@ public enum TransitionDelayValue {
     }
 }
 
-public func TransitionDelay(_ value: String) -> Property {
-    Property(name: "transition-delay", value: value)
+public struct TransitionDelay: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transition-delay" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TransitionDelay {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies when the transition effect will start
-public func TransitionDelay(_ value: TransitionDelayValue = .zero) -> Property {
-    TransitionDelay(value.rawValue)
+extension TransitionDelay {
+
+    /// Specifies when the transition effect will start
+    public init(_ value: TransitionDelayValue = .zero) {
+        self.init(value.rawValue)
+    }
 }

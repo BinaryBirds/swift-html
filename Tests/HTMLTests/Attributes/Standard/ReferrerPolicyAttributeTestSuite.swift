@@ -30,7 +30,8 @@ struct ReferrerPolicyAttributeTestSuite {
                 expectation = #"""
                     <a referrerpolicy></a>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <a referrerpolicy="\#(raw)"></a>
                     """#

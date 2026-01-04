@@ -24,13 +24,29 @@ public enum JustifyContentValue: String {
     case inherit
 }
 
-public func JustifyContent(_ value: String) -> Property {
-    Property(name: "justify-content", value: value)
+public struct JustifyContent: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "justify-content" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> JustifyContent {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the alignment between the items inside a flexible container when the items do not use all available space
-public func JustifyContent(_ value: JustifyContentValue = .flexStart)
-    -> Property
-{
-    JustifyContent(value.rawValue)
+extension JustifyContent {
+
+    /// Specifies the alignment between the items inside a flexible container when the items do not use all available space
+    public init(_ value: JustifyContentValue = .flexStart) {
+        self.init(value.rawValue)
+    }
 }

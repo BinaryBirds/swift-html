@@ -22,11 +22,29 @@ public enum WhiteSpaceValue: String {
     case inherit
 }
 
-public func WhiteSpace(_ value: String) -> Property {
-    Property(name: "white-space", value: value)
+public struct WhiteSpace: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "white-space" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> WhiteSpace {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how white-space inside an element is handled
-public func WhiteSpace(_ value: WhiteSpaceValue = .normal) -> Property {
-    WhiteSpace(value.rawValue)
+extension WhiteSpace {
+
+    /// Specifies how white-space inside an element is handled
+    public init(_ value: WhiteSpaceValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

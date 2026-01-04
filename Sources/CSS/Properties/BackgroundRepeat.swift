@@ -24,13 +24,29 @@ public enum BackgroundRepeatValue: String {
     case inherit
 }
 
-public func BackgroundRepeat(_ value: String) -> Property {
-    Property(name: "background-repeat", value: value)
+public struct BackgroundRepeat: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-repeat" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundRepeat {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets if/how a background image will be repeated
-public func BackgroundRepeat(_ value: BackgroundRepeatValue = .repeat)
-    -> Property
-{
-    BackgroundRepeat(value.rawValue)
+extension BackgroundRepeat {
+
+    /// Sets if/how a background image will be repeated
+    public init(_ value: BackgroundRepeatValue = .repeat) {
+        self.init(value.rawValue)
+    }
 }

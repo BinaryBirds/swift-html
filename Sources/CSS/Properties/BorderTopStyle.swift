@@ -5,11 +5,29 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func BorderTopStyle(_ value: String) -> Property {
-    Property(name: "border-top-style", value: value)
+public struct BorderTopStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-top-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderTopStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the style of the top border
-public func BorderTopStyle(_ value: BorderStyleValue = .none) -> Property {
-    BorderTopStyle(value.rawValue)
+extension BorderTopStyle {
+
+    /// Sets the style of the top border
+    public init(_ value: BorderStyleValue = .none) {
+        self.init(value.rawValue)
+    }
 }

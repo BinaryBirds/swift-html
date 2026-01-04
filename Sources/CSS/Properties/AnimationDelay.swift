@@ -40,11 +40,29 @@ public enum AnimationDelayValue {
     }
 }
 
-public func AnimationDelay(_ value: String) -> Property {
-    Property(name: "animation-delay", value: value)
+public struct AnimationDelay: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-delay" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationDelay {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies a delay for the start of an animation
-public func AnimationDelay(_ value: AnimationDelayValue = .zero) -> Property {
-    AnimationDelay(value.rawValue)
+extension AnimationDelay {
+
+    /// Specifies a delay for the start of an animation
+    public init(_ value: AnimationDelayValue = .zero) {
+        self.init(value.rawValue)
+    }
 }

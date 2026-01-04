@@ -29,16 +29,34 @@ public enum RightValue {
     }
 }
 
-public func Right(_ value: String) -> Property {
-    Property(name: "right", value: value)
+public struct Right: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "right" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Right {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the right position of a positioned element
-public func Right(_ value: RightValue = .auto) -> Property {
-    Right(value.rawValue)
-}
+extension Right {
 
-/// Specifies the right position of a positioned element
-public func Right(_ value: Unit) -> Property {
-    Right(.length(value))
+    /// Specifies the right position of a positioned element
+    public init(_ value: RightValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the right position of a positioned element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

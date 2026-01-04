@@ -40,11 +40,29 @@ public enum BreakBeforeValue: String {
     case inherit
 }
 
-public func BreakBefore(_ value: String) -> Property {
-    Property(name: "break-before", value: value)
+public struct BreakBefore: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "break-before" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BreakBefore {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not a page-, column-, or region-break should occur before the specified element
-public func BreakBefore(_ value: BreakBeforeValue = .auto) -> Property {
-    BreakBefore(value.rawValue)
+extension BreakBefore {
+
+    /// Specifies whether or not a page-, column-, or region-break should occur before the specified element
+    public init(_ value: BreakBeforeValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

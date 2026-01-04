@@ -57,16 +57,34 @@ public enum VerticalAlignValue {
     }
 }
 
-public func VerticalAlign(_ value: String) -> Property {
-    Property(name: "vertical-align", value: value)
+public struct VerticalAlign: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "vertical-align" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> VerticalAlign {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the vertical alignment of an element.
-public func VerticalAlign(_ value: VerticalAlignValue = .baseline) -> Property {
-    VerticalAlign(value.rawValue)
-}
+extension VerticalAlign {
 
-/// Sets the vertical alignment of an element.
-public func VerticalAlign(_ value: Unit) -> Property {
-    VerticalAlign(.length(value))
+    /// Sets the vertical alignment of an element.
+    public init(_ value: VerticalAlignValue = .baseline) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the vertical alignment of an element.
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

@@ -54,22 +54,40 @@ public enum BoxShadowValue {
     }
 }
 
-public func BoxShadow(_ value: String) -> Property {
-    Property(name: "box-shadow", value: value)
+public struct BoxShadow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "box-shadow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BoxShadow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Attaches one or more shadows to an element
-public func BoxShadow(_ value: BoxShadowValue = .none) -> Property {
-    BoxShadow(value.rawValue)
-}
+extension BoxShadow {
 
-public func BoxShadow(
-    _ hOffset: Unit,
-    _ vOffset: Unit,
-    blur: Unit? = nil,
-    spread: Unit? = nil,
-    color: CSSColor,
-    type: BoxShadowValue.ShadowType = .outset
-) -> Property {
-    BoxShadow(.values(hOffset, vOffset, blur, spread, color, type))
+    /// Attaches one or more shadows to an element
+    public init(_ value: BoxShadowValue = .none) {
+        self.init(value.rawValue)
+    }
+
+    public init(
+        _ hOffset: Unit,
+        _ vOffset: Unit,
+        blur: Unit? = nil,
+        spread: Unit? = nil,
+        color: CSSColor,
+        type: BoxShadowValue.ShadowType = .outset
+    ) {
+        self.init(.values(hOffset, vOffset, blur, spread, color, type))
+    }
 }

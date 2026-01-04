@@ -6,14 +6,33 @@
 //
 
 /// Sets the top margin of an element
-public func MarginTop(_ value: String) -> Property {
-    Property(name: "margin-top", value: value)
+
+public struct MarginTop: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "margin-top" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MarginTop {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-public func MarginTop(_ value: MarginValue = .length(.zero)) -> Property {
-    MarginTop(value.rawValue)
-}
+extension MarginTop {
 
-public func MarginTop(_ value: Unit = .zero) -> Property {
-    MarginTop(.length(value))
+    public init(_ value: MarginValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

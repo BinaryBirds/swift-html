@@ -67,13 +67,31 @@ public enum TransitionTimingFunctionValue {
     }
 }
 
-public func TransitionTimingFunction(_ value: String) -> Property {
-    Property(name: "transition-timing-function", value: value)
+public struct TransitionTimingFunction: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transition-timing-function" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TransitionTimingFunction {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the speed curve of the transition effect
-public func TransitionTimingFunction(
-    _ value: TransitionTimingFunctionValue = .ease
-) -> Property {
-    TransitionTimingFunction(value.rawValue)
+extension TransitionTimingFunction {
+
+    /// Specifies the speed curve of the transition effect
+    public init(
+        _ value: TransitionTimingFunctionValue = .ease
+    ) {
+        self.init(value.rawValue)
+    }
 }

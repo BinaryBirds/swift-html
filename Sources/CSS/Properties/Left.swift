@@ -29,11 +29,29 @@ public enum LeftValue {
     }
 }
 
-public func Left(_ value: String) -> Property {
-    Property(name: "left", value: value)
+public struct Left: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "left" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Left {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the left position of a positioned element
-public func Left(_ value: LeftValue = .auto) -> Property {
-    Left(value.rawValue)
+extension Left {
+
+    /// Specifies the left position of a positioned element
+    public init(_ value: LeftValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

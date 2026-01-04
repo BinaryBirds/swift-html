@@ -57,10 +57,29 @@ public enum ListStyleTypeValue: String {
 }
 
 /// Specifies the type of list-item marker
-public func ListStyleType(_ value: String) -> Property {
-    Property(name: "list-style-type", value: value)
+
+public struct ListStyleType: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "list-style-type" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ListStyleType {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-public func ListStyleType(_ value: ListStyleTypeValue = .disc) -> Property {
-    ListStyleType(value.rawValue)
+extension ListStyleType {
+
+    public init(_ value: ListStyleTypeValue = .disc) {
+        self.init(value.rawValue)
+    }
 }

@@ -15,13 +15,29 @@ public enum FontVariantpositionValue: String {
     case unset
 }
 
-public func FontVariantPosition(_ value: String) -> Property {
-    Property(name: "font-variant-position", value: value)
+public struct FontVariantPosition: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-variant-position" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontVariantPosition {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font
-public func FontVariantPosition(_ value: FontVariantpositionValue = .normal)
-    -> Property
-{
-    FontVariantPosition(value.rawValue)
+extension FontVariantPosition {
+
+    /// Controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font
+    public init(_ value: FontVariantpositionValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

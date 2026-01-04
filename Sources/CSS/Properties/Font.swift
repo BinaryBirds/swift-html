@@ -74,23 +74,41 @@ public enum FontValue {
     }
 }
 
-public func Font(_ value: String) -> Property {
-    Property(name: "font", value: value)
+public struct Font: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Font {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the font-style, font-variant, font-weight, font-size/line-height, and the font-family properties
-public func Font(_ value: FontValue) -> Property {
-    Font(value.rawValue)
-}
+extension Font {
 
-/// A shorthand property for the font-style, font-variant, font-weight, font-size/line-height, and the font-family properties
-public func Font(
-    _ style: FontStyleValue,
-    _ variant: FontVariantValue,
-    _ weight: FontWeightValue,
-    _ size: FontSizeValue,
-    _ lineHeight: LineHeightValue,
-    _ family: FontFamilyValue
-) -> Property {
-    Font(.values(style, variant, weight, size, lineHeight, family))
+    /// A shorthand property for the font-style, font-variant, font-weight, font-size/line-height, and the font-family properties
+    public init(_ value: FontValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for the font-style, font-variant, font-weight, font-size/line-height, and the font-family properties
+    public init(
+        _ style: FontStyleValue,
+        _ variant: FontVariantValue,
+        _ weight: FontWeightValue,
+        _ size: FontSizeValue,
+        _ lineHeight: LineHeightValue,
+        _ family: FontFamilyValue
+    ) {
+        self.init(.values(style, variant, weight, size, lineHeight, family))
+    }
 }

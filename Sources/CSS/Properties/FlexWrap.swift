@@ -18,11 +18,29 @@ public enum FlexWrapValue: String {
     case inherit
 }
 
-public func FlexWrap(_ value: String) -> Property {
-    Property(name: "flex-wrap", value: value)
+public struct FlexWrap: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex-wrap" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FlexWrap {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether the flexible items should wrap or not
-public func FlexWrap(_ value: FlexWrapValue = .nowrap) -> Property {
-    FlexWrap(value.rawValue)
+extension FlexWrap {
+
+    /// Specifies whether the flexible items should wrap or not
+    public init(_ value: FlexWrapValue = .nowrap) {
+        self.init(value.rawValue)
+    }
 }

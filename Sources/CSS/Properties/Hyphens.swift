@@ -18,11 +18,29 @@ public enum HyphensValue: String {
     case inherit
 }
 
-public func Hyphens(_ value: String) -> Property {
-    Property(name: "hyphens", value: value)
+public struct Hyphens: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "hyphens" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Hyphens {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets how to split words to improve the layout of paragraphs
-public func Hyphens(_ value: HyphensValue = .manual) -> Property {
-    Hyphens(value.rawValue)
+extension Hyphens {
+
+    /// Sets how to split words to improve the layout of paragraphs
+    public init(_ value: HyphensValue = .manual) {
+        self.init(value.rawValue)
+    }
 }

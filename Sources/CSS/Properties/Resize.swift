@@ -20,11 +20,29 @@ public enum ResizeValue: String {
     case inherit
 }
 
-public func Resize(_ value: String) -> Property {
-    Property(name: "resize", value: value)
+public struct Resize: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "resize" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Resize {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines if (and how) an element is resizable by the user
-public func Resize(_ value: ResizeValue = .none) -> Property {
-    Resize(value.rawValue)
+extension Resize {
+
+    /// Defines if (and how) an element is resizable by the user
+    public init(_ value: ResizeValue = .none) {
+        self.init(value.rawValue)
+    }
 }

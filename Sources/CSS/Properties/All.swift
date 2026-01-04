@@ -14,11 +14,29 @@ public enum AllValue: String {
     case unset
 }
 
-public func All(_ value: String) -> Property {
-    Property(name: "all", value: value)
+public struct AllProps: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "all" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AllProps {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Resets all properties (except unicode-bidi and direction)
-public func All(_ value: AllValue) -> Property {
-    All(value.rawValue)
+extension AllProps {
+
+    /// Resets all properties (except unicode-bidi and direction)
+    public init(_ value: AllValue) {
+        self.init(value.rawValue)
+    }
 }

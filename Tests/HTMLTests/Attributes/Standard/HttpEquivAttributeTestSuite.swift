@@ -27,7 +27,8 @@ struct HttpEquivAttributeTestSuite {
                 expectation = #"""
                     <meta http-equiv>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <meta http-equiv="\#(raw)">
                     """#

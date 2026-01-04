@@ -19,15 +19,36 @@ public enum AlignContentValue: String {
     case inherit
 }
 
-public func AlignContent(
-    _ value: String
-) -> Property {
-    Property(name: "align-content", value: value)
+public struct AlignContent: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "align-content" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AlignContent {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the alignment between the lines inside a flexible container when the items do not use all available space
-public func AlignContent(
-    _ value: AlignContentValue = .stretch
-) -> Property {
-    AlignContent(value.rawValue)
+extension AlignContent {
+    public init(
+        _ value: String
+    ) {
+        self.init(value)
+    }
+
+    /// Specifies the alignment between the lines inside a flexible container when the items do not use all available space
+    public init(
+        _ value: AlignContentValue = .stretch
+    ) {
+        self.init(value.rawValue)
+    }
 }

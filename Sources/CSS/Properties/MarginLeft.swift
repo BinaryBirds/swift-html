@@ -6,14 +6,33 @@
 //
 
 /// Sets the left margin of an element
-public func MarginLeft(_ value: String) -> Property {
-    Property(name: "margin-left", value: value)
+
+public struct MarginLeft: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "margin-left" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MarginLeft {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-public func MarginLeft(_ value: MarginValue = .length(.zero)) -> Property {
-    MarginLeft(value.rawValue)
-}
+extension MarginLeft {
 
-public func MarginLeft(_ value: Unit = .zero) -> Property {
-    MarginLeft(.length(value))
+    public init(_ value: MarginValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

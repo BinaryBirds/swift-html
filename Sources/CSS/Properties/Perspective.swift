@@ -29,16 +29,34 @@ public enum PerspectiveValue {
     }
 }
 
-public func Perspective(_ value: String) -> Property {
-    Property(name: "perspective", value: value)
+public struct Perspective: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "perspective" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Perspective {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Gives a 3D-positioned element some perspective
-public func Perspective(_ value: PerspectiveValue = .none) -> Property {
-    Perspective(value.rawValue)
-}
+extension Perspective {
 
-/// Gives a 3D-positioned element some perspective
-public func Perspective(_ value: Unit = .zero) -> Property {
-    Perspective(.length(value))
+    /// Gives a 3D-positioned element some perspective
+    public init(_ value: PerspectiveValue = .none) {
+        self.init(value.rawValue)
+    }
+
+    /// Gives a 3D-positioned element some perspective
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

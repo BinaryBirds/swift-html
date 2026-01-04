@@ -28,13 +28,29 @@ public enum FontLanguageOverrideValue {
     }
 }
 
-public func FontLanguageOverride(_ value: String) -> Property {
-    Property(name: "font-language-override", value: value)
+public struct FontLanguageOverride: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-language-override" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontLanguageOverride {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Controls the usage of language-specific glyphs in a typeface
-public func FontLanguageOverride(_ value: FontLanguageOverrideValue = .normal)
-    -> Property
-{
-    FontLanguageOverride(value.rawValue)
+extension FontLanguageOverride {
+
+    /// Controls the usage of language-specific glyphs in a typeface
+    public init(_ value: FontLanguageOverrideValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

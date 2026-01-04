@@ -16,11 +16,29 @@ public enum WordWrapValue: String {
     case inherit
 }
 
-public func WordWrap(_ value: String) -> Property {
-    Property(name: "word-wrap", value: value)
+public struct WordWrap: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "word-wrap" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> WordWrap {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Allows long, unbreakable words to be broken and wrap to the next line
-public func WordWrap(_ value: WordWrapValue = .normal) -> Property {
-    WordWrap(value.rawValue)
+extension WordWrap {
+
+    /// Allows long, unbreakable words to be broken and wrap to the next line
+    public init(_ value: WordWrapValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

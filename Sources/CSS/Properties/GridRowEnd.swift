@@ -25,11 +25,29 @@ public enum GridRowEndValue {
     }
 }
 
-public func GridRowEnd(_ value: String) -> Property {
-    Property(name: "grid-row-end", value: value)
+public struct GridRowEnd: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-row-end" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridRowEnd {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies where to end the grid item
-public func GridRowEnd(_ value: GridRowEndValue) -> Property {
-    GridRowEnd(value.rawValue)
+extension GridRowEnd {
+
+    /// Specifies where to end the grid item
+    public init(_ value: GridRowEndValue) {
+        self.init(value.rawValue)
+    }
 }

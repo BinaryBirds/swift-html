@@ -18,11 +18,29 @@ public enum GridAutoFlowValue: String {
     case columnDense = "column dense"
 }
 
-public func GridAutoFlow(_ value: String) -> Property {
-    Property(name: "grid-auto-flow", value: value)
+public struct GridAutoFlow: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-auto-flow" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridAutoFlow {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how auto-placed items are inserted in the grid
-public func GridAutoFlow(_ value: GridAutoFlowValue) -> Property {
-    GridAutoFlow(value.rawValue)
+extension GridAutoFlow {
+
+    /// Specifies how auto-placed items are inserted in the grid
+    public init(_ value: GridAutoFlowValue) {
+        self.init(value.rawValue)
+    }
 }

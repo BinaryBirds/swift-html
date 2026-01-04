@@ -40,11 +40,29 @@ public enum BreakAfterValue: String {
     case inherit
 }
 
-public func BreakAfter(_ value: String) -> Property {
-    Property(name: "break-after", value: value)
+public struct BreakAfter: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "break-after" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BreakAfter {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not a page-, column-, or region-break should occur after the specified element
-public func BreakAfter(_ value: BreakAfterValue = .auto) -> Property {
-    BreakAfter(value.rawValue)
+extension BreakAfter {
+
+    /// Specifies whether or not a page-, column-, or region-break should occur after the specified element
+    public init(_ value: BreakAfterValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

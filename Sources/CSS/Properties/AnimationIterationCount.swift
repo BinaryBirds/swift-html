@@ -34,13 +34,29 @@ public enum AnimationIterationCountValue: ExpressibleByIntegerLiteral {
     }
 }
 
-public func AnimationIterationCount(_ value: String) -> Property {
-    Property(name: "animation-iteration-count", value: value)
+public struct AnimationIterationCount: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-iteration-count" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationIterationCount {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the number of times an animation should be played
-public func AnimationIterationCount(_ value: AnimationIterationCountValue = 1)
-    -> Property
-{
-    AnimationIterationCount(value.rawValue)
+extension AnimationIterationCount {
+
+    /// Specifies the number of times an animation should be played
+    public init(_ value: AnimationIterationCountValue = 1) {
+        self.init(value.rawValue)
+    }
 }

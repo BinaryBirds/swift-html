@@ -28,11 +28,29 @@ public enum OutlineValue {
     }
 }
 
-public func Outline(_ value: String) -> Property {
-    Property(name: "outline", value: value)
+public struct Outline: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "outline" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Outline {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for the outline-width, outline-style, and the outline-color properties
-public func Outline(_ value: OutlineValue) -> Property {
-    Outline(value.rawValue)
+extension Outline {
+
+    /// A shorthand property for the outline-width, outline-style, and the outline-color properties
+    public init(_ value: OutlineValue) {
+        self.init(value.rawValue)
+    }
 }

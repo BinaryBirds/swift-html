@@ -29,20 +29,38 @@ public enum ColumnRuleValue {
     }
 }
 
-public func ColumnRule(_ value: String) -> Property {
-    Property(name: "column-rule", value: value)
+public struct ColumnRule: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-rule" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnRule {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for all the column-rule-* properties
-public func ColumnRule(_ value: ColumnRuleValue) -> Property {
-    ColumnRule(value.rawValue)
-}
+extension ColumnRule {
 
-/// A shorthand property for all the column-rule-* properties
-public func ColumnRule(
-    _ width: ColumnRuleWidthValue,
-    _ style: ColumnRuleStyleValue,
-    _ color: ColumnRuleColorValue
-) -> Property {
-    ColumnRule(.values(width, style, color))
+    /// A shorthand property for all the column-rule-* properties
+    public init(_ value: ColumnRuleValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for all the column-rule-* properties
+    public init(
+        _ width: ColumnRuleWidthValue,
+        _ style: ColumnRuleStyleValue,
+        _ color: ColumnRuleColorValue
+    ) {
+        self.init(.values(width, style, color))
+    }
 }

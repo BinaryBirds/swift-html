@@ -22,11 +22,29 @@ public enum AlignItemsValue: String {
     case inherit
 }
 
-public func AlignItems(_ value: String) -> Property {
-    Property(name: "align-items", value: value)
+public struct AlignItems: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "align-items" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AlignItems {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the alignment for items inside a flexible container
-public func AlignItems(_ value: AlignItemsValue = .stretch) -> Property {
-    AlignItems(value.rawValue)
+extension AlignItems {
+
+    /// Specifies the alignment for items inside a flexible container
+    public init(_ value: AlignItemsValue = .stretch) {
+        self.init(value.rawValue)
+    }
 }

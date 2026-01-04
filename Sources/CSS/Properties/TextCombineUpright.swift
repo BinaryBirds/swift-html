@@ -34,11 +34,29 @@ public enum TextCombineUprightValue {
     }
 }
 
-public func TextCombineUpright(_ value: String) -> Property {
-    Property(name: "text-combine-upright", value: value)
+public struct TextCombineUpright: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-combine-upright" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextCombineUpright {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the combination of multiple characters into the space of a single character
-public func TextCombineUpright(_ value: TextCombineUprightValue) -> Property {
-    TextCombineUpright(value.rawValue)
+extension TextCombineUpright {
+
+    /// Specifies the combination of multiple characters into the space of a single character
+    public init(_ value: TextCombineUprightValue) {
+        self.init(value.rawValue)
+    }
 }

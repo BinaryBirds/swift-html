@@ -33,17 +33,33 @@ public enum TransitionPropertyValue {
     }
 }
 
-public func TransitionProperty(_ value: String) -> Property {
-    Property(name: "transition-property", value: value)
+public struct TransitionProperty: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transition-property" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TransitionProperty {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the name of the CSS property the transition effect is for
-public func TransitionProperty(_ value: TransitionPropertyValue = .all)
-    -> Property
-{
-    TransitionProperty(value.rawValue)
-}
+extension TransitionProperty {
 
-public func TransitionProperty(_ value: [String]) -> Property {
-    TransitionProperty(.properties(value))
+    /// Specifies the name of the CSS property the transition effect is for
+    public init(_ value: TransitionPropertyValue = .all) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: [String]) {
+        self.init(.properties(value))
+    }
 }

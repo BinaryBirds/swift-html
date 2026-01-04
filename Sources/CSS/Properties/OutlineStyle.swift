@@ -32,11 +32,29 @@ public enum OutlineStyleValue: String {
     case inherit
 }
 
-public func OutlineStyle(_ value: String) -> Property {
-    Property(name: "outline-style", value: value)
+public struct OutlineStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "outline-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> OutlineStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the style of an outline
-public func OutlineStyle(_ value: OutlineStyleValue = .none) -> Property {
-    OutlineStyle(value.rawValue)
+extension OutlineStyle {
+
+    /// Sets the style of an outline
+    public init(_ value: OutlineStyleValue = .none) {
+        self.init(value.rawValue)
+    }
 }

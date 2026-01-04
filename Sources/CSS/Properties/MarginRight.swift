@@ -6,14 +6,33 @@
 //
 
 /// Sets the right margin of an element
-public func MarginRight(_ value: String) -> Property {
-    Property(name: "margin-right", value: value)
+
+public struct MarginRight: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "margin-right" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MarginRight {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-public func MarginRight(_ value: MarginValue = .length(.zero)) -> Property {
-    MarginRight(value.rawValue)
-}
+extension MarginRight {
 
-public func MarginRight(_ value: Unit = .zero) -> Property {
-    MarginRight(.length(value))
+    public init(_ value: MarginValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: Unit = .zero) {
+        self.init(.length(value))
+    }
 }

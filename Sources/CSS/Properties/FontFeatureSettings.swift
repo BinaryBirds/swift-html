@@ -21,13 +21,29 @@ public enum FontFeatureSettingsValue {
     }
 }
 
-public func FontFeatureSettings(_ value: String) -> Property {
-    Property(name: "font-feature-settings", value: value)
+public struct FontFeatureSettings: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-feature-settings" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontFeatureSettings {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Allows control over advanced typographic features in OpenType fonts
-public func FontFeatureSettings(_ value: FontFeatureSettingsValue = .normal)
-    -> Property
-{
-    FontFeatureSettings(value.rawValue)
+extension FontFeatureSettings {
+
+    /// Allows control over advanced typographic features in OpenType fonts
+    public init(_ value: FontFeatureSettingsValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

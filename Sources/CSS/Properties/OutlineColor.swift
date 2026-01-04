@@ -29,15 +29,33 @@ public enum OutlineColorValue {
     }
 }
 
-public func OutlineColor(_ value: String) -> Property {
-    Property(name: "outline-color", value: value)
+public struct OutlineColor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "outline-color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> OutlineColor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the color of an outline
-public func OutlineColor(_ value: OutlineColorValue = .invert) -> Property {
-    OutlineColor(value.rawValue)
-}
+extension OutlineColor {
 
-public func OutlineColor(_ value: CSSColor) -> Property {
-    OutlineColor(.color(value))
+    /// Sets the color of an outline
+    public init(_ value: OutlineColorValue = .invert) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

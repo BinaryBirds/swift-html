@@ -5,12 +5,29 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func BorderBottomLeftRadius(_ value: String) -> Property {
-    Property(name: "border-bottom-left-radius", value: value)
+public struct BorderBottomLeftRadius: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-bottom-left-radius" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderBottomLeftRadius {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines the radius of the border of the bottom-left corner
-public func BorderBottomLeftRadius(_ value: BorderRadiusSingleValue) -> Property
-{
-    BorderBottomLeftRadius(value.rawValue)
+extension BorderBottomLeftRadius {
+
+    /// Defines the radius of the border of the bottom-left corner
+    public init(_ value: BorderRadiusSingleValue) {
+        self.init(value.rawValue)
+    }
 }

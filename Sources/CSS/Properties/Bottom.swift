@@ -29,11 +29,29 @@ public enum BottomValue {
     }
 }
 
-public func Bottom(_ value: String) -> Property {
-    Property(name: "bottom", value: value)
+public struct Bottom: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "bottom" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Bottom {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the elements position, from the bottom of its parent element
-public func Bottom(_ value: BottomValue = .auto) -> Property {
-    Bottom(value.rawValue)
+extension Bottom {
+
+    /// Sets the elements position, from the bottom of its parent element
+    public init(_ value: BottomValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

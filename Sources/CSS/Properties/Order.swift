@@ -25,16 +25,34 @@ public enum OrderValue {
     }
 }
 
-public func Order(_ value: String) -> Property {
-    Property(name: "order", value: value)
+public struct Order: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "order" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Order {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the order of the flexible item, relative to the rest
-public func Order(_ value: OrderValue = .number(1)) -> Property {
-    Order(value.rawValue)
-}
+extension Order {
 
-/// Sets the order of the flexible item, relative to the rest
-public func Order(_ value: Int = 1) -> Property {
-    Order(.number(1))
+    /// Sets the order of the flexible item, relative to the rest
+    public init(_ value: OrderValue = .number(1)) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the order of the flexible item, relative to the rest
+    public init(_ value: Int = 1) {
+        self.init(.number(1))
+    }
 }

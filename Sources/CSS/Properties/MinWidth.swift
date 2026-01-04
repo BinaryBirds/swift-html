@@ -25,16 +25,34 @@ public enum MinWidthValue {
     }
 }
 
-public func MinWidth(_ value: String) -> Property {
-    Property(name: "min-width", value: value)
+public struct MinWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "min-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> MinWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the minimum width of an element
-public func MinWidth(_ value: MinWidthValue = .length(.zero)) -> Property {
-    MinWidth(value.rawValue)
-}
+extension MinWidth {
 
-/// Sets the minimum width of an element
-public func MinWidth(_ value: Unit) -> Property {
-    MinWidth(.length(value))
+    /// Sets the minimum width of an element
+    public init(_ value: MinWidthValue = .length(.zero)) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the minimum width of an element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

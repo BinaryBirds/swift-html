@@ -18,13 +18,29 @@ public enum TextUnderlinePositionValue: String {
     case unset
 }
 
-public func TextUnderlinePosition(_ value: String) -> Property {
-    Property(name: "text-underline-position", value: value)
+public struct TextUnderlinePosition: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-underline-position" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextUnderlinePosition {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the position of the underline which is set using the text-decoration property
-public func TextUnderlinePosition(_ value: TextUnderlinePositionValue)
-    -> Property
-{
-    TextUnderlinePosition(value.rawValue)
+extension TextUnderlinePosition {
+
+    /// Specifies the position of the underline which is set using the text-decoration property
+    public init(_ value: TextUnderlinePositionValue) {
+        self.init(value.rawValue)
+    }
 }

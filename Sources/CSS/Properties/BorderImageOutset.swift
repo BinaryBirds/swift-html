@@ -29,11 +29,29 @@ public enum BorderImageOutsetValue {
     }
 }
 
-public func BorderImageOutset(_ value: String) -> Property {
-    Property(name: "border-image-outset", value: value)
+public struct BorderImageOutset: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-image-outset" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderImageOutset {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the amount by which the border image area extends beyond the border box
-public func BorderImageOutset(_ value: BorderImageOutsetValue) -> Property {
-    BorderImageOutset(value.rawValue)
+extension BorderImageOutset {
+
+    /// Specifies the amount by which the border image area extends beyond the border box
+    public init(_ value: BorderImageOutsetValue) {
+        self.init(value.rawValue)
+    }
 }

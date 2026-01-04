@@ -111,13 +111,31 @@ public enum FilterValue {
     }
 }
 
-public func Filter(_ value: String) -> Property {
-    Property(name: "filter", value: value)
+public struct Filter: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "filter" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Filter {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines effects (e.g. blurring or color shifting) on an element before the element is displayed
-public func Filter(_ value: FilterValue = .none) -> Property {
-    Filter(value.rawValue)
-}
+extension Filter {
 
-// @TODO: add multiple filter support
+    /// Defines effects (e.g. blurring or color shifting) on an element before the element is displayed
+    public init(_ value: FilterValue = .none) {
+        self.init(value.rawValue)
+    }
+
+    // @TODO: add multiple filter support
+}

@@ -18,11 +18,29 @@ public enum FontStyleValue: String {
     case inherit
 }
 
-public func FontStyle(_ value: String) -> Property {
-    Property(name: "font-style", value: value)
+public struct FontStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the font style for text
-public func FontStyle(_ value: FontStyleValue = .normal) -> Property {
-    FontStyle(value.rawValue)
+extension FontStyle {
+
+    /// Specifies the font style for text
+    public init(_ value: FontStyleValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

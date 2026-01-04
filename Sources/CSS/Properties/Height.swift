@@ -29,16 +29,34 @@ public enum HeightValue {
     }
 }
 
-public func Height(_ value: String) -> Property {
-    Property(name: "height", value: value)
+public struct Height: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "height" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Height {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the height of an element
-public func Height(_ value: HeightValue = .auto) -> Property {
-    Height(value.rawValue)
-}
+extension Height {
 
-/// Sets the height of an element
-public func Height(_ value: Unit) -> Property {
-    Height(.length(value))
+    /// Sets the height of an element
+    public init(_ value: HeightValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the height of an element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

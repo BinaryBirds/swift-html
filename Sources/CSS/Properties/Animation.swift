@@ -54,36 +54,54 @@ public enum AnimationValue {
     }
 }
 
-public func Animation(_ value: String) -> Property {
-    Property(name: "animation", value: value)
+public struct Animation: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Animation {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// A shorthand property for all the animation-* properties
-public func Animation(_ value: AnimationValue) -> Property {
-    Animation(value.rawValue)
-}
+extension Animation {
 
-/// A shorthand property for all the animation-* properties
-public func Animation(
-    _ name: String,
-    duration: AnimationDurationValue? = nil,
-    timingFunction: AnimationTimingFunctionValue? = nil,
-    delay: AnimationDelayValue? = nil,
-    iterationCount: AnimationIterationCountValue? = nil,
-    direction: AnimationDirectionValue? = nil,
-    fillMode: AnimationFillModeValue? = nil,
-    playState: AnimationPlayStateValue?
-) -> Property {
-    Animation(
-        .values(
-            name,
-            duration,
-            timingFunction,
-            delay,
-            iterationCount,
-            direction,
-            fillMode,
-            playState
+    /// A shorthand property for all the animation-* properties
+    public init(_ value: AnimationValue) {
+        self.init(value.rawValue)
+    }
+
+    /// A shorthand property for all the animation-* properties
+    public init(
+        _ name: String,
+        duration: AnimationDurationValue? = nil,
+        timingFunction: AnimationTimingFunctionValue? = nil,
+        delay: AnimationDelayValue? = nil,
+        iterationCount: AnimationIterationCountValue? = nil,
+        direction: AnimationDirectionValue? = nil,
+        fillMode: AnimationFillModeValue? = nil,
+        playState: AnimationPlayStateValue?
+    ) {
+        self.init(
+            .values(
+                name,
+                duration,
+                timingFunction,
+                delay,
+                iterationCount,
+                direction,
+                fillMode,
+                playState
+            )
         )
-    )
+    }
 }

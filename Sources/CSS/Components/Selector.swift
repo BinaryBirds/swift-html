@@ -1,12 +1,12 @@
 /// https://www.w3schools.com/cssref/css_selectors.asp
 public struct Selector: Sendable {
     var name: String
-    var properties: [Property]
+    var properties: [any Property]
     var pseudo: String? = nil
 
     public init(
         name: String,
-        properties: [Property],
+        properties: [any Property],
         pseudo: String? = nil
     ) {
         self.name = name
@@ -16,7 +16,7 @@ public struct Selector: Sendable {
 
     public init(
         _ name: String,
-        @Builder<Property> _ builder: () -> [Property]
+        @Builder<any Property> _ builder: () -> [any Property]
     ) {
         self.name = name
         self.properties = builder()

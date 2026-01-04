@@ -16,13 +16,29 @@ public enum BackfaceVisibilityValue: String {
     case inherit
 }
 
-public func BackfaceVisibility(_ value: String) -> Property {
-    Property(name: "backface-visibility", value: value)
+public struct BackfaceVisibility: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "backface-visibility" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackfaceVisibility {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines whether or not the back face of an element should be visible when facing the user
-public func BackfaceVisibility(_ value: BackfaceVisibilityValue = .visible)
-    -> Property
-{
-    BackfaceVisibility(value.rawValue)
+extension BackfaceVisibility {
+
+    /// Defines whether or not the back face of an element should be visible when facing the user
+    public init(_ value: BackfaceVisibilityValue = .visible) {
+        self.init(value.rawValue)
+    }
 }

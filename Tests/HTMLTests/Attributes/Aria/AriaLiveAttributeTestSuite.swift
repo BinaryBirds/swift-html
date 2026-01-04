@@ -11,7 +11,7 @@ struct AriaLiveAttributeTestSuite {
         let cases: [(AriaLiveAttributeValue, String)] = [
             (.assertive, "assertive"),
             (.off, "off"),
-            (.polite, "polite")
+            (.polite, "polite"),
         ]
 
         for (value, raw) in cases {

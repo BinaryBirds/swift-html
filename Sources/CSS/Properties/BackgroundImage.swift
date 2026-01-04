@@ -34,11 +34,29 @@ public enum BackgroundImageValue {
     }
 }
 
-public func BackgroundImage(_ value: String) -> Property {
-    Property(name: "background-image", value: value)
+public struct BackgroundImage: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "background-image" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BackgroundImage {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies one or more background images for an element
-public func BackgroundImage(_ value: BackgroundImageValue) -> Property {
-    BackgroundImage(value.rawValue)
+extension BackgroundImage {
+
+    /// Specifies one or more background images for an element
+    public init(_ value: BackgroundImageValue) {
+        self.init(value.rawValue)
+    }
 }

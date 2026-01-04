@@ -20,11 +20,29 @@ public enum ClearValue: String {
     case inherit
 }
 
-public func Clear(_ value: String) -> Property {
-    Property(name: "clear", value: value)
+public struct Clear: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "clear" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Clear {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies what should happen with the element that is next to a floating element
-public func Clear(_ value: ClearValue) -> Property {
-    Clear(value.rawValue)
+extension Clear {
+
+    /// Specifies what should happen with the element that is next to a floating element
+    public init(_ value: ClearValue) {
+        self.init(value.rawValue)
+    }
 }

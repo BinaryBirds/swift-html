@@ -33,11 +33,29 @@ public enum GridAutoColumnsValue {
     }
 }
 
-public func GridAutoColumns(_ value: String) -> Property {
-    Property(name: "grid-auto-columns", value: value)
+public struct GridAutoColumns: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-auto-columns" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridAutoColumns {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies a default column size
-public func GridAutoColumns(_ value: GridAutoColumnsValue = .auto) -> Property {
-    GridAutoColumns(value.rawValue)
+extension GridAutoColumns {
+
+    /// Specifies a default column size
+    public init(_ value: GridAutoColumnsValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

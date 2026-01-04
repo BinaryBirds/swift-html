@@ -12,7 +12,7 @@ struct AriaSortAttributeTestSuite {
             (.ascending, "ascending"),
             (.descending, "descending"),
             (.none, "none"),
-            (.other, "other")
+            (.other, "other"),
         ]
 
         for (value, raw) in cases {

@@ -16,11 +16,29 @@ public enum IsolationValue: String {
     case inherit
 }
 
-public func Isolation(_ value: String) -> Property {
-    Property(name: "isolation", value: value)
+public struct Isolation: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "isolation" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Isolation {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Defines whether an element must create a new stacking content
-public func Isolation(_ value: IsolationValue = .auto) -> Property {
-    Isolation(value.rawValue)
+extension Isolation {
+
+    /// Defines whether an element must create a new stacking content
+    public init(_ value: IsolationValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

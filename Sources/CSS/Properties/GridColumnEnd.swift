@@ -25,11 +25,29 @@ public enum GridColumnEndValue {
     }
 }
 
-public func GridColumnEnd(_ value: String) -> Property {
-    Property(name: "grid-column-end", value: value)
+public struct GridColumnEnd: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "grid-column-end" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> GridColumnEnd {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies where to end the grid item
-public func GridColumnEnd(_ value: GridColumnEndValue) -> Property {
-    GridColumnEnd(value.rawValue)
+extension GridColumnEnd {
+
+    /// Specifies where to end the grid item
+    public init(_ value: GridColumnEndValue) {
+        self.init(value.rawValue)
+    }
 }

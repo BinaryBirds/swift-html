@@ -27,7 +27,8 @@ struct TargetAttributeTestSuite {
                 expectation = #"""
                     <a target></a>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <a target="\#(raw)"></a>
                     """#

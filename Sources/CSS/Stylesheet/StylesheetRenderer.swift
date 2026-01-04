@@ -60,8 +60,10 @@ public struct StylesheetRenderer {
 
     // MARK: - helpers
 
-    private func renderProperty(_ property: Property, level: Int = 0) -> String
-    {
+    private func renderProperty(
+        _ property: any Property,
+        level: Int = 0
+    ) -> String {
         let spaces = String(repeating: " ", count: level * indent)
         return spaces + property.name + ":" + singleSpace + property.value
             + (property.isImportant ? " !important" : "")

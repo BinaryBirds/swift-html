@@ -16,11 +16,29 @@ public enum PageBreakInsideValue: String {
     case inherit
 }
 
-public func PageBreakInside(_ value: String) -> Property {
-    Property(name: "page-break-inside", value: value)
+public struct PageBreakInside: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "page-break-inside" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> PageBreakInside {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the page-break behavior inside an element
-public func PageBreakInside(_ value: PageBreakInsideValue = .auto) -> Property {
-    PageBreakInside(value.rawValue)
+extension PageBreakInside {
+
+    /// Sets the page-break behavior inside an element
+    public init(_ value: PageBreakInsideValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

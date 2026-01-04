@@ -22,11 +22,29 @@ public enum PageBreakAfterValue: String {
     case inherit
 }
 
-public func PageBreakAfter(_ value: String) -> Property {
-    Property(name: "page-break-after", value: value)
+public struct PageBreakAfter: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "page-break-after" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> PageBreakAfter {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the page-break behavior after an element
-public func PageBreakAfter(_ value: PageBreakAfterValue = .auto) -> Property {
-    PageBreakAfter(value.rawValue)
+extension PageBreakAfter {
+
+    /// Sets the page-break behavior after an element
+    public init(_ value: PageBreakAfterValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

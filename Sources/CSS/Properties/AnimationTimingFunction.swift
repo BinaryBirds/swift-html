@@ -64,13 +64,31 @@ public enum AnimationTimingFunctionValue {
     }
 }
 
-public func AnimationTimingFunction(_ value: String) -> Property {
-    Property(name: "animation-timing-function", value: value)
+public struct AnimationTimingFunction: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-timing-function" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationTimingFunction {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the speed curve of an animation
-public func AnimationTimingFunction(
-    _ value: AnimationTimingFunctionValue = .linear
-) -> Property {
-    AnimationTimingFunction(value.rawValue)
+extension AnimationTimingFunction {
+
+    /// Specifies the speed curve of an animation
+    public init(
+        _ value: AnimationTimingFunctionValue = .linear
+    ) {
+        self.init(value.rawValue)
+    }
 }

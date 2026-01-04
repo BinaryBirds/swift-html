@@ -16,13 +16,29 @@ public enum BoxDecorationBreakValue: String {
     case inherit
 }
 
-public func BoxDecorationBreak(_ value: String) -> Property {
-    Property(name: "box-decoration-break", value: value)
+public struct BoxDecorationBreak: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "box-decoration-break" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BoxDecorationBreak {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the behavior of the background and border of an element at page-break, or, for in-line elements, at line-break.
-public func BoxDecorationBreak(_ value: BoxDecorationBreakValue = .slice)
-    -> Property
-{
-    BoxDecorationBreak(value.rawValue)
+extension BoxDecorationBreak {
+
+    /// Sets the behavior of the background and border of an element at page-break, or, for in-line elements, at line-break.
+    public init(_ value: BoxDecorationBreakValue = .slice) {
+        self.init(value.rawValue)
+    }
 }

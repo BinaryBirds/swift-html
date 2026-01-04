@@ -45,18 +45,34 @@ public enum QuotesValue {
     }
 }
 
-public func Quotes(_ value: String) -> Property {
-    Property(name: "quotes", value: value)
+public struct Quotes: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "quotes" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Quotes {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the type of quotation marks for embedded quotations
-public func Quotes(_ value: QuotesValue) -> Property {
-    Quotes(value.rawValue)
-}
+extension Quotes {
 
-/// Sets the type of quotation marks for embedded quotations
-public func Quotes(_ a: String, _ b: String, _ c: String, _ d: String)
-    -> Property
-{
-    Quotes(.marks(a, b, c, d))
+    /// Sets the type of quotation marks for embedded quotations
+    public init(_ value: QuotesValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the type of quotation marks for embedded quotations
+    public init(_ a: String, _ b: String, _ c: String, _ d: String) {
+        self.init(.marks(a, b, c, d))
+    }
 }

@@ -29,11 +29,29 @@ public enum LetterSpacingValue {
     }
 }
 
-public func LetterSpacing(_ value: String) -> Property {
-    Property(name: "letter-spacing", value: value)
+public struct LetterSpacing: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "letter-spacing" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> LetterSpacing {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Increases or decreases the space between characters in a text
-public func LetterSpacing(_ value: LetterSpacingValue) -> Property {
-    LetterSpacing(value.rawValue)
+extension LetterSpacing {
+
+    /// Increases or decreases the space between characters in a text
+    public init(_ value: LetterSpacingValue) {
+        self.init(value.rawValue)
+    }
 }

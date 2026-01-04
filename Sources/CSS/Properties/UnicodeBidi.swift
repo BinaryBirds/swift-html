@@ -22,11 +22,29 @@ public enum UnicodeBidiValue: String {
     case inherit
 }
 
-public func UnicodeBidi(_ value: String) -> Property {
-    Property(name: "unicode-bidi", value: value)
+public struct UnicodeBidi: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "unicode-bidi" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> UnicodeBidi {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document
-public func UnicodeBidi(_ value: UnicodeBidiValue = .normal) -> Property {
-    UnicodeBidi(value.rawValue)
+extension UnicodeBidi {
+
+    /// Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document
+    public init(_ value: UnicodeBidiValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

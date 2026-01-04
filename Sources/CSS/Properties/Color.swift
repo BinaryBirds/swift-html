@@ -25,16 +25,34 @@ public enum ColorValue {
     }
 }
 
-public func Color(_ value: String) -> Property {
-    Property(name: "color", value: value)
+public struct Color: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Color {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the color of text
-public func Color(_ value: ColorValue) -> Property {
-    Color(value.rawValue)
-}
+extension Color {
 
-/// Sets the color of text
-public func Color(_ value: CSSColor) -> Property {
-    Color(.color(value))
+    /// Sets the color of text
+    public init(_ value: ColorValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the color of text
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

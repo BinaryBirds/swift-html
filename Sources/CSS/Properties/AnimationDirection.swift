@@ -20,13 +20,29 @@ public enum AnimationDirectionValue: String {
     case inherit
 }
 
-public func AnimationDirection(_ value: String) -> Property {
-    Property(name: "animation-direction", value: value)
+public struct AnimationDirection: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-direction" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationDirection {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether an animation should be played forwards, backwards or in alternate cycles
-public func AnimationDirection(_ value: AnimationDirectionValue = .normal)
-    -> Property
-{
-    AnimationDirection(value.rawValue)
+extension AnimationDirection {
+
+    /// Specifies whether an animation should be played forwards, backwards or in alternate cycles
+    public init(_ value: AnimationDirectionValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

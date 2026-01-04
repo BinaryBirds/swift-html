@@ -10,7 +10,7 @@ struct LoadingAttributeTestSuite {
     func rendersLoadingValues() async throws {
         let cases: [(LoadingAttributeValue, String)] = [
             (.eager, "eager"),
-            (.lazy, "lazy")
+            (.lazy, "lazy"),
         ]
 
         for (value, raw) in cases {

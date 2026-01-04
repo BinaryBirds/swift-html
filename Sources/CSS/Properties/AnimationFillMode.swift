@@ -20,13 +20,29 @@ public enum AnimationFillModeValue: String {
     case inherit
 }
 
-public func AnimationFillMode(_ value: String) -> Property {
-    Property(name: "animation-fill-mode", value: value)
+public struct AnimationFillMode: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-fill-mode" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationFillMode {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)
-public func AnimationFillMode(_ value: AnimationFillModeValue = .none)
-    -> Property
-{
-    AnimationFillMode(value.rawValue)
+extension AnimationFillMode {
+
+    /// Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)
+    public init(_ value: AnimationFillModeValue = .none) {
+        self.init(value.rawValue)
+    }
 }

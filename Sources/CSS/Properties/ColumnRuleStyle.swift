@@ -32,11 +32,29 @@ public enum ColumnRuleStyleValue: String {
     case inherit
 }
 
-public func ColumnRuleStyle(_ value: String) -> Property {
-    Property(name: "column-rule-style", value: value)
+public struct ColumnRuleStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-rule-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnRuleStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the style of the rule between columns
-public func ColumnRuleStyle(_ value: ColumnRuleStyleValue = .none) -> Property {
-    ColumnRuleStyle(value.rawValue)
+extension ColumnRuleStyle {
+
+    /// Specifies the style of the rule between columns
+    public init(_ value: ColumnRuleStyleValue = .none) {
+        self.init(value.rawValue)
+    }
 }

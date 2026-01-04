@@ -29,21 +29,39 @@ public enum TabSizeValue {
     }
 }
 
-public func TabSize(_ value: String) -> Property {
-    Property(name: "tab-size", value: value)
+public struct TabSize: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "tab-size" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TabSize {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the width of a tab character
-public func TabSize(_ value: TabSizeValue = .number(8)) -> Property {
-    TabSize(value.rawValue)
-}
+extension TabSize {
 
-/// Specifies the width of a tab character
-public func TabSize(_ value: Int = 8) -> Property {
-    TabSize(.number(value))
-}
+    /// Specifies the width of a tab character
+    public init(_ value: TabSizeValue = .number(8)) {
+        self.init(value.rawValue)
+    }
 
-/// Specifies the width of a tab character
-public func TabSize(_ value: Unit) -> Property {
-    TabSize(.length(value))
+    /// Specifies the width of a tab character
+    public init(_ value: Int = 8) {
+        self.init(.number(value))
+    }
+
+    /// Specifies the width of a tab character
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

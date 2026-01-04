@@ -34,11 +34,29 @@ public enum AnimationNameValue: ExpressibleByStringLiteral {
     }
 }
 
-public func AnimationName(_ value: String) -> Property {
-    Property(name: "animation-name", value: value)
+public struct AnimationName: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-name" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationName {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies a name for the @keyframes animation
-public func AnimationName(_ value: AnimationNameValue = .none) -> Property {
-    AnimationName(value.rawValue)
+extension AnimationName {
+
+    /// Specifies a name for the @keyframes animation
+    public init(_ value: AnimationNameValue = .none) {
+        self.init(value.rawValue)
+    }
 }

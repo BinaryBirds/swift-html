@@ -29,16 +29,34 @@ public enum CaretColorValue {
     }
 }
 
-public func CaretColor(_ value: String) -> Property {
-    Property(name: "caret-color", value: value)
+public struct CaretColor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "caret-color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> CaretColor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the color of the cursor (caret) in inputs, textareas, or any element that is editable
-public func CaretColor(_ value: CaretColorValue = .auto) -> Property {
-    CaretColor(value.rawValue)
-}
+extension CaretColor {
 
-/// Specifies the color of the cursor (caret) in inputs, textareas, or any element that is editable
-public func CaretColor(_ value: CSSColor) -> Property {
-    CaretColor(.color(value))
+    /// Specifies the color of the cursor (caret) in inputs, textareas, or any element that is editable
+    public init(_ value: CaretColorValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the color of the cursor (caret) in inputs, textareas, or any element that is editable
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

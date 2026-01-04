@@ -16,11 +16,29 @@ public enum EmptyCellsValue: String {
     case inherit
 }
 
-public func EmptyCells(_ value: String) -> Property {
-    Property(name: "empty-cells", value: value)
+public struct EmptyCells: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "empty-cells" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> EmptyCells {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not to display borders and background on empty cells in a table
-public func EmptyCells(_ value: EmptyCellsValue = .show) -> Property {
-    EmptyCells(value.rawValue)
+extension EmptyCells {
+
+    /// Specifies whether or not to display borders and background on empty cells in a table
+    public init(_ value: EmptyCellsValue = .show) {
+        self.init(value.rawValue)
+    }
 }

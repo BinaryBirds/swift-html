@@ -25,11 +25,29 @@ public enum FontFamilyValue {
     }
 }
 
-public func FontFamily(_ value: String) -> Property {
-    Property(name: "font-family", value: value)
+public struct FontFamily: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-family" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontFamily {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the font family for text
-public func FontFamily(_ value: FontFamilyValue) -> Property {
-    FontFamily(value.rawValue)
+extension FontFamily {
+
+    /// Specifies the font family for text
+    public init(_ value: FontFamilyValue) {
+        self.init(value.rawValue)
+    }
 }

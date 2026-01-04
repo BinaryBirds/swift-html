@@ -37,12 +37,29 @@ public enum ColumnRuleWidthValue {
     }
 }
 
-public func ColumnRuleWidth(_ value: String) -> Property {
-    Property(name: "column-rule-width", value: value)
+public struct ColumnRuleWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "column-rule-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ColumnRuleWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the width of the rule between columns
-public func ColumnRuleWidth(_ value: ColumnRuleWidthValue = .medium) -> Property
-{
-    ColumnRuleWidth(value.rawValue)
+extension ColumnRuleWidth {
+
+    /// Specifies the width of the rule between columns
+    public init(_ value: ColumnRuleWidthValue = .medium) {
+        self.init(value.rawValue)
+    }
 }

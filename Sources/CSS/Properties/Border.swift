@@ -104,6 +104,25 @@ public enum BorderRadiusSingleValue {
 }
 
 /// A shorthand property for border-width, border-style and border-color
-public func Border(_ value: String) -> Property {
-    Property(name: "border", value: value)
+
+public struct Border: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Border {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
+}
+
+extension Border {
 }

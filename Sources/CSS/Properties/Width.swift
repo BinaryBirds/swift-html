@@ -29,16 +29,34 @@ public enum WidthValue {
     }
 }
 
-public func Width(_ value: String) -> Property {
-    Property(name: "width", value: value)
+public struct Width: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> Width {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the width of an element
-public func Width(_ value: WidthValue = .auto) -> Property {
-    Width(value.rawValue)
-}
+extension Width {
 
-/// Sets the width of an element
-public func Width(_ value: Unit) -> Property {
-    Width(.length(value))
+    /// Sets the width of an element
+    public init(_ value: WidthValue = .auto) {
+        self.init(value.rawValue)
+    }
+
+    /// Sets the width of an element
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

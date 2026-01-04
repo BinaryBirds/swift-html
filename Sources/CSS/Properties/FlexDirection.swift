@@ -20,11 +20,29 @@ public enum FlexDirectionValue: String {
     case inherit
 }
 
-public func FlexDirection(_ value: String) -> Property {
-    Property(name: "flex-direction", value: value)
+public struct FlexDirection: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "flex-direction" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FlexDirection {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the direction of the flexible items
-public func FlexDirection(_ value: FlexDirectionValue = .row) -> Property {
-    FlexDirection(value.rawValue)
+extension FlexDirection {
+
+    /// Specifies the direction of the flexible items
+    public init(_ value: FlexDirectionValue = .row) {
+        self.init(value.rawValue)
+    }
 }

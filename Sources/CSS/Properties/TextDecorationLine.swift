@@ -20,13 +20,29 @@ public enum TextDecorationLineValue: String {
     case inherit
 }
 
-public func TextDecorationLine(_ value: String) -> Property {
-    Property(name: "text-decoration-line", value: value)
+public struct TextDecorationLine: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-decoration-line" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextDecorationLine {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the type of line in a text-decoration
-public func TextDecorationLine(_ value: TextDecorationLineValue = .none)
-    -> Property
-{
-    TextDecorationLine(value.rawValue)
+extension TextDecorationLine {
+
+    /// Specifies the type of line in a text-decoration
+    public init(_ value: TextDecorationLineValue = .none) {
+        self.init(value.rawValue)
+    }
 }

@@ -25,16 +25,34 @@ public enum TextDecorationColorValue {
     }
 }
 
-public func TextDecorationColor(_ value: String) -> Property {
-    Property(name: "text-decoration-color", value: value)
+public struct TextDecorationColor: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "text-decoration-color" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TextDecorationColor {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the color of the text-decoration
-public func TextDecorationColor(_ value: TextDecorationColorValue) -> Property {
-    TextDecorationColor(value.rawValue)
-}
+extension TextDecorationColor {
 
-/// Specifies the color of the text-decoration
-public func TextDecorationColor(_ value: CSSColor) -> Property {
-    TextDecorationColor(.color(value))
+    /// Specifies the color of the text-decoration
+    public init(_ value: TextDecorationColorValue) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the color of the text-decoration
+    public init(_ value: CSSColor) {
+        self.init(.color(value))
+    }
 }

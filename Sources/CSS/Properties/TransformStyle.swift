@@ -16,11 +16,29 @@ public enum TransformStyleValue: String {
     case inherit
 }
 
-public func TransformStyle(_ value: String) -> Property {
-    Property(name: "transform-style", value: value)
+public struct TransformStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "transform-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> TransformStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how nested elements are rendered in 3D space
-public func TransformStyle(_ value: TransformStyleValue = .flat) -> Property {
-    TransformStyle(value.rawValue)
+extension TransformStyle {
+
+    /// Specifies how nested elements are rendered in 3D space
+    public init(_ value: TransformStyleValue = .flat) {
+        self.init(value.rawValue)
+    }
 }

@@ -36,7 +36,8 @@ struct RelAttributeTestSuite {
                 expectation = #"""
                     <a rel></a>
                     """#
-            } else {
+            }
+            else {
                 expectation = #"""
                     <a rel="\#(raw)"></a>
                     """#

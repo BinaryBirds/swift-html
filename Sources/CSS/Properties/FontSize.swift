@@ -61,11 +61,29 @@ public enum FontSizeValue {
     }
 }
 
-public func FontSize(_ value: String) -> Property {
-    Property(name: "font-size", value: value)
+public struct FontSize: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-size" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontSize {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the font size of text
-public func FontSize(_ value: FontSizeValue = .medium) -> Property {
-    FontSize(value.rawValue)
+extension FontSize {
+
+    /// Specifies the font size of text
+    public init(_ value: FontSizeValue = .medium) {
+        self.init(value.rawValue)
+    }
 }

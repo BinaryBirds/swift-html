@@ -30,11 +30,29 @@ public enum FontStretchValue: String {
     case inherit
 }
 
-public func FontStretch(_ value: String) -> Property {
-    Property(name: "font-stretch", value: value)
+public struct FontStretch: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "font-stretch" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> FontStretch {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Selects a normal, condensed, or expanded face from a font family
-public func FontStretch(_ value: FontStretchValue = .normal) -> Property {
-    FontStretch(value.rawValue)
+extension FontStretch {
+
+    /// Selects a normal, condensed, or expanded face from a font family
+    public init(_ value: FontStretchValue = .normal) {
+        self.init(value.rawValue)
+    }
 }

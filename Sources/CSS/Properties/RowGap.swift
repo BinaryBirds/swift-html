@@ -29,16 +29,34 @@ public enum RowGapValue {
     }
 }
 
-public func RowGap(_ value: String) -> Property {
-    Property(name: "row-gap", value: value)
+public struct RowGap: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "row-gap" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> RowGap {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies the gap between the grid rows
-public func RowGap(_ value: RowGapValue = .normal) -> Property {
-    RowGap(value.rawValue)
-}
+extension RowGap {
 
-/// Specifies the gap between the grid rows
-public func RowGap(_ value: Unit) -> Property {
-    RowGap(.length(value))
+    /// Specifies the gap between the grid rows
+    public init(_ value: RowGapValue = .normal) {
+        self.init(value.rawValue)
+    }
+
+    /// Specifies the gap between the grid rows
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

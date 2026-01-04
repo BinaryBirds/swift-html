@@ -15,11 +15,29 @@ public enum OverflowWrapValue: String {
     case unset
 }
 
-public func OverflowWrap(_ value: String) -> Property {
-    Property(name: "overflow-wrap", value: value)
+public struct OverflowWrap: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "overflow-wrap" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> OverflowWrap {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies whether or not the browser may break lines within words in order to prevent overflow (when a string is too long to fit its containing box)
-public func OverflowWrap(_ value: OverflowWrapValue) -> Property {
-    OverflowWrap(value.rawValue)
+extension OverflowWrap {
+
+    /// Specifies whether or not the browser may break lines within words in order to prevent overflow (when a string is too long to fit its containing box)
+    public init(_ value: OverflowWrapValue) {
+        self.init(value.rawValue)
+    }
 }

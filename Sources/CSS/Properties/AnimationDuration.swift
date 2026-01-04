@@ -42,13 +42,29 @@ public enum AnimationDurationValue {
     }
 }
 
-public func AnimationDuration(_ value: String) -> Property {
-    Property(name: "animation-duration", value: value)
+public struct AnimationDuration: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "animation-duration" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> AnimationDuration {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how long an animation should take to complete one cycle
-public func AnimationDuration(_ value: AnimationDurationValue = .zero)
-    -> Property
-{
-    AnimationDuration(value.rawValue)
+extension AnimationDuration {
+
+    /// Specifies how long an animation should take to complete one cycle
+    public init(_ value: AnimationDurationValue = .zero) {
+        self.init(value.rawValue)
+    }
 }

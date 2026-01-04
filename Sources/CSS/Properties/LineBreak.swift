@@ -17,11 +17,29 @@ public enum LineBreakValue: String {
     case unset
 }
 
-public func LineBreak(_ value: String) -> Property {
-    Property(name: "line-break", value: value)
+public struct LineBreak: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "line-break" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> LineBreak {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Specifies how/if to break lines
-public func LineBreak(_ value: LineBreakValue = .auto) -> Property {
-    LineBreak(value.rawValue)
+extension LineBreak {
+
+    /// Specifies how/if to break lines
+    public init(_ value: LineBreakValue = .auto) {
+        self.init(value.rawValue)
+    }
 }

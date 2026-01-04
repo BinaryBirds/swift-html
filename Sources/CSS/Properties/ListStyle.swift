@@ -28,11 +28,29 @@ public enum ListStyleValue {
     }
 }
 
-public func ListStyle(_ value: String) -> Property {
-    Property(name: "list-style", value: value)
+public struct ListStyle: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "list-style" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ListStyle {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets all the properties for a list in one declaration
-public func ListStyle(_ value: ListStyleValue) -> Property {
-    ListStyle(value.rawValue)
+extension ListStyle {
+
+    /// Sets all the properties for a list in one declaration
+    public init(_ value: ListStyleValue) {
+        self.init(value.rawValue)
+    }
 }

@@ -5,15 +5,33 @@
 //  Created by Tibor Bodecs on 2021. 07. 10..
 //
 
-public func BorderRightWidth(_ value: String) -> Property {
-    Property(name: "border-right-width", value: value)
+public struct BorderRightWidth: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "border-right-width" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> BorderRightWidth {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the width of the right border
-public func BorderRightWidth(_ value: BorderWidthValue = .medium) -> Property {
-    BorderRightWidth(value.rawValue)
-}
+extension BorderRightWidth {
 
-public func BorderRightWidth(_ value: Unit) -> Property {
-    BorderRightWidth(.length(value))
+    /// Sets the width of the right border
+    public init(_ value: BorderWidthValue = .medium) {
+        self.init(value.rawValue)
+    }
+
+    public init(_ value: Unit) {
+        self.init(.length(value))
+    }
 }

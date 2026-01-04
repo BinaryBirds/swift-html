@@ -16,11 +16,29 @@ public enum ZIndexValue: String {
     case inherit
 }
 
-public func ZIndex(_ value: String) -> Property {
-    Property(name: "z-index", value: value)
+public struct ZIndex: Property {
+    public var value: String
+    public var isImportant: Bool
+
+    public var name: String { "z-index" }
+
+    public init(_ value: String, isImportant: Bool = false) {
+        self.value = value
+        self.isImportant = isImportant
+    }
+
+    public func important() -> ZIndex {
+        guard !isImportant else {
+            return self
+        }
+        return .init(value, isImportant: true)
+    }
 }
 
-/// Sets the stack order of a positioned element
-public func ZIndex(_ value: ZIndexValue = .auto) -> Property {
-    ZIndex(value.rawValue)
+extension ZIndex {
+
+    /// Sets the stack order of a positioned element
+    public init(_ value: ZIndexValue = .auto) {
+        self.init(value.rawValue)
+    }
 }
