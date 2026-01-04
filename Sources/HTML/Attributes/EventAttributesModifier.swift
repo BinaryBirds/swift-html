@@ -167,7 +167,10 @@ public protocol EventAttributesModifier:
     SelectionEventAttributesModifier,
     MediaEventAttributesModifier,
     FormEventAttributesModifier,
-    DetailEventAttributesModifier
+    DetailEventAttributesModifier,
+    // TODO: double check
+    OnScrollAttributeModifier,
+    OnCueChangeAttributeModifier
 {
 
 }

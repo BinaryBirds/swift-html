@@ -43,6 +43,7 @@ public struct Input:
     RequiredAttributeModifier,
     SizeAttributeModifier,
     StepAttributeModifier,
+    SelectedAttributeModifier,
     // categories
     FlowContent,
     PhrasingContent,
@@ -51,10 +52,6 @@ public struct Input:
 {
     /// The attribute storage for the tag.
     public var attributes: AttributeStore
-
-    public init() {
-        self.attributes = .init()
-    }
 
     // MARK: - attributes
 
@@ -84,5 +81,9 @@ public struct Input:
     }
 
     public typealias TypeAttributeValueType = Types
+
+    public init() {
+        self.attributes = .init()
+    }
 
 }

@@ -1,19 +1,14 @@
 import SGML
 
 public protocol SelectedAttributeModifier {
-    associatedtype SelectedAttributeValueType: AttributeValueRepresentable =
-        String
+
 }
 
 extension SelectedAttributeModifier where Self: Attributes & Mutable {
 
-    public func selected(
-
-        _ value: SelectedAttributeValueType?
-    ) -> Self {
+    public func selected() -> Self {
         setAttribute(
-            key: StandardAttributeKey.selected,
-            value: value?.attributeValue
+            key: StandardAttributeKey.selected
         )
     }
 }

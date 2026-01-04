@@ -157,10 +157,11 @@ struct LastBuildDate: StandardTag {
 }
 ```
 
-### Attributes
+### Attribute modifiers
 
-You can define custom element attributes by conforming to the `Attribute` protocol.  
-By default, the attribute name is automatically derived from the type name, but this behavior can be overridden when needed:
+You can define custom element attributes by creating a new `attribute modifier` protocol. 
+
+TODO: update this
 
 ```swift
 // very simple attribute
@@ -217,7 +218,7 @@ There are built-in, type-safe attributes and helper modifiers available for the 
 
 ### Conditions
 
-Use the `check` modifier to evaluate a condition and update an element when the condition is met:
+Use the `if` modifier to evaluate a condition and update an element when the condition is met:
 
 ```swift
 let condition = false
@@ -283,11 +284,7 @@ print(StylesheetRenderer(minify: false, indent: 4).render(css))
 
 ## Future improvements
 
-- [ ] Finish attributes (global, event)
-- [ ] Finish content models (use `assert` & types)
-- [ ] Get rid of public enums  
-- [ ] Get rid of `@_exported SGML`
-- [ ] Add `OrderedDictionary` support?
+- [ ] Get rid of public enums or use resilient enums
 
 
 ## Credits & references

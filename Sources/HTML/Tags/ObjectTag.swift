@@ -13,8 +13,7 @@ public struct Object:
     FormAttributeModifier,
     WidthAttributeModifier,
     HeightAttributeModifier,
-    UseMapAttributeModifier,  // W3C but not in spec
-    TypeMustMatchAttributeModifier,  // W3C but not in spec,
+    UseMapAttributeModifier,  // W3C but not in spec + TypeMustMatch?
     // categories
     FlowContent,
     PhrasingContent,
