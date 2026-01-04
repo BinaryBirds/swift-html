@@ -46,7 +46,7 @@ struct SelectorTests {
     func testPadding() {
         let css = Stylesheet {
             Media {
-                Universal {
+                AllElements {
                     Padding(0)
                     Padding(8.rem)
                     Padding(horizontal: 8.px)

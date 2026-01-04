@@ -12,3 +12,5 @@ public struct Universal: Selector {
         self.pseudo = nil
     }
 }
+
+public typealias AllElements = Universal
