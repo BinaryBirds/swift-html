@@ -92,10 +92,10 @@ public struct Media: Rule {
             case color(Prefix, String)
             /// Specifies the number of colors the target display can handle.
             case colorIndex(Prefix, String)
-            /// Specifies the bits per pixel in a monochrome frame buffer.
-            case monochrome(Prefix, String)
             /// Specifies the pixel density (dpi or dpcm) of the target display/paper.
             case resolution(Prefix, String)
+            /// Specifies the bits per pixel in a monochrome frame buffer.
+            case monochrome(String)
             /// Specifies the display mode.
             case displayMode(DisplayMode)
             /// Specifies scanning method of a tv display.
@@ -141,10 +141,10 @@ public struct Media: Rule {
                     return feature("color", prefix, value)
                 case .colorIndex(let prefix, let value):
                     return feature("color-index", prefix, value)
-                case .monochrome(let prefix, let value):
-                    return feature("monochrome", prefix, value)
                 case .resolution(let prefix, let value):
                     return feature("resolution", prefix, value)
+                case .monochrome(let value):
+                    return .init("(monochrome: \(value)")
                 case .displayMode(let value):
                     return .init("(display-mode: \(value.rawValue))")
                 case .scan(let value):
@@ -228,6 +228,10 @@ public func || (
 
 extension Media.Query {
 
+    static func custom(_ value: String) -> Self {
+        .init(value)
+    }
+
     // devices
     static var all: Self { Media.Query.Device.all.query }
     static var aural: Self { Media.Query.Device.aural.query }
@@ -243,6 +247,10 @@ extension Media.Query {
 
     static func width(_ value: String) -> Self {
         Media.Query.Value.width(.equals, value).query
+    }
+
+    static func width(_ unit: Unit) -> Self {
+        .width(unit.rawValue)
     }
 
     static func minWidth(_ value: String) -> Self {
@@ -313,13 +321,45 @@ extension Media.Query {
         Media.Query.Value.deviceAspectRatio(.max, value).query
     }
 
-    //case color(Prefix, String)
-    /////Specifies the number of colors the target display can handle.
-    //case colorIndex(Prefix, String)
-    ///// Specifies the bits per pixel in a monochrome frame buffer.
-    //case monochrome(Prefix, String)
-    ///// Specifies the pixel density (dpi or dpcm) of the target display/paper.
-    //case resolution(Prefix, String)
+    static func color(_ value: String) -> Self {
+        Media.Query.Value.color(.equals, value).query
+    }
+
+    static func minColor(_ value: String) -> Self {
+        Media.Query.Value.color(.min, value).query
+    }
+
+    static func maxColor(_ value: String) -> Self {
+        Media.Query.Value.color(.max, value).query
+    }
+
+    static func colorIndex(_ value: String) -> Self {
+        Media.Query.Value.colorIndex(.equals, value).query
+    }
+
+    static func minColorIndex(_ value: String) -> Self {
+        Media.Query.Value.colorIndex(.min, value).query
+    }
+
+    static func maxColorIndex(_ value: String) -> Self {
+        Media.Query.Value.colorIndex(.max, value).query
+    }
+
+    static func monochrome(_ value: String) -> Self {
+        Media.Query.Value.monochrome(value).query
+    }
+
+    static func resolution(_ value: String) -> Self {
+        Media.Query.Value.resolution(.equals, value).query
+    }
+
+    static func minResolution(_ value: String) -> Self {
+        Media.Query.Value.resolution(.min, value).query
+    }
+
+    static func maxResolution(_ value: String) -> Self {
+        Media.Query.Value.resolution(.max, value).query
+    }
 
     static func grid(_ value: Media.Query.Grid) -> Self {
         Media.Query.Value.grid(value).query
@@ -340,5 +380,4 @@ extension Media.Query {
     static func orientation(_ value: Media.Query.Orientation) -> Self {
         Media.Query.Value.orientation(value).query
     }
-
 }
