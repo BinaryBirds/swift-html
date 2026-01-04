@@ -3,7 +3,7 @@ public struct TabSize: Property {
         /// The number of space-characters to be displayed for each tab-character. Default value is 8    Play it »
         case number(Int)
         /// The length of a tab-character. This property value is not supported in any of the major browsers
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -42,7 +42,7 @@ public struct TabSize: Property {
     }
 
     /// Specifies the width of a tab character
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

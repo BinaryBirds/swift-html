@@ -11,7 +11,7 @@ public struct BorderRightWidth: Property {
         self.isImportant = false
     }
 
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

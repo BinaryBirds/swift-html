@@ -1,7 +1,7 @@
 public struct TextIndent: Property {
     public enum Value: Sendable {
         /// Defines a fixed indentation in px, pt, cm, em, etc. Default value is 0. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -33,7 +33,7 @@ public struct TextIndent: Property {
     }
 
     /// Specifies the indentation of the first line in a text-block
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

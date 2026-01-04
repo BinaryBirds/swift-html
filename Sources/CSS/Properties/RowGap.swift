@@ -1,7 +1,7 @@
 public struct RowGap: Property {
     public enum Value: Sendable {
         /// A specified length or % that will set the gap between the rows
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Default value. Specifies a normal gap between the rows
         case normal
         /// Sets this property to its default value.
@@ -37,7 +37,7 @@ public struct RowGap: Property {
     }
 
     /// Specifies the gap between the grid rows
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

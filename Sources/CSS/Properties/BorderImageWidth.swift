@@ -1,7 +1,7 @@
 public struct BorderImageWidth: Property {
     public enum Value: Sendable {
         /// A length unit (px) specifying the size of the border-width    Play it »
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Default value 1. Represents multiples of the corresponding border-width    Play it »
         case number(Double)
         /// If specified, the width is the intrinsic width or height of the corresponding image slice

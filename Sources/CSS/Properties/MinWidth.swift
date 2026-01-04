@@ -1,7 +1,7 @@
 public struct MinWidth: Property {
     public enum Value: Sendable {
         /// Default value is 0. Defines the minimum width in px, cm, etc. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -25,7 +25,7 @@ public struct MinWidth: Property {
 
     /// Sets the minimum width of an element
     public init(
-        _ value: Value = .length(.zero)
+        _ value: Value = .length(0)
     ) {
         self.name = "min-width"
         self.value = value.rawValue
@@ -33,7 +33,7 @@ public struct MinWidth: Property {
     }
 
     /// Sets the minimum width of an element
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

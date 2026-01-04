@@ -1,7 +1,12 @@
 public struct BorderRadius: Property {
     public enum Value: Sendable {
         /// Defines the shape of the corners. Default value is 0. Read about length units
-        case length(Unit, Unit?, Unit?, Unit?)
+        case length(
+            UnitRepresentable,
+            UnitRepresentable?,
+            UnitRepresentable?,
+            UnitRepresentable?
+        )
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

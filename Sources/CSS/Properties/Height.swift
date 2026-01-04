@@ -3,7 +3,7 @@ public struct Height: Property {
         /// The browser calculates the height. This is default
         case auto
         /// Defines the height in px, cm, etc.
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -37,7 +37,7 @@ public struct Height: Property {
     }
 
     /// Sets the height of an element
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

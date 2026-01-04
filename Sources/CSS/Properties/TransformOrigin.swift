@@ -15,7 +15,7 @@ public struct TransformOrigin: Property {
         /// %
         /// z-axis    Defines where the view is placed at the z-axis (for 3D transformations). Possible values:
         /// length
-        case values(Unit, Unit, Unit)
+        case values(UnitRepresentable, UnitRepresentable, UnitRepresentable)
         /// Sets this property to its default value. Read about initial
         case initial
         /// Inherits this property from its parent element. Read about inherit

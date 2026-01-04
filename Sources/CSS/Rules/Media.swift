@@ -249,7 +249,7 @@ extension Media.Query {
         Media.Query.Value.width(.equals, value).query
     }
 
-    static func width(_ unit: Unit) -> Self {
+    static func width(_ unit: UnitRepresentable) -> Self {
         .width(unit.rawValue)
     }
 
@@ -257,44 +257,88 @@ extension Media.Query {
         Media.Query.Value.width(.min, value).query
     }
 
+    static func minWidth(_ unit: UnitRepresentable) -> Self {
+        .minWidth(unit.rawValue)
+    }
+
     static func maxWidth(_ value: String) -> Self {
         Media.Query.Value.width(.max, value).query
+    }
+
+    static func maxWidth(_ unit: UnitRepresentable) -> Self {
+        .maxWidth(unit.rawValue)
     }
 
     static func height(_ value: String) -> Self {
         Media.Query.Value.height(.equals, value).query
     }
 
+    static func height(_ unit: UnitRepresentable) -> Self {
+        .height(unit.rawValue)
+    }
+
     static func minHeight(_ value: String) -> Self {
         Media.Query.Value.height(.min, value).query
+    }
+
+    static func minHeight(_ unit: UnitRepresentable) -> Self {
+        .minHeight(unit.rawValue)
     }
 
     static func maxHeight(_ value: String) -> Self {
         Media.Query.Value.height(.max, value).query
     }
 
+    static func maxHeight(_ unit: UnitRepresentable) -> Self {
+        .maxHeight(unit.rawValue)
+    }
+
     static func deviceWidth(_ value: String) -> Self {
         Media.Query.Value.deviceWidth(.equals, value).query
+    }
+
+    static func deviceWidth(_ unit: UnitRepresentable) -> Self {
+        .deviceWidth(unit.rawValue)
     }
 
     static func deviceMinWidth(_ value: String) -> Self {
         Media.Query.Value.deviceWidth(.min, value).query
     }
 
+    static func deviceMinWidth(_ unit: UnitRepresentable) -> Self {
+        .deviceMinWidth(unit.rawValue)
+    }
+
     static func deviceMaxWidth(_ value: String) -> Self {
         Media.Query.Value.deviceWidth(.max, value).query
+    }
+
+    static func deviceMaxWidth(_ unit: UnitRepresentable) -> Self {
+        .deviceMaxWidth(unit.rawValue)
     }
 
     static func deviceHeight(_ value: String) -> Self {
         Media.Query.Value.deviceHeight(.equals, value).query
     }
 
+    static func deviceHeight(_ unit: UnitRepresentable) -> Self {
+        .deviceHeight(unit.rawValue)
+    }
+
     static func deviceMinHeight(_ value: String) -> Self {
         Media.Query.Value.deviceHeight(.min, value).query
     }
 
+    static func deviceMinHeight(_ unit: UnitRepresentable) -> Self {
+        .deviceMinHeight(unit.rawValue)
+    }
+
     static func deviceMaxHeight(_ value: String) -> Self {
         Media.Query.Value.deviceHeight(.max, value).query
+    }
+
+    static func deviceMaxHeight(_ unit: UnitRepresentable) -> Self {
+        .deviceMaxHeight(unit.rawValue)
     }
 
     static func aspectRatio(_ value: String) -> Self {

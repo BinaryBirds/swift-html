@@ -3,7 +3,7 @@ public struct Right: Property {
         /// Lets the browser calculate the right edge position. This is default
         case auto
         /// Sets the bottom edge position in px, cm, etc. Negative values are allowed. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -37,7 +37,9 @@ public struct Right: Property {
     }
 
     /// Specifies the right position of a positioned element
-    public init(_ value: Unit) {
+    public init(
+        _ value: UnitRepresentable
+    ) {
         self.init(.length(value))
     }
 }

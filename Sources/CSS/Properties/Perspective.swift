@@ -1,7 +1,7 @@
 public struct Perspective: Property {
     public enum Value: Sendable {
         /// How far the element is placed from the view
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Default value. Same as 0. The perspective is not set
         case none
         /// Sets this property to its default value.
@@ -37,7 +37,7 @@ public struct Perspective: Property {
     }
 
     /// Gives a 3D-positioned element some perspective
-    public init(_ value: Unit = .zero) {
+    public init(_ value: UnitRepresentable = 0) {
         self.init(.length(value))
     }
 }

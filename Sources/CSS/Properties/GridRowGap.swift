@@ -3,7 +3,7 @@
 public struct GridRowGap: Property {
     public enum Value: Sendable {
         /// Any legal length value, like px or %. 0 is the default value.
-        case length(Unit)
+        case length(UnitRepresentable)
 
         var rawValue: String {
             switch self {
@@ -27,7 +27,7 @@ public struct GridRowGap: Property {
     }
 
     /// Specifies the size of the gap between rows
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

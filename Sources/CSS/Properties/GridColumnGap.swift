@@ -1,7 +1,7 @@
 public struct GridColumnGap: Property {
     public enum Value: Sendable {
         /// Any legal length value, like px or %. 0 is the default value. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
 
         var rawValue: String {
             switch self {
@@ -25,7 +25,7 @@ public struct GridColumnGap: Property {
     }
 
     /// Specifies the size of the gap between columns
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

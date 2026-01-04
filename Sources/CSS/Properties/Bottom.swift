@@ -3,7 +3,7 @@ public struct Bottom: Property {
         /// Lets the browser calculate the bottom edge position. This is default
         case auto
         /// Sets the bottom edge position in px, cm, etc. Negative values are allowed. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

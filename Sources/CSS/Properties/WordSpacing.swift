@@ -3,7 +3,7 @@ public struct WordSpacing: Property {
         /// Defines normal space between words (0.25em) . This is default
         case normal
         /// Defines an additional space between words (in px, pt, cm, em, etc). Negative values are allowed. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -37,7 +37,7 @@ public struct WordSpacing: Property {
     }
 
     /// Increases or decreases the space between words in a text
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

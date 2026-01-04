@@ -7,7 +7,7 @@ public struct BorderWidth: Property {
         /// Specifies a thick bottom border
         case thick
         /// Allows you to define the thickness of the bottom border.
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -45,7 +45,7 @@ public struct BorderWidth: Property {
     }
 
     /// Sets the width of the four borders
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

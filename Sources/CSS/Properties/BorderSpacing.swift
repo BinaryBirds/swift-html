@@ -3,7 +3,7 @@ public struct BorderSpacing: Property {
         /// Specifies the distance between the borders of adjacent cells in px, cm, etc. Negative values are not allowed.
         /// If one value is specified, it defines both the horizontal and vertical spacing between cells
         /// If two values are specified, the first sets the horizontal spacing and the second sets the vertical spacing
-        case length(Unit, Unit?)
+        case length(UnitRepresentable, UnitRepresentable?)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

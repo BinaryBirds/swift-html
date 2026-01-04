@@ -7,7 +7,7 @@ public struct ColumnRuleWidth: Property {
         /// Defines a thick rule
         case thick
         /// Specifies the width of the rule
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

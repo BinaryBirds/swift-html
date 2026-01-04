@@ -1,7 +1,7 @@
 public struct BorderImageOutset: Property {
     public enum Value: Sendable {
         /// A length unit specifying how far from the edges the border-image will appear. Default value is 0
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Represent multiples of the corresponding border-width
         case number(Double)
         /// Sets this property to its default value.

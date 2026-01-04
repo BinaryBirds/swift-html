@@ -12,7 +12,7 @@ public struct BorderTopWidth: Property {
     }
 
     /// Sets the width of the top border
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

@@ -9,7 +9,7 @@ public struct GridTemplateRows: Property {
         /// Sets the size of each row to depend on the smallest item in the row
         case minContent
         /// Sets the size of the rows, by using a legal length value.
-        case length(Unit)
+        case length(UnitRepresentable)
 
         var rawValue: String {
             switch self {

@@ -11,8 +11,8 @@ struct SwiftCssTests {
             Charset("UTF-8")
             Media {
                 Root {
-                    Margin(horizontal: .px(8.5), vertical: .px(8))
-                    Padding(horizontal: .px(8), vertical: .px(8))
+                    Margin(horizontal: 8.5.px, vertical: 8.px)
+                    Padding(horizontal: 8.px, vertical: 8.px)
                 }
             }
         }
@@ -28,8 +28,8 @@ struct SwiftCssTests {
             Charset("UTF-8")
             Media {
                 Root {
-                    Margin(horizontal: .px(8.5), vertical: .px(8))
-                    Padding(horizontal: .px(8), vertical: .px(8))
+                    Margin(horizontal: 8.5.px, vertical: 8.px)
+                    Padding(horizontal: 8.px, vertical: 8.px)
                 }
             }
         }
@@ -52,8 +52,8 @@ struct SwiftCssTests {
 
             Media {
                 Root {
-                    Margin(horizontal: .px(8.5), vertical: .px(8))
-                    Padding(horizontal: .px(8), vertical: .px(8))
+                    Margin(horizontal: 8.5.px, vertical: 8.px)
+                    Padding(horizontal: 8.px, vertical: 8.px)
                 }
             }
 
@@ -64,7 +64,7 @@ struct SwiftCssTests {
             }
             Media(.screen && .prefersColorScheme(.dark)) {
                 Universal {
-                    Margin(horizontal: .px(8), vertical: .px(8))
+                    Margin(horizontal: 8.px, vertical: 8.px)
                 }
             }
 
@@ -109,15 +109,20 @@ struct SwiftCssTests {
                     Variable("size", "400px")
                 }
                 Class("container") {
-                    Width(.px(200))
+                    Width(200.px)
                 }
             }
             Media(.screen && .maxWidth("599px")) {
                 Root {
-                    Variable("size", "500px")
+                    Variable("size", "200px")
                 }
             }
             Media(.screen && .prefersColorScheme(.dark)) {
+                Root {
+                    Variable("size", "500px")
+                }
+            }
+            Media(.screen && .displayMode(.standalone)) {
                 Root {
                     Variable("size", "460px")
                 }
@@ -159,7 +164,7 @@ struct SwiftCssTests {
                     Background(.color(.red))
                 }
             }
-            Media(.screen && .maxWidth("599px")) {
+            Media(.screen && .maxWidth(599.px)) {
                 Root {
                     Background(.color(.blue))
                 }

@@ -3,7 +3,7 @@ public struct VerticalAlign: Property {
         /// The element is aligned with the baseline of the parent. This is default
         case baseline
         /// Raises or lower an element by the specified length. Negative values are allowed. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// The element is aligned with the subscript baseline of the parent
         case sub
         /// The element is aligned with the superscript baseline of the parent
@@ -65,7 +65,7 @@ public struct VerticalAlign: Property {
     }
 
     /// Sets the vertical alignment of an element.
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

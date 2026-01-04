@@ -19,7 +19,7 @@ public struct FontSize: Property {
         /// Sets the font-size to a larger size than the parent element
         case larger
         /// Sets the font-size to a fixed size in px, cm, etc.
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

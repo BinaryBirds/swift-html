@@ -13,7 +13,14 @@ public struct BoxShadow: Property {
         /// color        Optional. The color of the shadow. The default value is the text color. Look at CSS Color Values for a complete list of possible color values.
         ///          Note: In Safari (on PC) the color parameter is required. If you do not specify the color, the shadow is not displayed at all.    Play it »
         /// inset        Optional. Changes the shadow from an outer shadow (outset) to an inner shadow    Play it »
-        case values(Unit, Unit, Unit?, Unit?, CSSColor, ShadowType?)
+        case values(
+            UnitRepresentable,
+            UnitRepresentable,
+            UnitRepresentable?,
+            UnitRepresentable?,
+            CSSColor,
+            ShadowType?
+        )
         /// Sets this property to its default value. Read about initial    Play it »
         case initial
         /// Inherits this property from its parent element. Read about inherit
@@ -62,10 +69,10 @@ public struct BoxShadow: Property {
     }
 
     public init(
-        _ hOffset: Unit,
-        _ vOffset: Unit,
-        blur: Unit? = nil,
-        spread: Unit? = nil,
+        _ hOffset: UnitRepresentable,
+        _ vOffset: UnitRepresentable,
+        blur: UnitRepresentable? = nil,
+        spread: UnitRepresentable? = nil,
         color: CSSColor,
         type: Value.ShadowType = .outset
     ) {

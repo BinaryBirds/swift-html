@@ -5,7 +5,7 @@ public struct LineHeight: Property {
         /// A number that will be multiplied with the current font-size to set the line height
         case number(Double)
         /// A fixed line height in px, pt, cm, etc.
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

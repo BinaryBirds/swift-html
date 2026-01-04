@@ -1,7 +1,7 @@
 public struct Margin: Property {
     public enum Value: Sendable {
         /// Specifies a fixed bottom margin in px, cm, em, etc. Default value is 0. Negative values are allowed.
-        case length(Unit)
+        case length(UnitRepresentable)
         // The browser calculates a bottom margin
         case auto
         /// Sets this property to its default value.
@@ -29,20 +29,20 @@ public struct Margin: Property {
 
     /// Sets all the margin properties in one declaration
     public init(
-        _ value: Value = .length(.zero)
+        _ value: Value = .length(0)
     ) {
         self.name = "margin"
         self.value = value.rawValue
         self.isImportant = false
     }
 
-    public init(_ value: Unit = .zero) {
+    public init(_ value: UnitRepresentable = 0) {
         self.init(.length(value))
     }
 
     public init(
-        horizontal: Value = .length(.zero),
-        vertical: Value = .length(.zero)
+        horizontal: Value = .length(0),
+        vertical: Value = .length(0)
     ) {
         self.name = "margin"
         self.value = horizontal.rawValue + " " + vertical.rawValue
@@ -50,17 +50,17 @@ public struct Margin: Property {
     }
 
     public init(
-        horizontal: Unit = .zero,
-        vertical: Unit = .zero
+        horizontal: UnitRepresentable = 0,
+        vertical: UnitRepresentable = 0
     ) {
         self.init(horizontal: .length(horizontal), vertical: .length(vertical))
     }
 
     public init(
-        top: Value = .length(.zero),
-        right: Value = .length(.zero),
-        bottom: Value = .length(.zero),
-        left: Value = .length(.zero)
+        top: Value = .length(0),
+        right: Value = .length(0),
+        bottom: Value = .length(0),
+        left: Value = .length(0)
     ) {
         self.name = "margin"
         self.value =
@@ -70,10 +70,10 @@ public struct Margin: Property {
     }
 
     public init(
-        top: Unit = .zero,
-        right: Unit = .zero,
-        bottom: Unit = .zero,
-        left: Unit = .zero
+        top: UnitRepresentable = 0,
+        right: UnitRepresentable = 0,
+        bottom: UnitRepresentable = 0,
+        left: UnitRepresentable = 0
     ) {
         self.init(
             top: .length(top),

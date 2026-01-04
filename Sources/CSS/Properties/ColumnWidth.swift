@@ -3,7 +3,7 @@ public struct ColumnWidth: Property {
         /// Default value. The column width will be determined by the browser
         case auto
         /// A length that specifies the width of the columns. The number of columns will be the minimum number of columns needed to show all the content across the element.
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

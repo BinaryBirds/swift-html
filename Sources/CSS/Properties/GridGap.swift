@@ -12,7 +12,10 @@ public struct GridGap: Property {
     }
 
     /// A shorthand property for the grid-row-gap and grid-column-gap properties
-    public init(_ row: Unit, _ col: Unit) {
+    public init(
+        _ row: UnitRepresentable,
+        _ col: UnitRepresentable
+    ) {
         self.name = "grid-gap"
         self.value = row.rawValue + " " + col.rawValue
         self.isImportant = false

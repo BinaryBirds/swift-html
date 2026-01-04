@@ -9,7 +9,7 @@ public struct GridTemplateColumns: Property {
         /// Sets the size of each column to depend on the smallest item in the column
         case minContent
         /// Sets the size of the columns, by using a legal length value.
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

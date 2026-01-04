@@ -3,7 +3,7 @@ public struct Width: Property {
         /// Default value. The browser calculates the width
         case auto
         /// Defines the width in px, cm, etc. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -37,7 +37,7 @@ public struct Width: Property {
     }
 
     /// Sets the width of an element
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

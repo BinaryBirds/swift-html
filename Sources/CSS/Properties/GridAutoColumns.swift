@@ -11,7 +11,7 @@ public struct GridAutoColumns: Property {
         /// Sets a size range greater than or equal to min and less than or equal to max
         //    case minmax(min.max)
         ///     Sets the size of the columns, by using a legal length value.
-        case length(Unit)
+        case length(UnitRepresentable)
 
         var rawValue: String {
             switch self {

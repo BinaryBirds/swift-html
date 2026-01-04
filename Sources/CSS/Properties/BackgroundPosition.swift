@@ -34,7 +34,7 @@ public struct BackgroundPosition: Property {
         /// Units can be pixels (0px 0px) or any other CSS units.
         /// If you only specify one value, the other value will be 50%.
         /// You can mix % and positions
-        case position(Unit, Unit?)
+        case position(UnitRepresentable, UnitRepresentable?)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

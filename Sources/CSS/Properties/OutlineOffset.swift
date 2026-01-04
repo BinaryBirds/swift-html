@@ -1,7 +1,7 @@
 public struct OutlineOffset: Property {
     public enum Value: Sendable {
         /// The distance the outline is outset from the border edge. Default value is 0
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -25,7 +25,7 @@ public struct OutlineOffset: Property {
 
     /// Offsets an outline, and draws it beyond the border edge
     public init(
-        _ value: Value = .length(.zero)
+        _ value: Value = .length(0)
     ) {
         self.name = "outline-offset"
         self.value = value.rawValue
@@ -33,7 +33,7 @@ public struct OutlineOffset: Property {
     }
 
     /// Offsets an outline, and draws it beyond the border edge
-    public init(_ value: Unit = .zero) {
+    public init(_ value: UnitRepresentable = 0) {
         self.init(.length(value))
     }
 }

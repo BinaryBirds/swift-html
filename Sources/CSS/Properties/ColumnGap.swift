@@ -2,7 +2,7 @@ public struct ColumnGap: Property {
     public enum Value: Sendable {
 
         /// A specified length that will set the gap between the columns
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Default value. Specifies a normal gap between the columns. W3C suggests a value of 1em
         case normal
         /// Sets this property to its default value.
@@ -38,7 +38,7 @@ public struct ColumnGap: Property {
     }
 
     /// Specifies the gap between the columns
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }

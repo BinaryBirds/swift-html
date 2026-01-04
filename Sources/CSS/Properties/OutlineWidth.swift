@@ -7,7 +7,7 @@ public struct OutlineWidth: Property {
         /// Specifies a thick outline
         case thick
         /// Allows you to define the thickness of the outline. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

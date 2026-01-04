@@ -3,7 +3,7 @@ public struct LetterSpacing: Property {
         /// No extra space between characters. This is default
         case normal
         /// Defines an extra space between characters (negative values are allowed). Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.

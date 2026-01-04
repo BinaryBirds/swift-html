@@ -5,7 +5,7 @@ public struct ObjectPosition: Property {
         /// First value controls the x-axis and the second value controls the y-axis.
         /// Can be a string (left, center or right), or a number (in px or %).
         /// Negative values are allowed
-        case position(Unit, Unit?)
+        case position(UnitRepresentable, UnitRepresentable?)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -29,7 +29,7 @@ public struct ObjectPosition: Property {
 
     /// Specifies the alignment of the replaced element inside its box
     public init(
-        _ value: Value = .position(.percent(50), .percent(50))
+        _ value: Value = .position(50.percent, 50.percent)
     ) {
         self.name = "object-position"
         self.value = value.rawValue

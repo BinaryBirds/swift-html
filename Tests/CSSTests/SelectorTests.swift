@@ -25,8 +25,8 @@ struct SelectorTests {
         let css = Stylesheet {
             Media {
                 Universal {
-                    MarginTop(.length(.px(8)))
-                    MarginBottom(.length(.percent(25)))
+                    MarginTop(8.px)
+                    MarginBottom(.length(25.percent))
                 }
             }
         }
@@ -47,10 +47,10 @@ struct SelectorTests {
         let css = Stylesheet {
             Media {
                 Universal {
-                    Padding(.zero)
-                    Padding(.rem(8))
-                    Padding(horizontal: .px(8))
-                    Padding(horizontal: .length(.zero), vertical: .inherit)
+                    Padding(0)
+                    Padding(8.rem)
+                    Padding(horizontal: 8.px)
+                    Padding(horizontal: .length(0), vertical: .inherit)
                 }
             }
         }

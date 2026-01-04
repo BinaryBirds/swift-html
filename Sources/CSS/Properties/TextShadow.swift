@@ -4,7 +4,12 @@ public struct TextShadow: Property {
         /// v-shadow    Required. The position of the vertical shadow. Negative values are allowed    Play it »
         /// blur-radius    Optional. The blur radius. Default value is 0    Play it »
         /// color    Optional. The color of the shadow. Look at CSS Color Values for a complete list of possible color values    Play it »
-        case values(Unit, Unit, Unit, CSSColor)
+        case values(
+            UnitRepresentable,
+            UnitRepresentable,
+            UnitRepresentable,
+            CSSColor
+        )
         /// Default value. No shadow    Play it »
         case none
         /// Sets this property to its default value. Read about initial    Play it »

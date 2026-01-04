@@ -1,7 +1,7 @@
 public struct BorderImageSlice: Property {
     public enum Value: Sendable {
         /// The number(s) represent pixels for raster images or coordinates for vector images
-        case number(Unit)
+        case number(UnitRepresentable)
         /// Causes the middle part of the image to be displayed
         case fill
         /// Sets this property to its default value.

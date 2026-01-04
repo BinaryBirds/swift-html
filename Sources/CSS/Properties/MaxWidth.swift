@@ -3,7 +3,7 @@ public struct MaxWidth: Property {
         /// No maximum width. This is default
         case none
         /// Defines the maximum width in px, cm, etc. Read about length units
-        case length(Unit)
+        case length(UnitRepresentable)
         /// Sets this property to its default value.
         case initial
         /// Inherits this property from its parent element.
@@ -37,7 +37,7 @@ public struct MaxWidth: Property {
     }
 
     /// Sets the maximum width of an element
-    public init(_ value: Unit) {
+    public init(_ value: UnitRepresentable) {
         self.init(.length(value))
     }
 }
