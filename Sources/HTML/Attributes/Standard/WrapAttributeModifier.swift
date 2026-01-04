@@ -1,7 +1,15 @@
 import SGML
 
+public enum WrapAttributeValue: String, AttributeValueRepresentable {
+    /// Text is not to be wrapped when submitted.
+    case soft
+    /// Text is to have newlines added when submitted.
+    case hard
+}
+
 public protocol WrapAttributeModifier {
-    associatedtype WrapAttributeValueType: AttributeValueRepresentable = String
+    associatedtype WrapAttributeValueType: AttributeValueRepresentable =
+        WrapAttributeValue
 }
 
 extension WrapAttributeModifier where Self: Attributes & Mutable {

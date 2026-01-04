@@ -34,7 +34,11 @@ public protocol GlobalAttributesModifier:
     TabIndexAttributeModifier,
     TitleAttributeModifier,
     TranslateAttributeModifier,
-    WritingSuggestionsAttributeModifier
+    WritingSuggestionsAttributeModifier,
+    // events
+    EventAttributesModifier,
+    // aria
+    AriaAttributesModifier
 {
 
 }

@@ -34,7 +34,7 @@ public struct Link:
 
     // MARK: -
 
-    public enum RelAttributeValue: String, AttributeValueRepresentable {
+    public enum Rel: String, AttributeValueRepresentable {
         /// Provides a link to an alternate version of the document (i.e. print page, translated or mirror).
         ///
         /// Example: `<link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">`
@@ -85,12 +85,12 @@ public struct Link:
         case maskIcon = "mask-icon"
     }
 
-    public typealias RelAttributeValueType = RelAttributeValue
+    public typealias RelAttributeValueType = Rel
 
     // MARK: -
 
     public init(
-        rel value: RelAttributeValue
+        rel value: RelAttributeValueType
     ) {
         self.attributes = .init()
         self = rel(value)

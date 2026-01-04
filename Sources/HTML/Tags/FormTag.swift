@@ -60,7 +60,7 @@ public struct Form:
         self.init(children: block())
     }
 
-    public enum FormRelAttributeValue: String, AttributeValueRepresentable {
+    public enum Rel: String, AttributeValueRepresentable {
         /// Specifies that the referenced document is not a part of the current site
         case external
         /// Links to a help document
@@ -82,5 +82,5 @@ public struct Form:
         case search
     }
 
-    public typealias RelAttributeValueType = FormRelAttributeValue
+    public typealias RelAttributeValueType = Rel
 }

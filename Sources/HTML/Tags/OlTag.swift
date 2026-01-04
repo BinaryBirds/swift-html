@@ -35,7 +35,7 @@ public struct Ol:
 
     // MARK: -
 
-    public enum OlTypeAttributeValue: String, AttributeValueRepresentable {
+    public enum Types: String, AttributeValueRepresentable {
         /// Default. Decimal numbers (1, 2, 3, 4)
         case decimal = "1"
         /// Alphabetically ordered list, lowercase (a, b, c, d)
@@ -48,7 +48,7 @@ public struct Ol:
         case upperRoman = "I"
     }
 
-    public typealias TypeAttributeValueType = OlTypeAttributeValue
+    public typealias TypeAttributeValueType = Types
 
     // MARK: -
 

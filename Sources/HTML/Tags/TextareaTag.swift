@@ -66,13 +66,4 @@ public struct Textarea:
     ) {
         self.init(children: block())
     }
-
-    public enum WrapAttributeValue: String, AttributeValueRepresentable {
-        /// The text in the textarea is not wrapped when submitted in a form. This is default.
-        case soft
-        /// The text in the textarea is wrapped (contains newlines) when submitted in a form. When \"hard\" is used, the cols attribute must be specified.
-        case hard
-    }
-
-    public typealias WrapAttributeValueType = WrapAttributeValue
 }
