@@ -1,58 +1,37 @@
-//
-//  Right.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
+public struct Right: Property {
+    public enum Value: Sendable {
+        /// Lets the browser calculate the right edge position. This is default
+        case auto
+        /// Sets the bottom edge position in px, cm, etc. Negative values are allowed. Read about length units
+        case length(Unit)
+        /// Sets this property to its default value.
+        case initial
+        /// Inherits this property from its parent element.
+        case inherit
 
-public enum RightValue {
-    /// Lets the browser calculate the right edge position. This is default
-    case auto
-    /// Sets the bottom edge position in px, cm, etc. Negative values are allowed. Read about length units
-    case length(Unit)
-    /// Sets this property to its default value.
-    case initial
-    /// Inherits this property from its parent element.
-    case inherit
-
-    var rawValue: String {
-        switch self {
-        case .auto:
-            return "auto"
-        case .length(let value):
-            return value.rawValue
-        case .initial:
-            return "initial"
-        case .inherit:
-            return "inherit"
+        var rawValue: String {
+            switch self {
+            case .auto:
+                return "auto"
+            case .length(let value):
+                return value.rawValue
+            case .initial:
+                return "initial"
+            case .inherit:
+                return "inherit"
+            }
         }
     }
-}
 
-public struct Right: Property {
-    public var value: String
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "right" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
-    }
-
-    public func important() -> Right {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension Right {
-
     /// Specifies the right position of a positioned element
-    public init(_ value: RightValue = .auto) {
-        self.init(value.rawValue)
+    public init(_ value: Right.Value = .auto) {
+        self.name = "right"
+        self.value = value.rawValue
+        self.isImportant = false
     }
 
     /// Specifies the right position of a positioned element

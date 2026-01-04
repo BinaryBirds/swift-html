@@ -1,32 +1,32 @@
-//
-//  Mask.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
-
-// @TODO: add proper mask support
-// https://developer.mozilla.org/en-US/docs/Web/CSS/mask
-/// Hides an element by masking or clipping the image at specific places
-
 public struct Mask: Property {
-    public var value: String
+    public enum Value: Sendable {
+        /// Custom mask value.
+        case value(String)
+        /// Sets this property to its default value.
+        case initial
+        /// Inherits this property from its parent element.
+        case inherit
+
+        var rawValue: String {
+            switch self {
+            case .value(let value):
+                return value
+            case .initial:
+                return "initial"
+            case .inherit:
+                return "inherit"
+            }
+        }
+    }
+
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "mask" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
+    /// Hides an element by masking or clipping the image at specific places
+    public init(_ value: Value) {
+        self.name = "mask"
+        self.value = value.rawValue
+        self.isImportant = false
     }
-
-    public func important() -> Mask {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension Mask {
 }

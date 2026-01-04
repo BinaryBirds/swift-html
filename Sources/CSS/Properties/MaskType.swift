@@ -1,32 +1,23 @@
-//
-//  MaskType.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
-
-// @TODO: add mask support
-// https://developer.mozilla.org/en-US/docs/Web/CSS/mask-type
-/// Specifies whether a mask element is used as a luminance or an alpha mask
-
 public struct MaskType: Property {
-    public var value: String
+    public enum Value: String, Sendable {
+        /// Uses the luminance of the mask.
+        case luminance
+        /// Uses the alpha channel of the mask.
+        case alpha
+        /// Sets this property to its default value.
+        case initial
+        /// Inherits this property from its parent element.
+        case inherit
+    }
+
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "mask-type" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
+    /// Specifies whether a mask element is used as a luminance or an alpha mask
+    public init(_ value: Value) {
+        self.name = "mask-type"
+        self.value = value.rawValue
+        self.isImportant = false
     }
-
-    public func important() -> MaskType {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension MaskType {
 }

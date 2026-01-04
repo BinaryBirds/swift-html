@@ -1,43 +1,22 @@
-//
-//  OverflowWrap.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
-
-public enum OverflowWrapValue: String {
-    case normal
-    case breakWord = "break-word"
-    case anywhere
-    case inherit
-    case initial
-    case revert
-    case unset
-}
-
 public struct OverflowWrap: Property {
-    public var value: String
+    public enum Value: String, Sendable {
+        case normal
+        case breakWord = "break-word"
+        case anywhere
+        case inherit
+        case initial
+        case revert
+        case unset
+    }
+
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "overflow-wrap" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
-    }
-
-    public func important() -> OverflowWrap {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension OverflowWrap {
-
     /// Specifies whether or not the browser may break lines within words in order to prevent overflow (when a string is too long to fit its containing box)
-    public init(_ value: OverflowWrapValue) {
-        self.init(value.rawValue)
+    public init(_ value: OverflowWrap.Value) {
+        self.name = "overflow-wrap"
+        self.value = value.rawValue
+        self.isImportant = false
     }
 }

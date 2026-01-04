@@ -1,54 +1,33 @@
-//
-//  Padding.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
+public struct Padding: Property {
+    public enum Value: Sendable {
+        /// Specifies a fixed bottom padding in px, pt, cm, etc. Default value is 0.
+        case length(Unit)
+        /// Sets this property to its default value.
+        case initial
+        /// Inherits this property from its parent element.
+        case inherit
 
-public enum PaddingValue {
-    /// Specifies a fixed bottom padding in px, pt, cm, etc. Default value is 0.
-    case length(Unit)
-    /// Sets this property to its default value.
-    case initial
-    /// Inherits this property from its parent element.
-    case inherit
-
-    var rawValue: String {
-        switch self {
-        case .length(let value):
-            return value.rawValue
-        case .initial:
-            return "initial"
-        case .inherit:
-            return "inherit"
+        var rawValue: String {
+            switch self {
+            case .length(let value):
+                return value.rawValue
+            case .initial:
+                return "initial"
+            case .inherit:
+                return "inherit"
+            }
         }
     }
-}
 
-public struct Padding: Property {
-    public var value: String
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "padding" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
-    }
-
-    public func important() -> Padding {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension Padding {
-
     /// Sets all the Padding properties in one declaration
-    public init(_ value: PaddingValue = .length(.zero)) {
-        self.init(value.rawValue)
+    public init(_ value: Padding.Value = .length(.zero)) {
+        self.name = "padding"
+        self.value = value.rawValue
+        self.isImportant = false
     }
 
     public init(_ value: Unit = .zero) {
@@ -56,10 +35,12 @@ extension Padding {
     }
 
     public init(
-        horizontal: PaddingValue = .length(.zero),
-        vertical: PaddingValue = .length(.zero)
+        horizontal: Padding.Value = .length(.zero),
+        vertical: Padding.Value = .length(.zero)
     ) {
-        self.init(horizontal.rawValue + " " + vertical.rawValue)
+        self.name = "padding"
+        self.value = horizontal.rawValue + " " + vertical.rawValue
+        self.isImportant = false
     }
 
     public init(
@@ -70,15 +51,16 @@ extension Padding {
     }
 
     public init(
-        top: PaddingValue = .length(.zero),
-        right: PaddingValue = .length(.zero),
-        bottom: PaddingValue = .length(.zero),
-        left: PaddingValue = .length(.zero)
+        top: Padding.Value = .length(.zero),
+        right: Padding.Value = .length(.zero),
+        bottom: Padding.Value = .length(.zero),
+        left: Padding.Value = .length(.zero)
     ) {
-        self.init(
+        self.name = "padding"
+        self.value =
             top.rawValue + " " + right.rawValue + " " + bottom.rawValue + " "
-                + left.rawValue
-        )
+            + left.rawValue
+        self.isImportant = false
     }
 
     public init(

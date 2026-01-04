@@ -1,34 +1,14 @@
-//
-//  BorderTopWidth.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
-
 public struct BorderTopWidth: Property {
-    public var value: String
+
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "border-top-width" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
-    }
-
-    public func important() -> BorderTopWidth {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension BorderTopWidth {
-
     /// Sets the width of the top border
-    public init(_ value: BorderWidthValue = .medium) {
-        self.init(value.rawValue)
+    public init(_ value: BorderWidth.Value = .medium) {
+        self.name = "border-top-width"
+        self.value = value.rawValue
+        self.isImportant = false
     }
 
     /// Sets the width of the top border

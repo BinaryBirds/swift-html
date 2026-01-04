@@ -1,32 +1,32 @@
-//
-//  Orphans.swift
-//  SwiftCss
-//
-//  Created by Tibor Bodecs on 2021. 07. 10..
-//
-
-// @TODO: add orphans support
-// https://developer.mozilla.org/en-US/docs/Web/CSS/orphans
-/// Sets the minimum number of lines that must be left at the bottom of a page when a page break occurs inside an element
-
 public struct Orphans: Property {
-    public var value: String
+    public enum Value: Sendable {
+        /// Sets the minimum number of lines to keep together at the bottom of a page
+        case count(Int)
+        /// Sets this property to its default value.
+        case initial
+        /// Inherits this property from its parent element.
+        case inherit
+
+        var rawValue: String {
+            switch self {
+            case .count(let value):
+                return "\(value)"
+            case .initial:
+                return "initial"
+            case .inherit:
+                return "inherit"
+            }
+        }
+    }
+
+    public let name: String
+    public let value: String
     public var isImportant: Bool
 
-    public var name: String { "orphans" }
-
-    public init(_ value: String, isImportant: Bool = false) {
-        self.value = value
-        self.isImportant = isImportant
+    /// Sets the minimum number of lines that must be left at the bottom of a page
+    public init(_ value: Value) {
+        self.name = "orphans"
+        self.value = value.rawValue
+        self.isImportant = false
     }
-
-    public func important() -> Orphans {
-        guard !isImportant else {
-            return self
-        }
-        return .init(value, isImportant: true)
-    }
-}
-
-extension Orphans {
 }
