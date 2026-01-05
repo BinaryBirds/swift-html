@@ -7,7 +7,7 @@ struct MIMETests {
 
     @Test
     func standardTypes() async throws {
-        let mime = MIME(.standard)
+        let mime = MIMEDetector(.standard)
 
         #expect("text/html" == mime.getType(for: "html"))
         #expect("html" == mime.getExtension(for: "text/html"))
@@ -18,7 +18,7 @@ struct MIMETests {
 
     @Test
     func nonStandardTypes() async throws {
-        let nsMime = MIME(.nonStandard)
+        let nsMime = MIMEDetector(.nonStandard)
 
         #expect(nsMime.getType(for: "html") == nil)
         #expect(nsMime.getExtension(for: "text/html") == nil)
@@ -91,7 +91,7 @@ struct MIMETests {
             "7z": "application/x-7z-compressed",
         ]
 
-        let mime = MIME()
+        let mime = MIMEDetector()
         for (ext, expectation) in testCases {
             #expect(mime.getType(for: ext) == expectation)
         }

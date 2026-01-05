@@ -5,7 +5,7 @@
 //  Created by Tibor Bodecs on 2023. 02. 24..
 //
 
-public struct MIME {
+public struct MIMEDetector {
 
     private var definitions: [String: [String]]
 

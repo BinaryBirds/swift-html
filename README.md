@@ -282,9 +282,14 @@ print(StylesheetRenderer(minify: false, indent: 4).render(css))
 ```
 
 
-## Future improvements
+## Todo
 
+- [ ] Finish MIME lib (extension detector, DSL)
+- [ ] Proper CSS renderer (minify)
+- [ ] Security for HTML => proper escaping
 - [ ] Get rid of public enums or use resilient enums
+- [ ] Documentation for everything
+- [ ] 90%+ test coverage
 
 
 ## Credits & references
@@ -306,3 +311,4 @@ print(StylesheetRenderer(minify: false, indent: 4).render(css))
 - [What Is a File Extension and MIME Type?](https://www.lifewire.com/file-extensions-and-mime-types-3469109)
 
 
+- [MIME DB](https://github.com/jshttp/mime-db)
