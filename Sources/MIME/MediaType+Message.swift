@@ -30,7 +30,7 @@ extension MediaType {
                 type: name,
                 subtype: "disposition-notification",
                 possibleExtensions: [
-                    "disposition-notification",
+                    "disposition-notification"
                 ]
             )
         }
@@ -54,7 +54,7 @@ extension MediaType {
                 type: name,
                 subtype: "global",
                 possibleExtensions: [
-                    "u8msg",
+                    "u8msg"
                 ]
             )
         }
@@ -64,7 +64,7 @@ extension MediaType {
                 type: name,
                 subtype: "global-delivery-status",
                 possibleExtensions: [
-                    "u8dsn",
+                    "u8dsn"
                 ]
             )
         }
@@ -74,7 +74,7 @@ extension MediaType {
                 type: name,
                 subtype: "global-disposition-notification",
                 possibleExtensions: [
-                    "u8mdn",
+                    "u8mdn"
                 ]
             )
         }
@@ -84,7 +84,7 @@ extension MediaType {
                 type: name,
                 subtype: "global-headers",
                 possibleExtensions: [
-                    "u8hdr",
+                    "u8hdr"
                 ]
             )
         }
@@ -194,7 +194,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wfa.wsc",
                 possibleExtensions: [
-                    "wsc",
+                    "wsc"
                 ]
             )
         }

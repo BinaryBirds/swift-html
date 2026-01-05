@@ -23,7 +23,7 @@ extension MediaType {
                 type: name,
                 subtype: "3gpp",
                 possibleExtensions: [
-                    "3gpp",
+                    "3gpp"
                 ]
             )
         }
@@ -58,7 +58,7 @@ extension MediaType {
                 type: name,
                 subtype: "adpcm",
                 possibleExtensions: [
-                    "adp",
+                    "adp"
                 ]
             )
         }
@@ -68,7 +68,7 @@ extension MediaType {
                 type: name,
                 subtype: "amr",
                 possibleExtensions: [
-                    "amr",
+                    "amr"
                 ]
             )
         }
@@ -80,7 +80,7 @@ extension MediaType {
             )
         }
 
-        public static func amrWbAlt() -> MediaType {
+        public static func amrWbPlus() -> MediaType {
             .init(
                 type: name,
                 subtype: "amr-wb+"
@@ -592,7 +592,7 @@ extension MediaType {
                 type: name,
                 subtype: "mobile-xmf",
                 possibleExtensions: [
-                    "mxmf",
+                    "mxmf"
                 ]
             )
         }
@@ -602,7 +602,7 @@ extension MediaType {
                 type: name,
                 subtype: "mp3",
                 possibleExtensions: [
-                    "mp3",
+                    "mp3"
                 ]
             )
         }
@@ -785,7 +785,7 @@ extension MediaType {
                 type: name,
                 subtype: "s3m",
                 possibleExtensions: [
-                    "s3m",
+                    "s3m"
                 ]
             )
         }
@@ -802,7 +802,7 @@ extension MediaType {
                 type: name,
                 subtype: "silk",
                 possibleExtensions: [
-                    "sil",
+                    "sil"
                 ]
             )
         }
@@ -1012,7 +1012,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.digital-winds",
                 possibleExtensions: [
-                    "eol",
+                    "eol"
                 ]
             )
         }
@@ -1085,7 +1085,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dra",
                 possibleExtensions: [
-                    "dra",
+                    "dra"
                 ]
             )
         }
@@ -1095,7 +1095,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dts",
                 possibleExtensions: [
-                    "dts",
+                    "dts"
                 ]
             )
         }
@@ -1105,7 +1105,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dts.hd",
                 possibleExtensions: [
-                    "dtshd",
+                    "dtshd"
                 ]
             )
         }
@@ -1143,7 +1143,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lucent.voice",
                 possibleExtensions: [
-                    "lvp",
+                    "lvp"
                 ]
             )
         }
@@ -1153,7 +1153,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-playready.media.pya",
                 possibleExtensions: [
-                    "pya",
+                    "pya"
                 ]
             )
         }
@@ -1177,7 +1177,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nuera.ecelp4800",
                 possibleExtensions: [
-                    "ecelp4800",
+                    "ecelp4800"
                 ]
             )
         }
@@ -1187,7 +1187,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nuera.ecelp7470",
                 possibleExtensions: [
-                    "ecelp7470",
+                    "ecelp7470"
                 ]
             )
         }
@@ -1197,7 +1197,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nuera.ecelp9600",
                 possibleExtensions: [
-                    "ecelp9600",
+                    "ecelp9600"
                 ]
             )
         }
@@ -1235,7 +1235,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.rip",
                 possibleExtensions: [
-                    "rip",
+                    "rip"
                 ]
             )
         }
@@ -1287,7 +1287,7 @@ extension MediaType {
                 type: name,
                 subtype: "wav",
                 possibleExtensions: [
-                    "wav",
+                    "wav"
                 ]
             )
         }
@@ -1297,7 +1297,7 @@ extension MediaType {
                 type: name,
                 subtype: "wave",
                 possibleExtensions: [
-                    "wav",
+                    "wav"
                 ]
             )
         }
@@ -1307,7 +1307,7 @@ extension MediaType {
                 type: name,
                 subtype: "webm",
                 possibleExtensions: [
-                    "weba",
+                    "weba"
                 ]
             )
         }
@@ -1317,7 +1317,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-aac",
                 possibleExtensions: [
-                    "aac",
+                    "aac"
                 ]
             )
         }
@@ -1339,7 +1339,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-caf",
                 possibleExtensions: [
-                    "caf",
+                    "caf"
                 ]
             )
         }
@@ -1349,7 +1349,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-flac",
                 possibleExtensions: [
-                    "flac",
+                    "flac"
                 ]
             )
         }
@@ -1359,7 +1359,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-m4a",
                 possibleExtensions: [
-                    "m4a",
+                    "m4a"
                 ]
             )
         }
@@ -1369,7 +1369,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-matroska",
                 possibleExtensions: [
-                    "mka",
+                    "mka"
                 ]
             )
         }
@@ -1379,7 +1379,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mpegurl",
                 possibleExtensions: [
-                    "m3u",
+                    "m3u"
                 ]
             )
         }
@@ -1389,7 +1389,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wax",
                 possibleExtensions: [
-                    "wax",
+                    "wax"
                 ]
             )
         }
@@ -1399,7 +1399,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wma",
                 possibleExtensions: [
-                    "wma",
+                    "wma"
                 ]
             )
         }
@@ -1420,7 +1420,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-pn-realaudio-plugin",
                 possibleExtensions: [
-                    "rmp",
+                    "rmp"
                 ]
             )
         }
@@ -1430,7 +1430,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-realaudio",
                 possibleExtensions: [
-                    "ra",
+                    "ra"
                 ]
             )
         }
@@ -1447,7 +1447,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-wav",
                 possibleExtensions: [
-                    "wav",
+                    "wav"
                 ]
             )
         }
@@ -1457,7 +1457,7 @@ extension MediaType {
                 type: name,
                 subtype: "xm",
                 possibleExtensions: [
-                    "xm",
+                    "xm"
                 ]
             )
         }

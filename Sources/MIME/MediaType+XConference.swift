@@ -9,7 +9,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cooltalk",
                 possibleExtensions: [
-                    "ice",
+                    "ice"
                 ]
             )
         }

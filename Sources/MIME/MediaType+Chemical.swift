@@ -9,7 +9,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cdx",
                 possibleExtensions: [
-                    "cdx",
+                    "cdx"
                 ]
             )
         }
@@ -19,7 +19,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cif",
                 possibleExtensions: [
-                    "cif",
+                    "cif"
                 ]
             )
         }
@@ -29,7 +29,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cmdf",
                 possibleExtensions: [
-                    "cmdf",
+                    "cmdf"
                 ]
             )
         }
@@ -39,7 +39,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cml",
                 possibleExtensions: [
-                    "cml",
+                    "cml"
                 ]
             )
         }
@@ -49,7 +49,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-csml",
                 possibleExtensions: [
-                    "csml",
+                    "csml"
                 ]
             )
         }
@@ -66,7 +66,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xyz",
                 possibleExtensions: [
-                    "xyz",
+                    "xyz"
                 ]
             )
         }

@@ -357,7 +357,7 @@ extension MediaType {
                 type: name,
                 subtype: "andrew-inset",
                 possibleExtensions: [
-                    "ez",
+                    "ez"
                 ]
             )
         }
@@ -367,7 +367,7 @@ extension MediaType {
                 type: name,
                 subtype: "appinstaller",
                 possibleExtensions: [
-                    "appinstaller",
+                    "appinstaller"
                 ]
             )
         }
@@ -384,7 +384,7 @@ extension MediaType {
                 type: name,
                 subtype: "applixware",
                 possibleExtensions: [
-                    "aw",
+                    "aw"
                 ]
             )
         }
@@ -394,7 +394,7 @@ extension MediaType {
                 type: name,
                 subtype: "appx",
                 possibleExtensions: [
-                    "appx",
+                    "appx"
                 ]
             )
         }
@@ -404,7 +404,7 @@ extension MediaType {
                 type: name,
                 subtype: "appxbundle",
                 possibleExtensions: [
-                    "appxbundle",
+                    "appxbundle"
                 ]
             )
         }
@@ -461,7 +461,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "atom",
+                    "atom"
                 ]
             )
         }
@@ -474,7 +474,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "atomcat",
+                    "atomcat"
                 ]
             )
         }
@@ -487,7 +487,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "atomdeleted",
+                    "atomdeleted"
                 ]
             )
         }
@@ -507,7 +507,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "atomsvc",
+                    "atomsvc"
                 ]
             )
         }
@@ -520,7 +520,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "dwd",
+                    "dwd"
                 ]
             )
         }
@@ -540,7 +540,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "held",
+                    "held"
                 ]
             )
         }
@@ -563,7 +563,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rsat",
+                    "rsat"
                 ]
             )
         }
@@ -593,7 +593,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "aml",
+                    "aml"
                 ]
             )
         }
@@ -606,7 +606,7 @@ extension MediaType {
                     suffix: "zip"
                 ),
                 possibleExtensions: [
-                    "amlx",
+                    "amlx"
                 ]
             )
         }
@@ -633,7 +633,7 @@ extension MediaType {
                 type: name,
                 subtype: "bdoc",
                 possibleExtensions: [
-                    "bdoc",
+                    "bdoc"
                 ]
             )
         }
@@ -680,7 +680,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xcs",
+                    "xcs"
                 ]
             )
         }
@@ -748,7 +748,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ccxml",
+                    "ccxml"
                 ]
             )
         }
@@ -771,7 +771,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "cdfx",
+                    "cdfx"
                 ]
             )
         }
@@ -781,7 +781,7 @@ extension MediaType {
                 type: name,
                 subtype: "cdmi-capability",
                 possibleExtensions: [
-                    "cdmia",
+                    "cdmia"
                 ]
             )
         }
@@ -791,7 +791,7 @@ extension MediaType {
                 type: name,
                 subtype: "cdmi-container",
                 possibleExtensions: [
-                    "cdmic",
+                    "cdmic"
                 ]
             )
         }
@@ -801,7 +801,7 @@ extension MediaType {
                 type: name,
                 subtype: "cdmi-domain",
                 possibleExtensions: [
-                    "cdmid",
+                    "cdmid"
                 ]
             )
         }
@@ -811,7 +811,7 @@ extension MediaType {
                 type: name,
                 subtype: "cdmi-object",
                 possibleExtensions: [
-                    "cdmio",
+                    "cdmio"
                 ]
             )
         }
@@ -821,7 +821,7 @@ extension MediaType {
                 type: name,
                 subtype: "cdmi-queue",
                 possibleExtensions: [
-                    "cdmiq",
+                    "cdmiq"
                 ]
             )
         }
@@ -1045,7 +1045,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "cpl",
+                    "cpl"
                 ]
             )
         }
@@ -1092,7 +1092,7 @@ extension MediaType {
                 type: name,
                 subtype: "cu-seeme",
                 possibleExtensions: [
-                    "cu",
+                    "cu"
                 ]
             )
         }
@@ -1102,7 +1102,7 @@ extension MediaType {
                 type: name,
                 subtype: "cwl",
                 possibleExtensions: [
-                    "cwl",
+                    "cwl"
                 ]
             )
         }
@@ -1156,7 +1156,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mpd",
+                    "mpd"
                 ]
             )
         }
@@ -1169,7 +1169,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mpp",
+                    "mpp"
                 ]
             )
         }
@@ -1189,7 +1189,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "davmount",
+                    "davmount"
                 ]
             )
         }
@@ -1230,7 +1230,7 @@ extension MediaType {
                 type: name,
                 subtype: "dicom",
                 possibleExtensions: [
-                    "dcm",
+                    "dcm"
                 ]
             )
         }
@@ -1308,7 +1308,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "dbk",
+                    "dbk"
                 ]
             )
         }
@@ -1351,7 +1351,7 @@ extension MediaType {
                     suffix: "der"
                 ),
                 possibleExtensions: [
-                    "dssc",
+                    "dssc"
                 ]
             )
         }
@@ -1364,7 +1364,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xdssc",
+                    "xdssc"
                 ]
             )
         }
@@ -1441,7 +1441,7 @@ extension MediaType {
                 type: name,
                 subtype: "ecmascript",
                 possibleExtensions: [
-                    "ecma",
+                    "ecma"
                 ]
             )
         }
@@ -1609,7 +1609,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "emma",
+                    "emma"
                 ]
             )
         }
@@ -1622,7 +1622,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "emotionml",
+                    "emotionml"
                 ]
             )
         }
@@ -1662,7 +1662,7 @@ extension MediaType {
                     suffix: "zip"
                 ),
                 possibleExtensions: [
-                    "epub",
+                    "epub"
                 ]
             )
         }
@@ -1679,7 +1679,7 @@ extension MediaType {
                 type: name,
                 subtype: "exi",
                 possibleExtensions: [
-                    "exi",
+                    "exi"
                 ]
             )
         }
@@ -1699,7 +1699,7 @@ extension MediaType {
                 type: name,
                 subtype: "express",
                 possibleExtensions: [
-                    "exp",
+                    "exp"
                 ]
             )
         }
@@ -1723,7 +1723,7 @@ extension MediaType {
                 type: name,
                 subtype: "fdf",
                 possibleExtensions: [
-                    "fdf",
+                    "fdf"
                 ]
             )
         }
@@ -1736,7 +1736,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "fdt",
+                    "fdt"
                 ]
             )
         }
@@ -1797,7 +1797,7 @@ extension MediaType {
                 type: name,
                 subtype: "font-tdpfr",
                 possibleExtensions: [
-                    "pfr",
+                    "pfr"
                 ]
             )
         }
@@ -1827,7 +1827,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "geojson",
+                    "geojson"
                 ]
             )
         }
@@ -1907,7 +1907,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "gml",
+                    "gml"
                 ]
             )
         }
@@ -1948,7 +1948,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "gpx",
+                    "gpx"
                 ]
             )
         }
@@ -1965,7 +1965,7 @@ extension MediaType {
                 type: name,
                 subtype: "gxf",
                 possibleExtensions: [
-                    "gxf",
+                    "gxf"
                 ]
             )
         }
@@ -1975,7 +1975,7 @@ extension MediaType {
                 type: name,
                 subtype: "gzip",
                 possibleExtensions: [
-                    "gz",
+                    "gz"
                 ]
             )
         }
@@ -2002,7 +2002,7 @@ extension MediaType {
                 type: name,
                 subtype: "hjson",
                 possibleExtensions: [
-                    "hjson",
+                    "hjson"
                 ]
             )
         }
@@ -2029,7 +2029,7 @@ extension MediaType {
                 type: name,
                 subtype: "hyperstudio",
                 possibleExtensions: [
-                    "stk",
+                    "stk"
                 ]
             )
         }
@@ -2139,7 +2139,7 @@ extension MediaType {
                 type: name,
                 subtype: "ipfix",
                 possibleExtensions: [
-                    "ipfix",
+                    "ipfix"
                 ]
             )
         }
@@ -2166,7 +2166,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "its",
+                    "its"
                 ]
             )
         }
@@ -2188,7 +2188,7 @@ extension MediaType {
                 type: name,
                 subtype: "java-serialized-object",
                 possibleExtensions: [
-                    "ser",
+                    "ser"
                 ]
             )
         }
@@ -2198,7 +2198,7 @@ extension MediaType {
                 type: name,
                 subtype: "java-vm",
                 possibleExtensions: [
-                    "class",
+                    "class"
                 ]
             )
         }
@@ -2208,7 +2208,7 @@ extension MediaType {
                 type: name,
                 subtype: "javascript",
                 possibleExtensions: [
-                    "js",
+                    "js"
                 ]
             )
         }
@@ -2313,7 +2313,7 @@ extension MediaType {
                 type: name,
                 subtype: "json5",
                 possibleExtensions: [
-                    "json5",
+                    "json5"
                 ]
             )
         }
@@ -2326,7 +2326,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "jsonml",
+                    "jsonml"
                 ]
             )
         }
@@ -2393,7 +2393,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "kbl",
+                    "kbl"
                 ]
             )
         }
@@ -2426,7 +2426,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "jsonld",
+                    "jsonld"
                 ]
             )
         }
@@ -2439,7 +2439,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "lgr",
+                    "lgr"
                 ]
             )
         }
@@ -2496,7 +2496,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "lostxml",
+                    "lostxml"
                 ]
             )
         }
@@ -2533,7 +2533,7 @@ extension MediaType {
                 type: name,
                 subtype: "mac-binhex40",
                 possibleExtensions: [
-                    "hqx",
+                    "hqx"
                 ]
             )
         }
@@ -2543,7 +2543,7 @@ extension MediaType {
                 type: name,
                 subtype: "mac-compactpro",
                 possibleExtensions: [
-                    "cpt",
+                    "cpt"
                 ]
             )
         }
@@ -2563,7 +2563,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mads",
+                    "mads"
                 ]
             )
         }
@@ -2576,7 +2576,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "webmanifest",
+                    "webmanifest"
                 ]
             )
         }
@@ -2586,7 +2586,7 @@ extension MediaType {
                 type: name,
                 subtype: "marc",
                 possibleExtensions: [
-                    "mrc",
+                    "mrc"
                 ]
             )
         }
@@ -2599,7 +2599,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mrcx",
+                    "mrcx"
                 ]
             )
         }
@@ -2624,7 +2624,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mathml",
+                    "mathml"
                 ]
             )
         }
@@ -2649,7 +2649,8 @@ extension MediaType {
             )
         }
 
-        public static func mbmsAssociatedProcedureDescriptionXml() -> MediaType {
+        public static func mbmsAssociatedProcedureDescriptionXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -2764,7 +2765,7 @@ extension MediaType {
                 type: name,
                 subtype: "mbox",
                 possibleExtensions: [
-                    "mbox",
+                    "mbox"
                 ]
             )
         }
@@ -2777,7 +2778,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mpf",
+                    "mpf"
                 ]
             )
         }
@@ -2800,7 +2801,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mscml",
+                    "mscml"
                 ]
             )
         }
@@ -2823,7 +2824,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "metalink",
+                    "metalink"
                 ]
             )
         }
@@ -2836,7 +2837,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "meta4",
+                    "meta4"
                 ]
             )
         }
@@ -2849,7 +2850,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mets",
+                    "mets"
                 ]
             )
         }
@@ -2893,7 +2894,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "maei",
+                    "maei"
                 ]
             )
         }
@@ -2906,7 +2907,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "musd",
+                    "musd"
                 ]
             )
         }
@@ -2919,7 +2920,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mods",
+                    "mods"
                 ]
             )
         }
@@ -3042,7 +3043,7 @@ extension MediaType {
                 type: name,
                 subtype: "msix",
                 possibleExtensions: [
-                    "msix",
+                    "msix"
                 ]
             )
         }
@@ -3052,7 +3053,7 @@ extension MediaType {
                 type: name,
                 subtype: "msixbundle",
                 possibleExtensions: [
-                    "msixbundle",
+                    "msixbundle"
                 ]
             )
         }
@@ -3090,7 +3091,7 @@ extension MediaType {
                 type: name,
                 subtype: "mxf",
                 possibleExtensions: [
-                    "mxf",
+                    "mxf"
                 ]
             )
         }
@@ -3100,7 +3101,7 @@ extension MediaType {
                 type: name,
                 subtype: "n-quads",
                 possibleExtensions: [
-                    "nq",
+                    "nq"
                 ]
             )
         }
@@ -3110,7 +3111,7 @@ extension MediaType {
                 type: name,
                 subtype: "n-triples",
                 possibleExtensions: [
-                    "nt",
+                    "nt"
                 ]
             )
         }
@@ -3158,7 +3159,7 @@ extension MediaType {
                 type: name,
                 subtype: "node",
                 possibleExtensions: [
-                    "cjs",
+                    "cjs"
                 ]
             )
         }
@@ -3237,7 +3238,7 @@ extension MediaType {
                 type: name,
                 subtype: "oda",
                 possibleExtensions: [
-                    "oda",
+                    "oda"
                 ]
             )
         }
@@ -3267,7 +3268,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "opf",
+                    "opf"
                 ]
             )
         }
@@ -3277,7 +3278,7 @@ extension MediaType {
                 type: name,
                 subtype: "ogg",
                 possibleExtensions: [
-                    "ogx",
+                    "ogx"
                 ]
             )
         }
@@ -3297,7 +3298,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "omdoc",
+                    "omdoc"
                 ]
             )
         }
@@ -3339,7 +3340,7 @@ extension MediaType {
                 type: name,
                 subtype: "oxps",
                 possibleExtensions: [
-                    "oxps",
+                    "oxps"
                 ]
             )
         }
@@ -3369,7 +3370,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "relo",
+                    "relo"
                 ]
             )
         }
@@ -3396,7 +3397,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xer",
+                    "xer"
                 ]
             )
         }
@@ -3406,7 +3407,7 @@ extension MediaType {
                 type: name,
                 subtype: "pdf",
                 possibleExtensions: [
-                    "pdf",
+                    "pdf"
                 ]
             )
         }
@@ -3430,7 +3431,7 @@ extension MediaType {
                 type: name,
                 subtype: "pgp-encrypted",
                 possibleExtensions: [
-                    "pgp",
+                    "pgp"
                 ]
             )
         }
@@ -3440,7 +3441,7 @@ extension MediaType {
                 type: name,
                 subtype: "pgp-keys",
                 possibleExtensions: [
-                    "asc",
+                    "asc"
                 ]
             )
         }
@@ -3461,7 +3462,7 @@ extension MediaType {
                 type: name,
                 subtype: "pics-rules",
                 possibleExtensions: [
-                    "prf",
+                    "prf"
                 ]
             )
         }
@@ -3491,7 +3492,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkcs10",
                 possibleExtensions: [
-                    "p10",
+                    "p10"
                 ]
             )
         }
@@ -3519,7 +3520,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkcs7-signature",
                 possibleExtensions: [
-                    "p7s",
+                    "p7s"
                 ]
             )
         }
@@ -3529,7 +3530,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkcs8",
                 possibleExtensions: [
-                    "p8",
+                    "p8"
                 ]
             )
         }
@@ -3546,7 +3547,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkix-attr-cert",
                 possibleExtensions: [
-                    "ac",
+                    "ac"
                 ]
             )
         }
@@ -3556,7 +3557,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkix-cert",
                 possibleExtensions: [
-                    "cer",
+                    "cer"
                 ]
             )
         }
@@ -3566,7 +3567,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkix-crl",
                 possibleExtensions: [
-                    "crl",
+                    "crl"
                 ]
             )
         }
@@ -3576,7 +3577,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkix-pkipath",
                 possibleExtensions: [
-                    "pkipath",
+                    "pkipath"
                 ]
             )
         }
@@ -3586,7 +3587,7 @@ extension MediaType {
                 type: name,
                 subtype: "pkixcmp",
                 possibleExtensions: [
-                    "pki",
+                    "pki"
                 ]
             )
         }
@@ -3599,7 +3600,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "pls",
+                    "pls"
                 ]
             )
         }
@@ -3702,7 +3703,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "provx",
+                    "provx"
                 ]
             )
         }
@@ -3729,7 +3730,7 @@ extension MediaType {
                 type: name,
                 subtype: "prs.cww",
                 possibleExtensions: [
-                    "cww",
+                    "cww"
                 ]
             )
         }
@@ -3848,7 +3849,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xsf",
+                    "xsf"
                 ]
             )
         }
@@ -3861,7 +3862,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "pskcxml",
+                    "pskcxml"
                 ]
             )
         }
@@ -3891,7 +3892,7 @@ extension MediaType {
                     suffix: "yaml"
                 ),
                 possibleExtensions: [
-                    "raml",
+                    "raml"
                 ]
             )
         }
@@ -3935,7 +3936,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rif",
+                    "rif"
                 ]
             )
         }
@@ -3945,7 +3946,7 @@ extension MediaType {
                 type: name,
                 subtype: "relax-ng-compact-syntax",
                 possibleExtensions: [
-                    "rnc",
+                    "rnc"
                 ]
             )
         }
@@ -3985,7 +3986,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rl",
+                    "rl"
                 ]
             )
         }
@@ -3998,7 +3999,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rld",
+                    "rld"
                 ]
             )
         }
@@ -4038,7 +4039,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rs",
+                    "rs"
                 ]
             )
         }
@@ -4051,7 +4052,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rapd",
+                    "rapd"
                 ]
             )
         }
@@ -4064,7 +4065,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "sls",
+                    "sls"
                 ]
             )
         }
@@ -4077,7 +4078,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rusd",
+                    "rusd"
                 ]
             )
         }
@@ -4094,7 +4095,7 @@ extension MediaType {
                 type: name,
                 subtype: "rpki-ghostbusters",
                 possibleExtensions: [
-                    "gbr",
+                    "gbr"
                 ]
             )
         }
@@ -4104,7 +4105,7 @@ extension MediaType {
                 type: name,
                 subtype: "rpki-manifest",
                 possibleExtensions: [
-                    "mft",
+                    "mft"
                 ]
             )
         }
@@ -4121,7 +4122,7 @@ extension MediaType {
                 type: name,
                 subtype: "rpki-roa",
                 possibleExtensions: [
-                    "roa",
+                    "roa"
                 ]
             )
         }
@@ -4158,7 +4159,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rsd",
+                    "rsd"
                 ]
             )
         }
@@ -4171,7 +4172,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rss",
+                    "rss"
                 ]
             )
         }
@@ -4181,7 +4182,7 @@ extension MediaType {
                 type: name,
                 subtype: "rtf",
                 possibleExtensions: [
-                    "rtf",
+                    "rtf"
                 ]
             )
         }
@@ -4255,7 +4256,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "sbml",
+                    "sbml"
                 ]
             )
         }
@@ -4305,7 +4306,7 @@ extension MediaType {
                 type: name,
                 subtype: "scvp-cv-request",
                 possibleExtensions: [
-                    "scq",
+                    "scq"
                 ]
             )
         }
@@ -4315,7 +4316,7 @@ extension MediaType {
                 type: name,
                 subtype: "scvp-cv-response",
                 possibleExtensions: [
-                    "scs",
+                    "scs"
                 ]
             )
         }
@@ -4325,7 +4326,7 @@ extension MediaType {
                 type: name,
                 subtype: "scvp-vp-request",
                 possibleExtensions: [
-                    "spq",
+                    "spq"
                 ]
             )
         }
@@ -4335,7 +4336,7 @@ extension MediaType {
                 type: name,
                 subtype: "scvp-vp-response",
                 possibleExtensions: [
-                    "spp",
+                    "spp"
                 ]
             )
         }
@@ -4372,7 +4373,7 @@ extension MediaType {
                 type: name,
                 subtype: "sdp",
                 possibleExtensions: [
-                    "sdp",
+                    "sdp"
                 ]
             )
         }
@@ -4415,7 +4416,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "senmlx",
+                    "senmlx"
                 ]
             )
         }
@@ -4475,7 +4476,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "sensmlx",
+                    "sensmlx"
                 ]
             )
         }
@@ -4523,7 +4524,7 @@ extension MediaType {
                 type: name,
                 subtype: "set-payment-initiation",
                 possibleExtensions: [
-                    "setpay",
+                    "setpay"
                 ]
             )
         }
@@ -4540,7 +4541,7 @@ extension MediaType {
                 type: name,
                 subtype: "set-registration-initiation",
                 possibleExtensions: [
-                    "setreg",
+                    "setreg"
                 ]
             )
         }
@@ -4567,7 +4568,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "shf",
+                    "shf"
                 ]
             )
         }
@@ -4674,7 +4675,7 @@ extension MediaType {
                 type: name,
                 subtype: "sparql-query",
                 possibleExtensions: [
-                    "rq",
+                    "rq"
                 ]
             )
         }
@@ -4687,7 +4688,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "srx",
+                    "srx"
                 ]
             )
         }
@@ -4717,7 +4718,7 @@ extension MediaType {
                 type: name,
                 subtype: "sql",
                 possibleExtensions: [
-                    "sql",
+                    "sql"
                 ]
             )
         }
@@ -4727,7 +4728,7 @@ extension MediaType {
                 type: name,
                 subtype: "srgs",
                 possibleExtensions: [
-                    "gram",
+                    "gram"
                 ]
             )
         }
@@ -4740,7 +4741,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "grxml",
+                    "grxml"
                 ]
             )
         }
@@ -4753,7 +4754,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "sru",
+                    "sru"
                 ]
             )
         }
@@ -4766,7 +4767,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ssdl",
+                    "ssdl"
                 ]
             )
         }
@@ -4786,7 +4787,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ssml",
+                    "ssml"
                 ]
             )
         }
@@ -4843,7 +4844,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "swidtag",
+                    "swidtag"
                 ]
             )
         }
@@ -4988,7 +4989,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "tfi",
+                    "tfi"
                 ]
             )
         }
@@ -5012,7 +5013,7 @@ extension MediaType {
                 type: name,
                 subtype: "timestamped-data",
                 possibleExtensions: [
-                    "tsd",
+                    "tsd"
                 ]
             )
         }
@@ -5079,7 +5080,7 @@ extension MediaType {
                 type: name,
                 subtype: "toml",
                 possibleExtensions: [
-                    "toml",
+                    "toml"
                 ]
             )
         }
@@ -5096,7 +5097,7 @@ extension MediaType {
                 type: name,
                 subtype: "trig",
                 possibleExtensions: [
-                    "trig",
+                    "trig"
                 ]
             )
         }
@@ -5139,7 +5140,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ttml",
+                    "ttml"
                 ]
             )
         }
@@ -5170,7 +5171,7 @@ extension MediaType {
                 type: name,
                 subtype: "ubjson",
                 possibleExtensions: [
-                    "ubj",
+                    "ubj"
                 ]
             )
         }
@@ -5220,7 +5221,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "rsheet",
+                    "rsheet"
                 ]
             )
         }
@@ -5233,7 +5234,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "td",
+                    "td"
                 ]
             )
         }
@@ -5303,7 +5304,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "vec",
+                    "vec"
                 ]
             )
         }
@@ -5350,7 +5351,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "1km",
+                    "1km"
                 ]
             )
         }
@@ -5845,7 +5846,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.3gpp.pic-bw-large",
                 possibleExtensions: [
-                    "plb",
+                    "plb"
                 ]
             )
         }
@@ -5855,7 +5856,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.3gpp.pic-bw-small",
                 possibleExtensions: [
-                    "psb",
+                    "psb"
                 ]
             )
         }
@@ -5865,7 +5866,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.3gpp.pic-bw-var",
                 possibleExtensions: [
-                    "pvb",
+                    "pvb"
                 ]
             )
         }
@@ -5887,7 +5888,8 @@ extension MediaType {
             )
         }
 
-        public static func vnd3gppSealAppCommRequirementsInfoXml() -> MediaType {
+        public static func vnd3gppSealAppCommRequirementsInfoXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -5977,7 +5979,8 @@ extension MediaType {
             )
         }
 
-        public static func vnd3gppSealNetworkQosManagementInfoXml() -> MediaType {
+        public static func vnd3gppSealNetworkQosManagementInfoXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -6123,7 +6126,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.3gpp2.tcap",
                 possibleExtensions: [
-                    "tcap",
+                    "tcap"
                 ]
             )
         }
@@ -6140,7 +6143,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.3m.post-it-notes",
                 possibleExtensions: [
-                    "pwn",
+                    "pwn"
                 ]
             )
         }
@@ -6150,7 +6153,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.accpac.simply.aso",
                 possibleExtensions: [
-                    "aso",
+                    "aso"
                 ]
             )
         }
@@ -6160,7 +6163,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.accpac.simply.imp",
                 possibleExtensions: [
-                    "imp",
+                    "imp"
                 ]
             )
         }
@@ -6190,7 +6193,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.acucobol",
                 possibleExtensions: [
-                    "acu",
+                    "acu"
                 ]
             )
         }
@@ -6206,7 +6209,9 @@ extension MediaType {
             )
         }
 
-        public static func vndAdobeAirApplicationInstallerPackageZip() -> MediaType {
+        public static func vndAdobeAirApplicationInstallerPackageZip()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -6214,7 +6219,7 @@ extension MediaType {
                     suffix: "zip"
                 ),
                 possibleExtensions: [
-                    "air",
+                    "air"
                 ]
             )
         }
@@ -6231,7 +6236,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.adobe.formscentral.fcdt",
                 possibleExtensions: [
-                    "fcdt",
+                    "fcdt"
                 ]
             )
         }
@@ -6262,7 +6267,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xdp",
+                    "xdp"
                 ]
             )
         }
@@ -6272,7 +6277,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.adobe.xfdf",
                 possibleExtensions: [
-                    "xfdf",
+                    "xfdf"
                 ]
             )
         }
@@ -6380,7 +6385,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.age",
                 possibleExtensions: [
-                    "age",
+                    "age"
                 ]
             )
         }
@@ -6397,7 +6402,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ahead.space",
                 possibleExtensions: [
-                    "ahead",
+                    "ahead"
                 ]
             )
         }
@@ -6407,7 +6412,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.airzip.filesecure.azf",
                 possibleExtensions: [
-                    "azf",
+                    "azf"
                 ]
             )
         }
@@ -6417,7 +6422,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.airzip.filesecure.azs",
                 possibleExtensions: [
-                    "azs",
+                    "azs"
                 ]
             )
         }
@@ -6437,7 +6442,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.amazon.ebook",
                 possibleExtensions: [
-                    "azw",
+                    "azw"
                 ]
             )
         }
@@ -6454,7 +6459,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.americandynamics.acc",
                 possibleExtensions: [
-                    "acc",
+                    "acc"
                 ]
             )
         }
@@ -6464,7 +6469,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.amiga.ami",
                 possibleExtensions: [
-                    "ami",
+                    "ami"
                 ]
             )
         }
@@ -6491,7 +6496,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.android.package-archive",
                 possibleExtensions: [
-                    "apk",
+                    "apk"
                 ]
             )
         }
@@ -6503,12 +6508,13 @@ extension MediaType {
             )
         }
 
-        public static func vndAnserWebCertificateIssueInitiation() -> MediaType {
+        public static func vndAnserWebCertificateIssueInitiation() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.anser-web-certificate-issue-initiation",
                 possibleExtensions: [
-                    "cii",
+                    "cii"
                 ]
             )
         }
@@ -6518,7 +6524,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.anser-web-funds-transfer-initiation",
                 possibleExtensions: [
-                    "fti",
+                    "fti"
                 ]
             )
         }
@@ -6528,7 +6534,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.antix.game-component",
                 possibleExtensions: [
-                    "atx",
+                    "atx"
                 ]
             )
         }
@@ -6620,7 +6626,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "mpkg",
+                    "mpkg"
                 ]
             )
         }
@@ -6630,7 +6636,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.apple.keynote",
                 possibleExtensions: [
-                    "key",
+                    "key"
                 ]
             )
         }
@@ -6640,7 +6646,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.apple.mpegurl",
                 possibleExtensions: [
-                    "m3u8",
+                    "m3u8"
                 ]
             )
         }
@@ -6650,7 +6656,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.apple.numbers",
                 possibleExtensions: [
-                    "numbers",
+                    "numbers"
                 ]
             )
         }
@@ -6660,7 +6666,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.apple.pages",
                 possibleExtensions: [
-                    "pages",
+                    "pages"
                 ]
             )
         }
@@ -6670,7 +6676,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.apple.pkpass",
                 possibleExtensions: [
-                    "pkpass",
+                    "pkpass"
                 ]
             )
         }
@@ -6687,7 +6693,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.aristanetworks.swi",
                 possibleExtensions: [
-                    "swi",
+                    "swi"
                 ]
             )
         }
@@ -6754,7 +6760,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.astraea-software.iota",
                 possibleExtensions: [
-                    "iota",
+                    "iota"
                 ]
             )
         }
@@ -6764,7 +6770,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.audiograph",
                 possibleExtensions: [
-                    "aep",
+                    "aep"
                 ]
             )
         }
@@ -6774,7 +6780,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.autodesk.fbx",
                 possibleExtensions: [
-                    "fbx",
+                    "fbx"
                 ]
             )
         }
@@ -6814,7 +6820,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "bmml",
+                    "bmml"
                 ]
             )
         }
@@ -6916,7 +6922,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.blueice.multipass",
                 possibleExtensions: [
-                    "mpm",
+                    "mpm"
                 ]
             )
         }
@@ -6940,7 +6946,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.bmi",
                 possibleExtensions: [
-                    "bmi",
+                    "bmi"
                 ]
             )
         }
@@ -6964,7 +6970,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.businessobjects",
                 possibleExtensions: [
-                    "rep",
+                    "rep"
                 ]
             )
         }
@@ -7056,7 +7062,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "cdxml",
+                    "cdxml"
                 ]
             )
         }
@@ -7073,7 +7079,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.chipnuts.karaoke-mmd",
                 possibleExtensions: [
-                    "mmd",
+                    "mmd"
                 ]
             )
         }
@@ -7090,7 +7096,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cinderella",
                 possibleExtensions: [
-                    "cdy",
+                    "cdy"
                 ]
             )
         }
@@ -7110,7 +7116,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "csl",
+                    "csl"
                 ]
             )
         }
@@ -7120,7 +7126,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.claymore",
                 possibleExtensions: [
-                    "cla",
+                    "cla"
                 ]
             )
         }
@@ -7130,7 +7136,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cloanto.rp9",
                 possibleExtensions: [
-                    "rp9",
+                    "rp9"
                 ]
             )
         }
@@ -7154,7 +7160,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cluetrust.cartomobile-config",
                 possibleExtensions: [
-                    "c11amc",
+                    "c11amc"
                 ]
             )
         }
@@ -7164,7 +7170,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cluetrust.cartomobile-config-pkg",
                 possibleExtensions: [
-                    "c11amz",
+                    "c11amz"
                 ]
             )
         }
@@ -7210,7 +7216,8 @@ extension MediaType {
             )
         }
 
-        public static func vndCollabioXodocumentsDocumentTemplate() -> MediaType {
+        public static func vndCollabioXodocumentsDocumentTemplate() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.collabio.xodocuments.document-template"
@@ -7224,7 +7231,9 @@ extension MediaType {
             )
         }
 
-        public static func vndCollabioXodocumentsPresentationTemplate() -> MediaType {
+        public static func vndCollabioXodocumentsPresentationTemplate()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.collabio.xodocuments.presentation-template"
@@ -7238,7 +7247,9 @@ extension MediaType {
             )
         }
 
-        public static func vndCollabioXodocumentsSpreadsheetTemplate() -> MediaType {
+        public static func vndCollabioXodocumentsSpreadsheetTemplate()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.collabio.xodocuments.spreadsheet-template"
@@ -7304,7 +7315,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.commonspace",
                 possibleExtensions: [
-                    "csp",
+                    "csp"
                 ]
             )
         }
@@ -7314,7 +7325,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.contact.cmsg",
                 possibleExtensions: [
-                    "cdbcmsg",
+                    "cdbcmsg"
                 ]
             )
         }
@@ -7334,7 +7345,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cosmocaller",
                 possibleExtensions: [
-                    "cmc",
+                    "cmc"
                 ]
             )
         }
@@ -7344,7 +7355,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.crick.clicker",
                 possibleExtensions: [
-                    "clkx",
+                    "clkx"
                 ]
             )
         }
@@ -7354,7 +7365,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.crick.clicker.keyboard",
                 possibleExtensions: [
-                    "clkk",
+                    "clkk"
                 ]
             )
         }
@@ -7364,7 +7375,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.crick.clicker.palette",
                 possibleExtensions: [
-                    "clkp",
+                    "clkp"
                 ]
             )
         }
@@ -7374,7 +7385,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.crick.clicker.template",
                 possibleExtensions: [
-                    "clkt",
+                    "clkt"
                 ]
             )
         }
@@ -7384,7 +7395,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.crick.clicker.wordbank",
                 possibleExtensions: [
-                    "clkw",
+                    "clkw"
                 ]
             )
         }
@@ -7397,7 +7408,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "wbs",
+                    "wbs"
                 ]
             )
         }
@@ -7438,7 +7449,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ctc-posml",
                 possibleExtensions: [
-                    "pml",
+                    "pml"
                 ]
             )
         }
@@ -7472,7 +7483,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cups-ppd",
                 possibleExtensions: [
-                    "ppd",
+                    "ppd"
                 ]
             )
         }
@@ -7503,7 +7514,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.curl.car",
                 possibleExtensions: [
-                    "car",
+                    "car"
                 ]
             )
         }
@@ -7513,7 +7524,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.curl.pcurl",
                 possibleExtensions: [
-                    "pcurl",
+                    "pcurl"
                 ]
             )
         }
@@ -7584,7 +7595,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dart",
                 possibleExtensions: [
-                    "dart",
+                    "dart"
                 ]
             )
         }
@@ -7594,7 +7605,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.data-vision.rdz",
                 possibleExtensions: [
-                    "rdz",
+                    "rdz"
                 ]
             )
         }
@@ -7631,7 +7642,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dbf",
                 possibleExtensions: [
-                    "dbf",
+                    "dbf"
                 ]
             )
         }
@@ -7644,7 +7655,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "dcmp",
+                    "dcmp"
                 ]
             )
         }
@@ -7710,7 +7721,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.denovo.fcselayout-link",
                 possibleExtensions: [
-                    "fe_launch",
+                    "fe_launch"
                 ]
             )
         }
@@ -7744,7 +7755,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dna",
                 possibleExtensions: [
-                    "dna",
+                    "dna"
                 ]
             )
         }
@@ -7764,7 +7775,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dolby.mlp",
                 possibleExtensions: [
-                    "mlp",
+                    "mlp"
                 ]
             )
         }
@@ -7795,7 +7806,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dpgraph",
                 possibleExtensions: [
-                    "dpg",
+                    "dpg"
                 ]
             )
         }
@@ -7805,7 +7816,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dreamfactory",
                 possibleExtensions: [
-                    "dfac",
+                    "dfac"
                 ]
             )
         }
@@ -7825,7 +7836,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ds-keypoint",
                 possibleExtensions: [
-                    "kpxx",
+                    "kpxx"
                 ]
             )
         }
@@ -7856,7 +7867,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dvb.ait",
                 possibleExtensions: [
-                    "ait",
+                    "ait"
                 ]
             )
         }
@@ -8016,7 +8027,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dvb.service",
                 possibleExtensions: [
-                    "svc",
+                    "svc"
                 ]
             )
         }
@@ -8033,7 +8044,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dynageo",
                 possibleExtensions: [
-                    "geo",
+                    "geo"
                 ]
             )
         }
@@ -8081,7 +8092,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ecowin.chart",
                 possibleExtensions: [
-                    "mag",
+                    "mag"
                 ]
             )
         }
@@ -8160,7 +8171,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.enliven",
                 possibleExtensions: [
-                    "nml",
+                    "nml"
                 ]
             )
         }
@@ -8187,7 +8198,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.epson.esf",
                 possibleExtensions: [
-                    "esf",
+                    "esf"
                 ]
             )
         }
@@ -8197,7 +8208,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.epson.msf",
                 possibleExtensions: [
-                    "msf",
+                    "msf"
                 ]
             )
         }
@@ -8207,7 +8218,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.epson.quickanime",
                 possibleExtensions: [
-                    "qam",
+                    "qam"
                 ]
             )
         }
@@ -8217,7 +8228,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.epson.salt",
                 possibleExtensions: [
-                    "slt",
+                    "slt"
                 ]
             )
         }
@@ -8227,7 +8238,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.epson.ssf",
                 possibleExtensions: [
-                    "ssf",
+                    "ssf"
                 ]
             )
         }
@@ -8417,7 +8428,8 @@ extension MediaType {
             )
         }
 
-        public static func vndEtsiOverloadControlPolicyDatasetXml() -> MediaType {
+        public static func vndEtsiOverloadControlPolicyDatasetXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -8541,7 +8553,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ezpix-album",
                 possibleExtensions: [
-                    "ez2",
+                    "ez2"
                 ]
             )
         }
@@ -8551,7 +8563,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ezpix-package",
                 possibleExtensions: [
-                    "ez3",
+                    "ez3"
                 ]
             )
         }
@@ -8595,7 +8607,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fdf",
                 possibleExtensions: [
-                    "fdf",
+                    "fdf"
                 ]
             )
         }
@@ -8605,7 +8617,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fdsn.mseed",
                 possibleExtensions: [
-                    "mseed",
+                    "mseed"
                 ]
             )
         }
@@ -8681,7 +8693,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.flographit",
                 possibleExtensions: [
-                    "gph",
+                    "gph"
                 ]
             )
         }
@@ -8691,7 +8703,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fluxtime.clip",
                 possibleExtensions: [
-                    "ftc",
+                    "ftc"
                 ]
             )
         }
@@ -8728,7 +8740,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.frogans.fnc",
                 possibleExtensions: [
-                    "fnc",
+                    "fnc"
                 ]
             )
         }
@@ -8738,7 +8750,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.frogans.ltf",
                 possibleExtensions: [
-                    "ltf",
+                    "ltf"
                 ]
             )
         }
@@ -8748,7 +8760,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fsc.weblaunch",
                 possibleExtensions: [
-                    "fsc",
+                    "fsc"
                 ]
             )
         }
@@ -8789,7 +8801,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujitsu.oasys",
                 possibleExtensions: [
-                    "oas",
+                    "oas"
                 ]
             )
         }
@@ -8799,7 +8811,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujitsu.oasys2",
                 possibleExtensions: [
-                    "oa2",
+                    "oa2"
                 ]
             )
         }
@@ -8809,7 +8821,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujitsu.oasys3",
                 possibleExtensions: [
-                    "oa3",
+                    "oa3"
                 ]
             )
         }
@@ -8819,7 +8831,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujitsu.oasysgp",
                 possibleExtensions: [
-                    "fg5",
+                    "fg5"
                 ]
             )
         }
@@ -8829,7 +8841,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujitsu.oasysprs",
                 possibleExtensions: [
-                    "bh2",
+                    "bh2"
                 ]
             )
         }
@@ -8853,7 +8865,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujixerox.ddd",
                 possibleExtensions: [
-                    "ddd",
+                    "ddd"
                 ]
             )
         }
@@ -8863,7 +8875,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujixerox.docuworks",
                 possibleExtensions: [
-                    "xdw",
+                    "xdw"
                 ]
             )
         }
@@ -8873,7 +8885,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujixerox.docuworks.binder",
                 possibleExtensions: [
-                    "xbd",
+                    "xbd"
                 ]
             )
         }
@@ -8924,7 +8936,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fuzzysheet",
                 possibleExtensions: [
-                    "fzs",
+                    "fzs"
                 ]
             )
         }
@@ -8951,7 +8963,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.genomatix.tuxedo",
                 possibleExtensions: [
-                    "txd",
+                    "txd"
                 ]
             )
         }
@@ -9053,7 +9065,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.geogebra.file",
                 possibleExtensions: [
-                    "ggb",
+                    "ggb"
                 ]
             )
         }
@@ -9070,7 +9082,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.geogebra.slides",
                 possibleExtensions: [
-                    "ggs",
+                    "ggs"
                 ]
             )
         }
@@ -9080,7 +9092,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.geogebra.tool",
                 possibleExtensions: [
-                    "ggt",
+                    "ggt"
                 ]
             )
         }
@@ -9101,7 +9113,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.geonext",
                 possibleExtensions: [
-                    "gxt",
+                    "gxt"
                 ]
             )
         }
@@ -9111,7 +9123,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.geoplan",
                 possibleExtensions: [
-                    "g2w",
+                    "g2w"
                 ]
             )
         }
@@ -9121,7 +9133,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.geospace",
                 possibleExtensions: [
-                    "g3w",
+                    "g3w"
                 ]
             )
         }
@@ -9140,7 +9152,9 @@ extension MediaType {
             )
         }
 
-        public static func vndGlobalplatformCardContentMgtResponse() -> MediaType {
+        public static func vndGlobalplatformCardContentMgtResponse()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.globalplatform.card-content-mgt-response"
@@ -9152,7 +9166,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.gmx",
                 possibleExtensions: [
-                    "gmx",
+                    "gmx"
                 ]
             )
         }
@@ -9189,7 +9203,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.document",
                 possibleExtensions: [
-                    "gdoc",
+                    "gdoc"
                 ]
             )
         }
@@ -9199,7 +9213,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.drawing",
                 possibleExtensions: [
-                    "gdraw",
+                    "gdraw"
                 ]
             )
         }
@@ -9230,7 +9244,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.form",
                 possibleExtensions: [
-                    "gform",
+                    "gform"
                 ]
             )
         }
@@ -9247,7 +9261,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.jam",
                 possibleExtensions: [
-                    "gjam",
+                    "gjam"
                 ]
             )
         }
@@ -9264,7 +9278,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.map",
                 possibleExtensions: [
-                    "gmap",
+                    "gmap"
                 ]
             )
         }
@@ -9281,7 +9295,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.presentation",
                 possibleExtensions: [
-                    "gslides",
+                    "gslides"
                 ]
             )
         }
@@ -9291,7 +9305,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.script",
                 possibleExtensions: [
-                    "gscript",
+                    "gscript"
                 ]
             )
         }
@@ -9308,7 +9322,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.site",
                 possibleExtensions: [
-                    "gsite",
+                    "gsite"
                 ]
             )
         }
@@ -9318,7 +9332,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-apps.spreadsheet",
                 possibleExtensions: [
-                    "gsheet",
+                    "gsheet"
                 ]
             )
         }
@@ -9345,7 +9359,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "kml",
+                    "kml"
                 ]
             )
         }
@@ -9355,7 +9369,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.google-earth.kmz",
                 possibleExtensions: [
-                    "kmz",
+                    "kmz"
                 ]
             )
         }
@@ -9388,7 +9402,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xdcf",
+                    "xdcf"
                 ]
             )
         }
@@ -9426,7 +9440,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-account",
                 possibleExtensions: [
-                    "gac",
+                    "gac"
                 ]
             )
         }
@@ -9436,7 +9450,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-help",
                 possibleExtensions: [
-                    "ghf",
+                    "ghf"
                 ]
             )
         }
@@ -9446,7 +9460,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-identity-message",
                 possibleExtensions: [
-                    "gim",
+                    "gim"
                 ]
             )
         }
@@ -9456,7 +9470,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-injector",
                 possibleExtensions: [
-                    "grv",
+                    "grv"
                 ]
             )
         }
@@ -9466,7 +9480,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-tool-message",
                 possibleExtensions: [
-                    "gtm",
+                    "gtm"
                 ]
             )
         }
@@ -9476,7 +9490,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-tool-template",
                 possibleExtensions: [
-                    "tpl",
+                    "tpl"
                 ]
             )
         }
@@ -9486,7 +9500,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.groove-vcard",
                 possibleExtensions: [
-                    "vcg",
+                    "vcg"
                 ]
             )
         }
@@ -9509,7 +9523,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "hal",
+                    "hal"
                 ]
             )
         }
@@ -9522,7 +9536,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "zmm",
+                    "zmm"
                 ]
             )
         }
@@ -9532,7 +9546,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hbci",
                 possibleExtensions: [
-                    "hbci",
+                    "hbci"
                 ]
             )
         }
@@ -9576,7 +9590,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hhe.lesson-player",
                 possibleExtensions: [
-                    "les",
+                    "les"
                 ]
             )
         }
@@ -9586,7 +9600,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hp-hpgl",
                 possibleExtensions: [
-                    "hpgl",
+                    "hpgl"
                 ]
             )
         }
@@ -9596,7 +9610,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hp-hpid",
                 possibleExtensions: [
-                    "hpid",
+                    "hpid"
                 ]
             )
         }
@@ -9606,7 +9620,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hp-hps",
                 possibleExtensions: [
-                    "hps",
+                    "hps"
                 ]
             )
         }
@@ -9616,7 +9630,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hp-jlyt",
                 possibleExtensions: [
-                    "jlt",
+                    "jlt"
                 ]
             )
         }
@@ -9626,7 +9640,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hp-pcl",
                 possibleExtensions: [
-                    "pcl",
+                    "pcl"
                 ]
             )
         }
@@ -9636,7 +9650,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hp-pclxl",
                 possibleExtensions: [
-                    "pclxl",
+                    "pclxl"
                 ]
             )
         }
@@ -9660,7 +9674,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.hydrostatix.sof-data",
                 possibleExtensions: [
-                    "sfd-hdstx",
+                    "sfd-hdstx"
                 ]
             )
         }
@@ -9721,7 +9735,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ibm.minipay",
                 possibleExtensions: [
-                    "mpy",
+                    "mpy"
                 ]
             )
         }
@@ -9743,7 +9757,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ibm.rights-management",
                 possibleExtensions: [
-                    "irm",
+                    "irm"
                 ]
             )
         }
@@ -9753,7 +9767,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ibm.secure-container",
                 possibleExtensions: [
-                    "sc",
+                    "sc"
                 ]
             )
         }
@@ -9781,7 +9795,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.igloader",
                 possibleExtensions: [
-                    "igl",
+                    "igl"
                 ]
             )
         }
@@ -9811,7 +9825,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.immervision-ivp",
                 possibleExtensions: [
-                    "ivp",
+                    "ivp"
                 ]
             )
         }
@@ -9821,7 +9835,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.immervision-ivu",
                 possibleExtensions: [
-                    "ivu",
+                    "ivu"
                 ]
             )
         }
@@ -9953,7 +9967,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.insors.igm",
                 possibleExtensions: [
-                    "igm",
+                    "igm"
                 ]
             )
         }
@@ -9974,7 +9988,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.intergeo",
                 possibleExtensions: [
-                    "i2g",
+                    "i2g"
                 ]
             )
         }
@@ -9998,7 +10012,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.intu.qbo",
                 possibleExtensions: [
-                    "qbo",
+                    "qbo"
                 ]
             )
         }
@@ -10008,7 +10022,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.intu.qfx",
                 possibleExtensions: [
-                    "qfx",
+                    "qfx"
                 ]
             )
         }
@@ -10123,7 +10137,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ipunplugged.rcprofile",
                 possibleExtensions: [
-                    "rcprofile",
+                    "rcprofile"
                 ]
             )
         }
@@ -10136,7 +10150,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "irp",
+                    "irp"
                 ]
             )
         }
@@ -10146,7 +10160,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.is-xpr",
                 possibleExtensions: [
-                    "xpr",
+                    "xpr"
                 ]
             )
         }
@@ -10156,7 +10170,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.isac.fcs",
                 possibleExtensions: [
-                    "fcs",
+                    "fcs"
                 ]
             )
         }
@@ -10176,7 +10190,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.jam",
                 possibleExtensions: [
-                    "jam",
+                    "jam"
                 ]
             )
         }
@@ -10242,7 +10256,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.jcp.javame.midlet-rms",
                 possibleExtensions: [
-                    "rms",
+                    "rms"
                 ]
             )
         }
@@ -10252,7 +10266,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.jisp",
                 possibleExtensions: [
-                    "jisp",
+                    "jisp"
                 ]
             )
         }
@@ -10262,7 +10276,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.joost.joda-archive",
                 possibleExtensions: [
-                    "joda",
+                    "joda"
                 ]
             )
         }
@@ -10290,7 +10304,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kde.karbon",
                 possibleExtensions: [
-                    "karbon",
+                    "karbon"
                 ]
             )
         }
@@ -10300,7 +10314,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kde.kchart",
                 possibleExtensions: [
-                    "chrt",
+                    "chrt"
                 ]
             )
         }
@@ -10310,7 +10324,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kde.kformula",
                 possibleExtensions: [
-                    "kfo",
+                    "kfo"
                 ]
             )
         }
@@ -10320,7 +10334,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kde.kivio",
                 possibleExtensions: [
-                    "flw",
+                    "flw"
                 ]
             )
         }
@@ -10330,7 +10344,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kde.kontour",
                 possibleExtensions: [
-                    "kon",
+                    "kon"
                 ]
             )
         }
@@ -10351,7 +10365,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kde.kspread",
                 possibleExtensions: [
-                    "ksp",
+                    "ksp"
                 ]
             )
         }
@@ -10379,7 +10393,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kenameaapp",
                 possibleExtensions: [
-                    "htke",
+                    "htke"
                 ]
             )
         }
@@ -10406,7 +10420,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kidspiration",
                 possibleExtensions: [
-                    "kia",
+                    "kia"
                 ]
             )
         }
@@ -10440,7 +10454,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.kodak-descriptor",
                 possibleExtensions: [
-                    "sse",
+                    "sse"
                 ]
             )
         }
@@ -10470,7 +10484,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "lasxml",
+                    "lasxml"
                 ]
             )
         }
@@ -10514,12 +10528,13 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.llamagraphics.life-balance.desktop",
                 possibleExtensions: [
-                    "lbd",
+                    "lbd"
                 ]
             )
         }
 
-        public static func vndLlamagraphicsLifeBalanceExchangeXml() -> MediaType {
+        public static func vndLlamagraphicsLifeBalanceExchangeXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -10527,7 +10542,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "lbe",
+                    "lbe"
                 ]
             )
         }
@@ -10554,7 +10569,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-1-2-3",
                 possibleExtensions: [
-                    "123",
+                    "123"
                 ]
             )
         }
@@ -10564,7 +10579,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-approach",
                 possibleExtensions: [
-                    "apr",
+                    "apr"
                 ]
             )
         }
@@ -10574,7 +10589,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-freelance",
                 possibleExtensions: [
-                    "pre",
+                    "pre"
                 ]
             )
         }
@@ -10584,7 +10599,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-notes",
                 possibleExtensions: [
-                    "nsf",
+                    "nsf"
                 ]
             )
         }
@@ -10594,7 +10609,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-organizer",
                 possibleExtensions: [
-                    "org",
+                    "org"
                 ]
             )
         }
@@ -10604,7 +10619,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-screencam",
                 possibleExtensions: [
-                    "scm",
+                    "scm"
                 ]
             )
         }
@@ -10614,7 +10629,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.lotus-wordpro",
                 possibleExtensions: [
-                    "lwp",
+                    "lwp"
                 ]
             )
         }
@@ -10624,7 +10639,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.macports.portpkg",
                 possibleExtensions: [
-                    "portpkg",
+                    "portpkg"
                 ]
             )
         }
@@ -10641,7 +10656,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mapbox-vector-tile",
                 possibleExtensions: [
-                    "mvt",
+                    "mvt"
                 ]
             )
         }
@@ -10715,7 +10730,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mcd",
                 possibleExtensions: [
-                    "mcd",
+                    "mcd"
                 ]
             )
         }
@@ -10739,7 +10754,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.medcalcdata",
                 possibleExtensions: [
-                    "mc1",
+                    "mc1"
                 ]
             )
         }
@@ -10749,7 +10764,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mediastation.cdkey",
                 possibleExtensions: [
-                    "cdkey",
+                    "cdkey"
                 ]
             )
         }
@@ -10780,7 +10795,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mfer",
                 possibleExtensions: [
-                    "mwf",
+                    "mwf"
                 ]
             )
         }
@@ -10790,7 +10805,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mfmp",
                 possibleExtensions: [
-                    "mfm",
+                    "mfm"
                 ]
             )
         }
@@ -10810,7 +10825,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.micrografx.flo",
                 possibleExtensions: [
-                    "flo",
+                    "flo"
                 ]
             )
         }
@@ -10820,7 +10835,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.micrografx.igx",
                 possibleExtensions: [
-                    "igx",
+                    "igx"
                 ]
             )
         }
@@ -10854,7 +10869,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mif",
                 possibleExtensions: [
-                    "mif",
+                    "mif"
                 ]
             )
         }
@@ -10878,7 +10893,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.daf",
                 possibleExtensions: [
-                    "daf",
+                    "daf"
                 ]
             )
         }
@@ -10888,7 +10903,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.dis",
                 possibleExtensions: [
-                    "dis",
+                    "dis"
                 ]
             )
         }
@@ -10898,7 +10913,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.mbk",
                 possibleExtensions: [
-                    "mbk",
+                    "mbk"
                 ]
             )
         }
@@ -10908,7 +10923,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.mqy",
                 possibleExtensions: [
-                    "mqy",
+                    "mqy"
                 ]
             )
         }
@@ -10918,7 +10933,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.msl",
                 possibleExtensions: [
-                    "msl",
+                    "msl"
                 ]
             )
         }
@@ -10928,7 +10943,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.plc",
                 possibleExtensions: [
-                    "plc",
+                    "plc"
                 ]
             )
         }
@@ -10938,7 +10953,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mobius.txf",
                 possibleExtensions: [
-                    "txf",
+                    "txf"
                 ]
             )
         }
@@ -10955,7 +10970,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mophun.application",
                 possibleExtensions: [
-                    "mpn",
+                    "mpn"
                 ]
             )
         }
@@ -10965,7 +10980,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mophun.certificate",
                 possibleExtensions: [
-                    "mpc",
+                    "mpc"
                 ]
             )
         }
@@ -11034,7 +11049,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xul",
+                    "xul"
                 ]
             )
         }
@@ -11051,7 +11066,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-artgalry",
                 possibleExtensions: [
-                    "cil",
+                    "cil"
                 ]
             )
         }
@@ -11068,7 +11083,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-cab-compressed",
                 possibleExtensions: [
-                    "cab",
+                    "cab"
                 ]
             )
         }
@@ -11100,7 +11115,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-excel.addin.macroenabled.12",
                 possibleExtensions: [
-                    "xlam",
+                    "xlam"
                 ]
             )
         }
@@ -11110,7 +11125,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-excel.sheet.binary.macroenabled.12",
                 possibleExtensions: [
-                    "xlsb",
+                    "xlsb"
                 ]
             )
         }
@@ -11120,7 +11135,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-excel.sheet.macroenabled.12",
                 possibleExtensions: [
-                    "xlsm",
+                    "xlsm"
                 ]
             )
         }
@@ -11130,7 +11145,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-excel.template.macroenabled.12",
                 possibleExtensions: [
-                    "xltm",
+                    "xltm"
                 ]
             )
         }
@@ -11140,7 +11155,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-fontobject",
                 possibleExtensions: [
-                    "eot",
+                    "eot"
                 ]
             )
         }
@@ -11150,7 +11165,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-htmlhelp",
                 possibleExtensions: [
-                    "chm",
+                    "chm"
                 ]
             )
         }
@@ -11160,7 +11175,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-ims",
                 possibleExtensions: [
-                    "ims",
+                    "ims"
                 ]
             )
         }
@@ -11170,7 +11185,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-lrm",
                 possibleExtensions: [
-                    "lrm",
+                    "lrm"
                 ]
             )
         }
@@ -11190,7 +11205,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-officetheme",
                 possibleExtensions: [
-                    "thmx",
+                    "thmx"
                 ]
             )
         }
@@ -11207,7 +11222,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-outlook",
                 possibleExtensions: [
-                    "msg",
+                    "msg"
                 ]
             )
         }
@@ -11224,7 +11239,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-pki.seccat",
                 possibleExtensions: [
-                    "cat",
+                    "cat"
                 ]
             )
         }
@@ -11234,7 +11249,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-pki.stl",
                 possibleExtensions: [
-                    "stl",
+                    "stl"
                 ]
             )
         }
@@ -11266,17 +11281,19 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-powerpoint.addin.macroenabled.12",
                 possibleExtensions: [
-                    "ppam",
+                    "ppam"
                 ]
             )
         }
 
-        public static func vndMsPowerpointPresentationMacroenabled12() -> MediaType {
+        public static func vndMsPowerpointPresentationMacroenabled12()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.ms-powerpoint.presentation.macroenabled.12",
                 possibleExtensions: [
-                    "pptm",
+                    "pptm"
                 ]
             )
         }
@@ -11286,27 +11303,29 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-powerpoint.slide.macroenabled.12",
                 possibleExtensions: [
-                    "sldm",
+                    "sldm"
                 ]
             )
         }
 
-        public static func vndMsPowerpointSlideshowMacroenabled12() -> MediaType {
+        public static func vndMsPowerpointSlideshowMacroenabled12() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.ms-powerpoint.slideshow.macroenabled.12",
                 possibleExtensions: [
-                    "ppsm",
+                    "ppsm"
                 ]
             )
         }
 
-        public static func vndMsPowerpointTemplateMacroenabled12() -> MediaType {
+        public static func vndMsPowerpointTemplateMacroenabled12() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.ms-powerpoint.template.macroenabled.12",
                 possibleExtensions: [
-                    "potm",
+                    "potm"
                 ]
             )
         }
@@ -11364,7 +11383,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-visio.viewer",
                 possibleExtensions: [
-                    "vdx",
+                    "vdx"
                 ]
             )
         }
@@ -11430,7 +11449,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-word.document.macroenabled.12",
                 possibleExtensions: [
-                    "docm",
+                    "docm"
                 ]
             )
         }
@@ -11440,7 +11459,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-word.template.macroenabled.12",
                 possibleExtensions: [
-                    "dotm",
+                    "dotm"
                 ]
             )
         }
@@ -11463,7 +11482,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-wpl",
                 possibleExtensions: [
-                    "wpl",
+                    "wpl"
                 ]
             )
         }
@@ -11473,7 +11492,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-xpsdocument",
                 possibleExtensions: [
-                    "xps",
+                    "xps"
                 ]
             )
         }
@@ -11490,7 +11509,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mseq",
                 possibleExtensions: [
-                    "mseq",
+                    "mseq"
                 ]
             )
         }
@@ -11535,7 +11554,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.musician",
                 possibleExtensions: [
-                    "mus",
+                    "mus"
                 ]
             )
         }
@@ -11545,7 +11564,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.muvee.style",
                 possibleExtensions: [
-                    "msty",
+                    "msty"
                 ]
             )
         }
@@ -11555,7 +11574,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mynfc",
                 possibleExtensions: [
-                    "taglet",
+                    "taglet"
                 ]
             )
         }
@@ -11598,7 +11617,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "bdo",
+                    "bdo"
                 ]
             )
         }
@@ -11663,7 +11682,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.neurolanguage.nlu",
                 possibleExtensions: [
-                    "nlu",
+                    "nlu"
                 ]
             )
         }
@@ -11705,7 +11724,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.noblenet-directory",
                 possibleExtensions: [
-                    "nnd",
+                    "nnd"
                 ]
             )
         }
@@ -11715,7 +11734,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.noblenet-sealer",
                 possibleExtensions: [
-                    "nns",
+                    "nns"
                 ]
             )
         }
@@ -11725,7 +11744,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.noblenet-web",
                 possibleExtensions: [
-                    "nnw",
+                    "nnw"
                 ]
             )
         }
@@ -11812,7 +11831,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ac",
+                    "ac"
                 ]
             )
         }
@@ -11822,7 +11841,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nokia.n-gage.data",
                 possibleExtensions: [
-                    "ngdat",
+                    "ngdat"
                 ]
             )
         }
@@ -11832,7 +11851,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nokia.n-gage.symbian.install",
                 possibleExtensions: [
-                    "n-gage",
+                    "n-gage"
                 ]
             )
         }
@@ -11869,7 +11888,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nokia.radio-preset",
                 possibleExtensions: [
-                    "rpst",
+                    "rpst"
                 ]
             )
         }
@@ -11879,7 +11898,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.nokia.radio-presets",
                 possibleExtensions: [
-                    "rpss",
+                    "rpss"
                 ]
             )
         }
@@ -11889,7 +11908,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.novadigm.edm",
                 possibleExtensions: [
-                    "edm",
+                    "edm"
                 ]
             )
         }
@@ -11899,7 +11918,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.novadigm.edx",
                 possibleExtensions: [
-                    "edx",
+                    "edx"
                 ]
             )
         }
@@ -11909,7 +11928,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.novadigm.ext",
                 possibleExtensions: [
-                    "ext",
+                    "ext"
                 ]
             )
         }
@@ -11995,7 +12014,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.chart",
                 possibleExtensions: [
-                    "odc",
+                    "odc"
                 ]
             )
         }
@@ -12005,7 +12024,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.chart-template",
                 possibleExtensions: [
-                    "otc",
+                    "otc"
                 ]
             )
         }
@@ -12015,7 +12034,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.database",
                 possibleExtensions: [
-                    "odb",
+                    "odb"
                 ]
             )
         }
@@ -12025,7 +12044,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.formula",
                 possibleExtensions: [
-                    "odf",
+                    "odf"
                 ]
             )
         }
@@ -12035,7 +12054,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.formula-template",
                 possibleExtensions: [
-                    "odft",
+                    "odft"
                 ]
             )
         }
@@ -12045,7 +12064,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.graphics",
                 possibleExtensions: [
-                    "odg",
+                    "odg"
                 ]
             )
         }
@@ -12055,7 +12074,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.graphics-template",
                 possibleExtensions: [
-                    "otg",
+                    "otg"
                 ]
             )
         }
@@ -12065,7 +12084,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.image",
                 possibleExtensions: [
-                    "odi",
+                    "odi"
                 ]
             )
         }
@@ -12075,7 +12094,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.image-template",
                 possibleExtensions: [
-                    "oti",
+                    "oti"
                 ]
             )
         }
@@ -12085,17 +12104,19 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.presentation",
                 possibleExtensions: [
-                    "odp",
+                    "odp"
                 ]
             )
         }
 
-        public static func vndOasisOpendocumentPresentationTemplate() -> MediaType {
+        public static func vndOasisOpendocumentPresentationTemplate()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.oasis.opendocument.presentation-template",
                 possibleExtensions: [
-                    "otp",
+                    "otp"
                 ]
             )
         }
@@ -12105,17 +12126,19 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.spreadsheet",
                 possibleExtensions: [
-                    "ods",
+                    "ods"
                 ]
             )
         }
 
-        public static func vndOasisOpendocumentSpreadsheetTemplate() -> MediaType {
+        public static func vndOasisOpendocumentSpreadsheetTemplate()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.oasis.opendocument.spreadsheet-template",
                 possibleExtensions: [
-                    "ots",
+                    "ots"
                 ]
             )
         }
@@ -12125,7 +12148,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.text",
                 possibleExtensions: [
-                    "odt",
+                    "odt"
                 ]
             )
         }
@@ -12135,12 +12158,13 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.text-master",
                 possibleExtensions: [
-                    "odm",
+                    "odm"
                 ]
             )
         }
 
-        public static func vndOasisOpendocumentTextMasterTemplate() -> MediaType {
+        public static func vndOasisOpendocumentTextMasterTemplate() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.oasis.opendocument.text-master-template"
@@ -12152,7 +12176,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.text-template",
                 possibleExtensions: [
-                    "ott",
+                    "ott"
                 ]
             )
         }
@@ -12162,7 +12186,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.oasis.opendocument.text-web",
                 possibleExtensions: [
-                    "oth",
+                    "oth"
                 ]
             )
         }
@@ -12313,7 +12337,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.olpc-sugar",
                 possibleExtensions: [
-                    "xo",
+                    "xo"
                 ]
             )
         }
@@ -12339,7 +12363,9 @@ extension MediaType {
             )
         }
 
-        public static func vndOmaBcastAssociatedProcedureParameterXml() -> MediaType {
+        public static func vndOmaBcastAssociatedProcedureParameterXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -12523,7 +12549,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "dd2",
+                    "dd2"
                 ]
             )
         }
@@ -12769,7 +12795,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "obgx",
+                    "obgx"
                 ]
             )
         }
@@ -12793,7 +12819,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.openofficeorg.extension",
                 possibleExtensions: [
-                    "oxt",
+                    "oxt"
                 ]
             )
         }
@@ -12813,7 +12839,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "osm",
+                    "osm"
                 ]
             )
         }
@@ -12835,27 +12861,35 @@ extension MediaType {
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentCustomPropertiesXml() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentCustomPropertiesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.custom-properties",
+                    value:
+                        "vnd.openxmlformats-officedocument.custom-properties",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentCustomxmlpropertiesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentCustomxmlpropertiesXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.customxmlproperties",
+                    value:
+                        "vnd.openxmlformats-officedocument.customxmlproperties",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingXml() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentDrawingXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -12865,7 +12899,9 @@ extension MediaType {
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingmlChartXml() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentDrawingmlChartXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -12875,507 +12911,700 @@ extension MediaType {
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingmlChartshapesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentDrawingmlChartshapesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.drawingml.chartshapes",
+                    value:
+                        "vnd.openxmlformats-officedocument.drawingml.chartshapes",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingmlDiagramcolorsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentDrawingmlDiagramcolorsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.drawingml.diagramcolors",
+                    value:
+                        "vnd.openxmlformats-officedocument.drawingml.diagramcolors",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingmlDiagramdataXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentDrawingmlDiagramdataXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.drawingml.diagramdata",
+                    value:
+                        "vnd.openxmlformats-officedocument.drawingml.diagramdata",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingmlDiagramlayoutXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentDrawingmlDiagramlayoutXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.drawingml.diagramlayout",
+                    value:
+                        "vnd.openxmlformats-officedocument.drawingml.diagramlayout",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentDrawingmlDiagramstyleXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentDrawingmlDiagramstyleXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.drawingml.diagramstyle",
+                    value:
+                        "vnd.openxmlformats-officedocument.drawingml.diagramstyle",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentExtendedPropertiesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentExtendedPropertiesXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.extended-properties",
+                    value:
+                        "vnd.openxmlformats-officedocument.extended-properties",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlCommentauthorsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlCommentauthorsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.commentauthors",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.commentauthors",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlCommentsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlCommentsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.comments",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.comments",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlHandoutmasterXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlHandoutmasterXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.handoutmaster",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.handoutmaster",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlNotesmasterXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlNotesmasterXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.notesmaster",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.notesmaster",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlNotesslideXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlNotesslideXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.notesslide",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.notesslide",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlPresentation() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlPresentation()
+            -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.presentationml.presentation",
+                subtype:
+                    "vnd.openxmlformats-officedocument.presentationml.presentation",
                 possibleExtensions: [
-                    "pptx",
+                    "pptx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlPresentationMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlPresentationMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.presentation.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.presentation.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlPrespropsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlPrespropsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.presprops",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.presprops",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlide() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlide()
+            -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.presentationml.slide",
+                subtype:
+                    "vnd.openxmlformats-officedocument.presentationml.slide",
                 possibleExtensions: [
-                    "sldx",
+                    "sldx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlideXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlSlideXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.slide",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.slide",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlidelayoutXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlSlidelayoutXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.slidelayout",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.slidelayout",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlidemasterXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlSlidemasterXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.slidemaster",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.slidemaster",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlideshow() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlSlideshow()
+            -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.presentationml.slideshow",
+                subtype:
+                    "vnd.openxmlformats-officedocument.presentationml.slideshow",
                 possibleExtensions: [
-                    "ppsx",
+                    "ppsx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlideshowMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlSlideshowMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.slideshow.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.slideshow.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlSlideupdateinfoXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlSlideupdateinfoXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.slideupdateinfo",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.slideupdateinfo",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlTablestylesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlTablestylesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.tablestyles",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.tablestyles",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlTagsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlTagsXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.tags",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.tags",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlTemplate() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlTemplate() -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.presentationml.template",
+                subtype:
+                    "vnd.openxmlformats-officedocument.presentationml.template",
                 possibleExtensions: [
-                    "potx",
+                    "potx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlTemplateMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlTemplateMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.template.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.template.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentPresentationmlViewpropsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentPresentationmlViewpropsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.presentationml.viewprops",
+                    value:
+                        "vnd.openxmlformats-officedocument.presentationml.viewprops",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlCalcchainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlCalcchainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.calcchain",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.calcchain",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlChartsheetXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlChartsheetXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.chartsheet",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.chartsheet",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlCommentsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlCommentsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.comments",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.comments",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlConnectionsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlConnectionsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.connections",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.connections",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlDialogsheetXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlDialogsheetXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.dialogsheet",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.dialogsheet",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlExternallinkXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlExternallinkXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.externallink",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.externallink",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlPivotcachedefinitionXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlPivotcachedefinitionXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.pivotcachedefinition",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.pivotcachedefinition",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlPivotcacherecordsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlPivotcacherecordsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.pivotcacherecords",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.pivotcacherecords",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlPivottableXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlPivottableXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.pivottable",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.pivottable",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlQuerytableXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlQuerytableXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.querytable",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.querytable",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlRevisionheadersXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlRevisionheadersXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.revisionheaders",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.revisionheaders",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlRevisionlogXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlRevisionlogXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.revisionlog",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.revisionlog",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlSharedstringsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlSharedstringsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.sharedstrings",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.sharedstrings",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlSheet() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlSheet()
+            -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                subtype:
+                    "vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 possibleExtensions: [
-                    "xlsx",
+                    "xlsx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlSheetMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlSheetMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.sheet.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.sheet.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlSheetmetadataXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlSheetmetadataXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.sheetmetadata",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.sheetmetadata",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlStylesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlStylesXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.styles",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.styles",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlTableXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlTableXml() -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.table",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.table",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlTablesinglecellsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlTablesinglecellsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.tablesinglecells",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.tablesinglecells",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlTemplate() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlTemplate() -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.spreadsheetml.template",
+                subtype:
+                    "vnd.openxmlformats-officedocument.spreadsheetml.template",
                 possibleExtensions: [
-                    "xltx",
+                    "xltx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlTemplateMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlTemplateMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.template.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.template.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlUsernamesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlUsernamesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.usernames",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.usernames",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlVolatiledependenciesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlVolatiledependenciesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.volatiledependencies",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.volatiledependencies",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentSpreadsheetmlWorksheetXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentSpreadsheetmlWorksheetXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.spreadsheetml.worksheet",
+                    value:
+                        "vnd.openxmlformats-officedocument.spreadsheetml.worksheet",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentThemeXml() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentThemeXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -13385,7 +13614,9 @@ extension MediaType {
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentThemeoverrideXml() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentThemeoverrideXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -13395,154 +13626,214 @@ extension MediaType {
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentVmldrawing() -> MediaType {
+        public static func vndOpenxmlformatsOfficedocumentVmldrawing()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: "vnd.openxmlformats-officedocument.vmldrawing"
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlCommentsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlCommentsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.comments",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.comments",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlDocument() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlDocument()
+            -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.wordprocessingml.document",
+                subtype:
+                    "vnd.openxmlformats-officedocument.wordprocessingml.document",
                 possibleExtensions: [
-                    "docx",
+                    "docx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlDocumentGlossaryXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlDocumentGlossaryXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.document.glossary",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.document.glossary",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlDocumentMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlDocumentMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.document.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.document.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlEndnotesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlEndnotesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.endnotes",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.endnotes",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlFonttableXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlFonttableXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.fonttable",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.fonttable",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlFooterXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlFooterXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.footer",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.footer",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlFootnotesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlFootnotesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.footnotes",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.footnotes",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlNumberingXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlNumberingXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.numbering",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.numbering",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlSettingsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlSettingsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.settings",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.settings",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlStylesXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlStylesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.styles",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.styles",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlTemplate() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlTemplate()
+            -> MediaType
+        {
             .init(
                 type: name,
-                subtype: "vnd.openxmlformats-officedocument.wordprocessingml.template",
+                subtype:
+                    "vnd.openxmlformats-officedocument.wordprocessingml.template",
                 possibleExtensions: [
-                    "dotx",
+                    "dotx"
                 ]
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlTemplateMainXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlTemplateMainXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.template.main",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.template.main",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsOfficedocumentWordprocessingmlWebsettingsXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsOfficedocumentWordprocessingmlWebsettingsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-officedocument.wordprocessingml.websettings",
+                    value:
+                        "vnd.openxmlformats-officedocument.wordprocessingml.websettings",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsPackageCorePropertiesXml() -> MediaType {
+        public static func vndOpenxmlformatsPackageCorePropertiesXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -13552,17 +13843,23 @@ extension MediaType {
             )
         }
 
-        public static func vndOpenxmlformatsPackageDigitalSignatureXmlsignatureXml() -> MediaType {
+        public static func
+            vndOpenxmlformatsPackageDigitalSignatureXmlsignatureXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
-                    value: "vnd.openxmlformats-package.digital-signature-xmlsignature",
+                    value:
+                        "vnd.openxmlformats-package.digital-signature-xmlsignature",
                     suffix: "xml"
                 )
             )
         }
 
-        public static func vndOpenxmlformatsPackageRelationshipsXml() -> MediaType {
+        public static func vndOpenxmlformatsPackageRelationshipsXml()
+            -> MediaType
+        {
             .init(
                 type: name,
                 subtype: .init(
@@ -13601,7 +13898,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.osgeo.mapguide.package",
                 possibleExtensions: [
-                    "mgp",
+                    "mgp"
                 ]
             )
         }
@@ -13618,7 +13915,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.osgi.dp",
                 possibleExtensions: [
-                    "dp",
+                    "dp"
                 ]
             )
         }
@@ -13628,7 +13925,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.osgi.subsystem",
                 possibleExtensions: [
-                    "esa",
+                    "esa"
                 ]
             )
         }
@@ -13705,7 +14002,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pawaafile",
                 possibleExtensions: [
-                    "paw",
+                    "paw"
                 ]
             )
         }
@@ -13722,7 +14019,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pg.format",
                 possibleExtensions: [
-                    "str",
+                    "str"
                 ]
             )
         }
@@ -13732,7 +14029,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pg.osasli",
                 possibleExtensions: [
-                    "ei6",
+                    "ei6"
                 ]
             )
         }
@@ -13749,7 +14046,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.picsel",
                 possibleExtensions: [
-                    "efif",
+                    "efif"
                 ]
             )
         }
@@ -13759,7 +14056,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pmi.widget",
                 possibleExtensions: [
-                    "wg",
+                    "wg"
                 ]
             )
         }
@@ -13786,7 +14083,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pocketlearn",
                 possibleExtensions: [
-                    "plf",
+                    "plf"
                 ]
             )
         }
@@ -13796,7 +14093,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.powerbuilder6",
                 possibleExtensions: [
-                    "pbd",
+                    "pbd"
                 ]
             )
         }
@@ -13844,7 +14141,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "systemverify",
+                    "systemverify"
                 ]
             )
         }
@@ -13861,7 +14158,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.previewsystems.box",
                 possibleExtensions: [
-                    "box",
+                    "box"
                 ]
             )
         }
@@ -13871,7 +14168,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.procreate.brush",
                 possibleExtensions: [
-                    "brush",
+                    "brush"
                 ]
             )
         }
@@ -13881,7 +14178,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.procreate.brushset",
                 possibleExtensions: [
-                    "brushset",
+                    "brushset"
                 ]
             )
         }
@@ -13891,7 +14188,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.procreate.dream",
                 possibleExtensions: [
-                    "drm",
+                    "drm"
                 ]
             )
         }
@@ -13908,7 +14205,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.proteus.magazine",
                 possibleExtensions: [
-                    "mgz",
+                    "mgz"
                 ]
             )
         }
@@ -13932,7 +14229,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.publishare-delta-tree",
                 possibleExtensions: [
-                    "qps",
+                    "qps"
                 ]
             )
         }
@@ -13942,7 +14239,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pvi.ptid1",
                 possibleExtensions: [
-                    "ptid",
+                    "ptid"
                 ]
             )
         }
@@ -13962,7 +14259,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xhtm",
+                    "xhtm"
                 ]
             )
         }
@@ -14192,7 +14489,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.rar",
                 possibleExtensions: [
-                    "rar",
+                    "rar"
                 ]
             )
         }
@@ -14202,7 +14499,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.realvnc.bed",
                 possibleExtensions: [
-                    "bed",
+                    "bed"
                 ]
             )
         }
@@ -14212,7 +14509,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.recordare.musicxml",
                 possibleExtensions: [
-                    "mxl",
+                    "mxl"
                 ]
             )
         }
@@ -14225,7 +14522,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "musicxml",
+                    "musicxml"
                 ]
             )
         }
@@ -14266,7 +14563,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.rig.cryptonote",
                 possibleExtensions: [
-                    "cryptonote",
+                    "cryptonote"
                 ]
             )
         }
@@ -14276,7 +14573,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.rim.cod",
                 possibleExtensions: [
-                    "cod",
+                    "cod"
                 ]
             )
         }
@@ -14286,7 +14583,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.rn-realmedia",
                 possibleExtensions: [
-                    "rm",
+                    "rm"
                 ]
             )
         }
@@ -14296,7 +14593,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.rn-realmedia-vbr",
                 possibleExtensions: [
-                    "rmvb",
+                    "rmvb"
                 ]
             )
         }
@@ -14309,7 +14606,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "link66",
+                    "link66"
                 ]
             )
         }
@@ -14340,7 +14637,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sailingtracker.track",
                 possibleExtensions: [
-                    "st",
+                    "st"
                 ]
             )
         }
@@ -14455,7 +14752,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.seemail",
                 possibleExtensions: [
-                    "see",
+                    "see"
                 ]
             )
         }
@@ -14475,7 +14772,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sema",
                 possibleExtensions: [
-                    "sema",
+                    "sema"
                 ]
             )
         }
@@ -14485,7 +14782,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.semd",
                 possibleExtensions: [
-                    "semd",
+                    "semd"
                 ]
             )
         }
@@ -14495,7 +14792,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.semf",
                 possibleExtensions: [
-                    "semf",
+                    "semf"
                 ]
             )
         }
@@ -14512,7 +14809,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.shana.informed.formdata",
                 possibleExtensions: [
-                    "ifm",
+                    "ifm"
                 ]
             )
         }
@@ -14522,7 +14819,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.shana.informed.formtemplate",
                 possibleExtensions: [
-                    "itp",
+                    "itp"
                 ]
             )
         }
@@ -14532,7 +14829,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.shana.informed.interchange",
                 possibleExtensions: [
-                    "iif",
+                    "iif"
                 ]
             )
         }
@@ -14542,7 +14839,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.shana.informed.package",
                 possibleExtensions: [
-                    "ipk",
+                    "ipk"
                 ]
             )
         }
@@ -14628,7 +14925,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.smaf",
                 possibleExtensions: [
-                    "mmf",
+                    "mmf"
                 ]
             )
         }
@@ -14645,7 +14942,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.smart.teacher",
                 possibleExtensions: [
-                    "teacher",
+                    "teacher"
                 ]
             )
         }
@@ -14672,7 +14969,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "fo",
+                    "fo"
                 ]
             )
         }
@@ -14703,7 +15000,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.spotfire.dxp",
                 possibleExtensions: [
-                    "dxp",
+                    "dxp"
                 ]
             )
         }
@@ -14713,7 +15010,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.spotfire.sfs",
                 possibleExtensions: [
-                    "sfs",
+                    "sfs"
                 ]
             )
         }
@@ -14755,7 +15052,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stardivision.calc",
                 possibleExtensions: [
-                    "sdc",
+                    "sdc"
                 ]
             )
         }
@@ -14765,7 +15062,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stardivision.draw",
                 possibleExtensions: [
-                    "sda",
+                    "sda"
                 ]
             )
         }
@@ -14775,7 +15072,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stardivision.impress",
                 possibleExtensions: [
-                    "sdd",
+                    "sdd"
                 ]
             )
         }
@@ -14785,7 +15082,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stardivision.math",
                 possibleExtensions: [
-                    "smf",
+                    "smf"
                 ]
             )
         }
@@ -14806,7 +15103,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stardivision.writer-global",
                 possibleExtensions: [
-                    "sgl",
+                    "sgl"
                 ]
             )
         }
@@ -14816,7 +15113,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stepmania.package",
                 possibleExtensions: [
-                    "smzip",
+                    "smzip"
                 ]
             )
         }
@@ -14826,7 +15123,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.stepmania.stepchart",
                 possibleExtensions: [
-                    "sm",
+                    "sm"
                 ]
             )
         }
@@ -14846,7 +15143,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "wadl",
+                    "wadl"
                 ]
             )
         }
@@ -14856,7 +15153,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.calc",
                 possibleExtensions: [
-                    "sxc",
+                    "sxc"
                 ]
             )
         }
@@ -14866,7 +15163,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.calc.template",
                 possibleExtensions: [
-                    "stc",
+                    "stc"
                 ]
             )
         }
@@ -14876,7 +15173,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.draw",
                 possibleExtensions: [
-                    "sxd",
+                    "sxd"
                 ]
             )
         }
@@ -14886,7 +15183,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.draw.template",
                 possibleExtensions: [
-                    "std",
+                    "std"
                 ]
             )
         }
@@ -14896,7 +15193,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.impress",
                 possibleExtensions: [
-                    "sxi",
+                    "sxi"
                 ]
             )
         }
@@ -14906,7 +15203,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.impress.template",
                 possibleExtensions: [
-                    "sti",
+                    "sti"
                 ]
             )
         }
@@ -14916,7 +15213,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.math",
                 possibleExtensions: [
-                    "sxm",
+                    "sxm"
                 ]
             )
         }
@@ -14926,7 +15223,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.writer",
                 possibleExtensions: [
-                    "sxw",
+                    "sxw"
                 ]
             )
         }
@@ -14936,7 +15233,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.writer.global",
                 possibleExtensions: [
-                    "sxg",
+                    "sxg"
                 ]
             )
         }
@@ -14946,7 +15243,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.xml.writer.template",
                 possibleExtensions: [
-                    "stw",
+                    "stw"
                 ]
             )
         }
@@ -14974,7 +15271,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.svd",
                 possibleExtensions: [
-                    "svd",
+                    "svd"
                 ]
             )
         }
@@ -15032,7 +15329,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xsm",
+                    "xsm"
                 ]
             )
         }
@@ -15045,7 +15342,7 @@ extension MediaType {
                     suffix: "wbxml"
                 ),
                 possibleExtensions: [
-                    "bdm",
+                    "bdm"
                 ]
             )
         }
@@ -15058,7 +15355,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xdm",
+                    "xdm"
                 ]
             )
         }
@@ -15088,7 +15385,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ddf",
+                    "ddf"
                 ]
             )
         }
@@ -15135,7 +15432,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.tao.intent-module-archive",
                 possibleExtensions: [
-                    "tao",
+                    "tao"
                 ]
             )
         }
@@ -15184,7 +15481,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.tmobile-livetv",
                 possibleExtensions: [
-                    "tmo",
+                    "tmo"
                 ]
             )
         }
@@ -15201,7 +15498,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.trid.tpt",
                 possibleExtensions: [
-                    "tpt",
+                    "tpt"
                 ]
             )
         }
@@ -15211,7 +15508,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.triscape.mxs",
                 possibleExtensions: [
-                    "mxs",
+                    "mxs"
                 ]
             )
         }
@@ -15221,7 +15518,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.trueapp",
                 possibleExtensions: [
-                    "tra",
+                    "tra"
                 ]
             )
         }
@@ -15266,7 +15563,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.uiq.theme",
                 possibleExtensions: [
-                    "utz",
+                    "utz"
                 ]
             )
         }
@@ -15276,7 +15573,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.umajin",
                 possibleExtensions: [
-                    "umj",
+                    "umj"
                 ]
             )
         }
@@ -15286,7 +15583,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.unity",
                 possibleExtensions: [
-                    "unityweb",
+                    "unityweb"
                 ]
             )
         }
@@ -15415,7 +15712,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.vcx",
                 possibleExtensions: [
-                    "vcx",
+                    "vcx"
                 ]
             )
         }
@@ -15532,7 +15829,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.visionary",
                 possibleExtensions: [
-                    "vis",
+                    "vis"
                 ]
             )
         }
@@ -15556,7 +15853,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.vsf",
                 possibleExtensions: [
-                    "vsf",
+                    "vsf"
                 ]
             )
         }
@@ -15594,7 +15891,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wap.wbxml",
                 possibleExtensions: [
-                    "wbxml",
+                    "wbxml"
                 ]
             )
         }
@@ -15604,7 +15901,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wap.wmlc",
                 possibleExtensions: [
-                    "wmlc",
+                    "wmlc"
                 ]
             )
         }
@@ -15614,7 +15911,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wap.wmlscriptc",
                 possibleExtensions: [
-                    "wmlsc",
+                    "wmlsc"
                 ]
             )
         }
@@ -15631,7 +15928,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.webturbo",
                 possibleExtensions: [
-                    "wtb",
+                    "wtb"
                 ]
             )
         }
@@ -15704,7 +16001,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wolfram.player",
                 possibleExtensions: [
-                    "nbp",
+                    "nbp"
                 ]
             )
         }
@@ -15721,7 +16018,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wordperfect",
                 possibleExtensions: [
-                    "wpd",
+                    "wpd"
                 ]
             )
         }
@@ -15731,7 +16028,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wqd",
                 possibleExtensions: [
-                    "wqd",
+                    "wqd"
                 ]
             )
         }
@@ -15748,7 +16045,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wt.stf",
                 possibleExtensions: [
-                    "stf",
+                    "stf"
                 ]
             )
         }
@@ -15798,7 +16095,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.xara",
                 possibleExtensions: [
-                    "xar",
+                    "xar"
                 ]
             )
         }
@@ -15822,7 +16119,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.xfdl",
                 possibleExtensions: [
-                    "xfdl",
+                    "xfdl"
                 ]
             )
         }
@@ -15884,7 +16181,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yamaha.hv-dic",
                 possibleExtensions: [
-                    "hvd",
+                    "hvd"
                 ]
             )
         }
@@ -15894,7 +16191,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yamaha.hv-script",
                 possibleExtensions: [
-                    "hvs",
+                    "hvs"
                 ]
             )
         }
@@ -15904,7 +16201,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yamaha.hv-voice",
                 possibleExtensions: [
-                    "hvp",
+                    "hvp"
                 ]
             )
         }
@@ -15914,7 +16211,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yamaha.openscoreformat",
                 possibleExtensions: [
-                    "osf",
+                    "osf"
                 ]
             )
         }
@@ -15927,7 +16224,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "osfpvg",
+                    "osfpvg"
                 ]
             )
         }
@@ -15944,7 +16241,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yamaha.smaf-audio",
                 possibleExtensions: [
-                    "saf",
+                    "saf"
                 ]
             )
         }
@@ -15954,7 +16251,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yamaha.smaf-phrase",
                 possibleExtensions: [
-                    "spf",
+                    "spf"
                 ]
             )
         }
@@ -15985,7 +16282,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.yellowriver-custom-menu",
                 possibleExtensions: [
-                    "cmp",
+                    "cmp"
                 ]
             )
         }
@@ -16009,7 +16306,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "zaz",
+                    "zaz"
                 ]
             )
         }
@@ -16022,7 +16319,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "vxml",
+                    "vxml"
                 ]
             )
         }
@@ -16086,7 +16383,7 @@ extension MediaType {
                 type: name,
                 subtype: "wasm",
                 possibleExtensions: [
-                    "wasm",
+                    "wasm"
                 ]
             )
         }
@@ -16099,7 +16396,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "wif",
+                    "wif"
                 ]
             )
         }
@@ -16133,7 +16430,7 @@ extension MediaType {
                 type: name,
                 subtype: "widget",
                 possibleExtensions: [
-                    "wgt",
+                    "wgt"
                 ]
             )
         }
@@ -16143,7 +16440,7 @@ extension MediaType {
                 type: name,
                 subtype: "winhlp",
                 possibleExtensions: [
-                    "hlp",
+                    "hlp"
                 ]
             )
         }
@@ -16170,7 +16467,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "wsdl",
+                    "wsdl"
                 ]
             )
         }
@@ -16183,7 +16480,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "wspolicy",
+                    "wspolicy"
                 ]
             )
         }
@@ -16193,7 +16490,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-7z-compressed",
                 possibleExtensions: [
-                    "7z",
+                    "7z"
                 ]
             )
         }
@@ -16203,7 +16500,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-abiword",
                 possibleExtensions: [
-                    "abw",
+                    "abw"
                 ]
             )
         }
@@ -16213,7 +16510,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ace-compressed",
                 possibleExtensions: [
-                    "ace",
+                    "ace"
                 ]
             )
         }
@@ -16230,7 +16527,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-apple-diskimage",
                 possibleExtensions: [
-                    "dmg",
+                    "dmg"
                 ]
             )
         }
@@ -16240,7 +16537,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-arj",
                 possibleExtensions: [
-                    "arj",
+                    "arj"
                 ]
             )
         }
@@ -16263,7 +16560,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-authorware-map",
                 possibleExtensions: [
-                    "aam",
+                    "aam"
                 ]
             )
         }
@@ -16273,7 +16570,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-authorware-seg",
                 possibleExtensions: [
-                    "aas",
+                    "aas"
                 ]
             )
         }
@@ -16283,7 +16580,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-bcpio",
                 possibleExtensions: [
-                    "bcpio",
+                    "bcpio"
                 ]
             )
         }
@@ -16293,7 +16590,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-bdoc",
                 possibleExtensions: [
-                    "bdoc",
+                    "bdoc"
                 ]
             )
         }
@@ -16303,7 +16600,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-bittorrent",
                 possibleExtensions: [
-                    "torrent",
+                    "torrent"
                 ]
             )
         }
@@ -16313,7 +16610,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-blender",
                 possibleExtensions: [
-                    "blend",
+                    "blend"
                 ]
             )
         }
@@ -16334,7 +16631,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-bzip",
                 possibleExtensions: [
-                    "bz",
+                    "bz"
                 ]
             )
         }
@@ -16369,7 +16666,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cdlink",
                 possibleExtensions: [
-                    "vcd",
+                    "vcd"
                 ]
             )
         }
@@ -16379,7 +16676,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cfs-compressed",
                 possibleExtensions: [
-                    "cfs",
+                    "cfs"
                 ]
             )
         }
@@ -16389,7 +16686,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-chat",
                 possibleExtensions: [
-                    "chat",
+                    "chat"
                 ]
             )
         }
@@ -16399,7 +16696,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-chess-pgn",
                 possibleExtensions: [
-                    "pgn",
+                    "pgn"
                 ]
             )
         }
@@ -16409,7 +16706,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-chrome-extension",
                 possibleExtensions: [
-                    "crx",
+                    "crx"
                 ]
             )
         }
@@ -16419,7 +16716,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cocoa",
                 possibleExtensions: [
-                    "cco",
+                    "cco"
                 ]
             )
         }
@@ -16436,7 +16733,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-compressed",
                 possibleExtensions: [
-                    "rar",
+                    "rar"
                 ]
             )
         }
@@ -16446,7 +16743,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-conference",
                 possibleExtensions: [
-                    "nsc",
+                    "nsc"
                 ]
             )
         }
@@ -16456,7 +16753,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cpio",
                 possibleExtensions: [
-                    "cpio",
+                    "cpio"
                 ]
             )
         }
@@ -16466,7 +16763,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-csh",
                 possibleExtensions: [
-                    "csh",
+                    "csh"
                 ]
             )
         }
@@ -16494,7 +16791,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-dgc-compressed",
                 possibleExtensions: [
-                    "dgc",
+                    "dgc"
                 ]
             )
         }
@@ -16522,7 +16819,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-doom",
                 possibleExtensions: [
-                    "wad",
+                    "wad"
                 ]
             )
         }
@@ -16535,7 +16832,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "ncx",
+                    "ncx"
                 ]
             )
         }
@@ -16548,7 +16845,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "dtb",
+                    "dtb"
                 ]
             )
         }
@@ -16561,7 +16858,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "res",
+                    "res"
                 ]
             )
         }
@@ -16571,7 +16868,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-dvi",
                 possibleExtensions: [
-                    "dvi",
+                    "dvi"
                 ]
             )
         }
@@ -16581,7 +16878,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-envoy",
                 possibleExtensions: [
-                    "evy",
+                    "evy"
                 ]
             )
         }
@@ -16591,7 +16888,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-eva",
                 possibleExtensions: [
-                    "eva",
+                    "eva"
                 ]
             )
         }
@@ -16601,7 +16898,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-font-bdf",
                 possibleExtensions: [
-                    "bdf",
+                    "bdf"
                 ]
             )
         }
@@ -16625,7 +16922,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-font-ghostscript",
                 possibleExtensions: [
-                    "gsf",
+                    "gsf"
                 ]
             )
         }
@@ -16642,7 +16939,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-font-linux-psf",
                 possibleExtensions: [
-                    "psf",
+                    "psf"
                 ]
             )
         }
@@ -16652,7 +16949,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-font-pcf",
                 possibleExtensions: [
-                    "pcf",
+                    "pcf"
                 ]
             )
         }
@@ -16662,7 +16959,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-font-snf",
                 possibleExtensions: [
-                    "snf",
+                    "snf"
                 ]
             )
         }
@@ -16706,7 +17003,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-freearc",
                 possibleExtensions: [
-                    "arc",
+                    "arc"
                 ]
             )
         }
@@ -16716,7 +17013,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-futuresplash",
                 possibleExtensions: [
-                    "spl",
+                    "spl"
                 ]
             )
         }
@@ -16726,7 +17023,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-gca-compressed",
                 possibleExtensions: [
-                    "gca",
+                    "gca"
                 ]
             )
         }
@@ -16736,7 +17033,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-glulx",
                 possibleExtensions: [
-                    "ulx",
+                    "ulx"
                 ]
             )
         }
@@ -16746,7 +17043,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-gnumeric",
                 possibleExtensions: [
-                    "gnumeric",
+                    "gnumeric"
                 ]
             )
         }
@@ -16756,7 +17053,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-gramps-xml",
                 possibleExtensions: [
-                    "gramps",
+                    "gramps"
                 ]
             )
         }
@@ -16766,7 +17063,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-gtar",
                 possibleExtensions: [
-                    "gtar",
+                    "gtar"
                 ]
             )
         }
@@ -16783,7 +17080,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-hdf",
                 possibleExtensions: [
-                    "hdf",
+                    "hdf"
                 ]
             )
         }
@@ -16793,7 +17090,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-httpd-php",
                 possibleExtensions: [
-                    "php",
+                    "php"
                 ]
             )
         }
@@ -16803,7 +17100,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-install-instructions",
                 possibleExtensions: [
-                    "install",
+                    "install"
                 ]
             )
         }
@@ -16816,7 +17113,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "ipynb",
+                    "ipynb"
                 ]
             )
         }
@@ -16826,7 +17123,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-iso9660-image",
                 possibleExtensions: [
-                    "iso",
+                    "iso"
                 ]
             )
         }
@@ -16836,7 +17133,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-iwork-keynote-sffkey",
                 possibleExtensions: [
-                    "key",
+                    "key"
                 ]
             )
         }
@@ -16846,7 +17143,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-iwork-numbers-sffnumbers",
                 possibleExtensions: [
-                    "numbers",
+                    "numbers"
                 ]
             )
         }
@@ -16856,7 +17153,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-iwork-pages-sffpages",
                 possibleExtensions: [
-                    "pages",
+                    "pages"
                 ]
             )
         }
@@ -16866,7 +17163,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-java-archive-diff",
                 possibleExtensions: [
-                    "jardiff",
+                    "jardiff"
                 ]
             )
         }
@@ -16876,7 +17173,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-java-jnlp-file",
                 possibleExtensions: [
-                    "jnlp",
+                    "jnlp"
                 ]
             )
         }
@@ -16893,7 +17190,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-keepass2",
                 possibleExtensions: [
-                    "kdbx",
+                    "kdbx"
                 ]
             )
         }
@@ -16903,7 +17200,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-latex",
                 possibleExtensions: [
-                    "latex",
+                    "latex"
                 ]
             )
         }
@@ -16913,7 +17210,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-lua-bytecode",
                 possibleExtensions: [
-                    "luac",
+                    "luac"
                 ]
             )
         }
@@ -16934,7 +17231,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-makeself",
                 possibleExtensions: [
-                    "run",
+                    "run"
                 ]
             )
         }
@@ -16944,7 +17241,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mie",
                 possibleExtensions: [
-                    "mie",
+                    "mie"
                 ]
             )
         }
@@ -16972,7 +17269,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-application",
                 possibleExtensions: [
-                    "application",
+                    "application"
                 ]
             )
         }
@@ -16982,7 +17279,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-shortcut",
                 possibleExtensions: [
-                    "lnk",
+                    "lnk"
                 ]
             )
         }
@@ -16992,7 +17289,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wmd",
                 possibleExtensions: [
-                    "wmd",
+                    "wmd"
                 ]
             )
         }
@@ -17002,7 +17299,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wmz",
                 possibleExtensions: [
-                    "wmz",
+                    "wmz"
                 ]
             )
         }
@@ -17012,7 +17309,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-xbap",
                 possibleExtensions: [
-                    "xbap",
+                    "xbap"
                 ]
             )
         }
@@ -17022,7 +17319,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msaccess",
                 possibleExtensions: [
-                    "mdb",
+                    "mdb"
                 ]
             )
         }
@@ -17032,7 +17329,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msbinder",
                 possibleExtensions: [
-                    "obd",
+                    "obd"
                 ]
             )
         }
@@ -17042,7 +17339,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mscardfile",
                 possibleExtensions: [
-                    "crd",
+                    "crd"
                 ]
             )
         }
@@ -17052,7 +17349,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msclip",
                 possibleExtensions: [
-                    "clp",
+                    "clp"
                 ]
             )
         }
@@ -17062,7 +17359,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msdos-program",
                 possibleExtensions: [
-                    "exe",
+                    "exe"
                 ]
             )
         }
@@ -17111,7 +17408,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msmoney",
                 possibleExtensions: [
-                    "mny",
+                    "mny"
                 ]
             )
         }
@@ -17121,7 +17418,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mspublisher",
                 possibleExtensions: [
-                    "pub",
+                    "pub"
                 ]
             )
         }
@@ -17131,7 +17428,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msschedule",
                 possibleExtensions: [
-                    "scd",
+                    "scd"
                 ]
             )
         }
@@ -17141,7 +17438,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msterminal",
                 possibleExtensions: [
-                    "trm",
+                    "trm"
                 ]
             )
         }
@@ -17151,7 +17448,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mswrite",
                 possibleExtensions: [
-                    "wri",
+                    "wri"
                 ]
             )
         }
@@ -17172,7 +17469,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ns-proxy-autoconfig",
                 possibleExtensions: [
-                    "pac",
+                    "pac"
                 ]
             )
         }
@@ -17182,7 +17479,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-nzb",
                 possibleExtensions: [
-                    "nzb",
+                    "nzb"
                 ]
             )
         }
@@ -17236,7 +17533,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-pkcs7-certreqresp",
                 possibleExtensions: [
-                    "p7r",
+                    "p7r"
                 ]
             )
         }
@@ -17253,7 +17550,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-rar-compressed",
                 possibleExtensions: [
-                    "rar",
+                    "rar"
                 ]
             )
         }
@@ -17263,7 +17560,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-redhat-package-manager",
                 possibleExtensions: [
-                    "rpm",
+                    "rpm"
                 ]
             )
         }
@@ -17273,7 +17570,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-research-info-systems",
                 possibleExtensions: [
-                    "ris",
+                    "ris"
                 ]
             )
         }
@@ -17283,7 +17580,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sea",
                 possibleExtensions: [
-                    "sea",
+                    "sea"
                 ]
             )
         }
@@ -17293,7 +17590,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sh",
                 possibleExtensions: [
-                    "sh",
+                    "sh"
                 ]
             )
         }
@@ -17303,7 +17600,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-shar",
                 possibleExtensions: [
-                    "shar",
+                    "shar"
                 ]
             )
         }
@@ -17313,7 +17610,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-shockwave-flash",
                 possibleExtensions: [
-                    "swf",
+                    "swf"
                 ]
             )
         }
@@ -17323,7 +17620,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-silverlight-app",
                 possibleExtensions: [
-                    "xap",
+                    "xap"
                 ]
             )
         }
@@ -17333,7 +17630,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sql",
                 possibleExtensions: [
-                    "sql",
+                    "sql"
                 ]
             )
         }
@@ -17343,7 +17640,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-stuffit",
                 possibleExtensions: [
-                    "sit",
+                    "sit"
                 ]
             )
         }
@@ -17353,7 +17650,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-stuffitx",
                 possibleExtensions: [
-                    "sitx",
+                    "sitx"
                 ]
             )
         }
@@ -17363,7 +17660,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-subrip",
                 possibleExtensions: [
-                    "srt",
+                    "srt"
                 ]
             )
         }
@@ -17373,7 +17670,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sv4cpio",
                 possibleExtensions: [
-                    "sv4cpio",
+                    "sv4cpio"
                 ]
             )
         }
@@ -17383,7 +17680,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sv4crc",
                 possibleExtensions: [
-                    "sv4crc",
+                    "sv4crc"
                 ]
             )
         }
@@ -17393,7 +17690,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-t3vm-image",
                 possibleExtensions: [
-                    "t3",
+                    "t3"
                 ]
             )
         }
@@ -17403,7 +17700,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-tads",
                 possibleExtensions: [
-                    "gam",
+                    "gam"
                 ]
             )
         }
@@ -17413,7 +17710,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-tar",
                 possibleExtensions: [
-                    "tar",
+                    "tar"
                 ]
             )
         }
@@ -17434,7 +17731,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-tex",
                 possibleExtensions: [
-                    "tex",
+                    "tex"
                 ]
             )
         }
@@ -17444,7 +17741,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-tex-tfm",
                 possibleExtensions: [
-                    "tfm",
+                    "tfm"
                 ]
             )
         }
@@ -17465,7 +17762,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-tgif",
                 possibleExtensions: [
-                    "obj",
+                    "obj"
                 ]
             )
         }
@@ -17475,7 +17772,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ustar",
                 possibleExtensions: [
-                    "ustar",
+                    "ustar"
                 ]
             )
         }
@@ -17485,7 +17782,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-hdd",
                 possibleExtensions: [
-                    "hdd",
+                    "hdd"
                 ]
             )
         }
@@ -17495,7 +17792,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-ova",
                 possibleExtensions: [
-                    "ova",
+                    "ova"
                 ]
             )
         }
@@ -17505,7 +17802,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-ovf",
                 possibleExtensions: [
-                    "ovf",
+                    "ovf"
                 ]
             )
         }
@@ -17515,7 +17812,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-vbox",
                 possibleExtensions: [
-                    "vbox",
+                    "vbox"
                 ]
             )
         }
@@ -17525,7 +17822,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-vbox-extpack",
                 possibleExtensions: [
-                    "vbox-extpack",
+                    "vbox-extpack"
                 ]
             )
         }
@@ -17535,7 +17832,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-vdi",
                 possibleExtensions: [
-                    "vdi",
+                    "vdi"
                 ]
             )
         }
@@ -17545,7 +17842,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-vhd",
                 possibleExtensions: [
-                    "vhd",
+                    "vhd"
                 ]
             )
         }
@@ -17555,7 +17852,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-virtualbox-vmdk",
                 possibleExtensions: [
-                    "vmdk",
+                    "vmdk"
                 ]
             )
         }
@@ -17565,7 +17862,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-wais-source",
                 possibleExtensions: [
-                    "src",
+                    "src"
                 ]
             )
         }
@@ -17578,7 +17875,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "webapp",
+                    "webapp"
                 ]
             )
         }
@@ -17621,7 +17918,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xfig",
                 possibleExtensions: [
-                    "fig",
+                    "fig"
                 ]
             )
         }
@@ -17634,7 +17931,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xlf",
+                    "xlf"
                 ]
             )
         }
@@ -17644,7 +17941,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xpinstall",
                 possibleExtensions: [
-                    "xpi",
+                    "xpi"
                 ]
             )
         }
@@ -17654,7 +17951,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xz",
                 possibleExtensions: [
-                    "xz",
+                    "xz"
                 ]
             )
         }
@@ -17664,7 +17961,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-zip-compressed",
                 possibleExtensions: [
-                    "zip",
+                    "zip"
                 ]
             )
         }
@@ -17711,7 +18008,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xaml",
+                    "xaml"
                 ]
             )
         }
@@ -17724,7 +18021,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xav",
+                    "xav"
                 ]
             )
         }
@@ -17737,7 +18034,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xca",
+                    "xca"
                 ]
             )
         }
@@ -17750,7 +18047,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xdf",
+                    "xdf"
                 ]
             )
         }
@@ -17763,7 +18060,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xel",
+                    "xel"
                 ]
             )
         }
@@ -17786,7 +18083,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xns",
+                    "xns"
                 ]
             )
         }
@@ -17819,7 +18116,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xenc",
+                    "xenc"
                 ]
             )
         }
@@ -17829,7 +18126,7 @@ extension MediaType {
                 type: name,
                 subtype: "xfdf",
                 possibleExtensions: [
-                    "xfdf",
+                    "xfdf"
                 ]
             )
         }
@@ -17866,7 +18163,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xlf",
+                    "xlf"
                 ]
             )
         }
@@ -17889,7 +18186,7 @@ extension MediaType {
                 type: name,
                 subtype: "xml-dtd",
                 possibleExtensions: [
-                    "dtd",
+                    "dtd"
                 ]
             )
         }
@@ -17929,7 +18226,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xop",
+                    "xop"
                 ]
             )
         }
@@ -17942,7 +18239,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xpl",
+                    "xpl"
                 ]
             )
         }
@@ -17969,7 +18266,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "xspf",
+                    "xspf"
                 ]
             )
         }
@@ -18002,7 +18299,7 @@ extension MediaType {
                 type: name,
                 subtype: "yang",
                 possibleExtensions: [
-                    "yang",
+                    "yang"
                 ]
             )
         }
@@ -18075,7 +18372,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "yin",
+                    "yin"
                 ]
             )
         }
@@ -18085,7 +18382,7 @@ extension MediaType {
                 type: name,
                 subtype: "zip",
                 possibleExtensions: [
-                    "zip",
+                    "zip"
                 ]
             )
         }
@@ -18098,7 +18395,7 @@ extension MediaType {
                     suffix: "dotlottie"
                 ),
                 possibleExtensions: [
-                    "lottie",
+                    "lottie"
                 ]
             )
         }

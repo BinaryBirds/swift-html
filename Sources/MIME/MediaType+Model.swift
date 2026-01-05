@@ -9,7 +9,7 @@ extension MediaType {
                 type: name,
                 subtype: "3mf",
                 possibleExtensions: [
-                    "3mf",
+                    "3mf"
                 ]
             )
         }
@@ -29,7 +29,7 @@ extension MediaType {
                     suffix: "json"
                 ),
                 possibleExtensions: [
-                    "gltf",
+                    "gltf"
                 ]
             )
         }
@@ -39,7 +39,7 @@ extension MediaType {
                 type: name,
                 subtype: "gltf-binary",
                 possibleExtensions: [
-                    "glb",
+                    "glb"
                 ]
             )
         }
@@ -60,7 +60,7 @@ extension MediaType {
                 type: name,
                 subtype: "jt",
                 possibleExtensions: [
-                    "jt",
+                    "jt"
                 ]
             )
         }
@@ -82,7 +82,7 @@ extension MediaType {
                 type: name,
                 subtype: "mtl",
                 possibleExtensions: [
-                    "mtl",
+                    "mtl"
                 ]
             )
         }
@@ -92,7 +92,7 @@ extension MediaType {
                 type: name,
                 subtype: "obj",
                 possibleExtensions: [
-                    "obj",
+                    "obj"
                 ]
             )
         }
@@ -102,7 +102,7 @@ extension MediaType {
                 type: name,
                 subtype: "prc",
                 possibleExtensions: [
-                    "prc",
+                    "prc"
                 ]
             )
         }
@@ -129,7 +129,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "stpx",
+                    "stpx"
                 ]
             )
         }
@@ -142,7 +142,7 @@ extension MediaType {
                     suffix: "zip"
                 ),
                 possibleExtensions: [
-                    "stpz",
+                    "stpz"
                 ]
             )
         }
@@ -155,7 +155,7 @@ extension MediaType {
                     suffix: "zip"
                 ),
                 possibleExtensions: [
-                    "stpxz",
+                    "stpxz"
                 ]
             )
         }
@@ -165,7 +165,7 @@ extension MediaType {
                 type: name,
                 subtype: "stl",
                 possibleExtensions: [
-                    "stl",
+                    "stl"
                 ]
             )
         }
@@ -175,7 +175,7 @@ extension MediaType {
                 type: name,
                 subtype: "u3d",
                 possibleExtensions: [
-                    "u3d",
+                    "u3d"
                 ]
             )
         }
@@ -185,7 +185,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.bary",
                 possibleExtensions: [
-                    "bary",
+                    "bary"
                 ]
             )
         }
@@ -195,7 +195,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.cld",
                 possibleExtensions: [
-                    "cld",
+                    "cld"
                 ]
             )
         }
@@ -208,7 +208,7 @@ extension MediaType {
                     suffix: "xml"
                 ),
                 possibleExtensions: [
-                    "dae",
+                    "dae"
                 ]
             )
         }
@@ -218,7 +218,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dwf",
                 possibleExtensions: [
-                    "dwf",
+                    "dwf"
                 ]
             )
         }
@@ -235,7 +235,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.gdl",
                 possibleExtensions: [
-                    "gdl",
+                    "gdl"
                 ]
             )
         }
@@ -259,7 +259,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.gtw",
                 possibleExtensions: [
-                    "gtw",
+                    "gtw"
                 ]
             )
         }
@@ -279,7 +279,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.mts",
                 possibleExtensions: [
-                    "mts",
+                    "mts"
                 ]
             )
         }
@@ -289,7 +289,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.opengex",
                 possibleExtensions: [
-                    "ogex",
+                    "ogex"
                 ]
             )
         }
@@ -299,7 +299,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.parasolid.transmit.binary",
                 possibleExtensions: [
-                    "x_b",
+                    "x_b"
                 ]
             )
         }
@@ -309,7 +309,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.parasolid.transmit.text",
                 possibleExtensions: [
-                    "x_t",
+                    "x_t"
                 ]
             )
         }
@@ -337,7 +337,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sap.vds",
                 possibleExtensions: [
-                    "vds",
+                    "vds"
                 ]
             )
         }
@@ -347,7 +347,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.usda",
                 possibleExtensions: [
-                    "usda",
+                    "usda"
                 ]
             )
         }
@@ -360,7 +360,7 @@ extension MediaType {
                     suffix: "zip"
                 ),
                 possibleExtensions: [
-                    "usdz",
+                    "usdz"
                 ]
             )
         }
@@ -370,7 +370,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.valve.source.compiled-map",
                 possibleExtensions: [
-                    "bsp",
+                    "bsp"
                 ]
             )
         }
@@ -380,7 +380,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.vtu",
                 possibleExtensions: [
-                    "vtu",
+                    "vtu"
                 ]
             )
         }
@@ -418,7 +418,7 @@ extension MediaType {
                     suffix: "fastinfoset"
                 ),
                 possibleExtensions: [
-                    "x3db",
+                    "x3db"
                 ]
             )
         }
@@ -456,7 +456,7 @@ extension MediaType {
                 type: name,
                 subtype: "x3d-vrml",
                 possibleExtensions: [
-                    "x3dv",
+                    "x3dv"
                 ]
             )
         }

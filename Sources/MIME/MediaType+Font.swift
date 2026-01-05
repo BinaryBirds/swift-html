@@ -9,7 +9,7 @@ extension MediaType {
                 type: name,
                 subtype: "collection",
                 possibleExtensions: [
-                    "ttc",
+                    "ttc"
                 ]
             )
         }
@@ -19,7 +19,7 @@ extension MediaType {
                 type: name,
                 subtype: "otf",
                 possibleExtensions: [
-                    "otf",
+                    "otf"
                 ]
             )
         }
@@ -36,7 +36,7 @@ extension MediaType {
                 type: name,
                 subtype: "ttf",
                 possibleExtensions: [
-                    "ttf",
+                    "ttf"
                 ]
             )
         }
@@ -46,7 +46,7 @@ extension MediaType {
                 type: name,
                 subtype: "woff",
                 possibleExtensions: [
-                    "woff",
+                    "woff"
                 ]
             )
         }
@@ -56,7 +56,7 @@ extension MediaType {
                 type: name,
                 subtype: "woff2",
                 possibleExtensions: [
-                    "woff2",
+                    "woff2"
                 ]
             )
         }

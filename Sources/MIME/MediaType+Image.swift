@@ -9,7 +9,7 @@ extension MediaType {
                 type: name,
                 subtype: "aces",
                 possibleExtensions: [
-                    "exr",
+                    "exr"
                 ]
             )
         }
@@ -19,7 +19,7 @@ extension MediaType {
                 type: name,
                 subtype: "apng",
                 possibleExtensions: [
-                    "apng",
+                    "apng"
                 ]
             )
         }
@@ -29,7 +29,7 @@ extension MediaType {
                 type: name,
                 subtype: "avci",
                 possibleExtensions: [
-                    "avci",
+                    "avci"
                 ]
             )
         }
@@ -39,7 +39,7 @@ extension MediaType {
                 type: name,
                 subtype: "avcs",
                 possibleExtensions: [
-                    "avcs",
+                    "avcs"
                 ]
             )
         }
@@ -49,7 +49,7 @@ extension MediaType {
                 type: name,
                 subtype: "avif",
                 possibleExtensions: [
-                    "avif",
+                    "avif"
                 ]
             )
         }
@@ -70,7 +70,7 @@ extension MediaType {
                 type: name,
                 subtype: "cgm",
                 possibleExtensions: [
-                    "cgm",
+                    "cgm"
                 ]
             )
         }
@@ -80,7 +80,7 @@ extension MediaType {
                 type: name,
                 subtype: "dicom-rle",
                 possibleExtensions: [
-                    "drle",
+                    "drle"
                 ]
             )
         }
@@ -90,7 +90,7 @@ extension MediaType {
                 type: name,
                 subtype: "dpx",
                 possibleExtensions: [
-                    "dpx",
+                    "dpx"
                 ]
             )
         }
@@ -100,7 +100,7 @@ extension MediaType {
                 type: name,
                 subtype: "emf",
                 possibleExtensions: [
-                    "emf",
+                    "emf"
                 ]
             )
         }
@@ -110,7 +110,7 @@ extension MediaType {
                 type: name,
                 subtype: "fits",
                 possibleExtensions: [
-                    "fits",
+                    "fits"
                 ]
             )
         }
@@ -120,7 +120,7 @@ extension MediaType {
                 type: name,
                 subtype: "g3fax",
                 possibleExtensions: [
-                    "g3",
+                    "g3"
                 ]
             )
         }
@@ -130,7 +130,7 @@ extension MediaType {
                 type: name,
                 subtype: "gif",
                 possibleExtensions: [
-                    "gif",
+                    "gif"
                 ]
             )
         }
@@ -140,7 +140,7 @@ extension MediaType {
                 type: name,
                 subtype: "heic",
                 possibleExtensions: [
-                    "heic",
+                    "heic"
                 ]
             )
         }
@@ -150,7 +150,7 @@ extension MediaType {
                 type: name,
                 subtype: "heic-sequence",
                 possibleExtensions: [
-                    "heics",
+                    "heics"
                 ]
             )
         }
@@ -160,7 +160,7 @@ extension MediaType {
                 type: name,
                 subtype: "heif",
                 possibleExtensions: [
-                    "heif",
+                    "heif"
                 ]
             )
         }
@@ -170,7 +170,7 @@ extension MediaType {
                 type: name,
                 subtype: "heif-sequence",
                 possibleExtensions: [
-                    "heifs",
+                    "heifs"
                 ]
             )
         }
@@ -180,7 +180,7 @@ extension MediaType {
                 type: name,
                 subtype: "hej2k",
                 possibleExtensions: [
-                    "hej2",
+                    "hej2"
                 ]
             )
         }
@@ -190,7 +190,7 @@ extension MediaType {
                 type: name,
                 subtype: "ief",
                 possibleExtensions: [
-                    "ief",
+                    "ief"
                 ]
             )
         }
@@ -207,7 +207,7 @@ extension MediaType {
                 type: name,
                 subtype: "jaii",
                 possibleExtensions: [
-                    "jaii",
+                    "jaii"
                 ]
             )
         }
@@ -217,7 +217,7 @@ extension MediaType {
                 type: name,
                 subtype: "jais",
                 possibleExtensions: [
-                    "jais",
+                    "jais"
                 ]
             )
         }
@@ -227,7 +227,7 @@ extension MediaType {
                 type: name,
                 subtype: "jls",
                 possibleExtensions: [
-                    "jls",
+                    "jls"
                 ]
             )
         }
@@ -260,7 +260,7 @@ extension MediaType {
                 type: name,
                 subtype: "jph",
                 possibleExtensions: [
-                    "jph",
+                    "jph"
                 ]
             )
         }
@@ -270,7 +270,7 @@ extension MediaType {
                 type: name,
                 subtype: "jphc",
                 possibleExtensions: [
-                    "jhc",
+                    "jhc"
                 ]
             )
         }
@@ -302,7 +302,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxl",
                 possibleExtensions: [
-                    "jxl",
+                    "jxl"
                 ]
             )
         }
@@ -312,7 +312,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxr",
                 possibleExtensions: [
-                    "jxr",
+                    "jxr"
                 ]
             )
         }
@@ -322,7 +322,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxra",
                 possibleExtensions: [
-                    "jxra",
+                    "jxra"
                 ]
             )
         }
@@ -332,7 +332,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxrs",
                 possibleExtensions: [
-                    "jxrs",
+                    "jxrs"
                 ]
             )
         }
@@ -342,7 +342,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxs",
                 possibleExtensions: [
-                    "jxs",
+                    "jxs"
                 ]
             )
         }
@@ -352,7 +352,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxsc",
                 possibleExtensions: [
-                    "jxsc",
+                    "jxsc"
                 ]
             )
         }
@@ -362,7 +362,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxsi",
                 possibleExtensions: [
-                    "jxsi",
+                    "jxsi"
                 ]
             )
         }
@@ -372,7 +372,7 @@ extension MediaType {
                 type: name,
                 subtype: "jxss",
                 possibleExtensions: [
-                    "jxss",
+                    "jxss"
                 ]
             )
         }
@@ -382,7 +382,7 @@ extension MediaType {
                 type: name,
                 subtype: "ktx",
                 possibleExtensions: [
-                    "ktx",
+                    "ktx"
                 ]
             )
         }
@@ -392,7 +392,7 @@ extension MediaType {
                 type: name,
                 subtype: "ktx2",
                 possibleExtensions: [
-                    "ktx2",
+                    "ktx2"
                 ]
             )
         }
@@ -409,7 +409,7 @@ extension MediaType {
                 type: name,
                 subtype: "pjpeg",
                 possibleExtensions: [
-                    "jfif",
+                    "jfif"
                 ]
             )
         }
@@ -419,7 +419,7 @@ extension MediaType {
                 type: name,
                 subtype: "png",
                 possibleExtensions: [
-                    "png",
+                    "png"
                 ]
             )
         }
@@ -440,7 +440,7 @@ extension MediaType {
                 type: name,
                 subtype: "prs.pti",
                 possibleExtensions: [
-                    "pti",
+                    "pti"
                 ]
             )
         }
@@ -457,7 +457,7 @@ extension MediaType {
                 type: name,
                 subtype: "sgi",
                 possibleExtensions: [
-                    "sgi",
+                    "sgi"
                 ]
             )
         }
@@ -481,7 +481,7 @@ extension MediaType {
                 type: name,
                 subtype: "t38",
                 possibleExtensions: [
-                    "t38",
+                    "t38"
                 ]
             )
         }
@@ -502,7 +502,7 @@ extension MediaType {
                 type: name,
                 subtype: "tiff-fx",
                 possibleExtensions: [
-                    "tfx",
+                    "tfx"
                 ]
             )
         }
@@ -512,7 +512,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.adobe.photoshop",
                 possibleExtensions: [
-                    "psd",
+                    "psd"
                 ]
             )
         }
@@ -522,7 +522,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.airzip.accelerator.azv",
                 possibleExtensions: [
-                    "azv",
+                    "azv"
                 ]
             )
         }
@@ -532,7 +532,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.blockfact.facti",
                 possibleExtensions: [
-                    "facti",
+                    "facti"
                 ]
             )
         }
@@ -580,7 +580,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dvb.subtitle",
                 possibleExtensions: [
-                    "sub",
+                    "sub"
                 ]
             )
         }
@@ -590,7 +590,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dwg",
                 possibleExtensions: [
-                    "dwg",
+                    "dwg"
                 ]
             )
         }
@@ -600,7 +600,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dxf",
                 possibleExtensions: [
-                    "dxf",
+                    "dxf"
                 ]
             )
         }
@@ -610,7 +610,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fastbidsheet",
                 possibleExtensions: [
-                    "fbs",
+                    "fbs"
                 ]
             )
         }
@@ -620,7 +620,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fpx",
                 possibleExtensions: [
-                    "fpx",
+                    "fpx"
                 ]
             )
         }
@@ -630,7 +630,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fst",
                 possibleExtensions: [
-                    "fst",
+                    "fst"
                 ]
             )
         }
@@ -640,7 +640,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujixerox.edmics-mmr",
                 possibleExtensions: [
-                    "mmr",
+                    "mmr"
                 ]
             )
         }
@@ -650,7 +650,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fujixerox.edmics-rlc",
                 possibleExtensions: [
-                    "rlc",
+                    "rlc"
                 ]
             )
         }
@@ -667,7 +667,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.microsoft.icon",
                 possibleExtensions: [
-                    "ico",
+                    "ico"
                 ]
             )
         }
@@ -691,7 +691,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-dds",
                 possibleExtensions: [
-                    "dds",
+                    "dds"
                 ]
             )
         }
@@ -701,7 +701,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-modi",
                 possibleExtensions: [
-                    "mdi",
+                    "mdi"
                 ]
             )
         }
@@ -711,7 +711,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-photo",
                 possibleExtensions: [
-                    "wdp",
+                    "wdp"
                 ]
             )
         }
@@ -721,7 +721,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.net-fpx",
                 possibleExtensions: [
-                    "npx",
+                    "npx"
                 ]
             )
         }
@@ -731,7 +731,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.pco.b16",
                 possibleExtensions: [
-                    "b16",
+                    "b16"
                 ]
             )
         }
@@ -776,7 +776,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.tencent.tap",
                 possibleExtensions: [
-                    "tap",
+                    "tap"
                 ]
             )
         }
@@ -786,7 +786,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.valve.source.texture",
                 possibleExtensions: [
-                    "vtf",
+                    "vtf"
                 ]
             )
         }
@@ -796,7 +796,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wap.wbmp",
                 possibleExtensions: [
-                    "wbmp",
+                    "wbmp"
                 ]
             )
         }
@@ -806,7 +806,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.xiff",
                 possibleExtensions: [
-                    "xif",
+                    "xif"
                 ]
             )
         }
@@ -816,7 +816,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.zbrush.pcx",
                 possibleExtensions: [
-                    "pcx",
+                    "pcx"
                 ]
             )
         }
@@ -826,7 +826,7 @@ extension MediaType {
                 type: name,
                 subtype: "webp",
                 possibleExtensions: [
-                    "webp",
+                    "webp"
                 ]
             )
         }
@@ -836,7 +836,7 @@ extension MediaType {
                 type: name,
                 subtype: "wmf",
                 possibleExtensions: [
-                    "wmf",
+                    "wmf"
                 ]
             )
         }
@@ -846,7 +846,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-3ds",
                 possibleExtensions: [
-                    "3ds",
+                    "3ds"
                 ]
             )
         }
@@ -856,7 +856,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-adobe-dng",
                 possibleExtensions: [
-                    "dng",
+                    "dng"
                 ]
             )
         }
@@ -866,7 +866,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cmu-raster",
                 possibleExtensions: [
-                    "ras",
+                    "ras"
                 ]
             )
         }
@@ -876,7 +876,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-cmx",
                 possibleExtensions: [
-                    "cmx",
+                    "cmx"
                 ]
             )
         }
@@ -907,7 +907,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-icon",
                 possibleExtensions: [
-                    "ico",
+                    "ico"
                 ]
             )
         }
@@ -917,7 +917,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-jng",
                 possibleExtensions: [
-                    "jng",
+                    "jng"
                 ]
             )
         }
@@ -927,7 +927,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mrsid-image",
                 possibleExtensions: [
-                    "sid",
+                    "sid"
                 ]
             )
         }
@@ -937,7 +937,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-bmp",
                 possibleExtensions: [
-                    "bmp",
+                    "bmp"
                 ]
             )
         }
@@ -947,7 +947,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-pcx",
                 possibleExtensions: [
-                    "pcx",
+                    "pcx"
                 ]
             )
         }
@@ -968,7 +968,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-portable-anymap",
                 possibleExtensions: [
-                    "pnm",
+                    "pnm"
                 ]
             )
         }
@@ -978,7 +978,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-portable-bitmap",
                 possibleExtensions: [
-                    "pbm",
+                    "pbm"
                 ]
             )
         }
@@ -988,7 +988,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-portable-graymap",
                 possibleExtensions: [
-                    "pgm",
+                    "pgm"
                 ]
             )
         }
@@ -998,7 +998,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-portable-pixmap",
                 possibleExtensions: [
-                    "ppm",
+                    "ppm"
                 ]
             )
         }
@@ -1008,7 +1008,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-rgb",
                 possibleExtensions: [
-                    "rgb",
+                    "rgb"
                 ]
             )
         }
@@ -1018,7 +1018,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-tga",
                 possibleExtensions: [
-                    "tga",
+                    "tga"
                 ]
             )
         }
@@ -1035,7 +1035,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xbitmap",
                 possibleExtensions: [
-                    "xbm",
+                    "xbm"
                 ]
             )
         }
@@ -1052,7 +1052,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xpixmap",
                 possibleExtensions: [
-                    "xpm",
+                    "xpm"
                 ]
             )
         }
@@ -1062,7 +1062,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-xwindowdump",
                 possibleExtensions: [
-                    "xwd",
+                    "xwd"
                 ]
             )
         }

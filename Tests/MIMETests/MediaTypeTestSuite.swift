@@ -14,5 +14,7 @@ struct MediaTypeTestSuite {
         let formData = MediaType.Multipart.formData(boundary: "foo")
         #expect(formData.rawValue == "multipart/form-data; boundary=foo")
 
+        let css = MediaType.Text.css()
+        #expect(css.rawValue == "text/css")
     }
 }

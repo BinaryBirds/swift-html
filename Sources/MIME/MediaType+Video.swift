@@ -34,7 +34,7 @@ extension MediaType {
                 type: name,
                 subtype: "3gpp2",
                 possibleExtensions: [
-                    "3g2",
+                    "3g2"
                 ]
             )
         }
@@ -107,7 +107,7 @@ extension MediaType {
                 type: name,
                 subtype: "h261",
                 possibleExtensions: [
-                    "h261",
+                    "h261"
                 ]
             )
         }
@@ -117,7 +117,7 @@ extension MediaType {
                 type: name,
                 subtype: "h263",
                 possibleExtensions: [
-                    "h263",
+                    "h263"
                 ]
             )
         }
@@ -141,7 +141,7 @@ extension MediaType {
                 type: name,
                 subtype: "h264",
                 possibleExtensions: [
-                    "h264",
+                    "h264"
                 ]
             )
         }
@@ -179,7 +179,7 @@ extension MediaType {
                 type: name,
                 subtype: "iso.segment",
                 possibleExtensions: [
-                    "m4s",
+                    "m4s"
                 ]
             )
         }
@@ -189,7 +189,7 @@ extension MediaType {
                 type: name,
                 subtype: "jpeg",
                 possibleExtensions: [
-                    "jpgv",
+                    "jpgv"
                 ]
             )
         }
@@ -347,7 +347,7 @@ extension MediaType {
                 type: name,
                 subtype: "ogg",
                 possibleExtensions: [
-                    "ogv",
+                    "ogv"
                 ]
             )
         }
@@ -556,7 +556,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dvb.file",
                 possibleExtensions: [
-                    "dvb",
+                    "dvb"
                 ]
             )
         }
@@ -566,7 +566,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fvt",
                 possibleExtensions: [
-                    "fvt",
+                    "fvt"
                 ]
             )
         }
@@ -650,7 +650,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.ms-playready.media.pyv",
                 possibleExtensions: [
-                    "pyv",
+                    "pyv"
                 ]
             )
         }
@@ -748,7 +748,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.vivo",
                 possibleExtensions: [
-                    "viv",
+                    "viv"
                 ]
             )
         }
@@ -779,7 +779,7 @@ extension MediaType {
                 type: name,
                 subtype: "webm",
                 possibleExtensions: [
-                    "webm",
+                    "webm"
                 ]
             )
         }
@@ -789,7 +789,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-f4v",
                 possibleExtensions: [
-                    "f4v",
+                    "f4v"
                 ]
             )
         }
@@ -799,7 +799,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-fli",
                 possibleExtensions: [
-                    "fli",
+                    "fli"
                 ]
             )
         }
@@ -809,7 +809,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-flv",
                 possibleExtensions: [
-                    "flv",
+                    "flv"
                 ]
             )
         }
@@ -819,7 +819,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-m4v",
                 possibleExtensions: [
-                    "m4v",
+                    "m4v"
                 ]
             )
         }
@@ -841,7 +841,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-mng",
                 possibleExtensions: [
-                    "mng",
+                    "mng"
                 ]
             )
         }
@@ -862,7 +862,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-vob",
                 possibleExtensions: [
-                    "vob",
+                    "vob"
                 ]
             )
         }
@@ -872,7 +872,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wm",
                 possibleExtensions: [
-                    "wm",
+                    "wm"
                 ]
             )
         }
@@ -882,7 +882,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wmv",
                 possibleExtensions: [
-                    "wmv",
+                    "wmv"
                 ]
             )
         }
@@ -892,7 +892,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wmx",
                 possibleExtensions: [
-                    "wmx",
+                    "wmx"
                 ]
             )
         }
@@ -902,7 +902,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-ms-wvx",
                 possibleExtensions: [
-                    "wvx",
+                    "wvx"
                 ]
             )
         }
@@ -912,7 +912,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-msvideo",
                 possibleExtensions: [
-                    "avi",
+                    "avi"
                 ]
             )
         }
@@ -922,7 +922,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sgi-movie",
                 possibleExtensions: [
-                    "movie",
+                    "movie"
                 ]
             )
         }
@@ -932,7 +932,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-smv",
                 possibleExtensions: [
-                    "smv",
+                    "smv"
                 ]
             )
         }

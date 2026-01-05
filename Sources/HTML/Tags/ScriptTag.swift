@@ -47,11 +47,4 @@ public struct Script:
         self.attributes = .init()
         self.children = []
     }
-
-    public func javaScript() -> Self {
-        setAttribute(
-            key: StandardAttributeKey.type,
-            value: "application/javascript"
-        )
-    }
 }

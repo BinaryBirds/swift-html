@@ -34,9 +34,4 @@ public struct Style:
             Text(text)
         ]
     }
-
-    /// Specifies the media type (text/css) of the `<style>` tag.
-    public func css() -> Self {
-        setAttribute(key: StandardAttributeKey.type, value: "text/css")
-    }
 }

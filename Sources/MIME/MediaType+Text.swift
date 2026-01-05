@@ -77,7 +77,7 @@ extension MediaType {
                 type: name,
                 subtype: "css",
                 possibleExtensions: [
-                    "css",
+                    "css"
                 ]
             )
         }
@@ -87,7 +87,7 @@ extension MediaType {
                 type: name,
                 subtype: "csv",
                 possibleExtensions: [
-                    "csv",
+                    "csv"
                 ]
             )
         }
@@ -193,7 +193,7 @@ extension MediaType {
                 type: name,
                 subtype: "jade",
                 possibleExtensions: [
-                    "jade",
+                    "jade"
                 ]
             )
         }
@@ -221,7 +221,7 @@ extension MediaType {
                 type: name,
                 subtype: "jsx",
                 possibleExtensions: [
-                    "jsx",
+                    "jsx"
                 ]
             )
         }
@@ -231,7 +231,7 @@ extension MediaType {
                 type: name,
                 subtype: "less",
                 possibleExtensions: [
-                    "less",
+                    "less"
                 ]
             )
         }
@@ -252,7 +252,7 @@ extension MediaType {
                 type: name,
                 subtype: "mathml",
                 possibleExtensions: [
-                    "mml",
+                    "mml"
                 ]
             )
         }
@@ -262,7 +262,7 @@ extension MediaType {
                 type: name,
                 subtype: "mdx",
                 possibleExtensions: [
-                    "mdx",
+                    "mdx"
                 ]
             )
         }
@@ -279,7 +279,7 @@ extension MediaType {
                 type: name,
                 subtype: "n3",
                 possibleExtensions: [
-                    "n3",
+                    "n3"
                 ]
             )
         }
@@ -341,7 +341,7 @@ extension MediaType {
                 type: name,
                 subtype: "prs.lines.tag",
                 possibleExtensions: [
-                    "dsc",
+                    "dsc"
                 ]
             )
         }
@@ -386,7 +386,7 @@ extension MediaType {
                 type: name,
                 subtype: "richtext",
                 possibleExtensions: [
-                    "rtx",
+                    "rtx"
                 ]
             )
         }
@@ -396,7 +396,7 @@ extension MediaType {
                 type: name,
                 subtype: "rtf",
                 possibleExtensions: [
-                    "rtf",
+                    "rtf"
                 ]
             )
         }
@@ -445,7 +445,7 @@ extension MediaType {
                 type: name,
                 subtype: "shex",
                 possibleExtensions: [
-                    "shex",
+                    "shex"
                 ]
             )
         }
@@ -466,7 +466,7 @@ extension MediaType {
                 type: name,
                 subtype: "spdx",
                 possibleExtensions: [
-                    "spdx",
+                    "spdx"
                 ]
             )
         }
@@ -501,7 +501,7 @@ extension MediaType {
                 type: name,
                 subtype: "tab-separated-values",
                 possibleExtensions: [
-                    "tsv",
+                    "tsv"
                 ]
             )
         }
@@ -526,7 +526,7 @@ extension MediaType {
                 type: name,
                 subtype: "turtle",
                 possibleExtensions: [
-                    "ttl",
+                    "ttl"
                 ]
             )
         }
@@ -555,7 +555,7 @@ extension MediaType {
                 type: name,
                 subtype: "vcard",
                 possibleExtensions: [
-                    "vcard",
+                    "vcard"
                 ]
             )
         }
@@ -586,7 +586,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.curl",
                 possibleExtensions: [
-                    "curl",
+                    "curl"
                 ]
             )
         }
@@ -596,7 +596,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.curl.dcurl",
                 possibleExtensions: [
-                    "dcurl",
+                    "dcurl"
                 ]
             )
         }
@@ -606,7 +606,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.curl.mcurl",
                 possibleExtensions: [
-                    "mcurl",
+                    "mcurl"
                 ]
             )
         }
@@ -616,7 +616,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.curl.scurl",
                 possibleExtensions: [
-                    "scurl",
+                    "scurl"
                 ]
             )
         }
@@ -640,7 +640,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.dvb.subtitle",
                 possibleExtensions: [
-                    "sub",
+                    "sub"
                 ]
             )
         }
@@ -664,7 +664,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.familysearch.gedcom",
                 possibleExtensions: [
-                    "ged",
+                    "ged"
                 ]
             )
         }
@@ -681,7 +681,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fly",
                 possibleExtensions: [
-                    "fly",
+                    "fly"
                 ]
             )
         }
@@ -691,7 +691,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.fmi.flexstor",
                 possibleExtensions: [
-                    "flx",
+                    "flx"
                 ]
             )
         }
@@ -708,7 +708,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.graphviz",
                 possibleExtensions: [
-                    "gv",
+                    "gv"
                 ]
             )
         }
@@ -732,7 +732,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.in3d.3dml",
                 possibleExtensions: [
-                    "3dml",
+                    "3dml"
                 ]
             )
         }
@@ -742,7 +742,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.in3d.spot",
                 possibleExtensions: [
-                    "spot",
+                    "spot"
                 ]
             )
         }
@@ -822,7 +822,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.sun.j2me.app-descriptor",
                 possibleExtensions: [
-                    "jad",
+                    "jad"
                 ]
             )
         }
@@ -867,7 +867,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wap.wml",
                 possibleExtensions: [
-                    "wml",
+                    "wml"
                 ]
             )
         }
@@ -877,7 +877,7 @@ extension MediaType {
                 type: name,
                 subtype: "vnd.wap.wmlscript",
                 possibleExtensions: [
-                    "wmls",
+                    "wmls"
                 ]
             )
         }
@@ -894,7 +894,7 @@ extension MediaType {
                 type: name,
                 subtype: "vtt",
                 possibleExtensions: [
-                    "vtt",
+                    "vtt"
                 ]
             )
         }
@@ -904,7 +904,7 @@ extension MediaType {
                 type: name,
                 subtype: "wgsl",
                 possibleExtensions: [
-                    "wgsl",
+                    "wgsl"
                 ]
             )
         }
@@ -941,7 +941,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-component",
                 possibleExtensions: [
-                    "htc",
+                    "htc"
                 ]
             )
         }
@@ -971,7 +971,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-handlebars-template",
                 possibleExtensions: [
-                    "hbs",
+                    "hbs"
                 ]
             )
         }
@@ -981,7 +981,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-java-source",
                 possibleExtensions: [
-                    "java",
+                    "java"
                 ]
             )
         }
@@ -998,7 +998,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-lua",
                 possibleExtensions: [
-                    "lua",
+                    "lua"
                 ]
             )
         }
@@ -1008,7 +1008,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-markdown",
                 possibleExtensions: [
-                    "mkd",
+                    "mkd"
                 ]
             )
         }
@@ -1018,7 +1018,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-nfo",
                 possibleExtensions: [
-                    "nfo",
+                    "nfo"
                 ]
             )
         }
@@ -1028,7 +1028,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-opml",
                 possibleExtensions: [
-                    "opml",
+                    "opml"
                 ]
             )
         }
@@ -1038,7 +1038,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-org",
                 possibleExtensions: [
-                    "org",
+                    "org"
                 ]
             )
         }
@@ -1059,7 +1059,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-processing",
                 possibleExtensions: [
-                    "pde",
+                    "pde"
                 ]
             )
         }
@@ -1069,7 +1069,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sass",
                 possibleExtensions: [
-                    "sass",
+                    "sass"
                 ]
             )
         }
@@ -1079,7 +1079,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-scss",
                 possibleExtensions: [
-                    "scss",
+                    "scss"
                 ]
             )
         }
@@ -1089,7 +1089,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-setext",
                 possibleExtensions: [
-                    "etx",
+                    "etx"
                 ]
             )
         }
@@ -1099,7 +1099,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-sfv",
                 possibleExtensions: [
-                    "sfv",
+                    "sfv"
                 ]
             )
         }
@@ -1109,7 +1109,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-suse-ymp",
                 possibleExtensions: [
-                    "ymp",
+                    "ymp"
                 ]
             )
         }
@@ -1119,7 +1119,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-uuencode",
                 possibleExtensions: [
-                    "uu",
+                    "uu"
                 ]
             )
         }
@@ -1129,7 +1129,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-vcalendar",
                 possibleExtensions: [
-                    "vcs",
+                    "vcs"
                 ]
             )
         }
@@ -1139,7 +1139,7 @@ extension MediaType {
                 type: name,
                 subtype: "x-vcard",
                 possibleExtensions: [
-                    "vcf",
+                    "vcf"
                 ]
             )
         }
@@ -1149,7 +1149,7 @@ extension MediaType {
                 type: name,
                 subtype: "xml",
                 possibleExtensions: [
-                    "xml",
+                    "xml"
                 ]
             )
         }
