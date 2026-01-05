@@ -69,13 +69,13 @@ public struct MediaType {
     }
 
     public var type: String
-    public var subtype: String
+    public var subtype: Subtype
     public var parameter: Parameter?
     public var possibleExtensions: [String]
 
     public init(
         type: String,
-        subtype: String,
+        subtype: Subtype,
         parameter: Parameter? = nil,
         possibleExtensions: [String] = []
     ) {
@@ -86,7 +86,7 @@ public struct MediaType {
     }
 
     public var rawValue: String {
-        var value = "\(type)/\(subtype)"
+        var value = "\(type)/\(subtype.rawValue)"
         if let parameter, !parameter.rawValue.isEmpty {
             value += "; " + parameter.rawValue
         }

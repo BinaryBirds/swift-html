@@ -312,3 +312,5 @@ print(StylesheetRenderer(minify: false, indent: 4).render(css))
 
 
 - [MIME DB](https://github.com/jshttp/mime-db)
+- [MIME Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types)
+- [MIME Sniffing](https://mimesniff.spec.whatwg.org/#mime-type-representation)
