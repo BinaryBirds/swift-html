@@ -7,9 +7,9 @@ struct GridAreaTests {
 
     @Test
     func initializers() {
-        
-//        let property1 = GridArea(.)
-//        assertProperty(property1, name: "grid-area", value: value1.rawValue)
+
+        //        let property1 = GridArea(.)
+        //        assertProperty(property1, name: "grid-area", value: value1.rawValue)
 
     }
 }

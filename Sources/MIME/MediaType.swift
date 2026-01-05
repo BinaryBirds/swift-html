@@ -1,12 +1,10 @@
-
 /// type/subtype;parameter=value
-
 public struct MediaType {
 
     public struct Parameter: Sendable {
         public var key: String
         public var value: String?
-        
+
         public init(
             key: String,
             value: String
@@ -14,7 +12,7 @@ public struct MediaType {
             self.key = key
             self.value = value
         }
-        
+
         public var rawValue: String {
             var result = key
             if let value, !value.isEmpty {
@@ -24,28 +22,28 @@ public struct MediaType {
             return result
         }
     }
-    
+
     public struct Subtype: Sendable, ExpressibleByStringLiteral {
-        
+
         public struct Suffix: Sendable, ExpressibleByStringLiteral {
 
             public var value: String
-            
+
             public init(value: String) {
                 self.value = value
             }
-            
+
             public init(
                 stringLiteral value: StringLiteralType
             ) {
                 self.init(value: value)
             }
-            
+
         }
-        
+
         public var value: String
         public var suffix: Suffix?
-        
+
         public init(
             value: String,
             suffix: Suffix? = nil
@@ -53,13 +51,13 @@ public struct MediaType {
             self.value = value
             self.suffix = suffix
         }
-        
+
         public init(
             stringLiteral value: StringLiteralType
         ) {
             self.init(value: value, suffix: nil)
         }
-        
+
         public var rawValue: String {
             var result = value
             if let suffix, !suffix.value.isEmpty {
@@ -69,12 +67,24 @@ public struct MediaType {
             return result
         }
     }
-    
+
     public var type: String
     public var subtype: String
     public var parameter: Parameter?
-    
-    
+    public var possibleExtensions: [String]
+
+    public init(
+        type: String,
+        subtype: String,
+        parameter: Parameter? = nil,
+        possibleExtensions: [String] = []
+    ) {
+        self.type = type
+        self.subtype = subtype
+        self.parameter = parameter
+        self.possibleExtensions = possibleExtensions
+    }
+
     public var rawValue: String {
         var value = "\(type)/\(subtype)"
         if let parameter, !parameter.rawValue.isEmpty {
@@ -82,37 +92,4 @@ public struct MediaType {
         }
         return value
     }
-
 }
-
-public extension MediaType {
-
-    enum Application {
-        
-        static let name: String = "application"
-        
-        public static func json() -> MediaType {
-            .init(type: name, subtype: "json" )
-        }
-    }
-    
-    enum Multipart {
-        
-        static let name: String = "multipart"
-        
-        public static func formData(
-            boundary value: String
-        ) -> MediaType {
-            .init(
-                type: name,
-                subtype: "form-data",
-                parameter: .init(
-                    key: "boundary",
-                    value: value
-                )
-            )
-        }
-    }
-}
-
-
